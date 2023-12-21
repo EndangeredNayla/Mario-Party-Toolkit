@@ -1,8 +1,8 @@
 # ============================================
 # Mario Party Toolkit
-# Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 12/21/2023
-# License: MIT
+# Author:     Nayla Hanegan (naylahanegan@gmail.com)
+# Date:     12/21/2023
+# License:     MIT
 # ============================================
 
 import customtkinter as ctk
@@ -13,12 +13,12 @@ from pathlib import Path
 from codes import *
 
 
-def fetchResource(resource_path: Path) -> Path:
-    try:  # Running as *.exe; fetch resource from temp directory
+def fetchResource(resource_path:     Path) -> Path:
+    try:     # Running as *.exe; fetch resource from temp directory
         base_path = Path(sys._MEIPASS)
-    except AttributeError:  # Running as script; return unmodified path
+    except AttributeError:     # Running as script; return unmodified path
         return resource_path
-    else:  # Return temp resource path
+    else:     # Return temp resource path
         return base_path.joinpath(resource_path)
 
 def create_image_icon(frame, image_path, row, column):
@@ -40,7 +40,7 @@ ctk.set_default_color_theme("blue")
 # Create the main application window
 app = ctk.CTk()
 app.geometry("360x280")
-app.title("Mario Party: Toolkit")
+app.title("Mario Party:     Toolkit")
 
 tabviewGame = ctk.CTkTabview(master=app)
 tabviewGame.pack(padx=0, pady=0)
@@ -56,6 +56,7 @@ tabviewGame.add("MP8")
 tabviewEight = ctk.CTkTabview(master=tabviewGame.tab("MP8"), height=20)
 tabviewEight.pack(padx=0, pady=0)
 tabviewEight.add("Space Modifier")
+tabviewEight.add("Space Modifier (GC Mod)")
 
 # Create a frame inside the "Space Modifier" tab
 frameEight = ctk.CTkFrame(master=tabviewEight.tab("Space Modifier"), border_color="#2b2b2b")
@@ -70,6 +71,21 @@ blueSpaceAmountEight.grid(row=1, column=3)
 redSpaceIconEight = create_image_icon(frameEight, "assets/redSpace.png", 2, 1)
 redSpaceAmountEight = ctk.CTkEntry(master=frameEight, width=28)
 redSpaceAmountEight.grid(row=2, column=3)
+
+
+# Create a frame inside the "Space Modifier" tab
+frameEightGC = ctk.CTkFrame(master=tabviewEight.tab("Space Modifier (GC Mod)"), border_color="#2b2b2b")
+frameEightGC.pack(padx=20, pady=20)
+
+# Create blue space icon and entry
+blueSpaceIconEightGC = create_image_icon(frameEightGC, "assets/blueSpace.png", 1, 1)
+blueSpaceAmountEightGC = ctk.CTkEntry(master=frameEightGC, width=28)
+blueSpaceAmountEightGC.grid(row=1, column=3)
+
+# Create red space icon and entry
+redSpaceIconEightGC = create_image_icon(frameEightGC, "assets/redSpace.png", 2, 1)
+redSpaceAmountEightGC = ctk.CTkEntry(master=frameEightGC, width=28)
+redSpaceAmountEightGC.grid(row=2, column=3)
 
 tabviewSeven = ctk.CTkTabview(master=tabviewGame.tab("MP7"), height=20)
 tabviewSeven.pack(padx=0, pady=0)
@@ -182,6 +198,49 @@ def parseCoinsEight():
     generatedCode = marioPartyEightRedSpace + marioPartyEightBlueSpace
     generatedCode = generatedCode.replace("EIGHTRED", redSpaceAmountBaseEight)
     generatedCode = generatedCode.replace("EIGHTBLUE", blueSpaceAmountBaseEight)
+    generatedCode = generatedCode.strip()
+    pyperclip.copy(generatedCode)
+    print("Generated codes copied to the clipboard.")
+    createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
+
+def parseCoinsEightGC():
+    global blueSpaceAmountEightGC, redSpaceAmountEightGC
+
+    if not blueSpaceAmountEightGC.get() and not redSpaceAmountEightGC.get():
+        createDialog("Error", "error", "No information provided.")
+        return
+
+    try:
+        blueSpaceAmountBaseEightGC = blueSpaceAmountEightGC.get()
+        blueSpaceAmountEightGC = hex(int(blueSpaceAmountEightGC.get()))
+        if len(blueSpaceAmountEightGC) == 4:
+            blueSpaceAmountEightGC = "00" + blueSpaceAmountEightGC[2:]
+        elif len(blueSpaceAmountEightGC) == 3:
+            blueSpaceAmountEightGC = "000" + blueSpaceAmountEightGC[2:]
+    except:
+        blueSpaceAmountEightGC = "DUMMY"
+
+    try:
+        redSpaceAmountBaseEightGC = redSpaceAmountEightGC.get()
+        redSpaceAmountEightGC = hex(int(redSpaceAmountEightGC.get()))
+        if len(redSpaceAmountEightGC) == 4:
+            redSpaceAmountEightGC = "FF" + redSpaceAmountEightGC[2:]
+        elif len(redSpaceAmountEightGC) == 3:
+            redSpaceAmountEightGC = "FFF" + redSpaceAmountEightGC[2:]
+    except:
+        redSpaceAmountEightGC = "DUMMY"
+
+    marioPartyEightGCBlueSpace = getBlueSpaceCodeEightGC(blueSpaceAmountEightGC)
+    marioPartyEightGCRedSpace = getRedSpaceCodeEightGC(redSpaceAmountEightGC)
+
+    if redSpaceAmountEightGC == "DUMMY":
+        marioPartyEightGCRedSpace = ""
+    if blueSpaceAmountEightGC == "DUMMY":
+        marioPartyEightGCBlueSpace = ""
+
+    generatedCode = marioPartyEightGCRedSpace + marioPartyEightGCBlueSpace
+    generatedCode = generatedCode.replace("EightGCRED", redSpaceAmountBaseEightGC)
+    generatedCode = generatedCode.replace("EightGCBLUE", blueSpaceAmountBaseEightGC)
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)
     print("Generated codes copied to the clipboard.")
@@ -372,7 +431,7 @@ def createDialog(windowTitle, warn, info):
     completeWindow.focus()
 
 # Labels and button configuration
-preBlueLabelEight = ctk.CTkLabel(master=frameEight, text=": ", font=("Arial", 12))
+preBlueLabelEight = ctk.CTkLabel(master=frameEight, text=":     ", font=("Arial", 12))
 preBlueLabelEight.grid(row=1, column=2)
 
 preRedLabelEight = ctk.CTkLabel(master=frameEight, text=":   - ", font=("Arial", 12))
@@ -384,10 +443,25 @@ coinsBlueLabelEight.grid(row=1, column=4)
 coinsRedLabelEight = ctk.CTkLabel(master=frameEight, text=" Coins", font=("Arial", 12))
 coinsRedLabelEight.grid(row=2, column=4)
 
-parseButtonEight = ctk.CTkButton(master=tabviewGame.tab("MP8"), command=parseCoinsEight, text="Generate Codes")
+parseButtonEight = ctk.CTkButton(master=tabviewEight.tab("Space Modifier"), command=parseCoinsEight, text="Generate Codes")
 parseButtonEight.pack(padx=20, pady=20)
 
-preBlueLabelSeven = ctk.CTkLabel(master=frameSeven, text=": ", font=("Arial", 12))
+preBlueLabelEightGC = ctk.CTkLabel(master=frameEightGC, text=":    ", font=("Arial", 12))
+preBlueLabelEightGC.grid(row=1, column=2)
+
+preRedLabelEightGC = ctk.CTkLabel(master=frameEightGC, text=":   - ", font=("Arial", 12))
+preRedLabelEightGC.grid(row=2, column=2)
+
+coinsBlueLabelEightGC = ctk.CTkLabel(master=frameEightGC, text=" Coins", font=("Arial", 12))
+coinsBlueLabelEightGC.grid(row=1, column=4)
+
+coinsRedLabelEightGC = ctk.CTkLabel(master=frameEightGC, text=" Coins", font=("Arial", 12))
+coinsRedLabelEightGC.grid(row=2, column=4)
+
+parseButtonEightGC = ctk.CTkButton(master=tabviewEight.tab("Space Modifier (GC Mod)"), command=parseCoinsEightGC, text="Generate Codes")
+parseButtonEightGC.pack(padx=20, pady=20)
+
+preBlueLabelSeven = ctk.CTkLabel(master=frameSeven, text=":     ", font=("Arial", 12))
 preBlueLabelSeven.grid(row=1, column=2)
 
 preRedLabelSeven = ctk.CTkLabel(master=frameSeven, text=":   - ", font=("Arial", 12))
@@ -399,10 +473,10 @@ coinsBlueLabelSeven.grid(row=1, column=4)
 coinsRedLabelSeven = ctk.CTkLabel(master=frameSeven, text=" Coins", font=("Arial", 12))
 coinsRedLabelSeven.grid(row=2, column=4)
 
-parseButtonSeven = ctk.CTkButton(master=tabviewGame.tab("MP7"), command=parseCoinsSeven, text="Generate Codes")
+parseButtonSeven = ctk.CTkButton(master=tabviewSeven.tab("Space Modifier"), command=parseCoinsSeven, text="Generate Codes")
 parseButtonSeven.pack(padx=20, pady=20)
 
-preBlueLabelSix = ctk.CTkLabel(master=frameSix, text=": ", font=("Arial", 12))
+preBlueLabelSix = ctk.CTkLabel(master=frameSix, text=":     ", font=("Arial", 12))
 preBlueLabelSix.grid(row=1, column=2)
 
 preRedLabelSix = ctk.CTkLabel(master=frameSix, text=":   - ", font=("Arial", 12))
@@ -414,10 +488,10 @@ coinsBlueLabelSix.grid(row=1, column=4)
 coinsRedLabelSix = ctk.CTkLabel(master=frameSix, text=" Coins", font=("Arial", 12))
 coinsRedLabelSix.grid(row=2, column=4)
 
-parseButtonSix = ctk.CTkButton(master=tabviewGame.tab("MP6"), command=parseCoinsSix, text="Generate Codes")
+parseButtonSix = ctk.CTkButton(master=tabviewSix.tab("Space Modifier"), command=parseCoinsSix, text="Generate Codes")
 parseButtonSix.pack(padx=20, pady=20)
 
-preBlueLabelFive = ctk.CTkLabel(master=frameFive, text=": ", font=("Arial", 12))
+preBlueLabelFive = ctk.CTkLabel(master=frameFive, text=":     ", font=("Arial", 12))
 preBlueLabelFive.grid(row=1, column=2)
 
 preRedLabelFive = ctk.CTkLabel(master=frameFive, text=":   - ", font=("Arial", 12))
@@ -429,10 +503,10 @@ coinsBlueLabelFive.grid(row=1, column=4)
 coinsRedLabelFive = ctk.CTkLabel(master=frameFive, text=" Coins", font=("Arial", 12))
 coinsRedLabelFive.grid(row=2, column=4)
 
-parseButtonFive = ctk.CTkButton(master=tabviewGame.tab("MP5"), command=parseCoinsFive, text="Generate Codes")
+parseButtonFive = ctk.CTkButton(master=tabviewFive.tab("Space Modifier"), command=parseCoinsFive, text="Generate Codes")
 parseButtonFive.pack(padx=20, pady=20)
 
-preBlueLabelFour = ctk.CTkLabel(master=frameFour, text=": ", font=("Arial", 12))
+preBlueLabelFour = ctk.CTkLabel(master=frameFour, text=":     ", font=("Arial", 12))
 preBlueLabelFour.grid(row=1, column=2)
 
 preRedLabelFour = ctk.CTkLabel(master=frameFour, text=":   - ", font=("Arial", 12))
@@ -444,7 +518,8 @@ coinsBlueLabelFour.grid(row=1, column=4)
 coinsRedLabelFour = ctk.CTkLabel(master=frameFour, text=" Coins", font=("Arial", 12))
 coinsRedLabelFour.grid(row=2, column=4)
 
-parseButtonFour = ctk.CTkButton(master=tabviewGame.tab("MP4"), command=parseCoinsFour, text="Generate Codes")
+parseButtonFour = ctk.CTkButton(master=tabviewFour.tab("Space Modifier"), command=parseCoinsFour, text="Generate Codes")
 parseButtonFour.pack(padx=20, pady=20)
+
 # Run the main application loop
 app.mainloop()
