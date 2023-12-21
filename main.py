@@ -1,8 +1,8 @@
 # ============================================
 # Mario Party Toolkit
-# Author:     Nayla Hanegan (naylahanegan@gmail.com)
-# Date:     12/21/2023
-# License:     MIT
+# Author: Nayla Hanegan (naylahanegan@gmail.com)
+# Date: 12/21/2023
+# License: MIT
 # ============================================
 
 import customtkinter as ctk
