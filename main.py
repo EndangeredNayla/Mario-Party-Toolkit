@@ -179,11 +179,9 @@ def parseCoinsEight():
 
     try:
         redSpaceAmountBaseEight = redSpaceAmountEight.get()
-        redSpaceAmountEight = hex(int(redSpaceAmountEight.get()))
-        if len(redSpaceAmountEight) == 4:
-            redSpaceAmountEight = "FF" + redSpaceAmountEight[2:]
-        elif len(redSpaceAmountEight) == 3:
-            redSpaceAmountEight = "FFF" + redSpaceAmountEight[2:]
+        redSpaceAmountEight = int(redSpaceAmountBaseEight, 16)
+        negativeRedSpaceAmountBaseEight = -int(redSpaceAmountBaseEight)
+        redSpaceAmountEight = format(negativeRedSpaceAmountBaseEight & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
     except:
         redSpaceAmountEight = "DUMMY"
 
@@ -222,13 +220,11 @@ def parseCoinsEightGC():
 
     try:
         redSpaceAmountBaseEightGC = redSpaceAmountEightGC.get()
-        redSpaceAmountEightGC = hex(int(redSpaceAmountEightGC.get()))
-        if len(redSpaceAmountEightGC) == 4:
-            redSpaceAmountEightGC = "FF" + redSpaceAmountEightGC[2:]
-        elif len(redSpaceAmountEightGC) == 3:
-            redSpaceAmountEightGC = "FFF" + redSpaceAmountEightGC[2:]
+        redSpaceAmountEightGC = int(redSpaceAmountBaseEightGC, 16)
+        negativeRedSpaceAmountBaseEightGC = -int(redSpaceAmountBaseEightGC)
+        redSpaceAmountEightGC = format(negativeRedSpaceAmountBaseEightGC & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
     except:
-        redSpaceAmountEightGC = "DUMMY"
+        redSpaceAmountEight = "DUMMY"
 
     marioPartyEightGCBlueSpace = getBlueSpaceCodeEightGC(blueSpaceAmountEightGC)
     marioPartyEightGCRedSpace = getRedSpaceCodeEightGC(redSpaceAmountEightGC)
@@ -239,8 +235,8 @@ def parseCoinsEightGC():
         marioPartyEightGCBlueSpace = ""
 
     generatedCode = marioPartyEightGCRedSpace + marioPartyEightGCBlueSpace
-    generatedCode = generatedCode.replace("EIGHTGCRED", redSpaceAmountBaseEightGC)
-    generatedCode = generatedCode.replace("EIGHTGCBLUE", blueSpaceAmountBaseEightGC)
+    generatedCode = generatedCode.replace("EIGHTREDGC", redSpaceAmountBaseEightGC)
+    generatedCode = generatedCode.replace("EIGHTBLUEGC", blueSpaceAmountBaseEightGC)
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)
     print("Generated codes copied to the clipboard.")
