@@ -1,0 +1,140 @@
+# ============================================
+# Mario Party Toolkit
+# Author: Nayla Hanegan (naylahanegan@gmail.com)
+# Date: 12/21/2023
+# License: MIT
+# ============================================
+
+def getBlueSpaceCodeFour(amount):
+    return f'''
+MP4 - Blue Spaces Give FOURBLUE Coins
+0407FBDC 60000000
+0407FBE0 3BC0{amount}
+'''
+
+def getRedSpaceCodeFour(amount):
+    return f'''
+MP4 - Red Spaces Take Away FOURRED Coins
+0407FD74 60000000
+0407FD78 3BC0{amount}
+'''
+
+def getBlueSpaceCodeFive(amount):
+    return f'''
+MP5 - Blue Spaces Give FIVEBLUE Coins
+040A9F5C 3880{amount}
+'''
+
+def getRedSpaceCodeFive(amount):
+    return f'''
+MP5 - Red Spaces Take Away FIVERED Coins
+040AA160 3880{amount}
+'''
+
+def getBlueSpaceCodeSix(amount):
+    return f'''
+MP6 - Blue Spaces Give SIXBLUE Coins
+0415F1E8 3BC0{amount}
+'''
+
+def getRedSpaceCodeSix(amount):
+    return f'''
+MP6 - Red Spaces Take Away SIXRED Coins
+0415F278 3880{amount}
+'''
+
+def getBlueSpaceCodeSeven(amount):
+    return f'''
+MP7 - Blue Spaces Give SEVENBLUE Coins
+04168578 60000000
+0416857C 3880{amount}
+'''
+
+def getRedSpaceCodeSeven(amount):
+    return f'''
+MP7 - Red Spaces Take Away SEVENRED Coins
+04168600 60000000
+04168604 3880{amount}
+'''
+
+def getBlueSpaceCodeEight(amount):
+    return f'''
+MP8 - Blue Spaces Give EIGHTBLUE Coins
+2046CB88 38A00003
+0446CB88 38A0{amount}
+E0000000 80008000
+2046CB8C 38C00003
+0446CB8C 38C0{amount}
+E0000000 80008000
+20477C9C 38A00003
+04477C9C 38A0{amount}
+E0000000 80008000
+20477CA0 38C00003
+04477CA0 38C0{amount}
+E0000000 80008000
+204715CC 38A00003
+044715CC 38A0{amount}
+E0000000 80008000
+204715D0 38C00003
+044715D0 38C0{amount}
+E0000000 80008000
+204940A8 38A00003
+044940A8 38A0{amount}
+E0000000 80008000
+204940AC 38C00003
+044940AC 38C0{amount}
+E0000000 80008000
+2046F030 38A00003
+0446F030 38A0{amount}
+E0000000 80008000
+2046F034 38C00003
+0446F034 38C0{amount}
+E0000000 80008000
+20474964 38A00003
+04474964 38A0{amount}
+E0000000 80008000
+20474968 38C00003
+04474968 38C0{amount}
+E0000000 80008000
+'''
+
+def getRedSpaceCodeEight(amount):
+    return f'''
+MP8 - Red Spaces Take Away EIGHTRED Coins
+2046CEC4 38A0FFFD
+0446CEC4 38A0{amount}
+E0000000 80008000
+2046CEC8 38C0FFFD
+0446CEC8 38C0{amount}
+E0000000 80008000
+20477FD8 38A0FFFD
+04477FD8 38A0{amount}
+E0000000 80008000
+20477FDC 38C0FFFD
+04477FDC 38C0{amount}
+E0000000 80008000
+20471908 38A0FFFD
+04471908 38A0{amount}
+E0000000 80008000
+2047190C 38C0FFFD
+0447190C 38C0{amount}
+E0000000 80008000
+204943E4 38A0FFFD
+044943E4 38A0{amount}
+E0000000 80008000
+204943E8 38C0FFFD
+044943E8 38C0{amount}
+E0000000 80008000
+2046F36C 38A0FFFD
+0446F36C 38A0{amount}
+E0000000 80008000
+2046F370 38C0FFFD
+0446F370 38C0{amount}
+E0000000 80008000
+20474CA0 38A0FFFD
+04474CA4 38A0{amount}
+E0000000 80008000
+20474CA0 38C0FFFD
+04474CA4 38C0{amount}
+E0000000 80008000
+'''
