@@ -91,7 +91,7 @@ tabviewSeven = ctk.CTkTabview(master=tabviewGame.tab("MP7"), height=20)
 tabviewSeven.pack(padx=0, pady=0)
 tabviewSeven.add("Space Modifier")
 
-# Create a frame inside the "Space Modifier" tab
+# Create a frame inside the "Space Modifier" tab    
 frameSeven = ctk.CTkFrame(master=tabviewSeven.tab("Space Modifier"), border_color="#2b2b2b")
 frameSeven.pack(padx=20, pady=20)
 
@@ -239,8 +239,8 @@ def parseCoinsEightGC():
         marioPartyEightGCBlueSpace = ""
 
     generatedCode = marioPartyEightGCRedSpace + marioPartyEightGCBlueSpace
-    generatedCode = generatedCode.replace("EightGCRED", redSpaceAmountBaseEightGC)
-    generatedCode = generatedCode.replace("EightGCBLUE", blueSpaceAmountBaseEightGC)
+    generatedCode = generatedCode.replace("EIGHTGCRED", redSpaceAmountBaseEightGC)
+    generatedCode = generatedCode.replace("EIGHTGCBLUE", blueSpaceAmountBaseEightGC)
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)
     print("Generated codes copied to the clipboard.")
