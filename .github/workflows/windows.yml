@@ -24,13 +24,24 @@ jobs:
     - name: Install PIP Modules
       run: python -m pip install -r requirements.txt
 
-    # Build Project
-    - name: Build Project
+    # Build Project (Dynamic build)
+    - name: Build Project (Dynamic build)
+      run: pyinstaller --noconsole --name="Mario Party Toolkit" --add-data "assets/*;assets/" --distpath=dynamic main.py
+
+    # Build Project (Static build)
+    - name: Build Project (Static build)
       run: pyinstaller --onefile --noconsole --name="Mario Party Toolkit" --add-data "assets/*;assets/" main.py
 
     # Upload Artifact
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: MarioPartyToolkit-win32
+        name: MarioPartyToolkit-win32-static
         path: D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\dist
+
+    # Upload Artifact
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: MarioPartyToolkit-win32
+        path: D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\dynamic
