@@ -13,12 +13,12 @@ from pathlib import Path
 from codes import *
 
 
-def fetchResource(resource_path:     Path) -> Path:
-    try:     # Running as *.exe; fetch resource from temp directory
+def fetchResource(resource_path: Path) -> Path:
+    try:  # Running as *.exe; fetch resource from temp directory
         base_path = Path(sys._MEIPASS)
-    except AttributeError:     # Running as script; return unmodified path
+    except AttributeError:  # Running as script; return unmodified path
         return resource_path
-    else:     # Return temp resource path
+    else:   # Return temp resource path
         return base_path.joinpath(resource_path)
 
 def create_image_icon(frame, image_path, row, column):
@@ -39,7 +39,7 @@ ctk.set_default_color_theme("blue")
 
 # Create the main application window
 app = ctk.CTk()
-app.geometry("360x280")
+app.geometry("360x320")
 app.title("Mario Party: Toolkit")
 
 tabviewGame = ctk.CTkTabview(master=app)
@@ -105,6 +105,14 @@ redSpaceIconSeven = create_image_icon(frameSeven, "assets/redSpace.png", 2, 1)
 redSpaceAmountSeven = ctk.CTkEntry(master=frameSeven, width=28)
 redSpaceAmountSeven.grid(row=2, column=3)
 
+# Create red space icon and entry
+starSpaceIconSeven = create_image_icon(frameSeven, "assets/starSpace.png", 3, 1)
+starSpaceIconSevenLastFive = create_image_icon(frameSeven, "assets/starSpaceLastFive.png", 4, 1)
+starSpaceAmountSeven = ctk.CTkEntry(master=frameSeven, width=28)
+starSpaceAmountSeven.grid(row=3, column=3)
+starSpaceAmountSevenLastFive = ctk.CTkEntry(master=frameSeven, width=28)
+starSpaceAmountSevenLastFive.grid(row=4, column=3)
+
 tabviewSix = ctk.CTkTabview(master=tabviewGame.tab("MP6"), height=20)
 tabviewSix.pack(padx=0, pady=0)
 tabviewSix.add("Space Modifier")
@@ -122,6 +130,11 @@ blueSpaceAmountSix.grid(row=1, column=3)
 redSpaceIconSix = create_image_icon(frameSix, "assets/redSpace.png", 2, 1)
 redSpaceAmountSix = ctk.CTkEntry(master=frameSix, width=28)
 redSpaceAmountSix.grid(row=2, column=3)
+
+# Create star space icon and entry
+starSpaceIconSix = create_image_icon(frameSix, "assets/starSpace.png", 3, 1)
+starSpaceAmountSix = ctk.CTkEntry(master=frameSix, width=28)
+starSpaceAmountSix.grid(row=3, column=3)
 
 tabviewFive = ctk.CTkTabview(master=tabviewGame.tab("MP5"), height=20)
 tabviewFive.pack(padx=0, pady=0)
@@ -308,9 +321,9 @@ def parseCoinsEightGC():
     createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
 
 def parseCoinsSeven():
-    global blueSpaceAmountSeven, redSpaceAmountSeven
+    global blueSpaceAmountSeven, redSpaceAmountSeven, starSpaceAmountSeven, starSpaceAmountSevenLastFive
 
-    if not blueSpaceAmountSeven.get() and not redSpaceAmountSeven.get():
+    if not blueSpaceAmountSeven.get() and not redSpaceAmountSeven.get() and not starSpaceAmountSeven.get() and not starSpaceAmountSevenLastFive.get():
         createDialog("Error", "error", "No information provided.")
         return
 
@@ -331,23 +344,54 @@ def parseCoinsSeven():
         redSpaceAmountSeven = format(negativeRedSpaceAmountBaseSeven & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
     except:
         redSpaceAmountSeven = "DUMMY"
+
+    starSpaceAmountSevenBase = starSpaceAmountSeven.get()
+    starSpaceAmountSevenLastFiveBase = starSpaceAmountSevenLastFive.get()
+
+    try:
+        starSpaceAmountSeven = hex(int(starSpaceAmountSeven.get()))
+        if len(starSpaceAmountSeven) == 4:
+            starSpaceAmountSeven = "00" + starSpaceAmountSeven[2:]
+        elif len(starSpaceAmountSeven) == 3:
+            starSpaceAmountSeven = "000" + starSpaceAmountSeven[2:]
+    except:
+        starSpaceAmountSeven = "DUMMY"
+
+    try:
+        starSpaceAmountSevenLastFive = hex(int(starSpaceAmountSevenLastFive.get()))
+        if len(starSpaceAmountSevenLastFive) == 4:
+            starSpaceAmountSevenLastFive = "00" + starSpaceAmountSevenLastFive[2:]
+        elif len(starSpaceAmountSevenLastFive) == 3:
+            starSpaceAmountSevenLastFive = "000" + starSpaceAmountSevenLastFive[2:]
+    except:
+        starSpaceAmountSevenLastFive = "DUMMY"
+
     marioPartySevenBlueSpace = getBlueSpaceCodeSeven(blueSpaceAmountSeven)
     marioPartySevenRedSpace = getRedSpaceCodeSeven(redSpaceAmountSeven)
+    marioPartySevenStarSpace = getStarSpaceCodeSeven(starSpaceAmountSeven)
+    marioPartySevenStarSpaceLastFive = getStarSpaceCodeSevenLastFive(starSpaceAmountSevenLastFive)
+
     if redSpaceAmountSeven == "DUMMY":
         marioPartySevenRedSpace = ""
     if blueSpaceAmountSeven == "DUMMY":
         marioPartySevenBlueSpace = ""
+    if starSpaceAmountSeven == "DUMMY":
+        marioPartySevenStarSpace = ""
+    if starSpaceAmountSevenLastFive == "DUMMY":
+        marioPartySevenStarSpaceLastFive = ""
 
-    generatedCode = marioPartySevenRedSpace + marioPartySevenBlueSpace
+    generatedCode = marioPartySevenRedSpace + marioPartySevenBlueSpace + marioPartySevenStarSpace + marioPartySevenStarSpaceLastFive
     generatedCode = generatedCode.replace("SEVENRED", redSpaceAmountBaseSeven)
     generatedCode = generatedCode.replace("SEVENBLUE", blueSpaceAmountBaseSeven)
+    generatedCode = generatedCode.replace("SEVENSTAR", starSpaceAmountSevenBase)
+    generatedCode = generatedCode.replace("SEVENSTLASTFIVE", starSpaceAmountSevenLastFiveBase)
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)
     print("Generated codes copied to the clipboard.")
     createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
 
 def parseCoinsSix():
-    global blueSpaceAmountSix, redSpaceAmountSix
+    global blueSpaceAmountSix, redSpaceAmountSix, starSpaceAmountSix
 
     if not blueSpaceAmountSix.get() and not redSpaceAmountSix.get():
         createDialog("Error", "error", "No information provided.")
@@ -371,17 +415,32 @@ def parseCoinsSix():
     except:
         redSpaceAmountSix = "DUMMY"
 
+    starSpaceAmountSixBase = starSpaceAmountSix.get()
+
+    try:
+        starSpaceAmountSix = hex(int(starSpaceAmountSix.get()))
+        if len(starSpaceAmountSix) == 4:
+            starSpaceAmountSix = "00" + starSpaceAmountSix[2:]
+        elif len(starSpaceAmountSix) == 3:
+            starSpaceAmountSix = "000" + starSpaceAmountSix[2:]
+    except:
+        starSpaceAmountSix = "DUMMY"
+
     marioPartySixBlueSpace = getBlueSpaceCodeSix(blueSpaceAmountSix)
     marioPartySixRedSpace = getRedSpaceCodeSix(redSpaceAmountSix)
+    marioPartySixStarSpace = getStarSpaceCodeSix(starSpaceAmountSix)
 
     if redSpaceAmountSix == "DUMMY":
         marioPartySixRedSpace = ""
     if blueSpaceAmountSix == "DUMMY":
         marioPartySixBlueSpace = ""
+    if starSpaceAmountSix == "DUMMY":
+        marioPartySixStarSpace = ""
 
-    generatedCode = marioPartySixRedSpace + marioPartySixBlueSpace
+    generatedCode = marioPartySixRedSpace + marioPartySixBlueSpace + marioPartySixStarSpace
     generatedCode = generatedCode.replace("SIXRED", redSpaceAmountBaseSix)
     generatedCode = generatedCode.replace("SIXBLUE", blueSpaceAmountBaseSix)
+    generatedCode = generatedCode.replace("SIXSTAR", starSpaceAmountSixBase)
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)
     print("Generated codes copied to the clipboard.")
@@ -648,7 +707,7 @@ def parseCoinsOne():
 
 def createDialog(windowTitle, warn, info):
     completeWindow = ctk.CTkToplevel()
-    completeWindow.geometry("500x125")
+    completeWindow.geometry("500x145")
     completeWindow.title(windowTitle)
     
     # Load success image and display it in the success window
@@ -663,10 +722,10 @@ def createDialog(windowTitle, warn, info):
     completeWindow.focus()
 
 # Labels and button configuration
-preBlueLabelEight = ctk.CTkLabel(master=frameEight, text=":     ", font=("Arial", 12))
+preBlueLabelEight = ctk.CTkLabel(master=frameEight, text=":  Costs   ", font=("Arial", 12))
 preBlueLabelEight.grid(row=1, column=2)
 
-preRedLabelEight = ctk.CTkLabel(master=frameEight, text=":   - ", font=("Arial", 12))
+preRedLabelEight = ctk.CTkLabel(master=frameEight, text=":  Gives - ", font=("Arial", 12))
 preRedLabelEight.grid(row=2, column=2)
 
 coinsBlueLabelEight = ctk.CTkLabel(master=frameEight, text=" Coins", font=("Arial", 12))
@@ -681,7 +740,7 @@ parseButtonEight.pack(padx=20, pady=20)
 preBlueLabelEightGC = ctk.CTkLabel(master=frameEightGC, text=":    ", font=("Arial", 12))
 preBlueLabelEightGC.grid(row=1, column=2)
 
-preRedLabelEightGC = ctk.CTkLabel(master=frameEightGC, text=":   - ", font=("Arial", 12))
+preRedLabelEightGC = ctk.CTkLabel(master=frameEightGC, text=":  Gives - ", font=("Arial", 12))
 preRedLabelEightGC.grid(row=2, column=2)
 
 coinsBlueLabelEightGC = ctk.CTkLabel(master=frameEightGC, text=" Coins", font=("Arial", 12))
@@ -693,10 +752,10 @@ coinsRedLabelEightGC.grid(row=2, column=4)
 parseButtonEightGC = ctk.CTkButton(master=tabviewEight.tab("Space Modifier (GC Mod)"), command=parseCoinsEightGC, text="Generate Codes")
 parseButtonEightGC.pack(padx=20, pady=20)
 
-preBlueLabelSeven = ctk.CTkLabel(master=frameSeven, text=":     ", font=("Arial", 12))
+preBlueLabelSeven = ctk.CTkLabel(master=frameSeven, text=": Gives   ", font=("Arial", 12))
 preBlueLabelSeven.grid(row=1, column=2)
 
-preRedLabelSeven = ctk.CTkLabel(master=frameSeven, text=":   - ", font=("Arial", 12))
+preRedLabelSeven = ctk.CTkLabel(master=frameSeven, text=":  Gives - ", font=("Arial", 12))
 preRedLabelSeven.grid(row=2, column=2)
 
 coinsBlueLabelSeven = ctk.CTkLabel(master=frameSeven, text=" Coins", font=("Arial", 12))
@@ -705,14 +764,29 @@ coinsBlueLabelSeven.grid(row=1, column=4)
 coinsRedLabelSeven = ctk.CTkLabel(master=frameSeven, text=" Coins", font=("Arial", 12))
 coinsRedLabelSeven.grid(row=2, column=4)
 
+coinsStarLabelSeven = ctk.CTkLabel(master=frameSeven, text=":  Costs   ", font=("Arial", 12))
+coinsStarLabelSeven.grid(row=3, column=2)
+
+coinsStarLabelSeven = ctk.CTkLabel(master=frameSeven, text=":  Costs   ", font=("Arial", 12))
+coinsStarLabelSeven.grid(row=4, column=2)
+
 parseButtonSeven = ctk.CTkButton(master=tabviewSeven.tab("Space Modifier"), command=parseCoinsSeven, text="Generate Codes")
 parseButtonSeven.pack(padx=20, pady=20)
 
-preBlueLabelSix = ctk.CTkLabel(master=frameSix, text=":     ", font=("Arial", 12))
+coinsRedLabelSeven = ctk.CTkLabel(master=frameSeven, text=" Coins", font=("Arial", 12))
+coinsRedLabelSeven.grid(row=3, column=4)
+
+coinsStarLabelSeven = ctk.CTkLabel(master=frameSeven, text=" Coins", font=("Arial", 12))
+coinsStarLabelSeven.grid(row=4, column=4)
+
+preBlueLabelSix = ctk.CTkLabel(master=frameSix, text=":  Gives   ", font=("Arial", 12))
 preBlueLabelSix.grid(row=1, column=2)
 
-preRedLabelSix = ctk.CTkLabel(master=frameSix, text=":   - ", font=("Arial", 12))
+preRedLabelSix = ctk.CTkLabel(master=frameSix, text=":  Gives - ", font=("Arial", 12))
 preRedLabelSix.grid(row=2, column=2)
+
+preBlueLabelSix = ctk.CTkLabel(master=frameSix, text=":  Costs   ", font=("Arial", 12))
+preBlueLabelSix.grid(row=3, column=2)
 
 coinsBlueLabelSix = ctk.CTkLabel(master=frameSix, text=" Coins", font=("Arial", 12))
 coinsBlueLabelSix.grid(row=1, column=4)
@@ -723,10 +797,16 @@ coinsRedLabelSix.grid(row=2, column=4)
 parseButtonSix = ctk.CTkButton(master=tabviewSix.tab("Space Modifier"), command=parseCoinsSix, text="Generate Codes")
 parseButtonSix.pack(padx=20, pady=20)
 
-preBlueLabelFive = ctk.CTkLabel(master=frameFive, text=":     ", font=("Arial", 12))
+coinsStarLabelSix = ctk.CTkLabel(master=frameSix, text=" Coins", font=("Arial", 12))
+coinsStarLabelSix.grid(row=3, column=4)
+
+coinsStarLabelSeven = ctk.CTkLabel(master=frameSeven, text=":  Costs   ", font=("Arial", 12))
+coinsStarLabelSeven.grid(row=4, column=2)
+
+preBlueLabelFive = ctk.CTkLabel(master=frameFive, text=":  Costs   ", font=("Arial", 12))
 preBlueLabelFive.grid(row=1, column=2)
 
-preRedLabelFive = ctk.CTkLabel(master=frameFive, text=":   - ", font=("Arial", 12))
+preRedLabelFive = ctk.CTkLabel(master=frameFive, text=":  Gives - ", font=("Arial", 12))
 preRedLabelFive.grid(row=2, column=2)
 
 coinsBlueLabelFive = ctk.CTkLabel(master=frameFive, text=" Coins", font=("Arial", 12))
@@ -738,10 +818,10 @@ coinsRedLabelFive.grid(row=2, column=4)
 parseButtonFive = ctk.CTkButton(master=tabviewFive.tab("Space Modifier"), command=parseCoinsFive, text="Generate Codes")
 parseButtonFive.pack(padx=20, pady=20)
 
-preBlueLabelFour = ctk.CTkLabel(master=frameFour, text=":     ", font=("Arial", 12))
+preBlueLabelFour = ctk.CTkLabel(master=frameFour, text=":  Costs   ", font=("Arial", 12))
 preBlueLabelFour.grid(row=1, column=2)
 
-preRedLabelFour = ctk.CTkLabel(master=frameFour, text=":   - ", font=("Arial", 12))
+preRedLabelFour = ctk.CTkLabel(master=frameFour, text=":  Gives - ", font=("Arial", 12))
 preRedLabelFour.grid(row=2, column=2)
 
 coinsBlueLabelFour = ctk.CTkLabel(master=frameFour, text=" Coins", font=("Arial", 12))
@@ -753,10 +833,10 @@ coinsRedLabelFour.grid(row=2, column=4)
 parseButtonFour = ctk.CTkButton(master=tabviewFour.tab("Space Modifier"), command=parseCoinsFour, text="Generate Codes")
 parseButtonFour.pack(padx=20, pady=20)
 
-preBlueLabelThree = ctk.CTkLabel(master=frameThree, text=":     ", font=("Arial", 12))
+preBlueLabelThree = ctk.CTkLabel(master=frameThree, text=":  Costs   ", font=("Arial", 12))
 preBlueLabelThree.grid(row=1, column=2)
 
-preRedLabelThree = ctk.CTkLabel(master=frameThree, text=":   - ", font=("Arial", 12))
+preRedLabelThree = ctk.CTkLabel(master=frameThree, text=":  Gives - ", font=("Arial", 12))
 preRedLabelThree.grid(row=2, column=2)
 
 coinsBlueLabelThree = ctk.CTkLabel(master=frameThree, text=" Coins", font=("Arial", 12))
@@ -768,10 +848,10 @@ coinsRedLabelThree.grid(row=2, column=4)
 parseButtonThree = ctk.CTkButton(master=tabviewThree.tab("Space Modifier"), command=parseCoinsThree, text="Generate Codes")
 parseButtonThree.pack(padx=20, pady=20)
 
-preBlueLabelTwo = ctk.CTkLabel(master=frameTwo, text=":     ", font=("Arial", 12))
+preBlueLabelTwo = ctk.CTkLabel(master=frameTwo, text=":  Costs   ", font=("Arial", 12))
 preBlueLabelTwo.grid(row=1, column=2)
 
-preRedLabelTwo = ctk.CTkLabel(master=frameTwo, text=":   - ", font=("Arial", 12))
+preRedLabelTwo = ctk.CTkLabel(master=frameTwo, text=":  Gives - ", font=("Arial", 12))
 preRedLabelTwo.grid(row=2, column=2)
 
 coinsBlueLabelTwo = ctk.CTkLabel(master=frameTwo, text=" Coins", font=("Arial", 12))
@@ -783,10 +863,10 @@ coinsRedLabelTwo.grid(row=2, column=4)
 parseButtonTwo = ctk.CTkButton(master=tabviewTwo.tab("Space Modifier"), command=parseCoinsTwo, text="Generate Codes")
 parseButtonTwo.pack(padx=20, pady=20)
 
-preBlueLabelOne = ctk.CTkLabel(master=frameOne, text=":     ", font=("Arial", 12))
+preBlueLabelOne = ctk.CTkLabel(master=frameOne, text=":  Costs   ", font=("Arial", 12))
 preBlueLabelOne.grid(row=1, column=2)
 
-preRedLabelOne = ctk.CTkLabel(master=frameOne, text=":   - ", font=("Arial", 12))
+preRedLabelOne = ctk.CTkLabel(master=frameOne, text=":  Gives - ", font=("Arial", 12))
 preRedLabelOne.grid(row=2, column=2)
 
 coinsBlueLabelOne = ctk.CTkLabel(master=frameOne, text=" Coins", font=("Arial", 12))

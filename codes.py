@@ -141,6 +141,29 @@ MP7 - Red Spaces Take Away SEVENRED Coins
 04168604 3880{amount}
 '''
 
+def getStarSpaceCodeSeven(amount,):
+    return f'''
+MP7 - Stars Cost SEVENSTAR Coins
+04188774 3B80{amount}
+'''
+
+def getStarSpaceCodeSevenLastFive(amount):
+    return f'''
+MP7 - Stars Cost SEVENSTLASTFIVE Coins During the Last 5 Turns Event
+0418876C 3B80{amount}
+'''
+
+def getStarSpaceCodeSix(amount,):
+    return f'''
+MP7 - Stars Cost SIXSTAR Coins
+0418333C 2C03{amount}
+0418342C 2C03{amount}
+041834C4 2C03{amount}
+C2183590 00000002
+3880{amount} 7C8400D0
+60000000 00000000
+'''
+
 def getBlueSpaceCodeEight(amount):
     return f'''
 MP8 - Blue Spaces Give EIGHTBLUE Coins
