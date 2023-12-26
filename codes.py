@@ -248,7 +248,7 @@ E0000000 80008000
 
 def getBlueSpaceCodeEightGC(amount):
     return f'''
-MP8 - Blue Spaces Give EIGHTBLUEGC Coins
+MP8GC - Blue Spaces Give EIGHTBLUEGC Coins
 2045ADE8 38A00003
 0445ADE8 38A0{amount}
 E0000000 80008000
@@ -289,7 +289,7 @@ E0000000 80008000
 
 def getRedSpaceCodeEightGC(amount):
     return f'''
-MP8 - Red Spaces Take Away EIGHTREDGC Coins
+MP8GC - Red Spaces Take Away EIGHTREDGC Coins
 2045B124 38A0FFFD
 0445B124 38A0{amount}
 E0000000 80008000

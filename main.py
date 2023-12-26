@@ -286,9 +286,9 @@ def parseCoinsEightGC():
         createDialog("Error", "error", "No information provided.")
         return
 
-    blueSpaceAmountEightGC = hex(int(blueSpaceAmountEightGC.get()))
+    blueSpaceAmountBaseEightGC = blueSpaceAmountEightGC.get()
     try:
-        blueSpaceAmountBaseEightGC = blueSpaceAmountEightGC.get()
+        blueSpaceAmountEightGC = hex(int(blueSpaceAmountEightGC.get()))
         if len(blueSpaceAmountEightGC) == 4:
             blueSpaceAmountEightGC = "00" + blueSpaceAmountEightGC[2:]
         elif len(blueSpaceAmountEightGC) == 3:
@@ -722,7 +722,7 @@ def createDialog(windowTitle, warn, info):
     completeWindow.focus()
 
 # Labels and button configuration
-preBlueLabelEight = ctk.CTkLabel(master=frameEight, text=":  Costs   ", font=("Arial", 12))
+preBlueLabelEight = ctk.CTkLabel(master=frameEight, text=":  Gives   ", font=("Arial", 12))
 preBlueLabelEight.grid(row=1, column=2)
 
 preRedLabelEight = ctk.CTkLabel(master=frameEight, text=":  Gives - ", font=("Arial", 12))
@@ -737,7 +737,7 @@ coinsRedLabelEight.grid(row=2, column=4)
 parseButtonEight = ctk.CTkButton(master=tabviewEight.tab("Space Modifier"), command=parseCoinsEight, text="Generate Codes")
 parseButtonEight.pack(padx=20, pady=20)
 
-preBlueLabelEightGC = ctk.CTkLabel(master=frameEightGC, text=":    ", font=("Arial", 12))
+preBlueLabelEightGC = ctk.CTkLabel(master=frameEightGC, text=":  Gives   ", font=("Arial", 12))
 preBlueLabelEightGC.grid(row=1, column=2)
 
 preRedLabelEightGC = ctk.CTkLabel(master=frameEightGC, text=":  Gives - ", font=("Arial", 12))
