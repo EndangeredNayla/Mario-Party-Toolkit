@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 12/21/2023
+# Date: 12/31/2023
 # License: MIT
 # ============================================
 
@@ -109,10 +109,25 @@ MP5 - Blue Spaces Give FIVEBLUE Coins
 040A9F5C 3880{amount}
 '''
 
+def getStarSpaceCodeFive(amount):
+    return f'''
+MP5 - Stars Spaces Give FIVEBLUE Coins
+040A9F5C 3880{amount}
+'''
+
 def getRedSpaceCodeFive(amount):
     return f'''
 MP5 - Red Spaces Take Away FIVERED Coins
 040AA160 3880{amount}
+'''
+
+def getStarSpaceCodeFive(amount, negAmount):
+    return f'''
+MP5 - Stars Cost FIVESTAR Coins
+C20AFDB0 00000001
+2C03{amount} 00000000
+C20AFF9C 00000001
+3880{negAmount} 00000000
 '''
 
 def getBlueSpaceCodeSix(amount):
@@ -125,6 +140,17 @@ def getRedSpaceCodeSix(amount):
     return f'''
 MP6 - Red Spaces Take Away SIXRED Coins
 0415F278 3880{amount}
+'''
+
+def getStarSpaceCodeSix(amount,):
+    return f'''
+MP6 - Stars Cost SIXSTAR Coins
+0418333C 2C03{amount}
+0418342C 2C03{amount}
+041834C4 2C03{amount}
+C2183590 00000002
+3880{amount} 7C8400D0
+60000000 00000000
 '''
 
 def getBlueSpaceCodeSeven(amount):
@@ -151,17 +177,6 @@ def getStarSpaceCodeSevenLastFive(amount):
     return f'''
 MP7 - Stars Cost SEVENSTLASTFIVE Coins During the Last 5 Turns Event
 0418876C 3B80{amount}
-'''
-
-def getStarSpaceCodeSix(amount,):
-    return f'''
-MP7 - Stars Cost SIXSTAR Coins
-0418333C 2C03{amount}
-0418342C 2C03{amount}
-041834C4 2C03{amount}
-C2183590 00000002
-3880{amount} 7C8400D0
-60000000 00000000
 '''
 
 def getBlueSpaceCodeEight(amount):

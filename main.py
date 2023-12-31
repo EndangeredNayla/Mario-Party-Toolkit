@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 12/21/2023
+# Date: 12/31/2023
 # License: MIT
 # ============================================
 
@@ -153,6 +153,11 @@ blueSpaceAmountFive.grid(row=1, column=3)
 redSpaceIconFive = create_image_icon(frameFive, "assets/redSpace.png", 2, 1)
 redSpaceAmountFive = ctk.CTkEntry(master=frameFive, width=28)
 redSpaceAmountFive.grid(row=2, column=3)
+
+# Create star space icon and entry
+starSpaceIconFive = create_image_icon(frameFive, "assets/starSpace.png", 3, 1)
+starSpaceAmountFive = ctk.CTkEntry(master=frameFive, width=28)
+starSpaceAmountFive.grid(row=3, column=3)
 
 tabviewFour = ctk.CTkTabview(master=tabviewGame.tab("MP4"), height=20)
 tabviewFour.pack(padx=0, pady=0)
@@ -393,7 +398,7 @@ def parseCoinsSeven():
 def parseCoinsSix():
     global blueSpaceAmountSix, redSpaceAmountSix, starSpaceAmountSix
 
-    if not blueSpaceAmountSix.get() and not redSpaceAmountSix.get():
+    if not blueSpaceAmountSix.get() and not redSpaceAmountSix.get() and not starSpaceAmountSix.get():
         createDialog("Error", "error", "No information provided.")
         return
 
@@ -447,9 +452,9 @@ def parseCoinsSix():
     createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
 
 def parseCoinsFive():
-    global blueSpaceAmountFive, redSpaceAmountFive
+    global blueSpaceAmountFive, redSpaceAmountFive, starSpaceAmountFive
 
-    if not blueSpaceAmountFive.get() and not redSpaceAmountFive.get():
+    if not blueSpaceAmountFive.get() and not redSpaceAmountFive.get()and not starSpaceAmountFive.get():
         createDialog("Error", "error", "No information provided.")
         return
 
@@ -471,6 +476,23 @@ def parseCoinsFive():
     except:
         redSpaceAmountFive = "DUMMY"
 
+    starSpaceAmountFiveBase = starSpaceAmountFive.get()
+
+    try:
+        starSpaceAmountFive = hex(int(starSpaceAmountFive.get()))
+        if len(starSpaceAmountFive) == 4:
+            starSpaceAmountFive = "00" + starSpaceAmountFive[2:]
+        elif len(starSpaceAmountFive) == 3:
+            starSpaceAmountFive = "000" + starSpaceAmountFive[2:]
+
+        negativeRedSpaceAmountBaseFive = -int(starSpaceAmountFiveBase)
+        starSpaceAmountNegativeFive = format(negativeRedSpaceAmountBaseFive & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+
+    except:
+        starSpaceAmountFive = "DUMMY"
+        starSpaceAmountNegativeFive = "DUMMY"
+
+    marioPartyFiveStarSpace = getStarSpaceCodeFive(starSpaceAmountFive, starSpaceAmountNegativeFive)
     marioPartyFiveBlueSpace = getBlueSpaceCodeFive(blueSpaceAmountFive)
     marioPartyFiveRedSpace = getRedSpaceCodeFive(redSpaceAmountFive)
 
@@ -478,10 +500,15 @@ def parseCoinsFive():
         marioPartyFiveRedSpace = ""
     if blueSpaceAmountFive == "DUMMY":
         marioPartyFiveBlueSpace = ""
-
-    generatedCode = marioPartyFiveRedSpace + marioPartyFiveBlueSpace
+    if starSpaceAmountFive == "DUMMY":
+        marioPartyFiveStarSpace = ""
+    if starSpaceAmountNegativeFive == "DUMMY":
+        marioPartyFiveStarSpace = ""
+        
+    generatedCode = marioPartyFiveRedSpace + marioPartyFiveBlueSpace + marioPartyFiveStarSpace
     generatedCode = generatedCode.replace("FIVERED", redSpaceAmountBaseFive)
     generatedCode = generatedCode.replace("FIVEBLUE", blueSpaceAmountBaseFive)
+    generatedCode = generatedCode.replace("FIVESTAR", starSpaceAmountFiveBase)
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)
     print("Generated codes copied to the clipboard.")
@@ -800,8 +827,8 @@ parseButtonSix.pack(padx=20, pady=20)
 coinsStarLabelSix = ctk.CTkLabel(master=frameSix, text=" Coins", font=("Arial", 12))
 coinsStarLabelSix.grid(row=3, column=4)
 
-coinsStarLabelSeven = ctk.CTkLabel(master=frameSeven, text=":  Costs   ", font=("Arial", 12))
-coinsStarLabelSeven.grid(row=4, column=2)
+coinsStarLabelSix = ctk.CTkLabel(master=frameSeven, text=":  Costs   ", font=("Arial", 12))
+coinsStarLabelSix.grid(row=4, column=2)
 
 preBlueLabelFive = ctk.CTkLabel(master=frameFive, text=":  Costs   ", font=("Arial", 12))
 preBlueLabelFive.grid(row=1, column=2)
@@ -814,6 +841,12 @@ coinsBlueLabelFive.grid(row=1, column=4)
 
 coinsRedLabelFive = ctk.CTkLabel(master=frameFive, text=" Coins", font=("Arial", 12))
 coinsRedLabelFive.grid(row=2, column=4)
+
+coinsStarLabelFive = ctk.CTkLabel(master=frameFive, text=" Coins", font=("Arial", 12))
+coinsStarLabelFive.grid(row=3, column=4)
+
+coinsStarLabelFive = ctk.CTkLabel(master=frameFive, text=":  Costs   ", font=("Arial", 12))
+coinsStarLabelFive.grid(row=3, column=2)
 
 parseButtonFive = ctk.CTkButton(master=tabviewFive.tab("Space Modifier"), command=parseCoinsFive, text="Generate Codes")
 parseButtonFive.pack(padx=20, pady=20)
