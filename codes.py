@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 12/31/2023
+# Date: 1/2/2024
 # License: MIT
 # ============================================
 
@@ -106,12 +106,6 @@ MP4 - Red Spaces Take Away FOURRED Coins
 def getBlueSpaceCodeFive(amount):
     return f'''
 MP5 - Blue Spaces Give FIVEBLUE Coins
-040A9F5C 3880{amount}
-'''
-
-def getStarSpaceCodeFive(amount):
-    return f'''
-MP5 - Stars Spaces Give FIVEBLUE Coins
 040A9F5C 3880{amount}
 '''
 
