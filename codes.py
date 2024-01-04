@@ -103,15 +103,26 @@ MP4 - Red Spaces Take Away FOURRED Coins
 0407FD78 3BC0{amount}
 '''
 
+
+def getBlueSpaceCodeFour(amount):
+    return f'''
+MP4 - Blue Spaces Take Away FOURBLUE Coins
+0407FBDC 60000000
+0407FBE0 3BC0{amount}
+'''
+
+def getStarSpaceCodeFour(amount):
+    return f'''
+MP4 - Stars Cost FOURSTAR Coins
+040843CC 2C03{amount}
+04084590 2C03{amount}
+040845CC 2C03{amount}
+0408473C 2C1C{amount}
+'''
+
 def getBlueSpaceCodeFive(amount):
     return f'''
 MP5 - Blue Spaces Give FIVEBLUE Coins
-040A9F5C 3880{amount}
-'''
-
-def getStarSpaceCodeFive(amount):
-    return f'''
-MP5 - Stars Spaces Give FIVEBLUE Coins
 040A9F5C 3880{amount}
 '''
 

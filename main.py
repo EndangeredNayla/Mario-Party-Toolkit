@@ -177,6 +177,11 @@ redSpaceIconFour = create_image_icon(frameFour, "assets/redSpace.png", 2, 1)
 redSpaceAmountFour = ctk.CTkEntry(master=frameFour, width=28)
 redSpaceAmountFour.grid(row=2, column=3)
 
+# Create star space icon and entry
+starSpaceIconFour = create_image_icon(frameFour, "assets/starSpace.png", 3, 1)
+starSpaceAmountFour = ctk.CTkEntry(master=frameFour, width=28)
+starSpaceAmountFour.grid(row=3, column=3)
+
 tabviewThree = ctk.CTkTabview(master=tabviewGame.tab("MP3"), height=20)
 tabviewThree.pack(padx=0, pady=0)
 tabviewThree.add("Space Modifier")
@@ -515,9 +520,9 @@ def parseCoinsFive():
     createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
 
 def parseCoinsFour():
-    global blueSpaceAmountFour, redSpaceAmountFour
+    global blueSpaceAmountFour, redSpaceAmountFour, starSpaceAmountFour
 
-    if not blueSpaceAmountFour.get() and not redSpaceAmountFour.get():
+    if not blueSpaceAmountFour.get() and not redSpaceAmountFour.get() and not starSpaceAmountFour.get():
         createDialog("Error", "error", "No information provided.")
         return
 
@@ -539,17 +544,33 @@ def parseCoinsFour():
     except:
         redSpaceAmountFour = "DUMMY"
 
+    starSpaceAmountFourBase = starSpaceAmountFour.get()
+
+    try:
+        starSpaceAmountFour = hex(int(starSpaceAmountFour.get()))
+        if len(starSpaceAmountFour) == 4:
+            starSpaceAmountFour = "00" + starSpaceAmountFour[2:]
+        elif len(starSpaceAmountFour) == 3:
+            starSpaceAmountFour = "000" + starSpaceAmountFour[2:]
+    except:
+        starSpaceAmountFour = "DUMMY"
+
+    
     marioPartyFourBlueSpace = getBlueSpaceCodeFour(blueSpaceAmountFour)
     marioPartyFourRedSpace = getRedSpaceCodeFour(redSpaceAmountFour)
+    marioPartyFourStarSpace = getStarSpaceCodeFour(starSpaceAmountFour)
 
     if redSpaceAmountFour == "DUMMY":
         marioPartyFourRedSpace = ""
     if blueSpaceAmountFour == "DUMMY":
         marioPartyFourBlueSpace = ""
+    if starSpaceAmountFour == "DUMMY":
+        marioPartyFourStarSpace = ""
 
-    generatedCode = marioPartyFourRedSpace + marioPartyFourBlueSpace
+    generatedCode = marioPartyFourRedSpace + marioPartyFourBlueSpace + marioPartyFourStarSpace
     generatedCode = generatedCode.replace("FOURRED", redSpaceAmountBaseFour)
     generatedCode = generatedCode.replace("FOURBLUE", blueSpaceAmountBaseFour)
+    generatedCode = generatedCode.replace("FOURSTAR", starSpaceAmountFourBase)
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)
     print("Generated codes copied to the clipboard.")
@@ -862,6 +883,12 @@ coinsBlueLabelFour.grid(row=1, column=4)
 
 coinsRedLabelFour = ctk.CTkLabel(master=frameFour, text=" Coins", font=("Arial", 12))
 coinsRedLabelFour.grid(row=2, column=4)
+
+coinsStarLabelFour = ctk.CTkLabel(master=frameFour, text=" Coins", font=("Arial", 12))
+coinsStarLabelFour.grid(row=3, column=4)
+
+coinsStarLabelFive = ctk.CTkLabel(master=frameFour, text=":  Costs   ", font=("Arial", 12))
+coinsStarLabelFive.grid(row=3, column=2)
 
 parseButtonFour = ctk.CTkButton(master=tabviewFour.tab("Space Modifier"), command=parseCoinsFour, text="Generate Codes")
 parseButtonFour.pack(padx=20, pady=20)
