@@ -35,3 +35,4 @@
 ## Mario Party 8
 - Blue Space Gives ***x*** Coins - [WolfGC64](https://github.com/WolfGC64)
 - Red Space Gives ***x*** Coins - [WolfGC64](https://github.com/WolfGC64)
+- Stars Cost ***x*** Coins - [WolfGC64](https://github.com/WolfGC64)
