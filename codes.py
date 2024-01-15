@@ -144,7 +144,7 @@ C20AFF9C 00000001
 def getBlueSpaceCodeSix(amount):
     return f'''
 MP6 - Blue Spaces Give SIXBLUE Coins
-0415F1E8 3BC0{amount}
+0415F1E8 3880{amount}
 '''
 
 def getRedSpaceCodeSix(amount):
