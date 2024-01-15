@@ -23,7 +23,7 @@ MP1 - Blue Spaces Give ONEBLUE Coins: ONEBLUESWITCH
 
 def getRedSpaceCodeOne(amount, switch):
     return f'''
-MP1 - Blue Spaces Give ONEBLUE Coins: ONEREDSWITCH
+MP1 - Red Spaces Take Away ONEBLUE Coins: ONEREDSWITCH
 81057DD8 3408
 81057DDA 000{switch}
 81057DDC 1100
@@ -53,7 +53,7 @@ MP2 - Blue Spaces Give TWOBLUE Coins: TWOBLUESWITCH
 
 def getRedSpaceCodeTwo(amount, switch):
     return f'''
-MP2 - Blue Spaces Give TWOBLUE Coins: TWOREDSWITCH
+MP2 - Blue Spaces Take Away TWOBLUE Coins: TWOREDSWITCH
 8106634C 3408
 8106634E 000{switch}
 81066350 1100
@@ -83,7 +83,7 @@ MP3 - Blue Spaces Give THREEBLUE Coins: THREEBLUESWITCH
 
 def getRedSpaceCodeThree(amount, switch):
     return f'''
-MP3 - Blue Spaces Give THREEBLUE Coins: THREEREDSWITCH
+MP3 - Blue Spaces Take Away THREEBLUE Coins: THREEREDSWITCH
 810FE2C0 3408
 810FE2C2 000{amount}
 810FE2C4 1100
@@ -106,7 +106,7 @@ MP4 - Red Spaces Take Away FOURRED Coins
 
 def getBlueSpaceCodeFour(amount):
     return f'''
-MP4 - Blue Spaces Take Away FOURBLUE Coins
+MP4 - Blue Spaces Give FOURBLUE Coins
 0407FBDC 60000000
 0407FBE0 3BC0{amount}
 '''

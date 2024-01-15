@@ -591,9 +591,11 @@ def parseCoinsFour():
         
     redSpaceAmountBaseFour = redSpaceAmountFour.get()
     try:
-        redSpaceAmountFour = int(redSpaceAmountBaseFour, 16)
-        negativeRedSpaceAmountBaseFour = -int(redSpaceAmountBaseFour)
-        redSpaceAmountFour = format(negativeRedSpaceAmountBaseFour & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+        redSpaceAmountFour = hex(int(redSpaceAmountFour.get()))
+        if len(redSpaceAmountFour) == 4:
+            redSpaceAmountFour = "00" + redSpaceAmountFour[2:]
+        elif len(redSpaceAmountFour) == 3:
+            redSpaceAmountFour = "000" + redSpaceAmountFour[2:]
     except:
         redSpaceAmountFour = "DUMMY"
 
