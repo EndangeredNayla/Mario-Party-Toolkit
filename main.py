@@ -11,27 +11,7 @@ import pyperclip
 import sys
 from pathlib import Path
 from codes import *
-
-
-def fetchResource(resource_path: Path) -> Path:
-    try:  # Running as *.exe; fetch resource from temp directory
-        base_path = Path(sys._MEIPASS)
-    except AttributeError:  # Running as script; return unmodified path
-        return resource_path
-    else:   # Return temp resource path
-        return base_path.joinpath(resource_path)
-
-def create_image_icon(frame, image_path, row, column):
-    # Create and configure the canvas with the provided image
-    image = Image.open(fetchResource(image_path)).convert("RGBA")
-    image = image.resize((32, 32))
-    image_tk = ImageTk.PhotoImage(image)
-    
-    canvas = ctk.CTkCanvas(master=frame, background="#2b2b2b", highlightthickness=0, width=image.width, height=image.height)
-    canvas.grid(row=row, column=column)
-    canvas.create_image(0, 0, anchor="nw", image=image_tk)
-
-    return canvas, image_tk
+from functions import *
 
 # Set the appearance mode and color theme
 ctk.set_appearance_mode("dark")
@@ -41,6 +21,7 @@ ctk.set_default_color_theme("blue")
 app = ctk.CTk()
 app.geometry("360x340")
 app.title("Mario Party: Toolkit")
+
 
 tabviewGame = ctk.CTkTabview(master=app)
 tabviewGame.pack(padx=0, pady=0)
@@ -1065,6 +1046,8 @@ coinsRedLabelOne.grid(row=2, column=4)
 
 parseButtonOne = ctk.CTkButton(master=tabviewOne.tab("Space Modifier"), command=parseCoinsOne, text="Generate Codes")
 parseButtonOne.pack(padx=20, pady=20)
+
+check_for_updates()
 
 # Run the main application loop
 app.mainloop()
