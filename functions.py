@@ -12,6 +12,7 @@ from pathlib import Path
 import requests
 import sys
 import webbrowser
+from version import current_version
 
 def createDialog(windowTitle, warn, info, buttonTxt=None):
     completeWindow = ctk.CTkToplevel()
@@ -68,8 +69,7 @@ def check_for_updates():
     
     if response.status_code == 200:
         latest_version = response.text.strip()
-        current_version = "1.4.0"  # Replace with your current version
-        
+                
         if latest_version > current_version:
             createDialog("Update Available", "update", "A new version is available. Please update.", "Update Now")
     else:
