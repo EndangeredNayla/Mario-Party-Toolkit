@@ -3,3 +3,4 @@ tk
 Pillow
 pyperclip
 pyinstaller
+requests
