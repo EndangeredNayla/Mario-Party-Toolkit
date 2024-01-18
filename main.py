@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 1/4/2024
+# Date: 1/18/2024
 # License: MIT
 # ============================================
 
@@ -39,7 +39,7 @@ ctk.set_default_color_theme("blue")
 
 # Create the main application window
 app = ctk.CTk()
-app.geometry("360x320")
+app.geometry("360x340")
 app.title("Mario Party: Toolkit")
 
 tabviewGame = ctk.CTkTabview(master=app)
@@ -64,17 +64,17 @@ frameEight.pack(padx=20, pady=20)
 
 # Create blue space icon and entry
 blueSpaceIconEight = create_image_icon(frameEight, "assets/blueSpace.png", 1, 1)
-blueSpaceAmountEight = ctk.CTkEntry(master=frameEight, width=28)
+blueSpaceAmountEight = ctk.CTkEntry(master=frameEight, width=36)
 blueSpaceAmountEight.grid(row=1, column=3)
 
 # Create red space icon and entry
 redSpaceIconEight = create_image_icon(frameEight, "assets/redSpace.png", 2, 1)
-redSpaceAmountEight = ctk.CTkEntry(master=frameEight, width=28)
+redSpaceAmountEight = ctk.CTkEntry(master=frameEight, width=36)
 redSpaceAmountEight.grid(row=2, column=3)
 
 # Create star space icon and entry
 starSpaceIconEight = create_image_icon(frameEight, "assets/starSpace.png", 3, 1)
-starSpaceAmountEight = ctk.CTkEntry(master=frameEight, width=28)
+starSpaceAmountEight = ctk.CTkEntry(master=frameEight, width=36)
 starSpaceAmountEight.grid(row=3, column=3)
 
 # Create a frame inside the "Space Modifier" tab
@@ -83,17 +83,17 @@ frameEightGC.pack(padx=20, pady=20)
 
 # Create blue space icon and entry
 blueSpaceIconEightGC = create_image_icon(frameEightGC, "assets/blueSpace.png", 1, 1)
-blueSpaceAmountEightGC = ctk.CTkEntry(master=frameEightGC, width=28)
+blueSpaceAmountEightGC = ctk.CTkEntry(master=frameEightGC, width=36)
 blueSpaceAmountEightGC.grid(row=1, column=3)
 
 # Create red space icon and entry
 redSpaceIconEightGC = create_image_icon(frameEightGC, "assets/redSpace.png", 2, 1)
-redSpaceAmountEightGC = ctk.CTkEntry(master=frameEightGC, width=28)
+redSpaceAmountEightGC = ctk.CTkEntry(master=frameEightGC, width=36)
 redSpaceAmountEightGC.grid(row=2, column=3)
 
 # Create star space icon and entry
 starSpaceIconEightGC = create_image_icon(frameEightGC, "assets/starSpace.png", 3, 1)
-starSpaceAmountEightGC = ctk.CTkEntry(master=frameEightGC, width=28)
+starSpaceAmountEightGC = ctk.CTkEntry(master=frameEightGC, width=36)
 starSpaceAmountEightGC.grid(row=3, column=3)
 
 tabviewSeven = ctk.CTkTabview(master=tabviewGame.tab("MP7"), height=20)
@@ -106,20 +106,20 @@ frameSeven.pack(padx=20, pady=20)
 
 # Create blue space icon and entry
 blueSpaceIconSeven = create_image_icon(frameSeven, "assets/blueSpace.png", 1, 1)
-blueSpaceAmountSeven = ctk.CTkEntry(master=frameSeven, width=28)
+blueSpaceAmountSeven = ctk.CTkEntry(master=frameSeven, width=36)
 blueSpaceAmountSeven.grid(row=1, column=3)
 
 # Create red space icon and entry
 redSpaceIconSeven = create_image_icon(frameSeven, "assets/redSpace.png", 2, 1)
-redSpaceAmountSeven = ctk.CTkEntry(master=frameSeven, width=28)
+redSpaceAmountSeven = ctk.CTkEntry(master=frameSeven, width=36)
 redSpaceAmountSeven.grid(row=2, column=3)
 
 # Create red space icon and entry
 starSpaceIconSeven = create_image_icon(frameSeven, "assets/starSpace.png", 3, 1)
 starSpaceIconSevenLastFive = create_image_icon(frameSeven, "assets/starSpaceLastFive.png", 4, 1)
-starSpaceAmountSeven = ctk.CTkEntry(master=frameSeven, width=28)
+starSpaceAmountSeven = ctk.CTkEntry(master=frameSeven, width=36)
 starSpaceAmountSeven.grid(row=3, column=3)
-starSpaceAmountSevenLastFive = ctk.CTkEntry(master=frameSeven, width=28)
+starSpaceAmountSevenLastFive = ctk.CTkEntry(master=frameSeven, width=36)
 starSpaceAmountSevenLastFive.grid(row=4, column=3)
 
 tabviewSix = ctk.CTkTabview(master=tabviewGame.tab("MP6"), height=20)
@@ -132,17 +132,17 @@ frameSix.pack(padx=20, pady=20)
 
 # Create blue space icon and entry
 blueSpaceIconSix = create_image_icon(frameSix, "assets/blueSpace.png", 1, 1)
-blueSpaceAmountSix = ctk.CTkEntry(master=frameSix, width=28)
+blueSpaceAmountSix = ctk.CTkEntry(master=frameSix, width=36)
 blueSpaceAmountSix.grid(row=1, column=3)
 
 # Create red space icon and entry
 redSpaceIconSix = create_image_icon(frameSix, "assets/redSpace.png", 2, 1)
-redSpaceAmountSix = ctk.CTkEntry(master=frameSix, width=28)
+redSpaceAmountSix = ctk.CTkEntry(master=frameSix, width=36)
 redSpaceAmountSix.grid(row=2, column=3)
 
 # Create star space icon and entry
 starSpaceIconSix = create_image_icon(frameSix, "assets/starSpace.png", 3, 1)
-starSpaceAmountSix = ctk.CTkEntry(master=frameSix, width=28)
+starSpaceAmountSix = ctk.CTkEntry(master=frameSix, width=36)
 starSpaceAmountSix.grid(row=3, column=3)
 
 tabviewFive = ctk.CTkTabview(master=tabviewGame.tab("MP5"), height=20)
@@ -155,18 +155,22 @@ frameFive.pack(padx=20, pady=20)
 
 # Create blue space icon and entry
 blueSpaceIconFive = create_image_icon(frameFive, "assets/blueSpace.png", 1, 1)
-blueSpaceAmountFive = ctk.CTkEntry(master=frameFive, width=28)
+blueSpaceAmountFive = ctk.CTkEntry(master=frameFive, width=36)
 blueSpaceAmountFive.grid(row=1, column=3)
 
 # Create red space icon and entry
 redSpaceIconFive = create_image_icon(frameFive, "assets/redSpace.png", 2, 1)
-redSpaceAmountFive = ctk.CTkEntry(master=frameFive, width=28)
+redSpaceAmountFive = ctk.CTkEntry(master=frameFive, width=36)
 redSpaceAmountFive.grid(row=2, column=3)
 
 # Create star space icon and entry
 starSpaceIconFive = create_image_icon(frameFive, "assets/starSpace.png", 3, 1)
-starSpaceAmountFive = ctk.CTkEntry(master=frameFive, width=28)
+starSpaceWigglerFive = create_image_icon(frameFive, "assets/wigglerCapsule.png", 4, 1)
+starSpaceAmountFive = ctk.CTkEntry(master=frameFive, width=36)
 starSpaceAmountFive.grid(row=3, column=3)
+
+wigglerSpaceAmountFive = ctk.CTkEntry(master=frameFive, width=36)
+wigglerSpaceAmountFive.grid(row=4, column=3)
 
 tabviewFour = ctk.CTkTabview(master=tabviewGame.tab("MP4"), height=20)
 tabviewFour.pack(padx=0, pady=0)
@@ -178,17 +182,17 @@ frameFour.pack(padx=20, pady=20)
 
 # Create blue space icon and entry
 blueSpaceIconFour = create_image_icon(frameFour, "assets/blueSpace.png", 1, 1)
-blueSpaceAmountFour = ctk.CTkEntry(master=frameFour, width=28)
+blueSpaceAmountFour = ctk.CTkEntry(master=frameFour, width=36)
 blueSpaceAmountFour.grid(row=1, column=3)
 
 # Create red space icon and entry
 redSpaceIconFour = create_image_icon(frameFour, "assets/redSpace.png", 2, 1)
-redSpaceAmountFour = ctk.CTkEntry(master=frameFour, width=28)
+redSpaceAmountFour = ctk.CTkEntry(master=frameFour, width=36)
 redSpaceAmountFour.grid(row=2, column=3)
 
 # Create star space icon and entry
 starSpaceIconFour = create_image_icon(frameFour, "assets/starSpace.png", 3, 1)
-starSpaceAmountFour = ctk.CTkEntry(master=frameFour, width=28)
+starSpaceAmountFour = ctk.CTkEntry(master=frameFour, width=36)
 starSpaceAmountFour.grid(row=3, column=3)
 
 tabviewThree = ctk.CTkTabview(master=tabviewGame.tab("MP3"), height=20)
@@ -201,14 +205,14 @@ frameThree.pack(padx=20, pady=20)
 
 # Create blue space icon and entry, and tickbox
 blueSpaceIconThree = create_image_icon(frameThree, "assets/blueSpace.png", 1, 1)
-blueSpaceAmountThree = ctk.CTkEntry(master=frameThree, width=28)
+blueSpaceAmountThree = ctk.CTkEntry(master=frameThree, width=36)
 blueSpaceAmountThree.grid(row=1, column=3)
 blueSpaceTickboxThree = ctk.CTkCheckBox(master=frameThree, text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
 blueSpaceTickboxThree.grid(row=1, column=5, padx=10, pady=10)
 
 # Create red space icon and entry, and tickbox
 redSpaceIconThree = create_image_icon(frameThree, "assets/redSpace.png", 2, 1)
-redSpaceAmountThree = ctk.CTkEntry(master=frameThree, width=28)
+redSpaceAmountThree = ctk.CTkEntry(master=frameThree, width=36)
 redSpaceAmountThree.grid(row=2, column=3)
 redSpaceTickboxThree = ctk.CTkCheckBox(master=frameThree, text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
 redSpaceTickboxThree.grid(row=2, column=5, padx=10, pady=10)
@@ -223,14 +227,14 @@ frameTwo.pack(padx=20, pady=20)
 
 # Create blue space icon and entry, and tickbox
 blueSpaceIconTwo = create_image_icon(frameTwo, "assets/blueSpace.png", 1, 1)
-blueSpaceAmountTwo = ctk.CTkEntry(master=frameTwo, width=28)
+blueSpaceAmountTwo = ctk.CTkEntry(master=frameTwo, width=36)
 blueSpaceAmountTwo.grid(row=1, column=3)
 blueSpaceTickboxTwo = ctk.CTkCheckBox(master=frameTwo, text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
 blueSpaceTickboxTwo.grid(row=1, column=5, padx=10, pady=10)
 
 # Create red space icon and entry, and tickbox
 redSpaceIconTwo = create_image_icon(frameTwo, "assets/redSpace.png", 2, 1)
-redSpaceAmountTwo = ctk.CTkEntry(master=frameTwo, width=28)
+redSpaceAmountTwo = ctk.CTkEntry(master=frameTwo, width=36)
 redSpaceAmountTwo.grid(row=2, column=3)
 redSpaceTickboxTwo = ctk.CTkCheckBox(master=frameTwo, text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
 redSpaceTickboxTwo.grid(row=2, column=5, padx=10, pady=10)
@@ -245,14 +249,14 @@ frameOne.pack(padx=20, pady=20)
 
 # Create blue space icon and entry, and tickbox
 blueSpaceIconOne = create_image_icon(frameOne, "assets/blueSpace.png", 1, 1)
-blueSpaceAmountOne = ctk.CTkEntry(master=frameOne, width=28)
+blueSpaceAmountOne = ctk.CTkEntry(master=frameOne, width=36)
 blueSpaceAmountOne.grid(row=1, column=3)
 blueSpaceTickboxOne = ctk.CTkCheckBox(master=frameOne, text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
 blueSpaceTickboxOne.grid(row=1, column=5, padx=10, pady=10)
 
 # Create red space icon and entry, and tickbox
 redSpaceIconOne = create_image_icon(frameOne, "assets/redSpace.png", 2, 1)
-redSpaceAmountOne = ctk.CTkEntry(master=frameOne, width=28)
+redSpaceAmountOne = ctk.CTkEntry(master=frameOne, width=36)
 redSpaceAmountOne.grid(row=2, column=3)
 redSpaceTickboxOne = ctk.CTkCheckBox(master=frameOne, text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
 redSpaceTickboxOne.grid(row=2, column=5, padx=10, pady=10)
@@ -267,7 +271,9 @@ def parseCoinsEight():
     blueSpaceAmountBaseEight = blueSpaceAmountEight.get()
     try:
         blueSpaceAmountEight = hex(int(blueSpaceAmountEight.get()))
-        if len(blueSpaceAmountEight) == 4:
+        if len(blueSpaceAmountEight) == 5:
+            blueSpaceAmountEight = "0" + blueSpaceAmountEight[2:]
+        elif len(blueSpaceAmountEight) == 4:
             blueSpaceAmountEight = "00" + blueSpaceAmountEight[2:]
         elif len(blueSpaceAmountEight) == 3:
             blueSpaceAmountEight = "000" + blueSpaceAmountEight[2:]
@@ -286,6 +292,7 @@ def parseCoinsEight():
 
     try:
         starSpaceAmountEight = hex(int(starSpaceAmountEight.get()))
+
         if len(starSpaceAmountEight) == 4:
             starSpaceAmountEight = "00" + starSpaceAmountEight[2:]
         elif len(starSpaceAmountEight) == 3:
@@ -330,7 +337,10 @@ def parseCoinsEightGC():
     blueSpaceAmountBaseEightGC = blueSpaceAmountEightGC.get()
     try:
         blueSpaceAmountEightGC = hex(int(blueSpaceAmountEightGC.get()))
-        if len(blueSpaceAmountEightGC) == 4:
+        print(blueSpaceAmountEightGC)
+        if len(blueSpaceAmountEightGC) == 5:
+            blueSpaceAmountEightGC = "0" + blueSpaceAmountEightGC[2:]
+        elif len(blueSpaceAmountEightGC) == 4:
             blueSpaceAmountEightGC = "00" + blueSpaceAmountEightGC[2:]
         elif len(blueSpaceAmountEightGC) == 3:
             blueSpaceAmountEightGC = "000" + blueSpaceAmountEightGC[2:]
@@ -393,7 +403,9 @@ def parseCoinsSeven():
     blueSpaceAmountBaseSeven = blueSpaceAmountSeven.get()
     try:
         blueSpaceAmountSeven = hex(int(blueSpaceAmountSeven.get()))
-        if len(blueSpaceAmountSeven) == 4:
+        if len(blueSpaceAmountSeven) == 5:
+            blueSpaceAmountSeven = "0" + blueSpaceAmountSeven[2:]
+        elif len(blueSpaceAmountSeven) == 4:
             blueSpaceAmountSeven = "00" + blueSpaceAmountSeven[2:]
         elif len(blueSpaceAmountSeven) == 3:
             blueSpaceAmountSeven = "000" + blueSpaceAmountSeven[2:]
@@ -463,7 +475,9 @@ def parseCoinsSix():
     blueSpaceAmountBaseSix = blueSpaceAmountSix.get()
     try:
         blueSpaceAmountSix = hex(int(blueSpaceAmountSix.get()))
-        if len(blueSpaceAmountSix) == 4:
+        if len(blueSpaceAmountSix) == 5:
+            blueSpaceAmountSix = "0" + blueSpaceAmountSix[2:]
+        elif len(blueSpaceAmountSix) == 4:
             blueSpaceAmountSix = "00" + blueSpaceAmountSix[2:]
         elif len(blueSpaceAmountSix) == 3:
             blueSpaceAmountSix = "000" + blueSpaceAmountSix[2:]
@@ -510,16 +524,18 @@ def parseCoinsSix():
     createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
 
 def parseCoinsFive():
-    global blueSpaceAmountFive, redSpaceAmountFive, starSpaceAmountFive
+    global blueSpaceAmountFive, redSpaceAmountFive, starSpaceAmountFive, wigglerSpaceAmountFive
 
-    if not blueSpaceAmountFive.get() and not redSpaceAmountFive.get()and not starSpaceAmountFive.get():
+    if not blueSpaceAmountFive.get() and not redSpaceAmountFive.get() and not starSpaceAmountFive.get() and not wigglerSpaceAmountFive.get():
         createDialog("Error", "error", "No information provided.")
         return
 
     blueSpaceAmountBaseFive = blueSpaceAmountFive.get()
     try:
         blueSpaceAmountFive = hex(int(blueSpaceAmountFive.get()))
-        if len(blueSpaceAmountFive) == 4:
+        if len(blueSpaceAmountFive) == 5:
+            blueSpaceAmountFive = "0" + blueSpaceAmountFive[2:]
+        elif len(blueSpaceAmountFive) == 4:
             blueSpaceAmountFive = "00" + blueSpaceAmountFive[2:]
         elif len(blueSpaceAmountFive) == 3:
             blueSpaceAmountFive = "000" + blueSpaceAmountFive[2:]
@@ -550,7 +566,24 @@ def parseCoinsFive():
         starSpaceAmountFive = "DUMMY"
         starSpaceAmountNegativeFive = "DUMMY"
 
+    wigglerSpaceAmountFiveBase = wigglerSpaceAmountFive.get()
+
+    try:
+        wigglerSpaceAmountFive = hex(int(wigglerSpaceAmountFive.get()))
+        if len(wigglerSpaceAmountFive) == 4:
+            wigglerSpaceAmountFive = "00" + wigglerSpaceAmountFive[2:]
+        elif len(wigglerSpaceAmountFive) == 3:
+            wigglerSpaceAmountFive = "000" + wigglerSpaceAmountFive[2:]
+
+        negativeRedSpaceAmountBaseFive = -int(wigglerSpaceAmountFiveBase)
+        wigglerSpaceAmountNegativeFive = format(negativeRedSpaceAmountBaseFive & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+
+    except:
+        wigglerSpaceAmountFive = "DUMMY"
+        wigglerSpaceAmountNegativeFive = "DUMMY"
+
     marioPartyFiveStarSpace = getStarSpaceCodeFive(starSpaceAmountFive, starSpaceAmountNegativeFive)
+    marioPartyFiveWigglerSpace = getWigglerSpaceCodeFive(wigglerSpaceAmountFive, wigglerSpaceAmountNegativeFive)
     marioPartyFiveBlueSpace = getBlueSpaceCodeFive(blueSpaceAmountFive)
     marioPartyFiveRedSpace = getRedSpaceCodeFive(redSpaceAmountFive)
 
@@ -562,11 +595,16 @@ def parseCoinsFive():
         marioPartyFiveStarSpace = ""
     if starSpaceAmountNegativeFive == "DUMMY":
         marioPartyFiveStarSpace = ""
+    if wigglerSpaceAmountFive == "DUMMY":
+        marioPartyFiveWigglerSpace = ""
+    if wigglerSpaceAmountNegativeFive == "DUMMY":
+        marioPartyFiveWigglerSpace = ""
         
-    generatedCode = marioPartyFiveRedSpace + marioPartyFiveBlueSpace + marioPartyFiveStarSpace
+    generatedCode = marioPartyFiveRedSpace + marioPartyFiveBlueSpace + marioPartyFiveStarSpace + marioPartyFiveWigglerSpace
     generatedCode = generatedCode.replace("FIVERED", redSpaceAmountBaseFive)
     generatedCode = generatedCode.replace("FIVEBLUE", blueSpaceAmountBaseFive)
     generatedCode = generatedCode.replace("FIVESTAR", starSpaceAmountFiveBase)
+    generatedCode = generatedCode.replace("FIVEWIGGLER", wigglerSpaceAmountFiveBase)
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)
     print("Generated codes copied to the clipboard.")
@@ -582,7 +620,9 @@ def parseCoinsFour():
     blueSpaceAmountBaseFour = blueSpaceAmountFour.get()
     try:
         blueSpaceAmountFour = hex(int(blueSpaceAmountFour.get()))
-        if len(blueSpaceAmountFour) == 4:
+        if len(blueSpaceAmountFour) == 5:
+            blueSpaceAmountFour = "0" + blueSpaceAmountFour[2:]
+        elif len(blueSpaceAmountFour) == 4:
             blueSpaceAmountFour = "00" + blueSpaceAmountFour[2:]
         elif len(blueSpaceAmountFour) == 3:
             blueSpaceAmountFour = "000" + blueSpaceAmountFour[2:]
@@ -592,7 +632,9 @@ def parseCoinsFour():
     redSpaceAmountBaseFour = redSpaceAmountFour.get()
     try:
         redSpaceAmountFour = hex(int(redSpaceAmountFour.get()))
-        if len(redSpaceAmountFour) == 4:
+        if len(redSpaceAmountFour) == 5:
+            redSpaceAmountFour = "0" + redSpaceAmountFour[2:]
+        elif len(redSpaceAmountFour) == 4:
             redSpaceAmountFour = "00" + redSpaceAmountFour[2:]
         elif len(redSpaceAmountFour) == 3:
             redSpaceAmountFour = "000" + redSpaceAmountFour[2:]
@@ -641,7 +683,9 @@ def parseCoinsThree():
     blueSpaceAmountBaseThree = blueSpaceAmountThree.get()
     try:
         blueSpaceAmountThree = hex(int(blueSpaceAmountThree.get()))
-        if len(blueSpaceAmountThree) == 4:
+        if len(blueSpaceAmountThree) == 5:
+            blueSpaceAmountThree = "0" + blueSpaceAmountThree[2:]
+        elif len(blueSpaceAmountThree) == 4:
             blueSpaceAmountThree = "00" + blueSpaceAmountThree[2:]
         elif len(blueSpaceAmountThree) == 3:
             blueSpaceAmountThree = "000" + blueSpaceAmountThree[2:]
@@ -657,7 +701,9 @@ def parseCoinsThree():
     redSpaceAmountBaseThree = redSpaceAmountThree.get()
     try:
         redSpaceAmountThree = hex(int(redSpaceAmountThree.get()))
-        if len(redSpaceAmountThree) == 4:
+        if len(redSpaceAmountThree) == 5:
+            redSpaceAmountThree = "0" + redSpaceAmountThree[2:]
+        elif len(redSpaceAmountThree) == 4:
             redSpaceAmountThree = "00" + redSpaceAmountThree[2:]
         elif len(redSpaceAmountThree) == 3:
             redSpaceAmountThree = "000" + redSpaceAmountThree[2:]
@@ -700,7 +746,9 @@ def parseCoinsTwo():
     blueSpaceAmountBaseTwo = blueSpaceAmountTwo.get()
     try:
         blueSpaceAmountTwo = hex(int(blueSpaceAmountTwo.get()))
-        if len(blueSpaceAmountTwo) == 4:
+        if len(blueSpaceAmountTwo) == 5:
+            blueSpaceAmountTwo = "0" + blueSpaceAmountTwo[2:]
+        elif len(blueSpaceAmountTwo) == 4:
             blueSpaceAmountTwo = "00" + blueSpaceAmountTwo[2:]
         elif len(blueSpaceAmountTwo) == 3:
             blueSpaceAmountTwo = "000" + blueSpaceAmountTwo[2:]
@@ -716,7 +764,9 @@ def parseCoinsTwo():
     redSpaceAmountBaseTwo = redSpaceAmountTwo.get()
     try:
         redSpaceAmountTwo = hex(int(redSpaceAmountTwo.get()))
-        if len(redSpaceAmountTwo) == 4:
+        if len(redSpaceAmountTwo) == 5:
+            redSpaceAmountTwo = "0" + redSpaceAmountTwo[2:]
+        elif len(redSpaceAmountTwo) == 4:
             redSpaceAmountTwo = "00" + redSpaceAmountTwo[2:]
         elif len(redSpaceAmountTwo) == 3:
             redSpaceAmountTwo = "000" + redSpaceAmountTwo[2:]
@@ -759,7 +809,9 @@ def parseCoinsOne():
     blueSpaceAmountBaseOne = blueSpaceAmountOne.get()
     try:
         blueSpaceAmountOne = hex(int(blueSpaceAmountOne.get()))
-        if len(blueSpaceAmountOne) == 4:
+        if len(blueSpaceAmountOne) == 5:
+            blueSpaceAmountOne = "0" + blueSpaceAmountOne[2:]
+        elif len(blueSpaceAmountOne) == 4:
             blueSpaceAmountOne = "00" + blueSpaceAmountOne[2:]
         elif len(blueSpaceAmountOne) == 3:
             blueSpaceAmountOne = "000" + blueSpaceAmountOne[2:]
@@ -775,7 +827,9 @@ def parseCoinsOne():
     redSpaceAmountBaseOne = redSpaceAmountOne.get()
     try:
         redSpaceAmountOne = hex(int(redSpaceAmountOne.get()))
-        if len(redSpaceAmountOne) == 4:
+        if len(redSpaceAmountOne) == 5:
+            redSpaceAmountOne = "0" + redSpaceAmountOne[2:]
+        elif len(redSpaceAmountOne) == 4:
             redSpaceAmountOne = "00" + redSpaceAmountOne[2:]
         elif len(redSpaceAmountOne) == 3:
             redSpaceAmountOne = "000" + redSpaceAmountOne[2:]
@@ -791,6 +845,7 @@ def parseCoinsOne():
 
     marioPartyOneBlueSpace = getBlueSpaceCodeOne(blueSpaceAmountOne, blueSpaceSwitchOne)
     marioPartyOneRedSpace = getRedSpaceCodeOne(redSpaceAmountOne, redSpaceSwitchOne)
+
 
     if redSpaceAmountOne == "DUMMY":
         marioPartyOneRedSpace = ""
@@ -935,6 +990,12 @@ coinsStarLabelFive.grid(row=3, column=4)
 
 coinsStarLabelFive = ctk.CTkLabel(master=frameFive, text=":  Costs   ", font=("Arial", 12))
 coinsStarLabelFive.grid(row=3, column=2)
+
+wigglerStarLabelFive = ctk.CTkLabel(master=frameFive, text=" Coins", font=("Arial", 12))
+wigglerStarLabelFive.grid(row=4, column=4)
+
+wigglerStarLabelFive = ctk.CTkLabel(master=frameFive, text=":  Costs   ", font=("Arial", 12))
+wigglerStarLabelFive.grid(row=4, column=2)
 
 parseButtonFive = ctk.CTkButton(master=tabviewFive.tab("Space Modifier"), command=parseCoinsFive, text="Generate Codes")
 parseButtonFive.pack(padx=20, pady=20)

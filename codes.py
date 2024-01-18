@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 1/4/2024
+# Date: 1/18/2024
 # License: MIT
 # ============================================
 
@@ -134,10 +134,20 @@ MP5 - Red Spaces Take Away FIVERED Coins
 
 def getStarSpaceCodeFive(amount, negAmount):
     return f'''
-MP5 - Stars Cost FIVESTAR Coins
+MP5 - Stars Cost FIVEWIGGLER Coins from Wiggler
 C20AFDB0 00000001
 2C03{amount} 00000000
 C20AFF9C 00000001
+3880{negAmount} 00000000
+'''
+
+
+def getWigglerSpaceCodeFive(amount, negAmount):
+    return f'''
+MP5 - Stars Cost FIVESTAR Coins
+C20DB528 00000001
+2C03{amount} 00000000
+C20DBB40 00000001
 3880{negAmount} 00000000
 '''
 
