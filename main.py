@@ -352,7 +352,7 @@ def parseCoinsEightGC():
         starSpaceAmountEightGC = "DUMMY"
         starSpaceAmountNegativeEightGC = "DUMMY"
 
-    marioPartyEightStarSpace = getStarSpaceCodeEight(starSpaceAmountEight, starSpaceAmountNegativeEight)
+    marioPartyEightGCStarSpace = getStarSpaceCodeEightGC(starSpaceAmountEightGC, starSpaceAmountNegativeEightGC)
     marioPartyEightGCBlueSpace = getBlueSpaceCodeEightGC(blueSpaceAmountEightGC)
     marioPartyEightGCRedSpace = getRedSpaceCodeEightGC(redSpaceAmountEightGC)
 
@@ -368,7 +368,7 @@ def parseCoinsEightGC():
     generatedCode = marioPartyEightGCRedSpace + marioPartyEightGCBlueSpace + marioPartyEightGCStarSpace
     generatedCode = generatedCode.replace("EIGHTREDGC", redSpaceAmountBaseEightGC)
     generatedCode = generatedCode.replace("EIGHTBLUEGC", blueSpaceAmountBaseEightGC)
-    generatedCode = generatedCode.replace("EIGHTSTARGC", starSpaceAmountEightBaseGC)
+    generatedCode = generatedCode.replace("EIGHTSTARGC", starSpaceAmountEightGCBase)
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)
     print("Generated codes copied to the clipboard.")
