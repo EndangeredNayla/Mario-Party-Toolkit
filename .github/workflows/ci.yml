@@ -61,7 +61,7 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: MarioPartyToolkit-win32-static
+        name: MarioPartyToolkit-win32-nuitka
         path: D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\dist
 
   build-macOS:
