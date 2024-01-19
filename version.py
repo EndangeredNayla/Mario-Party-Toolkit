@@ -5,4 +5,4 @@
 # License: MIT
 # ============================================
 
-current_version = "1.4.1"
+current_version = "1.4.2"

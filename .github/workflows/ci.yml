@@ -5,12 +5,9 @@ on:
   pull_request:
 
 jobs:
-  build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [windows-latest, macos-latest]
-
+  build-win32-dynamic:
+    name: "Windows: Dynamic Build"
+    runs-on: windows-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -20,19 +17,28 @@ jobs:
 
     - name: Build Project (Dynamic build)
       if: matrix.os == 'windows-latest'
-      run: pyinstaller --noconsole --name="Mario Party Toolkit" --add-data "assets/*;assets/" --distpath=dynamic --icon="assets/diceBlock.ico" main.py
+      run: pyinstaller --noconsole --name="Mario Party Toolkit" --add-data "assets/*;assets/" --icon="assets/diceBlock.ico" main.py
+
+    - name: Upload Artifact
+      if: matrix.os == 'windows-latest'
+      uses: actions/upload-artifact@v2
+      with:
+        name: MarioPartyToolkit-win32-dynamic
+        path: D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\dist
+
+  build-win32-static:
+    name: "Windows: Static Build"
+    runs-on: windows-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install PIP Modules
+      run: python -m pip install -r requirements.txt
 
     - name: Build Project (Static build)
       if: matrix.os == 'windows-latest'
       run: pyinstaller --onefile --noconsole --name="Mario Party Toolkit" --add-data "assets/*;assets/" --icon="assets/diceBlock.ico" main.py
-
-    - name: Build Project (macOS build)
-      if: matrix.os == 'macos-latest'
-      run: pyinstaller --onefile --noconsole --name="Mario Party Toolkit" --add-data "assets/*:assets/" --icon="assets/diceBlock.ico" main.py
-
-    - name: Purge Files (macOS build)
-      if: matrix.os == 'macos-latest'
-      run: cd "/Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist/" && rm "Mario Party Toolkit"
 
     - name: Upload Artifact
       if: matrix.os == 'windows-latest'
@@ -41,12 +47,43 @@ jobs:
         name: MarioPartyToolkit-win32-static
         path: D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\dist
 
+  build-win32-c-code:
+    name: "Windows: C Code Build"
+    runs-on: windows-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install PIP Modules
+      run: python -m pip install -r requirements.txt
+
+    - name: Build Project
+      if: matrix.os == 'windows-latest'
+      run: python -m nuitka --onefile --enable-plugin=tk-inter --disable-console --standalone --output-filename="Mario Party Toolkit" --output-dir="dist" --include-data-files="assets/*" --windows-icon-from-ico="assets/diceBlock.ico" main.py
+
     - name: Upload Artifact
       if: matrix.os == 'windows-latest'
       uses: actions/upload-artifact@v2
       with:
-        name: MarioPartyToolkit-win32-dynamic
-        path: D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\dynamic
+        name: MarioPartyToolkit-win32-static
+        path: D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\dist
+
+  build-macOS:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install PIP Modules
+      run: python -m pip install -r requirements.txt
+
+    - name: Build Project (macOS build)
+      if: matrix.os == 'macos-latest'
+      run: pyinstaller --onefile --noconsole --name="Mario Party Toolkit" --add-data "assets/*:assets/" --icon="assets/diceBlock.ico" main.py
+
+    - name: Purge Files (macOS build)
+      if: matrix.os == 'macos-latest'
+      run: cd "/Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist/" && rm "Mario Party Toolkit"
 
     - name: Upload Artifact
       if: matrix.os == 'macos-latest'
