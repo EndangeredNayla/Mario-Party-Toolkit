@@ -16,11 +16,9 @@ jobs:
       run: python -m pip install -r requirements.txt
 
     - name: Build Project (Dynamic build)
-      if: matrix.os == 'windows-latest'
       run: pyinstaller --noconsole --name="Mario Party Toolkit" --add-data "assets/*;assets/" --icon="assets/diceBlock.ico" main.py
 
     - name: Upload Artifact
-      if: matrix.os == 'windows-latest'
       uses: actions/upload-artifact@v2
       with:
         name: MarioPartyToolkit-win32-dynamic
