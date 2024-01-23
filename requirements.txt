@@ -5,3 +5,4 @@ pyperclip
 pyinstaller
 requests
 nuitka
+CTkToolTip

@@ -163,7 +163,7 @@ MP6 - Red Spaces Take Away SIXRED Coins
 0415F278 3880{amount}
 '''
 
-def getStarSpaceCodeSix(amount,):
+def getStarSpaceCodeSix(amount):
     return f'''
 MP6 - Stars Cost SIXSTAR Coins
 0418333C 2C03{amount}
@@ -172,6 +172,23 @@ MP6 - Stars Cost SIXSTAR Coins
 C2183590 00000002
 3880{amount} 7C8400D0
 60000000 00000000
+'''
+
+def getStarSpaceCodeSixFS(one, two, three, four, five):
+    return f'''
+MP6 - Stars Can cost SIXSTARFS1, SIXSTARFS2, SIXSTARFS3, SIXSTARFS4, SIXSTARFS5 Coins during Faire Square Nighttime
+04248064 0000{one}
+04248068 0000{two}
+0424806C 0000{three}
+04248070 0000{four}
+04248074 0000{five}
+204DDF88 01020405
+044DDF74 0000{one}
+044DDF78 0000{two}
+044DDF7C 0000{three}
+044DDF80 0000{five}
+044DDF84 0000{five}
+E2000001 80008000
 '''
 
 def getBlueSpaceCodeSeven(amount):

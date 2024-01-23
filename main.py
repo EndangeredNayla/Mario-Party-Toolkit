@@ -7,6 +7,7 @@
 
 import customtkinter as ctk
 from PIL import Image, ImageTk
+from CTkToolTip import *
 import pyperclip
 import sys
 from pathlib import Path
@@ -19,7 +20,7 @@ ctk.set_default_color_theme("blue")
 
 # Create the main application window
 app = ctk.CTk()
-app.geometry("360x340")
+app.geometry("400x340")
 app.title("Mario Party: Toolkit")
 
 
@@ -47,16 +48,19 @@ frameEight.pack(padx=20, pady=20)
 blueSpaceIconEight = create_image_icon(frameEight, "assets/blueSpace.png", 1, 1)
 blueSpaceAmountEight = ctk.CTkEntry(master=frameEight, width=36)
 blueSpaceAmountEight.grid(row=1, column=3)
+toolTipBlue = CTkToolTip(blueSpaceAmountEight, message="Blue Coin Modifier - [0 ~ 999] (All Maps)")
 
 # Create red space icon and entry
 redSpaceIconEight = create_image_icon(frameEight, "assets/redSpace.png", 2, 1)
 redSpaceAmountEight = ctk.CTkEntry(master=frameEight, width=36)
 redSpaceAmountEight.grid(row=2, column=3)
+tooltipRed = CTkToolTip(redSpaceAmountEight, message="Red Coin Modifier - [0 ~ -999] (All Maps)")
 
 # Create star space icon and entry
 starSpaceIconEight = create_image_icon(frameEight, "assets/starSpace.png", 3, 1)
 starSpaceAmountEight = ctk.CTkEntry(master=frameEight, width=36)
 starSpaceAmountEight.grid(row=3, column=3)
+tooltipStar = CTkToolTip(starSpaceAmountEight, message="Star Price Modifier - [0 ~ 999] (DK's Treetop Temple, Shy Guy's Perplex, and King Boo's Haunted Hideaway)")
 
 # Create a frame inside the "Space Modifier" tab
 frameEightGC = ctk.CTkFrame(master=tabviewEight.tab("Space Modifier (Rev 2)"), border_color="#2b2b2b")
@@ -66,16 +70,19 @@ frameEightGC.pack(padx=20, pady=20)
 blueSpaceIconEightGC = create_image_icon(frameEightGC, "assets/blueSpace.png", 1, 1)
 blueSpaceAmountEightGC = ctk.CTkEntry(master=frameEightGC, width=36)
 blueSpaceAmountEightGC.grid(row=1, column=3)
+toolTipBlue = CTkToolTip(blueSpaceAmountEightGC, message="Blue Coin Modifier - [0 ~ 999] (All Maps)")
 
 # Create red space icon and entry
 redSpaceIconEightGC = create_image_icon(frameEightGC, "assets/redSpace.png", 2, 1)
 redSpaceAmountEightGC = ctk.CTkEntry(master=frameEightGC, width=36)
 redSpaceAmountEightGC.grid(row=2, column=3)
+tooltipRed = CTkToolTip(redSpaceAmountEightGC, message="Red Coin Modifier - [0 ~ 999] (All Maps)")
 
 # Create star space icon and entry
 starSpaceIconEightGC = create_image_icon(frameEightGC, "assets/starSpace.png", 3, 1)
 starSpaceAmountEightGC = ctk.CTkEntry(master=frameEightGC, width=36)
 starSpaceAmountEightGC.grid(row=3, column=3)
+tooltipStar = CTkToolTip(starSpaceAmountEightGC, message="Star Price Modifier - [0 ~ 999] (DK's Treetop Temple, Shy Guy's Perplex, and King Boo's Haunted Hideaway)")
 
 tabviewSeven = ctk.CTkTabview(master=tabviewGame.tab("MP7"), height=20)
 tabviewSeven.pack(padx=0, pady=0)
@@ -89,11 +96,13 @@ frameSeven.pack(padx=20, pady=20)
 blueSpaceIconSeven = create_image_icon(frameSeven, "assets/blueSpace.png", 1, 1)
 blueSpaceAmountSeven = ctk.CTkEntry(master=frameSeven, width=36)
 blueSpaceAmountSeven.grid(row=1, column=3)
+toolTipBlue = CTkToolTip(blueSpaceAmountSeven, message="Blue Coin Modifier - [0 ~ 999] (All Maps)")
 
 # Create red space icon and entry
 redSpaceIconSeven = create_image_icon(frameSeven, "assets/redSpace.png", 2, 1)
 redSpaceAmountSeven = ctk.CTkEntry(master=frameSeven, width=36)
 redSpaceAmountSeven.grid(row=2, column=3)
+toolTipRed = CTkToolTip(redSpaceAmountSeven, message="Red Coin Modifier - [0 ~ 999] (All Maps)")
 
 # Create red space icon and entry
 starSpaceIconSeven = create_image_icon(frameSeven, "assets/starSpace.png", 3, 1)
@@ -102,6 +111,8 @@ starSpaceAmountSeven = ctk.CTkEntry(master=frameSeven, width=36)
 starSpaceAmountSeven.grid(row=3, column=3)
 starSpaceAmountSevenLastFive = ctk.CTkEntry(master=frameSeven, width=36)
 starSpaceAmountSevenLastFive.grid(row=4, column=3)
+toolTipStar = CTkToolTip(starSpaceAmountSeven, message="Star Price Modifier - [0 ~ 999] (Grand Canal, Bowser's Enchanted Inferno)")
+toolTipStar = CTkToolTip(starSpaceAmountSevenLastFive, message="Last 5 Roulette Star Price Modifier - [0 ~ 999] (Grand Canal, Bowser's Enchanted Inferno)")
 
 tabviewSix = ctk.CTkTabview(master=tabviewGame.tab("MP6"), height=20)
 tabviewSix.pack(padx=0, pady=0)
@@ -115,16 +126,37 @@ frameSix.pack(padx=20, pady=20)
 blueSpaceIconSix = create_image_icon(frameSix, "assets/blueSpace.png", 1, 1)
 blueSpaceAmountSix = ctk.CTkEntry(master=frameSix, width=36)
 blueSpaceAmountSix.grid(row=1, column=3)
+toolTipBlue = CTkToolTip(blueSpaceAmountSix, message="Blue Coin Modifier - [0 ~ 999] (All Maps)")
 
 # Create red space icon and entry
 redSpaceIconSix = create_image_icon(frameSix, "assets/redSpace.png", 2, 1)
 redSpaceAmountSix = ctk.CTkEntry(master=frameSix, width=36)
 redSpaceAmountSix.grid(row=2, column=3)
+toolTipRed = CTkToolTip(redSpaceAmountSix, message="Red Coin Modifier - [0 ~ 999] (All Maps)")
 
 # Create star space icon and entry
 starSpaceIconSix = create_image_icon(frameSix, "assets/starSpace.png", 3, 1)
 starSpaceAmountSix = ctk.CTkEntry(master=frameSix, width=36)
 starSpaceAmountSix.grid(row=3, column=3)
+toolTipStar = CTkToolTip(starSpaceAmountSix, message="Star Price Modifier - [0 ~ 999] (Towering Treetop, E Gadd's Garage, Faire Square [DAY])")
+
+starSpaceFaireSquareNightSix = create_image_icon(frameSix, "assets/faireSquareLogo.png", 5, 1)
+starSpaceFaireSquareAmountSix1 = ctk.CTkEntry(master=frameSix, width=36)
+starSpaceFaireSquareAmountSix2 = ctk.CTkEntry(master=frameSix, width=36)
+starSpaceFaireSquareAmountSix3 = ctk.CTkEntry(master=frameSix, width=36)
+starSpaceFaireSquareAmountSix4 = ctk.CTkEntry(master=frameSix, width=36)
+starSpaceFaireSquareAmountSix5 = ctk.CTkEntry(master=frameSix, width=36)
+starSpaceFaireSquareAmountSix1.grid(row=5, column=3)
+starSpaceFaireSquareAmountSix2.grid(row=5, column=4)
+starSpaceFaireSquareAmountSix3.grid(row=5, column=5)
+starSpaceFaireSquareAmountSix4.grid(row=5, column=6)
+starSpaceFaireSquareAmountSix5.grid(row=5, column=7)
+toolTipStar1 = CTkToolTip(starSpaceFaireSquareAmountSix1, message="Star Price Modifier - [0 ~ 999] (Faire Square [NIGHT] Opt. 1)")
+toolTipStar2 = CTkToolTip(starSpaceFaireSquareAmountSix2, message="Star Price Modifier - [0 ~ 999] (Faire Square [NIGHT] Opt. 2)")
+toolTipStar3 = CTkToolTip(starSpaceFaireSquareAmountSix3, message="Star Price Modifier - [0 ~ 999] (Faire Square [NIGHT] Opt. 3)")
+toolTipStar4 = CTkToolTip(starSpaceFaireSquareAmountSix4, message="Star Price Modifier - [0 ~ 999] (Faire Square [NIGHT] Opt. 4)")
+toolTipStar5 = CTkToolTip(starSpaceFaireSquareAmountSix5, message="Star Price Modifier - [0 ~ 999] (Faire Square [NIGHT] Opt. 5)")
+
 
 tabviewFive = ctk.CTkTabview(master=tabviewGame.tab("MP5"), height=20)
 tabviewFive.pack(padx=0, pady=0)
@@ -138,20 +170,24 @@ frameFive.pack(padx=20, pady=20)
 blueSpaceIconFive = create_image_icon(frameFive, "assets/blueSpace.png", 1, 1)
 blueSpaceAmountFive = ctk.CTkEntry(master=frameFive, width=36)
 blueSpaceAmountFive.grid(row=1, column=3)
+toolTipBlue = CTkToolTip(blueSpaceAmountFive, message="Blue Coin Modifier - [0 ~ 999] (All Maps)")
 
 # Create red space icon and entry
 redSpaceIconFive = create_image_icon(frameFive, "assets/redSpace.png", 2, 1)
 redSpaceAmountFive = ctk.CTkEntry(master=frameFive, width=36)
 redSpaceAmountFive.grid(row=2, column=3)
+toolTipRed = CTkToolTip(redSpaceAmountFive, message="Red Coin Modifier - [0 ~ 999] (All Maps)")
 
 # Create star space icon and entry
 starSpaceIconFive = create_image_icon(frameFive, "assets/starSpace.png", 3, 1)
 starSpaceWigglerFive = create_image_icon(frameFive, "assets/wigglerCapsule.png", 4, 1)
 starSpaceAmountFive = ctk.CTkEntry(master=frameFive, width=36)
 starSpaceAmountFive.grid(row=3, column=3)
+toolTipStar = CTkToolTip(starSpaceAmountFive, message="Star Price Modifier - [0 ~ 999] (All Maps)")
 
 wigglerSpaceAmountFive = ctk.CTkEntry(master=frameFive, width=36)
 wigglerSpaceAmountFive.grid(row=4, column=3)
+toolTipStar = CTkToolTip(wigglerSpaceAmountFive, message="Wiggler Star Price Modifier - [0 ~ 999] (All Maps)")
 
 tabviewFour = ctk.CTkTabview(master=tabviewGame.tab("MP4"), height=20)
 tabviewFour.pack(padx=0, pady=0)
@@ -165,16 +201,19 @@ frameFour.pack(padx=20, pady=20)
 blueSpaceIconFour = create_image_icon(frameFour, "assets/blueSpace.png", 1, 1)
 blueSpaceAmountFour = ctk.CTkEntry(master=frameFour, width=36)
 blueSpaceAmountFour.grid(row=1, column=3)
+toolTipBlue = CTkToolTip(blueSpaceAmountFour, message="Blue Coin Modifier - [0 ~ 999] (All Maps)")
 
 # Create red space icon and entry
 redSpaceIconFour = create_image_icon(frameFour, "assets/redSpace.png", 2, 1)
 redSpaceAmountFour = ctk.CTkEntry(master=frameFour, width=36)
 redSpaceAmountFour.grid(row=2, column=3)
+toolTipRed = CTkToolTip(redSpaceAmountFour, message="Red Coin Modifier - [0 ~ 999] (All Maps)")
 
 # Create star space icon and entry
 starSpaceIconFour = create_image_icon(frameFour, "assets/starSpace.png", 3, 1)
 starSpaceAmountFour = ctk.CTkEntry(master=frameFour, width=36)
 starSpaceAmountFour.grid(row=3, column=3)
+toolTipStar = CTkToolTip(starSpaceAmountFour, message="Star Price Modifier - [0 ~ 999] (All Maps)")
 
 tabviewThree = ctk.CTkTabview(master=tabviewGame.tab("MP3"), height=20)
 tabviewThree.pack(padx=0, pady=0)
@@ -447,9 +486,9 @@ def parseCoinsSeven():
     createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
 
 def parseCoinsSix():
-    global blueSpaceAmountSix, redSpaceAmountSix, starSpaceAmountSix
+    global blueSpaceAmountSix, redSpaceAmountSix, starSpaceAmountSix, starSpaceFaireSquareAmountSix1, starSpaceFaireSquareAmountSix2, starSpaceFaireSquareAmountSix3, starSpaceFaireSquareAmountSix4, starSpaceFaireSquareAmountSix5
 
-    if not blueSpaceAmountSix.get() and not redSpaceAmountSix.get() and not starSpaceAmountSix.get():
+    if not blueSpaceAmountSix.get() and not redSpaceAmountSix.get() and not starSpaceAmountSix.get() and not starSpaceFaireSquareAmountSix1.get() and not starSpaceFaireSquareAmountSix2.get() and not starSpaceFaireSquareAmountSix3.get() and not starSpaceFaireSquareAmountSix4.get() and not starSpaceFaireSquareAmountSix5.get():
         createDialog("Error", "error", "No information provided.")
         return
 
@@ -474,6 +513,11 @@ def parseCoinsSix():
         redSpaceAmountSix = "DUMMY"
 
     starSpaceAmountSixBase = starSpaceAmountSix.get()
+    starSpaceFaireSquareAmountSix1Base = starSpaceFaireSquareAmountSix1.get()
+    starSpaceFaireSquareAmountSix2Base = starSpaceFaireSquareAmountSix2.get()
+    starSpaceFaireSquareAmountSix3Base = starSpaceFaireSquareAmountSix3.get()
+    starSpaceFaireSquareAmountSix4Base = starSpaceFaireSquareAmountSix4.get()
+    starSpaceFaireSquareAmountSix5Base = starSpaceFaireSquareAmountSix5.get()
 
     try:
         starSpaceAmountSix = hex(int(starSpaceAmountSix.get()))
@@ -484,9 +528,56 @@ def parseCoinsSix():
     except:
         starSpaceAmountSix = "DUMMY"
 
+    try:
+        starSpaceFaireSquareAmountSix1 = hex(int(starSpaceFaireSquareAmountSix1.get()))
+        print(starSpaceFaireSquareAmountSix1)
+        if len(starSpaceFaireSquareAmountSix1) == 4:
+            starSpaceFaireSquareAmountSix1 = "00" + starSpaceFaireSquareAmountSix1[2:]
+        elif len(starSpaceFaireSquareAmountSix1) == 3:
+            starSpaceFaireSquareAmountSix1 = "000" + starSpaceFaireSquareAmountSix1[2:]
+    except:
+        starSpaceFaireSquareAmountSix1 = "DUMMY"
+    
+    try:
+        starSpaceFaireSquareAmountSix2 = hex(int(starSpaceFaireSquareAmountSix2.get()))
+        if len(starSpaceFaireSquareAmountSix2) == 4:
+            starSpaceFaireSquareAmountSix2 = "00" + starSpaceFaireSquareAmountSix2[2:]
+        elif len(starSpaceFaireSquareAmountSix2) == 3:
+            starSpaceFaireSquareAmountSix2 = "000" + starSpaceFaireSquareAmountSix2[2:]
+    except:
+        starSpaceFaireSquareAmountSix2 = "DUMMY"
+
+    try:
+        starSpaceFaireSquareAmountSix3 = hex(int(starSpaceFaireSquareAmountSix3.get()))
+        if len(starSpaceFaireSquareAmountSix3) == 4:
+            starSpaceFaireSquareAmountSix3 = "00" + starSpaceFaireSquareAmountSix3[2:]
+        elif len(starSpaceFaireSquareAmountSix3) == 3:
+            starSpaceFaireSquareAmountSix3 = "000" + starSpaceFaireSquareAmountSix3[2:]
+    except:
+        starSpaceFaireSquareAmountSix3 = "DUMMY"
+
+    try:
+        starSpaceFaireSquareAmountSix4 = hex(int(starSpaceFaireSquareAmountSix4.get()))
+        if len(starSpaceFaireSquareAmountSix4) == 4:
+            starSpaceFaireSquareAmountSix4 = "00" + starSpaceFaireSquareAmountSix4[2:]
+        elif len(starSpaceFaireSquareAmountSix4) == 3:
+            starSpaceFaireSquareAmountSix4 = "000" + starSpaceFaireSquareAmountSix4[2:]
+    except:
+        starSpaceFaireSquareAmountSix4 = "DUMMY"
+
+    try:
+        starSpaceFaireSquareAmountSix5 = hex(int(starSpaceFaireSquareAmountSix5.get()))
+        if len(starSpaceFaireSquareAmountSix5) == 4:
+            starSpaceFaireSquareAmountSix5 = "00" + starSpaceFaireSquareAmountSix5[2:]
+        elif len(starSpaceFaireSquareAmountSix5) == 3:
+            starSpaceFaireSquareAmountSix5 = "000" + starSpaceFaireSquareAmountSix5[2:]
+    except:
+        starSpaceFaireSquareAmountSix5 = "DUMMY"
+
     marioPartySixBlueSpace = getBlueSpaceCodeSix(blueSpaceAmountSix)
     marioPartySixRedSpace = getRedSpaceCodeSix(redSpaceAmountSix)
     marioPartySixStarSpace = getStarSpaceCodeSix(starSpaceAmountSix)
+    marioPartySixStarSpaceFaireSquareNightTime = getStarSpaceCodeSixFS(starSpaceFaireSquareAmountSix1, starSpaceFaireSquareAmountSix2, starSpaceFaireSquareAmountSix3, starSpaceFaireSquareAmountSix4, starSpaceFaireSquareAmountSix5)
 
     if redSpaceAmountSix == "DUMMY":
         marioPartySixRedSpace = ""
@@ -494,10 +585,25 @@ def parseCoinsSix():
         marioPartySixBlueSpace = ""
     if starSpaceAmountSix == "DUMMY":
         marioPartySixStarSpace = ""
+    if starSpaceFaireSquareAmountSix1 == "DUMMY":
+        marioPartySixStarSpaceFaireSquareNightTime = ""
+    if starSpaceFaireSquareAmountSix2 == "DUMMY":
+        marioPartySixStarSpaceFaireSquareNightTime = ""
+    if starSpaceFaireSquareAmountSix3 == "DUMMY":
+        marioPartySixStarSpaceFaireSquareNightTime = ""
+    if starSpaceFaireSquareAmountSix4 == "DUMMY":
+        marioPartySixStarSpaceFaireSquareNightTime = ""
+    if starSpaceFaireSquareAmountSix5 == "DUMMY":
+        marioPartySixStarSpaceFaireSquareNightTime = ""
 
-    generatedCode = marioPartySixRedSpace + marioPartySixBlueSpace + marioPartySixStarSpace
+    generatedCode = marioPartySixRedSpace + marioPartySixBlueSpace + marioPartySixStarSpace + marioPartySixStarSpaceFaireSquareNightTime
     generatedCode = generatedCode.replace("SIXRED", redSpaceAmountBaseSix)
     generatedCode = generatedCode.replace("SIXBLUE", blueSpaceAmountBaseSix)
+    generatedCode = generatedCode.replace("SIXSTARFS1", starSpaceFaireSquareAmountSix1Base)
+    generatedCode = generatedCode.replace("SIXSTARFS2", starSpaceFaireSquareAmountSix2Base)
+    generatedCode = generatedCode.replace("SIXSTARFS3", starSpaceFaireSquareAmountSix3Base)
+    generatedCode = generatedCode.replace("SIXSTARFS4", starSpaceFaireSquareAmountSix4Base)
+    generatedCode = generatedCode.replace("SIXSTARFS5", starSpaceFaireSquareAmountSix5Base)
     generatedCode = generatedCode.replace("SIXSTAR", starSpaceAmountSixBase)
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)
@@ -951,8 +1057,14 @@ parseButtonSix.pack(padx=20, pady=20)
 coinsStarLabelSix = ctk.CTkLabel(master=frameSix, text=" Coins", font=("Arial", 12))
 coinsStarLabelSix.grid(row=3, column=4)
 
-coinsStarLabelSix = ctk.CTkLabel(master=frameSeven, text=":  Costs   ", font=("Arial", 12))
-coinsStarLabelSix.grid(row=4, column=2)
+coinsStarLabelSeven = ctk.CTkLabel(master=frameSeven, text=":  Costs   ", font=("Arial", 12))
+coinsStarLabelSeven.grid(row=4, column=2)
+
+coinsStarLabelSixS = ctk.CTkLabel(master=frameSix, text=" Coins", font=("Arial", 12))
+coinsStarLabelSixS.grid(row=5, column=8)
+
+coinsStarLabelSixS = ctk.CTkLabel(master=frameSix, text=":  Costs   ", font=("Arial", 12))
+coinsStarLabelSixS.grid(row=5, column=2)
 
 preBlueLabelFive = ctk.CTkLabel(master=frameFive, text=":  Costs   ", font=("Arial", 12))
 preBlueLabelFive.grid(row=1, column=2)
