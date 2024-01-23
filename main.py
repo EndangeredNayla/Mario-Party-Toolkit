@@ -731,6 +731,7 @@ class App(customtkinter.CTk):
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
         createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
+
     def actionSpaceButtonFive(self):
         if not self.blueSpaceAmountFive.get() and not self.redSpaceAmountFive.get() and not self.starSpaceAmountFive.get() and not self.wigglerSpaceAmountFive.get():
             createDialog("Error", "error", "No information provided.", None)
@@ -815,6 +816,7 @@ class App(customtkinter.CTk):
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
         createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
+
     def actionSpaceButtonSix(self):
         if not self.blueSpaceAmountSix.get() and not self.redSpaceAmountSix.get() and not self.starSpaceAmountSix.get():
             createDialog("Error", "error", "No information provided.", None)
@@ -847,12 +849,15 @@ class App(customtkinter.CTk):
                 starSpaceAmountSix = "00" + starSpaceAmountSix[2:]
             elif len(starSpaceAmountSix) == 3:
                 starSpaceAmountSix = "000" + starSpaceAmountSix[2:]
+
+            negativeRedSpaceAmountBaseSix = -int(starSpaceAmountSixBase)
+            starSpaceAmountNegativeSix = format(negativeRedSpaceAmountBaseSix & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
         except:
             starSpaceAmountSix = "DUMMY"
 
         marioPartySixBlueSpace = getBlueSpaceCodeSix(blueSpaceAmountSix)
         marioPartySixRedSpace = getRedSpaceCodeSix(redSpaceAmountSix)
-        marioPartySixStarSpace = getStarSpaceCodeSix(starSpaceAmountSix)
+        marioPartySixStarSpace = getStarSpaceCodeSix(starSpaceAmountSix, starSpaceAmountNegativeSix)
 
         if redSpaceAmountSix == "DUMMY":
             marioPartySixRedSpace = ""
@@ -939,6 +944,7 @@ class App(customtkinter.CTk):
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
         createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
+
     def actionSpaceButtonEight(self):
         if not self.blueSpaceAmountEight.get() and not self.redSpaceAmountEight.get() and not self.starSpaceAmountEight.get():
             createDialog("Error", "error", "No information provided.", None)
