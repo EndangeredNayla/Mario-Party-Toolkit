@@ -144,7 +144,7 @@ class App(customtkinter.CTk):
         self.redSpaceTickboxOne.grid(row=2, column=5, padx=10, pady=10)
 
         parseButtonOne = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonOne, text="Generate Codes")
-        parseButtonOne.place(x=345, y=660)
+        parseButtonOne.place(x=390, y=660)
 
         return frame
 
@@ -178,7 +178,7 @@ class App(customtkinter.CTk):
         self.redSpaceTickboxTwo.grid(row=2, column=5, padx=10, pady=10)
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonTwo, text="Generate Codes")
-        parseButtonTwo.place(x=345, y=660)
+        parseButtonTwo.place(x=390, y=660)
 
         return frame
 
@@ -211,7 +211,7 @@ class App(customtkinter.CTk):
         self.redSpaceTickboxThree = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="Double the coins on Last 5", width=16, checkbox_width=16, checkbox_height=16)
         self.redSpaceTickboxThree.grid(row=2, column=5, padx=10, pady=10)
         parseButtonThree = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonThree, text="Generate Codes")
-        parseButtonThree.place(x=345, y=660)
+        parseButtonThree.place(x=390, y=660)
         return frame
 
 
@@ -250,7 +250,7 @@ class App(customtkinter.CTk):
         starSpaceLabel4.grid(row=3, column=4, sticky="w")
 
         parseButtonFour = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonFour, text="Generate Codes")
-        parseButtonFour.place(x=345, y=660)
+        parseButtonFour.place(x=390, y=660)
         return frame
 
     def create_mp5_frame(self):
@@ -306,7 +306,7 @@ class App(customtkinter.CTk):
         chompSpaceLabel5.grid(row=5, column=4, sticky="w")
 
         parseButtonFive = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonFive, text="Generate Codes")
-        parseButtonFive.place(x=345, y=660)
+        parseButtonFive.place(x=390, y=660)
         return frame
 
     def create_mp6_frame(self):
@@ -353,7 +353,7 @@ class App(customtkinter.CTk):
         pinkBooSpaceLabel6.grid(row=4, column=4, sticky="w")
         
         parseButtonSix = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonSix, text="Generate Codes")
-        parseButtonSix.place(x=345, y=660)
+        parseButtonSix.place(x=390, y=660)
         return frame
 
     def create_mp7_frame(self):
@@ -739,12 +739,12 @@ class App(customtkinter.CTk):
         icon = create_image_icon(tabview.tab("Orb Modifiers"), "assets/koopaCapsule.png", 8, 15)
         label = ctk.CTkLabel(master=tabview.tab("Orb Modifiers"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=8, column=16)
-        self.tripleCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Modifiers"), width=48, font=("Arial", 16, "bold"))
-        self.tripleCapsulePrice7.grid(row=8, column=17)
+        self.koopaCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.koopaCapsulePrice7.grid(row=8, column=17)
         label = ctk.CTkLabel(master=tabview.tab("Orb Modifiers"), text=" and is ", font=("Arial", 16))
         label.grid(row=8, column=18)
-        self.tripleCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Modifiers"), width=48, font=("Arial", 16, "bold"))
-        self.tripleCapsuleWeight7.grid(row=8, column=19)
+        self.koopaCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.koopaCapsuleWeight7.grid(row=8, column=19)
         label = ctk.CTkLabel(master=tabview.tab("Orb Modifiers"), text=" % common.", font=("Arial", 16))
         label.grid(row=8, column=20)
 
@@ -785,10 +785,10 @@ class App(customtkinter.CTk):
         starSpaceLabel6.grid(row=4, column=4, sticky="w")
 
         parseButtonSeven = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonSeven, text="Generate Codes")
-        parseButtonSeven.place(x=345, y=660)
+        parseButtonSeven.place(x=390, y=660)
 
         parseButtonSevenOrbs = ctk.CTkButton(master=tabview.tab("Orb Modifiers"), command=self.actionSpaceButtonSevenOrb, text="Generate Codes")
-        parseButtonSevenOrbs.place(x=345, y=660)
+        parseButtonSevenOrbs.place(x=390, y=660)
         return frame
     
     def create_credits_frame(self):
@@ -842,7 +842,7 @@ class App(customtkinter.CTk):
         starSpaceLabel6.grid(row=3, column=4, sticky="w")
 
         parseButtonEight2 = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonEight2, text="Generate Codes")
-        parseButtonEight2.place(x=345, y=660)
+        parseButtonEight2.place(x=390, y=660)
         return frame
         
     def create_mp8_frame(self):
@@ -880,7 +880,7 @@ class App(customtkinter.CTk):
         starSpaceLabel6.grid(row=3, column=4, sticky="w")
 
         parseButtonEight = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonEight, text="Generate Codes")
-        parseButtonEight.place(x=345, y=660)
+        parseButtonEight.place(x=390, y=660)
         return frame
 
     def actionSpaceButtonOne(self):
@@ -1567,7 +1567,7 @@ class App(customtkinter.CTk):
         spinyCapsuleWeight7 = self.spinyCapsuleWeight7.get()
 
         zapCapsulePrice7 = self.zapCapsulePrice7.get()
-        zapCapsulePrice7 = self.zapCapsulePrice7.get()
+        zapCapsuleWeight7 = self.zapCapsuleWeight7.get()
 
         tweesterCapsulePrice7 = self.tweesterCapsulePrice7.get()
         tweesterCapsuleWeight7 = self.tweesterCapsuleWeight7.get()
@@ -1582,7 +1582,7 @@ class App(customtkinter.CTk):
         bombCapsuleWeight7 = self.bombCapsuleWeight7.get()
 
         fireballCapsulePrice7 = self.fireballCapsulePrice7.get()
-        fireballCapsulePrice7 = self.fireballCapsulePrice7.get()
+        fireballCapsuleWeight7 = self.fireballCapsuleWeight7.get()
 
         flowerCapsulePrice7 = self.flowerCapsulePrice7.get()
         flowerCapsuleWeight7 = self.flowerCapsuleWeight7.get()
@@ -1590,19 +1590,19 @@ class App(customtkinter.CTk):
         eggCapsulePrice7 = self.eggCapsulePrice7.get()
         eggCapsuleWeight7 = self.eggCapsuleWeight7.get()
 
-        vaccumCapsulePrice7 = self.vaccumCapsulePrice7.get()
-        vaccumCapsuleWeight7 = self.vaccumCapsuleWeight7.get()
+        vacuumCapsulePrice7 = self.vacuumCapsulePrice7.get()
+        vacuumCapsuleWeight7 = self.vacuumCapsuleWeight7.get()
 
         magicCapsulePrice7 = self.magicCapsulePrice7.get()
         magicCapsuleWeight7 = self.magicCapsuleWeight7.get()
 
         tripleCapsulePrice7 = self.tripleCapsulePrice7.get()
-        triplelCapsulePrice7 = self.tripleCapsulePrice7.get()
+        tripleCapsuleWeight7 = self.tripleCapsuleWeight7.get()
 
         koopaCapsulePrice7 = self.koopaCapsulePrice7.get()
         koopaCapsuleWeight7 = self.koopaCapsuleWeight7.get()
 
-        orbWeightTotal = int(mushroomCapsuleWeight7) + int(goldenMushroomCapsuleWeight7) + int(metalMushroomCapsuleWeight7) + int(slowMushroomCapsuleWeight7) + int(flutterCapsuleWeight7) + int(cannonCapsuleWeight7) + int(snackCapsuleWeight7) + int(lakituCapsuleWeight7) + int(hammerBroCapsuleWeight7) + int(plantCapsuleWeight7) + int(spearCapsuleWeight7) + int(kamekCapsuleWeight7) + int(toadyCapsuleWeight7) + int(blizzardCapsuleWeight7) + int(banditCapsuleWeight7) + int(pinkBooCapsuleWeight7) + int(spinyCapsuleWeight7) + int(zapCapsuleWeight7) + int(tweesterCapsuleWeight7) + int(thwompCapsuleWeight7) + int(warpCapsuleWeight7) + int(bombCapsuleWeight7) + int(fireballCapsuleWeight7) + int(flowerCapsulePrice7) + int(eggCapsuleWeight7) + int(vaccumCapsuleWeight7) + int(magicCapsuleWeight7) + int(tripleCapsuleWeight7) + int(koopaCapsuleWeight7)
+        orbWeightTotal = int(mushroomCapsuleWeight7) + int(goldenMushroomCapsuleWeight7) + int(metalMushroomCapsuleWeight7) + int(slowMushroomCapsuleWeight7) + int(flutterCapsuleWeight7) + int(cannonCapsuleWeight7) + int(snackCapsuleWeight7) + int(lakituCapsuleWeight7) + int(hammerBroCapsuleWeight7) + int(plantCapsuleWeight7) + int(spearCapsuleWeight7) + int(kamekCapsuleWeight7) + int(toadyCapsuleWeight7) + int(blizzardCapsuleWeight7) + int(banditCapsuleWeight7) + int(pinkBooCapsuleWeight7) + int(spinyCapsuleWeight7) + int(zapCapsuleWeight7) + int(tweesterCapsuleWeight7) + int(thwompCapsuleWeight7) + int(warpCapsuleWeight7) + int(bombCapsuleWeight7) + int(fireballCapsuleWeight7) + int(flowerCapsulePrice7) + int(eggCapsuleWeight7) + int(vacuumCapsuleWeight7) + int(magicCapsuleWeight7) + int(tripleCapsuleWeight7) + int(koopaCapsuleWeight7)
 
         mushroomCapsuleWeight7 = (int(mushroomCapsuleWeight7) / orbWeightTotal) * 100
         goldenMushroomCapsuleWeight7 = (int(goldenMushroomCapsuleWeight7) / orbWeightTotal) * 100
@@ -1618,9 +1618,9 @@ class App(customtkinter.CTk):
         kamekCapsuleWeight7 = (int(kamekCapsuleWeight7) / orbWeightTotal) * 100
         toadyCapsuleWeight7 = (int(toadyCapsuleWeight7) / orbWeightTotal) * 100
         blizzardCapsuleWeight7 = (int(blizzardCapsuleWeight7) / orbWeightTotal) * 100
-        banditMushroomCapsuleWeight7 = (int(banditMushroomCapsuleWeight7) / orbWeightTotal) * 100
+        banditCapsuleWeight7 = (int(banditCapsuleWeight7) / orbWeightTotal) * 100
         pinkBooCapsuleWeight7 = (int(pinkBooCapsuleWeight7) / orbWeightTotal) * 100
-        spinCapsuleWeight7 = (int(spinCapsuleWeight7) / orbWeightTotal) * 100
+        spinyCapsuleWeight7 = (int(spinyCapsuleWeight7) / orbWeightTotal) * 100
         zapCapsuleWeight7 = (int(zapCapsuleWeight7) / orbWeightTotal) * 100
         tweesterCapsuleWeight7 = (int(tweesterCapsuleWeight7) / orbWeightTotal) * 100
         thwompCapsuleWeight7 = (int(thwompCapsuleWeight7) / orbWeightTotal) * 100
@@ -1629,7 +1629,7 @@ class App(customtkinter.CTk):
         fireballCapsuleWeight7 = (int(fireballCapsuleWeight7) / orbWeightTotal) * 100
         flowerCapsuleWeight7 = (int(flowerCapsuleWeight7) / orbWeightTotal) * 100
         eggCapsuleWeight7 = (int(eggCapsuleWeight7) / orbWeightTotal) * 100
-        vaccumCapsuleWeight7 = (int(vaccumCapsuleWeight7) / orbWeightTotal) * 100
+        vacuumCapsuleWeight7 = (int(vacuumCapsuleWeight7) / orbWeightTotal) * 100
         magicCapsuleWeight7 = (int(magicCapsuleWeight7) / orbWeightTotal) * 100
         tripleCapsuleWeight7 = (int(tripleCapsuleWeight7) / orbWeightTotal) * 100
         koopaCapsuleWeight7 = (int(koopaCapsuleWeight7) / orbWeightTotal) * 100
@@ -2076,22 +2076,22 @@ class App(customtkinter.CTk):
             eggCapsulePrice7 = "00"
 
         try:
-            vaccumCapsuleWeight7 = hex(int(vaccumCapsuleWeight7))
-            if len(vaccumCapsuleWeight7) == 4:
-                vaccumCapsuleWeight7 = vaccumCapsuleWeight7[2:]
-            elif len(vaccumCapsuleWeight7) == 3:
-                vaccumCapsuleWeight7 = "0" + vaccumCapsuleWeight7[2:]
+            vacuumCapsuleWeight7 = hex(int(vacuumCapsuleWeight7))
+            if len(vacuumCapsuleWeight7) == 4:
+                vacuumCapsuleWeight7 = vacuumCapsuleWeight7[2:]
+            elif len(vacuumCapsuleWeight7) == 3:
+                vacuumCapsuleWeight7 = "0" + vacuumCapsuleWeight7[2:]
         except:
-            vaccumCapsuleWeight7 = "00"
+            vacuumCapsuleWeight7 = "00"
 
         try:
-            vaccumCapsulePrice7 = hex(int(vaccumCapsulePrice7))
-            if len(vaccumCapsulePrice7) == 4:
-                vaccumCapsulePrice7 = vaccumCapsulePrice7[2:]
-            elif len(vaccumCapsulePrice7) == 3:
-                vaccumCapsulePrice7 = "0" + vaccumCapsulePrice7[2:]
+            vacuumCapsulePrice7 = hex(int(vacuumCapsulePrice7))
+            if len(vacuumCapsulePrice7) == 4:
+                vacuumCapsulePrice7 = vacuumCapsulePrice7[2:]
+            elif len(vacuumCapsulePrice7) == 3:
+                vacuumCapsulePrice7 = "0" + vacuumCapsulePrice7[2:]
         except:
-            vaccumCapsulePrice7 = "00"
+            vacuumCapsulePrice7 = "00"
 
         try:
             magicCapsuleWeight7 = hex(int(magicCapsuleWeight7))
@@ -2147,7 +2147,7 @@ class App(customtkinter.CTk):
         except:
             koopaCapsulePrice7 = "00"
 
-        generatedCode = getOrbModsSeven(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, ThwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vaccumCapsulePrice7, vaccumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7)
+        generatedCode = getOrbModsSeven(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7)
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
 
