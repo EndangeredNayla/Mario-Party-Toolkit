@@ -134,24 +134,24 @@ class App(customtkinter.CTk):
 
         # Create blue space icon and entry, and tickbox
         blueSpaceIconOne = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
-        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Give  ", font=("Arial", 18))
         blueSpaceLabel.grid(row=1, column=2)
         self.blueSpaceAmountOne = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.blueSpaceAmountOne.grid(row=1, column=3)
-        blueSpaceLabel1 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        blueSpaceLabel1 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Blue Space.", font=("Arial", 18))
         blueSpaceLabel1.grid(row=1, column=4)
-        self.blueSpaceTickboxOne = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
+        self.blueSpaceTickboxOne = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="Double the coins on Last 5", width=16, checkbox_width=16, checkbox_height=16)
         self.blueSpaceTickboxOne.grid(row=1, column=5, padx=10, pady=10)
         
         # Create red space icon and entry, and tickbox
         redSpaceIconOne = create_image_icon(tabview.tab("Space Modifiers"), "assets/redSpace.png", 2, 1)
-        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Lose  ", font=("Arial", 18))
         redSpaceLabel.grid(row=2, column=2)
         self.redSpaceAmountOne = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.redSpaceAmountOne.grid(row=2, column=3)
-        redSpaceLabel1 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        redSpaceLabel1 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Red Space.", font=("Arial", 18))
         redSpaceLabel1.grid(row=2, column=4)
-        self.redSpaceTickboxOne = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
+        self.redSpaceTickboxOne = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="Double the coins on Last 5", width=16, checkbox_width=16, checkbox_height=16)
         self.redSpaceTickboxOne.grid(row=2, column=5, padx=10, pady=10)
 
         parseButtonOne = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonOne, text="Generate Codes")
@@ -168,24 +168,24 @@ class App(customtkinter.CTk):
 
         # Create blue space icon and entry, and tickbox
         blueSpaceIconTwo = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
-        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Give  ", font=("Arial", 18))
         blueSpaceLabel.grid(row=1, column=2)
         self.blueSpaceAmountTwo = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.blueSpaceAmountTwo.grid(row=1, column=3)
-        blueSpaceLabel2 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        blueSpaceLabel2 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Blue Space.", font=("Arial", 18))
         blueSpaceLabel2.grid(row=1, column=4)
-        self.blueSpaceTickboxTwo = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
+        self.blueSpaceTickboxTwo = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="Double the coins on Last 5", width=16, checkbox_width=16, checkbox_height=16)
         self.blueSpaceTickboxTwo.grid(row=1, column=5, padx=10, pady=10)
 
         # Create red space icon and entry, and tickbox
         redSpaceIconTwo = create_image_icon(tabview.tab("Space Modifiers"), "assets/redSpace.png", 2, 1)
-        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Lose  ", font=("Arial", 18))
         redSpaceLabel.grid(row=2, column=2)
         self.redSpaceAmountTwo = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.redSpaceAmountTwo.grid(row=2, column=3)
-        redSpaceLabel2 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        redSpaceLabel2 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Red Space.", font=("Arial", 18))
         redSpaceLabel2.grid(row=2, column=4)
-        self.redSpaceTickboxTwo = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
+        self.redSpaceTickboxTwo = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="Double the coins on Last 5", width=16, checkbox_width=16, checkbox_height=16)
         self.redSpaceTickboxTwo.grid(row=2, column=5, padx=10, pady=10)
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonTwo, text="Generate Codes")
@@ -202,24 +202,24 @@ class App(customtkinter.CTk):
 
         # Create blue space icon and entry, and tickbox
         blueSpaceIconThree = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
-        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Give  ", font=("Arial", 18))
         blueSpaceLabel.grid(row=1, column=2)
         self.blueSpaceAmountThree = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.blueSpaceAmountThree.grid(row=1, column=3)
-        blueSpaceLabel3 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        blueSpaceLabel3 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Blue Space.", font=("Arial", 18))
         blueSpaceLabel3.grid(row=1, column=4)
-        self.blueSpaceTickboxThree = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
+        self.blueSpaceTickboxThree = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="Double the coins on Last 5", width=16, checkbox_width=16, checkbox_height=16)
         self.blueSpaceTickboxThree.grid(row=1, column=5, padx=10, pady=10)
 
         # Create red space icon and entry, and tickbox
         redSpaceIconThree = create_image_icon(tabview.tab("Space Modifiers"), "assets/redSpace.png", 2, 1)
-        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Lose  ", font=("Arial", 18))
         redSpaceLabel.grid(row=2, column=2)
         self.redSpaceAmountThree = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.redSpaceAmountThree.grid(row=2, column=3)
-        redSpaceLabel3 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        redSpaceLabel3 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Red Space.", font=("Arial", 18))
         redSpaceLabel3.grid(row=2, column=4)
-        self.redSpaceTickboxThree = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
+        self.redSpaceTickboxThree = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="Double the coins on Last 5", width=16, checkbox_width=16, checkbox_height=16)
         self.redSpaceTickboxThree.grid(row=2, column=5, padx=10, pady=10)
         parseButtonThree = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonThree, text="Generate Codes")
         parseButtonThree.place(x=345, y=530)
@@ -235,30 +235,30 @@ class App(customtkinter.CTk):
 
         # Create blue space icon and entry
         blueSpaceIconFour = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
-        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Give  ", font=("Arial", 18))
         blueSpaceLabel.grid(row=1, column=2)
         self.blueSpaceAmountFour = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.blueSpaceAmountFour.grid(row=1, column=3)
-        blueSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        blueSpaceLabel4.grid(row=1, column=4)
+        blueSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Blue Space.", font=("Arial", 18))
+        blueSpaceLabel4.grid(row=1, column=4, sticky="w")
 
         # Create red space icon and entry
         redSpaceIconFour = create_image_icon(tabview.tab("Space Modifiers"), "assets/redSpace.png", 2, 1)
-        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Lose  ", font=("Arial", 18))
         redSpaceLabel.grid(row=2, column=2)
         self.redSpaceAmountFour = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.redSpaceAmountFour.grid(row=2, column=3)
-        redSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        redSpaceLabel4.grid(row=2, column=4)
+        redSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Red Space.", font=("Arial", 18))
+        redSpaceLabel4.grid(row=2, column=4, sticky="w")
 
         # Create star space icon and entry
         starSpaceIconFour = create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpace.png", 3, 1)
-        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Costs  ", font=("Arial", 18))
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 18))
         starSpaceLabel.grid(row=3, column=2)
         self.starSpaceAmountFour = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.starSpaceAmountFour.grid(row=3, column=3)
-        starSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        starSpaceLabel4.grid(row=3, column=4)
+        starSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when passing and using a Magic Lamp.", font=("Arial", 18))
+        starSpaceLabel4.grid(row=3, column=4, sticky="w")
 
         parseButtonFour = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonFour, text="Generate Codes")
         parseButtonFour.place(x=345, y=530)
@@ -273,39 +273,48 @@ class App(customtkinter.CTk):
 
         # Create blue space icon and entry
         blueSpaceIconFive = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
-        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gain  ", font=("Arial", 18))
         blueSpaceLabel.grid(row=1, column=2)
         self.blueSpaceAmountFive = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.blueSpaceAmountFive.grid(row=1, column=3)
-        blueSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        blueSpaceLabel4.grid(row=1, column=4)
+        blueSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Blue Space.", font=("Arial", 18))
+        blueSpaceLabel4.grid(row=1, column=4, sticky="w")
 
         # Create red space icon and entry
         redSpaceIconFive = create_image_icon(tabview.tab("Space Modifiers"), "assets/redSpace.png", 2, 1)
-        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Lose  ", font=("Arial", 18))
         redSpaceLabel.grid(row=2, column=2)
         self.redSpaceAmountFive = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.redSpaceAmountFive.grid(row=2, column=3)
-        redSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        redSpaceLabel5.grid(row=2, column=4)
+        redSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Red Space.", font=("Arial", 18))
+        redSpaceLabel5.grid(row=2, column=4, sticky="w")
 
         # Create star space icon and entry
         starSpaceIconFive = create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpace.png", 3, 1)
-        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Costs  ", font=("Arial", 18))
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 18))
         starSpaceLabel.grid(row=3, column=2)
         self.starSpaceAmountFive = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.starSpaceAmountFive.grid(row=3, column=3)
-        starSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        starSpaceLabel5.grid(row=3, column=4)
+        starSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when passing a Star Space.", font=("Arial", 18))
+        starSpaceLabel5.grid(row=3, column=4, sticky="w")
 
         # Create wiggler space icon and entry
         wigglerSpaceIconFive = create_image_icon(tabview.tab("Space Modifiers"), "assets/wigglerCapsule.png", 4, 1)
-        wigglerSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Costs  ", font=("Arial", 18))
+        wigglerSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 18))
         wigglerSpaceLabel.grid(row=4, column=2)
         self.wigglerSpaceAmountFive = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.wigglerSpaceAmountFive.grid(row=4, column=3)
-        wigglerSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        wigglerSpaceLabel5.grid(row=4, column=4)
+        wigglerSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins to use Wiggler.", font=("Arial", 18))
+        wigglerSpaceLabel5.grid(row=4, column=4, sticky="w")
+
+        # Create chain chomp space icon and entry
+        chompSpaceIconFive = create_image_icon(tabview.tab("Space Modifiers"), "assets/chainChomp.png", 5, 1)
+        chompSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 18))
+        chompSpaceLabel.grid(row=5, column=2)
+        self.chompSpaceAmountFive = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.chompSpaceAmountFive.grid(row=5, column=3)
+        chompSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins to steal a Star.", font=("Arial", 18))
+        chompSpaceLabel5.grid(row=5, column=4, sticky="w")
 
         parseButtonFive = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonFive, text="Generate Codes")
         parseButtonFive.place(x=345, y=530)
@@ -320,30 +329,39 @@ class App(customtkinter.CTk):
 
         # Create blue space icon and entry
         blueSpaceIconSix = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
-        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Give  ", font=("Arial", 18))
         blueSpaceLabel.grid(row=1, column=2)
         self.blueSpaceAmountSix = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.blueSpaceAmountSix.grid(row=1, column=3)
-        blueSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        blueSpaceLabel4.grid(row=1, column=4)
+        blueSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Blue Space.", font=("Arial", 18))
+        blueSpaceLabel4.grid(row=1, column=4, sticky="w")
 
         # Create red space icon and entry
         redSpaceIconSix = create_image_icon(tabview.tab("Space Modifiers"), "assets/redSpace.png", 2, 1)
-        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Lose  ", font=("Arial", 18))
         redSpaceLabel.grid(row=2, column=2)
         self.redSpaceAmountSix = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.redSpaceAmountSix.grid(row=2, column=3)
-        redSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        redSpaceLabel6.grid(row=2, column=4)
+        redSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Red Space.", font=("Arial", 18))
+        redSpaceLabel6.grid(row=2, column=4, sticky="w")
 
         # Create star space icon and entry
         starSpaceIconSix = create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpace.png", 3, 1)
-        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Costs  ", font=("Arial", 18))
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 18))
         starSpaceLabel.grid(row=3, column=2)
         self.starSpaceAmountSix = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.starSpaceAmountSix.grid(row=3, column=3)
-        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        starSpaceLabel6.grid(row=3, column=4)
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when passing and using a Flutter.", font=("Arial", 18))
+        starSpaceLabel6.grid(row=3, column=4, sticky="w")
+
+        # Create boo space icon and entry
+        pinkBooSpaceIconSix = create_image_icon(tabview.tab("Space Modifiers"), "assets/pinkBoo.png", 4, 1)
+        pinkBooSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 18))
+        pinkBooSpaceLabel.grid(row=4, column=2)
+        self.pinkBooSpaceAmountSix = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.pinkBooSpaceAmountSix.grid(row=4, column=3)
+        pinkBooSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when stealing a Star.", font=("Arial", 18))
+        pinkBooSpaceLabel6.grid(row=4, column=4, sticky="w")
         
         parseButtonSix = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonSix, text="Generate Codes")
         parseButtonSix.place(x=345, y=530)
@@ -354,43 +372,44 @@ class App(customtkinter.CTk):
         tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
         tabview.pack(padx=20, pady=20)
         tabview.add("Space Modifiers")
+        tabview.add("Orb Modifiers")
         tabview.set("Space Modifiers")
 
         # Create blue space icon and entry
         blueSpaceIconSeven = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
-        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Give  ", font=("Arial", 18))
         blueSpaceLabel.grid(row=1, column=2)
         self.blueSpaceAmountSeven = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.blueSpaceAmountSeven.grid(row=1, column=3)
-        blueSpaceLabel7 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        blueSpaceLabel7.grid(row=1, column=4)
+        blueSpaceLabel7 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Blue Space.", font=("Arial", 18))
+        blueSpaceLabel7.grid(row=1, column=4, sticky="w")
 
         # Create red space icon and entry
         redSpaceIconSeven = create_image_icon(tabview.tab("Space Modifiers"), "assets/redSpace.png", 2, 1)
-        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Lose  ", font=("Arial", 18))
         redSpaceLabel.grid(row=2, column=2)
         self.redSpaceAmountSeven = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.redSpaceAmountSeven.grid(row=2, column=3)
-        redSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        redSpaceLabel6.grid(row=2, column=4)
+        redSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Red Space.", font=("Arial", 18))
+        redSpaceLabel6.grid(row=2, column=4, sticky="w")
 
         # Create star space icon and entry
         starSpaceIconSeven= create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpace.png", 3, 1)
-        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Costs  ", font=("Arial", 18))
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 18))
         starSpaceLabel.grid(row=3, column=2)
         self.starSpaceAmountSeven = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.starSpaceAmountSeven.grid(row=3, column=3)
-        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        starSpaceLabel6.grid(row=3, column=4)
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when passing or when using a Flutter.", font=("Arial", 18))
+        starSpaceLabel6.grid(row=3, column=4, sticky="w")
 
         # Create star space last five icon and entry
         starSpaceIconSeven= create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpaceLastFive.png", 4, 1)
-        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Costs  ", font=("Arial", 18))
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 18))
         starSpaceLabel.grid(row=4, column=2)
         self.starSpaceAmountSevenLastFive = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.starSpaceAmountSevenLastFive.grid(row=4, column=3)
-        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        starSpaceLabel6.grid(row=4, column=4)
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins during the Last 5 Turns Event (only if wheel lands on it).", font=("Arial", 18))
+        starSpaceLabel6.grid(row=4, column=4, sticky="w")
 
         parseButtonSeven = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonSeven, text="Generate Codes")
         parseButtonSeven.place(x=345, y=530)
@@ -421,30 +440,30 @@ class App(customtkinter.CTk):
 
         # Create blue space icon and entry
         blueSpaceIconEight2 = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
-        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Give  ", font=("Arial", 18))
         blueSpaceLabel.grid(row=1, column=2)
         self.blueSpaceAmountEight2 = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.blueSpaceAmountEight2.grid(row=1, column=3)
-        blueSpaceLabel28 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        blueSpaceLabel28.grid(row=1, column=4)
+        blueSpaceLabel28 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Blue Space.", font=("Arial", 18))
+        blueSpaceLabel28.grid(row=1, column=4, sticky="w")
 
         # Create red space icon and entry
         redSpaceIconEight2 = create_image_icon(tabview.tab("Space Modifiers"), "assets/redSpace.png", 2, 1)
-        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Lose  ", font=("Arial", 18))
         redSpaceLabel.grid(row=2, column=2)
         self.redSpaceAmountEight2 = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.redSpaceAmountEight2.grid(row=2, column=3)
-        redSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        redSpaceLabel6.grid(row=2, column=4)
+        redSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Red Space.", font=("Arial", 18))
+        redSpaceLabel6.grid(row=2, column=4, sticky="w")
 
         # Create star space icon and entry
         starSpaceIconEight2= create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpace.png", 3, 1)
-        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Costs  ", font=("Arial", 18))
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 18))
         starSpaceLabel.grid(row=3, column=2)
         self.starSpaceAmountEight2 = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.starSpaceAmountEight2.grid(row=3, column=3)
-        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        starSpaceLabel6.grid(row=3, column=4)
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when passing.", font=("Arial", 18))
+        starSpaceLabel6.grid(row=3, column=4, sticky="w")
 
         parseButtonEight2 = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonEight2, text="Generate Codes")
         parseButtonEight2.place(x=345, y=530)
@@ -459,30 +478,30 @@ class App(customtkinter.CTk):
 
         # Create blue space icon and entry
         blueSpaceIconEight = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
-        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Give  ", font=("Arial", 18))
         blueSpaceLabel.grid(row=1, column=2)
         self.blueSpaceAmountEight = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.blueSpaceAmountEight.grid(row=1, column=3)
-        blueSpaceLabel8 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        blueSpaceLabel8.grid(row=1, column=4)
+        blueSpaceLabel8 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Blue Space.", font=("Arial", 18))
+        blueSpaceLabel8.grid(row=1, column=4, sticky="w")
 
         # Create red space icon and entry
         redSpaceIconEight = create_image_icon(tabview.tab("Space Modifiers"), "assets/redSpace.png", 2, 1)
-        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Lose  ", font=("Arial", 18))
         redSpaceLabel.grid(row=2, column=2)
         self.redSpaceAmountEight = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.redSpaceAmountEight.grid(row=2, column=3)
-        redSpaceLabel8 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        redSpaceLabel8.grid(row=2, column=4)
+        redSpaceLabel8 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Red Space.", font=("Arial", 18))
+        redSpaceLabel8.grid(row=2, column=4, sticky="w")
 
         # Create star space icon and entry
         starSpaceIconEight= create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpace.png", 3, 1)
-        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Costs  ", font=("Arial", 18))
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 18))
         starSpaceLabel.grid(row=3, column=2)
         self.starSpaceAmountEight = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
         self.starSpaceAmountEight.grid(row=3, column=3)
-        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
-        starSpaceLabel6.grid(row=3, column=4)
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when passing.", font=("Arial", 18))
+        starSpaceLabel6.grid(row=3, column=4, sticky="w")
 
         parseButtonEight = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonEight, text="Generate Codes")
         parseButtonEight.place(x=345, y=530)
@@ -775,6 +794,22 @@ class App(customtkinter.CTk):
 
         wigglerSpaceAmountFiveBase = self.wigglerSpaceAmountFive.get()
 
+        chompSpaceAmountFiveBase = self.chompSpaceAmountFive.get()
+
+        try:
+            chompSpaceAmountFive = hex(int(self.chompSpaceAmountFive.get()))
+            if len(chompSpaceAmountFive) == 4:
+                chompSpaceAmountFive = "00" + chompSpaceAmountFive[2:]
+            elif len(chompSpaceAmountFive) == 3:
+                chompSpaceAmountFive = "000" + chompSpaceAmountFive[2:]
+
+            negativeChompSpaceAmountBaseFive = -int(chompSpaceAmountFiveBase)
+            chompSpaceAmountNegativeFive = format(negativeChompSpaceAmountBaseFive & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+
+        except:
+            chompSpaceAmountFive = "DUMMY"
+            chompSpaceAmountNegativeFive = "DUMMY"
+
         try:
             wigglerSpaceAmountFive = hex(int(self.wigglerSpaceAmountFive.get()))
             if len(wigglerSpaceAmountFive) == 4:
@@ -782,8 +817,8 @@ class App(customtkinter.CTk):
             elif len(wigglerSpaceAmountFive) == 3:
                 wigglerSpaceAmountFive = "000" + wigglerSpaceAmountFive[2:]
 
-            negativeRedSpaceAmountBaseFive = -int(wigglerSpaceAmountFiveBase)
-            wigglerSpaceAmountNegativeFive = format(negativeRedSpaceAmountBaseFive & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+            negativeWigglerSpaceAmountBaseFive = -int(wigglerSpaceAmountFiveBase)
+            wigglerSpaceAmountNegativeFive = format(negativeWigglerSpaceAmountBaseFive & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
 
         except:
             wigglerSpaceAmountFive = "DUMMY"
@@ -791,6 +826,7 @@ class App(customtkinter.CTk):
 
         marioPartyFiveStarSpace = getStarSpaceCodeFive(starSpaceAmountFive, starSpaceAmountNegativeFive)
         marioPartyFiveWigglerSpace = getWigglerSpaceCodeFive(wigglerSpaceAmountFive, wigglerSpaceAmountNegativeFive)
+        marioPartyFiveChompSpace = getChompSpaceCodeFive(chompSpaceAmountFive, chompSpaceAmountNegativeFive)
         marioPartyFiveBlueSpace = getBlueSpaceCodeFive(blueSpaceAmountFive)
         marioPartyFiveRedSpace = getRedSpaceCodeFive(redSpaceAmountFive)
 
@@ -806,19 +842,24 @@ class App(customtkinter.CTk):
             marioPartyFiveWigglerSpace = ""
         if wigglerSpaceAmountNegativeFive == "DUMMY":
             marioPartyFiveWigglerSpace = ""
+        if chompSpaceAmountFive == "DUMMY":
+            marioPartyFiveChompSpace = ""
+        if chompSpaceAmountNegativeFive == "DUMMY":
+            marioPartyFiveChompSpace = ""
 
-        generatedCode = marioPartyFiveRedSpace + marioPartyFiveBlueSpace + marioPartyFiveStarSpace + marioPartyFiveWigglerSpace
+        generatedCode = marioPartyFiveRedSpace + marioPartyFiveBlueSpace + marioPartyFiveStarSpace + marioPartyFiveWigglerSpace + marioPartyFiveChompSpace
         generatedCode = generatedCode.replace("FIVERED", redSpaceAmountBaseFive)
         generatedCode = generatedCode.replace("FIVEBLUE", blueSpaceAmountBaseFive)
         generatedCode = generatedCode.replace("FIVESTAR", starSpaceAmountFiveBase)
         generatedCode = generatedCode.replace("FIVEWIGGLER", wigglerSpaceAmountFiveBase)
+        generatedCode = generatedCode.replace("FIVECHOMP", chompSpaceAmountFiveBase)
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
         createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
 
     def actionSpaceButtonSix(self):
-        if not self.blueSpaceAmountSix.get() and not self.redSpaceAmountSix.get() and not self.starSpaceAmountSix.get():
+        if not self.blueSpaceAmountSix.get() and not self.redSpaceAmountSix.get() and not self.starSpaceAmountSix.get() and not self.pinkBooSpaceAmountSix.get():
             createDialog("Error", "error", "No information provided.", None)
             return
 
@@ -854,10 +895,26 @@ class App(customtkinter.CTk):
             starSpaceAmountNegativeSix = format(negativeRedSpaceAmountBaseSix & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
         except:
             starSpaceAmountSix = "DUMMY"
+            starSpaceAmountNegativeSix = "DUMMY"
+
+        pinkBooSpaceAmountSixBase = self.pinkBooSpaceAmountSix.get()
+        try:
+            pinkBooSpaceAmountSix = hex(int(self.pinkBooSpaceAmountSix.get()))
+            if len(pinkBooSpaceAmountSix) == 4:
+                pinkBooSpaceAmountSix = "00" + pinkBooSpaceAmountSix[2:]
+            elif len(pinkBooSpaceAmountSix) == 3:
+                pinkBooSpaceAmountSix = "000" + pinkBooSpaceAmountSix[2:]
+
+            pinkBooSpaceAmountBaseNegativeSix = -int(pinkBooSpaceAmountSixBase)
+            pinkBooSpaceAmountNegativeSix = format(pinkBooSpaceAmountBaseNegativeSix & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+        except:
+            pinkBooSpaceAmountSix = "DUMMY"
+            pinkBooSpaceAmountNegativeSix = "DUMMY"
 
         marioPartySixBlueSpace = getBlueSpaceCodeSix(blueSpaceAmountSix)
         marioPartySixRedSpace = getRedSpaceCodeSix(redSpaceAmountSix)
         marioPartySixStarSpace = getStarSpaceCodeSix(starSpaceAmountSix, starSpaceAmountNegativeSix)
+        marioPartySixPinkBooSpace = getPinkBooSpaceCodeSix(pinkBooSpaceAmountSix, pinkBooSpaceAmountNegativeSix)
 
         if redSpaceAmountSix == "DUMMY":
             marioPartySixRedSpace = ""
@@ -865,11 +922,18 @@ class App(customtkinter.CTk):
             marioPartySixBlueSpace = ""
         if starSpaceAmountSix == "DUMMY":
             marioPartySixStarSpace = ""
-
-        generatedCode = marioPartySixRedSpace + marioPartySixBlueSpace + marioPartySixStarSpace
+        if starSpaceAmountNegativeSix == "DUMMY":
+            marioPartySixStarSpace = ""
+        if pinkBooSpaceAmountSix == "DUMMY":
+            marioPartySixPinkBooSpace = ""
+        if pinkBooSpaceAmountNegativeSix == "DUMMY":
+            marioPartySixPinkBooSpace = ""
+        
+        generatedCode = marioPartySixRedSpace + marioPartySixBlueSpace + marioPartySixStarSpace + marioPartySixPinkBooSpace
         generatedCode = generatedCode.replace("SIXRED", redSpaceAmountBaseSix)
         generatedCode = generatedCode.replace("SIXBLUE", blueSpaceAmountBaseSix)
         generatedCode = generatedCode.replace("SIXSTAR", starSpaceAmountSixBase)
+        generatedCode = generatedCode.replace("SIXBOO", pinkBooSpaceAmountSixBase)
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
@@ -1008,6 +1072,7 @@ class App(customtkinter.CTk):
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
         createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
+
     def actionSpaceButtonEight2(self):
         if not self.blueSpaceAmountEight2.get() and not self.redSpaceAmountEight2.get() and not self.starSpaceAmountEight2.get():
             createDialog("Error", "error", "No information provided.", None)

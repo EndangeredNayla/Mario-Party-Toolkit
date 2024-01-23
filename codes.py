@@ -134,7 +134,7 @@ MP5 - Red Spaces Take Away FIVERED Coins
 
 def getStarSpaceCodeFive(amount, negAmount):
     return f'''
-MP5 - Stars Cost FIVEWIGGLER Coins from Wiggler
+MP5 - Stars Cost FIVESTAR Coins
 C20AFDB0 00000001
 2C03{amount} 00000000
 C20AFF9C 00000001
@@ -144,10 +144,19 @@ C20AFF9C 00000001
 
 def getWigglerSpaceCodeFive(amount, negAmount):
     return f'''
-MP5 - Stars Cost FIVESTAR Coins
+MP5 - Stars Cost FIVEWIGGLER Coins from Wiggler
 C20DB528 00000001
 2C03{amount} 00000000
 C20DBB40 00000001
+3880{negAmount} 00000000
+'''
+
+def getChompSpaceCodeFive(amount, negAmount):
+    return f'''
+MP5 - Stars Cost FIVECHOMP Coins when stealing with Chain Chomp
+C20F5F34 00000001
+2C03{amount} 00000000
+C20F630C 00000001
 3880{negAmount} 00000000
 '''
 
@@ -175,6 +184,15 @@ MP6 - Stars Cost SIXSTAR Coins
 C2183590 00000002
 3880{amount} 7C8400D0
 60000000 00000000
+'''
+
+def getPinkBooSpaceCodeSix(amount, negAmount):
+    return f'''
+MP5 - Stars Cost SIXBOO Coins when stealing with Pink Boo
+C21B1FB4 00000001
+2C04{amount} 00000000
+C21B2634 00000001
+3880{negAmount} 00000000
 '''
 
 def getBlueSpaceCodeSeven(amount):
