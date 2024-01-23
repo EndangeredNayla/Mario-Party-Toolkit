@@ -490,7 +490,7 @@ class App(customtkinter.CTk):
 
     def actionSpaceButtonOne(self):
         if not self.blueSpaceAmountOne.get() and not self.redSpaceAmountOne.get():
-            createDialog("Error", "error", "No information provided.")
+            createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseOne = self.blueSpaceAmountOne.get()
@@ -548,11 +548,10 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
-
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
     def actionSpaceButtonTwo(self):
         if not self.blueSpaceAmountTwo.get() and not self.redSpaceAmountTwo.get():
-            createDialog("Error", "error", "No information provided.")
+            createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseTwo = self.blueSpaceAmountTwo.get()
@@ -610,11 +609,10 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
-
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
     def actionSpaceButtonThree(self):
         if not self.blueSpaceAmountThree.get() and not self.redSpaceAmountThree.get():
-            createDialog("Error", "error", "No information provided.")
+            createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseThree = self.blueSpaceAmountThree.get()
@@ -672,11 +670,10 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
-
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
     def actionSpaceButtonFour(self):    
         if not self.blueSpaceAmountFour.get() and not self.redSpaceAmountFour.get() and not self.starSpaceAmountFour.get():
-            createDialog("Error", "error", "No information provided.")
+            createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseFour = self.blueSpaceAmountFour.get()
@@ -733,11 +730,10 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
-
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
     def actionSpaceButtonFive(self):
         if not self.blueSpaceAmountFive.get() and not self.redSpaceAmountFive.get() and not self.starSpaceAmountFive.get() and not self.wigglerSpaceAmountFive.get():
-            createDialog("Error", "error", "No information provided.")
+            createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseFive = self.blueSpaceAmountFive.get()
@@ -818,11 +814,10 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
-
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
     def actionSpaceButtonSix(self):
         if not self.blueSpaceAmountSix.get() and not self.redSpaceAmountSix.get() and not self.starSpaceAmountSix.get():
-            createDialog("Error", "error", "No information provided.")
+            createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseSix = self.blueSpaceAmountSix.get()
@@ -873,12 +868,11 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
-
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
 
     def actionSpaceButtonSeven(self):
         if not self.blueSpaceAmountSeven.get() and not self.redSpaceAmountSeven.get() and not self.starSpaceAmountSeven.get() and not self.starSpaceAmountSevenLastFive.get():
-            createDialog("Error", "error", "No information provided.")
+            createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseSeven = self.blueSpaceAmountSeven.get()
@@ -944,11 +938,10 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
-
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
     def actionSpaceButtonEight(self):
         if not self.blueSpaceAmountEight.get() and not self.redSpaceAmountEight.get() and not self.starSpaceAmountEight.get():
-            createDialog("Error", "error", "No information provided.")
+            createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseEight = self.blueSpaceAmountEight.get()
@@ -1008,11 +1001,10 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
-
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
     def actionSpaceButtonEight2(self):
         if not self.blueSpaceAmountEight2.get() and not self.redSpaceAmountEight2.get() and not self.starSpaceAmountEight2.get():
-            createDialog("Error", "error", "No information provided.")
+            createDialog("Error", "error", "No information provided.", None)
             return
         blueSpaceAmountBaseEight2 = self.blueSpaceAmountEight2.get()
 
@@ -1069,8 +1061,7 @@ class App(customtkinter.CTk):
         pyperclip.copy(generatedCode)
 
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
-
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
     def mp1ButtonEvent(self):
         self.mario_party_1_button.configure(state="disabled")
         self.mario_party_2_button.configure(state="enabled")

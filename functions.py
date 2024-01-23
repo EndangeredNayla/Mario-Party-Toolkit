@@ -26,11 +26,14 @@ def createDialog(windowTitle, warn, info, buttonTxt=None):
     imgLabel.grid(row=0, column=0, padx=10, pady=10)
     imgLabel.image = img  # Keep a reference to the image
     
-    try:
-        button = ctk.CTkButton(completeWindow, command=run_update, text=buttonTxt)
-        button.grid(row=1, column=0, padx=50, pady=10)
-    except:
+    if buttonTxt == None:
         pass
+    else:
+        try:
+            button = ctk.CTkButton(completeWindow, command=run_update, text=buttonTxt)
+            button.grid(row=1, column=0, padx=50, pady=10)
+        except:
+            pass
 
     # Configure row and column weights
     completeWindow.columnconfigure(0, weight=1)
