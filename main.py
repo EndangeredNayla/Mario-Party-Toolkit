@@ -1,1165 +1,1215 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 1/18/2024
+# Date: 1/23/2024
 # License: MIT
 # ============================================
 
-import customtkinter as ctk
-from PIL import Image, ImageTk
-from CTkToolTip import *
+
+import tkinter
+import tkinter.messagebox
+import customtkinter
+import version
+import tkinter as tk
 import pyperclip
-import sys
-from pathlib import Path
-from codes import *
+
+from CTkToolTip import *
+
 from functions import *
+from credits import *
+from codes import *
 
-# Set the appearance mode and color theme
-ctk.set_appearance_mode("dark")
-ctk.set_default_color_theme("blue")
+customtkinter.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
+customtkinter.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
 
-# Create the main application window
-app = ctk.CTk()
-app.geometry("400x340")
-app.title("Mario Party: Toolkit")
 
+class App(customtkinter.CTk):
+    def __init__(self):
+        super().__init__()
 
-tabviewGame = ctk.CTkTabview(master=app)
-tabviewGame.pack(padx=0, pady=0)
-tabviewGame.add("MP1")
-tabviewGame.add("MP2")
-tabviewGame.add("MP3")
-tabviewGame.add("MP4")
-tabviewGame.add("MP5")
-tabviewGame.add("MP6")
-tabviewGame.add("MP7")
-tabviewGame.add("MP8")
+        # configure window
+        self.title("Mario Party: Toolkit")
+        self.geometry(f"{1100}x{680}")
 
-tabviewEight = ctk.CTkTabview(master=tabviewGame.tab("MP8"), height=20)
-tabviewEight.pack(padx=0, pady=0)
-tabviewEight.add("Space Modifier (Rev 1)")
-tabviewEight.add("Space Modifier (Rev 2)")
+        # configure grid layout (4x4)
+        self.grid_columnconfigure(1, weight=1)
+        self.grid_columnconfigure((2, 3), weight=0)
+        self.grid_rowconfigure((0, 1, 2), weight=1)
 
-# Create a frame inside the "Space Modifier" tab
-frameEight = ctk.CTkFrame(master=tabviewEight.tab("Space Modifier (Rev 1)"), border_color="#2b2b2b")
-frameEight.pack(padx=20, pady=20)
+        # create sidebar frame with widgets
+        self.sidebar_frame = customtkinter.CTkFrame(self, width=140, corner_radius=0)
+        self.sidebar_frame.grid(row=0, column=0, rowspan=4, sticky="nsew")
+        self.sidebar_frame.grid_rowconfigure(10, weight=1)
 
-# Create blue space icon and entry
-blueSpaceIconEight = create_image_icon(frameEight, "assets/blueSpace.png", 1, 1)
-blueSpaceAmountEight = ctk.CTkEntry(master=frameEight, width=36)
-blueSpaceAmountEight.grid(row=1, column=3)
-toolTipBlue = CTkToolTip(blueSpaceAmountEight, message="Blue Coin Modifier - [0 ~ 999] (All Maps)")
+        self.logo_label = customtkinter.CTkLabel(self.sidebar_frame, text="Mario Party Toolkit", font=customtkinter.CTkFont(size=20, weight="bold"))
+        self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
 
-# Create red space icon and entry
-redSpaceIconEight = create_image_icon(frameEight, "assets/redSpace.png", 2, 1)
-redSpaceAmountEight = ctk.CTkEntry(master=frameEight, width=36)
-redSpaceAmountEight.grid(row=2, column=3)
-tooltipRed = CTkToolTip(redSpaceAmountEight, message="Red Coin Modifier - [0 ~ -999] (All Maps)")
+        self.mario_party_1_button = customtkinter.CTkButton(self.sidebar_frame, text="Mario Party 1", command=self.mp1ButtonEvent)
+        self.mario_party_1_button.grid(row=1, column=0, padx=20, pady=10)
 
-# Create star space icon and entry
-starSpaceIconEight = create_image_icon(frameEight, "assets/starSpace.png", 3, 1)
-starSpaceAmountEight = ctk.CTkEntry(master=frameEight, width=36)
-starSpaceAmountEight.grid(row=3, column=3)
-tooltipStar = CTkToolTip(starSpaceAmountEight, message="Star Price Modifier - [0 ~ 999] (DK's Treetop Temple, Shy Guy's Perplex, and King Boo's Haunted Hideaway)")
+        self.mario_party_2_button = customtkinter.CTkButton(self.sidebar_frame, text="Mario Party 2", command=self.mp2ButtonEvent)
+        self.mario_party_2_button.grid(row=2, column=0, padx=20, pady=10)
 
-# Create a frame inside the "Space Modifier" tab
-frameEightGC = ctk.CTkFrame(master=tabviewEight.tab("Space Modifier (Rev 2)"), border_color="#2b2b2b")
-frameEightGC.pack(padx=20, pady=20)
+        self.mario_party_3_button = customtkinter.CTkButton(self.sidebar_frame, text="Mario Party 3", command=self.mp3ButtonEvent)
+        self.mario_party_3_button.grid(row=3, column=0, padx=20, pady=10)
 
-# Create blue space icon and entry
-blueSpaceIconEightGC = create_image_icon(frameEightGC, "assets/blueSpace.png", 1, 1)
-blueSpaceAmountEightGC = ctk.CTkEntry(master=frameEightGC, width=36)
-blueSpaceAmountEightGC.grid(row=1, column=3)
-toolTipBlue = CTkToolTip(blueSpaceAmountEightGC, message="Blue Coin Modifier - [0 ~ 999] (All Maps)")
+        self.mario_party_4_button = customtkinter.CTkButton(self.sidebar_frame, text="Mario Party 4", command=self.mp4ButtonEvent)
+        self.mario_party_4_button.grid(row=4, column=0, padx=20, pady=10)
 
-# Create red space icon and entry
-redSpaceIconEightGC = create_image_icon(frameEightGC, "assets/redSpace.png", 2, 1)
-redSpaceAmountEightGC = ctk.CTkEntry(master=frameEightGC, width=36)
-redSpaceAmountEightGC.grid(row=2, column=3)
-tooltipRed = CTkToolTip(redSpaceAmountEightGC, message="Red Coin Modifier - [0 ~ 999] (All Maps)")
-
-# Create star space icon and entry
-starSpaceIconEightGC = create_image_icon(frameEightGC, "assets/starSpace.png", 3, 1)
-starSpaceAmountEightGC = ctk.CTkEntry(master=frameEightGC, width=36)
-starSpaceAmountEightGC.grid(row=3, column=3)
-tooltipStar = CTkToolTip(starSpaceAmountEightGC, message="Star Price Modifier - [0 ~ 999] (DK's Treetop Temple, Shy Guy's Perplex, and King Boo's Haunted Hideaway)")
-
-tabviewSeven = ctk.CTkTabview(master=tabviewGame.tab("MP7"), height=20)
-tabviewSeven.pack(padx=0, pady=0)
-tabviewSeven.add("Space Modifier")
-
-# Create a frame inside the "Space Modifier" tab    
-frameSeven = ctk.CTkFrame(master=tabviewSeven.tab("Space Modifier"), border_color="#2b2b2b")
-frameSeven.pack(padx=20, pady=20)
-
-# Create blue space icon and entry
-blueSpaceIconSeven = create_image_icon(frameSeven, "assets/blueSpace.png", 1, 1)
-blueSpaceAmountSeven = ctk.CTkEntry(master=frameSeven, width=36)
-blueSpaceAmountSeven.grid(row=1, column=3)
-toolTipBlue = CTkToolTip(blueSpaceAmountSeven, message="Blue Coin Modifier - [0 ~ 999] (All Maps)")
-
-# Create red space icon and entry
-redSpaceIconSeven = create_image_icon(frameSeven, "assets/redSpace.png", 2, 1)
-redSpaceAmountSeven = ctk.CTkEntry(master=frameSeven, width=36)
-redSpaceAmountSeven.grid(row=2, column=3)
-toolTipRed = CTkToolTip(redSpaceAmountSeven, message="Red Coin Modifier - [0 ~ 999] (All Maps)")
-
-# Create red space icon and entry
-starSpaceIconSeven = create_image_icon(frameSeven, "assets/starSpace.png", 3, 1)
-starSpaceIconSevenLastFive = create_image_icon(frameSeven, "assets/starSpaceLastFive.png", 4, 1)
-starSpaceAmountSeven = ctk.CTkEntry(master=frameSeven, width=36)
-starSpaceAmountSeven.grid(row=3, column=3)
-starSpaceAmountSevenLastFive = ctk.CTkEntry(master=frameSeven, width=36)
-starSpaceAmountSevenLastFive.grid(row=4, column=3)
-toolTipStar = CTkToolTip(starSpaceAmountSeven, message="Star Price Modifier - [0 ~ 999] (Grand Canal, Bowser's Enchanted Inferno)")
-toolTipStar = CTkToolTip(starSpaceAmountSevenLastFive, message="Last 5 Roulette Star Price Modifier - [0 ~ 999] (Grand Canal, Bowser's Enchanted Inferno)")
-
-tabviewSix = ctk.CTkTabview(master=tabviewGame.tab("MP6"), height=20)
-tabviewSix.pack(padx=0, pady=0)
-tabviewSix.add("Space Modifier")
-
-# Create a frame inside the "Space Modifier" tab
-frameSix = ctk.CTkFrame(master=tabviewSix.tab("Space Modifier"), border_color="#2b2b2b")
-frameSix.pack(padx=20, pady=20)
-
-# Create blue space icon and entry
-blueSpaceIconSix = create_image_icon(frameSix, "assets/blueSpace.png", 1, 1)
-blueSpaceAmountSix = ctk.CTkEntry(master=frameSix, width=36)
-blueSpaceAmountSix.grid(row=1, column=3)
-toolTipBlue = CTkToolTip(blueSpaceAmountSix, message="Blue Coin Modifier - [0 ~ 999] (All Maps)")
-
-# Create red space icon and entry
-redSpaceIconSix = create_image_icon(frameSix, "assets/redSpace.png", 2, 1)
-redSpaceAmountSix = ctk.CTkEntry(master=frameSix, width=36)
-redSpaceAmountSix.grid(row=2, column=3)
-toolTipRed = CTkToolTip(redSpaceAmountSix, message="Red Coin Modifier - [0 ~ 999] (All Maps)")
-
-# Create star space icon and entry
-starSpaceIconSix = create_image_icon(frameSix, "assets/starSpace.png", 3, 1)
-starSpaceAmountSix = ctk.CTkEntry(master=frameSix, width=36)
-starSpaceAmountSix.grid(row=3, column=3)
-toolTipStar = CTkToolTip(starSpaceAmountSix, message="Star Price Modifier - [0 ~ 999] (Towering Treetop, E Gadd's Garage, Faire Square [DAY])")
-
-starSpaceFaireSquareNightSix = create_image_icon(frameSix, "assets/faireSquareLogo.png", 5, 1)
-starSpaceFaireSquareAmountSix1 = ctk.CTkEntry(master=frameSix, width=36)
-starSpaceFaireSquareAmountSix2 = ctk.CTkEntry(master=frameSix, width=36)
-starSpaceFaireSquareAmountSix3 = ctk.CTkEntry(master=frameSix, width=36)
-starSpaceFaireSquareAmountSix4 = ctk.CTkEntry(master=frameSix, width=36)
-starSpaceFaireSquareAmountSix5 = ctk.CTkEntry(master=frameSix, width=36)
-starSpaceFaireSquareAmountSix1.grid(row=5, column=3)
-starSpaceFaireSquareAmountSix2.grid(row=5, column=4)
-starSpaceFaireSquareAmountSix3.grid(row=5, column=5)
-starSpaceFaireSquareAmountSix4.grid(row=5, column=6)
-starSpaceFaireSquareAmountSix5.grid(row=5, column=7)
-toolTipStar1 = CTkToolTip(starSpaceFaireSquareAmountSix1, message="Star Price Modifier - [0 ~ 999] (Faire Square [NIGHT] Opt. 1)")
-toolTipStar2 = CTkToolTip(starSpaceFaireSquareAmountSix2, message="Star Price Modifier - [0 ~ 999] (Faire Square [NIGHT] Opt. 2)")
-toolTipStar3 = CTkToolTip(starSpaceFaireSquareAmountSix3, message="Star Price Modifier - [0 ~ 999] (Faire Square [NIGHT] Opt. 3)")
-toolTipStar4 = CTkToolTip(starSpaceFaireSquareAmountSix4, message="Star Price Modifier - [0 ~ 999] (Faire Square [NIGHT] Opt. 4)")
-toolTipStar5 = CTkToolTip(starSpaceFaireSquareAmountSix5, message="Star Price Modifier - [0 ~ 999] (Faire Square [NIGHT] Opt. 5)")
-
-
-tabviewFive = ctk.CTkTabview(master=tabviewGame.tab("MP5"), height=20)
-tabviewFive.pack(padx=0, pady=0)
-tabviewFive.add("Space Modifier")
-
-# Create a frame inside the "Space Modifier" tab
-frameFive = ctk.CTkFrame(master=tabviewFive.tab("Space Modifier"), border_color="#2b2b2b")
-frameFive.pack(padx=20, pady=20)
-
-# Create blue space icon and entry
-blueSpaceIconFive = create_image_icon(frameFive, "assets/blueSpace.png", 1, 1)
-blueSpaceAmountFive = ctk.CTkEntry(master=frameFive, width=36)
-blueSpaceAmountFive.grid(row=1, column=3)
-toolTipBlue = CTkToolTip(blueSpaceAmountFive, message="Blue Coin Modifier - [0 ~ 999] (All Maps)")
-
-# Create red space icon and entry
-redSpaceIconFive = create_image_icon(frameFive, "assets/redSpace.png", 2, 1)
-redSpaceAmountFive = ctk.CTkEntry(master=frameFive, width=36)
-redSpaceAmountFive.grid(row=2, column=3)
-toolTipRed = CTkToolTip(redSpaceAmountFive, message="Red Coin Modifier - [0 ~ 999] (All Maps)")
-
-# Create star space icon and entry
-starSpaceIconFive = create_image_icon(frameFive, "assets/starSpace.png", 3, 1)
-starSpaceWigglerFive = create_image_icon(frameFive, "assets/wigglerCapsule.png", 4, 1)
-starSpaceAmountFive = ctk.CTkEntry(master=frameFive, width=36)
-starSpaceAmountFive.grid(row=3, column=3)
-toolTipStar = CTkToolTip(starSpaceAmountFive, message="Star Price Modifier - [0 ~ 999] (All Maps)")
-
-wigglerSpaceAmountFive = ctk.CTkEntry(master=frameFive, width=36)
-wigglerSpaceAmountFive.grid(row=4, column=3)
-toolTipStar = CTkToolTip(wigglerSpaceAmountFive, message="Wiggler Star Price Modifier - [0 ~ 999] (All Maps)")
-
-tabviewFour = ctk.CTkTabview(master=tabviewGame.tab("MP4"), height=20)
-tabviewFour.pack(padx=0, pady=0)
-tabviewFour.add("Space Modifier")
-
-# Create a frame inside the "Space Modifier" tab
-frameFour = ctk.CTkFrame(master=tabviewFour.tab("Space Modifier"), border_color="#2b2b2b")
-frameFour.pack(padx=20, pady=20)
-
-# Create blue space icon and entry
-blueSpaceIconFour = create_image_icon(frameFour, "assets/blueSpace.png", 1, 1)
-blueSpaceAmountFour = ctk.CTkEntry(master=frameFour, width=36)
-blueSpaceAmountFour.grid(row=1, column=3)
-toolTipBlue = CTkToolTip(blueSpaceAmountFour, message="Blue Coin Modifier - [0 ~ 999] (All Maps)")
-
-# Create red space icon and entry
-redSpaceIconFour = create_image_icon(frameFour, "assets/redSpace.png", 2, 1)
-redSpaceAmountFour = ctk.CTkEntry(master=frameFour, width=36)
-redSpaceAmountFour.grid(row=2, column=3)
-toolTipRed = CTkToolTip(redSpaceAmountFour, message="Red Coin Modifier - [0 ~ 999] (All Maps)")
-
-# Create star space icon and entry
-starSpaceIconFour = create_image_icon(frameFour, "assets/starSpace.png", 3, 1)
-starSpaceAmountFour = ctk.CTkEntry(master=frameFour, width=36)
-starSpaceAmountFour.grid(row=3, column=3)
-toolTipStar = CTkToolTip(starSpaceAmountFour, message="Star Price Modifier - [0 ~ 999] (All Maps)")
-
-tabviewThree = ctk.CTkTabview(master=tabviewGame.tab("MP3"), height=20)
-tabviewThree.pack(padx=0, pady=0)
-tabviewThree.add("Space Modifier")
-
-# Create a frame inside the "Space Modifier" tab
-frameThree = ctk.CTkFrame(master=tabviewThree.tab("Space Modifier"), border_color="#2b2b2b")
-frameThree.pack(padx=20, pady=20)
-
-# Create blue space icon and entry, and tickbox
-blueSpaceIconThree = create_image_icon(frameThree, "assets/blueSpace.png", 1, 1)
-blueSpaceAmountThree = ctk.CTkEntry(master=frameThree, width=36)
-blueSpaceAmountThree.grid(row=1, column=3)
-blueSpaceTickboxThree = ctk.CTkCheckBox(master=frameThree, text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
-blueSpaceTickboxThree.grid(row=1, column=5, padx=10, pady=10)
-
-# Create red space icon and entry, and tickbox
-redSpaceIconThree = create_image_icon(frameThree, "assets/redSpace.png", 2, 1)
-redSpaceAmountThree = ctk.CTkEntry(master=frameThree, width=36)
-redSpaceAmountThree.grid(row=2, column=3)
-redSpaceTickboxThree = ctk.CTkCheckBox(master=frameThree, text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
-redSpaceTickboxThree.grid(row=2, column=5, padx=10, pady=10)
-
-tabviewTwo = ctk.CTkTabview(master=tabviewGame.tab("MP2"), height=20)
-tabviewTwo.pack(padx=0, pady=0)
-tabviewTwo.add("Space Modifier")
-
-# Create a frame inside the "Space Modifier" tab
-frameTwo = ctk.CTkFrame(master=tabviewTwo.tab("Space Modifier"), border_color="#2b2b2b")
-frameTwo.pack(padx=20, pady=20)
-
-# Create blue space icon and entry, and tickbox
-blueSpaceIconTwo = create_image_icon(frameTwo, "assets/blueSpace.png", 1, 1)
-blueSpaceAmountTwo = ctk.CTkEntry(master=frameTwo, width=36)
-blueSpaceAmountTwo.grid(row=1, column=3)
-blueSpaceTickboxTwo = ctk.CTkCheckBox(master=frameTwo, text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
-blueSpaceTickboxTwo.grid(row=1, column=5, padx=10, pady=10)
-
-# Create red space icon and entry, and tickbox
-redSpaceIconTwo = create_image_icon(frameTwo, "assets/redSpace.png", 2, 1)
-redSpaceAmountTwo = ctk.CTkEntry(master=frameTwo, width=36)
-redSpaceAmountTwo.grid(row=2, column=3)
-redSpaceTickboxTwo = ctk.CTkCheckBox(master=frameTwo, text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
-redSpaceTickboxTwo.grid(row=2, column=5, padx=10, pady=10)
-
-tabviewOne = ctk.CTkTabview(master=tabviewGame.tab("MP1"), height=20)
-tabviewOne.pack(padx=0, pady=0)
-tabviewOne.add("Space Modifier")
-
-# Create a frame inside the "Space Modifier" tab
-frameOne = ctk.CTkFrame(master=tabviewOne.tab("Space Modifier"), border_color="#2b2b2b")
-frameOne.pack(padx=20, pady=20)
-
-# Create blue space icon and entry, and tickbox
-blueSpaceIconOne = create_image_icon(frameOne, "assets/blueSpace.png", 1, 1)
-blueSpaceAmountOne = ctk.CTkEntry(master=frameOne, width=36)
-blueSpaceAmountOne.grid(row=1, column=3)
-blueSpaceTickboxOne = ctk.CTkCheckBox(master=frameOne, text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
-blueSpaceTickboxOne.grid(row=1, column=5, padx=10, pady=10)
-
-# Create red space icon and entry, and tickbox
-redSpaceIconOne = create_image_icon(frameOne, "assets/redSpace.png", 2, 1)
-redSpaceAmountOne = ctk.CTkEntry(master=frameOne, width=36)
-redSpaceAmountOne.grid(row=2, column=3)
-redSpaceTickboxOne = ctk.CTkCheckBox(master=frameOne, text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
-redSpaceTickboxOne.grid(row=2, column=5, padx=10, pady=10)
-
-def parseCoinsEight():
-    global blueSpaceAmountEight, redSpaceAmountEight, starSpaceAmountEight
-
-    if not blueSpaceAmountEight.get() and not redSpaceAmountEight.get() and not starSpaceAmountEight.get():
-        createDialog("Error", "error", "No information provided.")
-        return
-
-    blueSpaceAmountBaseEight = blueSpaceAmountEight.get()
-    try:
-        blueSpaceAmountEight = hex(int(blueSpaceAmountEight.get()))
-        if len(blueSpaceAmountEight) == 5:
-            blueSpaceAmountEight = "0" + blueSpaceAmountEight[2:]
-        elif len(blueSpaceAmountEight) == 4:
-            blueSpaceAmountEight = "00" + blueSpaceAmountEight[2:]
-        elif len(blueSpaceAmountEight) == 3:
-            blueSpaceAmountEight = "000" + blueSpaceAmountEight[2:]
-    except:
-        blueSpaceAmountEight = "DUMMY"
-
-    redSpaceAmountBaseEight = redSpaceAmountEight.get()
-    try:
-        redSpaceAmountEight = int(redSpaceAmountBaseEight, 16)
-        negativeRedSpaceAmountBaseEight = -int(redSpaceAmountBaseEight)
-        redSpaceAmountEight = format(negativeRedSpaceAmountBaseEight & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
-    except:
-        redSpaceAmountEight = "DUMMY"
-
-    starSpaceAmountEightBase = starSpaceAmountEight.get()
-
-    try:
-        starSpaceAmountEight = hex(int(starSpaceAmountEight.get()))
-
-        if len(starSpaceAmountEight) == 4:
-            starSpaceAmountEight = "00" + starSpaceAmountEight[2:]
-        elif len(starSpaceAmountEight) == 3:
-            starSpaceAmountEight = "000" + starSpaceAmountEight[2:]
-
-        negativeRedSpaceAmountBaseEight = -int(starSpaceAmountEightBase)
-        starSpaceAmountNegativeEight = format(negativeRedSpaceAmountBaseEight & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
-
-    except:
-        starSpaceAmountEight = "DUMMY"
-        starSpaceAmountNegativeEight = "DUMMY"
-
-    marioPartyEightStarSpace = getStarSpaceCodeEight(starSpaceAmountEight, starSpaceAmountNegativeEight)
-    marioPartyEightBlueSpace = getBlueSpaceCodeEight(blueSpaceAmountEight)
-    marioPartyEightRedSpace = getRedSpaceCodeEight(redSpaceAmountEight)
-
-    if redSpaceAmountEight == "DUMMY":
-        marioPartyEightRedSpace = ""
-    if blueSpaceAmountEight == "DUMMY":
-        marioPartyEightBlueSpace = ""
-    if starSpaceAmountEight == "DUMMY":
-        marioPartyFiveStarSpace = ""
-    if starSpaceAmountNegativeEight == "DUMMY":
-        marioPartyEightStarSpace = ""
-
-    generatedCode = marioPartyEightRedSpace + marioPartyEightBlueSpace + marioPartyEightStarSpace
-    generatedCode = generatedCode.replace("EIGHTRED", redSpaceAmountBaseEight)
-    generatedCode = generatedCode.replace("EIGHTBLUE", blueSpaceAmountBaseEight)
-    generatedCode = generatedCode.replace("EIGHTSTAR", starSpaceAmountEightBase)
-    generatedCode = generatedCode.strip()
-    pyperclip.copy(generatedCode)
-    print("Generated codes copied to the clipboard.")
-    createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
-
-def parseCoinsEightGC():
-    global blueSpaceAmountEightGC, redSpaceAmountEightGC, starSpaceAmountEightGC
-
-    if not blueSpaceAmountEightGC.get() and not redSpaceAmountEightGC.get() and not starSpaceAmountEightGC.get():
-        createDialog("Error", "error", "No information provided.")
-        return
-
-    blueSpaceAmountBaseEightGC = blueSpaceAmountEightGC.get()
-    try:
-        blueSpaceAmountEightGC = hex(int(blueSpaceAmountEightGC.get()))
-        print(blueSpaceAmountEightGC)
-        if len(blueSpaceAmountEightGC) == 5:
-            blueSpaceAmountEightGC = "0" + blueSpaceAmountEightGC[2:]
-        elif len(blueSpaceAmountEightGC) == 4:
-            blueSpaceAmountEightGC = "00" + blueSpaceAmountEightGC[2:]
-        elif len(blueSpaceAmountEightGC) == 3:
-            blueSpaceAmountEightGC = "000" + blueSpaceAmountEightGC[2:]
-    except:
-        blueSpaceAmountEightGC = "DUMMY"
-
-    redSpaceAmountBaseEightGC = redSpaceAmountEightGC.get()
-    try:
-        redSpaceAmountEightGC = int(redSpaceAmountBaseEightGC, 16)
-        negativeRedSpaceAmountBaseEightGC = -int(redSpaceAmountBaseEightGC)
-        redSpaceAmountEightGC = format(negativeRedSpaceAmountBaseEightGC & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
-    except:
-        redSpaceAmountEightGC = "DUMMY"
-
-    starSpaceAmountEightGCBase = starSpaceAmountEightGC.get()
-
-    try:
-        starSpaceAmountEightGC = hex(int(starSpaceAmountEightGC.get()))
-        if len(starSpaceAmountEightGC) == 4:
-            starSpaceAmountEightGC = "00" + starSpaceAmountEightGC[2:]
-        elif len(starSpaceAmountEightGC) == 3:
-            starSpaceAmountEightGC = "000" + starSpaceAmountEightGC[2:]
-
-        negativeRedSpaceAmountBaseEightGC = -int(starSpaceAmountEightGCBase)
-        starSpaceAmountNegativeEightGC = format(negativeRedSpaceAmountBaseEightGC & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
-
-    except:
-        starSpaceAmountEightGC = "DUMMY"
-        starSpaceAmountNegativeEightGC = "DUMMY"
-
-    marioPartyEightGCStarSpace = getStarSpaceCodeEightGC(starSpaceAmountEightGC, starSpaceAmountNegativeEightGC)
-    marioPartyEightGCBlueSpace = getBlueSpaceCodeEightGC(blueSpaceAmountEightGC)
-    marioPartyEightGCRedSpace = getRedSpaceCodeEightGC(redSpaceAmountEightGC)
-
-    if redSpaceAmountEightGC == "DUMMY":
-        marioPartyEightGCRedSpace = ""
-    if blueSpaceAmountEightGC == "DUMMY":
-        marioPartyEightGCBlueSpace = ""
-    if starSpaceAmountEightGC == "DUMMY":
-        marioPartyEightGCStarSpace = ""
-    if starSpaceAmountNegativeEightGC == "DUMMY":
-        marioPartyEightGCStarSpace = ""
-    
-    generatedCode = marioPartyEightGCRedSpace + marioPartyEightGCBlueSpace + marioPartyEightGCStarSpace
-    generatedCode = generatedCode.replace("EIGHTREDGC", redSpaceAmountBaseEightGC)
-    generatedCode = generatedCode.replace("EIGHTBLUEGC", blueSpaceAmountBaseEightGC)
-    generatedCode = generatedCode.replace("EIGHTSTARGC", starSpaceAmountEightGCBase)
-    generatedCode = generatedCode.strip()
-    pyperclip.copy(generatedCode)
-    print("Generated codes copied to the clipboard.")
-    createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
-
-def parseCoinsSeven():
-    global blueSpaceAmountSeven, redSpaceAmountSeven, starSpaceAmountSeven, starSpaceAmountSevenLastFive
-
-    if not blueSpaceAmountSeven.get() and not redSpaceAmountSeven.get() and not starSpaceAmountSeven.get() and not starSpaceAmountSevenLastFive.get():
-        createDialog("Error", "error", "No information provided.")
-        return
-
-    blueSpaceAmountBaseSeven = blueSpaceAmountSeven.get()
-    try:
-        blueSpaceAmountSeven = hex(int(blueSpaceAmountSeven.get()))
-        if len(blueSpaceAmountSeven) == 5:
-            blueSpaceAmountSeven = "0" + blueSpaceAmountSeven[2:]
-        elif len(blueSpaceAmountSeven) == 4:
-            blueSpaceAmountSeven = "00" + blueSpaceAmountSeven[2:]
-        elif len(blueSpaceAmountSeven) == 3:
-            blueSpaceAmountSeven = "000" + blueSpaceAmountSeven[2:]
-    except:
-        blueSpaceAmountSeven = "DUMMY"
-
-    redSpaceAmountBaseSeven = redSpaceAmountSeven.get()
-    try:
-        redSpaceAmountSeven = int(redSpaceAmountBaseSeven, 16)
-        negativeRedSpaceAmountBaseSeven = -int(redSpaceAmountBaseSeven)
-        redSpaceAmountSeven = format(negativeRedSpaceAmountBaseSeven & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
-    except:
-        redSpaceAmountSeven = "DUMMY"
-
-    starSpaceAmountSevenBase = starSpaceAmountSeven.get()
-    starSpaceAmountSevenLastFiveBase = starSpaceAmountSevenLastFive.get()
-
-    try:
-        starSpaceAmountSeven = hex(int(starSpaceAmountSeven.get()))
-        if len(starSpaceAmountSeven) == 4:
-            starSpaceAmountSeven = "00" + starSpaceAmountSeven[2:]
-        elif len(starSpaceAmountSeven) == 3:
-            starSpaceAmountSeven = "000" + starSpaceAmountSeven[2:]
-    except:
-        starSpaceAmountSeven = "DUMMY"
-
-    try:
-        starSpaceAmountSevenLastFive = hex(int(starSpaceAmountSevenLastFive.get()))
-        if len(starSpaceAmountSevenLastFive) == 4:
-            starSpaceAmountSevenLastFive = "00" + starSpaceAmountSevenLastFive[2:]
-        elif len(starSpaceAmountSevenLastFive) == 3:
-            starSpaceAmountSevenLastFive = "000" + starSpaceAmountSevenLastFive[2:]
-    except:
-        starSpaceAmountSevenLastFive = "DUMMY"
-
-    marioPartySevenBlueSpace = getBlueSpaceCodeSeven(blueSpaceAmountSeven)
-    marioPartySevenRedSpace = getRedSpaceCodeSeven(redSpaceAmountSeven)
-    marioPartySevenStarSpace = getStarSpaceCodeSeven(starSpaceAmountSeven)
-    marioPartySevenStarSpaceLastFive = getStarSpaceCodeSevenLastFive(starSpaceAmountSevenLastFive)
-
-    if redSpaceAmountSeven == "DUMMY":
-        marioPartySevenRedSpace = ""
-    if blueSpaceAmountSeven == "DUMMY":
-        marioPartySevenBlueSpace = ""
-    if starSpaceAmountSeven == "DUMMY":
-        marioPartySevenStarSpace = ""
-    if starSpaceAmountSevenLastFive == "DUMMY":
-        marioPartySevenStarSpaceLastFive = ""
-
-    generatedCode = marioPartySevenRedSpace + marioPartySevenBlueSpace + marioPartySevenStarSpace + marioPartySevenStarSpaceLastFive
-    generatedCode = generatedCode.replace("SEVENRED", redSpaceAmountBaseSeven)
-    generatedCode = generatedCode.replace("SEVENBLUE", blueSpaceAmountBaseSeven)
-    generatedCode = generatedCode.replace("SEVENSTAR", starSpaceAmountSevenBase)
-    generatedCode = generatedCode.replace("SEVENSTLASTFIVE", starSpaceAmountSevenLastFiveBase)
-    generatedCode = generatedCode.strip()
-    pyperclip.copy(generatedCode)
-    print("Generated codes copied to the clipboard.")
-    createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
-
-def parseCoinsSix():
-    global blueSpaceAmountSix, redSpaceAmountSix, starSpaceAmountSix, starSpaceFaireSquareAmountSix1, starSpaceFaireSquareAmountSix2, starSpaceFaireSquareAmountSix3, starSpaceFaireSquareAmountSix4, starSpaceFaireSquareAmountSix5
-
-    if not blueSpaceAmountSix.get() and not redSpaceAmountSix.get() and not starSpaceAmountSix.get() and not starSpaceFaireSquareAmountSix1.get() and not starSpaceFaireSquareAmountSix2.get() and not starSpaceFaireSquareAmountSix3.get() and not starSpaceFaireSquareAmountSix4.get() and not starSpaceFaireSquareAmountSix5.get():
-        createDialog("Error", "error", "No information provided.")
-        return
-
-    blueSpaceAmountBaseSix = blueSpaceAmountSix.get()
-    try:
-        blueSpaceAmountSix = hex(int(blueSpaceAmountSix.get()))
-        if len(blueSpaceAmountSix) == 5:
-            blueSpaceAmountSix = "0" + blueSpaceAmountSix[2:]
-        elif len(blueSpaceAmountSix) == 4:
-            blueSpaceAmountSix = "00" + blueSpaceAmountSix[2:]
-        elif len(blueSpaceAmountSix) == 3:
-            blueSpaceAmountSix = "000" + blueSpaceAmountSix[2:]
-    except:
-        blueSpaceAmountSix = "DUMMY"
-    
-    redSpaceAmountBaseSix = redSpaceAmountSix.get()
-    try:
-        redSpaceAmountSix = int(redSpaceAmountBaseSix, 16)
-        negativeRedSpaceAmountBaseSix = -int(redSpaceAmountBaseSix)
-        redSpaceAmountSix = format(negativeRedSpaceAmountBaseSix & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
-    except:
-        redSpaceAmountSix = "DUMMY"
-
-    starSpaceAmountSixBase = starSpaceAmountSix.get()
-    starSpaceFaireSquareAmountSix1Base = starSpaceFaireSquareAmountSix1.get()
-    starSpaceFaireSquareAmountSix2Base = starSpaceFaireSquareAmountSix2.get()
-    starSpaceFaireSquareAmountSix3Base = starSpaceFaireSquareAmountSix3.get()
-    starSpaceFaireSquareAmountSix4Base = starSpaceFaireSquareAmountSix4.get()
-    starSpaceFaireSquareAmountSix5Base = starSpaceFaireSquareAmountSix5.get()
-
-    try:
-        starSpaceAmountSix = hex(int(starSpaceAmountSix.get()))
-        if len(starSpaceAmountSix) == 4:
-            starSpaceAmountSix = "00" + starSpaceAmountSix[2:]
-        elif len(starSpaceAmountSix) == 3:
-            starSpaceAmountSix = "000" + starSpaceAmountSix[2:]
-    except:
-        starSpaceAmountSix = "DUMMY"
-
-    try:
-        starSpaceFaireSquareAmountSix1 = hex(int(starSpaceFaireSquareAmountSix1.get()))
-        print(starSpaceFaireSquareAmountSix1)
-        if len(starSpaceFaireSquareAmountSix1) == 4:
-            starSpaceFaireSquareAmountSix1 = "00" + starSpaceFaireSquareAmountSix1[2:]
-        elif len(starSpaceFaireSquareAmountSix1) == 3:
-            starSpaceFaireSquareAmountSix1 = "000" + starSpaceFaireSquareAmountSix1[2:]
-    except:
-        starSpaceFaireSquareAmountSix1 = "DUMMY"
-    
-    try:
-        starSpaceFaireSquareAmountSix2 = hex(int(starSpaceFaireSquareAmountSix2.get()))
-        if len(starSpaceFaireSquareAmountSix2) == 4:
-            starSpaceFaireSquareAmountSix2 = "00" + starSpaceFaireSquareAmountSix2[2:]
-        elif len(starSpaceFaireSquareAmountSix2) == 3:
-            starSpaceFaireSquareAmountSix2 = "000" + starSpaceFaireSquareAmountSix2[2:]
-    except:
-        starSpaceFaireSquareAmountSix2 = "DUMMY"
-
-    try:
-        starSpaceFaireSquareAmountSix3 = hex(int(starSpaceFaireSquareAmountSix3.get()))
-        if len(starSpaceFaireSquareAmountSix3) == 4:
-            starSpaceFaireSquareAmountSix3 = "00" + starSpaceFaireSquareAmountSix3[2:]
-        elif len(starSpaceFaireSquareAmountSix3) == 3:
-            starSpaceFaireSquareAmountSix3 = "000" + starSpaceFaireSquareAmountSix3[2:]
-    except:
-        starSpaceFaireSquareAmountSix3 = "DUMMY"
-
-    try:
-        starSpaceFaireSquareAmountSix4 = hex(int(starSpaceFaireSquareAmountSix4.get()))
-        if len(starSpaceFaireSquareAmountSix4) == 4:
-            starSpaceFaireSquareAmountSix4 = "00" + starSpaceFaireSquareAmountSix4[2:]
-        elif len(starSpaceFaireSquareAmountSix4) == 3:
-            starSpaceFaireSquareAmountSix4 = "000" + starSpaceFaireSquareAmountSix4[2:]
-    except:
-        starSpaceFaireSquareAmountSix4 = "DUMMY"
-
-    try:
-        starSpaceFaireSquareAmountSix5 = hex(int(starSpaceFaireSquareAmountSix5.get()))
-        if len(starSpaceFaireSquareAmountSix5) == 4:
-            starSpaceFaireSquareAmountSix5 = "00" + starSpaceFaireSquareAmountSix5[2:]
-        elif len(starSpaceFaireSquareAmountSix5) == 3:
-            starSpaceFaireSquareAmountSix5 = "000" + starSpaceFaireSquareAmountSix5[2:]
-    except:
-        starSpaceFaireSquareAmountSix5 = "DUMMY"
-
-    marioPartySixBlueSpace = getBlueSpaceCodeSix(blueSpaceAmountSix)
-    marioPartySixRedSpace = getRedSpaceCodeSix(redSpaceAmountSix)
-    marioPartySixStarSpace = getStarSpaceCodeSix(starSpaceAmountSix)
-    marioPartySixStarSpaceFaireSquareNightTime = getStarSpaceCodeSixFS(starSpaceFaireSquareAmountSix1, starSpaceFaireSquareAmountSix2, starSpaceFaireSquareAmountSix3, starSpaceFaireSquareAmountSix4, starSpaceFaireSquareAmountSix5)
-
-    if redSpaceAmountSix == "DUMMY":
-        marioPartySixRedSpace = ""
-    if blueSpaceAmountSix == "DUMMY":
-        marioPartySixBlueSpace = ""
-    if starSpaceAmountSix == "DUMMY":
-        marioPartySixStarSpace = ""
-    if starSpaceFaireSquareAmountSix1 == "DUMMY":
-        marioPartySixStarSpaceFaireSquareNightTime = ""
-    if starSpaceFaireSquareAmountSix2 == "DUMMY":
-        marioPartySixStarSpaceFaireSquareNightTime = ""
-    if starSpaceFaireSquareAmountSix3 == "DUMMY":
-        marioPartySixStarSpaceFaireSquareNightTime = ""
-    if starSpaceFaireSquareAmountSix4 == "DUMMY":
-        marioPartySixStarSpaceFaireSquareNightTime = ""
-    if starSpaceFaireSquareAmountSix5 == "DUMMY":
-        marioPartySixStarSpaceFaireSquareNightTime = ""
-
-    generatedCode = marioPartySixRedSpace + marioPartySixBlueSpace + marioPartySixStarSpace + marioPartySixStarSpaceFaireSquareNightTime
-    generatedCode = generatedCode.replace("SIXRED", redSpaceAmountBaseSix)
-    generatedCode = generatedCode.replace("SIXBLUE", blueSpaceAmountBaseSix)
-    generatedCode = generatedCode.replace("SIXSTARFS1", starSpaceFaireSquareAmountSix1Base)
-    generatedCode = generatedCode.replace("SIXSTARFS2", starSpaceFaireSquareAmountSix2Base)
-    generatedCode = generatedCode.replace("SIXSTARFS3", starSpaceFaireSquareAmountSix3Base)
-    generatedCode = generatedCode.replace("SIXSTARFS4", starSpaceFaireSquareAmountSix4Base)
-    generatedCode = generatedCode.replace("SIXSTARFS5", starSpaceFaireSquareAmountSix5Base)
-    generatedCode = generatedCode.replace("SIXSTAR", starSpaceAmountSixBase)
-    generatedCode = generatedCode.strip()
-    pyperclip.copy(generatedCode)
-    print("Generated codes copied to the clipboard.")
-    createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
-
-def parseCoinsFive():
-    global blueSpaceAmountFive, redSpaceAmountFive, starSpaceAmountFive, wigglerSpaceAmountFive
-
-    if not blueSpaceAmountFive.get() and not redSpaceAmountFive.get() and not starSpaceAmountFive.get() and not wigglerSpaceAmountFive.get():
-        createDialog("Error", "error", "No information provided.")
-        return
-
-    blueSpaceAmountBaseFive = blueSpaceAmountFive.get()
-    try:
-        blueSpaceAmountFive = hex(int(blueSpaceAmountFive.get()))
-        if len(blueSpaceAmountFive) == 5:
-            blueSpaceAmountFive = "0" + blueSpaceAmountFive[2:]
-        elif len(blueSpaceAmountFive) == 4:
-            blueSpaceAmountFive = "00" + blueSpaceAmountFive[2:]
-        elif len(blueSpaceAmountFive) == 3:
-            blueSpaceAmountFive = "000" + blueSpaceAmountFive[2:]
-    except:
-        blueSpaceAmountFive = "DUMMY"
-
-    redSpaceAmountBaseFive = redSpaceAmountFive.get()
-    try:
-        redSpaceAmountFive = int(redSpaceAmountBaseFive, 16)
-        negativeRedSpaceAmountBaseFive = -int(redSpaceAmountBaseFive)
-        redSpaceAmountFive = format(negativeRedSpaceAmountBaseFive & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
-    except:
-        redSpaceAmountFive = "DUMMY"
-
-    starSpaceAmountFiveBase = starSpaceAmountFive.get()
-
-    try:
-        starSpaceAmountFive = hex(int(starSpaceAmountFive.get()))
-        if len(starSpaceAmountFive) == 4:
-            starSpaceAmountFive = "00" + starSpaceAmountFive[2:]
-        elif len(starSpaceAmountFive) == 3:
-            starSpaceAmountFive = "000" + starSpaceAmountFive[2:]
-
-        negativeRedSpaceAmountBaseFive = -int(starSpaceAmountFiveBase)
-        starSpaceAmountNegativeFive = format(negativeRedSpaceAmountBaseFive & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
-
-    except:
-        starSpaceAmountFive = "DUMMY"
-        starSpaceAmountNegativeFive = "DUMMY"
-
-    wigglerSpaceAmountFiveBase = wigglerSpaceAmountFive.get()
-
-    try:
-        wigglerSpaceAmountFive = hex(int(wigglerSpaceAmountFive.get()))
-        if len(wigglerSpaceAmountFive) == 4:
-            wigglerSpaceAmountFive = "00" + wigglerSpaceAmountFive[2:]
-        elif len(wigglerSpaceAmountFive) == 3:
-            wigglerSpaceAmountFive = "000" + wigglerSpaceAmountFive[2:]
-
-        negativeRedSpaceAmountBaseFive = -int(wigglerSpaceAmountFiveBase)
-        wigglerSpaceAmountNegativeFive = format(negativeRedSpaceAmountBaseFive & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
-
-    except:
-        wigglerSpaceAmountFive = "DUMMY"
-        wigglerSpaceAmountNegativeFive = "DUMMY"
-
-    marioPartyFiveStarSpace = getStarSpaceCodeFive(starSpaceAmountFive, starSpaceAmountNegativeFive)
-    marioPartyFiveWigglerSpace = getWigglerSpaceCodeFive(wigglerSpaceAmountFive, wigglerSpaceAmountNegativeFive)
-    marioPartyFiveBlueSpace = getBlueSpaceCodeFive(blueSpaceAmountFive)
-    marioPartyFiveRedSpace = getRedSpaceCodeFive(redSpaceAmountFive)
-
-    if redSpaceAmountFive == "DUMMY":
-        marioPartyFiveRedSpace = ""
-    if blueSpaceAmountFive == "DUMMY":
-        marioPartyFiveBlueSpace = ""
-    if starSpaceAmountFive == "DUMMY":
-        marioPartyFiveStarSpace = ""
-    if starSpaceAmountNegativeFive == "DUMMY":
-        marioPartyFiveStarSpace = ""
-    if wigglerSpaceAmountFive == "DUMMY":
-        marioPartyFiveWigglerSpace = ""
-    if wigglerSpaceAmountNegativeFive == "DUMMY":
-        marioPartyFiveWigglerSpace = ""
+        self.mario_party_5_button = customtkinter.CTkButton(self.sidebar_frame, text="Mario Party 5", command=self.mp5ButtonEvent)
+        self.mario_party_5_button.grid(row=5, column=0, padx=20, pady=10)
         
-    generatedCode = marioPartyFiveRedSpace + marioPartyFiveBlueSpace + marioPartyFiveStarSpace + marioPartyFiveWigglerSpace
-    generatedCode = generatedCode.replace("FIVERED", redSpaceAmountBaseFive)
-    generatedCode = generatedCode.replace("FIVEBLUE", blueSpaceAmountBaseFive)
-    generatedCode = generatedCode.replace("FIVESTAR", starSpaceAmountFiveBase)
-    generatedCode = generatedCode.replace("FIVEWIGGLER", wigglerSpaceAmountFiveBase)
-    generatedCode = generatedCode.strip()
-    pyperclip.copy(generatedCode)
-    print("Generated codes copied to the clipboard.")
-    createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
+        self.mario_party_6_button = customtkinter.CTkButton(self.sidebar_frame, text="Mario Party 6", command=self.mp6ButtonEvent)
+        self.mario_party_6_button.grid(row=6, column=0, padx=20, pady=10)
 
-def parseCoinsFour():
-    global blueSpaceAmountFour, redSpaceAmountFour, starSpaceAmountFour
+        self.mario_party_7_button = customtkinter.CTkButton(self.sidebar_frame, text="Mario Party 7", command=self.mp7ButtonEvent)
+        self.mario_party_7_button.grid(row=7, column=0, padx=20, pady=10)
 
-    if not blueSpaceAmountFour.get() and not redSpaceAmountFour.get() and not starSpaceAmountFour.get():
-        createDialog("Error", "error", "No information provided.")
-        return
+        self.mario_party_8_button = customtkinter.CTkButton(self.sidebar_frame, text="Mario Party 8 (Rev. 1)", command=self.mp8ButtonEvent)
+        self.mario_party_8_button.grid(row=8, column=0, padx=20, pady=10)
 
-    blueSpaceAmountBaseFour = blueSpaceAmountFour.get()
-    try:
-        blueSpaceAmountFour = hex(int(blueSpaceAmountFour.get()))
-        if len(blueSpaceAmountFour) == 5:
-            blueSpaceAmountFour = "0" + blueSpaceAmountFour[2:]
-        elif len(blueSpaceAmountFour) == 4:
-            blueSpaceAmountFour = "00" + blueSpaceAmountFour[2:]
-        elif len(blueSpaceAmountFour) == 3:
-            blueSpaceAmountFour = "000" + blueSpaceAmountFour[2:]
-    except:
-        blueSpaceAmountFour = "DUMMY"
+        self.mario_party_82_button = customtkinter.CTkButton(self.sidebar_frame, text="Mario Party 8 (Rev. 2)", command=self.mp82ButtonEvent)
+        self.mario_party_82_button.grid(row=9, column=0, padx=20, pady=10)
+
+        self.credits_button = customtkinter.CTkButton(self.sidebar_frame, text="Credits", command=self.creditsButtonEvent)
+        self.credits_button.grid(row=11, column=0, padx=20, pady=10)
         
-    redSpaceAmountBaseFour = redSpaceAmountFour.get()
-    try:
-        redSpaceAmountFour = hex(int(redSpaceAmountFour.get()))
-        if len(redSpaceAmountFour) == 5:
-            redSpaceAmountFour = "0" + redSpaceAmountFour[2:]
-        elif len(redSpaceAmountFour) == 4:
-            redSpaceAmountFour = "00" + redSpaceAmountFour[2:]
-        elif len(redSpaceAmountFour) == 3:
-            redSpaceAmountFour = "000" + redSpaceAmountFour[2:]
-    except:
-        redSpaceAmountFour = "DUMMY"
+        self.version_label = customtkinter.CTkLabel(self.sidebar_frame, text=f"Version: {version.appVersion}", anchor="w", font=("Arial", 14, "bold"))
+        self.version_label.grid(row=13, column=0, padx=20, pady=(10, 0))
 
-    starSpaceAmountFourBase = starSpaceAmountFour.get()
-
-    try:
-        starSpaceAmountFour = hex(int(starSpaceAmountFour.get()))
-        if len(starSpaceAmountFour) == 4:
-            starSpaceAmountFour = "00" + starSpaceAmountFour[2:]
-        elif len(starSpaceAmountFour) == 3:
-            starSpaceAmountFour = "000" + starSpaceAmountFour[2:]
-    except:
-        starSpaceAmountFour = "DUMMY"
+        self.current_game_frame = None  # To keep track of the currently displayed game frame
+    
+        # set default values
+        self.mario_party_1_button.configure(state="disabled")
 
     
-    marioPartyFourBlueSpace = getBlueSpaceCodeFour(blueSpaceAmountFour)
-    marioPartyFourRedSpace = getRedSpaceCodeFour(redSpaceAmountFour)
-    marioPartyFourStarSpace = getStarSpaceCodeFour(starSpaceAmountFour)
+    def open_input_dialog_event(self):
+        dialog = customtkinter.CTkInputDialog(text="Type in a number:", title="CTkInputDialog")
+        print("CTkInputDialog:", dialog.get_input())
 
-    if redSpaceAmountFour == "DUMMY":
-        marioPartyFourRedSpace = ""
-    if blueSpaceAmountFour == "DUMMY":
-        marioPartyFourBlueSpace = ""
-    if starSpaceAmountFour == "DUMMY":
-        marioPartyFourStarSpace = ""
+    def change_appearance_mode_event(self, new_appearance_mode: str):
+        customtkinter.set_appearance_mode(new_appearance_mode)
 
-    generatedCode = marioPartyFourRedSpace + marioPartyFourBlueSpace + marioPartyFourStarSpace
-    generatedCode = generatedCode.replace("FOURRED", redSpaceAmountBaseFour)
-    generatedCode = generatedCode.replace("FOURBLUE", blueSpaceAmountBaseFour)
-    generatedCode = generatedCode.replace("FOURSTAR", starSpaceAmountFourBase)
-    generatedCode = generatedCode.strip()
-    pyperclip.copy(generatedCode)
-    print("Generated codes copied to the clipboard.")
-    createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
+    def change_scaling_event(self, new_scaling: str):
+        new_scaling_float = int(new_scaling.replace("%", "")) / 100
+        customtkinter.set_widget_scaling(new_scaling_float)
 
-def parseCoinsThree():
-    global blueSpaceAmountThree, redSpaceAmountThree
+    def reset_game_frames(self):
+        # Reset the main frame to remove any existing game-specific widgets
+        if self.current_game_frame:
+            self.current_game_frame.destroy()
 
-    if not blueSpaceAmountThree.get() and not redSpaceAmountThree.get():
-        createDialog("Error", "error", "No information provided.")
-        return
+    def create_game_frame(self, game_name):
+        # Create a new game frame based on the selected game_name
+        self.reset_game_frames()
 
-    blueSpaceAmountBaseThree = blueSpaceAmountThree.get()
-    try:
-        blueSpaceAmountThree = hex(int(blueSpaceAmountThree.get()))
-        if len(blueSpaceAmountThree) == 5:
-            blueSpaceAmountThree = "0" + blueSpaceAmountThree[2:]
-        elif len(blueSpaceAmountThree) == 4:
-            blueSpaceAmountThree = "00" + blueSpaceAmountThree[2:]
-        elif len(blueSpaceAmountThree) == 3:
-            blueSpaceAmountThree = "000" + blueSpaceAmountThree[2:]
-    except:
-        blueSpaceAmountThree = "DUMMY"
+        if game_name == "Mario Party 1":
+            self.current_game_frame = self.create_mp1_frame()
+        elif game_name == "Mario Party 2":
+            self.current_game_frame = self.create_mp2_frame()
+        elif game_name == "Mario Party 3":
+            self.current_game_frame = self.create_mp3_frame()
+        elif game_name == "Mario Party 4":
+            self.current_game_frame = self.create_mp4_frame()
+        elif game_name == "Mario Party 5":
+            self.current_game_frame = self.create_mp5_frame()
+        elif game_name == "Mario Party 6":
+            self.current_game_frame = self.create_mp6_frame()
+        elif game_name == "Mario Party 7":
+            self.current_game_frame = self.create_mp7_frame()
+        elif game_name == "Mario Party 8 (Rev. 1)":
+            self.current_game_frame = self.create_mp8_frame()
+        elif game_name == "Mario Party 8 (Rev. 2)":
+            self.current_game_frame = self.create_mp82_frame()
+        elif game_name == "Credits":
+            self.current_game_frame = self.create_credits_frame()
+        self.current_game_frame.grid(row=0, column=1, padx=(0, 0), pady=(0, 0), rowspan=3, sticky="nsew")
 
-    blueSpaceSwitchThree = blueSpaceTickboxThree.get()
-    if blueSpaceSwitchThree == True:
-        blueSpaceSwitchThree = "1"
-    elif blueSpaceSwitchThree == False:
-        blueSpaceSwitchThree = "0"
+    def create_mp1_frame(self):
+        frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview.pack(padx=20, pady=20)
+        tabview.add("Space Modifiers")
+        tabview.set("Space Modifiers")
 
-    redSpaceAmountBaseThree = redSpaceAmountThree.get()
-    try:
-        redSpaceAmountThree = hex(int(redSpaceAmountThree.get()))
-        if len(redSpaceAmountThree) == 5:
-            redSpaceAmountThree = "0" + redSpaceAmountThree[2:]
-        elif len(redSpaceAmountThree) == 4:
-            redSpaceAmountThree = "00" + redSpaceAmountThree[2:]
-        elif len(redSpaceAmountThree) == 3:
-            redSpaceAmountThree = "000" + redSpaceAmountThree[2:]
-    except:
-        redSpaceAmountThree = "DUMMY"
+        # Create blue space icon and entry, and tickbox
+        blueSpaceIconOne = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
+        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        blueSpaceLabel.grid(row=1, column=2)
+        self.blueSpaceAmountOne = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.blueSpaceAmountOne.grid(row=1, column=3)
+        blueSpaceLabel1 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        blueSpaceLabel1.grid(row=1, column=4)
+        self.blueSpaceTickboxOne = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
+        self.blueSpaceTickboxOne.grid(row=1, column=5, padx=10, pady=10)
+        
+        # Create red space icon and entry, and tickbox
+        redSpaceIconOne = create_image_icon(tabview.tab("Space Modifiers"), "assets/redSpace.png", 2, 1)
+        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        redSpaceLabel.grid(row=2, column=2)
+        self.redSpaceAmountOne = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.redSpaceAmountOne.grid(row=2, column=3)
+        redSpaceLabel1 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        redSpaceLabel1.grid(row=2, column=4)
+        self.redSpaceTickboxOne = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
+        self.redSpaceTickboxOne.grid(row=2, column=5, padx=10, pady=10)
 
+        parseButtonOne = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonOne, text="Generate Codes")
+        parseButtonOne.place(x=345, y=530)
 
-    redSpaceSwitchThree = redSpaceTickboxThree.get()
-    if redSpaceSwitchThree == True:
-        redSpaceSwitchThree = "1"
-    elif redSpaceSwitchThree == False:
-        redSpaceSwitchThree = "0"
+        return frame
 
-    marioPartyThreeBlueSpace = getBlueSpaceCodeThree(blueSpaceAmountThree, blueSpaceSwitchThree)
-    marioPartyThreeRedSpace = getRedSpaceCodeThree(redSpaceAmountThree, redSpaceSwitchThree)
+    def create_mp2_frame(self):
+        frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview.pack(padx=20, pady=20)
+        tabview.add("Space Modifiers")
+        tabview.set("Space Modifiers")
 
-    if redSpaceAmountThree == "DUMMY":
-        marioPartyThreeRedSpace = ""
-    if blueSpaceAmountThree == "DUMMY":
-        marioPartyThreeBlueSpace = ""
+        # Create blue space icon and entry, and tickbox
+        blueSpaceIconTwo = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
+        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        blueSpaceLabel.grid(row=1, column=2)
+        self.blueSpaceAmountTwo = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.blueSpaceAmountTwo.grid(row=1, column=3)
+        blueSpaceLabel2 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        blueSpaceLabel2.grid(row=1, column=4)
+        self.blueSpaceTickboxTwo = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
+        self.blueSpaceTickboxTwo.grid(row=1, column=5, padx=10, pady=10)
 
-    generatedCode = marioPartyThreeRedSpace + marioPartyThreeBlueSpace
-    generatedCode = generatedCode.replace("THREEBLUESWITCH", "Doesn't Double on Last 5")
-    generatedCode = generatedCode.replace("THREEREDSWITCH", "Doubles on Last 5")
-    generatedCode = generatedCode.replace("THREERED", redSpaceAmountBaseThree)
-    generatedCode = generatedCode.replace("THREEBLUE", blueSpaceAmountBaseThree)
+        # Create red space icon and entry, and tickbox
+        redSpaceIconTwo = create_image_icon(tabview.tab("Space Modifiers"), "assets/redSpace.png", 2, 1)
+        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        redSpaceLabel.grid(row=2, column=2)
+        self.redSpaceAmountTwo = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.redSpaceAmountTwo.grid(row=2, column=3)
+        redSpaceLabel2 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        redSpaceLabel2.grid(row=2, column=4)
+        self.redSpaceTickboxTwo = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
+        self.redSpaceTickboxTwo.grid(row=2, column=5, padx=10, pady=10)
 
-    generatedCode = generatedCode.strip()
-    pyperclip.copy(generatedCode)
-    print("Generated codes copied to the clipboard.")
-    createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
+        parseButtonTwo = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonTwo, text="Generate Codes")
+        parseButtonTwo.place(x=345, y=530)
 
-def parseCoinsTwo():
-    global blueSpaceAmountTwo, redSpaceAmountTwo
+        return frame
 
-    if not blueSpaceAmountTwo.get() and not redSpaceAmountTwo.get():
-        createDialog("Error", "error", "No information provided.")
-        return
+    def create_mp3_frame(self):
+        frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview.pack(padx=20, pady=20)
+        tabview.add("Space Modifiers")
+        tabview.set("Space Modifiers")
 
-    blueSpaceAmountBaseTwo = blueSpaceAmountTwo.get()
-    try:
-        blueSpaceAmountTwo = hex(int(blueSpaceAmountTwo.get()))
-        if len(blueSpaceAmountTwo) == 5:
-            blueSpaceAmountTwo = "0" + blueSpaceAmountTwo[2:]
-        elif len(blueSpaceAmountTwo) == 4:
-            blueSpaceAmountTwo = "00" + blueSpaceAmountTwo[2:]
-        elif len(blueSpaceAmountTwo) == 3:
-            blueSpaceAmountTwo = "000" + blueSpaceAmountTwo[2:]
-    except:
-        blueSpaceAmountTwo = "DUMMY"
+        # Create blue space icon and entry, and tickbox
+        blueSpaceIconThree = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
+        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        blueSpaceLabel.grid(row=1, column=2)
+        self.blueSpaceAmountThree = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.blueSpaceAmountThree.grid(row=1, column=3)
+        blueSpaceLabel3 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        blueSpaceLabel3.grid(row=1, column=4)
+        self.blueSpaceTickboxThree = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
+        self.blueSpaceTickboxThree.grid(row=1, column=5, padx=10, pady=10)
 
-    blueSpaceSwitchTwo = blueSpaceTickboxTwo.get()
-    if blueSpaceSwitchTwo == True:
-        blueSpaceSwitchTwo = "1"
-    elif blueSpaceSwitchTwo == False:
-        blueSpaceSwitchTwo = "0"
-
-    redSpaceAmountBaseTwo = redSpaceAmountTwo.get()
-    try:
-        redSpaceAmountTwo = hex(int(redSpaceAmountTwo.get()))
-        if len(redSpaceAmountTwo) == 5:
-            redSpaceAmountTwo = "0" + redSpaceAmountTwo[2:]
-        elif len(redSpaceAmountTwo) == 4:
-            redSpaceAmountTwo = "00" + redSpaceAmountTwo[2:]
-        elif len(redSpaceAmountTwo) == 3:
-            redSpaceAmountTwo = "000" + redSpaceAmountTwo[2:]
-    except:
-        redSpaceAmountTwo = "DUMMY"
-
-
-    redSpaceSwitchTwo = redSpaceTickboxTwo.get()
-    if redSpaceSwitchTwo == True:
-        redSpaceSwitchTwo = "1"
-    elif redSpaceSwitchTwo == False:
-        redSpaceSwitchTwo = "0"
-
-    marioPartyTwoBlueSpace = getBlueSpaceCodeTwo(blueSpaceAmountTwo, blueSpaceSwitchTwo)
-    marioPartyTwoRedSpace = getRedSpaceCodeTwo(redSpaceAmountTwo, redSpaceSwitchTwo)
-
-    if redSpaceAmountTwo == "DUMMY":
-        marioPartyTwoRedSpace = ""
-    if blueSpaceAmountTwo == "DUMMY":
-        marioPartyTwoBlueSpace = ""
-
-    generatedCode = marioPartyTwoRedSpace + marioPartyTwoBlueSpace
-    generatedCode = generatedCode.replace("TWOBLUESWITCH", "Doesn't Double on Last 5")
-    generatedCode = generatedCode.replace("TWOREDSWITCH", "Doubles on Last 5")
-    generatedCode = generatedCode.replace("TWORED", redSpaceAmountBaseTwo)
-    generatedCode = generatedCode.replace("TWOBLUE", blueSpaceAmountBaseTwo)
-
-    generatedCode = generatedCode.strip()
-    pyperclip.copy(generatedCode)
-    print("Generated codes copied to the clipboard.")
-    createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
-
-def parseCoinsOne():
-    global blueSpaceAmountOne, redSpaceAmountOne
-
-    if not blueSpaceAmountOne.get() and not redSpaceAmountOne.get():
-        createDialog("Error", "error", "No information provided.")
-        return
-
-    blueSpaceAmountBaseOne = blueSpaceAmountOne.get()
-    try:
-        blueSpaceAmountOne = hex(int(blueSpaceAmountOne.get()))
-        if len(blueSpaceAmountOne) == 5:
-            blueSpaceAmountOne = "0" + blueSpaceAmountOne[2:]
-        elif len(blueSpaceAmountOne) == 4:
-            blueSpaceAmountOne = "00" + blueSpaceAmountOne[2:]
-        elif len(blueSpaceAmountOne) == 3:
-            blueSpaceAmountOne = "000" + blueSpaceAmountOne[2:]
-    except:
-        blueSpaceAmountOne = "DUMMY"
-
-    blueSpaceSwitchOne = blueSpaceTickboxOne.get()
-    if blueSpaceSwitchOne == True:
-        blueSpaceSwitchOne = "1"
-    elif blueSpaceSwitchOne == False:
-        blueSpaceSwitchOne = "0"
-
-    redSpaceAmountBaseOne = redSpaceAmountOne.get()
-    try:
-        redSpaceAmountOne = hex(int(redSpaceAmountOne.get()))
-        if len(redSpaceAmountOne) == 5:
-            redSpaceAmountOne = "0" + redSpaceAmountOne[2:]
-        elif len(redSpaceAmountOne) == 4:
-            redSpaceAmountOne = "00" + redSpaceAmountOne[2:]
-        elif len(redSpaceAmountOne) == 3:
-            redSpaceAmountOne = "000" + redSpaceAmountOne[2:]
-    except:
-        redSpaceAmountOne = "DUMMY"
+        # Create red space icon and entry, and tickbox
+        redSpaceIconThree = create_image_icon(tabview.tab("Space Modifiers"), "assets/redSpace.png", 2, 1)
+        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        redSpaceLabel.grid(row=2, column=2)
+        self.redSpaceAmountThree = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.redSpaceAmountThree.grid(row=2, column=3)
+        redSpaceLabel3 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        redSpaceLabel3.grid(row=2, column=4)
+        self.redSpaceTickboxThree = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="x2 on Last 5", width=16, checkbox_width=16, checkbox_height=16)
+        self.redSpaceTickboxThree.grid(row=2, column=5, padx=10, pady=10)
+        parseButtonThree = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonThree, text="Generate Codes")
+        parseButtonThree.place(x=345, y=530)
+        return frame
 
 
-    redSpaceSwitchOne = redSpaceTickboxOne.get()
-    if redSpaceSwitchOne == True:
-        redSpaceSwitchOne = "1"
-    elif redSpaceSwitchOne == False:
-        redSpaceSwitchOne = "0"
+    def create_mp4_frame(self):
+        frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview.pack(padx=20, pady=20)
+        tabview.add("Space Modifiers")
+        tabview.set("Space Modifiers")
 
-    marioPartyOneBlueSpace = getBlueSpaceCodeOne(blueSpaceAmountOne, blueSpaceSwitchOne)
-    marioPartyOneRedSpace = getRedSpaceCodeOne(redSpaceAmountOne, redSpaceSwitchOne)
+        # Create blue space icon and entry
+        blueSpaceIconFour = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
+        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        blueSpaceLabel.grid(row=1, column=2)
+        self.blueSpaceAmountFour = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.blueSpaceAmountFour.grid(row=1, column=3)
+        blueSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        blueSpaceLabel4.grid(row=1, column=4)
 
+        # Create red space icon and entry
+        redSpaceIconFour = create_image_icon(tabview.tab("Space Modifiers"), "assets/redSpace.png", 2, 1)
+        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        redSpaceLabel.grid(row=2, column=2)
+        self.redSpaceAmountFour = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.redSpaceAmountFour.grid(row=2, column=3)
+        redSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        redSpaceLabel4.grid(row=2, column=4)
 
-    if redSpaceAmountOne == "DUMMY":
-        marioPartyOneRedSpace = ""
-    if blueSpaceAmountOne == "DUMMY":
-        marioPartyOneBlueSpace = ""
+        # Create star space icon and entry
+        starSpaceIconFour = create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpace.png", 3, 1)
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Costs  ", font=("Arial", 18))
+        starSpaceLabel.grid(row=3, column=2)
+        self.starSpaceAmountFour = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.starSpaceAmountFour.grid(row=3, column=3)
+        starSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        starSpaceLabel4.grid(row=3, column=4)
 
-    generatedCode = marioPartyOneRedSpace + marioPartyOneBlueSpace
-    generatedCode = generatedCode.replace("ONEBLUESWITCH", "Doesn't Double on Last 5")
-    generatedCode = generatedCode.replace("ONEREDSWITCH", "Doubles on Last 5")
-    generatedCode = generatedCode.replace("ONERED", redSpaceAmountBaseOne)
-    generatedCode = generatedCode.replace("ONEBLUE", blueSpaceAmountBaseOne)
+        parseButtonFour = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonFour, text="Generate Codes")
+        parseButtonFour.place(x=345, y=530)
+        return frame
 
-    generatedCode = generatedCode.strip()
-    pyperclip.copy(generatedCode)
-    print("Generated codes copied to the clipboard.")
-    createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
+    def create_mp5_frame(self):
+        frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview.pack(padx=20, pady=20)
+        tabview.add("Space Modifiers")
+        tabview.set("Space Modifiers")
 
-def createDialog(windowTitle, warn, info):
-    completeWindow = ctk.CTkToplevel()
-    completeWindow.geometry("500x145")
-    completeWindow.title(windowTitle)
+        # Create blue space icon and entry
+        blueSpaceIconFive = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
+        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        blueSpaceLabel.grid(row=1, column=2)
+        self.blueSpaceAmountFive = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.blueSpaceAmountFive.grid(row=1, column=3)
+        blueSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        blueSpaceLabel4.grid(row=1, column=4)
+
+        # Create red space icon and entry
+        redSpaceIconFive = create_image_icon(tabview.tab("Space Modifiers"), "assets/redSpace.png", 2, 1)
+        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        redSpaceLabel.grid(row=2, column=2)
+        self.redSpaceAmountFive = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.redSpaceAmountFive.grid(row=2, column=3)
+        redSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        redSpaceLabel5.grid(row=2, column=4)
+
+        # Create star space icon and entry
+        starSpaceIconFive = create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpace.png", 3, 1)
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Costs  ", font=("Arial", 18))
+        starSpaceLabel.grid(row=3, column=2)
+        self.starSpaceAmountFive = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.starSpaceAmountFive.grid(row=3, column=3)
+        starSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        starSpaceLabel5.grid(row=3, column=4)
+
+        # Create wiggler space icon and entry
+        wigglerSpaceIconFive = create_image_icon(tabview.tab("Space Modifiers"), "assets/wigglerCapsule.png", 4, 1)
+        wigglerSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Costs  ", font=("Arial", 18))
+        wigglerSpaceLabel.grid(row=4, column=2)
+        self.wigglerSpaceAmountFive = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.wigglerSpaceAmountFive.grid(row=4, column=3)
+        wigglerSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        wigglerSpaceLabel5.grid(row=4, column=4)
+
+        parseButtonFive = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonFive, text="Generate Codes")
+        parseButtonFive.place(x=345, y=530)
+        return frame
+
+    def create_mp6_frame(self):
+        frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview.pack(padx=20, pady=20)
+        tabview.add("Space Modifiers")
+        tabview.set("Space Modifiers")
+
+        # Create blue space icon and entry
+        blueSpaceIconSix = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
+        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        blueSpaceLabel.grid(row=1, column=2)
+        self.blueSpaceAmountSix = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.blueSpaceAmountSix.grid(row=1, column=3)
+        blueSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        blueSpaceLabel4.grid(row=1, column=4)
+
+        # Create red space icon and entry
+        redSpaceIconSix = create_image_icon(tabview.tab("Space Modifiers"), "assets/redSpace.png", 2, 1)
+        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        redSpaceLabel.grid(row=2, column=2)
+        self.redSpaceAmountSix = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.redSpaceAmountSix.grid(row=2, column=3)
+        redSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        redSpaceLabel6.grid(row=2, column=4)
+
+        # Create star space icon and entry
+        starSpaceIconSix = create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpace.png", 3, 1)
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Costs  ", font=("Arial", 18))
+        starSpaceLabel.grid(row=3, column=2)
+        self.starSpaceAmountSix = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.starSpaceAmountSix.grid(row=3, column=3)
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        starSpaceLabel6.grid(row=3, column=4)
+        
+        parseButtonSix = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonSix, text="Generate Codes")
+        parseButtonSix.place(x=345, y=530)
+        return frame
+
+    def create_mp7_frame(self):
+        frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview.pack(padx=20, pady=20)
+        tabview.add("Space Modifiers")
+        tabview.set("Space Modifiers")
+
+        # Create blue space icon and entry
+        blueSpaceIconSeven = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
+        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        blueSpaceLabel.grid(row=1, column=2)
+        self.blueSpaceAmountSeven = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.blueSpaceAmountSeven.grid(row=1, column=3)
+        blueSpaceLabel7 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        blueSpaceLabel7.grid(row=1, column=4)
+
+        # Create red space icon and entry
+        redSpaceIconSeven = create_image_icon(tabview.tab("Space Modifiers"), "assets/redSpace.png", 2, 1)
+        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        redSpaceLabel.grid(row=2, column=2)
+        self.redSpaceAmountSeven = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.redSpaceAmountSeven.grid(row=2, column=3)
+        redSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        redSpaceLabel6.grid(row=2, column=4)
+
+        # Create star space icon and entry
+        starSpaceIconSeven= create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpace.png", 3, 1)
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Costs  ", font=("Arial", 18))
+        starSpaceLabel.grid(row=3, column=2)
+        self.starSpaceAmountSeven = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.starSpaceAmountSeven.grid(row=3, column=3)
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        starSpaceLabel6.grid(row=3, column=4)
+
+        # Create star space last five icon and entry
+        starSpaceIconSeven= create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpaceLastFive.png", 4, 1)
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Costs  ", font=("Arial", 18))
+        starSpaceLabel.grid(row=4, column=2)
+        self.starSpaceAmountSevenLastFive = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.starSpaceAmountSevenLastFive.grid(row=4, column=3)
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        starSpaceLabel6.grid(row=4, column=4)
+
+        parseButtonSeven = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonSeven, text="Generate Codes")
+        parseButtonSeven.place(x=345, y=530)
+        return frame
     
-    # Load success image and display it in the success window
-    img = ctk.CTkImage(Image.open(fetchResource("assets/" + warn + ".png")), size=(100, 100))
-    imgLabel = ctk.CTkLabel(completeWindow, image=img, text="")
-    imgLabel.grid(row=0, column=0, padx=10, pady=10)
-    imgLabel.image = img  # Keep a reference to the image
+    def create_credits_frame(self):
+        frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview.pack(padx=20, pady=20)
+        tabview.add("Credits")
+        tabview.add("About")
+        tabview.add("License")
+        tabview.set("About")
+        mit_license_widget = customtkinter.CTkLabel(tabview.tab("License"), width=80, height=20, text=(get_mit_license_text()))
+        mit_license_widget.pack(padx=10, pady=10)
+        credits_widget = customtkinter.CTkLabel(tabview.tab("Credits"), width=80, height=20, text=(get_credits_text()))
+        credits_widget.pack(padx=10, pady=10)
+        about_widget = customtkinter.CTkLabel(tabview.tab("About"), width=80, height=20, text=(get_about_text()))
+        about_widget.pack(padx=10, pady=10)
+        return frame
+
+    def create_mp82_frame(self):
+        frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview.pack(padx=20, pady=20)
+        tabview.add("Space Modifiers")
+        tabview.set("Space Modifiers")
+
+        # Create blue space icon and entry
+        blueSpaceIconEight2 = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
+        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        blueSpaceLabel.grid(row=1, column=2)
+        self.blueSpaceAmountEight2 = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.blueSpaceAmountEight2.grid(row=1, column=3)
+        blueSpaceLabel28 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        blueSpaceLabel28.grid(row=1, column=4)
+
+        # Create red space icon and entry
+        redSpaceIconEight2 = create_image_icon(tabview.tab("Space Modifiers"), "assets/redSpace.png", 2, 1)
+        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        redSpaceLabel.grid(row=2, column=2)
+        self.redSpaceAmountEight2 = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.redSpaceAmountEight2.grid(row=2, column=3)
+        redSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        redSpaceLabel6.grid(row=2, column=4)
+
+        # Create star space icon and entry
+        starSpaceIconEight2= create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpace.png", 3, 1)
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Costs  ", font=("Arial", 18))
+        starSpaceLabel.grid(row=3, column=2)
+        self.starSpaceAmountEight2 = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.starSpaceAmountEight2.grid(row=3, column=3)
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        starSpaceLabel6.grid(row=3, column=4)
+
+        parseButtonEight2 = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonEight2, text="Generate Codes")
+        parseButtonEight2.place(x=345, y=530)
+        return frame
+        
+    def create_mp8_frame(self):
+        frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview.pack(padx=20, pady=20)
+        tabview.add("Space Modifiers")
+        tabview.set("Space Modifiers")
+
+        # Create blue space icon and entry
+        blueSpaceIconEight = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
+        blueSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        blueSpaceLabel.grid(row=1, column=2)
+        self.blueSpaceAmountEight = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.blueSpaceAmountEight.grid(row=1, column=3)
+        blueSpaceLabel8 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        blueSpaceLabel8.grid(row=1, column=4)
+
+        # Create red space icon and entry
+        redSpaceIconEight = create_image_icon(tabview.tab("Space Modifiers"), "assets/redSpace.png", 2, 1)
+        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gives  ", font=("Arial", 18))
+        redSpaceLabel.grid(row=2, column=2)
+        self.redSpaceAmountEight = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.redSpaceAmountEight.grid(row=2, column=3)
+        redSpaceLabel8 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        redSpaceLabel8.grid(row=2, column=4)
+
+        # Create star space icon and entry
+        starSpaceIconEight= create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpace.png", 3, 1)
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Costs  ", font=("Arial", 18))
+        starSpaceLabel.grid(row=3, column=2)
+        self.starSpaceAmountEight = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 18, "bold"))
+        self.starSpaceAmountEight.grid(row=3, column=3)
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins", font=("Arial", 18))
+        starSpaceLabel6.grid(row=3, column=4)
+
+        parseButtonEight = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonEight, text="Generate Codes")
+        parseButtonEight.place(x=345, y=530)
+        return frame
+
+    def actionSpaceButtonOne(self):
+        if not self.blueSpaceAmountOne.get() and not self.redSpaceAmountOne.get():
+            createDialog("Error", "error", "No information provided.")
+            return
+
+        blueSpaceAmountBaseOne = self.blueSpaceAmountOne.get()
+        try:
+            blueSpaceAmountOne = hex(int(blueSpaceAmountBaseOne))
+            if len(blueSpaceAmountOne) == 5:
+                blueSpaceAmountOne = "0" + blueSpaceAmountOne[2:]
+            elif len(blueSpaceAmountOne) == 4:
+                blueSpaceAmountOne = "00" + blueSpaceAmountOne[2:]
+            elif len(blueSpaceAmountOne) == 3:
+                blueSpaceAmountOne = "000" + blueSpaceAmountOne[2:]
+        except:
+            blueSpaceAmountOne = "DUMMY"
     
-    # Display success message in the success window
-    label = ctk.CTkLabel(completeWindow, text=info, font=ctk.CTkFont(size=18))
-    label.grid(row=0, column=1, padx=25, pady=10)
-    completeWindow.focus()
-
-# Labels and button configuration
-preBlueLabelEight = ctk.CTkLabel(master=frameEight, text=":  Gives   ", font=("Arial", 12))
-preBlueLabelEight.grid(row=1, column=2)
-
-preRedLabelEight = ctk.CTkLabel(master=frameEight, text=":  Gives - ", font=("Arial", 12))
-preRedLabelEight.grid(row=2, column=2)
-
-coinsBlueLabelEight = ctk.CTkLabel(master=frameEight, text=" Coins", font=("Arial", 12))
-coinsBlueLabelEight.grid(row=1, column=4)
-
-coinsRedLabelEight = ctk.CTkLabel(master=frameEight, text=" Coins", font=("Arial", 12))
-coinsRedLabelEight.grid(row=2, column=4)
-
-parseButtonEight = ctk.CTkButton(master=tabviewEight.tab("Space Modifier (Rev 1)"), command=parseCoinsEight, text="Generate Codes")
-parseButtonEight.pack(padx=20, pady=20)
-
-preBlueLabelEightGC = ctk.CTkLabel(master=frameEightGC, text=":  Gives   ", font=("Arial", 12))
-preBlueLabelEightGC.grid(row=1, column=2)
-
-preRedLabelEightGC = ctk.CTkLabel(master=frameEightGC, text=":  Gives - ", font=("Arial", 12))
-preRedLabelEightGC.grid(row=2, column=2)
-
-coinsBlueLabelEightGC = ctk.CTkLabel(master=frameEightGC, text=" Coins", font=("Arial", 12))
-coinsBlueLabelEightGC.grid(row=1, column=4)
-
-coinsRedLabelEightGC = ctk.CTkLabel(master=frameEightGC, text=" Coins", font=("Arial", 12))
-coinsRedLabelEightGC.grid(row=2, column=4)
-
-parseButtonEightGC = ctk.CTkButton(master=tabviewEight.tab("Space Modifier (Rev 2)"), command=parseCoinsEightGC, text="Generate Codes")
-parseButtonEightGC.pack(padx=20, pady=20)
-
-coinsStarLabelFour = ctk.CTkLabel(master=frameEight, text=" Coins", font=("Arial", 12))
-coinsStarLabelFour.grid(row=3, column=4)
-
-coinsStarLabelFive = ctk.CTkLabel(master=frameEight, text=":  Costs   ", font=("Arial", 12))
-coinsStarLabelFive.grid(row=3, column=2)
-
-coinsStarLabelFour = ctk.CTkLabel(master=frameEightGC, text=" Coins", font=("Arial", 12))
-coinsStarLabelFour.grid(row=3, column=4)
-
-coinsStarLabelFive = ctk.CTkLabel(master=frameEightGC, text=":  Costs   ", font=("Arial", 12))
-coinsStarLabelFive.grid(row=3, column=2)
-
-preBlueLabelSeven = ctk.CTkLabel(master=frameSeven, text=": Gives   ", font=("Arial", 12))
-preBlueLabelSeven.grid(row=1, column=2)
-
-preRedLabelSeven = ctk.CTkLabel(master=frameSeven, text=":  Gives - ", font=("Arial", 12))
-preRedLabelSeven.grid(row=2, column=2)
-
-coinsBlueLabelSeven = ctk.CTkLabel(master=frameSeven, text=" Coins", font=("Arial", 12))
-coinsBlueLabelSeven.grid(row=1, column=4)
-
-coinsRedLabelSeven = ctk.CTkLabel(master=frameSeven, text=" Coins", font=("Arial", 12))
-coinsRedLabelSeven.grid(row=2, column=4)
-
-coinsStarLabelSeven = ctk.CTkLabel(master=frameSeven, text=":  Costs   ", font=("Arial", 12))
-coinsStarLabelSeven.grid(row=3, column=2)
-
-coinsStarLabelSeven = ctk.CTkLabel(master=frameSeven, text=":  Costs   ", font=("Arial", 12))
-coinsStarLabelSeven.grid(row=4, column=2)
-
-parseButtonSeven = ctk.CTkButton(master=tabviewSeven.tab("Space Modifier"), command=parseCoinsSeven, text="Generate Codes")
-parseButtonSeven.pack(padx=20, pady=20)
-
-coinsRedLabelSeven = ctk.CTkLabel(master=frameSeven, text=" Coins", font=("Arial", 12))
-coinsRedLabelSeven.grid(row=3, column=4)
-
-coinsStarLabelSeven = ctk.CTkLabel(master=frameSeven, text=" Coins", font=("Arial", 12))
-coinsStarLabelSeven.grid(row=4, column=4)
-
-preBlueLabelSix = ctk.CTkLabel(master=frameSix, text=":  Gives   ", font=("Arial", 12))
-preBlueLabelSix.grid(row=1, column=2)
-
-preRedLabelSix = ctk.CTkLabel(master=frameSix, text=":  Gives - ", font=("Arial", 12))
-preRedLabelSix.grid(row=2, column=2)
-
-preBlueLabelSix = ctk.CTkLabel(master=frameSix, text=":  Costs   ", font=("Arial", 12))
-preBlueLabelSix.grid(row=3, column=2)
-
-coinsBlueLabelSix = ctk.CTkLabel(master=frameSix, text=" Coins", font=("Arial", 12))
-coinsBlueLabelSix.grid(row=1, column=4)
-
-coinsRedLabelSix = ctk.CTkLabel(master=frameSix, text=" Coins", font=("Arial", 12))
-coinsRedLabelSix.grid(row=2, column=4)
-
-parseButtonSix = ctk.CTkButton(master=tabviewSix.tab("Space Modifier"), command=parseCoinsSix, text="Generate Codes")
-parseButtonSix.pack(padx=20, pady=20)
-
-coinsStarLabelSix = ctk.CTkLabel(master=frameSix, text=" Coins", font=("Arial", 12))
-coinsStarLabelSix.grid(row=3, column=4)
-
-coinsStarLabelSeven = ctk.CTkLabel(master=frameSeven, text=":  Costs   ", font=("Arial", 12))
-coinsStarLabelSeven.grid(row=4, column=2)
-
-coinsStarLabelSixS = ctk.CTkLabel(master=frameSix, text=" Coins", font=("Arial", 12))
-coinsStarLabelSixS.grid(row=5, column=8)
-
-coinsStarLabelSixS = ctk.CTkLabel(master=frameSix, text=":  Costs   ", font=("Arial", 12))
-coinsStarLabelSixS.grid(row=5, column=2)
-
-preBlueLabelFive = ctk.CTkLabel(master=frameFive, text=":  Costs   ", font=("Arial", 12))
-preBlueLabelFive.grid(row=1, column=2)
-
-preRedLabelFive = ctk.CTkLabel(master=frameFive, text=":  Gives - ", font=("Arial", 12))
-preRedLabelFive.grid(row=2, column=2)
-
-coinsBlueLabelFive = ctk.CTkLabel(master=frameFive, text=" Coins", font=("Arial", 12))
-coinsBlueLabelFive.grid(row=1, column=4)
-
-coinsRedLabelFive = ctk.CTkLabel(master=frameFive, text=" Coins", font=("Arial", 12))
-coinsRedLabelFive.grid(row=2, column=4)
-
-coinsStarLabelFive = ctk.CTkLabel(master=frameFive, text=" Coins", font=("Arial", 12))
-coinsStarLabelFive.grid(row=3, column=4)
-
-coinsStarLabelFive = ctk.CTkLabel(master=frameFive, text=":  Costs   ", font=("Arial", 12))
-coinsStarLabelFive.grid(row=3, column=2)
-
-wigglerStarLabelFive = ctk.CTkLabel(master=frameFive, text=" Coins", font=("Arial", 12))
-wigglerStarLabelFive.grid(row=4, column=4)
-
-wigglerStarLabelFive = ctk.CTkLabel(master=frameFive, text=":  Costs   ", font=("Arial", 12))
-wigglerStarLabelFive.grid(row=4, column=2)
-
-parseButtonFive = ctk.CTkButton(master=tabviewFive.tab("Space Modifier"), command=parseCoinsFive, text="Generate Codes")
-parseButtonFive.pack(padx=20, pady=20)
-
-preBlueLabelFour = ctk.CTkLabel(master=frameFour, text=":  Costs   ", font=("Arial", 12))
-preBlueLabelFour.grid(row=1, column=2)
-
-preRedLabelFour = ctk.CTkLabel(master=frameFour, text=":  Gives - ", font=("Arial", 12))
-preRedLabelFour.grid(row=2, column=2)
-
-coinsBlueLabelFour = ctk.CTkLabel(master=frameFour, text=" Coins", font=("Arial", 12))
-coinsBlueLabelFour.grid(row=1, column=4)
-
-coinsRedLabelFour = ctk.CTkLabel(master=frameFour, text=" Coins", font=("Arial", 12))
-coinsRedLabelFour.grid(row=2, column=4)
-
-coinsStarLabelFour = ctk.CTkLabel(master=frameFour, text=" Coins", font=("Arial", 12))
-coinsStarLabelFour.grid(row=3, column=4)
-
-coinsStarLabelFive = ctk.CTkLabel(master=frameFour, text=":  Costs   ", font=("Arial", 12))
-coinsStarLabelFive.grid(row=3, column=2)
-
-parseButtonFour = ctk.CTkButton(master=tabviewFour.tab("Space Modifier"), command=parseCoinsFour, text="Generate Codes")
-parseButtonFour.pack(padx=20, pady=20)
-
-preBlueLabelThree = ctk.CTkLabel(master=frameThree, text=":  Costs   ", font=("Arial", 12))
-preBlueLabelThree.grid(row=1, column=2)
-
-preRedLabelThree = ctk.CTkLabel(master=frameThree, text=":  Gives - ", font=("Arial", 12))
-preRedLabelThree.grid(row=2, column=2)
-
-coinsBlueLabelThree = ctk.CTkLabel(master=frameThree, text=" Coins", font=("Arial", 12))
-coinsBlueLabelThree.grid(row=1, column=4)
-
-coinsRedLabelThree = ctk.CTkLabel(master=frameThree, text=" Coins", font=("Arial", 12))
-coinsRedLabelThree.grid(row=2, column=4)
-
-parseButtonThree = ctk.CTkButton(master=tabviewThree.tab("Space Modifier"), command=parseCoinsThree, text="Generate Codes")
-parseButtonThree.pack(padx=20, pady=20)
-
-preBlueLabelTwo = ctk.CTkLabel(master=frameTwo, text=":  Costs   ", font=("Arial", 12))
-preBlueLabelTwo.grid(row=1, column=2)
-
-preRedLabelTwo = ctk.CTkLabel(master=frameTwo, text=":  Gives - ", font=("Arial", 12))
-preRedLabelTwo.grid(row=2, column=2)
-
-coinsBlueLabelTwo = ctk.CTkLabel(master=frameTwo, text=" Coins", font=("Arial", 12))
-coinsBlueLabelTwo.grid(row=1, column=4)
-
-coinsRedLabelTwo = ctk.CTkLabel(master=frameTwo, text=" Coins", font=("Arial", 12))
-coinsRedLabelTwo.grid(row=2, column=4)
-
-parseButtonTwo = ctk.CTkButton(master=tabviewTwo.tab("Space Modifier"), command=parseCoinsTwo, text="Generate Codes")
-parseButtonTwo.pack(padx=20, pady=20)
-
-preBlueLabelOne = ctk.CTkLabel(master=frameOne, text=":  Costs   ", font=("Arial", 12))
-preBlueLabelOne.grid(row=1, column=2)
-
-preRedLabelOne = ctk.CTkLabel(master=frameOne, text=":  Gives - ", font=("Arial", 12))
-preRedLabelOne.grid(row=2, column=2)
-
-coinsBlueLabelOne = ctk.CTkLabel(master=frameOne, text=" Coins", font=("Arial", 12))
-coinsBlueLabelOne.grid(row=1, column=4)
-
-coinsRedLabelOne = ctk.CTkLabel(master=frameOne, text=" Coins", font=("Arial", 12))
-coinsRedLabelOne.grid(row=2, column=4)
-
-parseButtonOne = ctk.CTkButton(master=tabviewOne.tab("Space Modifier"), command=parseCoinsOne, text="Generate Codes")
-parseButtonOne.pack(padx=20, pady=20)
-
-check_for_updates()
-
-# Run the main application loop
-app.mainloop()
+        blueSpaceSwitchOne = self.blueSpaceTickboxOne.get()
+        if blueSpaceSwitchOne:
+            blueSpaceSwitchOne = "1"
+        else:
+            blueSpaceSwitchOne = "0"
+
+    
+        redSpaceAmountBaseOne = self.redSpaceAmountOne.get()
+        try:
+            redSpaceAmountOne = hex(int(self.redSpaceAmountOne.get()))
+            if len(redSpaceAmountOne) == 5:
+                redSpaceAmountOne = "0" + redSpaceAmountOne[2:]
+            elif len(redSpaceAmountOne) == 4:
+                redSpaceAmountOne = "00" + redSpaceAmountOne[2:]
+            elif len(redSpaceAmountOne) == 3:
+                redSpaceAmountOne = "000" + redSpaceAmountOne[2:]
+        except:
+            redSpaceAmountOne = "DUMMY"
+    
+    
+        redSpaceSwitchOne = self.redSpaceTickboxOne.get()
+        if redSpaceSwitchOne == True:
+            redSpaceSwitchOne = "1"
+        elif redSpaceSwitchOne == False:
+            redSpaceSwitchOne = "0"
+    
+        marioPartyOneBlueSpace = getBlueSpaceCodeOne(blueSpaceAmountOne, blueSpaceSwitchOne)
+        marioPartyOneRedSpace = getRedSpaceCodeOne(redSpaceAmountOne, redSpaceSwitchOne)
+    
+        if redSpaceAmountOne == "DUMMY":
+            marioPartyOneRedSpace = ""
+        if blueSpaceAmountOne == "DUMMY":
+            marioPartyOneBlueSpace = ""
+    
+        generatedCode = marioPartyOneRedSpace + marioPartyOneBlueSpace
+        generatedCode = generatedCode.replace("ONEBLUESWITCH", "Doesn't Double on Last 5")
+        generatedCode = generatedCode.replace("ONEREDSWITCH", "Doubles on Last 5")
+        generatedCode = generatedCode.replace("ONERED", redSpaceAmountBaseOne)
+        generatedCode = generatedCode.replace("ONEBLUE", blueSpaceAmountBaseOne)
+    
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
+
+    def actionSpaceButtonTwo(self):
+        if not self.blueSpaceAmountTwo.get() and not self.redSpaceAmountTwo.get():
+            createDialog("Error", "error", "No information provided.")
+            return
+
+        blueSpaceAmountBaseTwo = self.blueSpaceAmountTwo.get()
+        try:
+            blueSpaceAmountTwo = hex(int(blueSpaceAmountBaseTwo))
+            if len(blueSpaceAmountTwo) == 5:
+                blueSpaceAmountTwo = "0" + blueSpaceAmountTwo[2:]
+            elif len(blueSpaceAmountTwo) == 4:
+                blueSpaceAmountTwo = "00" + blueSpaceAmountTwo[2:]
+            elif len(blueSpaceAmountTwo) == 3:
+                blueSpaceAmountTwo = "000" + blueSpaceAmountTwo[2:]
+        except:
+            blueSpaceAmountTwo = "DUMMY"
+    
+        blueSpaceSwitchTwo = self.blueSpaceTickboxTwo.get()
+        if blueSpaceSwitchTwo:
+            blueSpaceSwitchTwo = "1"
+        else:
+            blueSpaceSwitchTwo = "0"
+
+    
+        redSpaceAmountBaseTwo = self.redSpaceAmountTwo.get()
+        try:
+            redSpaceAmountTwo = hex(int(self.redSpaceAmountTwo.get()))
+            if len(redSpaceAmountTwo) == 5:
+                redSpaceAmountTwo = "0" + redSpaceAmountTwo[2:]
+            elif len(redSpaceAmountTwo) == 4:
+                redSpaceAmountTwo = "00" + redSpaceAmountTwo[2:]
+            elif len(redSpaceAmountTwo) == 3:
+                redSpaceAmountTwo = "000" + redSpaceAmountTwo[2:]
+        except:
+            redSpaceAmountTwo = "DUMMY"
+    
+    
+        redSpaceSwitchTwo = self.redSpaceTickboxTwo.get()
+        if redSpaceSwitchTwo == True:
+            redSpaceSwitchTwo = "1"
+        elif redSpaceSwitchTwo == False:
+            redSpaceSwitchTwo = "0"
+    
+        marioPartyTwoBlueSpace = getBlueSpaceCodeTwo(blueSpaceAmountTwo, blueSpaceSwitchTwo)
+        marioPartyTwoRedSpace = getRedSpaceCodeTwo(redSpaceAmountTwo, redSpaceSwitchTwo)
+    
+        if redSpaceAmountTwo == "DUMMY":
+            marioPartyTwoRedSpace = ""
+        if blueSpaceAmountTwo == "DUMMY":
+            marioPartyTwoBlueSpace = ""
+    
+        generatedCode = marioPartyTwoRedSpace + marioPartyTwoBlueSpace
+        generatedCode = generatedCode.replace("TWOBLUESWITCH", "Doesn't Double on Last 5")
+        generatedCode = generatedCode.replace("TWOREDSWITCH", "Doubles on Last 5")
+        generatedCode = generatedCode.replace("TWORED", redSpaceAmountBaseTwo)
+        generatedCode = generatedCode.replace("TWOBLUE", blueSpaceAmountBaseTwo)
+    
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
+
+    def actionSpaceButtonThree(self):
+        if not self.blueSpaceAmountThree.get() and not self.redSpaceAmountThree.get():
+            createDialog("Error", "error", "No information provided.")
+            return
+
+        blueSpaceAmountBaseThree = self.blueSpaceAmountThree.get()
+        try:
+            blueSpaceAmountThree = hex(int(blueSpaceAmountBaseThree))
+            if len(blueSpaceAmountThree) == 5:
+                blueSpaceAmountThree = "0" + blueSpaceAmountThree[2:]
+            elif len(blueSpaceAmountThree) == 4:
+                blueSpaceAmountThree = "00" + blueSpaceAmountThree[2:]
+            elif len(blueSpaceAmountThree) == 3:
+                blueSpaceAmountThree = "000" + blueSpaceAmountThree[2:]
+        except:
+            blueSpaceAmountThree = "DUMMY"
+    
+        blueSpaceSwitchThree = self.blueSpaceTickboxThree.get()
+        if blueSpaceSwitchThree:
+            blueSpaceSwitchThree = "1"
+        else:
+            blueSpaceSwitchThree = "0"
+
+    
+        redSpaceAmountBaseThree = self.redSpaceAmountThree.get()
+        try:
+            redSpaceAmountThree = hex(int(self.redSpaceAmountThree.get()))
+            if len(redSpaceAmountThree) == 5:
+                redSpaceAmountThree = "0" + redSpaceAmountThree[2:]
+            elif len(redSpaceAmountThree) == 4:
+                redSpaceAmountThree = "00" + redSpaceAmountThree[2:]
+            elif len(redSpaceAmountThree) == 3:
+                redSpaceAmountThree = "000" + redSpaceAmountThree[2:]
+        except:
+            redSpaceAmountThree = "DUMMY"
+    
+    
+        redSpaceSwitchThree = self.redSpaceTickboxThree.get()
+        if redSpaceSwitchThree == True:
+            redSpaceSwitchThree = "1"
+        elif redSpaceSwitchThree == False:
+            redSpaceSwitchThree = "0"
+    
+        marioPartyThreeBlueSpace = getBlueSpaceCodeThree(blueSpaceAmountThree, blueSpaceSwitchThree)
+        marioPartyThreeRedSpace = getRedSpaceCodeThree(redSpaceAmountThree, redSpaceSwitchThree)
+    
+        if redSpaceAmountThree == "DUMMY":
+            marioPartyThreeRedSpace = ""
+        if blueSpaceAmountThree == "DUMMY":
+            marioPartyThreeBlueSpace = ""
+    
+        generatedCode = marioPartyThreeRedSpace + marioPartyThreeBlueSpace
+        generatedCode = generatedCode.replace("THREEBLUESWITCH", "Doesn't Double on Last 5")
+        generatedCode = generatedCode.replace("THREEREDSWITCH", "Doubles on Last 5")
+        generatedCode = generatedCode.replace("THREERED", redSpaceAmountBaseThree)
+        generatedCode = generatedCode.replace("THREEBLUE", blueSpaceAmountBaseThree)
+    
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
+
+    def actionSpaceButtonFour(self):    
+        if not self.blueSpaceAmountFour.get() and not self.redSpaceAmountFour.get() and not self.starSpaceAmountFour.get():
+            createDialog("Error", "error", "No information provided.")
+            return
+
+        blueSpaceAmountBaseFour = self.blueSpaceAmountFour.get()
+        try:
+            blueSpaceAmountFour = hex(int(self.blueSpaceAmountFour.get()))
+            if len(blueSpaceAmountFour) == 5:
+                blueSpaceAmountFour = "0" + blueSpaceAmountFour[2:]
+            elif len(blueSpaceAmountFour) == 4:
+                blueSpaceAmountFour = "00" + blueSpaceAmountFour[2:]
+            elif len(blueSpaceAmountFour) == 3:
+                blueSpaceAmountFour = "000" + blueSpaceAmountFour[2:]
+        except:
+            blueSpaceAmountFour = "DUMMY"
+
+        redSpaceAmountBaseFour = self.redSpaceAmountFour.get()
+        try:
+            redSpaceAmountFour = hex(int(self.redSpaceAmountFour.get()))
+            if len(redSpaceAmountFour) == 5:
+                redSpaceAmountFour = "0" + redSpaceAmountFour[2:]
+            elif len(redSpaceAmountFour) == 4:
+                redSpaceAmountFour = "00" + redSpaceAmountFour[2:]
+            elif len(redSpaceAmountFour) == 3:
+                redSpaceAmountFour = "000" + redSpaceAmountFour[2:]
+        except:
+            redSpaceAmountFour = "DUMMY"
+
+        starSpaceAmountFourBase = self.starSpaceAmountFour.get()
+
+        try:
+            starSpaceAmountFour = hex(int(self.starSpaceAmountFour.get()))
+            if len(starSpaceAmountFour) == 4:
+                starSpaceAmountFour = "00" + starSpaceAmountFour[2:]
+            elif len(starSpaceAmountFour) == 3:
+                starSpaceAmountFour = "000" + starSpaceAmountFour[2:]
+        except:
+            starSpaceAmountFour = "DUMMY"
+
+
+        marioPartyFourBlueSpace = getBlueSpaceCodeFour(blueSpaceAmountFour)
+        marioPartyFourRedSpace = getRedSpaceCodeFour(redSpaceAmountFour)
+        marioPartyFourStarSpace = getStarSpaceCodeFour(starSpaceAmountFour)
+
+        if redSpaceAmountFour == "DUMMY":
+            marioPartyFourRedSpace = ""
+        if blueSpaceAmountFour == "DUMMY":
+            marioPartyFourBlueSpace = ""
+        if starSpaceAmountFour == "DUMMY":
+            marioPartyFourStarSpace = ""
+
+        generatedCode = marioPartyFourRedSpace + marioPartyFourBlueSpace + marioPartyFourStarSpace
+        generatedCode = generatedCode.replace("FOURRED", redSpaceAmountBaseFour)
+        generatedCode = generatedCode.replace("FOURBLUE", blueSpaceAmountBaseFour)
+        generatedCode = generatedCode.replace("FOURSTAR", starSpaceAmountFourBase)
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
+
+    def actionSpaceButtonFive(self):
+        if not self.blueSpaceAmountFive.get() and not self.redSpaceAmountFive.get() and not self.starSpaceAmountFive.get() and not self.wigglerSpaceAmountFive.get():
+            createDialog("Error", "error", "No information provided.")
+            return
+
+        blueSpaceAmountBaseFive = self.blueSpaceAmountFive.get()
+        try:
+            blueSpaceAmountFive = hex(int(self.blueSpaceAmountFive.get()))
+            if len(blueSpaceAmountFive) == 5:
+                blueSpaceAmountFive = "0" + blueSpaceAmountFive[2:]
+            elif len(blueSpaceAmountFive) == 4:
+                blueSpaceAmountFive = "00" + blueSpaceAmountFive[2:]
+            elif len(blueSpaceAmountFive) == 3:
+                blueSpaceAmountFive = "000" + blueSpaceAmountFive[2:]
+        except:
+            blueSpaceAmountFive = "DUMMY"
+
+        redSpaceAmountBaseFive = self.redSpaceAmountFive.get()
+        try:
+            redSpaceAmountFive = int(redSpaceAmountBaseFive, 16)
+            negativeRedSpaceAmountBaseFive = -int(redSpaceAmountBaseFive)
+            redSpaceAmountFive = format(negativeRedSpaceAmountBaseFive & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+        except:
+            redSpaceAmountFive = "DUMMY"
+
+        starSpaceAmountFiveBase = self.starSpaceAmountFive.get()
+
+        try:
+            starSpaceAmountFive = hex(int(self.starSpaceAmountFive.get()))
+            if len(starSpaceAmountFive) == 4:
+                starSpaceAmountFive = "00" + starSpaceAmountFive[2:]
+            elif len(starSpaceAmountFive) == 3:
+                starSpaceAmountFive = "000" + starSpaceAmountFive[2:]
+
+            negativeRedSpaceAmountBaseFive = -int(starSpaceAmountFiveBase)
+            starSpaceAmountNegativeFive = format(negativeRedSpaceAmountBaseFive & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+
+        except:
+            starSpaceAmountFive = "DUMMY"
+            starSpaceAmountNegativeFive = "DUMMY"
+
+        wigglerSpaceAmountFiveBase = self.wigglerSpaceAmountFive.get()
+
+        try:
+            wigglerSpaceAmountFive = hex(int(self.wigglerSpaceAmountFive.get()))
+            if len(wigglerSpaceAmountFive) == 4:
+                wigglerSpaceAmountFive = "00" + wigglerSpaceAmountFive[2:]
+            elif len(wigglerSpaceAmountFive) == 3:
+                wigglerSpaceAmountFive = "000" + wigglerSpaceAmountFive[2:]
+
+            negativeRedSpaceAmountBaseFive = -int(wigglerSpaceAmountFiveBase)
+            wigglerSpaceAmountNegativeFive = format(negativeRedSpaceAmountBaseFive & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+
+        except:
+            wigglerSpaceAmountFive = "DUMMY"
+            wigglerSpaceAmountNegativeFive = "DUMMY"
+
+        marioPartyFiveStarSpace = getStarSpaceCodeFive(starSpaceAmountFive, starSpaceAmountNegativeFive)
+        marioPartyFiveWigglerSpace = getWigglerSpaceCodeFive(wigglerSpaceAmountFive, wigglerSpaceAmountNegativeFive)
+        marioPartyFiveBlueSpace = getBlueSpaceCodeFive(blueSpaceAmountFive)
+        marioPartyFiveRedSpace = getRedSpaceCodeFive(redSpaceAmountFive)
+
+        if redSpaceAmountFive == "DUMMY":
+            marioPartyFiveRedSpace = ""
+        if blueSpaceAmountFive == "DUMMY":
+            marioPartyFiveBlueSpace = ""
+        if starSpaceAmountFive == "DUMMY":
+            marioPartyFiveStarSpace = ""
+        if starSpaceAmountNegativeFive == "DUMMY":
+            marioPartyFiveStarSpace = ""
+        if wigglerSpaceAmountFive == "DUMMY":
+            marioPartyFiveWigglerSpace = ""
+        if wigglerSpaceAmountNegativeFive == "DUMMY":
+            marioPartyFiveWigglerSpace = ""
+
+        generatedCode = marioPartyFiveRedSpace + marioPartyFiveBlueSpace + marioPartyFiveStarSpace + marioPartyFiveWigglerSpace
+        generatedCode = generatedCode.replace("FIVERED", redSpaceAmountBaseFive)
+        generatedCode = generatedCode.replace("FIVEBLUE", blueSpaceAmountBaseFive)
+        generatedCode = generatedCode.replace("FIVESTAR", starSpaceAmountFiveBase)
+        generatedCode = generatedCode.replace("FIVEWIGGLER", wigglerSpaceAmountFiveBase)
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
+
+    def actionSpaceButtonSix(self):
+        if not self.blueSpaceAmountSix.get() and not self.redSpaceAmountSix.get() and not self.starSpaceAmountSix.get():
+            createDialog("Error", "error", "No information provided.")
+            return
+
+        blueSpaceAmountBaseSix = self.blueSpaceAmountSix.get()
+        try:
+            blueSpaceAmountSix = hex(int(self.blueSpaceAmountSix.get()))
+            if len(blueSpaceAmountSix) == 5:
+                blueSpaceAmountSix = "0" + blueSpaceAmountSix[2:]
+            elif len(blueSpaceAmountSix) == 4:
+                blueSpaceAmountSix = "00" + blueSpaceAmountSix[2:]
+            elif len(blueSpaceAmountSix) == 3:
+                blueSpaceAmountSix = "000" + blueSpaceAmountSix[2:]
+        except:
+            blueSpaceAmountSix = "DUMMY"
+
+        redSpaceAmountBaseSix = self.redSpaceAmountSix.get()
+        try:
+            redSpaceAmountSix = int(redSpaceAmountBaseSix, 16)
+            negativeRedSpaceAmountBaseSix = -int(redSpaceAmountBaseSix)
+            redSpaceAmountSix = format(negativeRedSpaceAmountBaseSix & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+        except:
+            redSpaceAmountSix = "DUMMY"
+
+        starSpaceAmountSixBase = self.starSpaceAmountSix.get()
+        try:
+            starSpaceAmountSix = hex(int(self.starSpaceAmountSix.get()))
+            if len(starSpaceAmountSix) == 4:
+                starSpaceAmountSix = "00" + starSpaceAmountSix[2:]
+            elif len(starSpaceAmountSix) == 3:
+                starSpaceAmountSix = "000" + starSpaceAmountSix[2:]
+        except:
+            starSpaceAmountSix = "DUMMY"
+
+        marioPartySixBlueSpace = getBlueSpaceCodeSix(blueSpaceAmountSix)
+        marioPartySixRedSpace = getRedSpaceCodeSix(redSpaceAmountSix)
+        marioPartySixStarSpace = getStarSpaceCodeSix(starSpaceAmountSix)
+
+        if redSpaceAmountSix == "DUMMY":
+            marioPartySixRedSpace = ""
+        if blueSpaceAmountSix == "DUMMY":
+            marioPartySixBlueSpace = ""
+        if starSpaceAmountSix == "DUMMY":
+            marioPartySixStarSpace = ""
+
+        generatedCode = marioPartySixRedSpace + marioPartySixBlueSpace + marioPartySixStarSpace
+        generatedCode = generatedCode.replace("SIXRED", redSpaceAmountBaseSix)
+        generatedCode = generatedCode.replace("SIXBLUE", blueSpaceAmountBaseSix)
+        generatedCode = generatedCode.replace("SIXSTAR", starSpaceAmountSixBase)
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
+
+
+    def actionSpaceButtonSeven(self):
+        if not self.blueSpaceAmountSeven.get() and not self.redSpaceAmountSeven.get() and not self.starSpaceAmountSeven.get() and not self.starSpaceAmountSevenLastFive.get():
+            createDialog("Error", "error", "No information provided.")
+            return
+
+        blueSpaceAmountBaseSeven = self.blueSpaceAmountSeven.get()
+        try:
+            blueSpaceAmountSeven = hex(int(self.blueSpaceAmountSeven.get()))
+            if len(blueSpaceAmountSeven) == 5:
+                blueSpaceAmountSeven = "0" + blueSpaceAmountSeven[2:]
+            elif len(blueSpaceAmountSeven) == 4:
+                blueSpaceAmountSeven = "00" + blueSpaceAmountSeven[2:]
+            elif len(blueSpaceAmountSeven) == 3:
+                blueSpaceAmountSeven = "000" + blueSpaceAmountSeven[2:]
+        except:
+            blueSpaceAmountSeven = "DUMMY"
+
+        redSpaceAmountBaseSeven = self.redSpaceAmountSeven.get()
+        try:
+            redSpaceAmountSeven = int(redSpaceAmountBaseSeven, 16)
+            negativeRedSpaceAmountBaseSeven = -int(redSpaceAmountBaseSeven)
+            redSpaceAmountSeven = format(negativeRedSpaceAmountBaseSeven & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+        except:
+            redSpaceAmountSeven = "DUMMY"
+
+        starSpaceAmountSevenBase = self.starSpaceAmountSeven.get()
+        starSpaceAmountSevenLastFiveBase = self.starSpaceAmountSevenLastFive.get()
+
+        try:
+            starSpaceAmountSeven = hex(int(self.starSpaceAmountSeven.get()))
+            if len(starSpaceAmountSeven) == 4:
+                starSpaceAmountSeven = "00" + starSpaceAmountSeven[2:]
+            elif len(starSpaceAmountSeven) == 3:
+                starSpaceAmountSeven = "000" + starSpaceAmountSeven[2:]
+        except:
+            starSpaceAmountSeven = "DUMMY"
+
+        try:
+            starSpaceAmountSevenLastFive = hex(int(self.starSpaceAmountSevenLastFive.get()))
+            if len(starSpaceAmountSevenLastFive) == 4:
+                starSpaceAmountSevenLastFive = "00" + starSpaceAmountSevenLastFive[2:]
+            elif len(starSpaceAmountSevenLastFive) == 3:
+                starSpaceAmountSevenLastFive = "000" + starSpaceAmountSevenLastFive[2:]
+        except:
+            starSpaceAmountSevenLastFive = "DUMMY"
+
+        marioPartySevenBlueSpace = getBlueSpaceCodeSeven(blueSpaceAmountSeven)
+        marioPartySevenRedSpace = getRedSpaceCodeSeven(redSpaceAmountSeven)
+        marioPartySevenStarSpace = getStarSpaceCodeSeven(starSpaceAmountSeven)
+        marioPartySevenStarSpaceLastFive = getStarSpaceCodeSevenLastFive(starSpaceAmountSevenLastFive)
+
+        if redSpaceAmountSeven == "DUMMY":
+            marioPartySevenRedSpace = ""
+        if blueSpaceAmountSeven == "DUMMY":
+            marioPartySevenBlueSpace = ""
+        if starSpaceAmountSeven == "DUMMY":
+            marioPartySevenStarSpace = ""
+        if starSpaceAmountSevenLastFive == "DUMMY":
+            marioPartySevenStarSpaceLastFive = ""
+
+        generatedCode = marioPartySevenRedSpace + marioPartySevenBlueSpace + marioPartySevenStarSpace + marioPartySevenStarSpaceLastFive
+        generatedCode = generatedCode.replace("SEVENRED", redSpaceAmountBaseSeven)
+        generatedCode = generatedCode.replace("SEVENBLUE", blueSpaceAmountBaseSeven)
+        generatedCode = generatedCode.replace("SEVENSTAR", starSpaceAmountSevenBase)
+        generatedCode = generatedCode.replace("SEVENSTLASTFIVE", starSpaceAmountSevenLastFiveBase)
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
+
+    def actionSpaceButtonEight(self):
+        if not self.blueSpaceAmountEight.get() and not self.redSpaceAmountEight.get() and not self.starSpaceAmountEight.get():
+            createDialog("Error", "error", "No information provided.")
+            return
+
+        blueSpaceAmountBaseEight = self.blueSpaceAmountEight.get()
+        try:
+            blueSpaceAmountEight = hex(int(self.blueSpaceAmountEight.get()))
+            if len(blueSpaceAmountEight) == 5:
+                blueSpaceAmountEight = "0" + blueSpaceAmountEight[2:]
+            elif len(blueSpaceAmountEight) == 4:
+                blueSpaceAmountEight = "00" + blueSpaceAmountEight[2:]
+            elif len(blueSpaceAmountEight) == 3:
+                blueSpaceAmountEight = "000" + blueSpaceAmountEight[2:]
+        except:
+            blueSpaceAmountEight = "DUMMY"
+
+        redSpaceAmountBaseEight = self.redSpaceAmountEight.get()
+        try:
+            redSpaceAmountEight = int(redSpaceAmountBaseEight, 16)
+            negativeRedSpaceAmountBaseEight = -int(redSpaceAmountBaseEight)
+            redSpaceAmountEight = format(negativeRedSpaceAmountBaseEight & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+        except:
+            redSpaceAmountEight = "DUMMY"
+
+        starSpaceAmountEightBase = self.starSpaceAmountEight.get()
+
+        try:
+            starSpaceAmountEight = hex(int(self.starSpaceAmountEight.get()))
+
+            if len(starSpaceAmountEight) == 4:
+                starSpaceAmountEight = "00" + starSpaceAmountEight[2:]
+            elif len(starSpaceAmountEight) == 3:
+                starSpaceAmountEight = "000" + starSpaceAmountEight[2:]
+
+            negativeRedSpaceAmountBaseEight = -int(starSpaceAmountEightBase)
+            starSpaceAmountNegativeEight = format(negativeRedSpaceAmountBaseEight & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+
+        except:
+            starSpaceAmountEight = "DUMMY"
+            starSpaceAmountNegativeEight = "DUMMY"
+
+        marioPartyEightStarSpace = getStarSpaceCodeEight(starSpaceAmountEight, starSpaceAmountNegativeEight)
+        marioPartyEightBlueSpace = getBlueSpaceCodeEight(blueSpaceAmountEight)
+        marioPartyEightRedSpace = getRedSpaceCodeEight(redSpaceAmountEight)
+
+        if redSpaceAmountEight == "DUMMY":
+            marioPartyEightRedSpace = ""
+        if blueSpaceAmountEight == "DUMMY":
+            marioPartyEightBlueSpace = ""
+        if starSpaceAmountEight == "DUMMY":
+            marioPartyFiveStarSpace = ""
+        if starSpaceAmountNegativeEight == "DUMMY":
+            marioPartyEightStarSpace = ""
+
+        generatedCode = marioPartyEightRedSpace + marioPartyEightBlueSpace + marioPartyEightStarSpace
+        generatedCode = generatedCode.replace("EIGHTRED", redSpaceAmountBaseEight)
+        generatedCode = generatedCode.replace("EIGHTBLUE", blueSpaceAmountBaseEight)
+        generatedCode = generatedCode.replace("EIGHTSTAR", starSpaceAmountEightBase)
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
+
+    def actionSpaceButtonEight2(self):
+        if not self.blueSpaceAmountEight2.get() and not self.redSpaceAmountEight2.get() and not self.starSpaceAmountEight2.get():
+            createDialog("Error", "error", "No information provided.")
+            return
+        blueSpaceAmountBaseEight2 = self.blueSpaceAmountEight2.get()
+
+        try:
+            blueSpaceAmountEight2 = hex(int(self.blueSpaceAmountEight2.get()))
+            if len(blueSpaceAmountEight2) == 5:
+                blueSpaceAmountEight2 = "0" + blueSpaceAmountEight2[2:]
+            elif len(blueSpaceAmountEight2) == 4:
+                blueSpaceAmountEight2 = "00" + blueSpaceAmountEight2[2:]
+            elif len(blueSpaceAmountEight2) == 3:
+                blueSpaceAmountEight2 = "000" + blueSpaceAmountEight2[2:]
+        except:
+            blueSpaceAmountEight2 = "DUMMY"
+
+        redSpaceAmountBaseEight2 = self.redSpaceAmountEight2.get()
+        try:
+            redSpaceAmountEight2 = int(redSpaceAmountBaseEight2, 16)
+            negativeRedSpaceAmountBaseEight2 = -int(redSpaceAmountBaseEight2)
+            redSpaceAmountEight2 = format(negativeRedSpaceAmountBaseEight2 & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+        except:
+            redSpaceAmountEight2 = "DUMMY"
+
+        starSpaceAmountEight2Base = self.starSpaceAmountEight2.get()
+        try:
+            starSpaceAmountEight2 = hex(int(self.starSpaceAmountEight2.get()))
+            if len(starSpaceAmountEight2) == 4:
+                starSpaceAmountEight2 = "00" + starSpaceAmountEight2[2:]
+            elif len(starSpaceAmountEight2) == 3:
+                starSpaceAmountEight2 = "000" + starSpaceAmountEight2[2:]
+            negativeRedSpaceAmountBaseEight2 = -int(starSpaceAmountEight2Base)
+            starSpaceAmountNegativeEight2 = format(negativeRedSpaceAmountBaseEight2 & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+        except:
+            starSpaceAmountEight2 = "DUMMY"
+            starSpaceAmountNegativeEight2 = "DUMMY"
+
+        marioPartyEight2StarSpace = getStarSpaceCodeEightGC(starSpaceAmountEight2, starSpaceAmountNegativeEight2)
+        marioPartyEight2BlueSpace = getBlueSpaceCodeEightGC(blueSpaceAmountEight2)
+        marioPartyEight2RedSpace = getRedSpaceCodeEightGC(redSpaceAmountEight2)
+
+        if redSpaceAmountEight2 == "DUMMY":
+            marioPartyEight2RedSpace = ""
+        if blueSpaceAmountEight2 == "DUMMY":
+            marioPartyEight2BlueSpace = ""
+        if starSpaceAmountEight2 == "DUMMY":
+            marioPartyFiveStarSpace = ""
+        if starSpaceAmountNegativeEight2 == "DUMMY":
+            marioPartyEight2StarSpace = ""
+
+        generatedCode = marioPartyEight2RedSpace + marioPartyEight2BlueSpace + marioPartyEight2StarSpace
+        generatedCode = generatedCode.replace("EIGHTREDGC", redSpaceAmountBaseEight2)
+        generatedCode = generatedCode.replace("EIGHTBLUEGC", blueSpaceAmountBaseEight2)
+        generatedCode = generatedCode.replace("EIGHTSTARGC", starSpaceAmountEight2Base)
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!")
+
+    def mp1ButtonEvent(self):
+        self.mario_party_1_button.configure(state="disabled")
+        self.mario_party_2_button.configure(state="enabled")
+        self.mario_party_3_button.configure(state="enabled")
+        self.mario_party_4_button.configure(state="enabled")
+        self.mario_party_5_button.configure(state="enabled")
+        self.mario_party_6_button.configure(state="enabled")
+        self.mario_party_7_button.configure(state="enabled")
+        self.mario_party_8_button.configure(state="enabled")
+        self.mario_party_82_button.configure(state="enabled")
+        self.credits_button.configure(state="enabled")
+        self.reset_game_frames()
+        self.create_game_frame("Mario Party 1")
+
+    def mp2ButtonEvent(self):
+        self.mario_party_1_button.configure(state="enabled")
+        self.mario_party_2_button.configure(state="disabled")
+        self.mario_party_3_button.configure(state="enabled")
+        self.mario_party_4_button.configure(state="enabled")
+        self.mario_party_5_button.configure(state="enabled")
+        self.mario_party_6_button.configure(state="enabled")
+        self.mario_party_7_button.configure(state="enabled")
+        self.mario_party_8_button.configure(state="enabled")
+        self.mario_party_82_button.configure(state="enabled")
+        self.credits_button.configure(state="enabled")
+        self.reset_game_frames()
+        self.create_game_frame("Mario Party 2")
+
+    def mp3ButtonEvent(self):
+        self.mario_party_1_button.configure(state="enabled")
+        self.mario_party_2_button.configure(state="enabled")
+        self.mario_party_3_button.configure(state="disabled")
+        self.mario_party_4_button.configure(state="enabled")
+        self.mario_party_5_button.configure(state="enabled")
+        self.mario_party_6_button.configure(state="enabled")
+        self.mario_party_7_button.configure(state="enabled")
+        self.mario_party_8_button.configure(state="enabled")
+        self.mario_party_82_button.configure(state="enabled")
+        self.reset_game_frames()
+        self.create_game_frame("Mario Party 3")
+
+    def mp4ButtonEvent(self):
+        self.mario_party_1_button.configure(state="enabled")
+        self.mario_party_2_button.configure(state="enabled")
+        self.mario_party_3_button.configure(state="enabled")
+        self.mario_party_4_button.configure(state="disabled")
+        self.mario_party_5_button.configure(state="enabled")
+        self.mario_party_6_button.configure(state="enabled")
+        self.mario_party_7_button.configure(state="enabled")
+        self.mario_party_8_button.configure(state="enabled")
+        self.mario_party_82_button.configure(state="enabled")
+        self.credits_button.configure(state="enabled")
+        self.reset_game_frames()
+        self.create_game_frame("Mario Party 4")
+
+    def mp5ButtonEvent(self):
+        self.mario_party_1_button.configure(state="enabled")
+        self.mario_party_2_button.configure(state="enabled")
+        self.mario_party_3_button.configure(state="enabled")
+        self.mario_party_4_button.configure(state="enabled")
+        self.mario_party_5_button.configure(state="disabled")
+        self.mario_party_6_button.configure(state="enabled")
+        self.mario_party_7_button.configure(state="enabled")
+        self.mario_party_8_button.configure(state="enabled")
+        self.mario_party_82_button.configure(state="enabled")
+        self.credits_button.configure(state="enabled")
+        self.reset_game_frames()
+        self.create_game_frame("Mario Party 5")
+
+    def mp6ButtonEvent(self):
+        self.mario_party_1_button.configure(state="enabled")
+        self.mario_party_2_button.configure(state="enabled")
+        self.mario_party_3_button.configure(state="enabled")
+        self.mario_party_4_button.configure(state="enabled")
+        self.mario_party_5_button.configure(state="enabled")
+        self.mario_party_6_button.configure(state="disabled")
+        self.mario_party_7_button.configure(state="enabled")
+        self.mario_party_8_button.configure(state="enabled")
+        self.mario_party_82_button.configure(state="enabled")
+        self.credits_button.configure(state="enabled")
+        self.reset_game_frames()
+        self.create_game_frame("Mario Party 6")
+
+    def mp7ButtonEvent(self):
+        self.mario_party_1_button.configure(state="enabled")
+        self.mario_party_2_button.configure(state="enabled")
+        self.mario_party_3_button.configure(state="enabled")
+        self.mario_party_4_button.configure(state="enabled")
+        self.mario_party_5_button.configure(state="enabled")
+        self.mario_party_6_button.configure(state="enabled")
+        self.mario_party_7_button.configure(state="disabled")
+        self.mario_party_8_button.configure(state="enabled")
+        self.mario_party_82_button.configure(state="enabled")
+        self.credits_button.configure(state="enabled")
+        self.reset_game_frames()
+        self.create_game_frame("Mario Party 7")
+
+    def mp8ButtonEvent(self):
+        self.mario_party_1_button.configure(state="enabled")
+        self.mario_party_2_button.configure(state="enabled")
+        self.mario_party_3_button.configure(state="enabled")
+        self.mario_party_4_button.configure(state="enabled")
+        self.mario_party_5_button.configure(state="enabled")
+        self.mario_party_6_button.configure(state="enabled")
+        self.mario_party_7_button.configure(state="enabled")
+        self.mario_party_8_button.configure(state="disabled")
+        self.mario_party_82_button.configure(state="enabled")
+        self.credits_button.configure(state="enabled")
+        self.reset_game_frames()
+        self.create_game_frame("Mario Party 8 (Rev. 1)")
+
+    def mp82ButtonEvent(self):
+        self.mario_party_1_button.configure(state="enabled")
+        self.mario_party_2_button.configure(state="enabled")
+        self.mario_party_3_button.configure(state="enabled")
+        self.mario_party_4_button.configure(state="enabled")
+        self.mario_party_5_button.configure(state="enabled")
+        self.mario_party_6_button.configure(state="enabled")
+        self.mario_party_7_button.configure(state="enabled")
+        self.mario_party_8_button.configure(state="enabled")
+        self.mario_party_82_button.configure(state="disabled")
+        self.credits_button.configure(state="enabled")
+        self.reset_game_frames()
+        self.create_game_frame("Mario Party 8 (Rev. 2)")
+
+    def creditsButtonEvent(self):
+        self.mario_party_1_button.configure(state="enabled")
+        self.mario_party_2_button.configure(state="enabled")
+        self.mario_party_3_button.configure(state="enabled")
+        self.mario_party_4_button.configure(state="enabled")
+        self.mario_party_5_button.configure(state="enabled")
+        self.mario_party_6_button.configure(state="enabled")
+        self.mario_party_7_button.configure(state="enabled")
+        self.mario_party_8_button.configure(state="enabled")
+        self.mario_party_82_button.configure(state="enabled")
+        self.credits_button.configure(state="disabled")
+        self.reset_game_frames()
+        self.create_game_frame("Credits")
+
+if __name__ == "__main__":
+    app = App()
+    app.mainloop()

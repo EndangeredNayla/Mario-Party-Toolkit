@@ -1,7 +1,8 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 1/18/2024
+# Date: 1/23/2024
+
 # License: MIT
 # ============================================
 
@@ -12,7 +13,7 @@ from pathlib import Path
 import requests
 import sys
 import webbrowser
-from version import current_version
+from version import appVersion
 
 def createDialog(windowTitle, warn, info, buttonTxt=None):
     completeWindow = ctk.CTkToplevel()
@@ -53,15 +54,12 @@ def fetchResource(resource_path: Path) -> Path:
 
 def create_image_icon(frame, image_path, row, column):
     # Create and configure the canvas with the provided image
-    image = Image.open(fetchResource(image_path)).convert("RGBA")
-    image = image.resize((32, 32))
+    image = Image.open(fetchResource(image_path))
+    image = image.resize((48, 48))
     image_tk = ImageTk.PhotoImage(image)
-    
-    canvas = ctk.CTkCanvas(master=frame, background="#2b2b2b", highlightthickness=0, width=image.width, height=image.height)
-    canvas.grid(row=row, column=column)
-    canvas.create_image(0, 0, anchor="nw", image=image_tk)
-
-    return canvas, image_tk
+    label = tk.Label(frame, image=image_tk)
+    label.image = image_tk  # Keep a reference to the image to prevent it from being garbage collected
+    label.grid(row=row, column=column)
 
 def check_for_updates():
     pastebin_url = "https://pastebin.com/raw/MrpYHUHy"

@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 1/18/2024
+# Date: 1/23/2024
 # License: MIT
 # ============================================
 
@@ -70,7 +70,7 @@ def getBlueSpaceCodeThree(amount, switch):
     return f'''
 MP3 - Blue Spaces Give THREEBLUE Coins: THREEBLUESWITCH
 810FE284 3408
-810FE286 000{amount}
+810FE286 000{switch}
 810FE288 1100
 810FE28A 0003
 810FE28C 3410
@@ -83,13 +83,13 @@ MP3 - Blue Spaces Give THREEBLUE Coins: THREEBLUESWITCH
 
 def getRedSpaceCodeThree(amount, switch):
     return f'''
-MP3 - Blue Spaces Take Away THREEBLUE Coins: THREEREDSWITCH
+MP3 - Red Spaces Take Away THREEBLUE Coins: THREEREDSWITCH
 810FE2C0 3408
-810FE2C2 000{amount}
+810FE2C2 000{switch}
 810FE2C4 1100
 810FE2C6 0003
 810FE2C8 3410
-810FE2CA 00{amount}
+810FE2CA {amount}
 810FE2CC 5440
 810FE2CE 0001
 810FE2D0 0010
