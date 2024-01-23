@@ -434,7 +434,6 @@ E0000000 80008000
 def getOrbModsSeven(oneW, twoP, twoW, threeP, threeW, fourP, fourW, fiveP, fiveW, sixP, sixW, sevenP, sevenW, eightP, eightW, nineP, nineW, tenP, tenW, elevenP, elevenW, tweleveP, tweleveW, thirteenP, thirteenW, fourteenP, fourteenW, fifteenP, fifteenW, sixteenP, sixteenW, seventeenP, seventeenW, eighteenP, eighteenW, ninteenP, ninteenW, twentyP, twentyW, twentyOneP, twentyOneW, twentyTwoP, twentyTwoW, twentyThreeP, twentyThreeW, twentyFourP, twentyFourW, twentyFiveP, twentyFiveW, twentySixP, twentySixW, twentySevenP, twentySevenW, twentyEightP, twentyEightW, twentyNineP, twentyNineW):
     return f'''
 MP7 - Orb Modifer
-00000000 00800000
 042EF588 00050505
 042EF58C 05{oneW}{oneW}{oneW}
 042EF590 {oneW}{oneW}{oneW}{oneW}
@@ -547,10 +546,10 @@ MP7 - Orb Modifer
 042EF73C {twentyEightP}{twentyEightW}{twentyEightW}{twentyEightW}
 042EF740 {twentyEightW}{twentyEightW}{twentyEightW}{twentyEightW}
 042EF744 {twentyEightW}{twentyEightW}0000
-042EF74828{twentyNineP}{twentyNineP}{twentyNineP}
-042EF74C{twentyNineP}{twentyNineW}{twentyNineW}{twentyNineW}
-042EF750{twentyNineW}{twentyNineW}{twentyNineW}{twentyNineW}
-042EF754{twentyNineW}{twentyNineW}0000
+042EF748 28{twentyNineP}{twentyNineP}{twentyNineP}
+042EF74C {twentyNineP}{twentyNineW}{twentyNineW}{twentyNineW}
+042EF750 {twentyNineW}{twentyNineW}{twentyNineW}{twentyNineW}
+042EF754 {twentyNineW}{twentyNineW}0000
 042EF758 32000000
 042EF75C 00000000
 042EF760 00000000
@@ -571,31 +570,4 @@ MP7 - Orb Modifer
 042EF79C 00000000
 042EF7A0 00000000
 042EF7A4 00000000
-0419EB0C 48000024
-04274ADC 00000001
-06004860 0000002C
-88030000 28000028
-4082001C 3C80802E
-6084F598 38A00010
-4BFFECC9 38000028
-98030000 3B9C0001
-481E5098 00000000
-041E991C 4BE1AF44
-041EE17C 38600000
-041EE23C 48000014
-041F5F98 8803001B
-041F5F9C 2C00001F
-041F5FA4 60000000
-041F5FA8 2C000020
-041F5FB0 4800004C
-041F60C4 8803001B
-041F60C8 2C00001F
-041F60D0 60000000
-041F60D4 2C000020
-041F60DC 48000064
-041F6230 8803001B
-041F6234 2C00001F
-041F623C 60000000
-041F6240 2C000020
-041F6248 48000050
 '''
