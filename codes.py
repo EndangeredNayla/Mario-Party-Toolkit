@@ -188,7 +188,7 @@ C2183590 00000002
 
 def getPinkBooSpaceCodeSix(amount, negAmount):
     return f'''
-MP5 - Stars Cost SIXBOO Coins when stealing with Pink Boo
+MP6 - Stars Cost SIXBOO Coins when stealing with Pink Boo
 C21B1FB4 00000001
 2C04{amount} 00000000
 C21B2634 00000001
