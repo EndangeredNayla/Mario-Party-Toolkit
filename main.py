@@ -18,7 +18,6 @@ from CTkToolTip import *
 from functions import *
 from credits import *
 from codes import *
-from items import *
 
 customtkinter.set_appearance_mode("Dark")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
@@ -144,7 +143,7 @@ class App(customtkinter.CTk):
         self.redSpaceTickboxOne.grid(row=2, column=5, padx=10, pady=10)
 
         parseButtonOne = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonOne, text="Generate Codes")
-        parseButtonOne.place(x=390, y=660)
+        parseButtonOne.place(x=390, y=560)
 
         return frame
 
@@ -178,7 +177,7 @@ class App(customtkinter.CTk):
         self.redSpaceTickboxTwo.grid(row=2, column=5, padx=10, pady=10)
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonTwo, text="Generate Codes")
-        parseButtonTwo.place(x=390, y=660)
+        parseButtonTwo.place(x=390, y=560)
 
         return frame
 
@@ -211,7 +210,7 @@ class App(customtkinter.CTk):
         self.redSpaceTickboxThree = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="Double the coins on Last 5", width=16, checkbox_width=16, checkbox_height=16)
         self.redSpaceTickboxThree.grid(row=2, column=5, padx=10, pady=10)
         parseButtonThree = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonThree, text="Generate Codes")
-        parseButtonThree.place(x=390, y=660)
+        parseButtonThree.place(x=390, y=560)
         return frame
 
 
@@ -250,7 +249,7 @@ class App(customtkinter.CTk):
         starSpaceLabel4.grid(row=3, column=4, sticky="w")
 
         parseButtonFour = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonFour, text="Generate Codes")
-        parseButtonFour.place(x=390, y=660)
+        parseButtonFour.place(x=390, y=560)
         return frame
 
     def create_mp5_frame(self):
@@ -306,7 +305,7 @@ class App(customtkinter.CTk):
         chompSpaceLabel5.grid(row=5, column=4, sticky="w")
 
         parseButtonFive = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonFive, text="Generate Codes")
-        parseButtonFive.place(x=390, y=660)
+        parseButtonFive.place(x=390, y=560)
         return frame
 
     def create_mp6_frame(self):
@@ -353,7 +352,7 @@ class App(customtkinter.CTk):
         pinkBooSpaceLabel6.grid(row=4, column=4, sticky="w")
         
         parseButtonSix = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonSix, text="Generate Codes")
-        parseButtonSix.place(x=390, y=660)
+        parseButtonSix.place(x=390, y=560)
         return frame
 
     def create_mp7_frame(self):
@@ -785,10 +784,10 @@ class App(customtkinter.CTk):
         starSpaceLabel6.grid(row=4, column=4, sticky="w")
 
         parseButtonSeven = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonSeven, text="Generate Codes")
-        parseButtonSeven.place(x=390, y=660)
+        parseButtonSeven.place(x=390, y=560)
 
         parseButtonSevenOrbs = ctk.CTkButton(master=tabview.tab("Orb Modifiers"), command=self.actionSpaceButtonSevenOrb, text="Generate Codes")
-        parseButtonSevenOrbs.place(x=390, y=660)
+        parseButtonSevenOrbs.place(x=390, y=560)
         return frame
     
     def create_credits_frame(self):
@@ -842,7 +841,7 @@ class App(customtkinter.CTk):
         starSpaceLabel6.grid(row=3, column=4, sticky="w")
 
         parseButtonEight2 = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonEight2, text="Generate Codes")
-        parseButtonEight2.place(x=390, y=660)
+        parseButtonEight2.place(x=390, y=560)
         return frame
         
     def create_mp8_frame(self):
@@ -880,7 +879,7 @@ class App(customtkinter.CTk):
         starSpaceLabel6.grid(row=3, column=4, sticky="w")
 
         parseButtonEight = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonEight, text="Generate Codes")
-        parseButtonEight.place(x=390, y=660)
+        parseButtonEight.place(x=390, y=560)
         return frame
 
     def actionSpaceButtonOne(self):
