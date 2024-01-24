@@ -219,7 +219,194 @@ class App(customtkinter.CTk):
         tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
         tabview.pack(padx=20, pady=20)
         tabview.add("Space Modifiers")
+        tabview.add("Item Modifiers")
         tabview.set("Space Modifiers")
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Item Modifiers"), "assets/miniMushroom.png", 2, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=2, column=2)
+        self.miniPrice4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.miniPrice4.grid(row=2, column=3)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" and is ", font=("Arial", 16))
+        label.grid(row=2, column=4)
+        self.miniWeight4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.miniWeight4.grid(row=2, column=5)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" % common.   ", font=("Arial", 16))
+        label.grid(row=2, column=6)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Item Modifiers"), "assets/megaMushroom.png", 3, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=3, column=2)
+        self.megaPrice4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.megaPrice4.grid(row=3, column=3)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" and is ", font=("Arial", 16))
+        label.grid(row=3, column=4)
+        self.megaWeight4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.megaWeight4.grid(row=3, column=5)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" % common.", font=("Arial", 16))
+        label.grid(row=3, column=6)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Item Modifiers"), "assets/superMiniMushroom.png", 4, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=4, column=2)
+        self.superMiniPrice4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.superMiniPrice4.grid(row=4, column=3)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" and is ", font=("Arial", 16))
+        label.grid(row=4, column=4)
+        self.superMiniWeight4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.superMiniWeight4.grid(row=4, column=5)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" % common.", font=("Arial", 16))
+        label.grid(row=4, column=6)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Item Modifiers"), "assets/superMegaMushroom.png", 5, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=5, column=2)
+        self.superMegaPrice4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.superMegaPrice4.grid(row=5, column=3)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" and is ", font=("Arial", 16))
+        label.grid(row=5, column=4)
+        self.superMegaWeight4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.superMegaWeight4.grid(row=5, column=5)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" % common.", font=("Arial", 16))
+        label.grid(row=5, column=6)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Item Modifiers"), "assets/miniMegaHammer.png", 6, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=6, column=2)
+        self.miniMegaHammerPrice4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.miniMegaHammerPrice4.grid(row=6, column=3)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" and is ", font=("Arial", 16))
+        label.grid(row=6, column=4)
+        self.miniMegaHammerWeight4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.miniMegaHammerWeight4.grid(row=6, column=5)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" % common.", font=("Arial", 16))
+        label.grid(row=6, column=6)
+
+
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text="", font=("Arial", 16))
+        label.grid(row=2, column=7)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Item Modifiers"), "assets/sparkySticker.png", 2, 8)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=2, column=9)
+        self.sparkyStickerPrice4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.sparkyStickerPrice4.grid(row=2, column=10)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" and is ", font=("Arial", 16))
+        label.grid(row=2, column=11)
+        self.sparkyStickerWeight4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.sparkyStickerWeight4.grid(row=2, column=12)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" % common.  ", font=("Arial", 16))
+        label.grid(row=2, column=13)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Item Modifiers"), "assets/warpPipe.png", 3, 8)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=3, column=9)
+        self.warpPipePrice4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.warpPipePrice4.grid(row=3, column=10)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" and is ", font=("Arial", 16))
+        label.grid(row=3, column=11)
+        self.warpPipeWeight4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.warpPipeWeight4.grid(row=3, column=12)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" % common.", font=("Arial", 16))
+        label.grid(row=3, column=13)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Item Modifiers"), "assets/swapCard.png", 4, 8)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=4, column=9)
+        self.swapCardPrice4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.swapCardPrice4.grid(row=4, column=10)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" and is ", font=("Arial", 16))
+        label.grid(row=4, column=11)
+        self.swapCardWeight4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.swapCardWeight4.grid(row=4, column=12)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" % common.", font=("Arial", 16))
+        label.grid(row=4, column=13)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Item Modifiers"), "assets/bowserSuit4.png", 5, 8)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=5, column=9)
+        self.bowserSuitPrice4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.bowserSuitPrice4.grid(row=5, column=10)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" and is ", font=("Arial", 16))
+        label.grid(row=5, column=11)
+        self.bowserSuitWeight4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.bowserSuitWeight4.grid(row=5, column=12)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" % common.", font=("Arial", 16))
+        label.grid(row=5, column=13)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Item Modifiers"), "assets/gaddlight.png", 6, 8)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=6, column=9)
+        self.gaddlightPrice4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.gaddlightPrice4.grid(row=6, column=10)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" and is ", font=("Arial", 16))
+        label.grid(row=6, column=11)
+        self.gaddlightWeight4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.gaddlightWeight4.grid(row=6, column=12)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" % common.", font=("Arial", 16))
+        label.grid(row=6, column=13)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Item Modifiers"), "assets/magicLamp4.png", 2, 15)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=2, column=16)
+        self.magicLampPrice4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.magicLampPrice4.grid(row=2, column=17)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" and is ", font=("Arial", 16))
+        label.grid(row=2, column=18)
+        self.magicLampWeight4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.magicLampWeight4.grid(row=2, column=19)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" % common.", font=("Arial", 16))
+        label.grid(row=2, column=20)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Item Modifiers"), "assets/crystalBall.png", 3, 15)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=3, column=16)
+        self.crystalBallPrice4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.crystalBallPrice4.grid(row=3, column=17)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" and is ", font=("Arial", 16))
+        label.grid(row=3, column=18)
+        self.crystalBallWeight4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.crystalBallWeight4.grid(row=3, column=19)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" % common.", font=("Arial", 16))
+        label.grid(row=3, column=20)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Item Modifiers"), "assets/chompCall.png", 4, 15)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=4, column=16)
+        self.chompCallPrice4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.chompCallPrice4.grid(row=4, column=17)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" and is ", font=("Arial", 16))
+        label.grid(row=4, column=18)
+        self.chompCallWeight4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.chompCallWeight4.grid(row=4, column=19)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" % common.", font=("Arial", 16))
+        label.grid(row=4, column=20)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Item Modifiers"), "assets/itemBag4.png", 5, 15)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=5, column=16)
+        self.itemBagPrice4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.itemBagPrice4.grid(row=5, column=17)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" and is ", font=("Arial", 16))
+        label.grid(row=5, column=18)
+        self.itemBagWeight4 = ctk.CTkEntry(master=tabview.tab("Item Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.itemBagWeight4.grid(row=5, column=19)
+        label = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text=" % common.", font=("Arial", 16))
+        label.grid(row=5, column=20)
 
         # Create blue space icon and entry
         blueSpaceIconFour = create_image_icon(tabview.tab("Space Modifiers"), "assets/blueSpace.png", 1, 1)
@@ -250,6 +437,10 @@ class App(customtkinter.CTk):
 
         parseButtonFour = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonFour, text="Generate Codes")
         parseButtonFour.place(x=390, y=560)
+
+        parseButtonFour = ctk.CTkButton(master=tabview.tab("Item Modifiers"), command=self.actionSpaceButtonFourItem, text="Generate Codes")
+        parseButtonFour.place(x=390, y=560)
+
         return frame
 
     def create_mp5_frame(self):
@@ -508,7 +699,6 @@ class App(customtkinter.CTk):
 
         label = ctk.CTkLabel(master=tabview.tab("Orb Modifiers"), text="", font=("Arial", 16))
         label.grid(row=2, column=7)
-        
 
         # Create mushroom orb space icon and entry
         icon = create_image_icon(tabview.tab("Orb Modifiers"), "assets/kamekCapsule.png", 2, 8)
@@ -787,7 +977,7 @@ class App(customtkinter.CTk):
         parseButtonSeven.place(x=390, y=560)
 
         parseButtonSevenOrbs = ctk.CTkButton(master=tabview.tab("Orb Modifiers"), command=self.actionSpaceButtonSevenOrb, text="Generate Codes")
-        parseButtonSevenOrbs.place(x=390, y=560)
+        parseButtonSevenOrbs.place(x=390, y=620)
         return frame
     
     def create_credits_frame(self):
@@ -1510,8 +1700,331 @@ class App(customtkinter.CTk):
         print("Generated codes copied to the clipboard.")
         createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
 
+    def actionSpaceButtonFourItem(self):
+        if not self.miniPrice4.get() or not self.miniWeight4.get() or not self.megaPrice4.get() or not self.megaWeight4.get() or not self.superMegaPrice4.get() or not self.superMegaWeight4.get() or not self.superMiniPrice4.get() or not self.superMiniWeight4.get() or not self.miniMegaHammerPrice4.get() or not self.miniMegaHammerWeight4.get() or not self.warpPipePrice4.get() or not self.warpPipeWeight4.get() or not self.swapCardPrice4.get() or not self.swapCardWeight4.get() or not self.sparkyStickerPrice4.get() or not self.sparkyStickerWeight4.get() or not self.bowserSuitPrice4.get() or not self.bowserSuitWeight4.get() or not self.gaddlightPrice4.get() or not self.gaddlightWeight4.get() or not self.chompCallPrice4.get() or not self.chompCallWeight4.get() or not self.crystalBallPrice4.get() or not self.crystalBallWeight4.get() or not self.magicLampPrice4.get() or not self.magicLampWeight4.get() or not self.itemBagPrice4.get()  or not self.itemBagWeight4.get():
+            createDialog("Error", "error", "Please fill out all the boxes.", None)
+            return
+
+        miniPrice4 = self.miniPrice4.get()
+        miniWeight4 = self.miniWeight4.get()
+
+        megaPrice4 = self.megaPrice4.get()
+        megaWeight4 = self.megaWeight4.get()
+
+        superMiniPrice4 = self.superMiniPrice4.get()
+        superMiniWeight4 = self.superMiniWeight4.get()
+
+        superMegaPrice4 = self.superMegaPrice4.get()
+        superMegaWeight4 = self.superMegaWeight4.get()
+
+        miniMegaHammerPrice4 = self.miniMegaHammerPrice4.get()
+        miniMegaHammerWeight4 = self.miniMegaHammerWeight4.get()
+
+        warpPipePrice4 = self.warpPipePrice4.get()
+        warpPipeWeight4 = self.warpPipeWeight4.get()
+
+        swapCardPrice4 = self.swapCardPrice4.get()
+        swapCardWeight4 = self.swapCardWeight4.get()
+
+        sparkyStickerPrice4 = self.sparkyStickerPrice4.get()
+        sparkyStickerWeight4 = self.sparkyStickerWeight4.get()
+
+        gaddlightPrice4 = self.gaddlightPrice4.get()
+        gaddlightWeight4 = self.gaddlightWeight4.get()
+
+        chompCallPrice4 = self.chompCallPrice4.get()
+        chompCallWeight4 = self.chompCallWeight4.get()
+
+        bowserSuitPrice4 = self.bowserSuitPrice4.get()
+        bowserSuitWeight4 = self.bowserSuitWeight4.get()
+
+        crystalBallPrice4 = self.crystalBallPrice4.get()
+        crystalBallWeight4 = self.crystalBallWeight4.get()
+
+        magicLampPrice4 = self.magicLampPrice4.get()
+        magicLampWeight4 = self.magicLampWeight4.get()
+
+        itemBagPrice4 = self.itemBagPrice4.get()
+        itemBagWeight4 = self.itemBagWeight4.get()
+
+        orbWeightTotal = int(miniWeight4) + int(megaWeight4) + int(superMiniWeight4) + int(superMegaWeight4) + int(miniMegaHammerWeight4) + int(warpPipeWeight4) + int(swapCardWeight4) + int(sparkyStickerWeight4) + int(gaddlightWeight4) + int(chompCallWeight4) + int(bowserSuitWeight4) + int(crystalBallWeight4) + int(magicLampWeight4) + int(itemBagWeight4)
+
+        miniWeight4 = (int(miniWeight4) / orbWeightTotal) * 100
+        megaWeight4 = (int(megaWeight4) / orbWeightTotal) * 100
+        superMegaWeight4 = (int(superMegaWeight4) / orbWeightTotal) * 100
+        superMiniWeight4 = (int(superMiniWeight4) / orbWeightTotal) * 100
+        miniMegaHammerWeight4 = (int(miniMegaHammerWeight4) / orbWeightTotal) * 100
+        warpPipeWeight4 = (int(warpPipeWeight4) / orbWeightTotal) * 100
+        swapCardWeight4 = (int(swapCardWeight4) / orbWeightTotal) * 100
+        sparkyStickerWeight4 = (int(sparkyStickerWeight4) / orbWeightTotal) * 100
+        gaddlightWeight4 = (int(gaddlightWeight4) / orbWeightTotal) * 100
+        chompCallWeight4 = (int(chompCallWeight4) / orbWeightTotal) * 100
+        bowserSuitWeight4 = (int(bowserSuitWeight4) / orbWeightTotal) * 100
+        crystalBallWeight4 = (int(crystalBallWeight4) / orbWeightTotal) * 100
+        magicLampWeight4 = (int(magicLampWeight4) / orbWeightTotal) * 100
+        itemBagWeight4 = (int(itemBagWeight4) / orbWeightTotal) * 100
+
+        try:
+            miniWeight4 = hex(int(miniWeight4))
+            if len(miniWeight4) == 4:
+                miniWeight4 = miniWeight4[2:]
+            elif len(miniWeight4) == 3:
+                miniWeight4 = "0" + miniWeight4[2:]
+        except:
+            miniWeight4 = "00"
+
+        try:
+            miniPrice4 = hex(int(miniPrice4))
+            if len(miniPrice4) == 4:
+                miniPrice4 = miniPrice4[2:]
+            elif len(miniPrice4) == 3:
+                miniPrice4 = "0" + miniPrice4[2:]
+        except:
+            miniPrice4 = "00"        
+
+        try:
+            megaWeight4 = hex(int(megaWeight4))
+            if len(megaWeight4) == 4:
+                megaWeight4 = megaWeight4[2:]
+            elif len(megaWeight4) == 3:
+                megaWeight4 = "0" + megaWeight4[2:]
+        except:
+            megaWeight4 = "00"
+
+        try:
+            megaPrice4 = hex(int(megaPrice4))
+            if len(megaPrice4) == 4:
+                megaPrice4 = megaPrice4[2:]
+            elif len(megaPrice4) == 3:
+                megaPrice4 = "0" + megaPrice4[2:]
+        except:
+            megaPrice4 = "00"
+
+        try:
+            superMiniWeight4 = hex(int(superMiniWeight4))
+            if len(superMiniWeight4) == 4:
+                superMiniWeight4 = superMiniWeight4[2:]
+            elif len(superMiniWeight4) == 3:
+                superMiniWeight4 = "0" + superMiniWeight4[2:]
+        except:
+            superMiniWeight4 = "00"
+
+        try:
+            superMiniPrice4 = hex(int(superMiniPrice4))
+            if len(superMiniPrice4) == 4:
+                superMiniPrice4 = superMiniPrice4[2:]
+            elif len(superMiniPrice4) == 3:
+                superMiniPrice4 = "0" + superMiniPrice4[2:]
+        except:
+            superMiniPrice4 = "00"
+
+        try:
+            superMegaWeight4 = hex(int(superMegaWeight4))
+            if len(superMegaWeight4) == 4:
+                superMegaWeight4 = superMegaWeight4[2:]
+            elif len(superMegaWeight4) == 3:
+                superMegaWeight4 = "0" + superMegaWeight4[2:]
+        except:
+            superMegaWeight4 = "00"
+
+        try:
+            superMegaPrice4 = hex(int(superMegaPrice4))
+            if len(superMegaPrice4) == 4:
+                superMegaPrice4 = superMegaPrice4[2:]
+            elif len(superMegaPrice4) == 3:
+                superMegaPrice4 = "0" + superMegaPrice4[2:]
+        except:
+            superMegaPrice4 = "00"
+
+        try:
+            miniMegaHammerWeight4 = hex(int(miniMegaHammerWeight4))
+            if len(miniMegaHammerWeight4) == 4:
+                miniMegaHammerWeight4 = miniMegaHammerWeight4[2:]
+            elif len(miniMegaHammerWeight4) == 3:
+                miniMegaHammerWeight4 = "0" + miniMegaHammerWeight4[2:]
+        except:
+            miniMegaHammerWeight4 = "00"
+
+        try:
+            miniMegaHammerPrice4 = hex(int(miniMegaHammerPrice4))
+            if len(miniMegaHammerPrice4) == 4:
+                miniMegaHammerPrice4 = miniMegaHammerPrice4[2:]
+            elif len(miniMegaHammerPrice4) == 3:
+                miniMegaHammerPrice4 = "0" + miniMegaHammerPrice4[2:]
+        except:
+            miniMegaHammerPrice4 = "00"
+
+        try:
+            warpPipeWeight4 = hex(int(warpPipeWeight4))
+            if len(warpPipeWeight4) == 4:
+                warpPipeWeight4 = warpPipeWeight4[2:]
+            elif len(warpPipeWeight4) == 3:
+                warpPipeWeight4 = "0" + warpPipeWeight4[2:]
+        except:
+            warpPipeWeight4 = "00"
+
+        try:
+            warpPipePrice4 = hex(int(warpPipePrice4))
+            if len(warpPipePrice4) == 4:
+                warpPipePrice4 = warpPipePrice4[2:]
+            elif len(warpPipePrice4) == 3:
+                warpPipePrice4 = "0" + warpPipePrice4[2:]
+        except:
+            warpPipePrice4 = "00"
+
+        try:
+            swapCardWeight4 = hex(int(swapCardWeight4))
+            if len(swapCardWeight4) == 4:
+                swapCardWeight4 = swapCardWeight4[2:]
+            elif len(swapCardWeight4) == 3:
+                swapCardWeight4 = "0" + swapCardWeight4[2:]
+        except:
+            swapCardWeight4 = "00"
+
+        try:
+            swapCardPrice4 = hex(int(swapCardPrice4))
+            if len(swapCardPrice4) == 4:
+                swapCardPrice4 = swapCardPrice4[2:]
+            elif len(swapCardPrice4) == 3:
+                swapCardPrice4 = "0" + swapCardPrice4[2:]
+        except:
+            swapCardPrice4 = "00"
+
+        try:
+            sparkyStickerWeight4 = hex(int(sparkyStickerWeight4))
+            if len(sparkyStickerWeight4) == 4:
+                sparkyStickerWeight4 = sparkyStickerWeight4[2:]
+            elif len(sparkyStickerWeight4) == 3:
+                sparkyStickerWeight4 = "0" + sparkyStickerWeight4[2:]
+        except:
+            sparkyStickerWeight4 = "00"
+
+        try:
+            sparkyStickerPrice4 = hex(int(sparkyStickerPrice4))
+            if len(sparkyStickerPrice4) == 4:
+                sparkyStickerPrice4 = sparkyStickerPrice4[2:]
+            elif len(sparkyStickerPrice4) == 3:
+                sparkyStickerPrice4 = "0" + sparkyStickerPrice4[2:]
+        except:
+            sparkyStickerPrice4 = "00"
+
+        try:
+            gaddlightWeight4 = hex(int(gaddlightWeight4))
+            if len(gaddlightWeight4) == 4:
+                gaddlightWeight4 = gaddlightWeight4[2:]
+            elif len(gaddlightWeight4) == 3:
+                gaddlightWeight4 = "0" + gaddlightWeight4[2:]
+        except:
+            gaddlightWeight4 = "00"
+
+        try:
+            gaddlightPrice4 = hex(int(gaddlightPrice4))
+            if len(gaddlightPrice4) == 4:
+                gaddlightPrice4 = gaddlightPrice4[2:]
+            elif len(gaddlightPrice4) == 3:
+                gaddlightPrice4 = "0" + gaddlightPrice4[2:]
+        except:
+            gaddlightPrice4 = "00"
+
+        try:
+            chompCallWeight4 = hex(int(chompCallWeight4))
+            if len(chompCallWeight4) == 4:
+                chompCallWeight4 = chompCallWeight4[2:]
+            elif len(chompCallWeight4) == 3:
+                chompCallWeight4 = "0" + chompCallWeight4[2:]
+        except:
+            chompCallWeight4 = "00"
+
+        try:
+            chompCallPrice4 = hex(int(chompCallPrice4))
+            if len(chompCallPrice4) == 4:
+                chompCallPrice4 = chompCallPrice4[2:]
+            elif len(chompCallPrice4) == 3:
+                chompCallPrice4 = "0" + chompCallPrice4[2:]
+        except:
+            chompCallPrice4 = "00"
+
+        try:
+            bowserSuitWeight4 = hex(int(bowserSuitWeight4))
+            if len(bowserSuitWeight4) == 4:
+                bowserSuitWeight4 = bowserSuitWeight4[2:]
+            elif len(bowserSuitWeight4) == 3:
+                bowserSuitWeight4 = "0" + bowserSuitWeight4[2:]
+        except:
+            bowserSuitWeight4 = "00"
+
+        try:
+            bowserSuitPrice4 = hex(int(bowserSuitPrice4))
+            if len(bowserSuitPrice4) == 4:
+                bowserSuitPrice4 = bowserSuitPrice4[2:]
+            elif len(bowserSuitPrice4) == 3:
+                bowserSuitPrice4 = "0" + bowserSuitPrice4[2:]
+        except:
+            bowserSuitPrice4 = "00"
+
+        try:
+            crystalBallWeight4 = hex(int(crystalBallWeight4))
+            if len(crystalBallWeight4) == 4:
+                crystalBallWeight4 = crystalBallWeight4[2:]
+            elif len(crystalBallWeight4) == 3:
+                crystalBallWeight4 = "0" + crystalBallWeight4[2:]
+        except:
+            crystalBallWeight4 = "00"
+
+        try:
+            crystalBallPrice4 = hex(int(crystalBallPrice4))
+            if len(crystalBallPrice4) == 4:
+                crystalBallPrice4 = crystalBallPrice4[2:]
+            elif len(crystalBallPrice4) == 3:
+                crystalBallPrice4 = "0" + crystalBallPrice4[2:]
+        except:
+            crystalBallPrice4 = "00"
+
+        try:
+            magicLampWeight4 = hex(int(magicLampWeight4))
+            if len(magicLampWeight4) == 4:
+                magicLampWeight4 = magicLampWeight4[2:]
+            elif len(magicLampWeight4) == 3:
+                magicLampWeight4 = "0" + magicLampWeight4[2:]
+        except:
+            magicLampWeight4 = "00"
+
+        try:
+            magicLampPrice4 = hex(int(magicLampPrice4))
+            if len(magicLampPrice4) == 4:
+                magicLampPrice4 = magicLampPrice4[2:]
+            elif len(magicLampPrice4) == 3:
+                magicLampPrice4 = "0" + magicLampPrice4[2:]
+        except:
+            magicLampPrice4 = "00"
+
+        try:
+            itemBagWeight4 = hex(int(itemBagWeight4))
+            if len(itemBagWeight4) == 4:
+                itemBagWeight4 = itemBagWeight4[2:]
+            elif len(itemBagWeight4) == 3:
+                itemBagWeight4 = "0" + itemBagWeight4[2:]
+        except:
+            itemBagWeight4 = "00"
+
+        try:
+            itemBagPrice4 = hex(int(itemBagPrice4))
+            if len(itemBagPrice4) == 4:
+                itemBagPrice4 = itemBagPrice4[2:]
+            elif len(itemBagPrice4) == 3:
+                itemBagPrice4 = "0" + itemBagPrice4[2:]
+        except:
+            itemBagPrice4 = "00"
+
+        generatedCode = getItemModsFour(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, sparkyStickerPrice4, sparkyStickerWeight4, gaddlightPrice4, gaddlightWeight4, chompCallPrice4, chompCallWeight4, bowserSuitPrice4, bowserSuitWeight4, crystalBallPrice4, crystalBallWeight4, magicLampPrice4, magicLampWeight4, itemBagPrice4, itemBagWeight4)
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+
+        print("Generated code copied to the clipboard.")
+        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
+
     def actionSpaceButtonSevenOrb(self):
-        if not self.mushroomCapsuleWeight7.get() or not self.goldenMushroomCapsulePrice7.get() or not self.goldenMushroomCapsuleWeight7.get() or not self.slowMushroomCapsulePrice7.get() or not self.slowMushroomCapsuleWeight7.get() or not self.metalMushroomCapsulePrice7.get() or not self.metalMushroomCapsuleWeight7.get() or not self.flutterCapsulePrice7.get() or not self.flutterCapsuleWeight7.get() or not self.cannonCapsulePrice7.get() or not self.cannonCapsuleWeight7.get() or not self.snackCapsulePrice7.get() or not self.snackCapsuleWeight7.get() or not self.lakituCapsulePrice7.get() or not self.lakituCapsuleWeight7.get() or not self.hammerBroCapsuleWeight7.get() or not self.hammerBroCapsulePrice7.get() or not self.plantCapsulePrice7.get() or not self.plantCapsuleWeight7.get() or not self.spearCapsuleWeight7.get() or not self.spearCapsulePrice7.get() or not self.kamekCapsuleWeight7.get() or not self.kamekCapsulePrice7.get() or not self.toadyCapsuleWeight7.get() or not self.toadyCapsulePrice7.get() or not self.blizzardCapsuleWeight7.get() or not self.blizzardCapsulePrice7.get():
+        if not self.mushroomCapsuleWeight7.get() or not self.goldenMushroomCapsulePrice7.get() or not self.goldenMushroomCapsuleWeight7.get() or not self.slowMushroomCapsulePrice7.get() or not self.slowMushroomCapsuleWeight7.get() or not self.metalMushroomCapsulePrice7.get() or not self.metalMushroomCapsuleWeight7.get() or not self.flutterCapsulePrice7.get() or not self.flutterCapsuleWeight7.get() or not self.cannonCapsulePrice7.get() or not self.cannonCapsuleWeight7.get() or not self.snackCapsulePrice7.get() or not self.snackCapsuleWeight7.get() or not self.lakituCapsulePrice7.get() or not self.lakituCapsuleWeight7.get() or not self.hammerBroCapsuleWeight7.get() or not self.hammerBroCapsulePrice7.get() or not self.plantCapsulePrice7.get() or not self.plantCapsuleWeight7.get() or not self.spearCapsuleWeight7.get() or not self.spearCapsulePrice7.get() or not self.kamekCapsuleWeight7.get() or not self.kamekCapsulePrice7.get() or not self.toadyCapsuleWeight7.get() or not self.toadyCapsulePrice7.get() or not self.blizzardCapsuleWeight7.get() or not self.blizzardCapsulePrice7.get() or not self.banditCapsulePrice7.get() or not self.banditCapsuleWeight7.get() or not pinkBooCapsuleWeight7() or not pinkBooCapsulePrice7.get() or not spinyCapsulePrice7() or not spinyCapsuleWeight7.get() or not zapCapsulePrice7() or not zapCapsuleWeight7.get() or not tweesterCapsulePrice7() or not tweesterCapsuleWeight7.get() or not thwompCapsulePrice7() or not thwompCapsuleWeight7.get() or not warpCapsulePrice7() or not warpCapsuleWeight7.get() or not bombCapsulePrice7() or not bombCapsuleWeight7.get() or not fireballCapsulePrice7() or not fireballCapsuleWeight7.get() or not eggCapsulePrice7() or not eggCapsuleWeight7.get() or not () or not flowerCapsulePrice7.get() or not flowerCapsuleWeight7() or not vacuumCapsulePrice7.get() or not vacuumCapsuleWeight7.get() or not magicCapsulePrice7.get() or not magicCapsuleWeight7.get() or not tripleCapsulePrice7.get() or not tripleCapsuleWeight7.get() or not koopaCapsulePrice7.get() or not koopaCapsuleWeight7.get():
             createDialog("Error", "error", "Please fill out all the boxes.", None)
             return
         
