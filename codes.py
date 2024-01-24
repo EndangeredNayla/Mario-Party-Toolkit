@@ -111,6 +111,12 @@ MP4 - Blue Spaces Give FOURBLUE Coins
 0407FBE0 3BC0{amount}
 '''
 
+def getBooSpaceCodeFour(amount):
+    return f'''
+MP4 - Stars Cost FOURBOO Coins when stealing with Chain chomp
+040A5F30 2C1E{amount}
+'''
+
 def getStarSpaceCodeFour(amount):
     return f'''
 MP4 - Stars Cost FOURSTAR Coins
@@ -118,6 +124,12 @@ MP4 - Stars Cost FOURSTAR Coins
 04084590 2C03{amount}
 040845CC 2C03{amount}
 0408473C 2C1C{amount}
+'''
+
+def getLotterySpaceCodeFour(amount):
+    return f'''
+MP4 - Lottery Costs FOURLOTTERY Coins
+0407BD20 2C1E{amount}
 '''
 
 def getBlueSpaceCodeFive(amount):
@@ -172,6 +184,12 @@ MP6 - Red Spaces Take Away SIXRED Coins
 0415F278 3880{amount}
 '''
 
+def getCharacterSpaceCodeSix(amount):
+    return f'''
+MP6 - Character Spaces Give SIXCHARACTER Coins
+0415F230 3880{amount}
+'''
+
 def getStarSpaceCodeSix(amount, negAmount):
     return f'''
 MP6 - Stars Cost SIXSTAR Coins
@@ -207,6 +225,12 @@ def getRedSpaceCodeSeven(amount):
 MP7 - Red Spaces Take Away SEVENRED Coins
 04168600 60000000
 04168604 3880{amount}
+'''
+
+def getCharacterSpaceCodeSeven(amount):
+    return f'''
+MP7 - Character Spaces Give SEVENCHARACTER Coins
+0415F230 3880{amount}
 '''
 
 def getStarSpaceCodeSeven(amount):

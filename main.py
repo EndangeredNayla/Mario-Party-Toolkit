@@ -435,6 +435,24 @@ class App(customtkinter.CTk):
         starSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when passing and using a Magic Lamp.", font=("Arial", 16))
         starSpaceLabel4.grid(row=3, column=4, sticky="w")
 
+        # Create star space icon and entry
+        starSpaceIconFour = create_image_icon(tabview.tab("Space Modifiers"), "assets/booHouse.png", 4, 1)
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 16))
+        starSpaceLabel.grid(row=4, column=2)
+        self.starSpaceAmountFour = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.starSpaceAmountFour.grid(row=4, column=3)
+        starSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when stealing a Star.", font=("Arial", 16))
+        starSpaceLabel4.grid(row=4, column=4, sticky="w")
+
+        # Create star space icon and entry
+        lotterySpaceIconFour = create_image_icon(tabview.tab("Space Modifiers"), "assets/lottery4.png", 5, 1)
+        lotterySpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 16))
+        lotterySpaceLabel.grid(row=5, column=2)
+        self.lotterySpaceAmountFour = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.lotterySpaceAmountFour.grid(row=5, column=3)
+        lotterySpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when playing the Lottery.", font=("Arial", 16))
+        lotterySpaceLabel4.grid(row=5, column=4, sticky="w")
+
         parseButtonFour = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonFour, text="Generate Codes")
         parseButtonFour.place(x=390, y=560)
 
@@ -524,23 +542,32 @@ class App(customtkinter.CTk):
         redSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Red Space.", font=("Arial", 16))
         redSpaceLabel6.grid(row=2, column=4, sticky="w")
 
+        # Create character space icon and entry
+        characterSpaceIconSix = create_image_icon(tabview.tab("Space Modifiers"), "assets/characterSpace.png", 3, 1)
+        characterSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Gain  ", font=("Arial", 16))
+        characterSpaceLabel.grid(row=3, column=2)
+        self.characterSpaceAmountSix = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.characterSpaceAmountSix.grid(row=3, column=3)
+        characterSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when the character lands on their own Character Space.", font=("Arial", 16))
+        characterSpaceLabel6.grid(row=3, column=4, sticky="w")
+
         # Create star space icon and entry
-        starSpaceIconSix = create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpace.png", 3, 1)
+        starSpaceIconSix = create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpace.png", 4, 1)
         starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 16))
-        starSpaceLabel.grid(row=3, column=2)
+        starSpaceLabel.grid(row=4, column=2)
         self.starSpaceAmountSix = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
-        self.starSpaceAmountSix.grid(row=3, column=3)
+        self.starSpaceAmountSix.grid(row=4, column=3)
         starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when passing and using a Flutter.", font=("Arial", 16))
-        starSpaceLabel6.grid(row=3, column=4, sticky="w")
+        starSpaceLabel6.grid(row=4, column=4, sticky="w")
 
         # Create boo space icon and entry
-        pinkBooSpaceIconSix = create_image_icon(tabview.tab("Space Modifiers"), "assets/pinkBoo.png", 4, 1)
+        pinkBooSpaceIconSix = create_image_icon(tabview.tab("Space Modifiers"), "assets/pinkBoo.png", 5, 1)
         pinkBooSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 16))
-        pinkBooSpaceLabel.grid(row=4, column=2)
+        pinkBooSpaceLabel.grid(row=5, column=2)
         self.pinkBooSpaceAmountSix = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
-        self.pinkBooSpaceAmountSix.grid(row=4, column=3)
+        self.pinkBooSpaceAmountSix.grid(row=5, column=3)
         pinkBooSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when stealing a Star.", font=("Arial", 16))
-        pinkBooSpaceLabel6.grid(row=4, column=4, sticky="w")
+        pinkBooSpaceLabel6.grid(row=5, column=4, sticky="w")
         
         parseButtonSix = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonSix, text="Generate Codes")
         parseButtonSix.place(x=390, y=560)
@@ -955,23 +982,32 @@ class App(customtkinter.CTk):
         redSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins on a Red Space.", font=("Arial", 16))
         redSpaceLabel6.grid(row=2, column=4, sticky="w")
 
-        # Create star space icon and entry
-        starSpaceIconSeven= create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpace.png", 3, 1)
-        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 16))
-        starSpaceLabel.grid(row=3, column=2)
-        self.starSpaceAmountSeven = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
-        self.starSpaceAmountSeven.grid(row=3, column=3)
-        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when passing or when using a Flutter.", font=("Arial", 16))
-        starSpaceLabel6.grid(row=3, column=4, sticky="w")
+        # Create character space icon and entry
+        characterSpaceIconSeven = create_image_icon(tabview.tab("Space Modifiers"), "assets/characterSpace7.png", 3, 1)
+        characterSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 16))
+        characterSpaceLabel.grid(row=3, column=2)
+        self.characterSpaceAmountSeven = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.characterSpaceAmountSeven.grid(row=3, column=3)
+        characterSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when the character lands on their own Character Space.", font=("Arial", 16))
+        characterSpaceLabel6.grid(row=3, column=4, sticky="w")
 
-        # Create star space last five icon and entry
-        starSpaceIconSeven= create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpaceLastFive.png", 4, 1)
+        # Create star space icon and entry
+        starSpaceIconSeven = create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpace.png", 4, 1)
         starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 16))
         starSpaceLabel.grid(row=4, column=2)
-        self.starSpaceAmountSevenLastFive = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
-        self.starSpaceAmountSevenLastFive.grid(row=4, column=3)
-        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins during the Last 5 Turns Event (only if wheel lands on it).", font=("Arial", 16))
+        self.starSpaceAmountSeven = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.starSpaceAmountSeven.grid(row=4, column=3)
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when passing or when using a Flutter.", font=("Arial", 16))
         starSpaceLabel6.grid(row=4, column=4, sticky="w")
+
+        # Create star space last five icon and entry
+        starSpaceIconSeven = create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpaceLastFive.png", 5, 1)
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 16))
+        starSpaceLabel.grid(row=5, column=2)
+        self.starSpaceAmountSevenLastFive = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.starSpaceAmountSevenLastFive.grid(row=5, column=3)
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins during the Last 5 Turns Event (only if wheel lands on it).", font=("Arial", 16))
+        starSpaceLabel6.grid(row=5, column=4, sticky="w")
 
         parseButtonSeven = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonSeven, text="Generate Codes")
         parseButtonSeven.place(x=390, y=560)
@@ -1256,8 +1292,9 @@ class App(customtkinter.CTk):
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
         createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
+
     def actionSpaceButtonFour(self):    
-        if not self.blueSpaceAmountFour.get() and not self.redSpaceAmountFour.get() and not self.starSpaceAmountFour.get():
+        if not self.blueSpaceAmountFour.get() and not self.redSpaceAmountFour.get() and not self.starSpaceAmountFour.get() and not self.booSpaceAmountFour.get() and not self.lotterySpaceAmountFour.get():
             createDialog("Error", "error", "No information provided.", None)
             return
 
@@ -1296,10 +1333,35 @@ class App(customtkinter.CTk):
         except:
             starSpaceAmountFour = "DUMMY"
 
+        booSpaceAmountBaseFour = self.booSpaceAmountFour.get()
+        try:
+            booSpaceAmountFour = hex(int(self.booSpaceAmountFour.get()))
+            if len(booSpaceAmountFour) == 5:
+                booSpaceAmountFour = "0" + booSpaceAmountFour[2:]
+            elif len(booSpaceAmountFour) == 4:
+                booSpaceAmountFour = "00" + booSpaceAmountFour[2:]
+            elif len(booSpaceAmountFour) == 3:
+                booSpaceAmountFour = "000" + booSpaceAmountFour[2:]
+        except:
+            booSpaceAmountFour = "DUMMY"
+
+        lotterySpaceAmountBaseFour = self.lotterySpaceAmountFour.get()
+        try:
+            lotterySpaceAmountFour = hex(int(self.lotterySpaceAmountFour.get()))
+            if len(lotterySpaceAmountFour) == 5:
+                lotterySpaceAmountFour = "0" + lotterySpaceAmountFour[2:]
+            elif len(lotterySpaceAmountFour) == 4:
+                lotterySpaceAmountFour = "00" + lotterySpaceAmountFour[2:]
+            elif len(lotterySpaceAmountFour) == 3:
+                lotterySpaceAmountFour = "000" + lotterySpaceAmountFour[2:]
+        except:
+            lotterySpaceAmountFour = "DUMMY"
 
         marioPartyFourBlueSpace = getBlueSpaceCodeFour(blueSpaceAmountFour)
         marioPartyFourRedSpace = getRedSpaceCodeFour(redSpaceAmountFour)
         marioPartyFourStarSpace = getStarSpaceCodeFour(starSpaceAmountFour)
+        marioPartyFourLotterySpace = getLotterySpaceCodeFour(lotterySpaceAmountFour)
+        marioPartyFourBooSpace = getBooSpaceCodeFour(booSpaceAmountFour)
 
         if redSpaceAmountFour == "DUMMY":
             marioPartyFourRedSpace = ""
@@ -1307,11 +1369,17 @@ class App(customtkinter.CTk):
             marioPartyFourBlueSpace = ""
         if starSpaceAmountFour == "DUMMY":
             marioPartyFourStarSpace = ""
+        if lotterySpaceAmountFour == "DUMMY":
+            marioPartyFourLotterySpace = ""
+        if booSpaceAmountFour == "DUMMY":
+            marioPartyFourBooSpace = ""
 
-        generatedCode = marioPartyFourRedSpace + marioPartyFourBlueSpace + marioPartyFourStarSpace
+        generatedCode = marioPartyFourRedSpace + marioPartyFourBlueSpace + marioPartyFourStarSpace + marioPartyFourBooSpace + marioPartyFourLotterySpace
         generatedCode = generatedCode.replace("FOURRED", redSpaceAmountBaseFour)
         generatedCode = generatedCode.replace("FOURBLUE", blueSpaceAmountBaseFour)
         generatedCode = generatedCode.replace("FOURSTAR", starSpaceAmountFourBase)
+        generatedCode = generatedCode.repalce("FOURBOO", booSpaceAmountFourBase)
+        generatedCode = generatedCode.repalce("FOURLOTTERY", lotterySpaceAmountFourBase)
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
@@ -1425,7 +1493,7 @@ class App(customtkinter.CTk):
         createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
 
     def actionSpaceButtonSix(self):
-        if not self.blueSpaceAmountSix.get() and not self.redSpaceAmountSix.get() and not self.starSpaceAmountSix.get() and not self.pinkBooSpaceAmountSix.get():
+        if not self.blueSpaceAmountSix.get() and not self.redSpaceAmountSix.get() and not self.starSpaceAmountSix.get() and not self.pinkBooSpaceAmountSix.get() and not self.characterSpaceAmountSix.get():
             createDialog("Error", "error", "No information provided.", None)
             return
 
@@ -1477,8 +1545,21 @@ class App(customtkinter.CTk):
             pinkBooSpaceAmountSix = "DUMMY"
             pinkBooSpaceAmountNegativeSix = "DUMMY"
 
+        characterSpaceAmountBaseSix = self.characterSpaceAmountSix.get()
+        try:
+            characterSpaceAmountSix = hex(int(self.characterSpaceAmountSix.get()))
+            if len(characterSpaceAmountSix) == 5:
+                characterSpaceAmountSix = "0" + characterSpaceAmountSix[2:]
+            elif len(characterSpaceAmountSix) == 4:
+                characterSpaceAmountSix = "00" + characterSpaceAmountSix[2:]
+            elif len(characterSpaceAmountSix) == 3:
+                characterSpaceAmountSix = "000" + characterSpaceAmountSix[2:]
+        except:
+            characterSpaceAmountSix = "DUMMY"
+
         marioPartySixBlueSpace = getBlueSpaceCodeSix(blueSpaceAmountSix)
         marioPartySixRedSpace = getRedSpaceCodeSix(redSpaceAmountSix)
+        marioPartySixCharacterSpace = getCharacterSpaceCodeSix(characterSpaceAmountSix)
         marioPartySixStarSpace = getStarSpaceCodeSix(starSpaceAmountSix, starSpaceAmountNegativeSix)
         marioPartySixPinkBooSpace = getPinkBooSpaceCodeSix(pinkBooSpaceAmountSix, pinkBooSpaceAmountNegativeSix)
 
@@ -1488,6 +1569,8 @@ class App(customtkinter.CTk):
             marioPartySixBlueSpace = ""
         if starSpaceAmountSix == "DUMMY":
             marioPartySixStarSpace = ""
+        if characterSpaceAmountSix == "DUMMY":
+            marioPartySixCharacterSpace = ""
         if starSpaceAmountNegativeSix == "DUMMY":
             marioPartySixStarSpace = ""
         if pinkBooSpaceAmountSix == "DUMMY":
@@ -1495,9 +1578,10 @@ class App(customtkinter.CTk):
         if pinkBooSpaceAmountNegativeSix == "DUMMY":
             marioPartySixPinkBooSpace = ""
         
-        generatedCode = marioPartySixRedSpace + marioPartySixBlueSpace + marioPartySixStarSpace + marioPartySixPinkBooSpace
+        generatedCode = marioPartySixRedSpace + marioPartySixBlueSpace + marioPartySixCharacterSpace + marioPartySixStarSpace + marioPartySixPinkBooSpace
         generatedCode = generatedCode.replace("SIXRED", redSpaceAmountBaseSix)
         generatedCode = generatedCode.replace("SIXBLUE", blueSpaceAmountBaseSix)
+        generatedCode = generatedCode.replace("SIXCHARACTER", characterSpaceAmountBaseSix)
         generatedCode = generatedCode.replace("SIXSTAR", starSpaceAmountSixBase)
         generatedCode = generatedCode.replace("SIXBOO", pinkBooSpaceAmountSixBase)
         generatedCode = generatedCode.strip()
@@ -1506,7 +1590,7 @@ class App(customtkinter.CTk):
         createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
 
     def actionSpaceButtonSeven(self):
-        if not self.blueSpaceAmountSeven.get() and not self.redSpaceAmountSeven.get() and not self.starSpaceAmountSeven.get() and not self.starSpaceAmountSevenLastFive.get():
+        if not self.blueSpaceAmountSeven.get() and not self.characterSpaceAmountSeven.get()  and not self.redSpaceAmountSeven.get() and not self.starSpaceAmountSeven.get() and not self.starSpaceAmountSevenLastFive.get():
             createDialog("Error", "error", "No information provided.", None)
             return
 
@@ -1550,9 +1634,22 @@ class App(customtkinter.CTk):
                 starSpaceAmountSevenLastFive = "000" + starSpaceAmountSevenLastFive[2:]
         except:
             starSpaceAmountSevenLastFive = "DUMMY"
+        
+        characterSpaceAmountBaseSeven = self.characterSpaceAmountSeven.get()
+        try:
+            characterSpaceAmountSeven = hex(int(self.characterSpaceAmountSeven.get()))
+            if len(characterSpaceAmountSeven) == 5:
+                characterSpaceAmountSeven = "0" + characterSpaceAmountSeven[2:]
+            elif len(characterSpaceAmountSeven) == 4:
+                characterSpaceAmountSeven = "00" + characterSpaceAmountSeven[2:]
+            elif len(characterSpaceAmountSeven) == 3:
+                characterSpaceAmountSeven = "000" + characterSpaceAmountSeven[2:]
+        except:
+            characterSpaceAmountSeven = "DUMMY"
 
         marioPartySevenBlueSpace = getBlueSpaceCodeSeven(blueSpaceAmountSeven)
         marioPartySevenRedSpace = getRedSpaceCodeSeven(redSpaceAmountSeven)
+        marioPartySevenCharacterSpace = getCharacterSpaceCodeSeven(characterSpaceAmountSeven)
         marioPartySevenStarSpace = getStarSpaceCodeSeven(starSpaceAmountSeven)
         marioPartySevenStarSpaceLastFive = getStarSpaceCodeSevenLastFive(starSpaceAmountSevenLastFive)
 
@@ -1560,14 +1657,17 @@ class App(customtkinter.CTk):
             marioPartySevenRedSpace = ""
         if blueSpaceAmountSeven == "DUMMY":
             marioPartySevenBlueSpace = ""
+        if characterSpaceAmountSeven == "DUMMY":
+            marioPartySevenCharacterSpace = ""
         if starSpaceAmountSeven == "DUMMY":
             marioPartySevenStarSpace = ""
         if starSpaceAmountSevenLastFive == "DUMMY":
             marioPartySevenStarSpaceLastFive = ""
 
-        generatedCode = marioPartySevenRedSpace + marioPartySevenBlueSpace + marioPartySevenStarSpace + marioPartySevenStarSpaceLastFive
+        generatedCode = marioPartySevenRedSpace + marioPartySevenBlueSpace + marioPartySevenCharacterSpace + marioPartySevenStarSpace + marioPartySevenStarSpaceLastFive
         generatedCode = generatedCode.replace("SEVENRED", redSpaceAmountBaseSeven)
         generatedCode = generatedCode.replace("SEVENBLUE", blueSpaceAmountBaseSeven)
+        generatedCode = generatedCode.replace("SEVENCHARACTER", blueSpaceAmountBaseSeven)
         generatedCode = generatedCode.replace("SEVENSTAR", starSpaceAmountSevenBase)
         generatedCode = generatedCode.replace("SEVENSTLASTFIVE", starSpaceAmountSevenLastFiveBase)
         generatedCode = generatedCode.strip()
