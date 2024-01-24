@@ -18,7 +18,6 @@ from CTkToolTip import *
 from functions import *
 from credits import *
 from codes import *
-from items import *
 
 customtkinter.set_appearance_mode("Dark")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
