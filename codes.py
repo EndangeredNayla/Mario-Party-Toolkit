@@ -113,7 +113,7 @@ MP4 - Blue Spaces Give FOURBLUE Coins
 
 def getBooSpaceCodeFour(amount):
     return f'''
-MP4 - Stars Cost FOURBOO Coins when stealing with Chain chomp
+MP4 - Stars Cost FOURBOO Coins when stealing at the Boo House
 040A5F30 2C1E{amount}
 '''
 
