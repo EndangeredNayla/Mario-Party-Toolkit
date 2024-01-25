@@ -439,8 +439,8 @@ class App(customtkinter.CTk):
         starSpaceIconFour = create_image_icon(tabview.tab("Space Modifiers"), "assets/booHouse.png", 4, 1)
         starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 16))
         starSpaceLabel.grid(row=4, column=2)
-        self.starSpaceAmountFour = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
-        self.starSpaceAmountFour.grid(row=4, column=3)
+        self.booSpaceAmountFour = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.booSpaceAmountFour.grid(row=4, column=3)
         starSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when stealing a Star.", font=("Arial", 16))
         starSpaceLabel4.grid(row=4, column=4, sticky="w")
 
@@ -1333,7 +1333,7 @@ class App(customtkinter.CTk):
         except:
             starSpaceAmountFour = "DUMMY"
 
-        booSpaceAmountBaseFour = self.booSpaceAmountFour.get()
+        booSpaceAmountFourBase = self.booSpaceAmountFour.get()
         try:
             booSpaceAmountFour = hex(int(self.booSpaceAmountFour.get()))
             if len(booSpaceAmountFour) == 5:
@@ -1345,7 +1345,7 @@ class App(customtkinter.CTk):
         except:
             booSpaceAmountFour = "DUMMY"
 
-        lotterySpaceAmountBaseFour = self.lotterySpaceAmountFour.get()
+        lotterySpaceAmountFourBase = self.lotterySpaceAmountFour.get()
         try:
             lotterySpaceAmountFour = hex(int(self.lotterySpaceAmountFour.get()))
             if len(lotterySpaceAmountFour) == 5:
@@ -1378,8 +1378,8 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.replace("FOURRED", redSpaceAmountBaseFour)
         generatedCode = generatedCode.replace("FOURBLUE", blueSpaceAmountBaseFour)
         generatedCode = generatedCode.replace("FOURSTAR", starSpaceAmountFourBase)
-        generatedCode = generatedCode.repalce("FOURBOO", booSpaceAmountFourBase)
-        generatedCode = generatedCode.repalce("FOURLOTTERY", lotterySpaceAmountFourBase)
+        generatedCode = generatedCode.replace("FOURBOO", booSpaceAmountFourBase)
+        generatedCode = generatedCode.replace("FOURLOTTERY", lotterySpaceAmountFourBase)
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
