@@ -81,6 +81,9 @@ class App(customtkinter.CTk):
     
         # set default values
         self.mario_party_1_button.configure(state="disabled")
+        self.current_game_frame = self.create_mp1_frame()
+        self.current_game_frame.grid(row=0, column=1, padx=(0, 0), pady=(0, 0), rowspan=3, sticky="nsew")
+
 
     def reset_game_frames(self):
         # Reset the main frame to remove any existing game-specific widgets
