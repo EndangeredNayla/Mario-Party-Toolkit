@@ -1012,6 +1012,24 @@ class App(customtkinter.CTk):
         starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins during the Last 5 Turns Event (only if wheel lands on it).", font=("Arial", 16))
         starSpaceLabel6.grid(row=5, column=4, sticky="w")
 
+        # Create hammer bro
+        hammerBroIconSeven = create_image_icon(tabview.tab("Space Modifiers"), "assets/hammerBroCapsule.png", 6, 1)
+        hammerBroLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Lose  ", font=("Arial", 16))
+        hammerBroLabel.grid(row=6, column=2)
+        self.hammerBroAmountSeven = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.hammerBroAmountSeven.grid(row=6, column=3)
+        hammerBroLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins from Hammer Bro.", font=("Arial", 16))
+        hammerBroLabel.grid(row=6, column=4, sticky="w")
+
+        # Create zap
+        zapIconSeven = create_image_icon(tabview.tab("Space Modifiers"), "assets/zapCapsule.png", 7, 1)
+        zapLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Lose  ", font=("Arial", 16))
+        zapLabel.grid(row=7, column=2)
+        self.zapAmountSeven = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
+        self.zapAmountSeven.grid(row=7, column=3)
+        zapLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins from Zaps.", font=("Arial", 16))
+        zapLabel.grid(row=7, column=4, sticky="w")
+
         parseButtonSeven = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonSeven, text="Generate Codes")
         parseButtonSeven.place(x=390, y=560)
 
@@ -1593,7 +1611,7 @@ class App(customtkinter.CTk):
         createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
 
     def actionSpaceButtonSeven(self):
-        if not self.blueSpaceAmountSeven.get() and not self.characterSpaceAmountSeven.get()  and not self.redSpaceAmountSeven.get() and not self.starSpaceAmountSeven.get() and not self.starSpaceAmountSevenLastFive.get():
+        if not self.blueSpaceAmountSeven.get() and not self.characterSpaceAmountSeven.get()  and not self.redSpaceAmountSeven.get() and not self.starSpaceAmountSeven.get() and not self.starSpaceAmountSevenLastFive.get() and not self.hammerBroAmountSeven.get() and not self.zapAmountSeven.get():
             createDialog("Error", "error", "No information provided.", None)
             return
 
@@ -1650,11 +1668,39 @@ class App(customtkinter.CTk):
         except:
             characterSpaceAmountSeven = "DUMMY"
 
+        hammerBroAmountSevenBase = self.hammerBroAmountSeven.get()
+        try:
+            hammerBroAmountSeven = hex(int(self.hammerBroAmountSeven.get()))
+            if len(hammerBroAmountSeven) == 4:
+                hammerBroAmountSeven = "00" + hammerBroAmountSeven[2:]
+            elif len(hammerBroAmountSeven) == 3:
+                hammerBroAmountSeven = "000" + hammerBroAmountSeven[2:]
+
+            hammerBroSpaceAmountBaseNegativeSeven = -int(hammerBroAmountSevenBase)
+            hammerBroSpaceAmountNegativeSeven = format(hammerBroSpaceAmountBaseNegativeSeven & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+        except:
+            hammerBroAmountSeven = "DUMMY"
+            hammerBroSpaceAmountNegativeSeven = "DUMMY"
+
+        zapAmountSevenBase = self.zapAmountSeven.get()
+        try:
+            zapAmountSeven = hex(int(self.zapAmountSeven.get()))
+            if len(zapAmountSeven) == 5:
+                zapAmountSeven = "0" + zapAmountSeven[2:]
+            elif len(zapAmountSeven) == 4:
+                zapAmountSeven = "00" + zapAmountSeven[2:]
+            elif len(zapAmountSeven) == 3:
+                zapAmountSeven = "000" + zapAmountSeven[2:]
+        except:
+            zapAmountSeven = "DUMMY"
+
         marioPartySevenBlueSpace = getBlueSpaceCodeSeven(blueSpaceAmountSeven)
         marioPartySevenRedSpace = getRedSpaceCodeSeven(redSpaceAmountSeven)
         marioPartySevenCharacterSpace = getCharacterSpaceCodeSeven(characterSpaceAmountSeven)
         marioPartySevenStarSpace = getStarSpaceCodeSeven(starSpaceAmountSeven)
         marioPartySevenStarSpaceLastFive = getStarSpaceCodeSevenLastFive(starSpaceAmountSevenLastFive)
+        marioPartySevenHammerBro = getHammerBroSpaceCodeSeven(hammerBroAmountSeven, hammerBroSpaceAmountNegativeSeven)
+        marioPartySevenZap = getZapSpaceCodeSeven(zapAmountSeven)
 
         if redSpaceAmountSeven == "DUMMY":
             marioPartySevenRedSpace = ""
@@ -1666,13 +1712,21 @@ class App(customtkinter.CTk):
             marioPartySevenStarSpace = ""
         if starSpaceAmountSevenLastFive == "DUMMY":
             marioPartySevenStarSpaceLastFive = ""
+        if hammerBroSpaceAmountNegativeSeven == "DUMMY":
+            marioPartySevenHammerBro = ""
+        if hammerBroAmountSeven == "DUMMY":
+            marioPartySevenHammerBro = ""
+        if zapAmountSeven == "DUMMY":
+            marioPartySevenZap = ""
 
-        generatedCode = marioPartySevenRedSpace + marioPartySevenBlueSpace + marioPartySevenCharacterSpace + marioPartySevenStarSpace + marioPartySevenStarSpaceLastFive
+        generatedCode = marioPartySevenRedSpace + marioPartySevenBlueSpace + marioPartySevenCharacterSpace + marioPartySevenStarSpace + marioPartySevenStarSpaceLastFive + marioPartySevenHammerBro + marioPartySevenZap
         generatedCode = generatedCode.replace("SEVENRED", redSpaceAmountBaseSeven)
         generatedCode = generatedCode.replace("SEVENBLUE", blueSpaceAmountBaseSeven)
         generatedCode = generatedCode.replace("SEVENCHARACTER", blueSpaceAmountBaseSeven)
         generatedCode = generatedCode.replace("SEVENSTAR", starSpaceAmountSevenBase)
         generatedCode = generatedCode.replace("SEVENSTLASTFIVE", starSpaceAmountSevenLastFiveBase)
+        generatedCode = generatedCode.replace("SEVENHAMMERBRO", hammerBroAmountSevenBase)
+        generatedCode = generatedCode.replace("SEVENZAP", zapAmountSevenBase)
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")

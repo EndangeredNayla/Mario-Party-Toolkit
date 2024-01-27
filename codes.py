@@ -245,6 +245,20 @@ MP7 - Stars Cost SEVENSTLASTFIVE Coins During the Last 5 Turns Event
 0418876C 3B80{amount}
 '''
 
+def getHammerBroSpaceCodeSeven(amount, negAmount):
+    return f'''
+MP7 - Hammer Bro Takes SEVENHAMMERBRO Coins
+041A902C 3AC0{amount}
+041A9A28 38A0{negAmount}
+'''
+
+def getZapSpaceCodeSeven(amount):
+    return f'''
+MP7 - Zap Takes SEVENZAP Coins
+C21B652C 00000001
+3880{amount} 00000000
+'''
+
 def getBlueSpaceCodeEight(amount):
     return f'''
 MP8 - Blue Spaces Give EIGHTBLUE Coins
