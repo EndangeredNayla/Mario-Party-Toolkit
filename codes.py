@@ -230,7 +230,8 @@ MP7 - Red Spaces Take Away SEVENRED Coins
 def getCharacterSpaceCodeSeven(amount):
     return f'''
 MP7 - Character Spaces Give SEVENCHARACTER Coins
-0415F230 3880{amount}
+041685BC 60000000
+041685C0 3880{amount}
 '''
 
 def getStarSpaceCodeSeven(amount):
