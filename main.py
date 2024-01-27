@@ -146,7 +146,7 @@ class App(customtkinter.CTk):
         self.redSpaceTickboxOne.grid(row=2, column=5, padx=10, pady=10)
 
         parseButtonOne = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonOne, text="Generate Codes")
-        parseButtonOne.place(x=390, y=560)
+        parseButtonOne.place(x=10, y=560)
 
         return frame
 
@@ -180,7 +180,7 @@ class App(customtkinter.CTk):
         self.redSpaceTickboxTwo.grid(row=2, column=5, padx=10, pady=10)
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonTwo, text="Generate Codes")
-        parseButtonTwo.place(x=390, y=560)
+        parseButtonTwo.place(x=10, y=560)
 
         return frame
 
@@ -213,7 +213,7 @@ class App(customtkinter.CTk):
         self.redSpaceTickboxThree = ctk.CTkCheckBox(master=tabview.tab("Space Modifiers"), text="Double the coins on Last 5", width=16, checkbox_width=16, checkbox_height=16)
         self.redSpaceTickboxThree.grid(row=2, column=5, padx=10, pady=10)
         parseButtonThree = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonThree, text="Generate Codes")
-        parseButtonThree.place(x=390, y=560)
+        parseButtonThree.place(x=10, y=560)
         return frame
 
 
@@ -435,7 +435,7 @@ class App(customtkinter.CTk):
         starSpaceLabel.grid(row=3, column=2)
         self.starSpaceAmountFour = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
         self.starSpaceAmountFour.grid(row=3, column=3)
-        starSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when passing and using a Magic Lamp.", font=("Arial", 16))
+        starSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when purchasing a Star and using a Magic Lamp.", font=("Arial", 16))
         starSpaceLabel4.grid(row=3, column=4, sticky="w")
 
         # Create star space icon and entry
@@ -457,10 +457,13 @@ class App(customtkinter.CTk):
         lotterySpaceLabel4.grid(row=5, column=4, sticky="w")
 
         parseButtonFour = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonFour, text="Generate Codes")
-        parseButtonFour.place(x=390, y=560)
+        parseButtonFour.place(x=10, y=560)
 
         parseButtonFour = ctk.CTkButton(master=tabview.tab("Item Modifiers"), command=self.actionSpaceButtonFourItem, text="Generate Codes")
-        parseButtonFour.place(x=390, y=560)
+        parseButtonFour.place(x=10, y=560)
+
+        warningLabel = ctk.CTkLabel(master=tabview.tab("Item Modifiers"), text="There must be at least 5 items with a value higher than 0. ", font=("Arial", 16, "bold"))
+        warningLabel.place(x=260, y=270)
 
         return frame
 
@@ -495,7 +498,7 @@ class App(customtkinter.CTk):
         starSpaceLabel.grid(row=3, column=2)
         self.starSpaceAmountFive = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
         self.starSpaceAmountFive.grid(row=3, column=3)
-        starSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when passing a Star Space.", font=("Arial", 16))
+        starSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when purchasing a Star at a Star Space.", font=("Arial", 16))
         starSpaceLabel5.grid(row=3, column=4, sticky="w")
 
         # Create wiggler space icon and entry
@@ -504,7 +507,7 @@ class App(customtkinter.CTk):
         wigglerSpaceLabel.grid(row=4, column=2)
         self.wigglerSpaceAmountFive = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
         self.wigglerSpaceAmountFive.grid(row=4, column=3)
-        wigglerSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins to use Wiggler.", font=("Arial", 16))
+        wigglerSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins to buy a star via Wiggler.", font=("Arial", 16))
         wigglerSpaceLabel5.grid(row=4, column=4, sticky="w")
 
         # Create chain chomp space icon and entry
@@ -517,7 +520,7 @@ class App(customtkinter.CTk):
         chompSpaceLabel5.grid(row=5, column=4, sticky="w")
 
         parseButtonFive = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonFive, text="Generate Codes")
-        parseButtonFive.place(x=390, y=560)
+        parseButtonFive.place(x=10, y=560)
         return frame
 
     def create_mp6_frame(self):
@@ -554,13 +557,13 @@ class App(customtkinter.CTk):
         characterSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when the character lands on their own Character Space.", font=("Arial", 16))
         characterSpaceLabel6.grid(row=3, column=4, sticky="w")
 
-        # Create star space icon and entry
+        # Create star space icon and entr
         starSpaceIconSix = create_image_icon(tabview.tab("Space Modifiers"), "assets/starSpace.png", 4, 1)
         starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Cost  ", font=("Arial", 16))
         starSpaceLabel.grid(row=4, column=2)
         self.starSpaceAmountSix = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
         self.starSpaceAmountSix.grid(row=4, column=3)
-        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when passing and using a Flutter.", font=("Arial", 16))
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when purchasing a Star and using a Flutter.", font=("Arial", 16))
         starSpaceLabel6.grid(row=4, column=4, sticky="w")
 
         # Create boo space icon and entry
@@ -573,7 +576,7 @@ class App(customtkinter.CTk):
         pinkBooSpaceLabel6.grid(row=5, column=4, sticky="w")
         
         parseButtonSix = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonSix, text="Generate Codes")
-        parseButtonSix.place(x=390, y=560)
+        parseButtonSix.place(x=10, y=560)
         return frame
 
     def create_mp7_frame(self):
@@ -1000,7 +1003,7 @@ class App(customtkinter.CTk):
         starSpaceLabel.grid(row=4, column=2)
         self.starSpaceAmountSeven = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
         self.starSpaceAmountSeven.grid(row=4, column=3)
-        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when passing or when using a Flutter.", font=("Arial", 16))
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when purchasing a Star or when using a Flutter.", font=("Arial", 16))
         starSpaceLabel6.grid(row=4, column=4, sticky="w")
 
         # Create star space last five icon and entry
@@ -1031,10 +1034,10 @@ class App(customtkinter.CTk):
         zapLabel.grid(row=7, column=4, sticky="w")
 
         parseButtonSeven = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonSeven, text="Generate Codes")
-        parseButtonSeven.place(x=390, y=560)
+        parseButtonSeven.place(x=10, y=560)
 
         parseButtonSevenOrbs = ctk.CTkButton(master=tabview.tab("Orb Modifiers"), command=self.actionSpaceButtonSevenOrb, text="Generate Codes")
-        parseButtonSevenOrbs.place(x=390, y=620)
+        parseButtonSevenOrbs.place(x=10, y=620)
         return frame
     
     def create_credits_frame(self):
@@ -1084,11 +1087,11 @@ class App(customtkinter.CTk):
         starSpaceLabel.grid(row=3, column=2)
         self.starSpaceAmountEight2 = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
         self.starSpaceAmountEight2.grid(row=3, column=3)
-        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when passing.", font=("Arial", 16))
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when purchasing a Star.", font=("Arial", 16))
         starSpaceLabel6.grid(row=3, column=4, sticky="w")
 
         parseButtonEight2 = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonEight2, text="Generate Codes")
-        parseButtonEight2.place(x=390, y=560)
+        parseButtonEight2.place(x=10, y=560)
         return frame
         
     def create_mp8_frame(self):
@@ -1122,11 +1125,11 @@ class App(customtkinter.CTk):
         starSpaceLabel.grid(row=3, column=2)
         self.starSpaceAmountEight = ctk.CTkEntry(master=tabview.tab("Space Modifiers"), width=48, font=("Arial", 16, "bold"))
         self.starSpaceAmountEight.grid(row=3, column=3)
-        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when passing.", font=("Arial", 16))
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Space Modifiers"), text=" Coins when purchasing a Star.", font=("Arial", 16))
         starSpaceLabel6.grid(row=3, column=4, sticky="w")
 
         parseButtonEight = ctk.CTkButton(master=tabview.tab("Space Modifiers"), command=self.actionSpaceButtonEight, text="Generate Codes")
-        parseButtonEight.place(x=390, y=560)
+        parseButtonEight.place(x=10, y=560)
         return frame
 
     def actionSpaceButtonOne(self):
