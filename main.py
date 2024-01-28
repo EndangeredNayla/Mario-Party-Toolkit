@@ -1681,6 +1681,11 @@ class App(customtkinter.CTk):
 
             hammerBroSpaceAmountBaseNegativeSeven = -int(hammerBroAmountSevenBase)
             hammerBroSpaceAmountNegativeSeven = format(hammerBroSpaceAmountBaseNegativeSeven & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+
+            hammerBroAmountHalf = hammerBroAmountSevenBase
+            hammerBroSpaceAmountHalfBaseNegativeSeven = -int(hammerBroAmountHalf)
+            hammerBroSpaceAmountHalfNegativeSeven = format(hammerBroSpaceAmountHalfBaseNegativeSeven & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+
         except:
             hammerBroAmountSeven = "DUMMY"
             hammerBroSpaceAmountNegativeSeven = "DUMMY"
@@ -1702,7 +1707,7 @@ class App(customtkinter.CTk):
         marioPartySevenCharacterSpace = getCharacterSpaceCodeSeven(characterSpaceAmountSeven)
         marioPartySevenStarSpace = getStarSpaceCodeSeven(starSpaceAmountSeven)
         marioPartySevenStarSpaceLastFive = getStarSpaceCodeSevenLastFive(starSpaceAmountSevenLastFive)
-        marioPartySevenHammerBro = getHammerBroSpaceCodeSeven(hammerBroAmountSeven, hammerBroSpaceAmountNegativeSeven)
+        marioPartySevenHammerBro = getHammerBroSpaceCodeSeven(hammerBroAmountSeven, hammerBroSpaceAmountNegativeSeven, hammerBroSpaceAmountHalfNegativeSeven)
         marioPartySevenZap = getZapSpaceCodeSeven(zapAmountSeven)
 
         if redSpaceAmountSeven == "DUMMY":
@@ -1716,6 +1721,8 @@ class App(customtkinter.CTk):
         if starSpaceAmountSevenLastFive == "DUMMY":
             marioPartySevenStarSpaceLastFive = ""
         if hammerBroSpaceAmountNegativeSeven == "DUMMY":
+            marioPartySevenHammerBro = ""
+        if hammerBroSpaceAmountHalfNegativeSeven == "DUMMY":
             marioPartySevenHammerBro = ""
         if hammerBroAmountSeven == "DUMMY":
             marioPartySevenHammerBro = ""

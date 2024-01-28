@@ -246,11 +246,15 @@ MP7 - Stars Cost SEVENSTLASTFIVE Coins During the Last 5 Turns Event
 0418876C 3B80{amount}
 '''
 
-def getHammerBroSpaceCodeSeven(amount, negAmount):
+def getHammerBroSpaceCodeSeven(amount, negAmount, halfAmount):
     return f'''
 MP7 - Hammer Bro Takes SEVENHAMMERBRO Coins
 041A902C 3AC0{amount}
 041A9A28 38A0{negAmount}
+041A973C 3800FFFF
+041A9744 3800{halfAmount}
+041A974C 3800FFFF
+041A9754 3800{halfAmount}
 '''
 
 def getZapSpaceCodeSeven(amount):
@@ -472,6 +476,7 @@ E0000000 80008000
 
 def getItemModsFour(oneP, oneW, twoP, twoW, threeP, threeW, fourP, fourW, fiveP, fiveW, sixP, sixW, sevenP, sevenW, eightP, eightW, nineP, nineW, tenP, tenW, elevenP, elevenW, twelveP, twelveW, thirteenP, thirteenW, fourteenP, fourteenW):
     return f'''
+MP4 - Item Modifer
 C2083724 0000001E
 48000041 60000000
 00{oneW}0000 {twoW}0001  
