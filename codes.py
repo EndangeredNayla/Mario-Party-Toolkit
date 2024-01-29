@@ -202,6 +202,9 @@ MP6 - Stars Cost SIXSTAR Coins
 C2183590 00000002
 3880{amount} 7C8400D0
 60000000 00000000
+28265B8A 00000014
+00265B8B 0000{amount}
+E2000001 80008000
 '''
 
 def getPinkBooSpaceCodeSix(amount, negAmount):
@@ -251,9 +254,9 @@ def getHammerBroSpaceCodeSeven(amount, negAmount, halfAmount):
 MP7 - Hammer Bro Takes SEVENHAMMERBRO Coins
 041A902C 3AC0{amount}
 041A9A28 38A0{negAmount}
-041A973C 3800FFFF
+041A973C 38000000
 041A9744 3800{halfAmount}
-041A974C 3800FFFF
+041A974C 38000000
 041A9754 3800{halfAmount}
 '''
 
