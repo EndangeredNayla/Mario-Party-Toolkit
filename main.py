@@ -1207,8 +1207,21 @@ class App(customtkinter.CTk):
             marioPartyOneBlueSpace = ""
     
         generatedCode = marioPartyOneRedSpace + marioPartyOneBlueSpace
-        generatedCode = generatedCode.replace("ONEBLUESWITCH", "Doesn't Double on Last 5")
-        generatedCode = generatedCode.replace("ONEREDSWITCH", "Doubles on Last 5")
+
+        if redSpaceSwitchOne == "0":
+            generatedCode = generatedCode.replace("ONEREDSWITCH", "Doesn't Double on Last 5")
+        elif redSpaceSwitchOne == "1":
+            generatedCode = generatedCode.replace("ONEREDSWITCH", "Doubles on Last 5")
+        else:
+            pass
+
+        if blueSpaceSwitchOne == "0":
+            generatedCode = generatedCode.replace("ONEBLUESWITCH", "Doesn't Double on Last 5")
+        elif blueSpaceSwitchOne == "1":
+            generatedCode = generatedCode.replace("ONEBLUESWITCH", "Doubles on Last 5")
+        else:
+            pass
+
         generatedCode = generatedCode.replace("ONERED", redSpaceAmountBaseOne)
         generatedCode = generatedCode.replace("ONEBLUE", blueSpaceAmountBaseOne)
     
@@ -1269,8 +1282,21 @@ class App(customtkinter.CTk):
             marioPartyTwoBlueSpace = ""
     
         generatedCode = marioPartyTwoRedSpace + marioPartyTwoBlueSpace
-        generatedCode = generatedCode.replace("TWOBLUESWITCH", "Doesn't Double on Last 5")
-        generatedCode = generatedCode.replace("TWOREDSWITCH", "Doubles on Last 5")
+        
+        if redSpaceSwitchTwo == "0":
+            generatedCode = generatedCode.replace("TWOREDSWITCH", "Doesn't Double on Last 5")
+        elif redSpaceSwitchTwo == "1":
+            generatedCode = generatedCode.replace("TWOREDSWITCH", "Doubles on Last 5")
+        else:
+            pass
+
+        if blueSpaceSwitchTwo == "0":
+            generatedCode = generatedCode.replace("TWOBLUESWITCH", "Doesn't Double on Last 5")
+        elif blueSpaceSwitchTwo == "1":
+            generatedCode = generatedCode.replace("TWOBLUESWITCH", "Doubles on Last 5")
+        else:
+            pass
+
         generatedCode = generatedCode.replace("TWORED", redSpaceAmountBaseTwo)
         generatedCode = generatedCode.replace("TWOBLUE", blueSpaceAmountBaseTwo)
     
@@ -1330,8 +1356,21 @@ class App(customtkinter.CTk):
             marioPartyThreeBlueSpace = ""
     
         generatedCode = marioPartyThreeRedSpace + marioPartyThreeBlueSpace
-        generatedCode = generatedCode.replace("THREEBLUESWITCH", "Doesn't Double on Last 5")
-        generatedCode = generatedCode.replace("THREEREDSWITCH", "Doubles on Last 5")
+
+        if redSpaceSwitchThree == "0":
+            generatedCode = generatedCode.replace("THREEREDSWITCH", "Doesn't Double on Last 5")
+        elif redSpaceSwitchThree == "1":
+            generatedCode = generatedCode.replace("THREEREDSWITCH", "Doubles on Last 5")
+        else:
+            pass
+
+        if blueSpaceSwitchThree == "0":
+            generatedCode = generatedCode.replace("THREEBLUESWITCH", "Doesn't Double on Last 5")
+        elif blueSpaceSwitchThree == "1":
+            generatedCode = generatedCode.replace("THREEBLUESWITCH", "Doubles on Last 5")
+        else:
+            pass
+
         generatedCode = generatedCode.replace("THREERED", redSpaceAmountBaseThree)
         generatedCode = generatedCode.replace("THREEBLUE", blueSpaceAmountBaseThree)
     
