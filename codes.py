@@ -207,6 +207,26 @@ C2183590 00000002
 E2000001 80008000
 '''
 
+
+def getFaireSquareStarCodeSix(one, two, three, four):
+    return f'''
+MP6 - Stars Can Cost SIXONE, SIXTWO, SIXTHREE, or SIXFOUR During Faire Square's Nightime
+04248064 0000{one}
+04248068 0000{two}
+04248070 0000{three}
+04248074 0000{four}
+04248D3C 0000{one}
+04248D40 0000{two}
+04248D48 0000{three}
+04248D4C 0000{four}
+204DDF60 465F6C00
+044DDF74 0000{one}
+044DDF78 0000{two}
+044DDF80 0000{three}
+044DDF84 0000{four}
+E2000001 80008000
+'''
+
 def getPinkBooSpaceCodeSix(amount, negAmount):
     return f'''
 MP6 - Stars Cost SIXBOO Coins when stealing with Pink Boo
