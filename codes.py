@@ -502,13 +502,13 @@ def getItemModsFour(oneP, oneW, twoP, twoW, threeP, threeW, fourP, fourW, fiveP,
 MP4 - Item Modifer
 C2083724 0000001E
 48000041 60000000
-00{oneW}0000 {twoW}0001  
-00{threeW}0002 {fourW}0003
-00{fiveW}0004 {sixW}0005
-00{sevenW}0006 {eightW}0007
-00{nineW}0008 {tenW}0009
-00{elevenW}000A {twelveW}000B
-00{thirteenW}000C {fourteenW}000D
+00{oneW}0000 00{twoW}0001  
+00{threeW}0002 00{fourW}0003
+00{fiveW}0004 00{sixW}0005
+00{sevenW}0006 00{eightW}0007
+00{nineW}0008 00{tenW}0009
+00{elevenW}000A 00{twelveW}000B
+00{thirteenW}000C 00{fourteenW}000D
 00000000 7CE802A6
 38E70004 38600000
 38800000 2C030038
