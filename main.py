@@ -235,7 +235,7 @@ class App(customtkinter.CTk):
         label.grid(row=2, column=4)
         self.miniWeight4 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
         self.miniWeight4.grid(row=2, column=5)
-        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.   ", font=("Arial", 16))
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=2, column=6)
 
         # Create mushroom orb space icon and entry
