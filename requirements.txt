@@ -6,5 +6,6 @@ pyinstaller
 requests
 nuitka
 CTkToolTip
-plyer
-pyobjus
+plyer; sys_platform == 'win32' or 'linux'
+pyobjus; sys_platform == 'win32' or 'linux'
+macos-notifications; sys_platform == 'darwin'
