@@ -14,6 +14,7 @@ import tkinter as tk
 import pyperclip
 
 from CTkToolTip import *
+from plyer import notification
 
 from functions import *
 from credits import *
@@ -595,23 +596,33 @@ class App(customtkinter.CTk):
         characterSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when the character lands on their own Character Space.", font=("Arial", 16))
         characterSpaceLabel6.grid(row=3, column=4, sticky="w")
 
+
+        # Create MG space icon and entry
+        miniGameIconSix = create_image_icon(tabview.tab("Coins Mods"), "assets/miniGame.png", 4, 1)
+        miniGameLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Gain  ", font=("Arial", 16))
+        miniGameLabel.grid(row=4, column=2)
+        self.miniGameAmountSix = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
+        self.miniGameAmountSix.grid(row=4, column=3)
+        miniGameLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when winning a Mini-Game.", font=("Arial", 16))
+        miniGameLabel6.grid(row=4, column=4, sticky="w")
+
         # Create star space icon and entr
-        starSpaceIconSix = create_image_icon(tabview.tab("Coins Mods"), "assets/starSpace.png", 4, 1)
+        starSpaceIconSix = create_image_icon(tabview.tab("Coins Mods"), "assets/starSpace.png", 5, 1)
         starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Cost  ", font=("Arial", 16))
-        starSpaceLabel.grid(row=4, column=2)
+        starSpaceLabel.grid(row=5, column=2)
         self.starSpaceAmountSix = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.starSpaceAmountSix.grid(row=4, column=3)
+        self.starSpaceAmountSix.grid(row=5, column=3)
         starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when purchasing a Star and using a Flutter.", font=("Arial", 16))
-        starSpaceLabel6.grid(row=4, column=4, sticky="w")
+        starSpaceLabel6.grid(row=5, column=4, sticky="w")
 
         # Create boo space icon and entry
-        pinkBooSpaceIconSix = create_image_icon(tabview.tab("Coins Mods"), "assets/pinkBoo.png", 5, 1)
+        pinkBooSpaceIconSix = create_image_icon(tabview.tab("Coins Mods"), "assets/pinkBoo.png", 6, 1)
         pinkBooSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Cost  ", font=("Arial", 16))
-        pinkBooSpaceLabel.grid(row=5, column=2)
+        pinkBooSpaceLabel.grid(row=6, column=2)
         self.pinkBooSpaceAmountSix = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.pinkBooSpaceAmountSix.grid(row=5, column=3)
+        self.pinkBooSpaceAmountSix.grid(row=6, column=3)
         pinkBooSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when stealing a Star.", font=("Arial", 16))
-        pinkBooSpaceLabel6.grid(row=5, column=4, sticky="w")
+        pinkBooSpaceLabel6.grid(row=6, column=4, sticky="w")
         
         parseButtonSix = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonSix, text="Generate Codes")
         parseButtonSix.place(x=10, y=560)
@@ -1038,41 +1049,50 @@ class App(customtkinter.CTk):
         characterSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when the character lands on their own Character Space.", font=("Arial", 16))
         characterSpaceLabel6.grid(row=3, column=4, sticky="w")
 
-        # Create star space icon and entry
-        starSpaceIconSeven = create_image_icon(tabview.tab("Coins Mods"), "assets/starSpace.png", 4, 1)
-        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Cost  ", font=("Arial", 16))
-        starSpaceLabel.grid(row=4, column=2)
-        self.starSpaceAmountSeven = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.starSpaceAmountSeven.grid(row=4, column=3)
-        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when purchasing a Star or when using a Flutter.", font=("Arial", 16))
-        starSpaceLabel6.grid(row=4, column=4, sticky="w")
+        # Create MG space icon and entry
+        miniGameIconSeven = create_image_icon(tabview.tab("Coins Mods"), "assets/miniGame.png", 4, 1)
+        miniGameLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Gain  ", font=("Arial", 16))
+        miniGameLabel.grid(row=4, column=2)
+        self.miniGameAmountSeven = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
+        self.miniGameAmountSeven.grid(row=4, column=3)
+        miniGameLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when winning a Mini-Game.", font=("Arial", 16))
+        miniGameLabel6.grid(row=4, column=4, sticky="w")
 
-        # Create star space last five icon and entry
-        starSpaceIconSeven = create_image_icon(tabview.tab("Coins Mods"), "assets/starSpaceLastFive.png", 5, 1)
+        # Create star space icon and entry
+        starSpaceIconSeven = create_image_icon(tabview.tab("Coins Mods"), "assets/starSpace.png", 5, 1)
         starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Cost  ", font=("Arial", 16))
         starSpaceLabel.grid(row=5, column=2)
-        self.starSpaceAmountSevenLastFive = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.starSpaceAmountSevenLastFive.grid(row=5, column=3)
-        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins during the Last 5 Turns Event (only if wheel lands on it).", font=("Arial", 16))
+        self.starSpaceAmountSeven = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
+        self.starSpaceAmountSeven.grid(row=5, column=3)
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when purchasing a Star or when using a Flutter.", font=("Arial", 16))
         starSpaceLabel6.grid(row=5, column=4, sticky="w")
 
+        # Create star space last five icon and entry
+        starSpaceIconSeven = create_image_icon(tabview.tab("Coins Mods"), "assets/starSpaceLastFive.png", 6, 1)
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Cost  ", font=("Arial", 16))
+        starSpaceLabel.grid(row=6, column=2)
+        self.starSpaceAmountSevenLastFive = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
+        self.starSpaceAmountSevenLastFive.grid(row=6, column=3)
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins during the Last 5 Turns Event (only if wheel lands on it).", font=("Arial", 16))
+        starSpaceLabel6.grid(row=6, column=4, sticky="w")
+
         # Create hammer bro
-        hammerBroIconSeven = create_image_icon(tabview.tab("Coins Mods"), "assets/hammerBroCapsule.png", 6, 1)
+        hammerBroIconSeven = create_image_icon(tabview.tab("Coins Mods"), "assets/hammerBroCapsule.png", 7, 1)
         hammerBroLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Lose  ", font=("Arial", 16))
-        hammerBroLabel.grid(row=6, column=2)
+        hammerBroLabel.grid(row=7, column=2)
         self.hammerBroAmountSeven = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.hammerBroAmountSeven.grid(row=6, column=3)
+        self.hammerBroAmountSeven.grid(row=7, column=3)
         hammerBroLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins from Hammer Bro.", font=("Arial", 16))
-        hammerBroLabel.grid(row=6, column=4, sticky="w")
+        hammerBroLabel.grid(row=7, column=4, sticky="w")
 
         # Create zap
-        zapIconSeven = create_image_icon(tabview.tab("Coins Mods"), "assets/zapCapsule.png", 7, 1)
+        zapIconSeven = create_image_icon(tabview.tab("Coins Mods"), "assets/zapCapsule.png", 8, 1)
         zapLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Lose  ", font=("Arial", 16))
-        zapLabel.grid(row=7, column=2)
+        zapLabel.grid(row=8, column=2)
         self.zapAmountSeven = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.zapAmountSeven.grid(row=7, column=3)
+        self.zapAmountSeven.grid(row=8, column=3)
         zapLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins from Zaps.", font=("Arial", 16))
-        zapLabel.grid(row=7, column=4, sticky="w")
+        zapLabel.grid(row=8, column=4, sticky="w")
 
         parseButtonSeven = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonSeven, text="Generate Codes")
         parseButtonSeven.place(x=10, y=560)
@@ -1224,7 +1244,7 @@ class App(customtkinter.CTk):
         if blueSpaceAmountOne == "DUMMY":
             marioPartyOneBlueSpace = ""
     
-        generatedCode = marioPartyOneRedSpace + marioPartyOneBlueSpace
+        generatedCode = marioPartyOneBlueSpace + marioPartyOneRedSpace
 
         if redSpaceSwitchOne == "0":
             generatedCode = generatedCode.replace("ONEREDSWITCH", "Doesn't Double on Last 5")
@@ -1246,7 +1266,7 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
+        notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/diceBlock.ico"), timeout = 10)
 
     def actionSpaceButtonTwo(self):
         if not self.blueSpaceAmountTwo.get() and not self.redSpaceAmountTwo.get():
@@ -1299,7 +1319,7 @@ class App(customtkinter.CTk):
         if blueSpaceAmountTwo == "DUMMY":
             marioPartyTwoBlueSpace = ""
     
-        generatedCode = marioPartyTwoRedSpace + marioPartyTwoBlueSpace
+        generatedCode = marioPartyTwoBlueSpace + marioPartyTwoRedSpace
         
         if redSpaceSwitchTwo == "0":
             generatedCode = generatedCode.replace("TWOREDSWITCH", "Doesn't Double on Last 5")
@@ -1321,7 +1341,8 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
+        notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/diceBlock.ico"), timeout = 10)
+
     def actionSpaceButtonThree(self):
         if not self.blueSpaceAmountThree.get() and not self.redSpaceAmountThree.get():
             createDialog("Error", "error", "No information provided.", None)
@@ -1373,7 +1394,7 @@ class App(customtkinter.CTk):
         if blueSpaceAmountThree == "DUMMY":
             marioPartyThreeBlueSpace = ""
     
-        generatedCode = marioPartyThreeRedSpace + marioPartyThreeBlueSpace
+        generatedCode = marioPartyThreeBlueSpace + marioPartyThreeRedSpace
 
         if redSpaceSwitchThree == "0":
             generatedCode = generatedCode.replace("THREEREDSWITCH", "Doesn't Double on Last 5")
@@ -1395,10 +1416,10 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
+        notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/diceBlock.ico"), timeout = 10)
 
     def actionSpaceButtonFour(self):    
-        if not self.blueSpaceAmountFour.get() and not self.redSpaceAmountFour.get() and not self.starSpaceAmountFour.get() and not self.booSpaceAmountFour.get() and not self.lotterySpaceAmountFour.get():
+        if not self.blueSpaceAmountFour.get() and not self.miniGameAmountFour.get() and not self.redSpaceAmountFour.get() and not self.starSpaceAmountFour.get() and not self.booSpaceAmountFour.get() and not self.lotterySpaceAmountFour.get():
             createDialog("Error", "error", "No information provided.", None)
             return
 
@@ -1490,10 +1511,10 @@ class App(customtkinter.CTk):
             marioPartyFourLotterySpace = ""
         if booSpaceAmountFour == "DUMMY":
             marioPartyFourBooSpace = ""
-        if miniGameAmountBaseFour == "DUMMY"
+        if miniGameAmountFour == "DUMMY":
             marioPartyFourMiniGame = ""
 
-        generatedCode = marioPartyFourRedSpace + marioPartyFourBlueSpace + marioPartyFourMiniGame + marioPartyFourStarSpace + marioPartyFourBooSpace + marioPartyFourLotterySpace
+        generatedCode = marioPartyFourBlueSpace + marioPartyFourRedSpace + marioPartyFourMiniGame + marioPartyFourStarSpace + marioPartyFourBooSpace + marioPartyFourLotterySpace
         generatedCode = generatedCode.replace("FOURRED", redSpaceAmountBaseFour)
         generatedCode = generatedCode.replace("FOURBLUE", blueSpaceAmountBaseFour)
         generatedCode = generatedCode.replace("FOURMINIGAME", miniGameAmountBaseFour)
@@ -1503,7 +1524,7 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
+        notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/diceBlock.ico"), timeout = 10)
 
     def actionSpaceButtonFive(self):
         if not self.blueSpaceAmountFive.get() and not self.miniGameAmountFive.get() and not self.redSpaceAmountFive.get() and not self.starSpaceAmountFive.get() and not self.wigglerSpaceAmountFive.get():
@@ -1614,10 +1635,10 @@ class App(customtkinter.CTk):
             marioPartyFiveChompSpace = ""
         if chompSpaceAmountNegativeFive == "DUMMY":
             marioPartyFiveChompSpace = ""
-        if miniGameAmountFive == "DUMMY"
+        if miniGameAmountFive == "DUMMY":
             marioPartyFiveMiniGame = ""
 
-        generatedCode = marioPartyFiveRedSpace + marioPartyFiveBlueSpace + marioPartyFiveMiniGame + marioPartyFiveStarSpace + marioPartyFiveWigglerSpace + marioPartyFiveChompSpace
+        generatedCode = marioPartyFiveBlueSpace + marioPartyFiveRedSpace + marioPartyFiveMiniGame + marioPartyFiveStarSpace + marioPartyFiveWigglerSpace + marioPartyFiveChompSpace
         generatedCode = generatedCode.replace("FIVERED", redSpaceAmountBaseFive)
         generatedCode = generatedCode.replace("FIVEBLUE", blueSpaceAmountBaseFive)
         generatedCode = generatedCode.replace("FIVEMINIGAME", miniGameAmountBaseFive)
@@ -1627,10 +1648,10 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
+        notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/diceBlock.ico"), timeout = 10)
 
     def actionSpaceButtonSix(self):
-        if not self.blueSpaceAmountSix.get() and not self.redSpaceAmountSix.get() and not self.starSpaceAmountSix.get() and not self.pinkBooSpaceAmountSix.get() and not self.characterSpaceAmountSix.get():
+        if not self.blueSpaceAmountSix.get() and not self.miniGameAmountSix.get() and not self.redSpaceAmountSix.get() and not self.starSpaceAmountSix.get() and not self.pinkBooSpaceAmountSix.get() and not self.characterSpaceAmountSix.get():
             createDialog("Error", "error", "No information provided.", None)
             return
 
@@ -1653,6 +1674,18 @@ class App(customtkinter.CTk):
             redSpaceAmountSix = format(negativeRedSpaceAmountBaseSix & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
         except:
             redSpaceAmountSix = "DUMMY"
+
+        miniGameAmountBaseSix = self.miniGameAmountSix.get()
+        try:
+            miniGameAmountSix = hex(int(self.miniGameAmountSix.get()))
+            if len(miniGameAmountSix) == 5:
+                miniGameAmountSix = "0" + miniGameAmountSix[2:]
+            elif len(miniGameAmountSix) == 4:
+                miniGameAmountSix = "00" + miniGameAmountSix[2:]
+            elif len(miniGameAmountSix) == 3:
+                miniGameAmountSix = "000" + miniGameAmountSix[2:]
+        except:
+            miniGameAmountSix = "DUMMY"
 
         starSpaceAmountSixBase = self.starSpaceAmountSix.get()
         try:
@@ -1699,6 +1732,7 @@ class App(customtkinter.CTk):
         marioPartySixCharacterSpace = getCharacterSpaceCodeSix(characterSpaceAmountSix)
         marioPartySixStarSpace = getStarSpaceCodeSix(starSpaceAmountSix, starSpaceAmountNegativeSix)
         marioPartySixPinkBooSpace = getPinkBooSpaceCodeSix(pinkBooSpaceAmountSix, pinkBooSpaceAmountNegativeSix)
+        marioPartySixMiniGame = getMinigameCodeSix(miniGameAmountSix)
 
         if redSpaceAmountSix == "DUMMY":
             marioPartySixRedSpace = ""
@@ -1714,20 +1748,23 @@ class App(customtkinter.CTk):
             marioPartySixPinkBooSpace = ""
         if pinkBooSpaceAmountNegativeSix == "DUMMY":
             marioPartySixPinkBooSpace = ""
+        if miniGameAmountSix == "DUMMY":
+            marioPartySixMiniGame == ""
         
-        generatedCode = marioPartySixRedSpace + marioPartySixBlueSpace + marioPartySixCharacterSpace + marioPartySixStarSpace + marioPartySixPinkBooSpace
+        generatedCode = marioPartySixBlueSpace + marioPartySixRedSpace + marioPartySixCharacterSpace + marioPartySixMiniGame + marioPartySixStarSpace + marioPartySixPinkBooSpace
         generatedCode = generatedCode.replace("SIXRED", redSpaceAmountBaseSix)
         generatedCode = generatedCode.replace("SIXBLUE", blueSpaceAmountBaseSix)
         generatedCode = generatedCode.replace("SIXCHARACTER", characterSpaceAmountBaseSix)
+        generatedCode = generatedCode.replace("SIXMINIGAME", miniGameAmountBaseSix)
         generatedCode = generatedCode.replace("SIXSTAR", starSpaceAmountSixBase)
         generatedCode = generatedCode.replace("SIXBOO", pinkBooSpaceAmountSixBase)
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
+        notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/diceBlock.ico"), timeout = 10)
 
     def actionSpaceButtonSeven(self):
-        if not self.blueSpaceAmountSeven.get() and not self.characterSpaceAmountSeven.get()  and not self.redSpaceAmountSeven.get() and not self.starSpaceAmountSeven.get() and not self.starSpaceAmountSevenLastFive.get() and not self.hammerBroAmountSeven.get() and not self.zapAmountSeven.get():
+        if not self.blueSpaceAmountSeven.get() and not self.miniGameAmountSeven.get() and not self.characterSpaceAmountSeven.get()  and not self.redSpaceAmountSeven.get() and not self.starSpaceAmountSeven.get() and not self.starSpaceAmountSevenLastFive.get() and not self.hammerBroAmountSeven.get() and not self.zapAmountSeven.get():
             createDialog("Error", "error", "No information provided.", None)
             return
 
@@ -1772,6 +1809,18 @@ class App(customtkinter.CTk):
         except:
             starSpaceAmountSevenLastFive = "DUMMY"
         
+        miniGameAmountBaseSeven = self.miniGameAmountSeven.get()
+        try:
+            miniGameAmountSeven = hex(int(self.miniGameAmountSeven.get()))
+            if len(miniGameAmountSeven) == 5:
+                miniGameAmountSeven = "0" + miniGameAmountSeven[2:]
+            elif len(miniGameAmountSeven) == 4:
+                miniGameAmountSeven = "00" + miniGameAmountSeven[2:]
+            elif len(miniGameAmountSeven) == 3:
+                miniGameAmountSeven = "000" + miniGameAmountSeven[2:]
+        except:
+            miniGameAmountSeven = "DUMMY"
+        
         characterSpaceAmountBaseSeven = self.characterSpaceAmountSeven.get()
         try:
             characterSpaceAmountSeven = hex(int(self.characterSpaceAmountSeven.get()))
@@ -1801,6 +1850,7 @@ class App(customtkinter.CTk):
 
         except:
             hammerBroAmountSeven = "DUMMY"
+            hammerBroSpaceAmountHalfNegativeSeven = "DUMMY"
             hammerBroSpaceAmountNegativeSeven = "DUMMY"
 
         zapAmountSevenBase = self.zapAmountSeven.get()
@@ -1822,6 +1872,7 @@ class App(customtkinter.CTk):
         marioPartySevenStarSpaceLastFive = getStarSpaceCodeSevenLastFive(starSpaceAmountSevenLastFive)
         marioPartySevenHammerBro = getHammerBroSpaceCodeSeven(hammerBroAmountSeven, hammerBroSpaceAmountNegativeSeven, hammerBroSpaceAmountHalfNegativeSeven)
         marioPartySevenZap = getZapSpaceCodeSeven(zapAmountSeven)
+        marioPartySevenMiniGame = getMinigameCodeSeven(miniGameAmountSeven)
 
         if redSpaceAmountSeven == "DUMMY":
             marioPartySevenRedSpace = ""
@@ -1841,10 +1892,13 @@ class App(customtkinter.CTk):
             marioPartySevenHammerBro = ""
         if zapAmountSeven == "DUMMY":
             marioPartySevenZap = ""
+        if miniGameAmountSeven == "DUMMY":
+            marioPartySevenMiniGame = ""
 
-        generatedCode = marioPartySevenRedSpace + marioPartySevenBlueSpace + marioPartySevenCharacterSpace + marioPartySevenStarSpace + marioPartySevenStarSpaceLastFive + marioPartySevenHammerBro + marioPartySevenZap
+        generatedCode = marioPartySevenBlueSpace + marioPartySevenRedSpace + marioPartySevenMiniGame + marioPartySevenCharacterSpace + marioPartySevenStarSpace + marioPartySevenStarSpaceLastFive + marioPartySevenHammerBro + marioPartySevenZap
         generatedCode = generatedCode.replace("SEVENRED", redSpaceAmountBaseSeven)
         generatedCode = generatedCode.replace("SEVENBLUE", blueSpaceAmountBaseSeven)
+        generatedCode = generatedCode.replace("SEVENMINIGAME", miniGameAmountBaseSeven)
         generatedCode = generatedCode.replace("SEVENCHARACTER", blueSpaceAmountBaseSeven)
         generatedCode = generatedCode.replace("SEVENSTAR", starSpaceAmountSevenBase)
         generatedCode = generatedCode.replace("SEVENSTLASTFIVE", starSpaceAmountSevenLastFiveBase)
@@ -1853,7 +1907,7 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
+        notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/diceBlock.ico"), timeout = 10)
 
     def actionSpaceButtonEight(self):
         if not self.blueSpaceAmountEight.get() and not self.redSpaceAmountEight.get() and not self.starSpaceAmountEight.get():
@@ -1910,14 +1964,14 @@ class App(customtkinter.CTk):
         if starSpaceAmountNegativeEight == "DUMMY":
             marioPartyEightStarSpace = ""
 
-        generatedCode = marioPartyEightRedSpace + marioPartyEightBlueSpace + marioPartyEightStarSpace
+        generatedCode = marioPartyEightBlueSpace + marioPartyEightRedSpace + marioPartyEightStarSpace
         generatedCode = generatedCode.replace("EIGHTRED", redSpaceAmountBaseEight)
         generatedCode = generatedCode.replace("EIGHTBLUE", blueSpaceAmountBaseEight)
         generatedCode = generatedCode.replace("EIGHTSTAR", starSpaceAmountEightBase)
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
+        notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/diceBlock.ico"), timeout = 10)
 
     def actionSpaceButtonEight2(self):
         if not self.blueSpaceAmountEight2.get() and not self.redSpaceAmountEight2.get() and not self.starSpaceAmountEight2.get():
@@ -1970,7 +2024,7 @@ class App(customtkinter.CTk):
         if starSpaceAmountNegativeEight2 == "DUMMY":
             marioPartyEight2StarSpace = ""
 
-        generatedCode = marioPartyEight2RedSpace + marioPartyEight2BlueSpace + marioPartyEight2StarSpace
+        generatedCode = marioPartyEight2BlueSpace + marioPartyEight2RedSpace + marioPartyEight2StarSpace
         generatedCode = generatedCode.replace("EIGHTREDGC", redSpaceAmountBaseEight2)
         generatedCode = generatedCode.replace("EIGHTBLUEGC", blueSpaceAmountBaseEight2)
         generatedCode = generatedCode.replace("EIGHTSTARGC", starSpaceAmountEight2Base)
@@ -1978,7 +2032,7 @@ class App(customtkinter.CTk):
         pyperclip.copy(generatedCode)
 
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
+        notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/diceBlock.ico"), timeout = 10)
 
     def actionFaireSquare(self):
         if not self.faireSquare1.get() or not self.faireSquare2.get() or not self.faireSquare3.get() or not self.faireSquare4.get():
@@ -2054,7 +2108,7 @@ class App(customtkinter.CTk):
         pyperclip.copy(generatedCode)
 
         print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
+        notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/diceBlock.ico"), timeout = 10)
 
     def actionSpaceButtonFourItem(self):
         if not self.miniPrice4.get() or not self.miniWeight4.get() or not self.megaPrice4.get() or not self.megaWeight4.get() or not self.superMegaPrice4.get() or not self.superMegaWeight4.get() or not self.superMiniPrice4.get() or not self.superMiniWeight4.get() or not self.miniMegaHammerPrice4.get() or not self.miniMegaHammerWeight4.get() or not self.warpPipePrice4.get() or not self.warpPipeWeight4.get() or not self.swapCardPrice4.get() or not self.swapCardWeight4.get() or not self.sparkyStickerPrice4.get() or not self.sparkyStickerWeight4.get() or not self.bowserSuitPrice4.get() or not self.bowserSuitWeight4.get() or not self.gaddlightPrice4.get() or not self.gaddlightWeight4.get() or not self.chompCallPrice4.get() or not self.chompCallWeight4.get() or not self.crystalBallPrice4.get() or not self.crystalBallWeight4.get() or not self.magicLampPrice4.get() or not self.magicLampWeight4.get() or not self.itemBagPrice4.get()  or not self.itemBagWeight4.get():
@@ -2377,7 +2431,7 @@ class App(customtkinter.CTk):
         pyperclip.copy(generatedCode)
 
         print("Generated code copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
+        notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/diceBlock.ico"), timeout = 10)
 
     def actionSpaceButtonSevenOrb(self):
         if not self.mushroomCapsuleWeight7.get() or not self.goldenMushroomCapsulePrice7.get() or not self.goldenMushroomCapsuleWeight7.get() or not self.slowMushroomCapsulePrice7.get() or not self.slowMushroomCapsuleWeight7.get() or not self.metalMushroomCapsulePrice7.get() or not self.metalMushroomCapsuleWeight7.get() or not self.flutterCapsulePrice7.get() or not self.flutterCapsuleWeight7.get() or not self.cannonCapsulePrice7.get() or not self.cannonCapsuleWeight7.get() or not self.snackCapsulePrice7.get() or not self.snackCapsuleWeight7.get() or not self.lakituCapsulePrice7.get() or not self.lakituCapsuleWeight7.get() or not self.hammerBroCapsuleWeight7.get() or not self.hammerBroCapsulePrice7.get() or not self.plantCapsulePrice7.get() or not self.plantCapsuleWeight7.get() or not self.spearCapsuleWeight7.get() or not self.spearCapsulePrice7.get() or not self.kamekCapsuleWeight7.get() or not self.kamekCapsulePrice7.get() or not self.toadyCapsuleWeight7.get() or not self.toadyCapsulePrice7.get() or not self.blizzardCapsuleWeight7.get() or not self.blizzardCapsulePrice7.get() or not self.banditCapsulePrice7.get() or not self.banditCapsuleWeight7.get() or not self.pinkBooCapsuleWeight7.get() or not self.pinkBooCapsulePrice7.get() or not self.spinyCapsulePrice7.get() or not self.spinyCapsuleWeight7.get() or not self.zapCapsulePrice7.get() or not self.zapCapsuleWeight7.get() or not self.tweesterCapsulePrice7.get() or not self.tweesterCapsuleWeight7.get() or not self.thwompCapsulePrice7.get() or not self.thwompCapsuleWeight7.get() or not self.warpCapsulePrice7.get() or not self.warpCapsuleWeight7.get() or not self.bombCapsulePrice7.get() or not self.bombCapsuleWeight7.get() or not self.fireballCapsulePrice7.get() or not self.fireballCapsuleWeight7.get() or not self.eggCapsulePrice7.get() or not self.eggCapsuleWeight7.get() or not self.flowerCapsulePrice7.get() or not self.flowerCapsuleWeight7.get() or not self.vacuumCapsulePrice7.get() or not self.vacuumCapsuleWeight7.get() or not self.magicCapsulePrice7.get() or not self.magicCapsuleWeight7.get() or not self.tripleCapsulePrice7.get() or not self.tripleCapsuleWeight7.get() or not self.koopaCapsulePrice7.get() or not self.koopaCapsuleWeight7.get():
@@ -3020,7 +3074,7 @@ class App(customtkinter.CTk):
         pyperclip.copy(generatedCode)
 
         print("Generated code copied to the clipboard.")
-        createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
+        notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/diceBlock.ico"), timeout = 10)
 
     def mp1ButtonEvent(self):
         self.mario_party_1_button.configure(state="disabled")
