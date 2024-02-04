@@ -914,3 +914,10 @@ MP7 - Orb Modifer
 042EF7A0 00000000
 042EF7A4 00000000
 '''
+
+def getBattleAmountFour(one, two, three, four, five):
+    return f'''
+MP4 - Give FOURBATTLE1, FOURBATTLE2, FOURBATTLE3, FOURBATTLE4, or FOURBATTLE5 coins in Battle Minigames
+041D5DE0 {one}{two}{three}{four}
+001D5DE4 000000{five}
+'''

@@ -236,7 +236,30 @@ class App(customtkinter.CTk):
         tabview.pack(padx=20, pady=20)
         tabview.add("Coins Mods")
         tabview.add("Item Mods")
+        tabview.add("Battle Game Mods")
         tabview.set("Coins Mods")
+
+        # Create faire square grid icon and entry
+        warningLabel = ctk.CTkLabel(master=tabview.tab("Battle Game Mods"), text="Battle Mini-Games Can Take These 5 Amounts. ", font=("Arial", 16, "bold"))
+        warningLabel.place(x=350, y=5)
+        icon = create_image_icon(tabview.tab("Battle Game Mods"), "assets/transparent.png", 3, 1)
+        icon = create_image_icon(tabview.tab("Battle Game Mods"), "assets/miniGame.png", 4, 1)
+        icon = create_image_icon(tabview.tab("Battle Game Mods"), "assets/miniGame.png", 5, 1)
+        icon = create_image_icon(tabview.tab("Battle Game Mods"), "assets/miniGame.png", 6, 1)
+        icon = create_image_icon(tabview.tab("Battle Game Mods"), "assets/miniGame.png", 7, 1)
+        icon = create_image_icon(tabview.tab("Battle Game Mods"), "assets/miniGame.png", 8, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Battle Game Mods"), text="   ", font=("Arial", 16))
+        label.grid(row=4, column=2)
+        self.battle41 = ctk.CTkEntry(master=tabview.tab("Battle Game Mods"), width=48, font=("Arial", 16, "bold"))
+        self.battle41.grid(row=4, column=3)
+        self.battle42 = ctk.CTkEntry(master=tabview.tab("Battle Game Mods"), width=48, font=("Arial", 16, "bold"))
+        self.battle42.grid(row=5, column=3)
+        self.battle43 = ctk.CTkEntry(master=tabview.tab("Battle Game Mods"), width=48, font=("Arial", 16, "bold"))
+        self.battle43.grid(row=6, column=3)
+        self.battle44 = ctk.CTkEntry(master=tabview.tab("Battle Game Mods"), width=48, font=("Arial", 16, "bold"))
+        self.battle44.grid(row=7, column=3)
+        self.battle45 = ctk.CTkEntry(master=tabview.tab("Battle Game Mods"), width=48, font=("Arial", 16, "bold"))
+        self.battle45.grid(row=8, column=3)
 
         # Create mushroom orb space icon and entry
         icon = create_image_icon(tabview.tab("Item Mods"), "assets/miniMushroom.png", 2, 1)
@@ -484,6 +507,9 @@ class App(customtkinter.CTk):
         parseButtonFour = ctk.CTkButton(master=tabview.tab("Item Mods"), command=self.actionSpaceButtonFourItem, text="Generate Codes")
         parseButtonFour.place(x=10, y=560)
 
+        parseButtonFour = ctk.CTkButton(master=tabview.tab("Battle Game Mods"), command=self.actionBattle4, text="Generate Codes")
+        parseButtonFour.place(x=10, y=560)
+
         warningLabel = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="There must be at least 5 items with a value higher than 0 and the Mega or Mini should be worth 5. ", font=("Arial", 16, "bold"))
         warningLabel.place(x=160, y=270)
 
@@ -562,7 +588,7 @@ class App(customtkinter.CTk):
         tabview.add("Faire Square Mods")
         tabview.set("Coins Mods")
 
-        # Create blue space icon and entry
+        # Create faire square grid icon and entry
         warningLabel = ctk.CTkLabel(master=tabview.tab("Faire Square Mods"), text="Stars Can Cost These 4 Amounts During Nightime in Faire Square. ", font=("Arial", 16, "bold"))
         warningLabel.place(x=260, y=5)
         icon = create_image_icon(tabview.tab("Faire Square Mods"), "assets/transparent.png", 3, 1)
@@ -2125,7 +2151,7 @@ class App(customtkinter.CTk):
             notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
 
     def actionFaireSquare(self):
-        if not self.faireSquare1.get() or not self.faireSquare2.get() or not self.faireSquare3.get() or not self.faireSquare4.get():
+        if not self.faireSquare1.get() and not self.faireSquare2.get() and not self.faireSquare3.get() and not self.faireSquare4.get():
             if sys.platform == "darwin":
                 createDialog("Error", "error", "Please fill out all the boxes.", None)
             else:
@@ -2197,6 +2223,103 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.replace("SIXTWO", faireSquare2Base)
         generatedCode = generatedCode.replace("SIXTHREE", faireSquare3Base)
         generatedCode = generatedCode.replace("SIXFOUR", faireSquare4Base)
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+
+        print("Generated codes copied to the clipboard.")
+        if sys.platform == "darwin":
+            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+        else:
+            notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
+
+    def actionBattle4(self):
+        if not self.battle41.get() and not self.battle42.get() and not self.battle43.get() and not self.battle44.get() and not self.battle45.get():
+            if sys.platform == "darwin":
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
+            else:
+                notification.notify(title = 'Error', message = 'Please fill out all the boxes', app_icon = fetchResource("assets/error.ico"), timeout = 10)
+            return
+
+        battle41Base = self.battle41.get()
+        battle42Base = self.battle42.get()
+        battle43Base = self.battle43.get()
+        battle44Base = self.battle44.get()
+        battle45Base = self.battle45.get()
+
+        try:
+            battle41 = hex(int(self.battle41.get()))
+            if len(battle41) == 5:
+                battle41 = "0" + battle41[2:]
+            elif len(battle41) == 4:
+                battle41 = "00" + battle41[2:]
+            elif len(battle41) == 3:
+                battle41 = "000" + battle41[2:]
+        except:
+            battle41 = "DUMMY"
+
+        try:
+            battle42 = hex(int(self.battle42.get()))
+            if len(battle42) == 5:
+                battle42 = "0" + battle42[2:]
+            elif len(battle42) == 4:
+                battle42 = "00" + battle42[2:]
+            elif len(battle42) == 3:
+                battle42 = "000" + battle42[2:]
+        except:
+            battle42 = "DUMMY"
+
+        try:
+            battle43 = hex(int(self.battle43.get()))
+            if len(battle43) == 5:
+                battle43 = "0" + battle43[2:]
+            elif len(battle43) == 4:
+                battle43 = "00" + battle43[2:]
+            elif len(battle43) == 3:
+                battle43 = "000" + battle43[2:]
+        except:
+            battle43 = "DUMMY"
+
+        try:
+            battle44 = hex(int(self.battle44.get()))
+            if len(battle44) == 5:
+                battle44 = "0" + battle44[2:]
+            elif len(battle44) == 4:
+                battle44 = "00" + battle44[2:]
+            elif len(battle44) == 3:
+                battle44 = "000" + battle44[2:]
+        except:
+            battle44 = "DUMMY"
+
+        try:
+            battle45 = hex(int(self.battle45.get()))
+            if len(battle45) == 5:
+                battle45 = "0" + battle45[2:]
+            elif len(battle45) == 4:
+                battle45 = "00" + battle45[2:]
+            elif len(battle45) == 3:
+                battle45 = "000" + battle45[2:]
+        except:
+            battle45 = "DUMMY"
+
+        codebattle4 = getBattleAmountFour(battle41, battle42, battle43, battle44, battle45)
+        
+        if battle41 == "DUMMY":
+            battle41 = ""
+        if battle42 == "DUMMY":
+            battle42 = ""
+        if battle43 == "DUMMY":
+            battle43 = ""
+        if battle44 == "DUMMY":
+            battle44 = ""
+        if battle45 == "DUMMY":
+            battle45 = ""
+
+        generatedCode = codebattle4
+        generatedCode = generatedCode.replace("FOURBATTLE1", battle41Base)
+        generatedCode = generatedCode.replace("FOURBATTLE2", battle42Base)
+        generatedCode = generatedCode.replace("FOURBATTLE3", battle43Base)
+        generatedCode = generatedCode.replace("FOURBATTLE4", battle44Base)
+        generatedCode = generatedCode.replace("FOURBATTLE5", battle45Base)
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
 
