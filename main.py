@@ -1949,7 +1949,7 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.replace("SEVENRED", redSpaceAmountBaseSeven)
         generatedCode = generatedCode.replace("SEVENBLUE", blueSpaceAmountBaseSeven)
         generatedCode = generatedCode.replace("SEVENMINIGAME", miniGameAmountBaseSeven)
-        generatedCode = generatedCode.replace("SEVENCHARACTER", blueSpaceAmountBaseSeven)
+        generatedCode = generatedCode.replace("SEVENCHARACTER", characterSpaceAmountBaseSeven)
         generatedCode = generatedCode.replace("SEVENSTAR", starSpaceAmountSevenBase)
         generatedCode = generatedCode.replace("SEVENSTLASTFIVE", starSpaceAmountSevenLastFiveBase)
         generatedCode = generatedCode.replace("SEVENHAMMERBRO", hammerBroAmountSevenBase)
