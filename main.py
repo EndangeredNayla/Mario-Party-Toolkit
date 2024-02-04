@@ -1154,14 +1154,23 @@ class App(customtkinter.CTk):
         redSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins on a Red Space.", font=("Arial", 16))
         redSpaceLabel6.grid(row=2, column=4, sticky="w")
 
+        # Create MG space icon and entry
+        miniGameIconEight = create_image_icon(tabview.tab("Coins Mods"), "assets/miniGame.png", 3, 1)
+        miniGameLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Gain  ", font=("Arial", 16))
+        miniGameLabel.grid(row=3, column=2)
+        self.miniGameAmountEight2 = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
+        self.miniGameAmountEight2.grid(row=3, column=3)
+        miniGameLabel8 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when winning a Mini-Game.", font=("Arial", 16))
+        miniGameLabel8.grid(row=3, column=4, sticky="w")
+
         # Create star space icon and entry
-        starSpaceIconEight2= create_image_icon(tabview.tab("Coins Mods"), "assets/starSpace.png", 3, 1)
+        starSpaceIconEight2= create_image_icon(tabview.tab("Coins Mods"), "assets/starSpace.png", 4, 1)
         starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Cost  ", font=("Arial", 16))
-        starSpaceLabel.grid(row=3, column=2)
+        starSpaceLabel.grid(row=4, column=2)
         self.starSpaceAmountEight2 = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.starSpaceAmountEight2.grid(row=3, column=3)
+        self.starSpaceAmountEight2.grid(row=4, column=3)
         starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when purchasing a Star.", font=("Arial", 16))
-        starSpaceLabel6.grid(row=3, column=4, sticky="w")
+        starSpaceLabel6.grid(row=4, column=4, sticky="w")
 
         parseButtonEight2 = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonEight2, text="Generate Codes")
         parseButtonEight2.place(x=10, y=560)
@@ -2033,7 +2042,7 @@ class App(customtkinter.CTk):
             notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
 
     def actionSpaceButtonEight2(self):
-        if not self.blueSpaceAmountEight2.get() and not self.redSpaceAmountEight2.get() and not self.starSpaceAmountEight2.get():
+        if not self.miniGameAmountEight2.get() and not self.blueSpaceAmountEight2.get() and not self.redSpaceAmountEight2.get() and not self.starSpaceAmountEight2.get():
             if sys.platform == "darwin":
                 createDialog("Error", "error", "No information provided.", None)
             else:
@@ -2072,10 +2081,23 @@ class App(customtkinter.CTk):
         except:
             starSpaceAmountEight2 = "DUMMY"
             starSpaceAmountNegativeEight2 = "DUMMY"
+        
+        miniGameAmountBaseEight2 = self.miniGameAmountEight2.get()
+        try:
+            miniGameAmountEight2 = hex(int(self.miniGameAmountEight2.get()))
+            if len(miniGameAmountEight2) == 5:
+                miniGameAmountEight2 = "0" + miniGameAmountEight2[2:]
+            elif len(miniGameAmountEight2) == 4:
+                miniGameAmountEight2 = "00" + miniGameAmountEight2[2:]
+            elif len(miniGameAmountEight2) == 3:
+                miniGameAmountEight2 = "000" + miniGameAmountEight2[2:]
+        except:
+            miniGameAmountEight2 = "DUMMY"
 
         marioPartyEight2StarSpace = getStarSpaceCodeEightGC(starSpaceAmountEight2, starSpaceAmountNegativeEight2)
         marioPartyEight2BlueSpace = getBlueSpaceCodeEightGC(blueSpaceAmountEight2)
         marioPartyEight2RedSpace = getRedSpaceCodeEightGC(redSpaceAmountEight2)
+        marioPartyEight2MiniGame = getMinigameCodeEight2(miniGameAmountEight2)
 
         if redSpaceAmountEight2 == "DUMMY":
             marioPartyEight2RedSpace = ""
@@ -2085,10 +2107,13 @@ class App(customtkinter.CTk):
             marioPartyFiveStarSpace = ""
         if starSpaceAmountNegativeEight2 == "DUMMY":
             marioPartyEight2StarSpace = ""
+        if miniGameAmountEight2 == "DUMMY":
+            marioPartyEight2MiniGame = ""
 
-        generatedCode = marioPartyEight2BlueSpace + marioPartyEight2RedSpace + marioPartyEight2StarSpace
+        generatedCode = marioPartyEight2BlueSpace + marioPartyEight2RedSpace + marioPartyEight2MiniGame + marioPartyEight2StarSpace
         generatedCode = generatedCode.replace("EIGHTREDGC", redSpaceAmountBaseEight2)
         generatedCode = generatedCode.replace("EIGHTBLUEGC", blueSpaceAmountBaseEight2)
+        generatedCode = generatedCode.replace("EIGHTMINIGAMEGC", miniGameAmountBaseEight2)
         generatedCode = generatedCode.replace("EIGHTSTARGC", starSpaceAmountEight2Base)
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
