@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 1/23/2024
+# Date: 2/3/2024
 # License: MIT
 # ============================================
 
@@ -103,13 +103,30 @@ MP4 - Red Spaces Take Away FOURRED Coins
 0407FD78 3BC0{amount}
 '''
 
-
 def getBlueSpaceCodeFour(amount):
     return f'''
 MP4 - Blue Spaces Give FOURBLUE Coins
 0407FBDC 60000000
 0407FBE0 3BC0{amount}
 '''
+
+def getMinigameCodeFour(amount):
+    return f'''
+MP4 - Minigames Award FOURMINIGAME Coins
+2818FC60 0000000A
+0218FC60 000000{amount}
+E2000001 80008000
+2818FC90 0000000A
+0218FC90 000000{amount}
+E2000001 80008000
+2818FCC0 0000000A
+0218FCC0 000000{amount}
+E2000001 80008000
+2818FCF0 0000000A
+0218FCF0 000000{amount}
+E2000001 80008000
+'''
+
 
 def getBooSpaceCodeFour(amount):
     return f'''
