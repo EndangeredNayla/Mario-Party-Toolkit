@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 2/3/2024
+# Date: 2/4/2024
 # License: MIT
 # ============================================
 
@@ -159,6 +159,23 @@ def getRedSpaceCodeFive(amount):
     return f'''
 MP5 - Red Spaces Take Away FIVERED Coins
 040AA160 3880{amount}
+'''
+
+def getMinigameCodeFive(amount):
+    return f'''
+MP5 - Minigames Award FIVEMINIGAME Coins
+2822A09D 0000000A
+0222A09D 000000{amount}
+E2000001 80008000
+2822A1A5 0000000A
+0222A1A5 000000{amount}
+E2000001 80008000
+2822A2AD 0000000A
+0222A2AD 000000{amount}
+E2000001 80008000
+2822A3B5 0000000A
+0222A3B5 000000{amount}
+E2000001 80008000
 '''
 
 def getStarSpaceCodeFive(amount, negAmount):

@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 2/3/2024
+# Date: 2/4/2024
 # License: MIT
 # ============================================
 
@@ -433,8 +433,8 @@ class App(customtkinter.CTk):
         minigameIconFour = create_image_icon(tabview.tab("Coins Mods"), "assets/miniGame.png", 3, 1)
         minigameLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Gain  ", font=("Arial", 16))
         minigameLabel.grid(row=3, column=2)
-        self.minigameAmountFour = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.minigameAmountFour.grid(row=3, column=3)
+        self.miniGameAmountFour = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
+        self.miniGameAmountFour.grid(row=3, column=3)
         minigameSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when winning a Mini-Game.", font=("Arial", 16))
         minigameSpaceLabel4.grid(row=3, column=4, sticky="w")
 
@@ -502,31 +502,40 @@ class App(customtkinter.CTk):
         redSpaceLabel5.grid(row=2, column=4, sticky="w")
 
         # Create star space icon and entry
-        starSpaceIconFive = create_image_icon(tabview.tab("Coins Mods"), "assets/starSpace.png", 3, 1)
+        miniGameIconFive = create_image_icon(tabview.tab("Coins Mods"), "assets/miniGame.png", 3, 1)
+        miniGameLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Gain  ", font=("Arial", 16))
+        miniGameLabel.grid(row=3, column=2)
+        self.miniGameAmountFive = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
+        self.miniGameAmountFive.grid(row=3, column=3)
+        miniGameLabel5 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when winning a Mini-Game.", font=("Arial", 16))
+        miniGameLabel5.grid(row=3, column=4, sticky="w")
+
+        # Create star space icon and entry
+        starSpaceIconFive = create_image_icon(tabview.tab("Coins Mods"), "assets/starSpace.png", 4, 1)
         starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Cost  ", font=("Arial", 16))
-        starSpaceLabel.grid(row=3, column=2)
+        starSpaceLabel.grid(row=4, column=2)
         self.starSpaceAmountFive = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.starSpaceAmountFive.grid(row=3, column=3)
+        self.starSpaceAmountFive.grid(row=4, column=3)
         starSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when purchasing a Star at a Star Space.", font=("Arial", 16))
-        starSpaceLabel5.grid(row=3, column=4, sticky="w")
+        starSpaceLabel5.grid(row=4, column=4, sticky="w")
 
         # Create wiggler space icon and entry
-        wigglerSpaceIconFive = create_image_icon(tabview.tab("Coins Mods"), "assets/wigglerCapsule.png", 4, 1)
+        wigglerSpaceIconFive = create_image_icon(tabview.tab("Coins Mods"), "assets/wigglerCapsule.png", 5, 1)
         wigglerSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Cost  ", font=("Arial", 16))
-        wigglerSpaceLabel.grid(row=4, column=2)
+        wigglerSpaceLabel.grid(row=5, column=2)
         self.wigglerSpaceAmountFive = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.wigglerSpaceAmountFive.grid(row=4, column=3)
+        self.wigglerSpaceAmountFive.grid(row=5, column=3)
         wigglerSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins to buy a star via Wiggler.", font=("Arial", 16))
-        wigglerSpaceLabel5.grid(row=4, column=4, sticky="w")
+        wigglerSpaceLabel5.grid(row=5, column=4, sticky="w")
 
         # Create chain chomp space icon and entry
-        chompSpaceIconFive = create_image_icon(tabview.tab("Coins Mods"), "assets/chainChomp.png", 5, 1)
+        chompSpaceIconFive = create_image_icon(tabview.tab("Coins Mods"), "assets/chainChomp.png", 6, 1)
         chompSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Cost  ", font=("Arial", 16))
-        chompSpaceLabel.grid(row=5, column=2)
+        chompSpaceLabel.grid(row=6, column=2)
         self.chompSpaceAmountFive = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.chompSpaceAmountFive.grid(row=5, column=3)
+        self.chompSpaceAmountFive.grid(row=6, column=3)
         chompSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins to steal a Star.", font=("Arial", 16))
-        chompSpaceLabel5.grid(row=5, column=4, sticky="w")
+        chompSpaceLabel5.grid(row=6, column=4, sticky="w")
 
         parseButtonFive = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonFive, text="Generate Codes")
         parseButtonFive.place(x=10, y=560)
@@ -1417,6 +1426,18 @@ class App(customtkinter.CTk):
         except:
             redSpaceAmountFour = "DUMMY"
 
+        miniGameAmountBaseFour = self.miniGameAmountFour.get()
+        try:
+            miniGameAmountFour = hex(int(self.miniGameAmountFour.get()))
+            if len(miniGameAmountFour) == 5:
+                miniGameAmountFour = "0" + miniGameAmountFour[2:]
+            elif len(miniGameAmountFour) == 4:
+                miniGameAmountFour = "00" + miniGameAmountFour[2:]
+            elif len(miniGameAmountFour) == 3:
+                miniGameAmountFour = "000" + miniGameAmountFour[2:]
+        except:
+            miniGameAmountFour = "DUMMY"
+
         starSpaceAmountFourBase = self.starSpaceAmountFour.get()
 
         try:
@@ -1457,6 +1478,7 @@ class App(customtkinter.CTk):
         marioPartyFourStarSpace = getStarSpaceCodeFour(starSpaceAmountFour)
         marioPartyFourLotterySpace = getLotterySpaceCodeFour(lotterySpaceAmountFour)
         marioPartyFourBooSpace = getBooSpaceCodeFour(booSpaceAmountFour)
+        marioPartyFourBooSpace = getMinigameCodeFour(minigameAmountFour)
 
         if redSpaceAmountFour == "DUMMY":
             marioPartyFourRedSpace = ""
@@ -1468,10 +1490,13 @@ class App(customtkinter.CTk):
             marioPartyFourLotterySpace = ""
         if booSpaceAmountFour == "DUMMY":
             marioPartyFourBooSpace = ""
+        if miniGameAmountBaseFour == "DUMMY"
+            marioPartyFourMiniGame = ""
 
-        generatedCode = marioPartyFourRedSpace + marioPartyFourBlueSpace + marioPartyFourStarSpace + marioPartyFourBooSpace + marioPartyFourLotterySpace
+        generatedCode = marioPartyFourRedSpace + marioPartyFourBlueSpace + marioPartyFourMiniGame + marioPartyFourStarSpace + marioPartyFourBooSpace + marioPartyFourLotterySpace
         generatedCode = generatedCode.replace("FOURRED", redSpaceAmountBaseFour)
         generatedCode = generatedCode.replace("FOURBLUE", blueSpaceAmountBaseFour)
+        generatedCode = generatedCode.replace("FOURMINIGAME", miniGameAmountBaseFour)
         generatedCode = generatedCode.replace("FOURSTAR", starSpaceAmountFourBase)
         generatedCode = generatedCode.replace("FOURBOO", booSpaceAmountFourBase)
         generatedCode = generatedCode.replace("FOURLOTTERY", lotterySpaceAmountFourBase)
@@ -1481,7 +1506,7 @@ class App(customtkinter.CTk):
         createDialog("Operation Sucesssful", "success", "Generated codes copied to clipboard!", None)
 
     def actionSpaceButtonFive(self):
-        if not self.blueSpaceAmountFive.get() and not self.redSpaceAmountFive.get() and not self.starSpaceAmountFive.get() and not self.wigglerSpaceAmountFive.get():
+        if not self.blueSpaceAmountFive.get() and not self.miniGameAmountFive.get() and not self.redSpaceAmountFive.get() and not self.starSpaceAmountFive.get() and not self.wigglerSpaceAmountFive.get():
             createDialog("Error", "error", "No information provided.", None)
             return
 
@@ -1504,6 +1529,19 @@ class App(customtkinter.CTk):
             redSpaceAmountFive = format(negativeRedSpaceAmountBaseFive & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
         except:
             redSpaceAmountFive = "DUMMY"
+
+
+        miniGameAmountBaseFive = self.miniGameAmountFive.get()
+        try:
+            miniGameAmountFive = hex(int(self.miniGameAmountFive.get()))
+            if len(miniGameAmountFive) == 5:
+                miniGameAmountFive = "0" + miniGameAmountFive[2:]
+            elif len(miniGameAmountFive) == 4:
+                miniGameAmountFive = "00" + miniGameAmountFive[2:]
+            elif len(miniGameAmountFive) == 3:
+                miniGameAmountFive = "000" + miniGameAmountFive[2:]
+        except:
+            miniGameAmountFive = "DUMMY"
 
         starSpaceAmountFiveBase = self.starSpaceAmountFive.get()
 
@@ -1558,6 +1596,7 @@ class App(customtkinter.CTk):
         marioPartyFiveChompSpace = getChompSpaceCodeFive(chompSpaceAmountFive, chompSpaceAmountNegativeFive)
         marioPartyFiveBlueSpace = getBlueSpaceCodeFive(blueSpaceAmountFive)
         marioPartyFiveRedSpace = getRedSpaceCodeFive(redSpaceAmountFive)
+        marioPartyFiveMiniGame = getMinigameCodeFive(miniGameAmountFive)
 
         if redSpaceAmountFive == "DUMMY":
             marioPartyFiveRedSpace = ""
@@ -1575,10 +1614,13 @@ class App(customtkinter.CTk):
             marioPartyFiveChompSpace = ""
         if chompSpaceAmountNegativeFive == "DUMMY":
             marioPartyFiveChompSpace = ""
+        if miniGameAmountFive == "DUMMY"
+            marioPartyFiveMiniGame = ""
 
-        generatedCode = marioPartyFiveRedSpace + marioPartyFiveBlueSpace + marioPartyFiveStarSpace + marioPartyFiveWigglerSpace + marioPartyFiveChompSpace
+        generatedCode = marioPartyFiveRedSpace + marioPartyFiveBlueSpace + marioPartyFiveMiniGame + marioPartyFiveStarSpace + marioPartyFiveWigglerSpace + marioPartyFiveChompSpace
         generatedCode = generatedCode.replace("FIVERED", redSpaceAmountBaseFive)
         generatedCode = generatedCode.replace("FIVEBLUE", blueSpaceAmountBaseFive)
+        generatedCode = generatedCode.replace("FIVEMINIGAME", miniGameAmountBaseFive)
         generatedCode = generatedCode.replace("FIVESTAR", starSpaceAmountFiveBase)
         generatedCode = generatedCode.replace("FIVEWIGGLER", wigglerSpaceAmountFiveBase)
         generatedCode = generatedCode.replace("FIVECHOMP", chompSpaceAmountFiveBase)
