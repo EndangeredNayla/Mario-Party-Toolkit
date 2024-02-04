@@ -14,7 +14,6 @@ import tkinter as tk
 import pyperclip
 
 from CTkToolTip import *
-from plyer import notification
 from functools import partial
 
 from functions import *
@@ -24,7 +23,12 @@ from codes import *
 try:
     from mac_notifications import client
 except:
-    pass # Any OS other then Winodws
+    pass
+
+try:
+    from plyer import notification
+except:
+    pass
 
 customtkinter.set_appearance_mode("Dark")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
