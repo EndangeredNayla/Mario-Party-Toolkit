@@ -1195,7 +1195,7 @@ class App(customtkinter.CTk):
 
     def actionSpaceButtonOne(self):
         if not self.blueSpaceAmountOne.get() and not self.redSpaceAmountOne.get():
-            createDialog("Error", "error", "No information provided.", None)
+            notification.notify(title= "Error", message = "No information provided", app_icon=fetchResource("assets/diceBlock.ico"), timeout = 10)
             return
 
         blueSpaceAmountBaseOne = self.blueSpaceAmountOne.get()
@@ -1270,7 +1270,7 @@ class App(customtkinter.CTk):
 
     def actionSpaceButtonTwo(self):
         if not self.blueSpaceAmountTwo.get() and not self.redSpaceAmountTwo.get():
-            createDialog("Error", "error", "No information provided.", None)
+            notification.notify(title= "Error", message = "No information provided", app_icon=fetchResource("assets/diceBlock.ico"), timeout = 10)
             return
 
         blueSpaceAmountBaseTwo = self.blueSpaceAmountTwo.get()
@@ -1345,7 +1345,7 @@ class App(customtkinter.CTk):
 
     def actionSpaceButtonThree(self):
         if not self.blueSpaceAmountThree.get() and not self.redSpaceAmountThree.get():
-            createDialog("Error", "error", "No information provided.", None)
+            notification.notify(title= "Error", message = "No information provided", app_icon=fetchResource("assets/diceBlock.ico"), timeout = 10)
             return
 
         blueSpaceAmountBaseThree = self.blueSpaceAmountThree.get()
@@ -1420,7 +1420,7 @@ class App(customtkinter.CTk):
 
     def actionSpaceButtonFour(self):    
         if not self.blueSpaceAmountFour.get() and not self.miniGameAmountFour.get() and not self.redSpaceAmountFour.get() and not self.starSpaceAmountFour.get() and not self.booSpaceAmountFour.get() and not self.lotterySpaceAmountFour.get():
-            createDialog("Error", "error", "No information provided.", None)
+            notification.notify(title= "Error", message = "No information provided", app_icon=fetchResource("assets/diceBlock.ico"), timeout = 10)
             return
 
         blueSpaceAmountBaseFour = self.blueSpaceAmountFour.get()
@@ -1528,7 +1528,7 @@ class App(customtkinter.CTk):
 
     def actionSpaceButtonFive(self):
         if not self.blueSpaceAmountFive.get() and not self.miniGameAmountFive.get() and not self.redSpaceAmountFive.get() and not self.starSpaceAmountFive.get() and not self.wigglerSpaceAmountFive.get():
-            createDialog("Error", "error", "No information provided.", None)
+            notification.notify(title= "Error", message = "No information provided", app_icon=fetchResource("assets/diceBlock.ico"), timeout = 10)
             return
 
         blueSpaceAmountBaseFive = self.blueSpaceAmountFive.get()
@@ -1652,7 +1652,7 @@ class App(customtkinter.CTk):
 
     def actionSpaceButtonSix(self):
         if not self.blueSpaceAmountSix.get() and not self.miniGameAmountSix.get() and not self.redSpaceAmountSix.get() and not self.starSpaceAmountSix.get() and not self.pinkBooSpaceAmountSix.get() and not self.characterSpaceAmountSix.get():
-            createDialog("Error", "error", "No information provided.", None)
+            notification.notify(title= "Error", message = "No information provided", app_icon=fetchResource("assets/diceBlock.ico"), timeout = 10)
             return
 
         blueSpaceAmountBaseSix = self.blueSpaceAmountSix.get()
@@ -1765,7 +1765,7 @@ class App(customtkinter.CTk):
 
     def actionSpaceButtonSeven(self):
         if not self.blueSpaceAmountSeven.get() and not self.miniGameAmountSeven.get() and not self.characterSpaceAmountSeven.get()  and not self.redSpaceAmountSeven.get() and not self.starSpaceAmountSeven.get() and not self.starSpaceAmountSevenLastFive.get() and not self.hammerBroAmountSeven.get() and not self.zapAmountSeven.get():
-            createDialog("Error", "error", "No information provided.", None)
+            notification.notify(title= "Error", message = "No information provided", app_icon=fetchResource("assets/diceBlock.ico"), timeout = 10)
             return
 
         blueSpaceAmountBaseSeven = self.blueSpaceAmountSeven.get()
@@ -1911,7 +1911,7 @@ class App(customtkinter.CTk):
 
     def actionSpaceButtonEight(self):
         if not self.blueSpaceAmountEight.get() and not self.redSpaceAmountEight.get() and not self.starSpaceAmountEight.get():
-            createDialog("Error", "error", "No information provided.", None)
+            notification.notify(title= "Error", message = "No information provided", app_icon=fetchResource("assets/diceBlock.ico"), timeout = 10)
             return
 
         blueSpaceAmountBaseEight = self.blueSpaceAmountEight.get()
@@ -1975,7 +1975,7 @@ class App(customtkinter.CTk):
 
     def actionSpaceButtonEight2(self):
         if not self.blueSpaceAmountEight2.get() and not self.redSpaceAmountEight2.get() and not self.starSpaceAmountEight2.get():
-            createDialog("Error", "error", "No information provided.", None)
+            notification.notify(title= "Error", message = "No information provided", app_icon=fetchResource("assets/diceBlock.ico"), timeout = 10)
             return
         blueSpaceAmountBaseEight2 = self.blueSpaceAmountEight2.get()
 
