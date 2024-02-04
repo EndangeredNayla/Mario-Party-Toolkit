@@ -471,8 +471,8 @@ class App(customtkinter.CTk):
         parseButtonFour = ctk.CTkButton(master=tabview.tab("Item Mods"), command=self.actionSpaceButtonFourItem, text="Generate Codes")
         parseButtonFour.place(x=10, y=560)
 
-        warningLabel = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="There must be at least 5 items with a value higher than 0. ", font=("Arial", 16, "bold"))
-        warningLabel.place(x=260, y=270)
+        warningLabel = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="There must be at least 5 items with a value higher than 0 and the Mega or Mini should be worth 5. ", font=("Arial", 16, "bold"))
+        warningLabel.place(x=160, y=270)
 
         return frame
 
