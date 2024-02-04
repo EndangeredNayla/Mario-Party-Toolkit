@@ -1527,7 +1527,7 @@ class App(customtkinter.CTk):
         marioPartyFourStarSpace = getStarSpaceCodeFour(starSpaceAmountFour)
         marioPartyFourLotterySpace = getLotterySpaceCodeFour(lotterySpaceAmountFour)
         marioPartyFourBooSpace = getBooSpaceCodeFour(booSpaceAmountFour)
-        marioPartyFourBooSpace = getMinigameCodeFour(minigameAmountFour)
+        marioPartyFourBooSpace = getMinigameCodeFour(miniGameAmountFour)
 
         if redSpaceAmountFour == "DUMMY":
             marioPartyFourRedSpace = ""
