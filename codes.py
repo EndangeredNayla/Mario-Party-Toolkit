@@ -329,6 +329,14 @@ def getStarSpaceCodeSeven(amount):
     return f'''
 MP7 - Stars Cost SEVENSTAR Coins
 04188774 3B80{amount}
+204E0640 38030001
+044E0644 1C00000A
+044E0574 3800{amount} 
+044E08D8 3800{amount}
+044E09B8 1C00000A
+044E0BAC 38A0{amount}
+044E0C8C 1C60000A
+E2000001 80008000
 '''
 
 def getStarSpaceCodeSevenLastFive(amount):

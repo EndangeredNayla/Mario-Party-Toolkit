@@ -652,6 +652,9 @@ class App(customtkinter.CTk):
         self.starSpaceAmountSix.grid(row=5, column=3)
         starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when purchasing a Star and using a Flutter.", font=("Arial", 16))
         starSpaceLabel6.grid(row=5, column=4, sticky="w")
+        starSpaceLabelHover = CTkToolTip(starSpaceLabel, message="Works on Towering Treetop, E Gadd's Garage, Faire Square (Day), Castaway Bay, and Clockwork Castle.")
+        starSpaceLabelHover = CTkToolTip(self.starSpaceAmountSix, message="Works on Towering Treetop, E Gadd's Garage, Faire Square (Day), Castaway Bay, and Clockwork Castle.")
+        starSpaceLabelHover = CTkToolTip(starSpaceLabel6, message="Works on Towering Treetop, E Gadd's Garage, Faire Square (Day), Castaway Bay, and Clockwork Castle.")
 
         # Create boo space icon and entry
         pinkBooSpaceIconSix = create_image_icon(tabview.tab("Coins Mods"), "assets/pinkBoo.png", 6, 1)
@@ -1102,8 +1105,12 @@ class App(customtkinter.CTk):
         starSpaceLabel.grid(row=5, column=2)
         self.starSpaceAmountSeven = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
         self.starSpaceAmountSeven.grid(row=5, column=3)
-        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when purchasing a Star or when using a Flutter.", font=("Arial", 16))
+        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when purchasing a Star and using a Flutter.", font=("Arial", 16))
         starSpaceLabel6.grid(row=5, column=4, sticky="w")
+        starSpaceLabelHover = CTkToolTip(starSpaceLabel6, message="Works on Grand Canal, Neon Heights, and Bowser's Enchanted Inferno")
+        starSpaceLabelHover = CTkToolTip(self.starSpaceAmountSeven, message="Works on Grand Canal, Neon Heights, and Bowser's Enchanted Inferno")
+        starSpaceLabelHover = CTkToolTip(starSpaceLabel, message="Works on Grand Canal, Neon Heights, and Bowser's Enchanted Inferno")
+
 
         # Create star space last five icon and entry
         starSpaceIconSeven = create_image_icon(tabview.tab("Coins Mods"), "assets/starSpaceLastFive.png", 6, 1)
@@ -1113,6 +1120,9 @@ class App(customtkinter.CTk):
         self.starSpaceAmountSevenLastFive.grid(row=6, column=3)
         starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins during the Last 5 Turns Event (only if wheel lands on it).", font=("Arial", 16))
         starSpaceLabel6.grid(row=6, column=4, sticky="w")
+        starSpaceLabelHover = CTkToolTip(starSpaceLabel6, message="Works on Grand Canal and Bowser's Enchanted Infern.")
+        starSpaceLabelHover = CTkToolTip(self.starSpaceAmountSevenLastFive, message="Works on Grand Canal and Bowser's Enchanted Inferno.")
+        starSpaceLabelHover = CTkToolTip(starSpaceLabel, message="Works on Grand Canal and Bowser's Enchanted Inferno.")
 
         # Create hammer bro
         hammerBroIconSeven = create_image_icon(tabview.tab("Coins Mods"), "assets/hammerBroCapsule.png", 7, 1)
@@ -1197,6 +1207,10 @@ class App(customtkinter.CTk):
         self.starSpaceAmountEight2.grid(row=4, column=3)
         starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when purchasing a Star.", font=("Arial", 16))
         starSpaceLabel6.grid(row=4, column=4, sticky="w")
+        starSpaceLabelHover = CTkToolTip(starSpaceLabel, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
+        starSpaceLabelHover = CTkToolTip(self.starSpaceAmountEight2, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
+        starSpaceLabelHover = CTkToolTip(starSpaceLabel6, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
+
 
         parseButtonEight2 = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonEight2, text="Generate Codes")
         parseButtonEight2.place(x=10, y=560)
@@ -1235,6 +1249,9 @@ class App(customtkinter.CTk):
         self.starSpaceAmountEight.grid(row=3, column=3)
         starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when purchasing a Star.", font=("Arial", 16))
         starSpaceLabel6.grid(row=3, column=4, sticky="w")
+        starSpaceLabelHover = CTkToolTip(starSpaceLabel, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
+        # starSpaceLabelHover = CTkToolTip(self.starSpaceAmountEight, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
+        starSpaceLabelHover = CTkToolTip(starSpaceLabel6, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
 
         parseButtonEight = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonEight, text="Generate Codes")
         parseButtonEight.place(x=10, y=560)
