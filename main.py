@@ -1583,7 +1583,7 @@ class App(customtkinter.CTk):
         marioPartyFourStarSpace = getStarSpaceCodeFour(starSpaceAmountFour)
         marioPartyFourLotterySpace = getLotterySpaceCodeFour(lotterySpaceAmountFour)
         marioPartyFourBooSpace = getBooSpaceCodeFour(booSpaceAmountFour)
-        marioPartyFourBooSpace = getMinigameCodeFour(miniGameAmountFour)
+        marioPartyFourMiniGame = getMinigameCodeFour(miniGameAmountFour)
 
         if redSpaceAmountFour == "DUMMY":
             marioPartyFourRedSpace = ""
@@ -2265,56 +2265,46 @@ class App(customtkinter.CTk):
 
         try:
             battle41 = hex(int(self.battle41.get()))
-            if len(battle41) == 5:
-                battle41 = "0" + battle41[2:]
-            elif len(battle41) == 4:
-                battle41 = "00" + battle41[2:]
+            if len(battle41) == 4:
+                battle41 = battle41[2:]
             elif len(battle41) == 3:
-                battle41 = "000" + battle41[2:]
+                battle41 = "0" + battle41[2:]
         except:
             battle41 = "DUMMY"
 
         try:
             battle42 = hex(int(self.battle42.get()))
-            if len(battle42) == 5:
-                battle42 = "0" + battle42[2:]
-            elif len(battle42) == 4:
-                battle42 = "00" + battle42[2:]
+            if len(battle42) == 4:
+                battle42 = battle42[2:]
             elif len(battle42) == 3:
-                battle42 = "000" + battle42[2:]
+                battle42 = "0" + battle42[2:]
         except:
             battle42 = "DUMMY"
 
         try:
             battle43 = hex(int(self.battle43.get()))
-            if len(battle43) == 5:
-                battle43 = "0" + battle43[2:]
-            elif len(battle43) == 4:
-                battle43 = "00" + battle43[2:]
+            if len(battle43) == 4:
+                battle43 = battle43[2:]
             elif len(battle43) == 3:
-                battle43 = "000" + battle43[2:]
+                battle43 = "0" + battle43[2:]
         except:
             battle43 = "DUMMY"
 
         try:
             battle44 = hex(int(self.battle44.get()))
-            if len(battle44) == 5:
-                battle44 = "0" + battle44[2:]
-            elif len(battle44) == 4:
-                battle44 = "00" + battle44[2:]
+            if len(battle44) == 4:
+                battle44 = battle44[2:]
             elif len(battle44) == 3:
-                battle44 = "000" + battle44[2:]
+                battle44 = "0" + battle44[2:]
         except:
             battle44 = "DUMMY"
 
         try:
             battle45 = hex(int(self.battle45.get()))
-            if len(battle45) == 5:
-                battle45 = "0" + battle45[2:]
-            elif len(battle45) == 4:
-                battle45 = "00" + battle45[2:]
+            if len(battle45) == 4:
+                battle45 = battle45[2:]
             elif len(battle45) == 3:
-                battle45 = "000" + battle45[2:]
+                battle45 = "0" + battle45[2:]
         except:
             battle45 = "DUMMY"
 
