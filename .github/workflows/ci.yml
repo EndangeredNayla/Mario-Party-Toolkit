@@ -56,30 +56,11 @@ jobs:
     - name: Build Project
       run: python -m nuitka --onefile --enable-plugin=tk-inter --disable-console --standalone --assume-yes-for-downloads --output-filename="Mario Party Toolkit" --output-dir="dist" --include-data-files="assets/*=assets/" --windows-icon-from-ico="assets/diceBlock.ico" main.py
 
+    - name: Purge Files
+      run: rmdir /S /Q "D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\main.onefile-build" && rmdir /S /Q "D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\main.build" && rmdir /S /Q "D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\main.dist"
+
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
         name: MarioPartyToolkit-win32-nuitka
         path: D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\dist
-
-  build-macOS:
-    name: "macOS x86_64: Build"
-    runs-on: macos-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Install PIP Modules
-      run: python -m pip install -r requirements.txt
-
-    - name: Build Project (macOS build)
-      run: pyinstaller --onefile --noconsole --name="Mario Party Toolkit" --add-data "assets/*:assets/" --icon="assets/diceBlock.ico" main.py
-
-    - name: Purge Files (macOS build)
-      run: cd "/Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist/" && rm "Mario Party Toolkit"
-
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: MarioPartyToolkit-darwin
-        path: /Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist
