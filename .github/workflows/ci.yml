@@ -66,23 +66,32 @@ jobs:
         path: D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\dist
 
   build-macOS:
-    name: "macOS x86_64: Build"
-    runs-on: macos-latest
+    name: "macOS Universal: Build"
+    runs-on: macos-14
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Install Python Tk
+      run: arch -arch arm64 brew install python@3.12 python-tk@3.12 && arch -arch x86_64 brew install python@3.12 python-tk@3.12
+
     - name: Install PIP Modules
-      run: python -m pip install -r requirements.txt
+      run: arch -arch arm64 /opt/homebrew/Cellar/python@3.12/3.12.1_1/bin/pip3.12 install -r requirements.txt --break-system-packages && arch -arch x86_64 /usr/local/Cellar/python@3.11/3.12.1_1/bin/pip3.12 install -r requirements.txt --break-system-packages
+  
+    - name: Build Project
+      run: arch -arch arm64 /opt/homebrew/bin/pyinstaller --onefile main.py --add-data "assets/*:assets/" --name="Mario Party Toolkit" --noconsole  --icon="assets/diceBlock.ico" --distpath="dist/arm64" && arch -arch x86_64 /usr/local/bin/pyinstaller --onefile main.py --add-data "assets/*:assets/" --name="Mario Party Toolkit" --noconsole  --icon="assets/diceBlock.ico" --distpath="dist/x86_64" && 
 
-    - name: Build Project (macOS build)
-      run: pyinstaller --onefile --noconsole --name="Mario Party Toolkit" --add-data "assets/*:assets/" --icon="assets/diceBlock.ico" main.py
+    - name: Purge Files
+      run: cd "/Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist/arm64" && rm "Mario Party Toolkit" && cd "/Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist/x86_64" && rm "Mario Party Toolkit"
 
-    - name: Purge Files (macOS build)
-      run: cd "/Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist/" && rm "Mario Party Toolkit"
+    - name: Setup Universal Binary
+      run: cp -r "/Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist/arm64/" "/Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist/universal2" && rm "/Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist/universal2/Mario Party Toolkit.app/Contents/MacOS/Mario Party Toolkit"
+    
+    - name: Make Universal Binary
+      run: arch -arch arm64 lipo -create -output "/Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist/universal2/Mario Party Toolkit.app/Contents/MacOS/Mario Party Toolkit" "/Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist/x86_64/Mario Party Toolkit.app/Contents/MacOS/Mario Party Toolkit" "/Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist/arm64/Mario Party Toolkit.app/Contents/MacOS/Mario Party Toolkit"
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
         name: MarioPartyToolkit-darwin
-        path: /Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist
+        path: /Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist/universal2
