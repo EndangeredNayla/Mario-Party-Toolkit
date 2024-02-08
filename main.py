@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 2/4/2024
+# Date: 2/8/2024
 # License: MIT
 # ============================================
 
@@ -131,7 +131,7 @@ class App(customtkinter.CTk):
 
     def create_mp1_frame(self):
         frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
-        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=750, fg_color=("#fcfcfc", "#323232"))
         tabview.pack(padx=20, pady=20)
         tabview.add("Coins Mods")
         tabview.set("Coins Mods")
@@ -165,7 +165,7 @@ class App(customtkinter.CTk):
 
     def create_mp2_frame(self):
         frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
-        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=750, fg_color=("#fcfcfc", "#323232"))
         tabview.pack(padx=20, pady=20)
         tabview.add("Coins Mods")
         tabview.set("Coins Mods")
@@ -199,7 +199,7 @@ class App(customtkinter.CTk):
 
     def create_mp3_frame(self):
         frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
-        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=750, fg_color=("#fcfcfc", "#323232"))
         tabview.pack(padx=20, pady=20)
         tabview.add("Coins Mods")
         tabview.set("Coins Mods")
@@ -232,7 +232,7 @@ class App(customtkinter.CTk):
 
     def create_mp4_frame(self):
         frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
-        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=750, fg_color=("#fcfcfc", "#323232"))
         tabview.pack(padx=20, pady=20)
         tabview.add("Coins Mods")
         tabview.add("Item Mods")
@@ -517,7 +517,7 @@ class App(customtkinter.CTk):
 
     def create_mp5_frame(self):
         frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
-        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=750, fg_color=("#fcfcfc", "#323232"))
         tabview.pack(padx=20, pady=20)
         tabview.add("Coins Mods")
         tabview.set("Coins Mods")
@@ -582,10 +582,11 @@ class App(customtkinter.CTk):
 
     def create_mp6_frame(self):
         frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
-        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=750, fg_color=("#fcfcfc", "#323232"))
         tabview.pack(padx=20, pady=20)
         tabview.add("Coins Mods")
         tabview.add("Faire Square Mods")
+        tabview.add("Orb Mods")
         tabview.set("Coins Mods")
 
         # Create faire square grid icon and entry
@@ -634,6 +635,375 @@ class App(customtkinter.CTk):
         characterSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when the character lands on their own Character Space.", font=("Arial", 16))
         characterSpaceLabel6.grid(row=3, column=4, sticky="w")
 
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/mushroomCapsule.png", 2, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=2, column=2)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" 5  ", font=("Arial", 24, "bold"))
+        label.grid(row=2, column=3)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=2, column=4)
+        self.mushroomCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.mushroomCapsuleWeight6.grid(row=2, column=5)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.   ", font=("Arial", 16))
+        label.grid(row=2, column=6)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/goldenMushroomCapsule.png", 3, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=3, column=2)
+        self.goldenMushroomCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.goldenMushroomCapsulePrice6.grid(row=3, column=3)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=3, column=4)
+        self.goldenMushroomCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.goldenMushroomCapsuleWeight6.grid(row=3, column=5)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=3, column=6)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/slowMushroomCapsule.png", 4, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=4, column=2)
+        self.slowMushroomCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.slowMushroomCapsulePrice6.grid(row=4, column=3)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=4, column=4)
+        self.slowMushroomCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.slowMushroomCapsuleWeight6.grid(row=4, column=5)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=4, column=6)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/metalMushroomCapsule.png", 5, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=5, column=2)
+        self.metalMushroomCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.metalMushroomCapsulePrice6.grid(row=5, column=3)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=5, column=4)
+        self.metalMushroomCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.metalMushroomCapsuleWeight6.grid(row=5, column=5)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=5, column=6)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/warpCapsule.png", 6, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=6, column=2)
+        self.warpPipeCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.warpPipeCapsulePrice6.grid(row=6, column=3)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=6, column=4)
+        self.warpPipeCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.warpPipeCapsuleWeight6.grid(row=6, column=5)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=6, column=6)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/wigglerCapsule.png", 8, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=8, column=2)
+        self.flutterCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.flutterCapsulePrice6.grid(row=8, column=3)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=8, column=4)
+        self.flutterCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.flutterCapsuleWeight6.grid(row=8, column=5)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=8, column=6)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/cursedMushroomCapsule.png", 9, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=9, column=2)
+        self.cursedMushroomCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.cursedMushroomCapsulePrice6.grid(row=9, column=3)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=9, column=4)
+        self.cursedMushroomCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.cursedMushroomCapsuleWeight6.grid(row=9, column=5)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=9, column=6)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/spinyCapsule.png", 10, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=10, column=2)
+        self.spinyCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.spinyCapsulePrice6.grid(row=10, column=3)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=10, column=4)
+        self.spinyCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.spinyCapsuleWeight6.grid(row=10, column=5)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=10, column=6)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/goombaCapsule.png", 11, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=11, column=2)
+        self.goombaCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.goombaCapsulePrice6.grid(row=11, column=3)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=11, column=4)
+        self.goombaCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.goombaCapsuleWeight6.grid(row=11, column=5)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=11, column=6)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/plantCapsule.png", 12, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=12, column=2)
+        self.plantCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.plantCapsulePrice6.grid(row=12, column=3)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=12, column=4)
+        self.plantCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.plantCapsuleWeight6.grid(row=12, column=5)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.  ", font=("Arial", 16))
+        label.grid(row=12, column=6)
+
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text="", font=("Arial", 16))
+        label.grid(row=2, column=6)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/kamekCapsule.png", 2, 8)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=2, column=9)
+        self.kamekCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.kamekCapsulePrice6.grid(row=2, column=10)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=2, column=11)
+        self.kamekCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.kamekCapsuleWeight6.grid(row=2, column=12)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.  ", font=("Arial", 16))
+        label.grid(row=2, column=13)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/toadyCapsule.png", 3, 8)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=3, column=9)
+        self.toadyCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.toadyCapsulePrice6.grid(row=3, column=10)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=3, column=11)
+        self.toadyCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.toadyCapsuleWeight6.grid(row=3, column=12)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=3, column=13)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/blizzardCapsule.png", 4, 8)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=4, column=9)
+        self.blizzardCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.blizzardCapsulePrice6.grid(row=4, column=10)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=4, column=11)
+        self.blizzardCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.blizzardCapsuleWeight6.grid(row=4, column=12)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=4, column=13)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/kleptoCapsule.png", 5, 8)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=5, column=9)
+        self.kleptoCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.kleptoCapsulePrice6.grid(row=5, column=10)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=5, column=11)
+        self.kleptoCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.kleptoCapsuleWeight6.grid(row=5, column=12)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=5, column=13)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/pinkBooCapsule.png", 6, 8)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=6, column=9)
+        self.pinkBooCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.pinkBooCapsulePrice6.grid(row=6, column=10)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=6, column=11)
+        self.pinkBooCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.pinkBooCapsuleWeight6.grid(row=6, column=12)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=6, column=13)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/podobooCapsule.png", 6, 8)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=6, column=9)
+        self.podobooCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.podobooCapsulePrice6.grid(row=6, column=10)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=6, column=11)
+        self.podobooCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.podobooCapsuleWeight6.grid(row=6, column=12)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=6, column=13)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/zapCapsule.png", 8, 8)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=8, column=9)
+        self.zapCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.zapCapsulePrice6.grid(row=8, column=10)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=8, column=11)
+        self.zapCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.zapCapsuleWeight6.grid(row=8, column=12)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=8, column=13)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/tweesterCapsule.png", 9, 8)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=9, column=9)
+        self.tweesterCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.tweesterCapsulePrice6.grid(row=9, column=10)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=9, column=11)
+        self.tweesterCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.tweesterCapsuleWeight6.grid(row=9, column=12)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=9, column=13)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/thwompCapsule.png", 10, 8)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=10, column=9)
+        self.thwompCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.thwompCapsulePrice6.grid(row=10, column=10)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=10, column=11)
+        self.thwompCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.thwompCapsuleWeight6.grid(row=10, column=12)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=10, column=13)
+    
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/bulletBillCapsule.png", 11, 8)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=11, column=9)
+        self.bulletBillCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.bulletBillCapsulePrice6.grid(row=11, column=10)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=11, column=11)
+        self.bulletBillCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.bulletBillCapsuleWeight6.grid(row=11, column=12)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=11, column=13)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/bombCapsule.png", 12, 8)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=12, column=9)
+        self.bombCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.bombCapsulePrice6.grid(row=12, column=10)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=12, column=11)
+        self.bombCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.bombCapsuleWeight6.grid(row=12, column=12)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.  ", font=("Arial", 16))
+        label.grid(row=12, column=13)
+
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text="", font=("Arial", 16))
+        label.grid(row=2, column=14)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/paraTroopaCapsule.png", 2, 15)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=2, column=16)
+        self.paraTroopaCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.paraTroopaCapsulePrice6.grid(row=2, column=16)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=2, column=18)
+        self.paraTroopaCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.paraTroopaCapsuleWeight6.grid(row=2, column=19)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=2, column=20)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/snackCapsule.png", 3, 15)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=3, column=16)
+        self.snackCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.snackCapsulePrice6.grid(row=3, column=16)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=3, column=18)
+        self.snackCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.snackCapsuleWeight6.grid(row=3, column=19)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=3, column=20)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/gaddlightCapsule.png", 4, 15)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=4, column=16)
+        self.gaddLightCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.gaddLightCapsulePrice6.grid(row=4, column=16)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=4, column=18)
+        self.gaddLightCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.gaddLightCapsuleWeight6.grid(row=4, column=19)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=4, column=20)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/pinkBooCapsule.png", 5, 15)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=5, column=16)
+        self.pinkBooCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.pinkBooCapsulePrice6.grid(row=5, column=16)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=5, column=18)
+        self.pinkBooCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.pinkBooCapsuleWeight6.grid(row=5, column=19)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=5, column=20)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/chanceCapsule.png", 6, 15)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=6, column=16)
+        self.chanceTimeCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.chanceTimeCapsulePrice6.grid(row=6, column=16)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=6, column=18)
+        self.chanceTimeCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.chanceTimeCapsuleWeight6.grid(row=6, column=19)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=6, column=20)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/dkCapsule.png", 8, 15)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=8, column=16)
+        self.dkCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.dkCapsulePrice6.grid(row=8, column=16)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=8, column=18)
+        self.dkCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.dkCapsuleWeight6.grid(row=8, column=19)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=8, column=20)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/bowserCapsule.png", 9, 15)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=9, column=16)
+        self.bowserCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.bowserCapsulePrice6.grid(row=9, column=16)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=9, column=18)
+        self.bowserCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.bowserCapsuleWeight6.grid(row=9, column=19)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=9, column=20)
 
         # Create MG space icon and entry
         miniGameIconSix = create_image_icon(tabview.tab("Coins Mods"), "assets/miniGame.png", 4, 1)
@@ -670,6 +1040,9 @@ class App(customtkinter.CTk):
 
         parseFaireSquare = ctk.CTkButton(master=tabview.tab("Faire Square Mods"), command=self.actionFaireSquare, text="Generate Codes")
         parseFaireSquare.place(x=10, y=560)
+
+        parseButtonSixOrbs = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=self.actionSpaceButtonSixOrb, text="Generate Codes")
+        parseButtonSixOrbs.place(x=10, y=620)
         return frame
 
     def create_mp7_frame(self):
@@ -1151,7 +1524,7 @@ class App(customtkinter.CTk):
     
     def create_credits_frame(self):
         frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
-        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=750, fg_color=("#fcfcfc", "#323232"))
         tabview.pack(padx=20, pady=20)
         tabview.add("Credits")
         tabview.add("About")
@@ -1167,7 +1540,7 @@ class App(customtkinter.CTk):
 
     def create_mp82_frame(self):
         frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
-        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=750, fg_color=("#fcfcfc", "#323232"))
         tabview.pack(padx=20, pady=20)
         tabview.add("Coins Mods")
         tabview.set("Coins Mods")
@@ -1218,7 +1591,7 @@ class App(customtkinter.CTk):
         
     def create_mp8_frame(self):
         frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
-        tabview = customtkinter.CTkTabview(frame, width=2000, height=650, fg_color=("#fcfcfc", "#323232"))
+        tabview = customtkinter.CTkTabview(frame, width=2000, height=750, fg_color=("#fcfcfc", "#323232"))
         tabview.pack(padx=20, pady=20)
         tabview.add("Coins Mods")
         tabview.set("Coins Mods")
@@ -3305,6 +3678,634 @@ class App(customtkinter.CTk):
             koopaCapsulePrice7 = "00"
 
         generatedCode = getOrbModsSeven(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7)
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+
+        print("Generated code copied to the clipboard.")
+        if sys.platform == "darwin":
+            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+        else:
+            notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
+
+    def actionSpaceButtonSixOrb(self):
+        if not self.metalMushroomCapsulePrice6.get() or not self.metalMushroomCapsuleWeight6.get() or not self.mushroomCapsuleWeight6.get() or not self.goldenMushroomCapsulePrice6.get() or not self.goldenMushroomCapsuleWeight6.get() or not self.slowMushroomCapsulePrice6.get() or not self.slowMushroomCapsuleWeight6.get() or not self.bulletBillCapsulePrice6.get() or not self.bulletBillCapsuleWeight6.get() or not self.warpPipeCapsulePrice6.get() or not self.warpPipeCapsuleWeight6.get() or not self.flutterCapsulePrice6.get() or not self.flutterCapsuleWeight6.get() or not self.cursedMushroomCapsulePrice6.get() or not self.cursedMushroomCapsuleWeight6.get() or not self.spinyCapsulePrice6.get() or not self.spinyCapsuleWeight6.get() or not self.goombaCapsuleWeight6.get() or not self.goombaCapsulePrice6.get() or not self.plantCapsulePrice6.get() or not self.plantCapsuleWeight6.get() or not self.kleptoCapsuleWeight6.get() or not self.kleptoCapsulePrice6.get() or not self.kamekCapsuleWeight6.get() or not self.kamekCapsulePrice6.get() or not self.toadyCapsuleWeight6.get() or not self.toadyCapsulePrice6.get() or not self.blizzardCapsuleWeight6.get() or not self.blizzardCapsulePrice6.get() or not self.podobooCapsulePrice6.get() or not self.podobooCapsuleWeight6.get() or not self.paraTroopaCapsuleWeight6.get() or not self.paraTroopaCapsulePrice6.get() or not self.snackCapsulePrice6.get() or not self.snackCapsuleWeight6.get() or not self.zapCapsulePrice6.get() or not self.zapCapsuleWeight6.get() or not self.tweesterCapsulePrice6.get() or not self.tweesterCapsuleWeight6.get() or not self.thwompCapsulePrice6.get() or not self.thwompCapsuleWeight6.get() or not self.warpPipeCapsulePrice6.get() or not self.warpPipeCapsuleWeight6.get() or not self.bombCapsulePrice6.get() or not self.bombCapsuleWeight6.get() or not self.gaddLightCapsulePrice6.get() or not self.gaddLightCapsuleWeight6.get() or not self.chanceTimeCapsulePrice6.get() or not self.chanceTimeCapsuleWeight6.get() or not self.pinkBooCapsulePrice6.get() or not self.pinkBooCapsuleWeight6.get() or not self.bowserCapsulePrice6.get() or not self.bowserCapsuleWeight6.get() or not self.dkCapsulePrice6.get() or not self.dkCapsuleWeight6.get():
+            if sys.platform == "darwin":
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
+            else:
+                notification.notify(title = 'Error', message = 'Please fill out all the boxes', app_icon = fetchResource("assets/error.ico"), timeout = 10)
+            return
+        
+        mushroomCapsuleWeight6 = self.mushroomCapsuleWeight6.get()
+        
+        goldenMushroomCapsulePrice6 = self.goldenMushroomCapsulePrice6.get()
+        goldenMushroomCapsuleWeight6 = self.goldenMushroomCapsuleWeight6.get()
+
+        slowMushroomCapsulePrice6 = self.slowMushroomCapsulePrice6.get()
+        slowMushroomCapsuleWeight6 = self.slowMushroomCapsuleWeight6.get()
+
+        metalMushroomCapsulePrice6 = self.metalMushroomCapsulePrice6.get()
+        metalMushroomCapsuleWeight6 = self.metalMushroomCapsuleWeight6.get()
+
+        bulletBillCapsulePrice6 = self.bulletBillCapsulePrice6.get()
+        bulletBillCapsuleWeight6 = self.bulletBillCapsuleWeight6.get()
+
+        warpPipeCapsulePrice6 = self.warpPipeCapsulePrice6.get()
+        warpPipeCapsuleWeight6 = self.warpPipeCapsuleWeight6.get()
+
+        flutterCapsulePrice6 = self.flutterCapsulePrice6.get()
+        flutterCapsuleWeight6 = self.flutterCapsuleWeight6.get()
+
+        cursedMushroomCapsulePrice6 = self.cursedMushroomCapsulePrice6.get()
+        cursedMushroomCapsuleWeight6 = self.cursedMushroomCapsuleWeight6.get()
+
+        spinyCapsulePrice6 = self.spinyCapsulePrice6.get()
+        spinyCapsuleWeight6 = self.spinyCapsuleWeight6.get()
+
+        goombaCapsulePrice6 = self.goombaCapsulePrice6.get()
+        goombaCapsuleWeight6 = self.goombaCapsuleWeight6.get()
+
+        plantCapsulePrice6 = self.plantCapsulePrice6.get()
+        plantCapsuleWeight6 = self.plantCapsuleWeight6.get()
+
+        kleptoCapsulePrice6 = self.kleptoCapsulePrice6.get()
+        kleptoCapsuleWeight6 = self.kleptoCapsuleWeight6.get()
+
+        kamekCapsulePrice6 = self.kamekCapsulePrice6.get()
+        kamekCapsuleWeight6 = self.kamekCapsuleWeight6.get()
+
+        toadyCapsulePrice6 = self.toadyCapsulePrice6.get()
+        toadyCapsuleWeight6 = self.toadyCapsuleWeight6.get()
+
+        blizzardCapsulePrice6 = self.blizzardCapsulePrice6.get()
+        blizzardCapsuleWeight6 = self.blizzardCapsuleWeight6.get()
+
+        podobooCapsulePrice6 = self.podobooCapsulePrice6.get()
+        podobooCapsuleWeight6 = self.podobooCapsuleWeight6.get()
+
+        paraTroopaCapsulePrice6 = self.paraTroopaCapsulePrice6.get()
+        paraTroopaCapsuleWeight6 = self.paraTroopaCapsuleWeight6.get()
+
+        snackCapsulePrice6 = self.snackCapsulePrice6.get()
+        snackCapsuleWeight6 = self.snackCapsuleWeight6.get()
+
+        zapCapsulePrice6 = self.zapCapsulePrice6.get()
+        zapCapsuleWeight6 = self.zapCapsuleWeight6.get()
+
+        tweesterCapsulePrice6 = self.tweesterCapsulePrice6.get()
+        tweesterCapsuleWeight6 = self.tweesterCapsuleWeight6.get()
+
+        thwompCapsulePrice6 = self.thwompCapsulePrice6.get()
+        thwompCapsuleWeight6 = self.thwompCapsuleWeight6.get()
+
+        warpPipeCapsulePrice6 = self.warpPipeCapsulePrice6.get()
+        warpPipeCapsuleWeight6 = self.warpPipeCapsuleWeight6.get()
+
+        bombCapsulePrice6 = self.bombCapsulePrice6.get()
+        bombCapsuleWeight6 = self.bombCapsuleWeight6.get()
+
+        gaddLightCapsulePrice6 = self.gaddLightCapsulePrice6.get()
+        gaddLightCapsuleWeight6 = self.gaddLightCapsuleWeight6.get()
+
+        pinkBooCapsulePrice6 = self.pinkBooCapsulePrice6.get()
+        pinkBooCapsuleWeight6 = self.pinkBooCapsuleWeight6.get()
+
+        chanceTimeCapsulePrice6 = self.chanceTimeCapsulePrice6.get()
+        chanceTimeCapsuleWeight6 = self.chanceTimeCapsuleWeight6.get()
+
+        bowserCapsulePrice6 = self.bowserCapsulePrice6.get()
+        bowserCapsuleWeight6 = self.bowserCapsuleWeight6.get()
+
+        dkCapsulePrice6 = self.dkCapsulePrice6.get()
+        dkCapsuleWeight6 = self.dkCapsuleWeight6.get()
+
+        orbWeightTotal = int(mushroomCapsuleWeight6) + int(goldenMushroomCapsuleWeight6) + int(bulletBillCapsuleWeight6) + int(slowMushroomCapsuleWeight6) + int(warpPipeCapsuleWeight6) + int(flutterCapsuleWeight6) + int(cursedMushroomCapsuleWeight6) + int(spinyCapsuleWeight6) + int(goombaCapsuleWeight6) + int(plantCapsuleWeight6) + int(kleptoCapsuleWeight6) + int(kamekCapsuleWeight6) + int(toadyCapsuleWeight6) + int(blizzardCapsuleWeight6) + int(podobooCapsuleWeight6) + int(paraTroopaCapsuleWeight6) + int(snackCapsuleWeight6) + int(zapCapsuleWeight6) + int(tweesterCapsuleWeight6) + int(thwompCapsuleWeight6) + int(warpPipeCapsuleWeight6) + int(bombCapsuleWeight6) + int(gaddLightCapsuleWeight6) + int(pinkBooCapsulePrice6) + int(chanceTimeCapsuleWeight6) + int(bowserCapsuleWeight6) + int(dkCapsuleWeight6) + int(metalMushroomCapsuleWeight6)
+
+        mushroomCapsuleWeight6 = (int(mushroomCapsuleWeight6) / orbWeightTotal) * 100
+        goldenMushroomCapsuleWeight6 = (int(goldenMushroomCapsuleWeight6) / orbWeightTotal) * 100
+        bulletBillCapsuleWeight6 = (int(bulletBillCapsuleWeight6) / orbWeightTotal) * 100
+        slowMushroomCapsuleWeight6 = (int(slowMushroomCapsuleWeight6) / orbWeightTotal) * 100
+        warpPipeCapsuleWeight6 = (int(warpPipeCapsuleWeight6) / orbWeightTotal) * 100
+        flutterCapsuleWeight6 = (int(flutterCapsuleWeight6) / orbWeightTotal) * 100
+        cursedMushroomCapsuleWeight6 = (int(cursedMushroomCapsuleWeight6) / orbWeightTotal) * 100
+        spinyCapsuleWeight6 = (int(spinyCapsuleWeight6) / orbWeightTotal) * 100
+        goombaCapsuleWeight6 = (int(goombaCapsuleWeight6) / orbWeightTotal) * 100
+        plantCapsuleWeight6 = (int(plantCapsuleWeight6) / orbWeightTotal) * 100
+        kleptoCapsuleWeight6 = (int(kleptoCapsuleWeight6) / orbWeightTotal) * 100
+        kamekCapsuleWeight6 = (int(kamekCapsuleWeight6) / orbWeightTotal) * 100
+        toadyCapsuleWeight6 = (int(toadyCapsuleWeight6) / orbWeightTotal) * 100
+        blizzardCapsuleWeight6 = (int(blizzardCapsuleWeight6) / orbWeightTotal) * 100
+        podobooCapsuleWeight6 = (int(podobooCapsuleWeight6) / orbWeightTotal) * 100
+        paraTroopaCapsuleWeight6 = (int(paraTroopaCapsuleWeight6) / orbWeightTotal) * 100
+        snackCapsuleWeight6 = (int(snackCapsuleWeight6) / orbWeightTotal) * 100
+        zapCapsuleWeight6 = (int(zapCapsuleWeight6) / orbWeightTotal) * 100
+        tweesterCapsuleWeight6 = (int(tweesterCapsuleWeight6) / orbWeightTotal) * 100
+        thwompCapsuleWeight6 = (int(thwompCapsuleWeight6) / orbWeightTotal) * 100
+        warpPipeCapsuleWeight6 = (int(warpPipeCapsuleWeight6) / orbWeightTotal) * 100
+        bombCapsuleWeight6 = (int(bombCapsuleWeight6) / orbWeightTotal) * 100
+        gaddLightCapsuleWeight6 = (int(gaddLightCapsuleWeight6) / orbWeightTotal) * 100
+        pinkBooCapsuleWeight6 = (int(pinkBooCapsuleWeight6) / orbWeightTotal) * 100
+        chanceTimeCapsuleWeight6 = (int(chanceTimeCapsuleWeight6) / orbWeightTotal) * 100
+        bowserCapsuleWeight6 = (int(bowserCapsuleWeight6) / orbWeightTotal) * 100
+        dkCapsuleWeight6 = (int(dkCapsuleWeight6) / orbWeightTotal) * 100
+        metalMushroomCapsuleWeight6 = (int(metalMushroomCapsuleWeight6) / orbWeightTotal) * 100
+
+        try:
+            mushroomCapsuleWeight6 = hex(int(mushroomCapsuleWeight6))
+            if len(mushroomCapsuleWeight6) == 4:
+                mushroomCapsuleWeight6 = mushroomCapsuleWeight6[2:]
+            elif len(mushroomCapsuleWeight6) == 3:
+                mushroomCapsuleWeight6 = "0" + mushroomCapsuleWeight6[2:]
+        except:
+            mushroomCapsuleWeight6 = "00"
+
+        try:
+            goldenMushroomCapsuleWeight6 = hex(int(goldenMushroomCapsuleWeight6))
+            if len(goldenMushroomCapsuleWeight6) == 4:
+                goldenMushroomCapsuleWeight6 = goldenMushroomCapsuleWeight6[2:]
+            elif len(goldenMushroomCapsuleWeight6) == 3:
+                goldenMushroomCapsuleWeight6 = "0" + goldenMushroomCapsuleWeight6[2:]
+        except:
+            goldenMushroomCapsuleWeight6 = "00"
+
+        try:
+            goldenMushroomCapsulePrice6 = hex(int(goldenMushroomCapsulePrice6))
+            if len(goldenMushroomCapsulePrice6) == 4:
+                goldenMushroomCapsulePrice6 = goldenMushroomCapsulePrice6[2:]
+            elif len(goldenMushroomCapsulePrice6) == 3:
+                goldenMushroomCapsulePrice6 = "0" + goldenMushroomCapsulePrice6[2:]
+        except:
+            goldenMushroomCapsulePrice6 = "00"
+       
+        try:
+            slowMushroomCapsuleWeight6 = hex(int(slowMushroomCapsuleWeight6))
+            if len(slowMushroomCapsuleWeight6) == 4:
+                slowMushroomCapsuleWeight6 = slowMushroomCapsuleWeight6[2:]
+            elif len(slowMushroomCapsuleWeight6) == 3:
+                slowMushroomCapsuleWeight6 = "0" + slowMushroomCapsuleWeight6[2:]
+        except:
+            slowMushroomCapsuleWeight6 = "00"
+
+        try:
+            slowMushroomCapsulePrice6 = hex(int(slowMushroomCapsulePrice6))
+            if len(slowMushroomCapsulePrice6) == 4:
+                slowMushroomCapsulePrice6 = slowMushroomCapsulePrice6[2:]
+            elif len(slowMushroomCapsulePrice6) == 3:
+                slowMushroomCapsulePrice6 = "0" + slowMushroomCapsulePrice6[2:]
+        except:
+            slowMushroomCapsulePrice6 = "00"
+
+        try:
+            bulletBillCapsuleWeight6 = hex(int(bulletBillCapsuleWeight6))
+            if len(bulletBillCapsuleWeight6) == 4:
+                bulletBillCapsuleWeight6 = bulletBillCapsuleWeight6[2:]
+            elif len(bulletBillCapsuleWeight6) == 3:
+                bulletBillCapsuleWeight6 = "0" + bulletBillCapsuleWeight6[2:]
+        except:
+            bulletBillCapsuleWeight6 = "00"
+
+        try:
+            bulletBillCapsulePrice6 = hex(int(bulletBillCapsulePrice6))
+            if len(bulletBillCapsulePrice6) == 4:
+                bulletBillCapsulePrice6 = bulletBillCapsulePrice6[2:]
+            elif len(bulletBillCapsulePrice6) == 3:
+                bulletBillCapsulePrice6 = "0" + bulletBillCapsulePrice6[2:]
+        except:
+            bulletBillCapsulePrice6 = "00"
+
+        try:
+            warpPipeCapsuleWeight6 = hex(int(warpPipeCapsuleWeight6))
+            if len(warpPipeCapsuleWeight6) == 4:
+                warpPipeCapsuleWeight6 = warpPipeCapsuleWeight6[2:]
+            elif len(warpPipeCapsuleWeight6) == 3:
+                warpPipeCapsuleWeight6 = "0" + warpPipeCapsuleWeight6[2:]
+        except:
+            warpPipeCapsuleWeight6 = "00"
+
+        try:
+            warpPipeCapsulePrice6 = hex(int(warpPipeCapsulePrice6))
+            if len(warpPipeCapsulePrice6) == 4:
+                warpPipeCapsulePrice6 = warpPipeCapsulePrice6[2:]
+            elif len(warpPipeCapsulePrice6) == 3:
+                warpPipeCapsulePrice6 = "0" + warpPipeCapsulePrice6[2:]
+        except:
+            warpPipeCapsulePrice6 = "00"
+
+        try:
+            flutterCapsuleWeight6 = hex(int(flutterCapsuleWeight6))
+            if len(flutterCapsuleWeight6) == 4:
+                flutterCapsuleWeight6 = flutterCapsuleWeight6[2:]
+            elif len(flutterCapsuleWeight6) == 3:
+                flutterCapsuleWeight6 = "0" + flutterCapsuleWeight6[2:]
+        except:
+            flutterCapsuleWeight6 = "00"
+
+        try:
+            flutterCapsulePrice6 = hex(int(flutterCapsulePrice6))
+            if len(flutterCapsulePrice6) == 4:
+                flutterCapsulePrice6 = flutterCapsulePrice6[2:]
+            elif len(flutterCapsulePrice6) == 3:
+                flutterCapsulePrice6 = "0" + flutterCapsulePrice6[2:]
+        except:
+            flutterCapsulePrice6 = "00"
+
+        try:
+            cursedMushroomCapsuleWeight6 = hex(int(cursedMushroomCapsuleWeight6))
+            if len(cursedMushroomCapsuleWeight6) == 4:
+                cursedMushroomCapsuleWeight6 = cursedMushroomCapsuleWeight6[2:]
+            elif len(cursedMushroomCapsuleWeight6) == 3:
+                cursedMushroomCapsuleWeight6 = "0" + cursedMushroomCapsuleWeight6[2:]
+        except:
+            cursedMushroomCapsuleWeight6 = "00"
+
+        try:
+            cursedMushroomCapsulePrice6 = hex(int(cursedMushroomCapsulePrice6))
+            if len(cursedMushroomCapsulePrice6) == 4:
+                cursedMushroomCapsulePrice6 = cursedMushroomCapsulePrice6[2:]
+            elif len(cursedMushroomCapsulePrice6) == 3:
+                cursedMushroomCapsulePrice6 = "0" + cursedMushroomCapsulePrice6[2:]
+        except:
+            cursedMushroomCapsulePrice6 = "00"
+
+        try:
+            spinyCapsuleWeight6 = hex(int(spinyCapsuleWeight6))
+            if len(spinyCapsuleWeight6) == 4:
+                spinyCapsuleWeight6 = spinyCapsuleWeight6[2:]
+            elif len(spinyCapsuleWeight6) == 3:
+                spinyCapsuleWeight6 = "0" + spinyCapsuleWeight6[2:]
+        except:
+            spinyCapsuleWeight6 = "00"
+
+        try:
+            spinyCapsulePrice6 = hex(int(spinyCapsulePrice6))
+            if len(spinyCapsulePrice6) == 4:
+                spinyCapsulePrice6 = spinyCapsulePrice6[2:]
+            elif len(spinyCapsulePrice6) == 3:
+                spinyCapsulePrice6 = "0" + spinyCapsulePrice6[2:]
+        except:
+            spinyCapsulePrice6 = "00"
+
+        try:
+            goombaCapsuleWeight6 = hex(int(goombaCapsuleWeight6))
+            if len(goombaCapsuleWeight6) == 4:
+                goombaCapsuleWeight6 = goombaCapsuleWeight6[2:]
+            elif len(goombaCapsuleWeight6) == 3:
+                goombaCapsuleWeight6 = "0" + goombaCapsuleWeight6[2:]
+        except:
+            goombaCapsuleWeight6 = "00"
+
+        try:
+            goombaCapsulePrice6 = hex(int(goombaCapsulePrice6))
+            if len(goombaCapsulePrice6) == 4:
+                goombaCapsulePrice6 = goombaCapsulePrice6[2:]
+            elif len(goombaCapsulePrice6) == 3:
+                goombaCapsulePrice6 = "0" + goombaCapsulePrice6[2:]
+        except:
+            goombaCapsulePrice6 = "00"
+
+        try:
+            plantCapsuleWeight6 = hex(int(plantCapsuleWeight6))
+            if len(plantCapsuleWeight6) == 4:
+                plantCapsuleWeight6 = plantCapsuleWeight6[2:]
+            elif len(plantCapsuleWeight6) == 3:
+                plantCapsuleWeight6 = "0" + plantCapsuleWeight6[2:]
+        except:
+            plantCapsuleWeight6 = "00"
+
+        try:
+            plantCapsulePrice6 = hex(int(plantCapsulePrice6))
+            if len(plantCapsulePrice6) == 4:
+                plantCapsulePrice6 = plantCapsulePrice6[2:]
+            elif len(plantCapsulePrice6) == 3:
+                plantCapsulePrice6 = "0" + plantCapsulePrice6[2:]
+        except:
+            plantCapsulePrice6 = "00"
+
+        try:
+            kleptoCapsuleWeight6 = hex(int(kleptoCapsuleWeight6))
+            if len(kleptoCapsuleWeight6) == 4:
+                kleptoCapsuleWeight6 = kleptoCapsuleWeight6[2:]
+            elif len(kleptoCapsuleWeight6) == 3:
+                kleptoCapsuleWeight6 = "0" + kleptoCapsuleWeight6[2:]
+        except:
+            kleptoCapsuleWeight6 = "00"
+
+        try:
+            kleptoCapsulePrice6 = hex(int(kleptoCapsulePrice6))
+            if len(kleptoCapsulePrice6) == 4:
+                kleptoCapsulePrice6 = kleptoCapsulePrice6[2:]
+            elif len(kleptoCapsulePrice6) == 3:
+                kleptoCapsulePrice6 = "0" + kleptoCapsulePrice6[2:]
+        except:
+            kleptoCapsulePrice6 = "00"
+
+        try:
+            kamekCapsuleWeight6 = hex(int(kamekCapsuleWeight6))
+            if len(kamekCapsuleWeight6) == 4:
+                kamekCapsuleWeight6 = kamekCapsuleWeight6[2:]
+            elif len(kamekCapsuleWeight6) == 3:
+                kamekCapsuleWeight6 = "0" + kamekCapsuleWeight6[2:]
+        except:
+            kamekCapsuleWeight6 = "00"
+
+        try:
+            kamekCapsulePrice6 = hex(int(kamekCapsulePrice6))
+            if len(kamekCapsulePrice6) == 4:
+                kamekCapsulePrice6 = kamekCapsulePrice6[2:]
+            elif len(kamekCapsulePrice6) == 3:
+                kamekCapsulePrice6 = "0" + kamekCapsulePrice6[2:]
+        except:
+            kamekCapsulePrice6 = "00"
+
+        try:
+            toadyCapsuleWeight6 = hex(int(toadyCapsuleWeight6))
+            if len(toadyCapsuleWeight6) == 4:
+                toadyCapsuleWeight6 = toadyCapsuleWeight6[2:]
+            elif len(toadyCapsuleWeight6) == 3:
+                toadyCapsuleWeight6 = "0" + toadyCapsuleWeight6[2:]
+        except:
+            toadyCapsuleWeight6 = "00"
+
+        try:
+            toadyCapsulePrice6 = hex(int(toadyCapsulePrice6))
+            if len(toadyCapsulePrice6) == 4:
+                toadyCapsulePrice6 = toadyCapsulePrice6[2:]
+            elif len(toadyCapsulePrice6) == 3:
+                toadyCapsulePrice6 = "0" + toadyCapsulePrice6[2:]
+        except:
+            toadyCapsulePrice6 = "00"
+
+        try:
+            blizzardCapsuleWeight6 = hex(int(blizzardCapsuleWeight6))
+            if len(blizzardCapsuleWeight6) == 4:
+                blizzardCapsuleWeight6 = blizzardCapsuleWeight6[2:]
+            elif len(blizzardCapsuleWeight6) == 3:
+                blizzardCapsuleWeight6 = "0" + blizzardCapsuleWeight6[2:]
+        except:
+            blizzardCapsuleWeight6 = "00"
+
+        try:
+            blizzardCapsulePrice6 = hex(int(blizzardCapsulePrice6))
+            if len(blizzardCapsulePrice6) == 4:
+                blizzardCapsulePrice6 = blizzardCapsulePrice6[2:]
+            elif len(blizzardCapsulePrice6) == 3:
+                blizzardCapsulePrice6 = "0" + blizzardCapsulePrice6[2:]
+        except:
+            blizzardCapsulePrice6 = "00"
+
+        try:
+            podobooCapsuleWeight6 = hex(int(podobooCapsuleWeight6))
+            if len(podobooCapsuleWeight6) == 4:
+                podobooCapsuleWeight6 = podobooCapsuleWeight6[2:]
+            elif len(podobooCapsuleWeight6) == 3:
+                podobooCapsuleWeight6 = "0" + podobooCapsuleWeight6[2:]
+        except:
+            podobooCapsuleWeight6 = "00"
+
+        try:
+            podobooCapsulePrice6 = hex(int(podobooCapsulePrice6))
+            if len(podobooCapsulePrice6) == 4:
+                podobooCapsulePrice6 = podobooCapsulePrice6[2:]
+            elif len(podobooCapsulePrice6) == 3:
+                podobooCapsulePrice6 = "0" + podobooCapsulePrice6[2:]
+        except:
+            podobooCapsulePrice6 = "00"
+
+        try:
+            paraTroopaCapsuleWeight6 = hex(int(paraTroopaCapsuleWeight6))
+            if len(paraTroopaCapsuleWeight6) == 4:
+                paraTroopaCapsuleWeight6 = paraTroopaCapsuleWeight6[2:]
+            elif len(paraTroopaCapsuleWeight6) == 3:
+                paraTroopaCapsuleWeight6 = "0" + paraTroopaCapsuleWeight6[2:]
+        except:
+            paraTroopaCapsuleWeight6 = "00"
+
+        try:
+            paraTroopaCapsulePrice6 = hex(int(paraTroopaCapsulePrice6))
+            if len(paraTroopaCapsulePrice6) == 4:
+                paraTroopaCapsulePrice6 = paraTroopaCapsulePrice6[2:]
+            elif len(paraTroopaCapsulePrice6) == 3:
+                paraTroopaCapsulePrice6 = "0" + paraTroopaCapsulePrice6[2:]
+        except:
+            paraTroopaCapsulePrice6 = "00"
+
+        try:
+            snackCapsuleWeight6 = hex(int(snackCapsuleWeight6))
+            if len(snackCapsuleWeight6) == 4:
+                snackCapsuleWeight6 = snackCapsuleWeight6[2:]
+            elif len(snackCapsuleWeight6) == 3:
+                snackCapsuleWeight6 = "0" + snackCapsuleWeight6[2:]
+        except:
+            snackCapsuleWeight6 = "00"
+
+        try:
+            snackCapsulePrice6 = hex(int(snackCapsulePrice6))
+            if len(snackCapsulePrice6) == 4:
+                snackCapsulePrice6 = snackCapsulePrice6[2:]
+            elif len(snackCapsulePrice6) == 3:
+                snackCapsulePrice6 = "0" + snackCapsulePrice6[2:]
+        except:
+            snackCapsulePrice6 = "00"
+
+        try:
+            zapCapsuleWeight6 = hex(int(zapCapsuleWeight6))
+            if len(zapCapsuleWeight6) == 4:
+                zapCapsuleWeight6 = zapCapsuleWeight6[2:]
+            elif len(zapCapsuleWeight6) == 3:
+                zapCapsuleWeight6 = "0" + zapCapsuleWeight6[2:]
+        except:
+            zapCapsuleWeight6 = "00"
+
+        try:
+            zapCapsulePrice6 = hex(int(zapCapsulePrice6))
+            if len(zapCapsulePrice6) == 4:
+                zapCapsulePrice6 = zapCapsulePrice6[2:]
+            elif len(zapCapsulePrice6) == 3:
+                zapCapsulePrice6 = "0" + zapCapsulePrice6[2:]
+        except:
+            zapCapsulePrice6 = "00"
+
+        try:
+            tweesterCapsuleWeight6 = hex(int(tweesterCapsuleWeight6))
+            if len(tweesterCapsuleWeight6) == 4:
+                tweesterCapsuleWeight6 = tweesterCapsuleWeight6[2:]
+            elif len(tweesterCapsuleWeight6) == 3:
+                tweesterCapsuleWeight6 = "0" + tweesterCapsuleWeight6[2:]
+        except:
+            tweesterCapsuleWeight6 = "00"
+
+        try:
+            tweesterCapsulePrice6 = hex(int(tweesterCapsulePrice6))
+            if len(tweesterCapsulePrice6) == 4:
+                tweesterCapsulePrice6 = tweesterCapsulePrice6[2:]
+            elif len(tweesterCapsulePrice6) == 3:
+                tweesterCapsulePrice6 = "0" + tweesterCapsulePrice6[2:]
+        except:
+            tweesterCapsulePrice6 = "00"
+
+        try:
+            thwompCapsuleWeight6 = hex(int(thwompCapsuleWeight6))
+            if len(thwompCapsuleWeight6) == 4:
+                thwompCapsuleWeight6 = thwompCapsuleWeight6[2:]
+            elif len(thwompCapsuleWeight6) == 3:
+                thwompCapsuleWeight6 = "0" + thwompCapsuleWeight6[2:]
+        except:
+            thwompCapsuleWeight6 = "00"
+
+        try:
+            thwompCapsulePrice6 = hex(int(thwompCapsulePrice6))
+            if len(thwompCapsulePrice6) == 4:
+                thwompCapsulePrice6 = thwompCapsulePrice6[2:]
+            elif len(thwompCapsulePrice6) == 3:
+                thwompCapsulePrice6 = "0" + thwompCapsulePrice6[2:]
+        except:
+            thwompCapsulePrice6 = "00"
+
+
+        try:
+            warpPipeCapsuleWeight6 = hex(int(warpPipeCapsuleWeight6))
+            if len(warpPipeCapsuleWeight6) == 4:
+                warpPipeCapsuleWeight6 = warpPipeCapsuleWeight6[2:]
+            elif len(warpPipeCapsuleWeight6) == 3:
+                warpPipeCapsuleWeight6 = "0" + warpPipeCapsuleWeight6[2:]
+        except:
+            warpPipeCapsuleWeight6 = "00"
+
+        try:
+            warpPipeCapsulePrice6 = hex(int(warpPipeCapsulePrice6))
+            if len(warpPipeCapsulePrice6) == 4:
+                warpPipeCapsulePrice6 = warpPipeCapsulePrice6[2:]
+            elif len(warpPipeCapsulePrice6) == 3:
+                warpPipeCapsulePrice6 = "0" + warpPipeCapsulePrice6[2:]
+        except:
+            warpPipeCapsulePrice6 = "00"
+
+        try:
+            bombCapsuleWeight6 = hex(int(bombCapsuleWeight6))
+            if len(bombCapsuleWeight6) == 4:
+                bombCapsuleWeight6 = bombCapsuleWeight6[2:]
+            elif len(bombCapsuleWeight6) == 3:
+                bombCapsuleWeight6 = "0" + bombCapsuleWeight6[2:]
+        except:
+            bombCapsuleWeight6 = "00"
+
+        try:
+            bombCapsulePrice6 = hex(int(bombCapsulePrice6))
+            if len(bombCapsulePrice6) == 4:
+                bombCapsulePrice6 = bombCapsulePrice6[2:]
+            elif len(bombCapsulePrice6) == 3:
+                bombCapsulePrice6 = "0" + bombCapsulePrice6[2:]
+        except:
+            bombCapsulePrice6 = "00"
+
+        try:
+            gaddLightCapsuleWeight6 = hex(int(gaddLightCapsuleWeight6))
+            if len(gaddLightCapsuleWeight6) == 4:
+                gaddLightCapsuleWeight6 = gaddLightCapsuleWeight6[2:]
+            elif len(gaddLightCapsuleWeight6) == 3:
+                gaddLightCapsuleWeight6 = "0" + gaddLightCapsuleWeight6[2:]
+        except:
+            gaddLightCapsuleWeight6 = "00"
+
+        try:
+            gaddLightCapsulePrice6 = hex(int(gaddLightCapsulePrice6))
+            if len(gaddLightCapsulePrice6) == 4:
+                gaddLightCapsulePrice6 = gaddLightCapsulePrice6[2:]
+            elif len(gaddLightCapsulePrice6) == 3:
+                gaddLightCapsulePrice6 = "0" + gaddLightCapsulePrice6[2:]
+        except:
+            gaddLightCapsulePrice6 = "00"
+
+        try:
+            pinkBooCapsuleWeight6 = hex(int(pinkBooCapsuleWeight6))
+            if len(pinkBooCapsuleWeight6) == 4:
+                pinkBooCapsuleWeight6 = pinkBooCapsuleWeight6[2:]
+            elif len(pinkBooCapsuleWeight6) == 3:
+                pinkBooCapsuleWeight6 = "0" + pinkBooCapsuleWeight6[2:]
+        except:
+            pinkBooCapsuleWeight6 = "00"
+
+        try:
+            pinkBooCapsulePrice6 = hex(int(pinkBooCapsulePrice6))
+            if len(pinkBooCapsulePrice6) == 4:
+                pinkBooCapsulePrice6 = pinkBooCapsulePrice6[2:]
+            elif len(pinkBooCapsulePrice6) == 3:
+                pinkBooCapsulePrice6 = "0" + pinkBooCapsulePrice6[2:]
+        except:
+            pinkBooCapsulePrice6 = "00"
+
+        try:
+            chanceTimeCapsuleWeight6 = hex(int(chanceTimeCapsuleWeight6))
+            if len(chanceTimeCapsuleWeight6) == 4:
+                chanceTimeCapsuleWeight6 = chanceTimeCapsuleWeight6[2:]
+            elif len(chanceTimeCapsuleWeight6) == 3:
+                chanceTimeCapsuleWeight6 = "0" + chanceTimeCapsuleWeight6[2:]
+        except:
+            chanceTimeCapsuleWeight6 = "00"
+
+        try:
+            chanceTimeCapsulePrice6 = hex(int(chanceTimeCapsulePrice6))
+            if len(chanceTimeCapsulePrice6) == 4:
+                chanceTimeCapsulePrice6 = chanceTimeCapsulePrice6[2:]
+            elif len(chanceTimeCapsulePrice6) == 3:
+                chanceTimeCapsulePrice6 = "0" + chanceTimeCapsulePrice6[2:]
+        except:
+            chanceTimeCapsulePrice6 = "00"
+
+        try:
+            bowserCapsuleWeight6 = hex(int(bowserCapsuleWeight6))
+            if len(bowserCapsuleWeight6) == 4:
+                bowserCapsuleWeight6 = bowserCapsuleWeight6[2:]
+            elif len(bowserCapsuleWeight6) == 3:
+                bowserCapsuleWeight6 = "0" + bowserCapsuleWeight6[2:]
+        except:
+            bowserCapsuleWeight6 = "00"
+
+        try:
+            bowserCapsulePrice6 = hex(int(bowserCapsulePrice6))
+            if len(bowserCapsulePrice6) == 4:
+                bowserCapsulePrice6 = bowserCapsulePrice6[2:]
+            elif len(bowserCapsulePrice6) == 3:
+                bowserCapsulePrice6 = "0" + bowserCapsulePrice6[2:]
+        except:
+            bowserCapsulePrice6 = "00"
+
+        try:
+            dkCapsuleWeight6 = hex(int(dkCapsuleWeight6))
+            if len(dkCapsuleWeight6) == 4:
+                dkCapsuleWeight6 = dkCapsuleWeight6[2:]
+            elif len(dkCapsuleWeight6) == 3:
+                dkCapsuleWeight6 = "0" + dkCapsuleWeight6[2:]
+        except:
+            dkCapsuleWeight6 = "00"
+
+        try:
+            dkCapsulePrice6 = hex(int(dkCapsulePrice6))
+            if len(dkCapsulePrice6) == 4:
+                dkCapsulePrice6 = dkCapsulePrice6[2:]
+            elif len(dkCapsulePrice6) == 3:
+                dkCapsulePrice6 = "0" + dkCapsulePrice6[2:]
+        except:
+            dkCapsulePrice6 = "00"
+
+        try:
+            metalMushroomCapsuleWeight6 = hex(int(metalMushroomCapsuleWeight6))
+            if len(metalMushroomCapsuleWeight6) == 4:
+                metalMushroomCapsuleWeight6 = metalMushroomCapsuleWeight6[2:]
+            elif len(metalMushroomCapsuleWeight6) == 3:
+                metalMushroomCapsuleWeight6 = "0" + metalMushroomCapsuleWeight6[2:]
+        except:
+            metalMushroomCapsuleWeight6 = "00"
+
+        try:
+            metalMushroomCapsulePrice6 = hex(int(metalMushroomCapsulePrice6))
+            if len(metalMushroomCapsulePrice6) == 4:
+                metalMushroomCapsulePrice6 = metalMushroomCapsulePrice6[2:]
+            elif len(metalMushroomCapsulePrice6) == 3:
+                metalMushroomCapsulePrice6 = "0" + metalMushroomCapsulePrice6[2:]
+        except:
+            metalMushroomCapsulePrice6 = "00"
+
+        generatedCode = getOrbModsSix(mushroomCapsuleWeight6, goldenMushroomCapsulePrice6, goldenMushroomCapsuleWeight6, slowMushroomCapsulePrice6, slowMushroomCapsuleWeight6, metalMushroomCapsulePrice6, metalMushroomCapsuleWeight6, bulletBillCapsulePrice6, bulletBillCapsuleWeight6, warpPipeCapsulePrice6, warpPipeCapsuleWeight6, flutterCapsulePrice6, flutterCapsuleWeight6, cursedMushroomCapsulePrice6, cursedMushroomCapsuleWeight6, spinyCapsulePrice6, spinyCapsuleWeight6, goombaCapsulePrice6, goombaCapsuleWeight6, plantCapsulePrice6, plantCapsuleWeight6, kleptoCapsulePrice6, kleptoCapsuleWeight6, toadyCapsulePrice6, toadyCapsuleWeight6, kamekCapsulePrice6, kamekCapsuleWeight6, blizzardCapsulePrice6, blizzardCapsuleWeight6, podobooCapsulePrice6, podobooCapsuleWeight6, zapCapsulePrice6, zapCapsuleWeight6, tweesterCapsulePrice6, tweesterCapsuleWeight6, thwompCapsulePrice6, thwompCapsuleWeight6, bombCapsulePrice6, bombCapsuleWeight6, paraTroopaCapsulePrice6, paraTroopaCapsuleWeight6, snackCapsulePrice6, snackCapsuleWeight6, gaddLightCapsulePrice6, gaddLightCapsuleWeight6, pinkBooCapsulePrice6, pinkBooCapsuleWeight6, chanceTimeCapsulePrice6, chanceTimeCapsuleWeight6, bowserCapsulePrice6, bowserCapsuleWeight6, dkCapsulePrice6, dkCapsuleWeight6)
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
 

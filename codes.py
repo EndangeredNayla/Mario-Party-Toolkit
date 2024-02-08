@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 2/4/2024
+# Date: 2/8/2024
 # License: MIT
 # ============================================
 
@@ -780,8 +780,8 @@ E0000000 80008000
 def getItemModsFour(oneP, oneW, twoP, twoW, threeP, threeW, fourP, fourW, fiveP, fiveW, sixP, sixW, sevenP, sevenW, eightP, eightW, nineP, nineW, tenP, tenW, elevenP, elevenW, twelveP, twelveW, thirteenP, thirteenW, fourteenP, fourteenW):
     return f'''
 MP4 - Item Modifer
-C2083724 0000001E
-48000041 60000000
+C2083878 0000001E
+48000045 60000000
 00{oneW}0000 00{twoW}0001  
 00{threeW}0002 00{fourW}0003
 00{fiveW}0004 00{sixW}0005
@@ -964,6 +964,127 @@ C2083CF0 00000002
 02139E38 0000{nineW}{tenW}
 02139E3A 0000{elevenW}{twelveW}
 02139E3C 0000{thirteenW}{fourteenW}
+'''
+
+def getOrbModsSix(oneW, twoP, twoW, threeP, threeW, fourP, fourW, fiveP, fiveW, sixP, sixW, sevenP, sevenW, eightP, eightW, nineP, nineW, tenP, tenW, elevenP, elevenW, twelveP, twelveW, thirteenP, thirteenW, fourteenP, fourteenW, fifteenP, fifteenW, sixteenP, sixteenW, seventeenP, seventeenW, eighteenP, eighteenW, ninteenP, ninteenW, twentyP, twentyW, twentyOneP, twentyOneW, twentyTwoP, twentyTwoW, twentyThreeP, twentyThreeW, twentyFourP, twentyFourW, twentyFiveP, twentyFiveW, twentySixP, twentySixW, twentySevenP, twentySevenW):
+    return f'''
+MP6 - Orb Modifier
+042BD220 00050505
+042BD224 05{oneW}{oneW}{oneW}
+042BD228 {oneW}{oneW}{oneW}{oneW}
+042BD22C {oneW}{oneW}{oneW}{oneW}
+042BD230 01{twoP}{twoP}{twoP}
+042BD234 {twoP}{twoW}{twoW}{twoW}
+042BD238 {twoW}{twoW}{twoW}{twoW}
+042BD23C {twoW}{twoW}{twoW}{twoW}
+042BD240 02{threeP}{threeP}{threeP}
+042BD244 {threeP}{threeW}{threeW}{threeW}
+042BD248 {threeW}{threeW}{threeW}{threeW}
+042BD24C {threeW}{threeW}{threeW}{threeW}
+042BD250 03{fourP}{fourP}{fourP}
+042BD254 {fourP}{fourW}{fourW}{fourW}
+042BD258 {fourW}{fourW}{fourW}{fourW}
+042BD25C {fourW}{fourW}{fourW}{fourW}
+042BD260 04{fiveP}{fiveP}{fiveP}
+042BD264 {fiveP}{fiveW}{fiveW}{fiveW}
+042BD268 {fiveW}{fiveW}{fiveW}{fiveW}
+042BD26C {fiveW}{fiveW}{fiveW}{fiveW}
+042BD270 05{sixP}{sixP}{sixP}
+042BD274 {sixP}{sixW}{sixW}{sixW}
+042BD278 {sixW}{sixW}{sixW}{sixW}
+042BD27C {sixW}{sixW}{sixW}{sixW}
+042BD280 06{sevenP}{sevenP}{sevenP}
+042BD284 {sevenP}{sevenW}{sevenW}{sevenW}
+042BD288 {sevenW}{sevenW}{sevenW}{sevenW}
+042BD28C {sevenW}{sevenW}{sevenW}{sevenW}
+042BD290 07{eightP}{eightP}{eightP}
+042BD294 {eightP}{eightW}{eightW}{eightW}
+042BD298 {eightW}{eightW}{eightW}{eightW}
+042BD29C {eightW}{eightW}{eightW}{eightW}
+042BD2A0 0A{nineP}{nineP}{nineP}
+042BD2A4 {nineP}{nineW}{nineW}{nineW}
+042BD2A8 {nineW}{nineW}{nineW}{nineW}
+042BD2AC {nineW}{nineW}{nineW}{nineW}
+042BD2B0 0B{tenP}{tenP}{tenP}
+042BD2B4 {tenP}{tenW}{tenW}{tenW}
+042BD2B8 {tenW}{tenW}{tenW}{tenW}
+042BD2BC {tenW}{tenW}{tenW}{tenW}
+042BD2C0 0C{elevenP}{elevenP}{elevenP}
+042BD2C4 {elevenP}{elevenW}{elevenW}{elevenW}
+042BD2C8 {elevenW}{elevenW}{elevenW}{elevenW}
+042BD2CC {elevenW}{elevenW}{elevenW}{elevenW}
+042BD2D0 0D{twelveP}{twelveP}{twelveP}
+042BD2D4 {twelveP}{twelveW}{twelveW}{twelveW}
+042BD2D8 {twelveW}{twelveW}{twelveW}{twelveW}
+042BD2DC {twelveW}{twelveW}{twelveW}{twelveW}
+042BD2E0 0F{thirteenP}{thirteenP}{thirteenP}
+042BD2E4 {thirteenP}{thirteenW}{thirteenW}{thirteenW}
+042BD2E8 {thirteenW}{thirteenW}{thirteenW}{thirteenW}
+042BD2EC {thirteenW}{thirteenW}{thirteenW}{thirteenW}
+042BD2F0 10{fourteenP}{fourteenP}{fourteenP}
+042BD2F4 {fourteenP}{fourteenW}{fourteenW}{fourteenW}
+042BD2F8 {fourteenW}{fourteenW}{fourteenW}{fourteenW}
+042BD2FC {fourteenW}{fourteenW}{fourteenW}{fourteenW}
+042BD300 11{fifteenP}{fifteenP}{fifteenP}
+042BD304 {fifteenP}{fifteenW}{fifteenW}{fifteenW}
+042BD308 {fifteenW}{fifteenW}{fifteenW}{fifteenW}
+042BD30C {fifteenW}{fifteenW}{fifteenW}{fifteenW}
+042BD310 14{sixteenP}{sixteenP}{sixteenP}
+042BD314 {sixteenP}{sixteenW}{sixteenW}{sixteenW}
+042BD318 {sixteenW}{sixteenW}{sixteenW}{sixteenW}
+042BD31C {sixteenW}{sixteenW}{sixteenW}{sixteenW}
+042BD320 15{seventeenP}{seventeenP}{seventeenP}
+042BD324 {seventeenP}{seventeenW}{seventeenW}{seventeenW}
+042BD328 {seventeenW}{seventeenW}{seventeenW}{seventeenW}
+042BD32C {seventeenW}{seventeenW}0000
+042BD330 16{eighteenP}{eighteenP}{eighteenP}
+042BD334 {eighteenP}{eighteenW}{eighteenW}{eighteenW}
+042BD338 {eighteenW}{eighteenW}{eighteenW}{eighteenW}
+042BD33C {eighteenW}{eighteenW}0000
+042BD340 17{ninteenP}{ninteenP}{ninteenP}
+042BD344 {ninteenP}{ninteenW}{ninteenW}{ninteenW}
+042BD348 {ninteenW}{ninteenW}{ninteenW}{ninteenW}
+042BD34C {ninteenW}{ninteenW}0000
+042BD350 18{twentyP}{twentyP}{twentyP}
+042BD354 {twentyP}{twentyW}{twentyW}{twentyW}
+042BD358 {twentyW}{twentyW}{twentyW}{twentyW}
+042BD35C {twentyW}{twentyW}0000
+042BD360 19{twentyOneP}{twentyOneP}{twentyOneP}
+042BD364 {twentyOneP}{twentyOneW}{twentyOneW}{twentyOneW}
+042BD368 {twentyOneW}{twentyOneW}{twentyOneW}{twentyOneW}
+042BD36C {twentyOneW}{twentyOneW}0000
+042BD370 1E{twentyTwoP}{twentyTwoP}{twentyTwoP}
+042BD374 {twentyTwoP}{twentyTwoW}{twentyTwoW}{twentyTwoW}
+042BD378 {twentyTwoW}{twentyTwoW}{twentyTwoW}{twentyTwoW}
+042BD37C {twentyTwoW}{twentyTwoW}0000
+042BD380 1F{twentyThreeP}{twentyThreeP}{twentyThreeP}
+042BD384 {twentyThreeP}{twentyThreeW}{twentyThreeW}{twentyThreeW}
+042BD388 {twentyThreeW}{twentyThreeW}{twentyThreeW}{twentyThreeW}
+042BD38C {twentyThreeW}{twentyThreeW}0000
+042BD390 2E{twentyFourP}{twentyFourP}{twentyFourP}
+042BD394 {twentyFourP}{twentyFourW}{twentyFourW}{twentyFourW}
+042BD398 {twentyFourW}{twentyFourW}{twentyFourW}{twentyFourW}
+042BD39C {twentyFourW}{twentyFourW}0000
+042BD3A0 2A{twentyFiveP}{twentyFiveP}{twentyFiveP}
+042BD3A4 {twentyFiveP}{twentyFiveW}{twentyFiveW}{twentyFiveW}
+042BD3A8 {twentyFiveW}{twentyFiveW}{twentyFiveW}{twentyFiveW}
+042BD3AC {twentyFiveW}{twentyFiveW}0000
+042BD3B0 2B{twentySixP}{twentySixP}{twentySixP}
+042BD3B4 {twentySixP}{twentySixW}{twentySixW}{twentySixW}
+042BD3B8 {twentySixW}{twentySixW}{twentySixW}{twentySixW}
+042BD3BC {twentySixW}{twentySixW}0000
+042BD3C0 2C{twentySevenP}{twentySevenP}{twentySevenP}
+042BD3C4 {twentySevenP}{twentySevenW}{twentySevenW}{twentySevenW}
+042BD3C8 {twentySevenW}{twentySevenW}{twentySevenW}{twentySevenW}
+042BD3CC {twentySevenW}{twentySevenW}0000
+042BD3D0 29000000
+042BD3D4 00000000
+042BD3D8 00000000
+042BD3DC 00000000
+042BD3E0 FF000000
+042BD3E4 00000000
+042BD3E8 00000000
+042BD3EC 00000000
 '''
 
 def getOrbModsSeven(oneW, twoP, twoW, threeP, threeW, fourP, fourW, fiveP, fiveW, sixP, sixW, sevenP, sevenW, eightP, eightW, nineP, nineW, tenP, tenW, elevenP, elevenW, twelveP, twelveW, thirteenP, thirteenW, fourteenP, fourteenW, fifteenP, fifteenW, sixteenP, sixteenW, seventeenP, seventeenW, eighteenP, eighteenW, ninteenP, ninteenW, twentyP, twentyW, twentyOneP, twentyOneW, twentyTwoP, twentyTwoW, twentyThreeP, twentyThreeW, twentyFourP, twentyFourW, twentyFiveP, twentyFiveW, twentySixP, twentySixW, twentySevenP, twentySevenW, twentyEightP, twentyEightW, twentyNineP, twentyNineW):

@@ -1,8 +1,8 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 2/4/2024
+# Date: 2/8/2024
 # License: MIT
 # ============================================
 
-appVersion = "2.3.0"
+appVersion = "2.5.0"
