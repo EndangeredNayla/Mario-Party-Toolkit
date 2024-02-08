@@ -3722,9 +3722,6 @@ class App(customtkinter.CTk):
         bulletBillCapsulePrice6 = self.bulletBillCapsulePrice6.get()
         bulletBillCapsuleWeight6 = self.bulletBillCapsuleWeight6.get()
 
-        warpPipeCapsulePrice6 = self.warpPipeCapsulePrice6.get()
-        warpPipeCapsuleWeight6 = self.warpPipeCapsuleWeight6.get()
-
         flutterCapsulePrice6 = self.flutterCapsulePrice6.get()
         flutterCapsuleWeight6 = self.flutterCapsuleWeight6.get()
 
