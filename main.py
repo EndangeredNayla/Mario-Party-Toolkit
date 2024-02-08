@@ -919,7 +919,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=2, column=16)
         self.paraTroopaCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-        self.paraTroopaCapsulePrice6.grid(row=2, column=16)
+        self.paraTroopaCapsulePrice6.grid(row=2, column=17)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
         label.grid(row=2, column=18)
         self.paraTroopaCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
@@ -932,7 +932,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=3, column=16)
         self.snackCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-        self.snackCapsulePrice6.grid(row=3, column=16)
+        self.snackCapsulePrice6.grid(row=3, column=17)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
         label.grid(row=3, column=18)
         self.snackCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
@@ -945,7 +945,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=4, column=16)
         self.gaddLightCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-        self.gaddLightCapsulePrice6.grid(row=4, column=16)
+        self.gaddLightCapsulePrice6.grid(row=4, column=17)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
         label.grid(row=4, column=18)
         self.gaddLightCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
@@ -958,7 +958,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=5, column=16)
         self.pinkBooCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-        self.pinkBooCapsulePrice6.grid(row=5, column=16)
+        self.pinkBooCapsulePrice6.grid(row=5, column=17)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
         label.grid(row=5, column=18)
         self.pinkBooCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
@@ -971,7 +971,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=6, column=16)
         self.chanceTimeCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-        self.chanceTimeCapsulePrice6.grid(row=6, column=16)
+        self.chanceTimeCapsulePrice6.grid(row=6, column=17)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
         label.grid(row=6, column=18)
         self.chanceTimeCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
@@ -984,7 +984,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=8, column=16)
         self.dkCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-        self.dkCapsulePrice6.grid(row=8, column=16)
+        self.dkCapsulePrice6.grid(row=8, column=17)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
         label.grid(row=8, column=18)
         self.dkCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
@@ -997,13 +997,26 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=9, column=16)
         self.bowserCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-        self.bowserCapsulePrice6.grid(row=9, column=16)
+        self.bowserCapsulePrice6.grid(row=9, column=17)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
         label.grid(row=9, column=18)
         self.bowserCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
         self.bowserCapsuleWeight6.grid(row=9, column=19)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=9, column=20)
+
+        # Create mushroom orb space icon and entry
+        icon = create_image_icon(tabview.tab("Orb Mods"), "assets/duelCapsule.png", 10, 15)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=10, column=16)
+        self.bowserCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.bowserCapsulePrice6.grid(row=10, column=17)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=10, column=18)
+        self.bowserCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+        self.bowserCapsuleWeight6.grid(row=10, column=19)
+        label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=10, column=20)
 
         # Create MG space icon and entry
         miniGameIconSix = create_image_icon(tabview.tab("Coins Mods"), "assets/miniGame.png", 4, 1)
@@ -3688,7 +3701,7 @@ class App(customtkinter.CTk):
             notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
 
     def actionSpaceButtonSixOrb(self):
-        if not self.metalMushroomCapsulePrice6.get() or not self.metalMushroomCapsuleWeight6.get() or not self.mushroomCapsuleWeight6.get() or not self.goldenMushroomCapsulePrice6.get() or not self.goldenMushroomCapsuleWeight6.get() or not self.slowMushroomCapsulePrice6.get() or not self.slowMushroomCapsuleWeight6.get() or not self.bulletBillCapsulePrice6.get() or not self.bulletBillCapsuleWeight6.get() or not self.warpPipeCapsulePrice6.get() or not self.warpPipeCapsuleWeight6.get() or not self.flutterCapsulePrice6.get() or not self.flutterCapsuleWeight6.get() or not self.cursedMushroomCapsulePrice6.get() or not self.cursedMushroomCapsuleWeight6.get() or not self.spinyCapsulePrice6.get() or not self.spinyCapsuleWeight6.get() or not self.goombaCapsuleWeight6.get() or not self.goombaCapsulePrice6.get() or not self.plantCapsulePrice6.get() or not self.plantCapsuleWeight6.get() or not self.kleptoCapsuleWeight6.get() or not self.kleptoCapsulePrice6.get() or not self.kamekCapsuleWeight6.get() or not self.kamekCapsulePrice6.get() or not self.toadyCapsuleWeight6.get() or not self.toadyCapsulePrice6.get() or not self.blizzardCapsuleWeight6.get() or not self.blizzardCapsulePrice6.get() or not self.podobooCapsulePrice6.get() or not self.podobooCapsuleWeight6.get() or not self.paraTroopaCapsuleWeight6.get() or not self.paraTroopaCapsulePrice6.get() or not self.snackCapsulePrice6.get() or not self.snackCapsuleWeight6.get() or not self.zapCapsulePrice6.get() or not self.zapCapsuleWeight6.get() or not self.tweesterCapsulePrice6.get() or not self.tweesterCapsuleWeight6.get() or not self.thwompCapsulePrice6.get() or not self.thwompCapsuleWeight6.get() or not self.warpPipeCapsulePrice6.get() or not self.warpPipeCapsuleWeight6.get() or not self.bombCapsulePrice6.get() or not self.bombCapsuleWeight6.get() or not self.gaddLightCapsulePrice6.get() or not self.gaddLightCapsuleWeight6.get() or not self.chanceTimeCapsulePrice6.get() or not self.chanceTimeCapsuleWeight6.get() or not self.pinkBooCapsulePrice6.get() or not self.pinkBooCapsuleWeight6.get() or not self.bowserCapsulePrice6.get() or not self.bowserCapsuleWeight6.get() or not self.dkCapsulePrice6.get() or not self.dkCapsuleWeight6.get():
+        if not self.duelCapsulePrice6.get() or not self.duelCapsuleWeight6.get() or not self.metalMushroomCapsulePrice6.get() or not self.metalMushroomCapsuleWeight6.get() or not self.mushroomCapsuleWeight6.get() or not self.goldenMushroomCapsulePrice6.get() or not self.goldenMushroomCapsuleWeight6.get() or not self.slowMushroomCapsulePrice6.get() or not self.slowMushroomCapsuleWeight6.get() or not self.bulletBillCapsulePrice6.get() or not self.bulletBillCapsuleWeight6.get() or not self.warpPipeCapsulePrice6.get() or not self.warpPipeCapsuleWeight6.get() or not self.flutterCapsulePrice6.get() or not self.flutterCapsuleWeight6.get() or not self.cursedMushroomCapsulePrice6.get() or not self.cursedMushroomCapsuleWeight6.get() or not self.spinyCapsulePrice6.get() or not self.spinyCapsuleWeight6.get() or not self.goombaCapsuleWeight6.get() or not self.goombaCapsulePrice6.get() or not self.plantCapsulePrice6.get() or not self.plantCapsuleWeight6.get() or not self.kleptoCapsuleWeight6.get() or not self.kleptoCapsulePrice6.get() or not self.kamekCapsuleWeight6.get() or not self.kamekCapsulePrice6.get() or not self.toadyCapsuleWeight6.get() or not self.toadyCapsulePrice6.get() or not self.blizzardCapsuleWeight6.get() or not self.blizzardCapsulePrice6.get() or not self.podobooCapsulePrice6.get() or not self.podobooCapsuleWeight6.get() or not self.paraTroopaCapsuleWeight6.get() or not self.paraTroopaCapsulePrice6.get() or not self.snackCapsulePrice6.get() or not self.snackCapsuleWeight6.get() or not self.zapCapsulePrice6.get() or not self.zapCapsuleWeight6.get() or not self.tweesterCapsulePrice6.get() or not self.tweesterCapsuleWeight6.get() or not self.thwompCapsulePrice6.get() or not self.thwompCapsuleWeight6.get() or not self.warpPipeCapsulePrice6.get() or not self.warpPipeCapsuleWeight6.get() or not self.bombCapsulePrice6.get() or not self.bombCapsuleWeight6.get() or not self.gaddLightCapsulePrice6.get() or not self.gaddLightCapsuleWeight6.get() or not self.chanceTimeCapsulePrice6.get() or not self.chanceTimeCapsuleWeight6.get() or not self.pinkBooCapsulePrice6.get() or not self.pinkBooCapsuleWeight6.get() or not self.bowserCapsulePrice6.get() or not self.bowserCapsuleWeight6.get() or not self.dkCapsulePrice6.get() or not self.dkCapsuleWeight6.get():
             if sys.platform == "darwin":
                 createDialog("Error", "error", "Please fill out all the boxes.", None)
             else:
@@ -3778,7 +3791,11 @@ class App(customtkinter.CTk):
         dkCapsulePrice6 = self.dkCapsulePrice6.get()
         dkCapsuleWeight6 = self.dkCapsuleWeight6.get()
 
-        orbWeightTotal = int(mushroomCapsuleWeight6) + int(goldenMushroomCapsuleWeight6) + int(bulletBillCapsuleWeight6) + int(slowMushroomCapsuleWeight6) + int(warpPipeCapsuleWeight6) + int(flutterCapsuleWeight6) + int(cursedMushroomCapsuleWeight6) + int(spinyCapsuleWeight6) + int(goombaCapsuleWeight6) + int(plantCapsuleWeight6) + int(kleptoCapsuleWeight6) + int(kamekCapsuleWeight6) + int(toadyCapsuleWeight6) + int(blizzardCapsuleWeight6) + int(podobooCapsuleWeight6) + int(paraTroopaCapsuleWeight6) + int(snackCapsuleWeight6) + int(zapCapsuleWeight6) + int(tweesterCapsuleWeight6) + int(thwompCapsuleWeight6) + int(warpPipeCapsuleWeight6) + int(bombCapsuleWeight6) + int(gaddLightCapsuleWeight6) + int(pinkBooCapsulePrice6) + int(chanceTimeCapsuleWeight6) + int(bowserCapsuleWeight6) + int(dkCapsuleWeight6) + int(metalMushroomCapsuleWeight6)
+        duelCapsulePrice6 = self.duelCapsulePrice6.get()
+        duelCapsuleWeight6 = self.duelCapsuleWeight6.get()
+
+
+        orbWeightTotal = int(mushroomCapsuleWeight6) + int(goldenMushroomCapsuleWeight6) + int(bulletBillCapsuleWeight6) + int(slowMushroomCapsuleWeight6) + int(warpPipeCapsuleWeight6) + int(flutterCapsuleWeight6) + int(cursedMushroomCapsuleWeight6) + int(spinyCapsuleWeight6) + int(goombaCapsuleWeight6) + int(plantCapsuleWeight6) + int(kleptoCapsuleWeight6) + int(kamekCapsuleWeight6) + int(toadyCapsuleWeight6) + int(blizzardCapsuleWeight6) + int(podobooCapsuleWeight6) + int(paraTroopaCapsuleWeight6) + int(snackCapsuleWeight6) + int(zapCapsuleWeight6) + int(tweesterCapsuleWeight6) + int(thwompCapsuleWeight6) + int(warpPipeCapsuleWeight6) + int(bombCapsuleWeight6) + int(gaddLightCapsuleWeight6) + int(pinkBooCapsulePrice6) + int(chanceTimeCapsuleWeight6) + int(bowserCapsuleWeight6) + int(dkCapsuleWeight6) + int(metalMushroomCapsuleWeight6) + int(duelCapsuleWeight6)
 
         mushroomCapsuleWeight6 = (int(mushroomCapsuleWeight6) / orbWeightTotal) * 100
         goldenMushroomCapsuleWeight6 = (int(goldenMushroomCapsuleWeight6) / orbWeightTotal) * 100
@@ -3808,6 +3825,7 @@ class App(customtkinter.CTk):
         bowserCapsuleWeight6 = (int(bowserCapsuleWeight6) / orbWeightTotal) * 100
         dkCapsuleWeight6 = (int(dkCapsuleWeight6) / orbWeightTotal) * 100
         metalMushroomCapsuleWeight6 = (int(metalMushroomCapsuleWeight6) / orbWeightTotal) * 100
+        duelCapsuleWeight6 = (int(duelCapsuleWeight6) / orbWeightTotal) * 100
 
         try:
             mushroomCapsuleWeight6 = hex(int(mushroomCapsuleWeight6))
@@ -4305,7 +4323,25 @@ class App(customtkinter.CTk):
         except:
             metalMushroomCapsulePrice6 = "00"
 
-        generatedCode = getOrbModsSix(mushroomCapsuleWeight6, goldenMushroomCapsulePrice6, goldenMushroomCapsuleWeight6, slowMushroomCapsulePrice6, slowMushroomCapsuleWeight6, metalMushroomCapsulePrice6, metalMushroomCapsuleWeight6, bulletBillCapsulePrice6, bulletBillCapsuleWeight6, warpPipeCapsulePrice6, warpPipeCapsuleWeight6, flutterCapsulePrice6, flutterCapsuleWeight6, cursedMushroomCapsulePrice6, cursedMushroomCapsuleWeight6, spinyCapsulePrice6, spinyCapsuleWeight6, goombaCapsulePrice6, goombaCapsuleWeight6, plantCapsulePrice6, plantCapsuleWeight6, kleptoCapsulePrice6, kleptoCapsuleWeight6, toadyCapsulePrice6, toadyCapsuleWeight6, kamekCapsulePrice6, kamekCapsuleWeight6, blizzardCapsulePrice6, blizzardCapsuleWeight6, podobooCapsulePrice6, podobooCapsuleWeight6, zapCapsulePrice6, zapCapsuleWeight6, tweesterCapsulePrice6, tweesterCapsuleWeight6, thwompCapsulePrice6, thwompCapsuleWeight6, bombCapsulePrice6, bombCapsuleWeight6, paraTroopaCapsulePrice6, paraTroopaCapsuleWeight6, snackCapsulePrice6, snackCapsuleWeight6, gaddLightCapsulePrice6, gaddLightCapsuleWeight6, pinkBooCapsulePrice6, pinkBooCapsuleWeight6, chanceTimeCapsulePrice6, chanceTimeCapsuleWeight6, bowserCapsulePrice6, bowserCapsuleWeight6, dkCapsulePrice6, dkCapsuleWeight6)
+        try:
+            duelCapsuleWeight6 = hex(int(duelCapsuleWeight6))
+            if len(duelCapsuleWeight6) == 4:
+                duelCapsuleWeight6 = duelCapsuleWeight6[2:]
+            elif len(duelCapsuleWeight6) == 3:
+                duelCapsuleWeight6 = "0" + duelCapsuleWeight6[2:]
+        except:
+            duelCapsuleWeight6 = "00"
+
+        try:
+            duelCapsulePrice6 = hex(int(duelCapsulePrice6))
+            if len(duelCapsulePrice6) == 4:
+                duelCapsulePrice6 = duelCapsulePrice6[2:]
+            elif len(duelCapsulePrice6) == 3:
+                duelCapsulePrice6 = "0" + duelCapsulePrice6[2:]
+        except:
+            duelCapsulePrice6 = "00"
+
+        generatedCode = getOrbModsSix(mushroomCapsuleWeight6, goldenMushroomCapsulePrice6, goldenMushroomCapsuleWeight6, slowMushroomCapsulePrice6, slowMushroomCapsuleWeight6, metalMushroomCapsulePrice6, metalMushroomCapsuleWeight6, bulletBillCapsulePrice6, bulletBillCapsuleWeight6, warpPipeCapsulePrice6, warpPipeCapsuleWeight6, flutterCapsulePrice6, flutterCapsuleWeight6, cursedMushroomCapsulePrice6, cursedMushroomCapsuleWeight6, spinyCapsulePrice6, spinyCapsuleWeight6, goombaCapsulePrice6, goombaCapsuleWeight6, plantCapsulePrice6, plantCapsuleWeight6, kleptoCapsulePrice6, kleptoCapsuleWeight6, toadyCapsulePrice6, toadyCapsuleWeight6, kamekCapsulePrice6, kamekCapsuleWeight6, blizzardCapsulePrice6, blizzardCapsuleWeight6, podobooCapsulePrice6, podobooCapsuleWeight6, zapCapsulePrice6, zapCapsuleWeight6, tweesterCapsulePrice6, tweesterCapsuleWeight6, thwompCapsulePrice6, thwompCapsuleWeight6, bombCapsulePrice6, bombCapsuleWeight6, paraTroopaCapsulePrice6, paraTroopaCapsuleWeight6, snackCapsulePrice6, snackCapsuleWeight6, gaddLightCapsulePrice6, gaddLightCapsuleWeight6, pinkBooCapsulePrice6, pinkBooCapsuleWeight6, chanceTimeCapsulePrice6, chanceTimeCapsuleWeight6, bowserCapsulePrice6, bowserCapsuleWeight6, dkCapsulePrice6, dkCapsuleWeight6, duelCapsulePrice6, duelCapsuleWeight6)
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
 

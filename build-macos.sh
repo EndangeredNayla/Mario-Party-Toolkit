@@ -1,5 +1,5 @@
-arch -arm64 /opt/homebrew/bin/pyinstaller --onefile main.py --add-data "assets/*:assets/" --name="Mario Party Toolkit" --noconsole  --icon="assets/diceBlock.ico" --distpath="dist/arm64"
-arch -x86_64 /usr/local/bin/pyinstaller --onefile main.py --add-data "assets/*:assets/" --name="Mario Party Toolkit" --noconsole  --icon="assets/diceBlock.ico" --distpath="dist/x86_64"
+arch -arch arm64 /opt/homebrew/bin/pyinstaller --onefile main.py --add-data "assets/*:assets/" --name="Mario Party Toolkit" --noconsole  --icon="assets/diceBlock.ico" --distpath="dist/arm64"
+arch -arch x86_64 /usr/local/bin/pyinstaller --onefile main.py --add-data "assets/*:assets/" --name="Mario Party Toolkit" --noconsole  --icon="assets/diceBlock.ico" --distpath="dist/x86_64"
 rm "dist/arm64/Mario Party Toolkit"
 rm "dist/x86_64/Mario Party Toolkit"
 cp -r "dist/arm64/" "dist/universal2"

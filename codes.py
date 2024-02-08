@@ -966,7 +966,7 @@ C2083CF0 00000002
 02139E3C 0000{thirteenW}{fourteenW}
 '''
 
-def getOrbModsSix(oneW, twoP, twoW, threeP, threeW, fourP, fourW, fiveP, fiveW, sixP, sixW, sevenP, sevenW, eightP, eightW, nineP, nineW, tenP, tenW, elevenP, elevenW, twelveP, twelveW, thirteenP, thirteenW, fourteenP, fourteenW, fifteenP, fifteenW, sixteenP, sixteenW, seventeenP, seventeenW, eighteenP, eighteenW, ninteenP, ninteenW, twentyP, twentyW, twentyOneP, twentyOneW, twentyTwoP, twentyTwoW, twentyThreeP, twentyThreeW, twentyFourP, twentyFourW, twentyFiveP, twentyFiveW, twentySixP, twentySixW, twentySevenP, twentySevenW):
+def getOrbModsSix(oneW, twoP, twoW, threeP, threeW, fourP, fourW, fiveP, fiveW, sixP, sixW, sevenP, sevenW, eightP, eightW, nineP, nineW, tenP, tenW, elevenP, elevenW, twelveP, twelveW, thirteenP, thirteenW, fourteenP, fourteenW, fifteenP, fifteenW, sixteenP, sixteenW, seventeenP, seventeenW, eighteenP, eighteenW, ninteenP, ninteenW, twentyP, twentyW, twentyOneP, twentyOneW, twentyTwoP, twentyTwoW, twentyThreeP, twentyThreeW, twentyFourP, twentyFourW, twentyFiveP, twentyFiveW, twentySixP, twentySixW, twentySevenP, twentySevenW, twentyEightP, twentyEightW):
     return f'''
 MP6 - Orb Modifier
 042BD220 00050505
@@ -1036,51 +1036,51 @@ MP6 - Orb Modifier
 042BD320 15{seventeenP}{seventeenP}{seventeenP}
 042BD324 {seventeenP}{seventeenW}{seventeenW}{seventeenW}
 042BD328 {seventeenW}{seventeenW}{seventeenW}{seventeenW}
-042BD32C {seventeenW}{seventeenW}0000
+042BD32C {seventeenW}{seventeenW}{seventeenW}{seventeenW}
 042BD330 16{eighteenP}{eighteenP}{eighteenP}
 042BD334 {eighteenP}{eighteenW}{eighteenW}{eighteenW}
 042BD338 {eighteenW}{eighteenW}{eighteenW}{eighteenW}
-042BD33C {eighteenW}{eighteenW}0000
+042BD33C {eighteenW}{eighteenW}{eighteenW}{eighteenW}
 042BD340 17{ninteenP}{ninteenP}{ninteenP}
 042BD344 {ninteenP}{ninteenW}{ninteenW}{ninteenW}
 042BD348 {ninteenW}{ninteenW}{ninteenW}{ninteenW}
-042BD34C {ninteenW}{ninteenW}0000
+042BD34C {ninteenW}{ninteenW}{ninteenW}{ninteenW}
 042BD350 18{twentyP}{twentyP}{twentyP}
 042BD354 {twentyP}{twentyW}{twentyW}{twentyW}
 042BD358 {twentyW}{twentyW}{twentyW}{twentyW}
-042BD35C {twentyW}{twentyW}0000
+042BD35C {twentyW}{twentyW}{twentyW}{twentyW}
 042BD360 19{twentyOneP}{twentyOneP}{twentyOneP}
 042BD364 {twentyOneP}{twentyOneW}{twentyOneW}{twentyOneW}
 042BD368 {twentyOneW}{twentyOneW}{twentyOneW}{twentyOneW}
-042BD36C {twentyOneW}{twentyOneW}0000
+042BD36C {twentyOneW}{twentyOneW}{twentyOneW}{twentyOneW}
 042BD370 1E{twentyTwoP}{twentyTwoP}{twentyTwoP}
 042BD374 {twentyTwoP}{twentyTwoW}{twentyTwoW}{twentyTwoW}
 042BD378 {twentyTwoW}{twentyTwoW}{twentyTwoW}{twentyTwoW}
-042BD37C {twentyTwoW}{twentyTwoW}0000
+042BD37C {twentyTwoW}{twentyTwoW}{twentyTwoW}{twentyTwoW}
 042BD380 1F{twentyThreeP}{twentyThreeP}{twentyThreeP}
 042BD384 {twentyThreeP}{twentyThreeW}{twentyThreeW}{twentyThreeW}
 042BD388 {twentyThreeW}{twentyThreeW}{twentyThreeW}{twentyThreeW}
-042BD38C {twentyThreeW}{twentyThreeW}0000
+042BD38C {twentyThreeW}{twentyThreeW}{twentyThreeW}{twentyThreeW}
 042BD390 2E{twentyFourP}{twentyFourP}{twentyFourP}
 042BD394 {twentyFourP}{twentyFourW}{twentyFourW}{twentyFourW}
 042BD398 {twentyFourW}{twentyFourW}{twentyFourW}{twentyFourW}
-042BD39C {twentyFourW}{twentyFourW}0000
+042BD39C {twentyFourW}{twentyFourW}{twentyFourW}{twentyFourW}
 042BD3A0 2A{twentyFiveP}{twentyFiveP}{twentyFiveP}
 042BD3A4 {twentyFiveP}{twentyFiveW}{twentyFiveW}{twentyFiveW}
 042BD3A8 {twentyFiveW}{twentyFiveW}{twentyFiveW}{twentyFiveW}
-042BD3AC {twentyFiveW}{twentyFiveW}0000
+042BD3AC {twentyFiveW}{twentyFiveW}{twentyFiveW}{twentyFiveW}
 042BD3B0 2B{twentySixP}{twentySixP}{twentySixP}
 042BD3B4 {twentySixP}{twentySixW}{twentySixW}{twentySixW}
 042BD3B8 {twentySixW}{twentySixW}{twentySixW}{twentySixW}
-042BD3BC {twentySixW}{twentySixW}0000
+042BD3BC {twentySixW}{twentySixW}{twentySixW}{twentySixW}
 042BD3C0 2C{twentySevenP}{twentySevenP}{twentySevenP}
 042BD3C4 {twentySevenP}{twentySevenW}{twentySevenW}{twentySevenW}
 042BD3C8 {twentySevenW}{twentySevenW}{twentySevenW}{twentySevenW}
-042BD3CC {twentySevenW}{twentySevenW}0000
-042BD3D0 29000000
-042BD3D4 00000000
-042BD3D8 00000000
-042BD3DC 00000000
+042BD3CC {twentySevenW}{twentySevenW}{twentySevenW}{twentySevenW}
+042BD3D0 29{twentyEightP}{twentyEightP}{twentyEightP}
+042BD3D4 {twentyEightP}{twentyEightW}{twentyEightW}{twentyEightW}
+042BD3D8 {twentyEightW}{twentyEightW}{twentyEightW}{twentyEightW}
+042BD3DC {twentyEightW}{twentyEightW}{twentyEightW}{twentyEightW}
 042BD3E0 FF000000
 042BD3E4 00000000
 042BD3E8 00000000
