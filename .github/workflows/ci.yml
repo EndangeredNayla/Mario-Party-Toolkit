@@ -56,6 +56,9 @@ jobs:
     - name: Build Project
       run: python -m nuitka --onefile --enable-plugin=tk-inter --disable-console --standalone --assume-yes-for-downloads --output-filename="Mario Party Toolkit" --output-dir="dist" --include-data-files="assets/*=assets/" --windows-icon-from-ico="assets/diceBlock.ico" main.py
 
+    - name: Purge Files
+      run: rmdir /S /Q "D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\main.onefile-build" && rmdir /S /Q "D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\main.build" && rmdir /S /Q "D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\main.dist"
+
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
