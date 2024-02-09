@@ -2073,30 +2073,30 @@ class App(customtkinter.CTk):
         
 
         if is_file_greater_than_4gb(iso_path):
-            subprocess.run([fetchResource("dependencies/wit.exe"), "extract", iso_path, "tmp/tmpROM/"], check=True)
+            subprocess.run(["dependencies/wit.exe", "extract", iso_path, "tmp/tmpROM/"], check=True)
             tmpromContents = os.listdir("tmp/tmpROM")
             folders = [item for item in tmpromContents if os.path.isdir(os.path.join("tmp/tmpROM", item))]
             folder_name = folders[0]
             folder_path = os.path.join("tmp/tmpROM", folder_name + "/sys/main.dol")
             folder_path_raw = os.path.join("tmp/tmpROM", folder_name)
-            subprocess.run([fetchResource("dependencies/GeckoLoader.exe"), "--hooktype=GX", folder_path, "tmp/codes.txt", "--dest=tmp/tmpDOL"], check=True)
+            subprocess.run(["dependencies/GeckoLoader.exe", "--hooktype=GX", folder_path, "tmp/codes.txt", "--dest=tmp/tmpDOL"], check=True)
             os.remove(folder_path)
             shutil.move("tmp/tmpDOL/main.dol", folder_path)
-            subprocess.run([fetchResource("dependencies/wit.exe"), "copy", folder_path_raw, "--dest=tmp/game.iso"], check=True)
+            subprocess.run(["dependencies/wit.exe", "copy", folder_path_raw, "--dest=tmp/game.iso"], check=True)
             file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".iso", initialfile=gameName[:-4] + " (Modded).iso", filetypes=[("ISO Files", "*.iso")])
             shutil.move("tmp/game.iso", file_path)
             shutil.rmtree("tmp/") 
         else:
-            subprocess.run([fetchResource("dependencies/pyisotools.exe"), iso_path, "E", "--dest=tmp/tmpROM/"], check=True)
+            subprocess.run(["dependencies/pyisotools.exe", iso_path, "E", "--dest=tmp/tmpROM/"], check=True)
             tmpromContents = os.listdir("tmp/tmpROM")
             folders = [item for item in tmpromContents if os.path.isdir(os.path.join("tmp/tmpROM", item))]
             folder_name = folders[0]
             folder_path = os.path.join("tmp/tmpROM", folder_name + "/sys/main.dol")
             folder_path_raw = os.path.join("tmp/tmpROM", folder_name)
-            subprocess.run([fetchResource("dependencies/GeckoLoader.exe"), "--hooktype=GX", folder_path, "tmp/codes.txt", "--dest=tmp/tmpDOL"], check=True)
+            subprocess.run(["dependencies/GeckoLoader.exe", "--hooktype=GX", folder_path, "tmp/codes.txt", "--dest=tmp/tmpDOL"], check=True)
             os.remove(folder_path)
             shutil.move("tmp/tmpDOL/main.dol", folder_path)
-            subprocess.run([fetchResource("dependencies/pyisotools.exe"), folder_path_raw, "B", "--dest=../../game.iso"], check=True)
+            subprocess.run(["dependencies/pyisotools.exe", folder_path_raw, "B", "--dest=../../game.iso"], check=True)
             file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".iso", initialfile=gameName[:-4] + " (Modded).iso", filetypes=[("ISO Files", "*.iso")])
             shutil.move("tmp/game.iso", file_path)
             shutil.rmtree("tmp/")
