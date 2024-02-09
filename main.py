@@ -2231,7 +2231,7 @@ class App(customtkinter.CTk):
         if pinkBooSpaceAmountNegativeSix == "DUMMY":
             marioPartySixPinkBooSpace = ""
         if miniGameAmountSix == "DUMMY":
-            marioPartySixMiniGame == ""
+            marioPartySixMiniGame = ""
         
         generatedCode = marioPartySixBlueSpace + marioPartySixRedSpace + marioPartySixCharacterSpace + marioPartySixMiniGame + marioPartySixStarSpace + marioPartySixPinkBooSpace
         generatedCode = generatedCode.replace("SIXRED", redSpaceAmountBaseSix)
