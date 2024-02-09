@@ -2086,7 +2086,7 @@ class App(customtkinter.CTk):
             file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".iso", initialfile=gameName[:-4] + " (Modded).iso", filetypes=[("ISO Files", "*.iso")])
             shutil.move("tmp/game.iso", file_path)
             shutil.rmtree("tmp/") 
-        elif:
+        else:
             subprocess.run([fetchResource("dependencies/pyisotools.exe"), iso_path, "E", "--dest=tmp/tmpROM/"], check=True)
             tmpromContents = os.listdir("tmp/tmpROM")
             folders = [item for item in tmpromContents if os.path.isdir(os.path.join("tmp/tmpROM", item))]
