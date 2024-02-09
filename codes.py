@@ -968,6 +968,76 @@ C2083CF0 00000002
 02139E3C 0000{thirteenW}{fourteenW}
 '''
 
+def getCapsuleModsFive(oneP, oneW, twoP, twoW, threeP, threeW, fourP, fourW, fiveP, fiveW, sixP, sixW, sevenP, sevenW, eightP, eightW, nineP, nineW, tenP, tenW, elevenP, elevenW, twelveP, twelveW, thirteenP, thirteenW, fourteenP, fourteenW, fifteenP, fifteenW, sixteenP, sixteenW, seventeenP, seventeenW, eighteenP, eighteenW, ninteenP, ninteenW, twentyP, twentyW, twentyOneP, twentyOneW, twentyTwoP, twentyTwoW, twentyThreeP, twentyThreeW, twentyFourP, twentyFourW, twentyFiveP, twentyFiveW, twentySixP, twentySixW, twentySevenP, twentySevenW, twentyEightP, twentyEightW, twentyNineP, twentyNineW):
+    return f'''
+C20C8FA0 00000024
+9421FFF0 7C0802A6
+90010014 93E10000
+48000081 60000000
+00{oneW}0000 00{twoW}0001
+00{threeW}0002 00{fourW}0003
+00{fiveW}0004 00{sixW}0005
+00{sevenW}0006 00{eightW}000a
+00{nineW}000b 00{tenW}000c
+00{elevenW}000d 00{twelveW}000e
+00{thirteenW}000f 00{fourteenW}0010
+00{fifteenW}0011 00{sixteenW}0014
+00{seventeenW}0015 00{eighteenW}0016
+00{ninteenW}0017 00{twentyW}0018
+00{twentyOneW}0019 00{twentyTwoW}001e
+00{twentyThreeW}001f 00{twentyFourW}0020
+00{twentyFiveW}0021 00{twentySixW}0022
+00{twentySevenW}0023 00{twentyEightW}0024
+00{twentyNineW}0025 00000000
+7CE802A6 38E70004
+38600000 38800000
+2C030074 41820014
+7CA71A2E 7C842A14
+38630004 4BFFFFEC
+3CA08003 60A5B0F4
+7CA903A6 7C832378
+4E800421 38800000
+38A00000 2C050074
+41820024 7CC72A2E
+7C661850 2C030000
+40A00008 48000010
+38840001 38A50004
+4BFFFFDC 1C840004
+38840002 7C6720AE
+83E10000 80010014
+7C0803A6 38210010
+4E800020 00000000
+001CA233 000000{oneP}
+001CA249 000000{twoP}
+001CA26B 000000{threeP}
+001CA287 000000{fourP}
+001CA2A3 000000{fiveP}
+001CA22F 000000{sixP}
+001CA2DB 000000{sevenP}
+001CA34B 000000{eightP}
+001CA367 000000{nineP}
+001CA383 000000{tenP}
+001CA39F 000000{elevenP}
+001CA3BB 000000{twelveP}
+001CA3D7 000000{thirteenP}
+001CA3F3 000000{fourteenP}
+001CA40F 000000{fifteenP}
+001CA463 000000{sixteenP}
+001CA47F 000000{seventeenP}
+001CA49B 000000{eighteenP}
+001CA4B7 000000{ninteenP}
+001CA4D3 000000{twentyP}
+001CA4EF 000000{twentyOneP}
+001CA57B 000000{twentyTwoP}
+001CA597 000000{twentyThreeP}
+001CA5B3 000000{twentyFourP}
+001CA5CF 000000{twentyFiveP}
+001CA5EB 000000{twentySixP}
+001CA607 000000{twentySevenP}
+001CA623 000000{twentyEightP}
+001CA63F 000000{twentyNineP}
+'''
+
 def getOrbModsSix(oneW, twoP, twoW, threeP, threeW, fourP, fourW, fiveP, fiveW, sixP, sixW, sevenP, sevenW, eightP, eightW, nineP, nineW, tenP, tenW, elevenP, elevenW, twelveP, twelveW, thirteenP, thirteenW, fourteenP, fourteenW, fifteenP, fifteenW, sixteenP, sixteenW, seventeenP, seventeenW, eighteenP, eighteenW, ninteenP, ninteenW, twentyP, twentyW, twentyOneP, twentyOneW, twentyTwoP, twentyTwoW, twentyThreeP, twentyThreeW, twentyFourP, twentyFourW, twentyFiveP, twentyFiveW, twentySixP, twentySixW, twentySevenP, twentySevenW, twentyEightP, twentyEightW):
     return f'''
 MP6 - Orb Modifier
