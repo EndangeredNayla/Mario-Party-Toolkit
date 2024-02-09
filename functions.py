@@ -13,6 +13,15 @@ import requests
 import sys
 import webbrowser
 from version import appVersion
+import tkinter.filedialog
+import os
+import threading
+
+# Create a function for file selection
+def select_file(file_label):
+    filename = tkinter.filedialog.askopenfilename(filetypes=[("Z64 Files", "*.z64"), ("ISO Files", "*.iso")])
+    # Do something with the selected filename, e.g., display it in the entry
+    file_label.configure(text=filename)
 
 def fetchResource(resource_path: Path) -> Path:
     try:  # Running as *.exe; fetch resource from temp directory
@@ -76,4 +85,12 @@ def createDialog(windowTitle, warn, info, buttonTxt=None):
     # Display success message in the success window
     label = ctk.CTkLabel(completeWindow, text=info, font=ctk.CTkFont(size=18))
     label.grid(row=0, column=1, padx=25, pady=10)
+    
+    # Function to close the window after 2.5 seconds
+    def close_window():
+        completeWindow.destroy()
+
+    # Close the window after 2.5 seconds
+    completeWindow.after(2500, close_window)
+
     completeWindow.focus()

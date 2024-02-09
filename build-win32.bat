@@ -1,0 +1,1 @@
+pyinstaller --onefile .\main.py --add-data "assets/*;assets/" --add-data "dependencies/*;dependencies/" --name="Mario Party Toolkit" --noconsole --icon="assets/diceBlock.ico"
