@@ -6,4 +6,4 @@ pyinstaller
 requests
 nuitka
 CTkToolTip
-plyer
+requests

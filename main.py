@@ -12,23 +12,18 @@ import customtkinter
 import version
 import tkinter as tk
 import pyperclip
+import tkinter.filedialog
+import os
+import subprocess
+import threading
+import shutil
+import time
 
 from CTkToolTip import *
-from functools import partial
 
 from functions import *
 from credits import *
 from codes import *
-
-try:
-    from mac_notifications import client
-except:
-    pass
-
-try:
-    from plyer import notification
-except:
-    pass
 
 customtkinter.set_appearance_mode("Dark")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
@@ -52,7 +47,7 @@ class App(customtkinter.CTk):
         # create sidebar frame with widgets
         self.sidebar_frame = customtkinter.CTkFrame(self, width=140, corner_radius=0)
         self.sidebar_frame.grid(row=0, column=0, rowspan=4, sticky="nsew")
-        self.sidebar_frame.grid_rowconfigure(10, weight=1)
+        self.sidebar_frame.grid_rowconfigure(11, weight=1)
 
         self.logo_label = customtkinter.CTkLabel(self.sidebar_frame, text="Mario Party Toolkit", font=customtkinter.CTkFont(size=20, weight="bold"))
         self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
@@ -84,11 +79,14 @@ class App(customtkinter.CTk):
         self.mario_party_82_button = customtkinter.CTkButton(self.sidebar_frame, text="Mario Party 8 (Rev. 2)", command=self.mp82ButtonEvent)
         self.mario_party_82_button.grid(row=9, column=0, padx=20, pady=10)
 
+        self.codeInjector_button = customtkinter.CTkButton(self.sidebar_frame, text="Code Injector", command=self.codeInjectorButtonEvent)
+        self.codeInjector_button.grid(row=10, column=0, padx=20, pady=10)
+
         self.credits_button = customtkinter.CTkButton(self.sidebar_frame, text="Credits", command=self.creditsButtonEvent)
-        self.credits_button.grid(row=11, column=0, padx=20, pady=10)
+        self.credits_button.grid(row=12, column=0, padx=20, pady=10)
         
         self.version_label = customtkinter.CTkLabel(self.sidebar_frame, text=f"Version: {version.appVersion}", anchor="w", font=("Arial", 14, "bold"))
-        self.version_label.grid(row=13, column=0, padx=20, pady=(10, 0))
+        self.version_label.grid(row=14, column=0, padx=20, pady=(10, 0))
 
         self.current_game_frame = None  # To keep track of the currently displayed game frame
     
@@ -125,9 +123,33 @@ class App(customtkinter.CTk):
             self.current_game_frame = self.create_mp8_frame()
         elif game_name == "Mario Party 8 (Rev. 2)":
             self.current_game_frame = self.create_mp82_frame()
+        elif game_name == "Code Injector":
+            self.current_game_frame = self.create_codes_frame()
         elif game_name == "Credits":
             self.current_game_frame = self.create_credits_frame()
         self.current_game_frame.grid(row=0, column=1, padx=(0, 0), pady=(0, 0), rowspan=3, sticky="nsew")
+
+    def create_codes_frame(self):        
+        frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
+    
+        # Create button for file selection
+        select_file_button = ctk.CTkButton(master=frame, text="Select ROM", command=lambda: select_file(self.file_label))
+        select_file_button.place(x=10, y=10)
+
+        # Create label for file selection
+        self.file_label = ctk.CTkLabel(master=frame, text="path/to/rom/file")
+        self.file_label.place(x=160, y=10)
+
+        file_label2 = ctk.CTkLabel(master=frame, text="Codes:")
+        file_label2.place(x=10, y=60)
+
+        self.cheatCodeEntry = ctk.CTkTextbox(master=frame, width=200, height=500)
+        self.cheatCodeEntry.place(x=10, y=65)
+
+        injectCodes = ctk.CTkButton(master=frame, command=self.injectCodesFunc, text="Inject Codes")
+        injectCodes.place(x=10, y=590)
+    
+        return frame
 
     def create_mp1_frame(self):
         frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
@@ -2030,12 +2052,62 @@ class App(customtkinter.CTk):
         parseButtonEight.place(x=10, y=560)
         return frame
 
+    def injectCodesFunc(self):
+        if not self.cheatCodeEntry.get("1.0", "end"):
+            if sys.platform == "darwin":
+                createDialog("Error", "error", "No information provided.", None)
+            else:
+                createDialog("Error", "error", "No information provided.", None)
+            return
+
+        if not os.path.exists("tmp"):
+            os.mkdir("tmp")
+        else:
+            shutil.rmtree("tmp")
+            os.mkdir("tmp")
+
+        with open("tmp/codes.txt", 'w') as file:
+            file.write("$MPToolkit\n" + self.cheatCodeEntry.get("1.0", "end"))
+        iso_path = self.file_label.cget("text")
+        gameName = os.path.basename(iso_path)
+        
+
+        if is_file_greater_than_4gb(iso_path):
+            subprocess.run(["dependencies/wit.exe", "extract", iso_path, "tmp/tmpROM/"], check=True)
+            tmpromContents = os.listdir("tmp/tmpROM")
+            folders = [item for item in tmpromContents if os.path.isdir(os.path.join("tmp/tmpROM", item))]
+            folder_name = folders[0]
+            folder_path = os.path.join("tmp/tmpROM", folder_name + "/sys/main.dol")
+            folder_path_raw = os.path.join("tmp/tmpROM", folder_name)
+            subprocess.run(["dependencies/GeckoLoader.exe", "--hooktype=GX", folder_path, "tmp/codes.txt", "--dest=tmp/tmpDOL"], check=True)
+            os.remove(folder_path)
+            shutil.move("tmp/tmpDOL/main.dol", folder_path)
+            subprocess.run(["dependencies/wit.exe", "copy", folder_path_raw, "--dest=tmp/game.iso"], check=True)
+            file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".iso", initialfile=gameName[:-4] + " (Modded).iso", filetypes=[("ISO Files", "*.iso")])
+            shutil.move("tmp/game.iso", file_path)
+            shutil.rmtree("tmp/") 
+        else:
+            subprocess.run(["dependencies/pyisotools.exe", iso_path, "E", "--dest=tmp/tmpROM/"], check=True)
+            tmpromContents = os.listdir("tmp/tmpROM")
+            folders = [item for item in tmpromContents if os.path.isdir(os.path.join("tmp/tmpROM", item))]
+            folder_name = folders[0]
+            folder_path = os.path.join("tmp/tmpROM", folder_name + "/sys/main.dol")
+            folder_path_raw = os.path.join("tmp/tmpROM", folder_name)
+            subprocess.run(["dependencies/GeckoLoader.exe", "--hooktype=GX", folder_path, "tmp/codes.txt", "--dest=tmp/tmpDOL"], check=True)
+            os.remove(folder_path)
+            shutil.move("tmp/tmpDOL/main.dol", folder_path)
+            subprocess.run(["dependencies/pyisotools.exe", folder_path_raw, "B", "--dest=../../game.iso"], check=True)
+            file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".iso", initialfile=gameName[:-4] + " (Modded).iso", filetypes=[("ISO Files", "*.iso")])
+            shutil.move("tmp/game.iso", file_path)
+            shutil.rmtree("tmp/")
+
+
     def actionSpaceButtonOne(self):
         if not self.blueSpaceAmountOne.get() and not self.redSpaceAmountOne.get():
             if sys.platform == "darwin":
                 createDialog("Error", "error", "No information provided.", None)
             else:
-                notification.notify(title= "Error", message = "No information provided", app_icon=fetchResource("assets/error.ico"), timeout = 10)
+                createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseOne = self.blueSpaceAmountOne.get()
@@ -2109,14 +2181,14 @@ class App(customtkinter.CTk):
         if sys.platform == "darwin":
             createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
         else:
-            notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
+            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonTwo(self):
         if not self.blueSpaceAmountTwo.get() and not self.redSpaceAmountTwo.get():
             if sys.platform == "darwin":
                 createDialog("Error", "error", "No information provided.", None)
             else:
-                notification.notify(title= "Error", message = "No information provided", app_icon=fetchResource("assets/error.ico"), timeout = 10)
+                createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseTwo = self.blueSpaceAmountTwo.get()
@@ -2190,13 +2262,14 @@ class App(customtkinter.CTk):
         if sys.platform == "darwin":
             createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
         else:
-            notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
+            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+    
     def actionSpaceButtonThree(self):
         if not self.blueSpaceAmountThree.get() and not self.redSpaceAmountThree.get():
             if sys.platform == "darwin":
                 createDialog("Error", "error", "No information provided.", None)
             else:
-                notification.notify(title= "Error", message = "No information provided", app_icon=fetchResource("assets/error.ico"), timeout = 10)
+                createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseThree = self.blueSpaceAmountThree.get()
@@ -2270,14 +2343,14 @@ class App(customtkinter.CTk):
         if sys.platform == "darwin":
             createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
         else:
-            notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
+            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonFour(self):    
         if not self.blueSpaceAmountFour.get() and not self.miniGameAmountFour.get() and not self.redSpaceAmountFour.get() and not self.starSpaceAmountFour.get() and not self.booSpaceAmountFour.get() and not self.lotterySpaceAmountFour.get():
             if sys.platform == "darwin":
                 createDialog("Error", "error", "No information provided.", None)
             else:
-                notification.notify(title= "Error", message = "No information provided", app_icon=fetchResource("assets/error.ico"), timeout = 10)
+                createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseFour = self.blueSpaceAmountFour.get()
@@ -2384,14 +2457,14 @@ class App(customtkinter.CTk):
         if sys.platform == "darwin":
             createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
         else:
-            notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
+            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonFive(self):
         if not self.blueSpaceAmountFive.get() and not self.miniGameAmountFive.get() and not self.redSpaceAmountFive.get() and not self.starSpaceAmountFive.get() and not self.wigglerSpaceAmountFive.get():
             if sys.platform == "darwin":
                 createDialog("Error", "error", "No information provided.", None)
             else:
-                notification.notify(title= "Error", message = "No information provided", app_icon=fetchResource("assets/error.ico"), timeout = 10)
+                createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseFive = self.blueSpaceAmountFive.get()
@@ -2514,14 +2587,14 @@ class App(customtkinter.CTk):
         if sys.platform == "darwin":
             createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
         else:
-            notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
+            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonSix(self):
         if not self.blueSpaceAmountSix.get() and not self.miniGameAmountSix.get() and not self.redSpaceAmountSix.get() and not self.starSpaceAmountSix.get() and not self.pinkBooSpaceAmountSix.get() and not self.characterSpaceAmountSix.get():
             if sys.platform == "darwin":
                 createDialog("Error", "error", "No information provided.", None)
             else:
-                notification.notify(title= "Error", message = "No information provided", app_icon=fetchResource("assets/error.ico"), timeout = 10)
+                createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseSix = self.blueSpaceAmountSix.get()
@@ -2633,14 +2706,14 @@ class App(customtkinter.CTk):
         if sys.platform == "darwin":
             createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
         else:
-            notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
+            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonSeven(self):
         if not self.blueSpaceAmountSeven.get() and not self.miniGameAmountSeven.get() and not self.characterSpaceAmountSeven.get()  and not self.redSpaceAmountSeven.get() and not self.starSpaceAmountSeven.get() and not self.starSpaceAmountSevenLastFive.get() and not self.hammerBroAmountSeven.get() and not self.zapAmountSeven.get():
             if sys.platform == "darwin":
                 createDialog("Error", "error", "No information provided.", None)
             else:
-                notification.notify(title= "Error", message = "No information provided", app_icon=fetchResource("assets/error.ico"), timeout = 10)
+                createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseSeven = self.blueSpaceAmountSeven.get()
@@ -2785,14 +2858,14 @@ class App(customtkinter.CTk):
         if sys.platform == "darwin":
             createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
         else:
-            notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
+            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonEight(self):
         if not self.blueSpaceAmountEight.get() and not self.redSpaceAmountEight.get() and not self.starSpaceAmountEight.get():
             if sys.platform == "darwin":
                 createDialog("Error", "error", "No information provided.", None)
             else:
-                notification.notify(title= "Error", message = "No information provided", app_icon=fetchResource("assets/error.ico"), timeout = 10)
+                createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseEight = self.blueSpaceAmountEight.get()
@@ -2855,14 +2928,14 @@ class App(customtkinter.CTk):
         if sys.platform == "darwin":
             createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
         else:
-            notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
+            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonEight2(self):
         if not self.miniGameAmountEight2.get() and not self.blueSpaceAmountEight2.get() and not self.redSpaceAmountEight2.get() and not self.starSpaceAmountEight2.get():
             if sys.platform == "darwin":
                 createDialog("Error", "error", "No information provided.", None)
             else:
-                notification.notify(title= "Error", message = "No information provided", app_icon=fetchResource("assets/error.ico"), timeout = 10)
+                createDialog("Error", "error", "No information provided.", None)
             return
         blueSpaceAmountBaseEight2 = self.blueSpaceAmountEight2.get()
 
@@ -2938,14 +3011,14 @@ class App(customtkinter.CTk):
         if sys.platform == "darwin":
             createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
         else:
-            notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
+            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionFaireSquare(self):
         if not self.faireSquare1.get() and not self.faireSquare2.get() and not self.faireSquare3.get() and not self.faireSquare4.get():
             if sys.platform == "darwin":
                 createDialog("Error", "error", "Please fill out all the boxes.", None)
             else:
-                notification.notify(title = 'Error', message = 'Please fill out all the boxes', app_icon = fetchResource("assets/error.ico"), timeout = 10)
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
             return
 
         faireSquare1Base = self.faireSquare1.get()
@@ -3020,14 +3093,14 @@ class App(customtkinter.CTk):
         if sys.platform == "darwin":
             createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
         else:
-            notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
+            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionBattle4(self):
         if not self.battle41.get() and not self.battle42.get() and not self.battle43.get() and not self.battle44.get() and not self.battle45.get():
             if sys.platform == "darwin":
                 createDialog("Error", "error", "Please fill out all the boxes.", None)
             else:
-                notification.notify(title = 'Error', message = 'Please fill out all the boxes', app_icon = fetchResource("assets/error.ico"), timeout = 10)
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
             return
 
         battle41Base = self.battle41.get()
@@ -3107,14 +3180,14 @@ class App(customtkinter.CTk):
         if sys.platform == "darwin":
             createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
         else:
-            notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
+            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonFourItem(self):
         if not self.miniPrice4.get() or not self.miniWeight4.get() or not self.megaPrice4.get() or not self.megaWeight4.get() or not self.superMegaPrice4.get() or not self.superMegaWeight4.get() or not self.superMiniPrice4.get() or not self.superMiniWeight4.get() or not self.miniMegaHammerPrice4.get() or not self.miniMegaHammerWeight4.get() or not self.warpPipePrice4.get() or not self.warpPipeWeight4.get() or not self.swapCardPrice4.get() or not self.swapCardWeight4.get() or not self.sparkyStickerPrice4.get() or not self.sparkyStickerWeight4.get() or not self.bowserSuitPrice4.get() or not self.bowserSuitWeight4.get() or not self.gaddlightPrice4.get() or not self.gaddlightWeight4.get() or not self.chompCallPrice4.get() or not self.chompCallWeight4.get() or not self.crystalBallPrice4.get() or not self.crystalBallWeight4.get() or not self.magicLampPrice4.get() or not self.magicLampWeight4.get() or not self.itemBagPrice4.get()  or not self.itemBagWeight4.get():
             if sys.platform == "darwin":
                 createDialog("Error", "error", "Please fill out all the boxes.", None)
             else:
-                notification.notify(title = 'Error', message = 'Please fill out all the boxes', app_icon = fetchResource("assets/error.ico"), timeout = 10)
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
             return
 
         miniPrice4 = self.miniPrice4.get()
@@ -3436,14 +3509,14 @@ class App(customtkinter.CTk):
         if sys.platform == "darwin":
             createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
         else:
-            notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
+            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonSevenOrb(self):
         if not self.mushroomCapsuleWeight7.get() or not self.goldenMushroomCapsulePrice7.get() or not self.goldenMushroomCapsuleWeight7.get() or not self.slowMushroomCapsulePrice7.get() or not self.slowMushroomCapsuleWeight7.get() or not self.metalMushroomCapsulePrice7.get() or not self.metalMushroomCapsuleWeight7.get() or not self.flutterCapsulePrice7.get() or not self.flutterCapsuleWeight7.get() or not self.cannonCapsulePrice7.get() or not self.cannonCapsuleWeight7.get() or not self.snackCapsulePrice7.get() or not self.snackCapsuleWeight7.get() or not self.lakituCapsulePrice7.get() or not self.lakituCapsuleWeight7.get() or not self.hammerBroCapsuleWeight7.get() or not self.hammerBroCapsulePrice7.get() or not self.plantCapsulePrice7.get() or not self.plantCapsuleWeight7.get() or not self.spearCapsuleWeight7.get() or not self.spearCapsulePrice7.get() or not self.kamekCapsuleWeight7.get() or not self.kamekCapsulePrice7.get() or not self.toadyCapsuleWeight7.get() or not self.toadyCapsulePrice7.get() or not self.blizzardCapsuleWeight7.get() or not self.blizzardCapsulePrice7.get() or not self.banditCapsulePrice7.get() or not self.banditCapsuleWeight7.get() or not self.pinkBooCapsuleWeight7.get() or not self.pinkBooCapsulePrice7.get() or not self.spinyCapsulePrice7.get() or not self.spinyCapsuleWeight7.get() or not self.zapCapsulePrice7.get() or not self.zapCapsuleWeight7.get() or not self.tweesterCapsulePrice7.get() or not self.tweesterCapsuleWeight7.get() or not self.thwompCapsulePrice7.get() or not self.thwompCapsuleWeight7.get() or not self.warpCapsulePrice7.get() or not self.warpCapsuleWeight7.get() or not self.bombCapsulePrice7.get() or not self.bombCapsuleWeight7.get() or not self.fireballCapsulePrice7.get() or not self.fireballCapsuleWeight7.get() or not self.eggCapsulePrice7.get() or not self.eggCapsuleWeight7.get() or not self.flowerCapsulePrice7.get() or not self.flowerCapsuleWeight7.get() or not self.vacuumCapsulePrice7.get() or not self.vacuumCapsuleWeight7.get() or not self.magicCapsulePrice7.get() or not self.magicCapsuleWeight7.get() or not self.tripleCapsulePrice7.get() or not self.tripleCapsuleWeight7.get() or not self.koopaCapsulePrice7.get() or not self.koopaCapsuleWeight7.get():
             if sys.platform == "darwin":
                 createDialog("Error", "error", "Please fill out all the boxes.", None)
             else:
-                notification.notify(title = 'Error', message = 'Please fill out all the boxes', app_icon = fetchResource("assets/error.ico"), timeout = 10)
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
             return
         
         mushroomCapsuleWeight7 = self.mushroomCapsuleWeight7.get()
@@ -4085,14 +4158,14 @@ class App(customtkinter.CTk):
         if sys.platform == "darwin":
             createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
         else:
-            notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
+            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonSixOrb(self):
         if not self.duelCapsulePrice6.get() or not self.duelCapsuleWeight6.get() or not self.metalMushroomCapsulePrice6.get() or not self.metalMushroomCapsuleWeight6.get() or not self.mushroomCapsuleWeight6.get() or not self.goldenMushroomCapsulePrice6.get() or not self.goldenMushroomCapsuleWeight6.get() or not self.slowMushroomCapsulePrice6.get() or not self.slowMushroomCapsuleWeight6.get() or not self.bulletBillCapsulePrice6.get() or not self.bulletBillCapsuleWeight6.get() or not self.warpPipeCapsulePrice6.get() or not self.warpPipeCapsuleWeight6.get() or not self.flutterCapsulePrice6.get() or not self.flutterCapsuleWeight6.get() or not self.cursedMushroomCapsulePrice6.get() or not self.cursedMushroomCapsuleWeight6.get() or not self.spinyCapsulePrice6.get() or not self.spinyCapsuleWeight6.get() or not self.goombaCapsuleWeight6.get() or not self.goombaCapsulePrice6.get() or not self.plantCapsulePrice6.get() or not self.plantCapsuleWeight6.get() or not self.kleptoCapsuleWeight6.get() or not self.kleptoCapsulePrice6.get() or not self.kamekCapsuleWeight6.get() or not self.kamekCapsulePrice6.get() or not self.toadyCapsuleWeight6.get() or not self.toadyCapsulePrice6.get() or not self.blizzardCapsuleWeight6.get() or not self.blizzardCapsulePrice6.get() or not self.podobooCapsulePrice6.get() or not self.podobooCapsuleWeight6.get() or not self.paraTroopaCapsuleWeight6.get() or not self.paraTroopaCapsulePrice6.get() or not self.snackCapsulePrice6.get() or not self.snackCapsuleWeight6.get() or not self.zapCapsulePrice6.get() or not self.zapCapsuleWeight6.get() or not self.tweesterCapsulePrice6.get() or not self.tweesterCapsuleWeight6.get() or not self.thwompCapsulePrice6.get() or not self.thwompCapsuleWeight6.get() or not self.warpPipeCapsulePrice6.get() or not self.warpPipeCapsuleWeight6.get() or not self.bombCapsulePrice6.get() or not self.bombCapsuleWeight6.get() or not self.gaddLightCapsulePrice6.get() or not self.gaddLightCapsuleWeight6.get() or not self.chanceTimeCapsulePrice6.get() or not self.chanceTimeCapsuleWeight6.get() or not self.pinkBooCapsulePrice6.get() or not self.pinkBooCapsuleWeight6.get() or not self.bowserCapsulePrice6.get() or not self.bowserCapsuleWeight6.get() or not self.dkCapsulePrice6.get() or not self.dkCapsuleWeight6.get():
             if sys.platform == "darwin":
                 createDialog("Error", "error", "Please fill out all the boxes.", None)
             else:
-                notification.notify(title = 'Error', message = 'Please fill out all the boxes', app_icon = fetchResource("assets/error.ico"), timeout = 10)
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
             return
         
         mushroomCapsuleWeight6 = self.mushroomCapsuleWeight6.get()
@@ -4733,14 +4806,14 @@ class App(customtkinter.CTk):
         if sys.platform == "darwin":
             createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
         else:
-            notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
+            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonFiveCapsule(self):
         if not self.duelCapsulePrice5.get() or not self.duelCapsuleWeight5.get() or not self.warpPipeCapsulePrice5.get() or not self.warpPipeCapsuleWeight5.get() or not self.mushroomCapsulePrice5.get() or not self.mushroomCapsuleWeight5.get() or not self.goldenMushroomCapsulePrice5.get() or not self.goldenMushroomCapsuleWeight5.get() or not self.cursedMushroomCapsulePrice5.get() or not self.cursedMushroomCapsuleWeight5.get() or not self.kleptoCapsulePrice5.get() or not self.kleptoCapsuleWeight5.get() or not self.warpPipeCapsulePrice5.get() or not self.warpPipeCapsuleWeight5.get() or not self.flutterCapsulePrice5.get() or not self.flutterCapsuleWeight5.get() or not self.cursedMushroomCapsulePrice5.get() or not self.cursedMushroomCapsuleWeight5.get() or not self.spinyCapsulePrice5.get() or not self.spinyCapsuleWeight5.get() or not self.goombaCapsuleWeight5.get() or not self.goombaCapsulePrice5.get() or not self.plantCapsulePrice5.get() or not self.plantCapsuleWeight5.get() or not self.kleptoCapsuleWeight5.get() or not self.kleptoCapsulePrice5.get() or not self.kamekCapsuleWeight5.get() or not self.kamekCapsulePrice5.get() or not self.magiKoopaCapsuleWeight5.get() or not self.magiKoopaCapsulePrice5.get() or not self.blizzardCapsuleWeight5.get() or not self.blizzardCapsulePrice5.get() or not self.podobooCapsulePrice5.get() or not self.podobooCapsuleWeight5.get() or not self.paraTroopaCapsuleWeight5.get() or not self.paraTroopaCapsulePrice5.get() or not self.magiKoopaCapsulePrice5.get() or not self.magiKoopaCapsuleWeight5.get() or not self.ukikiCapsulePrice5.get() or not self.ukikiCapsuleWeight5.get() or not self.tweesterCapsulePrice5.get() or not self.tweesterCapsuleWeight5.get() or not self.lakituCapsulePrice5.get() or not self.lakituCapsuleWeight5.get() or not self.warpPipeCapsulePrice5.get() or not self.warpPipeCapsuleWeight5.get() or not self.miracleCapsulePrice5.get() or not self.miracleCapsuleWeight5.get() or not self.boneCapsulePrice5.get() or not self.boneCapsuleWeight5.get() or not self.chanceCapsulePrice5.get() or not self.chanceCapsuleWeight5.get() or not self.chainChompCapsulePrice5.get() or not self.chainChompCapsuleWeight5.get() or not self.bowserCapsulePrice5.get() or not self.bowserCapsuleWeight5.get() or not self.dkCapsulePrice5.get() or not self.dkCapsuleWeight5.get():
             if sys.platform == "darwin":
                 createDialog("Error", "error", "Please fill out all the boxes.", None)
             else:
-                notification.notify(title = 'Error', message = 'Please fill out all the boxes', app_icon = fetchResource("assets/error.ico"), timeout = 10)
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
             return
 
         mushroomCapsulePrice5 = self.mushroomCapsulePrice5.get()
@@ -5465,7 +5538,7 @@ class App(customtkinter.CTk):
         if sys.platform == "darwin":
             createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
         else:
-            notification.notify(title = 'Operation Sucesssful', message = 'Generated codes copied to clipboard!', app_icon = fetchResource("assets/success.ico"), timeout = 10)
+            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def mp1ButtonEvent(self):
         self.mario_party_1_button.configure(state="disabled")
@@ -5477,6 +5550,7 @@ class App(customtkinter.CTk):
         self.mario_party_7_button.configure(state="enabled")
         self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="enabled")
+        self.codeInjector_button.configure(state="enabled")
         self.credits_button.configure(state="enabled")
         self.reset_game_frames()
         self.create_game_frame("Mario Party 1")
@@ -5491,6 +5565,7 @@ class App(customtkinter.CTk):
         self.mario_party_7_button.configure(state="enabled")
         self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="enabled")
+        self.codeInjector_button.configure(state="enabled")
         self.credits_button.configure(state="enabled")
         self.reset_game_frames()
         self.create_game_frame("Mario Party 2")
@@ -5505,6 +5580,7 @@ class App(customtkinter.CTk):
         self.mario_party_7_button.configure(state="enabled")
         self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="enabled")
+        self.codeInjector_button.configure(state="enabled")
         self.reset_game_frames()
         self.create_game_frame("Mario Party 3")
 
@@ -5518,6 +5594,7 @@ class App(customtkinter.CTk):
         self.mario_party_7_button.configure(state="enabled")
         self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="enabled")
+        self.codeInjector_button.configure(state="enabled")
         self.credits_button.configure(state="enabled")
         self.reset_game_frames()
         self.create_game_frame("Mario Party 4")
@@ -5532,6 +5609,7 @@ class App(customtkinter.CTk):
         self.mario_party_7_button.configure(state="enabled")
         self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="enabled")
+        self.codeInjector_button.configure(state="enabled")
         self.credits_button.configure(state="enabled")
         self.reset_game_frames()
         self.create_game_frame("Mario Party 5")
@@ -5546,6 +5624,7 @@ class App(customtkinter.CTk):
         self.mario_party_7_button.configure(state="enabled")
         self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="enabled")
+        self.codeInjector_button.configure(state="enabled")
         self.credits_button.configure(state="enabled")
         self.reset_game_frames()
         self.create_game_frame("Mario Party 6")
@@ -5560,6 +5639,7 @@ class App(customtkinter.CTk):
         self.mario_party_7_button.configure(state="disabled")
         self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="enabled")
+        self.codeInjector_button.configure(state="enabled")
         self.credits_button.configure(state="enabled")
         self.reset_game_frames()
         self.create_game_frame("Mario Party 7")
@@ -5574,6 +5654,7 @@ class App(customtkinter.CTk):
         self.mario_party_7_button.configure(state="enabled")
         self.mario_party_8_button.configure(state="disabled")
         self.mario_party_82_button.configure(state="enabled")
+        self.codeInjector_button.configure(state="enabled")
         self.credits_button.configure(state="enabled")
         self.reset_game_frames()
         self.create_game_frame("Mario Party 8 (Rev. 1)")
@@ -5588,6 +5669,7 @@ class App(customtkinter.CTk):
         self.mario_party_7_button.configure(state="enabled")
         self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="disabled")
+        self.codeInjector_button.configure(state="enabled")
         self.credits_button.configure(state="enabled")
         self.reset_game_frames()
         self.create_game_frame("Mario Party 8 (Rev. 2)")
@@ -5602,9 +5684,25 @@ class App(customtkinter.CTk):
         self.mario_party_7_button.configure(state="enabled")
         self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="enabled")
+        self.codeInjector_button.configure(state="enabled")
         self.credits_button.configure(state="disabled")
         self.reset_game_frames()
         self.create_game_frame("Credits")
+
+    def codeInjectorButtonEvent(self):
+        self.mario_party_1_button.configure(state="enabled")
+        self.mario_party_2_button.configure(state="enabled")
+        self.mario_party_3_button.configure(state="enabled")
+        self.mario_party_4_button.configure(state="enabled")
+        self.mario_party_5_button.configure(state="enabled")
+        self.mario_party_6_button.configure(state="enabled")
+        self.mario_party_7_button.configure(state="enabled")
+        self.mario_party_8_button.configure(state="enabled")
+        self.mario_party_82_button.configure(state="enabled")
+        self.codeInjector_button.configure(state="disabled")
+        self.credits_button.configure(state="enabled")
+        self.reset_game_frames()
+        self.create_game_frame("Code Injector")
 
 if __name__ == "__main__":
     app = App()
