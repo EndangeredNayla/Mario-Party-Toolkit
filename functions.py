@@ -58,6 +58,16 @@ def run_update():
     url = "https://github.com/EndangeredNayla/Mario-Party-Toolkit/releases"
     webbrowser.open_new_tab(url)
 
+def is_file_greater_than_4gb(file_path):
+    # Get the size of the file in bytes
+    file_size_bytes = os.path.getsize(file_path)
+    
+    # Convert bytes to gigabytes
+    file_size_gb = file_size_bytes / (1024**3)  # 1 GB = 1024**3 bytes
+    
+    # Check if the file size is greater than 4 GB
+    return file_size_gb > 4
+
 def createDialog(windowTitle, warn, info, buttonTxt=None):
     completeWindow = ctk.CTkToplevel()
     completeWindow.geometry("600x165")
