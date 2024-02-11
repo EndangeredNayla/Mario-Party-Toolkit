@@ -2095,6 +2095,14 @@ class App(customtkinter.CTk):
             file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".iso", initialfile=gameName[:-4] + " (Modded).iso", filetypes=[("ISO Files", "*.iso")])
             shutil.move("tmp/game.iso", file_path)
             shutil.rmtree("tmp/") 
+        elif is_file_less_than_100mb(iso_path):
+            if sys.platform == "win32":
+                subprocess.run([fetchResource("dependencies/GSInject.exe"), "tmp/codes.txt", iso_path, "tmp/game.z64"], check=True)
+            else:
+                subprocess.run([fetchResource("dependencies/GSInject"), "tmp/codes.txt", iso_path, "tmp/tmp.z64"], check=True)
+            file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".z64", initialfile=gameName[:-4] + " (Modded).z64", filetypes=[("Z64 Files", "*.z64")])
+            shutil.move("tmp/game.z64", file_path)
+            shutil.rmtree("tmp/")
         else:
             if sys.platform == "win32":
                 subprocess.run([fetchResource("dependencies/pyisotools.exe"), iso_path, "E", "--dest=tmp/tmpROM/"], check=True)
