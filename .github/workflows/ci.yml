@@ -18,9 +18,6 @@ jobs:
     - name: Build Project (Dynamic build)
       run: pyinstaller --noconsole --name="Mario Party Toolkit" --add-data "assets/*;assets/" --icon="assets/diceBlock.ico" main.py
 
-    - name: Copy in Dependencies
-      run: xcopy /s /e /i "D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\dependencies\" "D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\dist\_internal\dependencies"
-
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
@@ -39,9 +36,6 @@ jobs:
 
     - name: Build Project (Static build)
       run: pyinstaller --onefile --noconsole --name="Mario Party Toolkit" --add-data "assets/*;assets/" --icon="assets/diceBlock.ico" main.py
-
-    - name: Copy in Dependencies
-      run: xcopy /s /e /i "D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\dependencies\" "D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\dist\dependencies"
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
