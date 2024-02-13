@@ -18,6 +18,7 @@ import subprocess
 import threading
 import shutil
 import time
+import tempfile
 
 from CTkToolTip import *
 
@@ -49,8 +50,10 @@ class App(customtkinter.CTk):
         self.sidebar_frame.grid(row=0, column=0, rowspan=4, sticky="nsew")
         self.sidebar_frame.grid_rowconfigure(11, weight=1)
 
-        self.logo_label = customtkinter.CTkLabel(self.sidebar_frame, text="Mario Party Toolkit", font=customtkinter.CTkFont(size=20, weight="bold"))
-        self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
+        logo_label = create_banner(self.sidebar_frame, "assets/mptoolkit.png", 0, 0)
+
+        #self.logo_label = customtkinter.CTkLabel(self.sidebar_frame, text="Mario Party Toolkit", font=customtkinter.CTkFont(size=20, weight="bold"))
+        #self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
 
         self.mario_party_1_button = customtkinter.CTkButton(self.sidebar_frame, text="Mario Party 1", command=self.mp1ButtonEvent)
         self.mario_party_1_button.grid(row=1, column=0, padx=20, pady=10)
@@ -2060,11 +2063,13 @@ class App(customtkinter.CTk):
                 createDialog("Error", "error", "No information provided.", None)
             return
 
-        if not os.path.exists("tmp"):
-            os.mkdir("tmp")
+        tmp_dir = tempfile.gettempdir() + "/MPTkt"
+
+        if not os.path.exists(tmp_dir):
+            os.mkdir(tmp_dir)
         else:
-            shutil.rmtree("tmp")
-            os.mkdir("tmp")
+            shutil.rmtree(tmp_dir)
+            os.mkdir(tmp_dir)
 
         with open("tmp/codes.txt", 'w') as file:
             file.write("$MPToolkit\n" + self.cheatCodeEntry.get("1.0", "end"))
@@ -2074,50 +2079,50 @@ class App(customtkinter.CTk):
 
         if is_file_greater_than_4gb(iso_path):
             if sys.platform == "win32":
-                subprocess.run([fetchResource("dependencies/wit.exe"), "extract", iso_path, "tmp/tmpROM/"], check=True)
+                subprocess.run([fetchResource("dependencies/wit.exe"), "extract", iso_path, f"{tmp_dir}/tmpROM"], check=True)
             else:
-                subprocess.run([fetchResource("dependencies/wit"), "extract", iso_path, "tmp/tmpROM/"], check=True)
-            tmpromContents = os.listdir("tmp/tmpROM")
-            folders = [item for item in tmpromContents if os.path.isdir(os.path.join("tmp/tmpROM", item))]
+                subprocess.run([fetchResource("dependencies/wit"), "extract", iso_path, f"{tmp_dir}/tmpROM"], check=True)
+            tmpromContents = os.listdir(f"{tmp_dir}/tmpROM")
+            folders = [item for item in tmpromContents if os.path.isdir(os.path.join(f"{tmp_dir}/tmpROM", item))]
             folder_name = folders[0]
-            folder_path = os.path.join("tmp/tmpROM", folder_name + "/sys/main.dol")
-            folder_path_raw = os.path.join("tmp/tmpROM", folder_name)
+            folder_path = os.path.join(f"{tmp_dir}/tmpROM", folder_name + "/sys/main.dol")
+            folder_path_raw = os.path.join(f"{tmp_dir}/tmpROM", folder_name)
             if sys.platform == "win32":
-                subprocess.run([fetchResource("dependencies/GeckoLoader.exe"), "--hooktype=GX", folder_path, "tmp/codes.txt", "--dest=tmp/tmpDOL"], check=True)
+                subprocess.run([fetchResource("dependencies/GeckoLoader.exe"), "--hooktype=GX", folder_path, f"{tmp_dir}/codes.txt", f"--dest={tmp_dir}/tmpDOL"], check=True)
             else:
-                subprocess.run([fetchResource("dependencies/GeckoLoader"), "--hooktype=GX", folder_path, "tmp/codes.txt", "--dest=tmp/tmpDOL"], check=True)
+                subprocess.run([fetchResource("dependencies/GeckoLoader"), "--hooktype=GX", folder_path, "tmp/codes.txt", f"--dest={tmp_dir}/tmpDOL"], check=True)
             os.remove(folder_path)
-            shutil.move("tmp/tmpDOL/main.dol", folder_path)
+            shutil.move(f"{tmp_dir}/tmpDOL/main.dol", folder_path)
             if sys.platform == "win32":
-                subprocess.run([fetchResource("dependencies/wit.exe"), "copy", folder_path_raw, "--dest=tmp/game.iso"], check=True)
+                subprocess.run([fetchResource("dependencies/wit.exe"), "copy", folder_path_raw, f"--dest={tmp_dir}/game.iso"], check=True)
             else:
-                subprocess.run([fetchResource("dependencies/wit"), "copy", folder_path_raw, "--dest=tmp/game.iso"], check=True)
+                subprocess.run([fetchResource("dependencies/wit"), "copy", folder_path_raw, f"--dest={tmp_dir}/game.iso"], check=True)
             file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".iso", initialfile=gameName[:-4] + " (Modded).iso", filetypes=[("ISO Files", "*.iso")])
-            shutil.move("tmp/game.iso", file_path)
-            shutil.rmtree("tmp/") 
+            shutil.move(f"{tmp_dir}/game.iso", file_path)
+            shutil.rmtree(f"{tmp_dir}/") 
         else:
             if sys.platform == "win32":
-                subprocess.run([fetchResource("dependencies/pyisotools.exe"), iso_path, "E", "--dest=tmp/tmpROM/"], check=True)
+                subprocess.run([fetchResource("dependencies/pyisotools.exe"), iso_path, "E", f"--dest={tmp_dir}/tmpROM/"], check=True)
             else:
-                subprocess.run([fetchResource("dependencies/pyisotools"), iso_path, "E", "--dest=tmp/tmpROM/"], check=True)
-            tmpromContents = os.listdir("tmp/tmpROM")
-            folders = [item for item in tmpromContents if os.path.isdir(os.path.join("tmp/tmpROM", item))]
+                subprocess.run([fetchResource("dependencies/pyisotools"), iso_path, "E", f"--dest={tmp_dir}/tmpROM/"], check=True)
+            tmpromContents = os.listdir(f"{tmp_dir}/tmpROM")
+            folders = [item for item in tmpromContents if os.path.isdir(os.path.join(f"{tmp_dir}/tmpROM", item))]
             folder_name = folders[0]
-            folder_path = os.path.join("tmp/tmpROM", folder_name + "/sys/main.dol")
-            folder_path_raw = os.path.join("tmp/tmpROM", folder_name)
+            folder_path = os.path.join(f"{tmp_dir}/tmpROM", folder_name + "/sys/main.dol")
+            folder_path_raw = os.path.join(f"{tmp_dir}/tmpROM", folder_name)
             if sys.platform == "win32":
-                subprocess.run([fetchResource("dependencies/GeckoLoader.exe"), "--hooktype=GX", folder_path, "tmp/codes.txt", "--dest=tmp/tmpDOL"], check=True)
+                subprocess.run([fetchResource("dependencies/GeckoLoader.exe"), "--hooktype=GX", folder_path, f"{tmp_dir}/codes.txt", f"--dest={tmp_dir}/tmpDOL"], check=True)
             else:
-                subprocess.run([fetchResource("dependencies/pyisotools"), iso_path, "E", "--dest=tmp/tmpROM/"], check=True)
+                subprocess.run([fetchResource("dependencies/GeckoLoader"), "--hooktype=GX", folder_path, f"{tmp_dir}/codes.txt", f"--dest={tmp_dir}/tmpDOL"], check=True)
             os.remove(folder_path)
-            shutil.move("tmp/tmpDOL/main.dol", folder_path)
+            shutil.move(f"{tmp_dir}/tmpDOL/main.dol", folder_path)
             if sys.platform == "win32":
-                subprocess.run([fetchResource("dependencies/pyisotools.exe"), folder_path_raw, "B", "--dest=../../game.iso"], check=True)
+                subprocess.run([fetchResource("dependencies/pyisotools.exe"), folder_path_raw, "B", f"--dest={tmp_dir}/game.iso"], check=True)
             else:
-                subprocess.run([fetchResource("dependencies/pyisotools"), folder_path_raw, "B", "--dest=../../game.iso"], check=True)
+                subprocess.run([fetchResource("dependencies/pyisotools"), folder_path_raw, "B", f"--dest={tmp_dir}/game.iso"], check=True)
             file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".iso", initialfile=gameName[:-4] + " (Modded).iso", filetypes=[("ISO Files", "*.iso")])
-            shutil.move("tmp/game.iso", file_path)
-            shutil.rmtree("tmp/")
+            shutil.move(f"{tmp_dir}/game.iso", file_path)
+            shutil.rmtree(f"{tmp_dir}/")
 
 
     def actionSpaceButtonOne(self):
