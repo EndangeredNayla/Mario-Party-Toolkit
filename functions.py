@@ -68,6 +68,25 @@ def is_file_greater_than_4gb(file_path):
     # Check if the file size is greater than 4 GB
     return file_size_gb > 4
 
+def find_lowest_integer(*args):
+    if not args:
+        return None  # Return None if no arguments are provided
+    lowest = args[0]  # Initialize lowest with the first argument
+    for num in args[1:]:  # Iterate over remaining arguments
+        if num < lowest:
+            lowest = num
+    return lowest
+    
+def is_file_less_than_100mb(file_path):
+    # Get the size of the file in bytes
+    file_size_bytes = os.path.getsize(file_path)
+    
+    # Convert bytes to megabytes
+    file_size_mb = file_size_bytes / (1024**2)  # 1 MB = 1024**2 bytes
+    
+    # Check if the file size is less than 100 MB
+    return file_size_mb < 100
+
 def createDialog(windowTitle, warn, info, buttonTxt=None):
     completeWindow = ctk.CTkToplevel()
     completeWindow.geometry("600x165")

@@ -18,7 +18,6 @@ import subprocess
 import threading
 import shutil
 import time
-import tempfile
 
 from CTkToolTip import *
 
@@ -51,9 +50,6 @@ class App(customtkinter.CTk):
         self.sidebar_frame.grid_rowconfigure(11, weight=1)
 
         logo_label = create_banner(self.sidebar_frame, "assets/mptoolkit.png", 0, 0)
-
-        #self.logo_label = customtkinter.CTkLabel(self.sidebar_frame, text="Mario Party Toolkit", font=customtkinter.CTkFont(size=20, weight="bold"))
-        #self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
 
         self.mario_party_1_button = customtkinter.CTkButton(self.sidebar_frame, text="Mario Party 1", command=self.mp1ButtonEvent)
         self.mario_party_1_button.grid(row=1, column=0, padx=20, pady=10)
@@ -2063,13 +2059,11 @@ class App(customtkinter.CTk):
                 createDialog("Error", "error", "No information provided.", None)
             return
 
-        tmp_dir = tempfile.gettempdir() + "/MPTkt"
-
-        if not os.path.exists(tmp_dir):
-            os.mkdir(tmp_dir)
+        if not os.path.exists("tmp"):
+            os.mkdir("tmp")
         else:
-            shutil.rmtree(tmp_dir)
-            os.mkdir(tmp_dir)
+            shutil.rmtree("tmp")
+            os.mkdir("tmp")
 
         with open("tmp/codes.txt", 'w') as file:
             file.write("$MPToolkit\n" + self.cheatCodeEntry.get("1.0", "end"))
@@ -2079,50 +2073,58 @@ class App(customtkinter.CTk):
 
         if is_file_greater_than_4gb(iso_path):
             if sys.platform == "win32":
-                subprocess.run([fetchResource("dependencies/wit.exe"), "extract", iso_path, f"{tmp_dir}/tmpROM"], check=True)
+                subprocess.run([fetchResource("dependencies/wit.exe"), "extract", iso_path, "tmp/tmpROM/"], check=True)
             else:
-                subprocess.run([fetchResource("dependencies/wit"), "extract", iso_path, f"{tmp_dir}/tmpROM"], check=True)
-            tmpromContents = os.listdir(f"{tmp_dir}/tmpROM")
-            folders = [item for item in tmpromContents if os.path.isdir(os.path.join(f"{tmp_dir}/tmpROM", item))]
+                subprocess.run([fetchResource("dependencies/wit"), "extract", iso_path, "tmp/tmpROM/"], check=True)
+            tmpromContents = os.listdir("tmp/tmpROM")
+            folders = [item for item in tmpromContents if os.path.isdir(os.path.join("tmp/tmpROM", item))]
             folder_name = folders[0]
-            folder_path = os.path.join(f"{tmp_dir}/tmpROM", folder_name + "/sys/main.dol")
-            folder_path_raw = os.path.join(f"{tmp_dir}/tmpROM", folder_name)
+            folder_path = os.path.join("tmp/tmpROM", folder_name + "/sys/main.dol")
+            folder_path_raw = os.path.join("tmp/tmpROM", folder_name)
             if sys.platform == "win32":
-                subprocess.run([fetchResource("dependencies/GeckoLoader.exe"), "--hooktype=GX", folder_path, f"{tmp_dir}/codes.txt", f"--dest={tmp_dir}/tmpDOL"], check=True)
+                subprocess.run([fetchResource("dependencies/GeckoLoader.exe"), "--hooktype=GX", folder_path, "tmp/codes.txt", "--dest=tmp/tmpDOL"], check=True)
             else:
-                subprocess.run([fetchResource("dependencies/GeckoLoader"), "--hooktype=GX", folder_path, "tmp/codes.txt", f"--dest={tmp_dir}/tmpDOL"], check=True)
+                subprocess.run([fetchResource("dependencies/GeckoLoader"), "--hooktype=GX", folder_path, "tmp/codes.txt", "--dest=tmp/tmpDOL"], check=True)
             os.remove(folder_path)
-            shutil.move(f"{tmp_dir}/tmpDOL/main.dol", folder_path)
+            shutil.move("tmp/tmpDOL/main.dol", folder_path)
             if sys.platform == "win32":
-                subprocess.run([fetchResource("dependencies/wit.exe"), "copy", folder_path_raw, f"--dest={tmp_dir}/game.iso"], check=True)
+                subprocess.run([fetchResource("dependencies/wit.exe"), "copy", folder_path_raw, "--dest=tmp/game.iso"], check=True)
             else:
-                subprocess.run([fetchResource("dependencies/wit"), "copy", folder_path_raw, f"--dest={tmp_dir}/game.iso"], check=True)
+                subprocess.run([fetchResource("dependencies/wit"), "copy", folder_path_raw, "--dest=tmp/game.iso"], check=True)
             file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".iso", initialfile=gameName[:-4] + " (Modded).iso", filetypes=[("ISO Files", "*.iso")])
-            shutil.move(f"{tmp_dir}/game.iso", file_path)
-            shutil.rmtree(f"{tmp_dir}/") 
+            shutil.move("tmp/game.iso", file_path)
+            shutil.rmtree("tmp/") 
+        elif is_file_less_than_100mb(iso_path):
+            if sys.platform == "win32":
+                subprocess.run([fetchResource("dependencies/GSInject.exe"), "tmp/codes.txt", iso_path, "tmp/game.z64"], check=True)
+            else:
+                subprocess.run([fetchResource("dependencies/GSInject"), "tmp/codes.txt", iso_path, "tmp/tmp.z64"], check=True)
+            file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".z64", initialfile=gameName[:-4] + " (Modded).z64", filetypes=[("Z64 Files", "*.z64")])
+            shutil.move("tmp/game.z64", file_path)
+            shutil.rmtree("tmp/")
         else:
             if sys.platform == "win32":
-                subprocess.run([fetchResource("dependencies/pyisotools.exe"), iso_path, "E", f"--dest={tmp_dir}/tmpROM/"], check=True)
+                subprocess.run([fetchResource("dependencies/pyisotools.exe"), iso_path, "E", "--dest=tmp/tmpROM/"], check=True)
             else:
-                subprocess.run([fetchResource("dependencies/pyisotools"), iso_path, "E", f"--dest={tmp_dir}/tmpROM/"], check=True)
-            tmpromContents = os.listdir(f"{tmp_dir}/tmpROM")
-            folders = [item for item in tmpromContents if os.path.isdir(os.path.join(f"{tmp_dir}/tmpROM", item))]
+                subprocess.run([fetchResource("dependencies/pyisotools"), iso_path, "E", "--dest=tmp/tmpROM/"], check=True)
+            tmpromContents = os.listdir("tmp/tmpROM")
+            folders = [item for item in tmpromContents if os.path.isdir(os.path.join("tmp/tmpROM", item))]
             folder_name = folders[0]
-            folder_path = os.path.join(f"{tmp_dir}/tmpROM", folder_name + "/sys/main.dol")
-            folder_path_raw = os.path.join(f"{tmp_dir}/tmpROM", folder_name)
+            folder_path = os.path.join("tmp/tmpROM", folder_name + "/sys/main.dol")
+            folder_path_raw = os.path.join("tmp/tmpROM", folder_name)
             if sys.platform == "win32":
-                subprocess.run([fetchResource("dependencies/GeckoLoader.exe"), "--hooktype=GX", folder_path, f"{tmp_dir}/codes.txt", f"--dest={tmp_dir}/tmpDOL"], check=True)
+                subprocess.run([fetchResource("dependencies/GeckoLoader.exe"), "--hooktype=GX", folder_path, "tmp/codes.txt", "--dest=tmp/tmpDOL"], check=True)
             else:
-                subprocess.run([fetchResource("dependencies/GeckoLoader"), "--hooktype=GX", folder_path, f"{tmp_dir}/codes.txt", f"--dest={tmp_dir}/tmpDOL"], check=True)
+                subprocess.run([fetchResource("dependencies/pyisotools"), iso_path, "E", "--dest=tmp/tmpROM/"], check=True)
             os.remove(folder_path)
-            shutil.move(f"{tmp_dir}/tmpDOL/main.dol", folder_path)
+            shutil.move("tmp/tmpDOL/main.dol", folder_path)
             if sys.platform == "win32":
-                subprocess.run([fetchResource("dependencies/pyisotools.exe"), folder_path_raw, "B", f"--dest={tmp_dir}/game.iso"], check=True)
+                subprocess.run([fetchResource("dependencies/pyisotools.exe"), folder_path_raw, "B", "--dest=../../game.iso"], check=True)
             else:
-                subprocess.run([fetchResource("dependencies/pyisotools"), folder_path_raw, "B", f"--dest={tmp_dir}/game.iso"], check=True)
+                subprocess.run([fetchResource("dependencies/pyisotools"), folder_path_raw, "B", "--dest=../../game.iso"], check=True)
             file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".iso", initialfile=gameName[:-4] + " (Modded).iso", filetypes=[("ISO Files", "*.iso")])
-            shutil.move(f"{tmp_dir}/game.iso", file_path)
-            shutil.rmtree(f"{tmp_dir}/")
+            shutil.move("tmp/game.iso", file_path)
+            shutil.rmtree("tmp/")
 
 
     def actionSpaceButtonOne(self):
@@ -3256,6 +3258,7 @@ class App(customtkinter.CTk):
         itemBagWeight4 = self.itemBagWeight4.get()
 
         orbWeightTotal = int(miniWeight4) + int(megaWeight4) + int(superMiniWeight4) + int(superMegaWeight4) + int(miniMegaHammerWeight4) + int(warpPipeWeight4) + int(swapCardWeight4) + int(sparkyStickerWeight4) + int(gaddlightWeight4) + int(chompCallWeight4) + int(bowserSuitWeight4) + int(crystalBallWeight4) + int(magicLampWeight4) + int(itemBagWeight4)
+        orbPriceMin = find_lowest_integer(*[int(miniPrice4), int(megaPrice4), int(superMiniPrice4), int(superMegaPrice4), int(miniMegaHammerPrice4), int(warpPipePrice4), int(swapCardPrice4), int(sparkyStickerPrice4), int(gaddlightPrice4), int(chompCallPrice4), int(bowserSuitPrice4), int(crystalBallPrice4), int(magicLampPrice4), int(itemBagPrice4)])
 
         miniWeight4 = (int(miniWeight4) / orbWeightTotal) * 100
         megaWeight4 = (int(megaWeight4) / orbWeightTotal) * 100
@@ -3524,7 +3527,14 @@ class App(customtkinter.CTk):
         except:
             itemBagPrice4 = "00"
 
-        generatedCode = getItemModsFour(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, sparkyStickerPrice4, sparkyStickerWeight4, gaddlightPrice4, gaddlightWeight4, chompCallPrice4, chompCallWeight4, bowserSuitPrice4, bowserSuitWeight4, crystalBallPrice4, crystalBallWeight4, magicLampPrice4, magicLampWeight4, itemBagPrice4, itemBagWeight4)
+        orbPriceMin = hex(int(orbPriceMin))
+        print(orbPriceMin)
+        if len(orbPriceMin) == 4:
+            orbPriceMin = "00" + orbPriceMin[2:]
+        elif len(orbPriceMin) == 3:
+            orbPriceMin = "000" + orbPriceMin[2:]
+
+        generatedCode = getItemModsFour(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, sparkyStickerPrice4, sparkyStickerWeight4, gaddlightPrice4, gaddlightWeight4, chompCallPrice4, chompCallWeight4, bowserSuitPrice4, bowserSuitWeight4, crystalBallPrice4, crystalBallWeight4, magicLampPrice4, magicLampWeight4, itemBagPrice4, itemBagWeight4, orbPriceMin)
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
 
