@@ -41,6 +41,16 @@ def create_image_icon(frame, image_path, row, column):
     label.image = image_tk  # Keep a reference to the image to prevent it from being garbage collected
     label.grid(row=row, column=column)
 
+def create_banner(frame, image_path, row, column):
+    # Create and configure the canvas with the provided image
+    image = Image.open(fetchResource(image_path))
+    image = image.resize((200, 75))
+    image_tk = ImageTk.PhotoImage(image)
+    label = tk.Label(frame, image=image_tk)
+    label.configure(bg='#2d2d2d') # Windows fix
+    label.image = image_tk  # Keep a reference to the image to prevent it from being garbage collected
+    label.grid(row=row, column=column)
+
 def check_for_updates():
     pastebin_url = "https://pastebin.com/raw/MrpYHUHy"
     response = requests.get(pastebin_url)
