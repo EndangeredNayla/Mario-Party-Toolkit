@@ -1,4 +1,6 @@
 # Mario Party Toolkit
+![mptoolkit](https://github.com/EndangeredNayla/Mario-Party-Toolkit/assets/48419040/0dde2000-cfa9-41d6-b996-dbf1d3652bcc)
+
 
 Introducing the Mario Party Toolkit, a versatile piece of software designed to revolutionize your Mario Party gaming experience. Developed by a collaborative effort of various talented code creators, this toolkit grants you unprecedented control over the intricacies of your Mario Party sessions. Released initially on GitHub in late 2022, it has now undergone extensive refinement to ensure stability and usability for all enthusiasts.
 
