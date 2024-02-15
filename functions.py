@@ -78,13 +78,15 @@ def is_file_greater_than_4gb(file_path):
     # Check if the file size is greater than 4 GB
     return file_size_gb > 4
 
-def find_lowest_integer(*args):
+def find_lowest_integer_not_zero(*args):
     if not args:
         return None  # Return None if no arguments are provided
-    lowest = args[0]  # Initialize lowest with the first argument
-    for num in args[1:]:  # Iterate over remaining arguments
-        if num < lowest:
+    lowest = float('inf')  # Initialize lowest with positive infinity
+    for num in args:  # Iterate over arguments
+        if num != 0 and num < lowest:
             lowest = num
+    if lowest == float('inf'):
+        return None  # If no non-zero integers were found, return None
     return lowest
     
 def is_file_less_than_100mb(file_path):
