@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 2/8/2024
+# Date: 2/15/2024
 # License: MIT
 # ============================================
 
@@ -94,6 +94,71 @@ MP3 - Red Spaces Take Away THREERED Coins: THREEREDSWITCH
 810FE2CE 0001
 810FE2D0 0010
 810FE2D2 8040
+'''
+
+def getKoopaBankCodeThree(amount, negAmount):
+    return f'''
+MP3 - Koopa Bank Deposits are THREEKOOPA Coins
+D10CE202 0048
+8110AE3E {amount}
+D10CE202 0048
+8110AFB6 {amount}
+D10CE202 0048
+8110AFE6 {amount}
+D10CE202 0048
+8110AFFA {negAmount}
+D10CE202 0048
+8110B002 {negAmount}
+D10CE202 0049
+8110A9AA {amount}
+D10CE202 0049
+8110AB22 {amount}
+D10CE202 0049
+8110AB52 {amount}
+D10CE202 0049
+8110AB66 {negAmount}
+D10CE202 0049
+8110AB6E {negAmount}
+D10CE202 004A
+8110AF16 {amount}
+D10CE202 004A
+8110B08E {amount}
+D10CE202 004A
+8110B0BE {amount}
+D10CE202 004A
+8110B0D2 {negAmount}
+D10CE202 004A
+8110B0DA {negAmount}
+D10CE202 004B
+8110A9DE {amount}
+D10CE202 004B
+8110AB56 {amount}
+D10CE202 004B
+8110AB86 {amount}
+D10CE202 004B
+8110AB9A {negAmount}
+D10CE202 004B
+8110ABA2 {negAmount}
+D10CE202 004C
+8110A3EE {amount}
+D10CE202 004C
+8110A566 {amount}
+D10CE202 004C
+8110A596 {amount}
+D10CE202 004C
+8110A5AA {negAmount}
+D10CE202 004C
+8110A5B2 {negAmount}
+D10CE202 004D
+8110C1CE {amount}
+D10CE202 004D
+8110C346 {amount}
+D10CE202 004D
+8110C376 {amount}
+D10CE202 004D
+8110C38A {negAmount}
+D10CE202 004D
+8110C392 {negAmount}
 '''
 
 def getRedSpaceCodeFour(amount):

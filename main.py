@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 2/8/2024
+# Date: 2/15/2024
 # License: MIT
 # ============================================
 
@@ -246,6 +246,16 @@ class App(customtkinter.CTk):
         redSpaceLabel3.grid(row=2, column=4)
         self.redSpaceTickboxThree = ctk.CTkCheckBox(master=tabview.tab("Coins Mods"), text="Double the coins on Last 5", width=16, checkbox_width=16, checkbox_height=16)
         self.redSpaceTickboxThree.grid(row=2, column=5, padx=10, pady=10)
+
+        # Create koopa bank space icon and entry
+        koopaBankIconThree = create_image_icon(tabview.tab("Coins Mods"), "assets/koopaBank3.png", 3, 1)
+        koopaBankLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Lose  ", font=("Arial", 16))
+        koopaBankLabel.grid(row=3, column=2)
+        self.koopaBankAmountThree = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
+        self.koopaBankAmountThree.grid(row=3, column=3)
+        koopaBankLabel3 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins to Koopa Bank.", font=("Arial", 16))
+        koopaBankLabel3.grid(row=3, column=4)
+
         parseButtonThree = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonThree, text="Generate Codes")
         parseButtonThree.place(x=10, y=560)
         return frame
@@ -2053,10 +2063,7 @@ class App(customtkinter.CTk):
 
     def injectCodesFunc(self):
         if not self.cheatCodeEntry.get("1.0", "end"):
-            if sys.platform == "darwin":
-                createDialog("Error", "error", "No information provided.", None)
-            else:
-                createDialog("Error", "error", "No information provided.", None)
+            createDialog("Error", "error", "No information provided.", None)
             return
 
         if not os.path.exists("tmp"):
@@ -2129,10 +2136,7 @@ class App(customtkinter.CTk):
 
     def actionSpaceButtonOne(self):
         if not self.blueSpaceAmountOne.get() and not self.redSpaceAmountOne.get():
-            if sys.platform == "darwin":
-                createDialog("Error", "error", "No information provided.", None)
-            else:
-                createDialog("Error", "error", "No information provided.", None)
+            createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseOne = self.blueSpaceAmountOne.get()
@@ -2203,17 +2207,11 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        if sys.platform == "darwin":
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
-        else:
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonTwo(self):
         if not self.blueSpaceAmountTwo.get() and not self.redSpaceAmountTwo.get():
-            if sys.platform == "darwin":
-                createDialog("Error", "error", "No information provided.", None)
-            else:
-                createDialog("Error", "error", "No information provided.", None)
+            createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseTwo = self.blueSpaceAmountTwo.get()
@@ -2284,17 +2282,11 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        if sys.platform == "darwin":
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
-        else:
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
     
     def actionSpaceButtonThree(self):
-        if not self.blueSpaceAmountThree.get() and not self.redSpaceAmountThree.get():
-            if sys.platform == "darwin":
-                createDialog("Error", "error", "No information provided.", None)
-            else:
-                createDialog("Error", "error", "No information provided.", None)
+        if not self.blueSpaceAmountThree.get() and not self.redSpaceAmountThree.get() and not self.koopaBankAmountThree.get():
+            createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseThree = self.blueSpaceAmountThree.get()
@@ -2327,7 +2319,21 @@ class App(customtkinter.CTk):
                 redSpaceAmountThree = "000" + redSpaceAmountThree[2:]
         except:
             redSpaceAmountThree = "DUMMY"
-    
+
+        koopaBankAmountBaseThree = self.koopaBankAmountThree.get()
+        try:
+            koopaBankAmountThree = hex(int(self.koopaBankAmountThree.get()))
+            if len(koopaBankAmountThree) == 5:
+                koopaBankAmountThree = "0" + koopaBankAmountThree[2:]
+            elif len(koopaBankAmountThree) == 4:
+                koopaBankAmountThree = "00" + koopaBankAmountThree[2:]
+            elif len(koopaBankAmountThree) == 3:
+                koopaBankAmountThree = "000" + koopaBankAmountThree[2:]
+            negativeKoopaBankAmountBaseThree = -int(koopaBankAmountBaseThree)
+            koopaBankAmountNegativeThree = format(negativeKoopaBankAmountBaseThree & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+        except:
+            koopaBankAmountThree = "DUMMY"
+            koopaBankAmountNegativeThree = "DUMMY"
     
         redSpaceSwitchThree = self.redSpaceTickboxThree.get()
         if redSpaceSwitchThree == True:
@@ -2337,13 +2343,18 @@ class App(customtkinter.CTk):
     
         marioPartyThreeBlueSpace = getBlueSpaceCodeThree(blueSpaceAmountThree, blueSpaceSwitchThree)
         marioPartyThreeRedSpace = getRedSpaceCodeThree(redSpaceAmountThree, redSpaceSwitchThree)
+        marioPartyThreeKoopaBank = getKoopaBankCodeThree(koopaBankAmountThree, koopaBankAmountNegativeThree)
     
         if redSpaceAmountThree == "DUMMY":
             marioPartyThreeRedSpace = ""
         if blueSpaceAmountThree == "DUMMY":
             marioPartyThreeBlueSpace = ""
+        if koopaBankAmountThree == "DUMMY":
+            marioPartyThreeKoopaBank = ""
+        if koopaBankAmountNegativeThree == "DUMMY":
+            marioPartyThreeKoopaBank = ""
     
-        generatedCode = marioPartyThreeBlueSpace + marioPartyThreeRedSpace
+        generatedCode = marioPartyThreeBlueSpace + marioPartyThreeRedSpace + marioPartyThreeKoopaBank
 
         if redSpaceSwitchThree == "0":
             generatedCode = generatedCode.replace("THREEREDSWITCH", "Doesn't Double on Last 5")
@@ -2361,21 +2372,16 @@ class App(customtkinter.CTk):
 
         generatedCode = generatedCode.replace("THREERED", redSpaceAmountBaseThree)
         generatedCode = generatedCode.replace("THREEBLUE", blueSpaceAmountBaseThree)
-    
+        generatedCode = generatedCode.replace("THREEKOOPA", koopaBankAmountBaseThree)
+
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        if sys.platform == "darwin":
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
-        else:
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonFour(self):    
         if not self.blueSpaceAmountFour.get() and not self.miniGameAmountFour.get() and not self.redSpaceAmountFour.get() and not self.starSpaceAmountFour.get() and not self.booSpaceAmountFour.get() and not self.lotterySpaceAmountFour.get():
-            if sys.platform == "darwin":
-                createDialog("Error", "error", "No information provided.", None)
-            else:
-                createDialog("Error", "error", "No information provided.", None)
+            createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseFour = self.blueSpaceAmountFour.get()
@@ -2479,17 +2485,11 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        if sys.platform == "darwin":
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
-        else:
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonFive(self):
         if not self.blueSpaceAmountFive.get() and not self.miniGameAmountFive.get() and not self.redSpaceAmountFive.get() and not self.starSpaceAmountFive.get() and not self.wigglerSpaceAmountFive.get():
-            if sys.platform == "darwin":
-                createDialog("Error", "error", "No information provided.", None)
-            else:
-                createDialog("Error", "error", "No information provided.", None)
+            createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseFive = self.blueSpaceAmountFive.get()
@@ -2609,17 +2609,11 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        if sys.platform == "darwin":
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
-        else:
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonSix(self):
         if not self.blueSpaceAmountSix.get() and not self.miniGameAmountSix.get() and not self.redSpaceAmountSix.get() and not self.starSpaceAmountSix.get() and not self.pinkBooSpaceAmountSix.get() and not self.characterSpaceAmountSix.get():
-            if sys.platform == "darwin":
-                createDialog("Error", "error", "No information provided.", None)
-            else:
-                createDialog("Error", "error", "No information provided.", None)
+            createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseSix = self.blueSpaceAmountSix.get()
@@ -2728,17 +2722,11 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        if sys.platform == "darwin":
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
-        else:
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonSeven(self):
         if not self.blueSpaceAmountSeven.get() and not self.miniGameAmountSeven.get() and not self.characterSpaceAmountSeven.get()  and not self.redSpaceAmountSeven.get() and not self.starSpaceAmountSeven.get() and not self.starSpaceAmountSevenLastFive.get() and not self.hammerBroAmountSeven.get() and not self.zapAmountSeven.get():
-            if sys.platform == "darwin":
-                createDialog("Error", "error", "No information provided.", None)
-            else:
-                createDialog("Error", "error", "No information provided.", None)
+            createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseSeven = self.blueSpaceAmountSeven.get()
@@ -2880,17 +2868,11 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        if sys.platform == "darwin":
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
-        else:
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonEight(self):
         if not self.blueSpaceAmountEight.get() and not self.redSpaceAmountEight.get() and not self.starSpaceAmountEight.get():
-            if sys.platform == "darwin":
-                createDialog("Error", "error", "No information provided.", None)
-            else:
-                createDialog("Error", "error", "No information provided.", None)
+            createDialog("Error", "error", "No information provided.", None)
             return
 
         blueSpaceAmountBaseEight = self.blueSpaceAmountEight.get()
@@ -2950,17 +2932,11 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
-        if sys.platform == "darwin":
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
-        else:
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonEight2(self):
         if not self.miniGameAmountEight2.get() and not self.blueSpaceAmountEight2.get() and not self.redSpaceAmountEight2.get() and not self.starSpaceAmountEight2.get():
-            if sys.platform == "darwin":
-                createDialog("Error", "error", "No information provided.", None)
-            else:
-                createDialog("Error", "error", "No information provided.", None)
+            createDialog("Error", "error", "No information provided.", None)
             return
         blueSpaceAmountBaseEight2 = self.blueSpaceAmountEight2.get()
 
@@ -3033,10 +3009,7 @@ class App(customtkinter.CTk):
         pyperclip.copy(generatedCode)
 
         print("Generated codes copied to the clipboard.")
-        if sys.platform == "darwin":
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
-        else:
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionFaireSquare(self):
         if not self.faireSquare1.get() and not self.faireSquare2.get() and not self.faireSquare3.get() and not self.faireSquare4.get():
@@ -3115,10 +3088,7 @@ class App(customtkinter.CTk):
         pyperclip.copy(generatedCode)
 
         print("Generated codes copied to the clipboard.")
-        if sys.platform == "darwin":
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
-        else:
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionBattle4(self):
         if not self.battle41.get() and not self.battle42.get() and not self.battle43.get() and not self.battle44.get() and not self.battle45.get():
@@ -3202,10 +3172,7 @@ class App(customtkinter.CTk):
         pyperclip.copy(generatedCode)
 
         print("Generated codes copied to the clipboard.")
-        if sys.platform == "darwin":
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
-        else:
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonFourItem(self):
         if not self.miniPrice4.get() or not self.miniWeight4.get() or not self.megaPrice4.get() or not self.megaWeight4.get() or not self.superMegaPrice4.get() or not self.superMegaWeight4.get() or not self.superMiniPrice4.get() or not self.superMiniWeight4.get() or not self.miniMegaHammerPrice4.get() or not self.miniMegaHammerWeight4.get() or not self.warpPipePrice4.get() or not self.warpPipeWeight4.get() or not self.swapCardPrice4.get() or not self.swapCardWeight4.get() or not self.sparkyStickerPrice4.get() or not self.sparkyStickerWeight4.get() or not self.bowserSuitPrice4.get() or not self.bowserSuitWeight4.get() or not self.gaddlightPrice4.get() or not self.gaddlightWeight4.get() or not self.chompCallPrice4.get() or not self.chompCallWeight4.get() or not self.crystalBallPrice4.get() or not self.crystalBallWeight4.get() or not self.magicLampPrice4.get() or not self.magicLampWeight4.get() or not self.itemBagPrice4.get()  or not self.itemBagWeight4.get():
@@ -3539,10 +3506,7 @@ class App(customtkinter.CTk):
         pyperclip.copy(generatedCode)
 
         print("Generated code copied to the clipboard.")
-        if sys.platform == "darwin":
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
-        else:
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonSevenOrb(self):
         if not self.mushroomCapsuleWeight7.get() or not self.goldenMushroomCapsulePrice7.get() or not self.goldenMushroomCapsuleWeight7.get() or not self.slowMushroomCapsulePrice7.get() or not self.slowMushroomCapsuleWeight7.get() or not self.metalMushroomCapsulePrice7.get() or not self.metalMushroomCapsuleWeight7.get() or not self.flutterCapsulePrice7.get() or not self.flutterCapsuleWeight7.get() or not self.cannonCapsulePrice7.get() or not self.cannonCapsuleWeight7.get() or not self.snackCapsulePrice7.get() or not self.snackCapsuleWeight7.get() or not self.lakituCapsulePrice7.get() or not self.lakituCapsuleWeight7.get() or not self.hammerBroCapsuleWeight7.get() or not self.hammerBroCapsulePrice7.get() or not self.plantCapsulePrice7.get() or not self.plantCapsuleWeight7.get() or not self.spearCapsuleWeight7.get() or not self.spearCapsulePrice7.get() or not self.kamekCapsuleWeight7.get() or not self.kamekCapsulePrice7.get() or not self.toadyCapsuleWeight7.get() or not self.toadyCapsulePrice7.get() or not self.blizzardCapsuleWeight7.get() or not self.blizzardCapsulePrice7.get() or not self.banditCapsulePrice7.get() or not self.banditCapsuleWeight7.get() or not self.pinkBooCapsuleWeight7.get() or not self.pinkBooCapsulePrice7.get() or not self.spinyCapsulePrice7.get() or not self.spinyCapsuleWeight7.get() or not self.zapCapsulePrice7.get() or not self.zapCapsuleWeight7.get() or not self.tweesterCapsulePrice7.get() or not self.tweesterCapsuleWeight7.get() or not self.thwompCapsulePrice7.get() or not self.thwompCapsuleWeight7.get() or not self.warpCapsulePrice7.get() or not self.warpCapsuleWeight7.get() or not self.bombCapsulePrice7.get() or not self.bombCapsuleWeight7.get() or not self.fireballCapsulePrice7.get() or not self.fireballCapsuleWeight7.get() or not self.eggCapsulePrice7.get() or not self.eggCapsuleWeight7.get() or not self.flowerCapsulePrice7.get() or not self.flowerCapsuleWeight7.get() or not self.vacuumCapsulePrice7.get() or not self.vacuumCapsuleWeight7.get() or not self.magicCapsulePrice7.get() or not self.magicCapsuleWeight7.get() or not self.tripleCapsulePrice7.get() or not self.tripleCapsuleWeight7.get() or not self.koopaCapsulePrice7.get() or not self.koopaCapsuleWeight7.get():
@@ -4188,10 +4152,7 @@ class App(customtkinter.CTk):
         pyperclip.copy(generatedCode)
 
         print("Generated code copied to the clipboard.")
-        if sys.platform == "darwin":
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
-        else:
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonSixOrb(self):
         if not self.duelCapsulePrice6.get() or not self.duelCapsuleWeight6.get() or not self.metalMushroomCapsulePrice6.get() or not self.metalMushroomCapsuleWeight6.get() or not self.mushroomCapsuleWeight6.get() or not self.goldenMushroomCapsulePrice6.get() or not self.goldenMushroomCapsuleWeight6.get() or not self.slowMushroomCapsulePrice6.get() or not self.slowMushroomCapsuleWeight6.get() or not self.bulletBillCapsulePrice6.get() or not self.bulletBillCapsuleWeight6.get() or not self.warpPipeCapsulePrice6.get() or not self.warpPipeCapsuleWeight6.get() or not self.flutterCapsulePrice6.get() or not self.flutterCapsuleWeight6.get() or not self.cursedMushroomCapsulePrice6.get() or not self.cursedMushroomCapsuleWeight6.get() or not self.spinyCapsulePrice6.get() or not self.spinyCapsuleWeight6.get() or not self.goombaCapsuleWeight6.get() or not self.goombaCapsulePrice6.get() or not self.plantCapsulePrice6.get() or not self.plantCapsuleWeight6.get() or not self.kleptoCapsuleWeight6.get() or not self.kleptoCapsulePrice6.get() or not self.kamekCapsuleWeight6.get() or not self.kamekCapsulePrice6.get() or not self.toadyCapsuleWeight6.get() or not self.toadyCapsulePrice6.get() or not self.blizzardCapsuleWeight6.get() or not self.blizzardCapsulePrice6.get() or not self.podobooCapsulePrice6.get() or not self.podobooCapsuleWeight6.get() or not self.paraTroopaCapsuleWeight6.get() or not self.paraTroopaCapsulePrice6.get() or not self.snackCapsulePrice6.get() or not self.snackCapsuleWeight6.get() or not self.zapCapsulePrice6.get() or not self.zapCapsuleWeight6.get() or not self.tweesterCapsulePrice6.get() or not self.tweesterCapsuleWeight6.get() or not self.thwompCapsulePrice6.get() or not self.thwompCapsuleWeight6.get() or not self.warpPipeCapsulePrice6.get() or not self.warpPipeCapsuleWeight6.get() or not self.bombCapsulePrice6.get() or not self.bombCapsuleWeight6.get() or not self.gaddLightCapsulePrice6.get() or not self.gaddLightCapsuleWeight6.get() or not self.chanceTimeCapsulePrice6.get() or not self.chanceTimeCapsuleWeight6.get() or not self.pinkBooCapsulePrice6.get() or not self.pinkBooCapsuleWeight6.get() or not self.bowserCapsulePrice6.get() or not self.bowserCapsuleWeight6.get() or not self.dkCapsulePrice6.get() or not self.dkCapsuleWeight6.get():
@@ -4836,10 +4797,7 @@ class App(customtkinter.CTk):
         pyperclip.copy(generatedCode)
 
         print("Generated code copied to the clipboard.")
-        if sys.platform == "darwin":
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
-        else:
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonFiveCapsule(self):
         if not self.duelCapsulePrice5.get() or not self.duelCapsuleWeight5.get() or not self.warpPipeCapsulePrice5.get() or not self.warpPipeCapsuleWeight5.get() or not self.mushroomCapsulePrice5.get() or not self.mushroomCapsuleWeight5.get() or not self.goldenMushroomCapsulePrice5.get() or not self.goldenMushroomCapsuleWeight5.get() or not self.cursedMushroomCapsulePrice5.get() or not self.cursedMushroomCapsuleWeight5.get() or not self.kleptoCapsulePrice5.get() or not self.kleptoCapsuleWeight5.get() or not self.warpPipeCapsulePrice5.get() or not self.warpPipeCapsuleWeight5.get() or not self.flutterCapsulePrice5.get() or not self.flutterCapsuleWeight5.get() or not self.cursedMushroomCapsulePrice5.get() or not self.cursedMushroomCapsuleWeight5.get() or not self.spinyCapsulePrice5.get() or not self.spinyCapsuleWeight5.get() or not self.goombaCapsuleWeight5.get() or not self.goombaCapsulePrice5.get() or not self.plantCapsulePrice5.get() or not self.plantCapsuleWeight5.get() or not self.kleptoCapsuleWeight5.get() or not self.kleptoCapsulePrice5.get() or not self.kamekCapsuleWeight5.get() or not self.kamekCapsulePrice5.get() or not self.magiKoopaCapsuleWeight5.get() or not self.magiKoopaCapsulePrice5.get() or not self.blizzardCapsuleWeight5.get() or not self.blizzardCapsulePrice5.get() or not self.podobooCapsulePrice5.get() or not self.podobooCapsuleWeight5.get() or not self.paraTroopaCapsuleWeight5.get() or not self.paraTroopaCapsulePrice5.get() or not self.magiKoopaCapsulePrice5.get() or not self.magiKoopaCapsuleWeight5.get() or not self.ukikiCapsulePrice5.get() or not self.ukikiCapsuleWeight5.get() or not self.tweesterCapsulePrice5.get() or not self.tweesterCapsuleWeight5.get() or not self.lakituCapsulePrice5.get() or not self.lakituCapsuleWeight5.get() or not self.warpPipeCapsulePrice5.get() or not self.warpPipeCapsuleWeight5.get() or not self.miracleCapsulePrice5.get() or not self.miracleCapsuleWeight5.get() or not self.boneCapsulePrice5.get() or not self.boneCapsuleWeight5.get() or not self.chanceCapsulePrice5.get() or not self.chanceCapsuleWeight5.get() or not self.chainChompCapsulePrice5.get() or not self.chainChompCapsuleWeight5.get() or not self.bowserCapsulePrice5.get() or not self.bowserCapsuleWeight5.get() or not self.dkCapsulePrice5.get() or not self.dkCapsuleWeight5.get():
@@ -5568,10 +5526,7 @@ class App(customtkinter.CTk):
         pyperclip.copy(generatedCode)
 
         print("Generated code copied to the clipboard.")
-        if sys.platform == "darwin":
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
-        else:
-            createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def mp1ButtonEvent(self):
         self.mario_party_1_button.configure(state="disabled")

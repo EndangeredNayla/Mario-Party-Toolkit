@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 2/8/2024
+# Date: 2/15/2024
 # License: MIT
 # ============================================
 
@@ -78,7 +78,7 @@ def is_file_greater_than_4gb(file_path):
     # Check if the file size is greater than 4 GB
     return file_size_gb > 4
 
-def find_lowest_integer_not_zero(*args):
+def find_lowest_integer(*args):
     if not args:
         return None  # Return None if no arguments are provided
     lowest = float('inf')  # Initialize lowest with positive infinity
