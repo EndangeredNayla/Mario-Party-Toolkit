@@ -269,11 +269,17 @@ E2000001 80008000
 E2000001 80008000
 '''
 
-
 def getBooSpaceCodeFour(amount):
     return f'''
-MP4 - Stars Cost FOURBOO Coins when stealing at the Boo House
+MP4 - Stars Cost FOURBOOSTARS Coins when stealing at the Boo House
 040A5F30 2C1E{amount}
+'''
+
+def getBooSpaceCoinsCodeFour(amount):
+    return f'''
+MP4 - Coins Cost FOURBOOCOINS Coins when stealing at the Boo House
+040A61DC 2C1E{amount}
+040A517C 2C03{amount}
 '''
 
 def getStarSpaceCodeFour(amount):
@@ -502,10 +508,19 @@ E2000001 80008000
 
 def getPinkBooSpaceCodeSix(amount, negAmount):
     return f'''
-MP6 - Stars Cost SIXBOO Coins when stealing with Pink Boo
+MP6 - Stars Cost SIXBOOSTARS Coins when stealing with Pink Boo
 C21B1FB4 00000001
 2C04{amount} 00000000
 C21B2634 00000001
+3880{negAmount} 00000000
+'''
+
+def getPinkBooCoinsSpaceCodeSix(amount, negAmount):
+    return f'''
+MP6 - Coins Cost SIXBOOCOINS Coins when stealing with Pink Boo
+C21B1F28 00000001
+2C04{amount} 00000000
+C21B2626 00000001
 3880{negAmount} 00000000
 '''
 
@@ -615,6 +630,25 @@ def getZapSpaceCodeSeven(amount):
 MP7 - Zap Takes SEVENZAP Coins
 C21B652C 00000001
 3880{amount} 00000000
+'''
+
+def getFlowerSpaceCodeSeven(amount):
+    return f'''
+MP7 - Flower Gives SEVENFLOWER Coins Per Space
+041C4F24 3B40{amount}
+'''
+
+def getVacuumSpaceCodeSeven(amount):
+    return f'''
+MP7 - Vaccum Always Steals SEVENVACUUM Coins
+041C8A34 3860{amount}
+'''
+
+def getFireballSpaceCodeSeven(amount, negAmount):
+    return f'''
+MP7 - Fireball Takes SEVENFIREBALL Coins
+041C1464 3b80{amount}
+041C148C 38A0{negAmount}
 '''
 
 def getBlueSpaceCodeEight(amount):
@@ -1084,21 +1118,21 @@ C20C8FA0 00000024
 9421FFF0 7C0802A6
 90010014 93E10000
 48000081 60000000
-00{oneW}0000 00{twoW}0001
-00{threeW}0002 00{fourW}0003
-00{fiveW}0004 00{sixW}0005
-00{sevenW}0006 00{eightW}000a
-00{nineW}000b 00{tenW}000c
-00{elevenW}000d 00{twelveW}000e
-00{thirteenW}000f 00{fourteenW}0010
-00{fifteenW}0011 00{sixteenW}0014
-00{seventeenW}0015 00{eighteenW}0016
-00{ninteenW}0017 00{twentyW}0018
-00{twentyOneW}0019 00{twentyTwoW}001e
-00{twentyThreeW}001f 00{twentyFourW}0020
-00{twentyFiveW}0021 00{twentySixW}0022
-00{twentySevenW}0023 00{twentyEightW}0024
-00{twentyNineW}0025 00000000
+00{oneW}0005 00{twoW}0100
+00{threeW}0200 00{fourW}0300
+00{fiveW}0400 00{sixW}0500
+00{sevenW}0605 00{eightW}0A00
+00{nineW}0B00 00{tenW}0C00
+00{elevenW}0D00 00{twelveW}0E00
+00{thirteenW}0F00 00{fourteenW}1000
+00{fifteenW}1100 00{sixteenW}1400
+00{seventeenW}1500 00{eighteenW}1600
+00{ninteenW}1700 00{twentyW}1800
+00{twentyOneW}1900 00{twentyTwoW}1E00
+00{twentyThreeW}1F00 00{twentyFourW}2000
+00{twentyFiveW}2100 00{twentySixW}2200
+00{twentySevenW}2300 000{twentyEightW}2400
+00{twentyNineW}2500 00000000
 7CE802A6 38E70004
 38600000 38800000
 2C030074 41820014
