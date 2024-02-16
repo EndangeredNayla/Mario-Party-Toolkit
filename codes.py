@@ -96,6 +96,47 @@ MP3 - Red Spaces Take Away THREERED Coins: THREEREDSWITCH
 810FE2D2 8040
 '''
 
+def getStarSpaceCodeThree(amount, negAmount):
+    return f'''
+MP3 - Stars Cost THREESTAR Coins
+D10CE202 0048
+8110A61A {amount}
+D10CE202 0048
+8110A6BE {negAmount}
+D10CE202 0048
+8110A6CA {negAmount}
+D10CE202 0049
+8110A17E {amount}
+D10CE202 0049
+8110A222 {negAmount}
+D10CE202 0049
+8110A22E {negAmount}
+D10CE202 004A
+8110AF16 {amount}
+D10CE202 004A
+8110A4F2 {negAmount}
+D10CE202 004A
+8110A4FE {negAmount}
+D10CE202 004B
+8110A1BA {amount}
+D10CE202 004B
+8110A25E {negAmount}
+D10CE202 004B
+8110A26A {negAmount}
+D10CE202 004C
+81109BC2 {amount}
+D10CE202 004C
+81109C66 {negAmount}
+D10CE202 004C
+81109C72 {negAmount}
+D10CE202 004D
+8110B9AA {amount}
+D10CE202 004D
+8110BA4E {negAmount}
+D10CE202 004D
+8110BA5A {negAmount}
+'''
+
 def getKoopaBankCodeThree(amount, negAmount):
     return f'''
 MP3 - Koopa Bank Deposits are THREEKOOPA Coins

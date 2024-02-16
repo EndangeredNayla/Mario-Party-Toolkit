@@ -232,7 +232,7 @@ class App(customtkinter.CTk):
         self.blueSpaceAmountThree = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
         self.blueSpaceAmountThree.grid(row=1, column=3)
         label3 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins on a Blue Space.", font=("Arial", 16))
-        label3.grid(row=1, column=4)
+        label3.grid(row=1, column=4, sticky="w")
         self.blueSpaceTickboxThree = ctk.CTkCheckBox(master=tabview.tab("Coins Mods"), text="Double the coins on Last 5", width=16, checkbox_width=16, checkbox_height=16)
         self.blueSpaceTickboxThree.grid(row=1, column=5, padx=10, pady=10)
 
@@ -243,18 +243,27 @@ class App(customtkinter.CTk):
         self.redSpaceAmountThree = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
         self.redSpaceAmountThree.grid(row=2, column=3)
         redSpaceLabel3 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins on a Red Space.", font=("Arial", 16))
-        redSpaceLabel3.grid(row=2, column=4)
+        redSpaceLabel3.grid(row=2, column=4, sticky="w")
         self.redSpaceTickboxThree = ctk.CTkCheckBox(master=tabview.tab("Coins Mods"), text="Double the coins on Last 5", width=16, checkbox_width=16, checkbox_height=16)
         self.redSpaceTickboxThree.grid(row=2, column=5, padx=10, pady=10)
 
+        # Create Star space icon and entry
+        starSpaceIconThree = create_image_icon(tabview.tab("Coins Mods"), "assets/starSpace.png", 3, 1)
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Cost  ", font=("Arial", 16))
+        starSpaceLabel.grid(row=3, column=2)
+        self.starSpaceAmountThree = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
+        self.starSpaceAmountThree.grid(row=3, column=3)
+        starSpaceLabel3 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when purchasing a Star.", font=("Arial", 16))
+        starSpaceLabel3.grid(row=3, column=4, sticky="w")
+
         # Create koopa bank space icon and entry
-        koopaBankIconThree = create_image_icon(tabview.tab("Coins Mods"), "assets/koopaBank3.png", 3, 1)
+        koopaBankIconThree = create_image_icon(tabview.tab("Coins Mods"), "assets/koopaBank3.png", 4, 1)
         koopaBankLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Lose  ", font=("Arial", 16))
-        koopaBankLabel.grid(row=3, column=2)
+        koopaBankLabel.grid(row=4, column=2)
         self.koopaBankAmountThree = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.koopaBankAmountThree.grid(row=3, column=3)
+        self.koopaBankAmountThree.grid(row=4, column=3)
         koopaBankLabel3 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins to Koopa Bank.", font=("Arial", 16))
-        koopaBankLabel3.grid(row=3, column=4)
+        koopaBankLabel3.grid(row=4, column=4, sticky="w")
 
         parseButtonThree = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonThree, text="Generate Codes")
         parseButtonThree.place(x=10, y=560)
@@ -2285,7 +2294,7 @@ class App(customtkinter.CTk):
         createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
     
     def actionSpaceButtonThree(self):
-        if not self.blueSpaceAmountThree.get() and not self.redSpaceAmountThree.get() and not self.koopaBankAmountThree.get():
+        if not self.blueSpaceAmountThree.get() and not self.redSpaceAmountThree.get() and not self.koopaBankAmountThree.get() and not self.starSpaceAmountThree.get():
             createDialog("Error", "error", "No information provided.", None)
             return
 
@@ -2334,6 +2343,21 @@ class App(customtkinter.CTk):
         except:
             koopaBankAmountThree = "DUMMY"
             koopaBankAmountNegativeThree = "DUMMY"
+
+        starSpaceAmountBaseThree = self.starSpaceAmountThree.get()
+        try:
+            starSpaceAmountThree = hex(int(self.starSpaceAmountThree.get()))
+            if len(starSpaceAmountThree) == 5:
+                starSpaceAmountThree = "0" + starSpaceAmountThree[2:]
+            elif len(starSpaceAmountThree) == 4:
+                starSpaceAmountThree = "00" + starSpaceAmountThree[2:]
+            elif len(starSpaceAmountThree) == 3:
+                starSpaceAmountThree = "000" + starSpaceAmountThree[2:]
+            negativestarSpaceAmountBaseThree = -int(starSpaceAmountBaseThree)
+            starSpaceAmountNegativeThree = format(negativestarSpaceAmountBaseThree & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+        except:
+            starSpaceAmountThree = "DUMMY"
+            starSpaceAmountNegativeThree = "DUMMY"
     
         redSpaceSwitchThree = self.redSpaceTickboxThree.get()
         if redSpaceSwitchThree == True:
@@ -2344,7 +2368,8 @@ class App(customtkinter.CTk):
         marioPartyThreeBlueSpace = getBlueSpaceCodeThree(blueSpaceAmountThree, blueSpaceSwitchThree)
         marioPartyThreeRedSpace = getRedSpaceCodeThree(redSpaceAmountThree, redSpaceSwitchThree)
         marioPartyThreeKoopaBank = getKoopaBankCodeThree(koopaBankAmountThree, koopaBankAmountNegativeThree)
-    
+        marioPartyThreeStarSpace = getStarSpaceCodeThree(starSpaceAmountThree, starSpaceAmountNegativeThree)
+
         if redSpaceAmountThree == "DUMMY":
             marioPartyThreeRedSpace = ""
         if blueSpaceAmountThree == "DUMMY":
@@ -2353,8 +2378,12 @@ class App(customtkinter.CTk):
             marioPartyThreeKoopaBank = ""
         if koopaBankAmountNegativeThree == "DUMMY":
             marioPartyThreeKoopaBank = ""
+        if starSpaceAmountThree == "DUMMY":
+            marioPartyThreeStarSpace = ""
+        if starSpaceAmountNegativeThree == "DUMMY":
+            marioPartyThreeStarSpace = ""
     
-        generatedCode = marioPartyThreeBlueSpace + marioPartyThreeRedSpace + marioPartyThreeKoopaBank
+        generatedCode = marioPartyThreeBlueSpace + marioPartyThreeRedSpace + marioPartyThreeKoopaBank + marioPartyThreeStarSpace
 
         if redSpaceSwitchThree == "0":
             generatedCode = generatedCode.replace("THREEREDSWITCH", "Doesn't Double on Last 5")
@@ -2373,6 +2402,7 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.replace("THREERED", redSpaceAmountBaseThree)
         generatedCode = generatedCode.replace("THREEBLUE", blueSpaceAmountBaseThree)
         generatedCode = generatedCode.replace("THREEKOOPA", koopaBankAmountBaseThree)
+        generatedCode = generatedCode.replace("THREESTAR", starSpaceAmountBaseThree)
 
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
