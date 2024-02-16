@@ -1131,7 +1131,7 @@ C20C8FA0 00000024
 00{twentyOneW}1900 00{twentyTwoW}1E00
 00{twentyThreeW}1F00 00{twentyFourW}2000
 00{twentyFiveW}2100 00{twentySixW}2200
-00{twentySevenW}2300 000{twentyEightW}2400
+00{twentySevenW}2300 00∂{twentyEightW}2400
 00{twentyNineW}2500 00000000
 7CE802A6 38E70004
 38600000 38800000
