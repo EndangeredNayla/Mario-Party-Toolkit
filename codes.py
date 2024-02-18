@@ -291,6 +291,14 @@ MP4 - Stars Cost FOURSTAR Coins
 0408473C 2C1C{amount}
 '''
 
+def getSquishCodeFour(amount):
+    return f'''
+MP4 - Mega Mushroom Steals FOURSQUISH Coins
+0406BE70 3860{amount}
+0406BEAC 3860{amount}
+0406BE1C 3860{amount}
+'''
+
 def getLotterySpaceCodeFour(amount):
     return f'''
 MP4 - Lottery Costs FOURLOTTERY Coins

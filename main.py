@@ -523,32 +523,41 @@ class App(customtkinter.CTk):
         starSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when purchasing a Star and using a Magic Lamp.", font=("Arial", 16))
         starSpaceLabel4.grid(row=4, column=4, sticky="w")
 
-        # Create star space icon and entry
-        starSpaceIconFour = create_image_icon(tabview.tab("Coins Mods"), "assets/booHouseStars.png", 5, 1)
-        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Cost  ", font=("Arial", 16))
+        # Create squish space icon and entry
+        starSpaceIconFour = create_image_icon(tabview.tab("Coins Mods"), "assets/megaMushroom.png", 5, 1)
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Gain  ", font=("Arial", 16))
         starSpaceLabel.grid(row=5, column=2)
-        self.booSpaceAmountFour = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.booSpaceAmountFour.grid(row=5, column=3)
-        starSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when stealing a Star.", font=("Arial", 16))
+        self.squishAmountFour = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
+        self.squishAmountFour.grid(row=5, column=3)
+        starSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when squishing a player.", font=("Arial", 16))
         starSpaceLabel4.grid(row=5, column=4, sticky="w")
 
         # Create star space icon and entry
-        starSpaceIconFour = create_image_icon(tabview.tab("Coins Mods"), "assets/booHouseCoins.png", 6, 1)
+        starSpaceIconFour = create_image_icon(tabview.tab("Coins Mods"), "assets/booHouseStars.png", 6, 1)
         starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Cost  ", font=("Arial", 16))
         starSpaceLabel.grid(row=6, column=2)
-        self.booSpaceCoinsAmountFour = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.booSpaceCoinsAmountFour.grid(row=6, column=3)
-        starSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when stealing coins.", font=("Arial", 16))
+        self.booSpaceAmountFour = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
+        self.booSpaceAmountFour.grid(row=6, column=3)
+        starSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when stealing a Star.", font=("Arial", 16))
         starSpaceLabel4.grid(row=6, column=4, sticky="w")
 
         # Create star space icon and entry
-        lotterySpaceIconFour = create_image_icon(tabview.tab("Coins Mods"), "assets/lottery4.png", 7, 1)
+        starSpaceIconFour = create_image_icon(tabview.tab("Coins Mods"), "assets/booHouseCoins.png", 7, 1)
+        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Cost  ", font=("Arial", 16))
+        starSpaceLabel.grid(row=7, column=2)
+        self.booSpaceCoinsAmountFour = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
+        self.booSpaceCoinsAmountFour.grid(row=7, column=3)
+        starSpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when stealing coins.", font=("Arial", 16))
+        starSpaceLabel4.grid(row=7, column=4, sticky="w")
+
+        # Create star space icon and entry
+        lotterySpaceIconFour = create_image_icon(tabview.tab("Coins Mods"), "assets/lottery4.png", 8, 1)
         lotterySpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Cost  ", font=("Arial", 16))
-        lotterySpaceLabel.grid(row=7, column=2)
+        lotterySpaceLabel.grid(row=8, column=2)
         self.lotterySpaceAmountFour = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.lotterySpaceAmountFour.grid(row=7, column=3)
+        self.lotterySpaceAmountFour.grid(row=8, column=3)
         lotterySpaceLabel4 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when playing the Lottery.", font=("Arial", 16))
-        lotterySpaceLabel4.grid(row=7, column=4, sticky="w")
+        lotterySpaceLabel4.grid(row=8, column=4, sticky="w")
 
         parseButtonFour = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonFour, text="Generate Codes")
         parseButtonFour.place(x=10, y=560)
@@ -2456,7 +2465,7 @@ class App(customtkinter.CTk):
         createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonFour(self):    
-        if not self.blueSpaceAmountFour.get() and not self.miniGameAmountFour.get() and not self.redSpaceAmountFour.get() and not self.starSpaceAmountFour.get() and not self.booSpaceAmountFour.get() and not self.booSpaceCoinsAmountFour.get() and not self.lotterySpaceAmountFour.get():
+        if not self.blueSpaceAmountFour.get() and not self.miniGameAmountFour.get() and not self.redSpaceAmountFour.get() and not self.starSpaceAmountFour.get() and not self.booSpaceAmountFour.get() and not self.booSpaceCoinsAmountFour.get() and not self.lotterySpaceAmountFour.get() and not self.squishAmountFour.get():
             createDialog("Error", "error", "No information provided.", None)
             return
 
@@ -2545,6 +2554,18 @@ class App(customtkinter.CTk):
         except:
             lotterySpaceAmountFour = "DUMMY"
 
+        squishAmountFourBase = self.squishAmountFour.get()
+        try:
+            squishAmountFour = hex(int(self.squishAmountFour.get()))
+            if len(squishAmountFour) == 5:
+                squishAmountFour = "0" + squishAmountFour[2:]
+            elif len(squishAmountFour) == 4:
+                squishAmountFour = "00" + squishAmountFour[2:]
+            elif len(squishAmountFour) == 3:
+                squishAmountFour = "000" + squishAmountFour[2:]
+        except:
+            squishAmountFour = "DUMMY"
+
         marioPartyFourBlueSpace = getBlueSpaceCodeFour(blueSpaceAmountFour)
         marioPartyFourRedSpace = getRedSpaceCodeFour(redSpaceAmountFour)
         marioPartyFourStarSpace = getStarSpaceCodeFour(starSpaceAmountFour)
@@ -2552,6 +2573,7 @@ class App(customtkinter.CTk):
         marioPartyFourBooSpace = getBooSpaceCodeFour(booSpaceAmountFour)
         marioPartyFourBooSpaceCoins = getBooSpaceCoinsCodeFour(booSpaceCoinsAmountFour)
         marioPartyFourMiniGame = getMinigameCodeFour(miniGameAmountFour)
+        marioPartyFourSquish = getSquishCodeFour(squishAmountFour)
 
         if redSpaceAmountFour == "DUMMY":
             marioPartyFourRedSpace = ""
@@ -2567,8 +2589,10 @@ class App(customtkinter.CTk):
             marioPartyFourBooSpaceCoins = ""
         if miniGameAmountFour == "DUMMY":
             marioPartyFourMiniGame = ""
+        if squishAmountFour == "DUMMY":
+            marioPartyFourSquish = ""
 
-        generatedCode = marioPartyFourBlueSpace + marioPartyFourRedSpace + marioPartyFourMiniGame + marioPartyFourStarSpace + marioPartyFourBooSpaceCoins + marioPartyFourBooSpace + marioPartyFourLotterySpace
+        generatedCode = marioPartyFourBlueSpace + marioPartyFourRedSpace + marioPartyFourMiniGame + marioPartyFourStarSpace + marioPartyFourBooSpaceCoins + marioPartyFourBooSpace + marioPartyFourLotterySpace + marioPartyFourSquish
         generatedCode = generatedCode.replace("FOURRED", redSpaceAmountBaseFour)
         generatedCode = generatedCode.replace("FOURBLUE", blueSpaceAmountBaseFour)
         generatedCode = generatedCode.replace("FOURMINIGAME", miniGameAmountBaseFour)
@@ -2576,6 +2600,7 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.replace("FOURBOOSTARS", booSpaceAmountFourBase)
         generatedCode = generatedCode.replace("FOURBOOCOINS", booSpaceCoinsAmountFourBase)
         generatedCode = generatedCode.replace("FOURLOTTERY", lotterySpaceAmountFourBase)
+        generatedCode = generatedCode.replace("FOURSQUISH", squishAmountFourBase)
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
