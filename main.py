@@ -18,6 +18,7 @@ import subprocess
 import threading
 import shutil
 import time
+import csv
 
 from CTkToolTip import *
 
@@ -564,6 +565,12 @@ class App(customtkinter.CTk):
 
         parseButtonFour = ctk.CTkButton(master=tabview.tab("Item Mods"), command=self.actionSpaceButtonFourItem, text="Generate Codes")
         parseButtonFour.place(x=10, y=560)
+
+        parseButtonFour = ctk.CTkButton(master=tabview.tab("Item Mods"), command=self.savePresetItems4, text="Save Preset")
+        parseButtonFour.place(x=160, y=560)
+
+        parseButtonFour = ctk.CTkButton(master=tabview.tab("Item Mods"), command=self.loadPresetItems4, text="Load Preset")
+        parseButtonFour.place(x=310, y=560)
 
         parseButtonFour = ctk.CTkButton(master=tabview.tab("Battle Game Mods"), command=self.actionBattle4, text="Generate Codes")
         parseButtonFour.place(x=10, y=560)
@@ -3300,6 +3307,100 @@ class App(customtkinter.CTk):
 
         print("Generated codes copied to the clipboard.")
         createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
+    def savePresetItems4(self):
+        if not self.miniPrice4.get() or not self.miniWeight4.get() or not self.megaPrice4.get() or not self.megaWeight4.get() or not self.superMegaPrice4.get() or not self.superMegaWeight4.get() or not self.superMiniPrice4.get() or not self.superMiniWeight4.get() or not self.miniMegaHammerPrice4.get() or not self.miniMegaHammerWeight4.get() or not self.warpPipePrice4.get() or not self.warpPipeWeight4.get() or not self.swapCardPrice4.get() or not self.swapCardWeight4.get() or not self.sparkyStickerPrice4.get() or not self.sparkyStickerWeight4.get() or not self.bowserSuitPrice4.get() or not self.bowserSuitWeight4.get() or not self.gaddlightPrice4.get() or not self.gaddlightWeight4.get() or not self.chompCallPrice4.get() or not self.chompCallWeight4.get() or not self.crystalBallPrice4.get() or not self.crystalBallWeight4.get() or not self.magicLampPrice4.get() or not self.magicLampWeight4.get() or not self.itemBagPrice4.get()  or not self.itemBagWeight4.get():
+            if sys.platform == "darwin":
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
+            else:
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
+            return
+
+        miniPrice4 = self.miniPrice4.get()
+        miniWeight4 = self.miniWeight4.get()
+
+        megaPrice4 = self.megaPrice4.get()
+        megaWeight4 = self.megaWeight4.get()
+
+        superMiniPrice4 = self.superMiniPrice4.get()
+        superMiniWeight4 = self.superMiniWeight4.get()
+
+        superMegaPrice4 = self.superMegaPrice4.get()
+        superMegaWeight4 = self.superMegaWeight4.get()
+
+        miniMegaHammerPrice4 = self.miniMegaHammerPrice4.get()
+        miniMegaHammerWeight4 = self.miniMegaHammerWeight4.get()
+
+        warpPipePrice4 = self.warpPipePrice4.get()
+        warpPipeWeight4 = self.warpPipeWeight4.get()
+
+        swapCardPrice4 = self.swapCardPrice4.get()
+        swapCardWeight4 = self.swapCardWeight4.get()
+
+        sparkyStickerPrice4 = self.sparkyStickerPrice4.get()
+        sparkyStickerWeight4 = self.sparkyStickerWeight4.get()
+
+        gaddlightPrice4 = self.gaddlightPrice4.get()
+        gaddlightWeight4 = self.gaddlightWeight4.get()
+
+        chompCallPrice4 = self.chompCallPrice4.get()
+        chompCallWeight4 = self.chompCallWeight4.get()
+
+        bowserSuitPrice4 = self.bowserSuitPrice4.get()
+        bowserSuitWeight4 = self.bowserSuitWeight4.get()
+
+        crystalBallPrice4 = self.crystalBallPrice4.get()
+        crystalBallWeight4 = self.crystalBallWeight4.get()
+
+        magicLampPrice4 = self.magicLampPrice4.get()
+        magicLampWeight4 = self.magicLampWeight4.get()
+
+        itemBagPrice4 = self.itemBagPrice4.get()
+        itemBagWeight4 = self.itemBagWeight4.get()
+
+        prices4 = [miniPrice4, megaPrice4, superMiniPrice4, superMegaPrice4, miniMegaHammerPrice4, warpPipePrice4, swapCardPrice4, sparkyStickerPrice4, gaddlightPrice4, chompCallPrice4, bowserSuitPrice4, crystalBallPrice4, magicLampPrice4, itemBagPrice4]
+        weights4 = [miniWeight4, megaWeight4, superMiniWeight4, superMegaWeight4, miniMegaHammerWeight4, warpPipeWeight4, swapCardWeight4, sparkyStickerWeight4, gaddlightWeight4, chompCallWeight4, bowserSuitWeight4, crystalBallWeight4, magicLampWeight4, itemBagWeight4]
+     
+        file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
+        if file_path:
+            with open(file_path, 'w', newline='') as csvfile:
+                writer = csv.writer(csvfile)
+                writer.writerow(['Prices', 'Weights'])
+                for price, weight in zip(prices4, weights4):
+                    writer.writerow([price, weight])
+            print("MPT file saved successfully!")
+            createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
+
+
+
+    def loadPresetItems4(self):
+        file_path = tkinter.filedialog.askopenfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
+        if file_path:
+            prices4In = []
+            weights4In = []
+            with open(file_path, 'r', newline='') as csvfile:
+                reader = csv.reader(csvfile)
+                next(reader)
+                for row in reader:
+                    prices4In.append(float(row[0]))
+                    weights4In.append(float(row[1]))
+
+            # Define a list of Entry widget attributes
+            pricesNames4 = [self.miniPrice4, self.megaPrice4, self.superMiniPrice4, self.superMegaPrice4, self.miniMegaHammerPrice4, self.warpPipePrice4, self.swapCardPrice4, self.sparkyStickerPrice4, self.gaddlightPrice4, self.chompCallPrice4, self.bowserSuitPrice4, self.crystalBallPrice4, self.magicLampPrice4, self.itemBagPrice4]
+            weightsNames4 = [self.miniWeight4, self.megaWeight4, self.superMiniWeight4, self.superMegaWeight4, self.miniMegaHammerWeight4, self.warpPipeWeight4, self.swapCardWeight4, self.sparkyStickerWeight4, self.gaddlightWeight4, self.chompCallWeight4, self.bowserSuitWeight4, self.crystalBallWeight4, self.magicLampWeight4, self.itemBagWeight4]
+
+            # Update widgets with loaded values
+            for index, widget in enumerate(pricesNames4):
+                if widget and index < len(prices4In):
+                    widget.delete(0, 'end')
+                    widget.insert(0, int(prices4In[index]))
+
+            for index, widget in enumerate(weightsNames4):
+                if widget and index < len(weights4In):
+                    widget.delete(0, 'end')
+                    widget.insert(0, int(weights4In[index]))
+            print("MPT file laoded successfully!")
+            createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
 
     def actionBattle4(self):
         if not self.battle41.get() and not self.battle42.get() and not self.battle43.get() and not self.battle44.get() and not self.battle45.get():
