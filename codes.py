@@ -36,6 +36,13 @@ MP1 - Red Spaces Take Away ONERED Coins: ONEREDSWITCH
 81057DEA 8040
 '''
 
+def getMinigameReplacement1(hexUno, hexDos, gameUno, gameDos):
+    return f'''
+MP1 - Minigame Replacement: {gameUno} -> {gameDos}
+D10ED5DE 00{hexUno}
+810ED5DE 00{hexDos}		
+'''
+
 def getBlueSpaceCodeTwo(amount, switch):
     return f'''
 MP2 - Blue Spaces Give TWOBLUE Coins: TWOBLUESWITCH

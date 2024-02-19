@@ -58,10 +58,10 @@ def check_for_updates():
         latest_version = response.text.strip()
                 
         if latest_version > appVersion:
-            notification.notify(title= "Error", message = "Update Available!", app_icon=fetchResource("assets/diceBlock.ico"), timeout = 10)
-
+            createDialog(title= "Error", message = "Update Available!", app_icon=fetchResource("assets/diceBlock.ico"))
+    
     else:
-        notification.notify(title= "Error", message = "Unable to check for updates!", app_icon=fetchResource("assets/diceBlock.ico"), timeout = 10)
+        createDialog(title= "Error", message = "Unable to check for updates!", app_icon=fetchResource("assets/diceBlock.ico"))
 
 def run_update():
     url = "https://github.com/EndangeredNayla/Mario-Party-Toolkit/releases"
