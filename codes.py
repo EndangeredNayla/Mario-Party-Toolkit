@@ -73,6 +73,13 @@ MP2 - Red Spaces Take Away TWORED Coins: TWOREDSWITCH
 8106635E 8040
 '''
 
+def getMinigameReplacement2(hexUno, hexDos, gameUno, gameDos):
+    return f'''
+MP2 - Minigame Replacement: {gameUno} -> {gameDos}
+D00F93C9 00{hexUno}
+800F93C9 00{hexDos}		
+'''
+
 def getBlueSpaceCodeThree(amount, switch):
     return f'''
 MP3 - Blue Spaces Give THREEBLUE Coins: THREEBLUESWITCH
@@ -209,6 +216,13 @@ D10CE202 004D
 8110C392 {negAmount}
 '''
 
+def getMinigameReplacement3(hexUno, hexDos, gameUno, gameDos):
+    return f'''
+MP3 - Minigame Replacement: {gameUno} -> {gameDos}
+D00CD068 00{hexUno}
+800CD068 00{hexDos}			
+'''
+
 def getRedSpaceCodeFour(amount):
     return f'''
 MP4 - Red Spaces Take Away FOURRED Coins
@@ -312,6 +326,14 @@ MP4 - Lottery Costs FOURLOTTERY Coins
 0407BD20 2C1E{amount}
 '''
 
+def getMinigameReplacement4(hexUno, hexDos, gameUno, gameDos):
+    return f'''
+MP4 - Minigame Replacement: {gameUno} ➜ {gameDos}
+2818FD2C 000000{hexUno}
+0218FD2C 000000{hexDos}
+E2000001 80008000
+'''
+
 def getBlueSpaceCodeFive(amount):
     return f'''
 MP5 - Blue Spaces Give FIVEBLUE Coins
@@ -409,6 +431,14 @@ C20F630C 00000001
 3880{negAmount} 00000000
 '''
 
+def getMinigameReplacement5(hexUno, hexDos, gameUno, gameDos):
+    return f'''
+MP5 - Minigame Replacement: {gameUno} ➜ {gameDos}
+2822A4C4 000000{hexUno}
+0222A4C4 000000{hexDos}
+E2000001 80008000
+'''
+
 def getBlueSpaceCodeSix(amount):
     return f'''
 MP6 - Blue Spaces Give SIXBLUE Coins
@@ -501,7 +531,6 @@ E2000001 80008000
 E2000001 80008000
 '''
 
-
 def getFaireSquareStarCodeSix(one, two, three, four):
     return f'''
 MP6 - Stars Can Cost SIXONE, SIXTWO, SIXTHREE, or SIXFOUR During Faire Square's Nightime
@@ -537,6 +566,14 @@ C21B1F28 00000001
 2C04{amount} 00000000
 C21B2626 00000001
 3880{negAmount} 00000000
+'''
+
+def getMinigameReplacement6(hexUno, hexDos, gameUno, gameDos):
+    return f'''
+MP6 - Minigame Replacement: {gameUno} ➜ {gameDos}
+28265BA8 000000{hexUno}
+0222A4C4 000000{hexDos}
+E2000001 80008000
 '''
 
 def getBlueSpaceCodeSeven(amount):
@@ -664,6 +701,14 @@ def getFireballSpaceCodeSeven(amount, negAmount):
 MP7 - Fireball Takes SEVENFIREBALL Coins
 041C1464 3b80{amount}
 041C148C 38A0{negAmount}
+'''
+
+def getMinigameReplacement7(hexUno, hexDos, gameUno, gameDos):
+    return f'''
+MP7 - Minigame Replacement: {gameUno} ➜ {gameDos}
+28291558 000000{hexUno}
+02291558 000000{hexDos}
+E2000001 80008000
 '''
 
 def getBlueSpaceCodeEight(amount):
@@ -1465,4 +1510,12 @@ MP4 - Give FOURBATTLE1, FOURBATTLE2, FOURBATTLE3, FOURBATTLE4, or FOURBATTLE5 co
 201D5DE0 050A141E
 041D5DE0 {one}{two}{three}{four}
 041D5DE4 {five}000000
+'''
+
+def getMinigameReplacement82(hexUno, hexDos, gameUno, gameDos):
+    return f'''
+MP8 - Minigame Replacement: {gameUno} ➜ {gameDos}
+282287CC 000000{hexUno}
+022287CC 000000{hexDos}
+E2000001 80008000
 '''

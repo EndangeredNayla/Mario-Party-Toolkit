@@ -208,6 +208,7 @@ class App(customtkinter.CTk):
         tabview = customtkinter.CTkTabview(frame, width=2000, height=750, fg_color=("#fcfcfc", "#323232"))
         tabview.pack(padx=20, pady=20)
         tabview.add("Coins Mods")
+        tabview.add("Minigame Replacement")
         tabview.set("Coins Mods")
 
         # Create blue space icon and entry, and tickbox
@@ -234,6 +235,23 @@ class App(customtkinter.CTk):
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonTwo, text="Generate Codes")
         parseButtonTwo.place(x=10, y=560)
+        
+        self.minigame2 = ["BOWSER Slots", "Roll Out the Barrels", "Coffin Congestion", "Hammer Slammer", "Give Me a Brake!", "Mallet-Go Round", "Grab Bag", "Bumper Balloon Cars", "Rakin' 'em In", "Day at the Races", "Face Lift", "Crazy Cutters", "Hot BOB-OMB", "Bowl Over", "Rainbow Run", "Crane Game", "Move to the Music", "BOB-OMB Barrage", "Look Away", "Shock Drop or Roll", "Lights Out", "Filet Relay", "Archer-ival", "TOAD Bandstand", "Bobsled Run", "Handcar Havoc", "Balloon Burst", "Sky Pilots", "Speed Hockey", "Cake Factory", "Dungeon Dash", "Magnet Carta", "Lava Tile Isle", "Hot Rope Jump", "Shell Shocked", "TOAD in the Box", "Mecha-Marathon", "Roll Call", "Abandon Ship", "Platform Peril", "Totem Pole Pound", "Bumper Balls", "Bombs Away", "Tipsy Tourney", "Honeycomb Havoc", "Hexagon Heat", "Skateboard Scamper", "Slot Car Derby", "Shy Guy Says", "Sneak 'n' Snore", "Driver's Ed", "BOWSER's Big Blast", "Looney Lumberjacks", "Torpedo Targets", "Destruction Duet", "Dizzy Dancing", "Tile Driver", "Quicksand Cache", "Deep Sea Salvage"]
+
+        label = ctk.CTkLabel(master=tabview.tab("Minigame Replacement"), text=" Replace  ", font=("Arial", 16))
+        label.grid(row=0, column=0)
+
+        self.comboboxMingames21 = customtkinter.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=self.minigame2)
+        self.comboboxMingames21.grid(row=0, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Minigame Replacement"), text=" with ", font=("Arial", 16))
+        label.grid(row=0, column=2)
+
+        self.comboboxMingames22 = customtkinter.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=self.minigame2)
+        self.comboboxMingames22.grid(row=0, column=3)
+
+        parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceTwo, text="Generate Codes")
+        parseButtonTwo.place(x=10, y=560)
 
         return frame
 
@@ -242,6 +260,7 @@ class App(customtkinter.CTk):
         tabview = customtkinter.CTkTabview(frame, width=2000, height=750, fg_color=("#fcfcfc", "#323232"))
         tabview.pack(padx=20, pady=20)
         tabview.add("Coins Mods")
+        tabview.add("Minigame Replacement")
         tabview.set("Coins Mods")
 
         # Create blue space icon and entry, and tickbox
@@ -286,6 +305,23 @@ class App(customtkinter.CTk):
 
         parseButtonThree = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonThree, text="Generate Codes")
         parseButtonThree.place(x=10, y=560)
+
+        self.minigame3 = ["Thwomp Pull", "River Raiders", "Tidal Toss", "Eatsa Pizza", "Baby Bowser Broadside", "Pump, Pump and Away", "Hyper Hydrants", "Picking Panic", "Treadmill Grill", "Toadstoll Titan", "Aces High", "Bounce 'n' Trounce", "Ice Rink Risk", "Locked Out", "Chip Shot Challenge", "Parasol Plummet", "Messy Memory", "Picture Imperfect", "Mario's Puzzle Party", "The Beat Goes On", "M. P. I. Q.", "Curtain Call", "Water Whirled", "Frigid Bridges", "Awful Tower", "Cheep Cheep Chase", "Pipe Cleaners", "Snowball Summit", "All Fired Up", "Stacked Deck", "Three Door Monty", "Rockin' Raceway", "Merry-Go-Chomp", "Slap Down", "Storm Chasers", "Eye Sore", "Vine With Me", "Popgun Pick-Off", "End of the Line", "Bowser Toss", "Baby Bowser Bonkers", "Motor Rooter", "Silly Screws", "Crowd Cover", "Tick Tock Hop", "Fowl Play", "Mecha-Marathon", "Hey, Batter, Batter!", "Bobbing Bow-loons", "Dorrie Dip", "Swinging with Sharks", "Swing 'n' Swipe", "Stardust Battle", "Game Guy's Roulette", "Game Guy's Lucky 7", "Game Guy's Magic Boxes", "Game Guy's Sweet Surprise", "Dizzy Dinghies", "Mario's Puzzle Party Pro"]
+
+        label = ctk.CTkLabel(master=tabview.tab("Minigame Replacement"), text=" Replace  ", font=("Arial", 16))
+        label.grid(row=0, column=0)
+
+        self.comboboxMingames31 = customtkinter.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=self.minigame3)
+        self.comboboxMingames31.grid(row=0, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Minigame Replacement"), text=" with ", font=("Arial", 16))
+        label.grid(row=0, column=2)
+
+        self.comboboxMingames32 = customtkinter.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=self.minigame3)
+        self.comboboxMingames32.grid(row=0, column=3)
+
+        parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceThree, text="Generate Codes")
+        parseButtonTwo.place(x=10, y=560)
         return frame
 
 
@@ -296,6 +332,7 @@ class App(customtkinter.CTk):
         tabview.add("Coins Mods")
         tabview.add("Item Mods")
         tabview.add("Battle Game Mods")
+        tabview.add("Minigame Replacement")
         tabview.set("Coins Mods")
 
         # Create faire square grid icon and entry
@@ -596,6 +633,22 @@ class App(customtkinter.CTk):
         warningLabel = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="There must be at least 5 items with a value higher than 0 and the Mega or Mini should be worth 5. ", font=("Arial", 16, "bold"))
         warningLabel.place(x=160, y=270)
 
+        self.minigame4 = ["Manta Rings", "Slime Time", "Booksquirm", "Trace Race", "Mario Medley", "Avalanche!", "Domination", "Paratrooper Plunge", "Toad's Quick Draw", "Three Throw", "Photo Finish", "Mr. Blizzard's Brigade", "Bob-omb Breakers", "Long Claw of the Law", "Stamp Out!", "Candlelight Fright", "Makin' Waves", "Hide and Go BOOM!", "Tree Stomp", "Fish n' Drips", "Hop or Pop", "Money Belts", "GOOOOOOAL!!", "Blame it on the Crane", "The Great Deflate", "Revers-a-Bomb", "Right Oar Left?", "Cliffhangers", "Team Treasure Trek", "Pair-a-sailing", "Order Up", "Dungeon Duos", "Beach Volley Folley", "Cheep Cheep Sweep", "Darts of Doom", "Fruits of Doom", "Balloon of Doom", "Chain Chomp Fever", "Paths of Peril", "Bowser's Bigger Blast", "Butterfly Blitz", "Barrel Baron", "Mario Speedwagons", "Bowser Bop", "Mystic Match 'Em", "Archaeologuess", "Goomba's Chip Flip", "Kareening Koopas", "The Final Battle!", "Rumble Fishing", "Take a Breather", "Bowser Wrestling", "Panels of Doom"]
+        
+        label = ctk.CTkLabel(master=tabview.tab("Minigame Replacement"), text=" Replace  ", font=("Arial", 16))
+        label.grid(row=0, column=0)
+
+        self.comboboxMingames41 = customtkinter.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=self.minigame4)
+        self.comboboxMingames41.grid(row=0, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Minigame Replacement"), text=" with ", font=("Arial", 16))
+        label.grid(row=0, column=2)
+
+        self.comboboxMingames42 = customtkinter.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=self.minigame4)
+        self.comboboxMingames42.grid(row=0, column=3)
+
+        parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceFour, text="Generate Codes")
+        parseButtonTwo.place(x=10, y=560)
         return frame
 
     def create_mp5_frame(self):
@@ -604,6 +657,7 @@ class App(customtkinter.CTk):
         tabview.pack(padx=20, pady=20)
         tabview.add("Coins Mods")
         tabview.add("Capsule Mods")
+        tabview.add("Minigame Replacement")
         tabview.set("Coins Mods")
 
         # Create blue space icon and entry
@@ -1054,6 +1108,23 @@ class App(customtkinter.CTk):
 
         parseButtonFive = ctk.CTkButton(master=tabview.tab("Capsule Mods"), command=self.loadPresetItems5, text="Load Preset")
         parseButtonFive.place(x=310, y=560)
+
+        self.minigame5 = ["Coney Island", "Ground Pound Down", "Chimp Chase", "Chomp Romp", "Pushy Penguins", "Leaf Leap", "Night Light Fright", "Pop-Star Piranhas", "Mazed & Confused", "Dinger Derby", "Hydrostars", "Later Skater", "Will Flower", "Triple Jump", "Hotel Goomba", "Coin Cache", "Flatiator", "Squared Away", "Mario Mechs", "Revolving Fire", "Clock Stoppers", "Heat Stroke", "Beam Team", "Vicious Vending", "Big Top Drop", "Defuse or Lose", "ID UFO", "Mario Can-Can", "Handy Hoppers", "Berry Basket", "Bus Buffer", "Rumble Ready", "Submarathon", "Manic Mallets", "Astro-Logical", "Bill Blasters", "Tug-o-Dorrie", "Twist 'n' Out", "Lucky Lineup", "Random Ride", "Shock Absorbers", "Countdown Pound", "Whomp Maze", "Shy Guy Showdown", "Button Mashers", "Get a Rope", "Pump 'n' Jump", "Head Waiter", "Blown Away", "Merry Poppings", "Pound Peril", "Piece Out", "Bound of Music", "Wind Wavers", "Sky Survivor", "Cage-in Cookin'", "Rain of Fire", "Scaldin' Cauldron", "Frightmare", "Flower Shower", "Dodge Bomb", "Fish Upon a Star", "Rumble Fumble", "Quilt for Speed", "Tube It or Lose It", "Mathletes", "Fight Cards", "Banana Punch", "Da Vine Climb", "Mass A-peel", "Panic Pinball", "Banking Coins", "Frozen Frenzy", "Curvy Curbs", "Beach Volleyball", "Fish Sticks", "Ice Hockey"]
+                
+        label = ctk.CTkLabel(master=tabview.tab("Minigame Replacement"), text=" Replace  ", font=("Arial", 16))
+        label.grid(row=0, column=0)
+
+        self.comboboxMingames51 = customtkinter.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=self.minigame5)
+        self.comboboxMingames51.grid(row=0, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Minigame Replacement"), text=" with ", font=("Arial", 16))
+        label.grid(row=0, column=2)
+
+        self.comboboxMingames52 = customtkinter.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=self.minigame5)
+        self.comboboxMingames52.grid(row=0, column=3)
+
+        parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceFive, text="Generate Codes")
+        parseButtonTwo.place(x=10, y=560)
         return frame
 
     def create_mp6_frame(self):
@@ -1063,6 +1134,7 @@ class App(customtkinter.CTk):
         tabview.add("Coins Mods")
         tabview.add("Orb Mods")
         tabview.add("Faire Square Mods")
+        tabview.add("Minigame Replacement")
         tabview.set("Coins Mods")
 
         # Create faire square grid icon and entry
@@ -1549,6 +1621,23 @@ class App(customtkinter.CTk):
 
         parseButtonSixOrbs = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=self.actionSpaceButtonSixOrb, text="Generate Codes")
         parseButtonSixOrbs.place(x=10, y=620)
+
+        self.minigame6 = ["Smashdance", "Odd Card Out", "Freeze Frame", "What Goes Up...", "Granite Getaway", "Circuit Maximus", "Catch You Letter", "Snow Whirled", "Daft Rafts", "Tricky Tires", "Treasure Trawlers", "Memory Lane", "Mowtown", "Cannonball Fun", "Note to Self", "Same is Lame", "Light Up My Night", "Lift Leapers", "Blooper Scooper", "Trap Ease Artist", "Pokey Punch-out", "Money Belt", "Cash Flow", "Cog Jog", "Sink or Swim", "Snow Brawl", "Ball Dozers", "Surge and Destroy", "Pop Star", "Stage Fright", "Conveyor Bolt", "Crate and Peril", "Ray of Fright", "Dust 'til Dawn", "Garden Grab", "Pixel Perfect", "Slot Trot", "Gondola Glide", "Light Breeze", "Body Builder", "Mole-it!", "Cashapult", "Jump the Gun", "Rocky Road", "Clean Team", "Hyper Sniper", "Insectiride", "Sunday Drivers", "Stamp By Me", "Throw Me a Bone", "Black Hole Boogie", "Full Tilt", "Sumo of Doom-o", "O-Zone", "Pitifall", "Mass Meteor", "Lunar-tics", "T Minus Five", "Asteroad Rage", "Boo'd Off the Stage", "Boonanza!", "Trick or Tree", "Something's Amist", "Wrasslin' Rapids", "Verbal Assault", "Shoot Yer Mouth Off", "Talkie Walkie", "Burnstile", "Word Herd", "Fruit Talktail", "Pit Boss", "Dizzy Rotisserie", "Dark 'n Crispy", "Tally Me Banana", "Banana Shake", "Pier Factor", "Seer Terror", "Block Star", "Lab Brats", "Strawberry Shortfuse", "Control Shtick", "Dunk Bros."]
+                
+        label = ctk.CTkLabel(master=tabview.tab("Minigame Replacement"), text=" Replace  ", font=("Arial", 16))
+        label.grid(row=0, column=0)
+
+        self.comboboxMingames61 = customtkinter.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=self.minigame6)
+        self.comboboxMingames61.grid(row=0, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Minigame Replacement"), text=" with ", font=("Arial", 16))
+        label.grid(row=0, column=2)
+
+        self.comboboxMingames62 = customtkinter.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=self.minigame6)
+        self.comboboxMingames62.grid(row=0, column=3)
+
+        parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceSix, text="Generate Codes")
+        parseButtonTwo.place(x=10, y=560)
         return frame
 
     def create_mp7_frame(self):
@@ -1557,6 +1646,7 @@ class App(customtkinter.CTk):
         tabview.pack(padx=20, pady=20)
         tabview.add("Coins Mods")
         tabview.add("Orb Mods")
+        tabview.add("Minigame Replacement")
         tabview.set("Coins Mods")
 
         # Create mushroom orb space icon and entry
@@ -2058,6 +2148,23 @@ class App(customtkinter.CTk):
 
         parseButtonSevenOrbs = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=self.actionSpaceButtonSevenOrb, text="Generate Codes")
         parseButtonSevenOrbs.place(x=10, y=620)
+
+        self.minigame7 = ["Catchy Tunes", "Bubble Brawl", "Track & Yield", "Fun Run", "Cointagious", "Snow Ride", "Picture This", "Ghost in the Hall", "Big Dripper", "Target Tag", "Pokey Pummel", "Take Me Ohm", "Kart Wheeled", "Balloon Busters", "Clock Watchers", "Dart Attack", "Oil Crisis", "La Bomba", "Spray Anything", "Balloonatic", "Spinner Cell", "Think Tank", "Flashfright", "Coin-op Bop", "Easy Pickings", "Wheel of Woe", "Boxing Day", "Be My Chum!", "StratosFEAR!", "Pogo-a-go-go", "Buzzstormer", "Tile and Error", "Battery Ram", "Cardinal Rule", "Ice Moves", "Bumper Crop", "Hop-O-Matic 4000", "Wingin' It", "Sphere Factor", "Herbicidal Maniac", "Pyramid Scheme", "World Piece", "Warp Pipe Dreams", "Weight for It", "Helipopper", "Monty's Revenge", "Deck Hands", "Mad Props", "Gimme a Sign", "Bridge Work", "Spin Doctor", "Hip Hop Drop", "Air Farce", "The Final Countdown", "Royal Rumpus", "Light Speed", "Apes of Wrath", "Fish & Cheeps", "Camp Ukiki", "Funstacle Course!", "Funderwall!", "Magmagical Journey!", "Tunnel of Lava!", "Treasure Dome!", "Slot-O-Whirl!", "Peel Out", "Bananas Faster", "Stump Change", "Jump, Man", "Vine Country", "A Bridge Too Short", "Spider Stomp", "Stick and Spin", "Bowser's Lovely Lift!"]
+                
+        label = ctk.CTkLabel(master=tabview.tab("Minigame Replacement"), text=" Replace  ", font=("Arial", 16))
+        label.grid(row=0, column=0)
+
+        self.comboboxMingames71 = customtkinter.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=self.minigame7)
+        self.comboboxMingames71.grid(row=0, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Minigame Replacement"), text=" with ", font=("Arial", 16))
+        label.grid(row=0, column=2)
+
+        self.comboboxMingames72 = customtkinter.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=self.minigame7)
+        self.comboboxMingames72.grid(row=0, column=3)
+
+        parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceSeven, text="Generate Codes")
+        parseButtonTwo.place(x=10, y=560)
         return frame
     
     def create_credits_frame(self):
@@ -2081,6 +2188,7 @@ class App(customtkinter.CTk):
         tabview = customtkinter.CTkTabview(frame, width=2000, height=750, fg_color=("#fcfcfc", "#323232"))
         tabview.pack(padx=20, pady=20)
         tabview.add("Coins Mods")
+        tabview.add("Minigame Replacement")
         tabview.set("Coins Mods")
 
         # Create blue space icon and entry
@@ -2122,6 +2230,22 @@ class App(customtkinter.CTk):
         starSpaceLabelHover = CTkToolTip(self.starSpaceAmountEight2, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
         starSpaceLabelHover = CTkToolTip(starSpaceLabel6, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
 
+        self.minigame8 = ["Speedy Graffiti", "Swing Kings", "Water Ski Spree", "Punch-a-Bunch", "Crank to Rank", "At the Chomp Wash", "Mosh-Pit Playroom", "Mario Matrix", "Hammer de Pokari", "Grabby Giridion", "Lava or Leave 'Em", "Kartastrophe", "Ribbon Game", "Aim of the Game", "Rudder Madness", "Gun the Runner", "Grabbin' Gold", "Power Trip", "Bob-ombs Away", "Swervin' Skies", "Picture Perfect", "Snow Way Out", "Thrash 'n' Crash", "Chump Rope", "Sick and Twisted", "Bumper Balloons", "Rowed to Victory", "Winner or Dinner", "Paint Misbehavin'", "Sugar Rush", "King of the Thrill", "Shake It Up", "Lean, Mean Ravine", "Boo-ting Gallery", "Crops 'n' Robbers", "In the Nick of Time", "Cut from the Team", "Snipe for the Picking", "Saucer Swarm", "Glacial Meltdown", "Attention Grabber", "Blazing Lassos", "Wing and a Scare", "Lob to Rob", "Pumper Cars", "Cosmic Slalom", "Lava Lobbers", "Loco Motives", "Specter Inspector", "Frozen Assets", "Breakneck Building", "Surf's Way Up", "Bull Riding", "Balancing Act", "Ion the Prize", "You're the Bob-omb", "Scooter Pursuit", "Cardiators", "Rotation Station", "Eyebrawl", "Table Menace", "Flagging Rights", "Trial by Tile", "Star Carnival Bowling", "Puzzle Pillars", "Canyon Cruisers", "Settle It in Court", "Moped Mayhem", "Flip the Chimp", "Pour to Score", "Fruit Picker", "Stampede", "Superstar Showdown", "Alpine Assault", "Treacherous Tightrope"]
+                
+        label = ctk.CTkLabel(master=tabview.tab("Minigame Replacement"), text=" Replace  ", font=("Arial", 16))
+        label.grid(row=0, column=0)
+
+        self.comboboxMingames81 = customtkinter.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=self.minigame8)
+        self.comboboxMingames81.grid(row=0, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Minigame Replacement"), text=" with ", font=("Arial", 16))
+        label.grid(row=0, column=2)
+
+        self.comboboxMingames82 = customtkinter.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=self.minigame8)
+        self.comboboxMingames82.grid(row=0, column=3)
+
+        parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceEight2, text="Generate Codes")
+        parseButtonTwo.place(x=10, y=560)
 
         parseButtonEight2 = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonEight2, text="Generate Codes")
         parseButtonEight2.place(x=10, y=560)
@@ -2163,6 +2287,7 @@ class App(customtkinter.CTk):
         starSpaceLabelHover = CTkToolTip(starSpaceLabel, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
         # starSpaceLabelHover = CTkToolTip(self.starSpaceAmountEight, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
         starSpaceLabelHover = CTkToolTip(starSpaceLabel6, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
+
 
         parseButtonEight = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonEight, text="Generate Codes")
         parseButtonEight.place(x=10, y=560)
@@ -2248,7 +2373,119 @@ class App(customtkinter.CTk):
         minigameSlot1Hex = minigameHex[minigameSlot1Num]
         minigameSlot2Num = self.minigame1.index(mingameSlot2)
         minigameSlot2Hex = minigameHex[minigameSlot2Num]
-        code = getMinigameReplacement1(minigameSlot1Hex, minigameSlot2Hex, mingameSlot1, mingameSlot1)
+        code = getMinigameReplacement1(minigameSlot1Hex, minigameSlot2Hex, mingameSlot1, mingameSlot2)
+        code = code.strip()
+        pyperclip.copy(code)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
+    def minigameReplaceTwo(self):
+        mingameSlot1 = self.comboboxMingames21.get()
+        mingameSlot2 = self.comboboxMingames22.get()
+        minigameHex = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "0B", "0C", "0D", "0E", "0F", "10", "11", "12", "13", "14", "15", "16", "17", "18", "1A", "1B", "1C", "1E", "1F", "20", "21", "23", "24", "25", "26", "27", "28", "29", "2A", "2B", "2C", "2D", "2E", "30", "31", "32", "33", "34", "35", "36", "37", "39", "41", "42", "43", "44", "45", "46", "47", "48"]
+        minigameSlot1Num = self.minigame2.index(mingameSlot1)
+        minigameSlot1Hex = minigameHex[minigameSlot1Num]
+        minigameSlot2Num = self.minigame2.index(mingameSlot2)
+        minigameSlot2Hex = minigameHex[minigameSlot2Num]
+        code = getMinigameReplacement2(minigameSlot1Hex, minigameSlot2Hex, mingameSlot1, mingameSlot2)
+        code = code.strip()
+        pyperclip.copy(code)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
+    def minigameReplaceThree(self):
+        mingameSlot1 = self.comboboxMingames31.get()
+        mingameSlot2 = self.comboboxMingames32.get()
+        minigameHex = ["08", "09", "0A", "0B", "0C", "0D", "0E", "0F", "15", "16", "17", "18", "19", "1A", "1B", "1C", "1D", "1E", "1F", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "2A", "2B", "2C", "2D", "2E", "2F", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "3A", "3B", "3C", "3D", "3E", "3F", "40", "42", "43", "44", "45", "46", "47", "48"]
+        minigameSlot1Num = self.minigame3.index(mingameSlot1)
+        minigameSlot1Hex = minigameHex[minigameSlot1Num]
+        minigameSlot2Num = self.minigame3.index(mingameSlot2)
+        minigameSlot2Hex = minigameHex[minigameSlot2Num]
+        code = getMinigameReplacement3(minigameSlot1Hex, minigameSlot2Hex, mingameSlot1, mingameSlot2)
+        code = code.strip()
+        pyperclip.copy(code)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
+    def minigameReplaceFour(self):
+        mingameSlot1 = self.comboboxMingames41.get()
+        mingameSlot2 = self.comboboxMingames42.get()
+        minigameHex = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "0A", "0B", "0C", "0D", "0E", "0F", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "1A", "1B", "1C", "1D", "1E", "1F", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "2A", "2C", "2D", "2E", "2F", "30", "31", "36", "37", "38", "39"]
+        minigameSlot1Num = self.minigame4.index(mingameSlot1)
+        minigameSlot1Hex = minigameHex[minigameSlot1Num]
+        minigameSlot2Num = self.minigame4.index(mingameSlot2)
+        minigameSlot2Hex = minigameHex[minigameSlot2Num]
+        code = getMinigameReplacement4(minigameSlot1Hex, minigameSlot2Hex, mingameSlot1, mingameSlot2)
+        code = code.strip()
+        pyperclip.copy(code)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
+    def minigameReplaceFive(self):
+        mingameSlot1 = self.comboboxMingames51.get()
+        mingameSlot2 = self.comboboxMingames52.get()
+        minigameHex = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "0A", "0B", "0C", "0D", "0E", "0F", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "1A", "1B", "1C", "1D", "1E", "1F", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "2A", "2B", "2C", "2D", "2E", "2F", "30", "31", "32", "33", "34", "35", "36", "37", "3A", "3C", "3D", "3E", "3F", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "4A", "4B", "4C", "4D", "4E", "4F"]
+        minigameSlot1Num = self.minigame5.index(mingameSlot1)
+        minigameSlot1Hex = minigameHex[minigameSlot1Num]
+        minigameSlot2Num = self.minigame5.index(mingameSlot2)
+        minigameSlot2Hex = minigameHex[minigameSlot2Num]
+        code = getMinigameReplacement5(minigameSlot1Hex, minigameSlot2Hex, mingameSlot1, mingameSlot2)
+        code = code.strip()
+        pyperclip.copy(code)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
+    def minigameReplaceFive(self):
+        mingameSlot1 = self.comboboxMingames51.get()
+        mingameSlot2 = self.comboboxMingames52.get()
+        minigameHex = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "0A", "0B", "0C", "0D", "0E", "0F", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "1A", "1B", "1C", "1D", "1E", "1F", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "2A", "2B", "2C", "2D", "2E", "2F", "30", "31", "32", "33", "34", "35", "36", "37", "3A", "3C", "3D", "3E", "3F", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "4A", "4B", "4C", "4D", "4E", "4F"]
+        minigameSlot1Num = self.minigame5.index(mingameSlot1)
+        minigameSlot1Hex = minigameHex[minigameSlot1Num]
+        minigameSlot2Num = self.minigame5.index(mingameSlot2)
+        minigameSlot2Hex = minigameHex[minigameSlot2Num]
+        code = getMinigameReplacement5(minigameSlot1Hex, minigameSlot2Hex, mingameSlot1, mingameSlot2)
+        code = code.strip()
+        pyperclip.copy(code)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
+    def minigameReplaceSix(self):
+        mingameSlot1 = self.comboboxMingames61.get()
+        mingameSlot2 = self.comboboxMingames62.get()
+        minigameHex = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "0A", "0B", "0C", "0D", "0E", "0F", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "1A", "1B", "1C", "1D", "1E", "1F", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "2A", "2B", "2C", "2D", "2E", "2F", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "3A", "3B", "3C", "3D", "3E", "3F", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "4A", "4B", "4C", "4D", "4E", "4F", "50", "51"]
+        minigameSlot1Num = self.minigame6.index(mingameSlot1)
+        minigameSlot1Hex = minigameHex[minigameSlot1Num]
+        minigameSlot2Num = self.minigame6.index(mingameSlot2)
+        minigameSlot2Hex = minigameHex[minigameSlot2Num]
+        code = getMinigameReplacement6(minigameSlot1Hex, minigameSlot2Hex, mingameSlot1, mingameSlot2)
+        code = code.strip()
+        pyperclip.copy(code)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
+    def minigameReplaceSeven(self):
+        mingameSlot1 = self.comboboxMingames71.get()
+        mingameSlot2 = self.comboboxMingames72.get()
+        minigameHex = ["00", "01", "02", "03", "04", "05", "07", "08", "09", "0A", "0B", "0C", "0D", "0E", "0F", "10", "12", "14", "15", "16", "17", "18", "19", "1A", "1B", "1C", "1D", "1E", "1F", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "2A", "2B", "2C", "2D", "2E", "2F", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "3A", "3B", "3C", "3D", "3E", "3F", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "4A", "4B", "55"]
+        minigameSlot1Num = self.minigame7.index(mingameSlot1)
+        minigameSlot1Hex = minigameHex[minigameSlot1Num]
+        minigameSlot2Num = self.minigame7.index(mingameSlot2)
+        minigameSlot2Hex = minigameHex[minigameSlot2Num]
+        code = getMinigameReplacement7(minigameSlot1Hex, minigameSlot2Hex, mingameSlot1, mingameSlot2)
+        code = code.strip()
+        pyperclip.copy(code)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)\
+
+    def minigameReplaceEight2(self):
+        mingameSlot1 = self.comboboxMingames81.get()
+        mingameSlot2 = self.comboboxMingames82.get()
+        minigameHex = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "0A", "0B", "0C", "0D", "0E", "0F", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "1A", "1B", "1C", "1D", "1E", "1F", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "2A", "2B", "2C", "2D", "2E", "2F", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "3A", "3B", "3C", "3D", "3E", "3F", "40", "41", "43", "44", "45", "46", "47", "48", "49", "4A", "4B"]
+        minigameSlot1Num = self.minigame8.index(mingameSlot1)
+        minigameSlot1Hex = minigameHex[minigameSlot1Num]
+        minigameSlot2Num = self.minigame8.index(mingameSlot2)
+        minigameSlot2Hex = minigameHex[minigameSlot2Num]
+        code = getMinigameReplacement82(minigameSlot1Hex, minigameSlot2Hex, mingameSlot1, mingameSlot2)
         code = code.strip()
         pyperclip.copy(code)
         print("Generated codes copied to the clipboard.")
