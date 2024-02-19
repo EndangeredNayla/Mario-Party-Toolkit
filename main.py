@@ -1030,6 +1030,12 @@ class App(customtkinter.CTk):
 
         parseButtonFiveItems = ctk.CTkButton(master=tabview.tab("Capsule Mods"), command=self.actionSpaceButtonFiveCapsule, text="Generate Codes")
         parseButtonFiveItems.place(x=10, y=560)
+
+        parseButtonFive = ctk.CTkButton(master=tabview.tab("Capsule Mods"), command=self.savePresetItems5, text="Save Preset")
+        parseButtonFive.place(x=160, y=560)
+
+        parseButtonFive = ctk.CTkButton(master=tabview.tab("Capsule Mods"), command=self.loadPresetItems5, text="Load Preset")
+        parseButtonFive.place(x=310, y=560)
         return frame
 
     def create_mp6_frame(self):
@@ -1037,8 +1043,8 @@ class App(customtkinter.CTk):
         tabview = customtkinter.CTkTabview(frame, width=2000, height=750, fg_color=("#fcfcfc", "#323232"))
         tabview.pack(padx=20, pady=20)
         tabview.add("Coins Mods")
-        tabview.add("Faire Square Mods")
         tabview.add("Orb Mods")
+        tabview.add("Faire Square Mods")
         tabview.set("Coins Mods")
 
         # Create faire square grid icon and entry
@@ -1516,6 +1522,12 @@ class App(customtkinter.CTk):
 
         parseFaireSquare = ctk.CTkButton(master=tabview.tab("Faire Square Mods"), command=self.actionFaireSquare, text="Generate Codes")
         parseFaireSquare.place(x=10, y=560)
+
+        parseButton6 = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=self.savePresetItems6, text="Save Preset")
+        parseButton6.place(x=160, y=620)
+
+        parseButton6 = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=self.loadPresetItems6, text="Load Preset")
+        parseButton6.place(x=310, y=620)
 
         parseButtonSixOrbs = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=self.actionSpaceButtonSixOrb, text="Generate Codes")
         parseButtonSixOrbs.place(x=10, y=620)
@@ -2019,6 +2031,12 @@ class App(customtkinter.CTk):
 
         parseButtonSeven = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonSeven, text="Generate Codes")
         parseButtonSeven.place(x=10, y=620)
+
+        parseButton7 = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=self.savePresetItems7, text="Save Preset")
+        parseButton7.place(x=160, y=620)
+
+        parseButton7 = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=self.loadPresetItems7, text="Load Preset")
+        parseButton7.place(x=310, y=620)
 
         parseButtonSevenOrbs = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=self.actionSpaceButtonSevenOrb, text="Generate Codes")
         parseButtonSevenOrbs.place(x=10, y=620)
@@ -5110,7 +5128,145 @@ class App(customtkinter.CTk):
 
         print("Generated code copied to the clipboard.")
         createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+    
+    def savePresetItems5(self):
+        if not self.duelCapsulePrice5.get() or not self.duelCapsuleWeight5.get() or not self.warpPipeCapsulePrice5.get() or not self.warpPipeCapsuleWeight5.get() or not self.mushroomCapsulePrice5.get() or not self.mushroomCapsuleWeight5.get() or not self.goldenMushroomCapsulePrice5.get() or not self.goldenMushroomCapsuleWeight5.get() or not self.cursedMushroomCapsulePrice5.get() or not self.cursedMushroomCapsuleWeight5.get() or not self.kleptoCapsulePrice5.get() or not self.kleptoCapsuleWeight5.get() or not self.warpPipeCapsulePrice5.get() or not self.warpPipeCapsuleWeight5.get() or not self.flutterCapsulePrice5.get() or not self.flutterCapsuleWeight5.get() or not self.cursedMushroomCapsulePrice5.get() or not self.cursedMushroomCapsuleWeight5.get() or not self.spinyCapsulePrice5.get() or not self.spinyCapsuleWeight5.get() or not self.goombaCapsuleWeight5.get() or not self.goombaCapsulePrice5.get() or not self.plantCapsulePrice5.get() or not self.plantCapsuleWeight5.get() or not self.kleptoCapsuleWeight5.get() or not self.kleptoCapsulePrice5.get() or not self.kamekCapsuleWeight5.get() or not self.kamekCapsulePrice5.get() or not self.magiKoopaCapsuleWeight5.get() or not self.magiKoopaCapsulePrice5.get() or not self.blizzardCapsuleWeight5.get() or not self.blizzardCapsulePrice5.get() or not self.podobooCapsulePrice5.get() or not self.podobooCapsuleWeight5.get() or not self.paraTroopaCapsuleWeight5.get() or not self.paraTroopaCapsulePrice5.get() or not self.magiKoopaCapsulePrice5.get() or not self.magiKoopaCapsuleWeight5.get() or not self.ukikiCapsulePrice5.get() or not self.ukikiCapsuleWeight5.get() or not self.tweesterCapsulePrice5.get() or not self.tweesterCapsuleWeight5.get() or not self.lakituCapsulePrice5.get() or not self.lakituCapsuleWeight5.get() or not self.warpPipeCapsulePrice5.get() or not self.warpPipeCapsuleWeight5.get() or not self.miracleCapsulePrice5.get() or not self.miracleCapsuleWeight5.get() or not self.boneCapsulePrice5.get() or not self.boneCapsuleWeight5.get() or not self.chanceCapsulePrice5.get() or not self.chanceCapsuleWeight5.get() or not self.chainChompCapsulePrice5.get() or not self.chainChompCapsuleWeight5.get() or not self.bowserCapsulePrice5.get() or not self.bowserCapsuleWeight5.get() or not self.dkCapsulePrice5.get() or not self.dkCapsuleWeight5.get():
+            if sys.platform == "darwin":
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
+            else:
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
+            return
 
+        mushroomCapsulePrice5 = self.mushroomCapsulePrice5.get()
+        mushroomCapsuleWeight5 = self.mushroomCapsuleWeight5.get()
+
+        kamekCapsuleWeight5 = self.kamekCapsuleWeight5.get()
+        kamekCapsulePrice5 = self.kamekCapsulePrice5.get()
+        
+        goldenMushroomCapsulePrice5 = self.goldenMushroomCapsulePrice5.get()
+        goldenMushroomCapsuleWeight5 = self.goldenMushroomCapsuleWeight5.get()
+
+        cursedMushroomCapsulePrice5 = self.cursedMushroomCapsulePrice5.get()
+        cursedMushroomCapsuleWeight5 = self.cursedMushroomCapsuleWeight5.get()
+
+        goombaCapsulePrice5 = self.goombaCapsulePrice5.get()
+        goombaCapsuleWeight5 = self.goombaCapsuleWeight5.get()
+
+        kleptoCapsulePrice5 = self.kleptoCapsulePrice5.get()
+        kleptoCapsuleWeight5 = self.kleptoCapsuleWeight5.get()
+
+        flutterCapsulePrice5 = self.flutterCapsulePrice5.get()
+        flutterCapsuleWeight5 = self.flutterCapsuleWeight5.get()
+
+        podobooCapsulePrice5 = self.podobooCapsulePrice5.get()
+        podobooCapsuleWeight5 = self.podobooCapsuleWeight5.get()
+
+        spinyCapsulePrice5 = self.spinyCapsulePrice5.get()
+        spinyCapsuleWeight5 = self.spinyCapsuleWeight5.get()
+
+        coinBlockCapsulePrice5 = self.coinBlockCapsulePrice5.get()
+        coinBlockCapsuleWeight5 = self.coinBlockCapsuleWeight5.get()
+
+        plantCapsulePrice5 = self.plantCapsulePrice5.get()
+        plantCapsuleWeight5 = self.plantCapsuleWeight5.get()
+
+        hammerBroCapsulePrice5 = self.hammerBroCapsulePrice5.get()
+        hammerBroCapsuleWeight5 = self.hammerBroCapsuleWeight5.get()
+
+        bulletBillCapsulePrice5 = self.bulletBillCapsulePrice5.get()
+        bulletBillCapsuleWeight5 = self.bulletBillCapsuleWeight5.get()
+
+        blizzardCapsulePrice5 = self.blizzardCapsulePrice5.get()
+        blizzardCapsuleWeight5 = self.blizzardCapsuleWeight5.get()
+
+        paraTroopaCapsulePrice5 = self.paraTroopaCapsulePrice5.get()
+        paraTroopaCapsuleWeight5 = self.paraTroopaCapsuleWeight5.get()
+
+        magiKoopaCapsulePrice5 = self.magiKoopaCapsulePrice5.get()
+        magiKoopaCapsuleWeight5 = self.magiKoopaCapsuleWeight5.get()
+
+        ukikiCapsulePrice5 = self.ukikiCapsulePrice5.get()
+        ukikiCapsuleWeight5 = self.ukikiCapsuleWeight5.get()
+
+        tweesterCapsulePrice5 = self.tweesterCapsulePrice5.get()
+        tweesterCapsuleWeight5 = self.tweesterCapsuleWeight5.get()
+
+        lakituCapsulePrice5 = self.lakituCapsulePrice5.get()
+        lakituCapsuleWeight5 = self.lakituCapsuleWeight5.get()
+
+        warpPipeCapsulePrice5 = self.warpPipeCapsulePrice5.get()
+        warpPipeCapsuleWeight5 = self.warpPipeCapsuleWeight5.get()
+
+        miracleCapsulePrice5 = self.miracleCapsulePrice5.get()
+        miracleCapsuleWeight5 = self.miracleCapsuleWeight5.get()
+
+        boneCapsulePrice5 = self.boneCapsulePrice5.get()
+        boneCapsuleWeight5 = self.boneCapsuleWeight5.get()
+
+        chainChompCapsulePrice5 = self.chainChompCapsulePrice5.get()
+        chainChompCapsuleWeight5 = self.chainChompCapsuleWeight5.get()
+
+        chanceCapsulePrice5 = self.chanceCapsulePrice5.get()
+        chanceCapsuleWeight5 = self.chanceCapsuleWeight5.get()
+
+        bowserCapsulePrice5 = self.bowserCapsulePrice5.get()
+        bowserCapsuleWeight5 = self.bowserCapsuleWeight5.get()
+
+        dkCapsulePrice5 = self.dkCapsulePrice5.get()
+        dkCapsuleWeight5 = self.dkCapsuleWeight5.get()
+
+        duelCapsulePrice5 = self.duelCapsulePrice5.get()
+        duelCapsuleWeight5 = self.duelCapsuleWeight5.get()
+
+        koopaBankCapsulePrice5 = self.koopaBankCapsulePrice5.get()
+        koopaBankCapsuleWeight5 = self.koopaBankCapsuleWeight5.get()
+
+        bombCapsulePrice5 = self.bombCapsulePrice5.get()
+        bombCapsuleWeight5 = self.bombCapsuleWeight5.get()
+
+        prices5 = [mushroomCapsulePrice5, kamekCapsulePrice5, goldenMushroomCapsulePrice5, cursedMushroomCapsulePrice5, goombaCapsulePrice5, kleptoCapsulePrice5, flutterCapsulePrice5, podobooCapsulePrice5, spinyCapsulePrice5, coinBlockCapsulePrice5, plantCapsulePrice5, hammerBroCapsulePrice5, bulletBillCapsulePrice5, blizzardCapsulePrice5, paraTroopaCapsulePrice5, magiKoopaCapsulePrice5, ukikiCapsulePrice5, tweesterCapsulePrice5, lakituCapsulePrice5, warpPipeCapsulePrice5, miracleCapsulePrice5, boneCapsulePrice5, chainChompCapsulePrice5, chanceCapsulePrice5, bowserCapsulePrice5, dkCapsulePrice5, duelCapsulePrice5, koopaBankCapsulePrice5, bombCapsulePrice5]
+        weights5 = [mushroomCapsuleWeight5, kamekCapsuleWeight5, goldenMushroomCapsuleWeight5, cursedMushroomCapsuleWeight5, goombaCapsuleWeight5, kleptoCapsuleWeight5, flutterCapsuleWeight5, podobooCapsuleWeight5, spinyCapsuleWeight5, coinBlockCapsuleWeight5, plantCapsuleWeight5, hammerBroCapsuleWeight5, bulletBillCapsuleWeight5, blizzardCapsuleWeight5, paraTroopaCapsuleWeight5, magiKoopaCapsuleWeight5, ukikiCapsuleWeight5, tweesterCapsuleWeight5, lakituCapsuleWeight5, warpPipeCapsuleWeight5, miracleCapsuleWeight5, boneCapsuleWeight5, chainChompCapsuleWeight5, chanceCapsuleWeight5, bowserCapsuleWeight5, dkCapsuleWeight5, duelCapsuleWeight5, koopaBankCapsuleWeight5, bombCapsuleWeight5]
+
+        file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
+        if file_path:
+            with open(file_path, 'w', newline='') as csvfile:
+                writer = csv.writer(csvfile)
+                writer.writerow(['Prices', 'Weights'])
+                for price, weight in zip(prices5, weights5):
+                    writer.writerow([price, weight])
+            print("MPT file saved successfully!")
+            createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
+
+
+    def loadPresetItems5(self):
+        file_path = tkinter.filedialog.askopenfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
+        if file_path:
+            prices5In = []
+            weights5In = []
+            with open(file_path, 'r', newline='') as csvfile:
+                reader = csv.reader(csvfile)
+                next(reader)
+                for row in reader:
+                    prices5In.append(float(row[0]))
+                    weights5In.append(float(row[1]))
+
+            # Define a list of Entry widget attributes
+            pricesNames5 = [self.mushroomCapsulePrice5, self.kamekCapsulePrice5, self.goldenMushroomCapsulePrice5, self.cursedMushroomCapsulePrice5, self.goombaCapsulePrice5, self.kleptoCapsulePrice5, self.flutterCapsulePrice5, self.podobooCapsulePrice5, self.spinyCapsulePrice5, self.coinBlockCapsulePrice5, self.plantCapsulePrice5, self.hammerBroCapsulePrice5, self.bulletBillCapsulePrice5, self.blizzardCapsulePrice5, self.paraTroopaCapsulePrice5, self.magiKoopaCapsulePrice5, self.ukikiCapsulePrice5, self.tweesterCapsulePrice5, self.lakituCapsulePrice5, self.warpPipeCapsulePrice5, self.miracleCapsulePrice5, self.boneCapsulePrice5, self.chainChompCapsulePrice5, self.chanceCapsulePrice5, self.bowserCapsulePrice5, self.dkCapsulePrice5, self.duelCapsulePrice5, self.koopaBankCapsulePrice5, self.bombCapsulePrice5]
+            weightsNames5 = [self.mushroomCapsuleWeight5, self.kamekCapsuleWeight5, self.goldenMushroomCapsuleWeight5, self.cursedMushroomCapsuleWeight5, self.goombaCapsuleWeight5, self.kleptoCapsuleWeight5, self.flutterCapsuleWeight5, self.podobooCapsuleWeight5, self.spinyCapsuleWeight5, self.coinBlockCapsuleWeight5, self.plantCapsuleWeight5, self.hammerBroCapsuleWeight5, self.bulletBillCapsuleWeight5, self.blizzardCapsuleWeight5, self.paraTroopaCapsuleWeight5, self.magiKoopaCapsuleWeight5, self.ukikiCapsuleWeight5, self.tweesterCapsuleWeight5, self.lakituCapsuleWeight5, self.warpPipeCapsuleWeight5, self.miracleCapsuleWeight5, self.boneCapsuleWeight5, self.chainChompCapsuleWeight5, self.chanceCapsuleWeight5, self.bowserCapsuleWeight5, self.dkCapsuleWeight5, self.duelCapsuleWeight5, self.koopaBankCapsuleWeight5, self.bombCapsuleWeight5]
+
+            # Update widgets with loaded values
+            for index, widget in enumerate(pricesNames5):
+                if widget and index < len(prices5In):
+                    widget.delete(0, 'end')
+                    widget.insert(0, int(prices5In[index]))
+
+            for index, widget in enumerate(weightsNames5):
+                if widget and index < len(weights5In):
+                    widget.delete(0, 'end')
+                    widget.insert(0, int(weights5In[index]))
+            print("MPT file laoded successfully!")
+            createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
+    
     def actionSpaceButtonFiveCapsule(self):
         if not self.duelCapsulePrice5.get() or not self.duelCapsuleWeight5.get() or not self.warpPipeCapsulePrice5.get() or not self.warpPipeCapsuleWeight5.get() or not self.mushroomCapsulePrice5.get() or not self.mushroomCapsuleWeight5.get() or not self.goldenMushroomCapsulePrice5.get() or not self.goldenMushroomCapsuleWeight5.get() or not self.cursedMushroomCapsulePrice5.get() or not self.cursedMushroomCapsuleWeight5.get() or not self.kleptoCapsulePrice5.get() or not self.kleptoCapsuleWeight5.get() or not self.warpPipeCapsulePrice5.get() or not self.warpPipeCapsuleWeight5.get() or not self.flutterCapsulePrice5.get() or not self.flutterCapsuleWeight5.get() or not self.cursedMushroomCapsulePrice5.get() or not self.cursedMushroomCapsuleWeight5.get() or not self.spinyCapsulePrice5.get() or not self.spinyCapsuleWeight5.get() or not self.goombaCapsuleWeight5.get() or not self.goombaCapsulePrice5.get() or not self.plantCapsulePrice5.get() or not self.plantCapsuleWeight5.get() or not self.kleptoCapsuleWeight5.get() or not self.kleptoCapsulePrice5.get() or not self.kamekCapsuleWeight5.get() or not self.kamekCapsulePrice5.get() or not self.magiKoopaCapsuleWeight5.get() or not self.magiKoopaCapsulePrice5.get() or not self.blizzardCapsuleWeight5.get() or not self.blizzardCapsulePrice5.get() or not self.podobooCapsulePrice5.get() or not self.podobooCapsuleWeight5.get() or not self.paraTroopaCapsuleWeight5.get() or not self.paraTroopaCapsulePrice5.get() or not self.magiKoopaCapsulePrice5.get() or not self.magiKoopaCapsuleWeight5.get() or not self.ukikiCapsulePrice5.get() or not self.ukikiCapsuleWeight5.get() or not self.tweesterCapsulePrice5.get() or not self.tweesterCapsuleWeight5.get() or not self.lakituCapsulePrice5.get() or not self.lakituCapsuleWeight5.get() or not self.warpPipeCapsulePrice5.get() or not self.warpPipeCapsuleWeight5.get() or not self.miracleCapsulePrice5.get() or not self.miracleCapsuleWeight5.get() or not self.boneCapsulePrice5.get() or not self.boneCapsuleWeight5.get() or not self.chanceCapsulePrice5.get() or not self.chanceCapsuleWeight5.get() or not self.chainChompCapsulePrice5.get() or not self.chainChompCapsuleWeight5.get() or not self.bowserCapsulePrice5.get() or not self.bowserCapsuleWeight5.get() or not self.dkCapsulePrice5.get() or not self.dkCapsuleWeight5.get():
             if sys.platform == "darwin":
@@ -5839,6 +5995,281 @@ class App(customtkinter.CTk):
 
         print("Generated code copied to the clipboard.")
         createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
+    def savePresetItems7(self):
+        if not self.mushroomCapsuleWeight7.get() or not self.goldenMushroomCapsulePrice7.get() or not self.goldenMushroomCapsuleWeight7.get() or not self.slowMushroomCapsulePrice7.get() or not self.slowMushroomCapsuleWeight7.get() or not self.metalMushroomCapsulePrice7.get() or not self.metalMushroomCapsuleWeight7.get() or not self.flutterCapsulePrice7.get() or not self.flutterCapsuleWeight7.get() or not self.cannonCapsulePrice7.get() or not self.cannonCapsuleWeight7.get() or not self.snackCapsulePrice7.get() or not self.snackCapsuleWeight7.get() or not self.lakituCapsulePrice7.get() or not self.lakituCapsuleWeight7.get() or not self.hammerBroCapsuleWeight7.get() or not self.hammerBroCapsulePrice7.get() or not self.plantCapsulePrice7.get() or not self.plantCapsuleWeight7.get() or not self.spearCapsuleWeight7.get() or not self.spearCapsulePrice7.get() or not self.kamekCapsuleWeight7.get() or not self.kamekCapsulePrice7.get() or not self.toadyCapsuleWeight7.get() or not self.toadyCapsulePrice7.get() or not self.blizzardCapsuleWeight7.get() or not self.blizzardCapsulePrice7.get() or not self.banditCapsulePrice7.get() or not self.banditCapsuleWeight7.get() or not self.pinkBooCapsuleWeight7.get() or not self.pinkBooCapsulePrice7.get() or not self.spinyCapsulePrice7.get() or not self.spinyCapsuleWeight7.get() or not self.zapCapsulePrice7.get() or not self.zapCapsuleWeight7.get() or not self.tweesterCapsulePrice7.get() or not self.tweesterCapsuleWeight7.get() or not self.thwompCapsulePrice7.get() or not self.thwompCapsuleWeight7.get() or not self.warpCapsulePrice7.get() or not self.warpCapsuleWeight7.get() or not self.bombCapsulePrice7.get() or not self.bombCapsuleWeight7.get() or not self.fireballCapsulePrice7.get() or not self.fireballCapsuleWeight7.get() or not self.eggCapsulePrice7.get() or not self.eggCapsuleWeight7.get() or not self.flowerCapsulePrice7.get() or not self.flowerCapsuleWeight7.get() or not self.vacuumCapsulePrice7.get() or not self.vacuumCapsuleWeight7.get() or not self.magicCapsulePrice7.get() or not self.magicCapsuleWeight7.get() or not self.tripleCapsulePrice7.get() or not self.tripleCapsuleWeight7.get() or not self.koopaCapsulePrice7.get() or not self.koopaCapsuleWeight7.get():
+            if sys.platform == "darwin":
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
+            else:
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
+            return
+        
+        mushroomCapsuleWeight7 = self.mushroomCapsuleWeight7.get()
+        
+        goldenMushroomCapsulePrice7 = self.goldenMushroomCapsulePrice7.get()
+        goldenMushroomCapsuleWeight7 = self.goldenMushroomCapsuleWeight7.get()
+
+        slowMushroomCapsulePrice7 = self.slowMushroomCapsulePrice7.get()
+        slowMushroomCapsuleWeight7 = self.slowMushroomCapsuleWeight7.get()
+
+        metalMushroomCapsulePrice7 = self.metalMushroomCapsulePrice7.get()
+        metalMushroomCapsuleWeight7 = self.metalMushroomCapsuleWeight7.get()
+
+        flutterCapsulePrice7 = self.flutterCapsulePrice7.get()
+        flutterCapsuleWeight7 = self.flutterCapsuleWeight7.get()
+
+        cannonCapsulePrice7 = self.cannonCapsulePrice7.get()
+        cannonCapsuleWeight7 = self.cannonCapsuleWeight7.get()
+
+        snackCapsulePrice7 = self.snackCapsulePrice7.get()
+        snackCapsuleWeight7 = self.snackCapsuleWeight7.get()
+
+        lakituCapsulePrice7 = self.lakituCapsulePrice7.get()
+        lakituCapsuleWeight7 = self.lakituCapsuleWeight7.get()
+
+        hammerBroCapsulePrice7 = self.hammerBroCapsulePrice7.get()
+        hammerBroCapsuleWeight7 = self.hammerBroCapsuleWeight7.get()
+
+        plantCapsulePrice7 = self.plantCapsulePrice7.get()
+        plantCapsuleWeight7 = self.plantCapsuleWeight7.get()
+
+        spearCapsulePrice7 = self.spearCapsulePrice7.get()
+        spearCapsuleWeight7 = self.spearCapsuleWeight7.get()
+
+        kamekCapsulePrice7 = self.kamekCapsulePrice7.get()
+        kamekCapsuleWeight7 = self.kamekCapsuleWeight7.get()
+
+        toadyCapsulePrice7 = self.toadyCapsulePrice7.get()
+        toadyCapsuleWeight7 = self.toadyCapsuleWeight7.get()
+
+        blizzardCapsulePrice7 = self.blizzardCapsulePrice7.get()
+        blizzardCapsuleWeight7 = self.blizzardCapsuleWeight7.get()
+
+        banditCapsulePrice7 = self.banditCapsulePrice7.get()
+        banditCapsuleWeight7 = self.banditCapsuleWeight7.get()
+
+        pinkBooCapsulePrice7 = self.pinkBooCapsulePrice7.get()
+        pinkBooCapsuleWeight7 = self.pinkBooCapsuleWeight7.get()
+
+        spinyCapsulePrice7 = self.spinyCapsulePrice7.get()
+        spinyCapsuleWeight7 = self.spinyCapsuleWeight7.get()
+
+        zapCapsulePrice7 = self.zapCapsulePrice7.get()
+        zapCapsuleWeight7 = self.zapCapsuleWeight7.get()
+
+        tweesterCapsulePrice7 = self.tweesterCapsulePrice7.get()
+        tweesterCapsuleWeight7 = self.tweesterCapsuleWeight7.get()
+
+        thwompCapsulePrice7 = self.thwompCapsulePrice7.get()
+        thwompCapsuleWeight7 = self.thwompCapsuleWeight7.get()
+
+        warpCapsulePrice7 = self.warpCapsulePrice7.get()
+        warpCapsuleWeight7 = self.warpCapsuleWeight7.get()
+
+        bombCapsulePrice7 = self.bombCapsulePrice7.get()
+        bombCapsuleWeight7 = self.bombCapsuleWeight7.get()
+
+        fireballCapsulePrice7 = self.fireballCapsulePrice7.get()
+        fireballCapsuleWeight7 = self.fireballCapsuleWeight7.get()
+
+        flowerCapsulePrice7 = self.flowerCapsulePrice7.get()
+        flowerCapsuleWeight7 = self.flowerCapsuleWeight7.get()
+
+        eggCapsulePrice7 = self.eggCapsulePrice7.get()
+        eggCapsuleWeight7 = self.eggCapsuleWeight7.get()
+
+        vacuumCapsulePrice7 = self.vacuumCapsulePrice7.get()
+        vacuumCapsuleWeight7 = self.vacuumCapsuleWeight7.get()
+
+        magicCapsulePrice7 = self.magicCapsulePrice7.get()
+        magicCapsuleWeight7 = self.magicCapsuleWeight7.get()
+
+        tripleCapsulePrice7 = self.tripleCapsulePrice7.get()
+        tripleCapsuleWeight7 = self.tripleCapsuleWeight7.get()
+
+        koopaCapsulePrice7 = self.koopaCapsulePrice7.get()
+        koopaCapsuleWeight7 = self.koopaCapsuleWeight7.get()
+
+
+        prices7 = ["5", goldenMushroomCapsulePrice7, slowMushroomCapsulePrice7, metalMushroomCapsulePrice7, flutterCapsulePrice7, cannonCapsulePrice7, snackCapsulePrice7, lakituCapsulePrice7, hammerBroCapsulePrice7, plantCapsulePrice7, spearCapsulePrice7, kamekCapsulePrice7, toadyCapsulePrice7, blizzardCapsulePrice7, banditCapsulePrice7, pinkBooCapsulePrice7, spinyCapsulePrice7, zapCapsulePrice7, tweesterCapsulePrice7, thwompCapsulePrice7, warpCapsulePrice7, bombCapsulePrice7, fireballCapsulePrice7, flowerCapsulePrice7, eggCapsulePrice7, vacuumCapsulePrice7, magicCapsulePrice7, tripleCapsulePrice7, koopaCapsulePrice7]
+        weights7 = [mushroomCapsuleWeight7, goldenMushroomCapsuleWeight7, slowMushroomCapsuleWeight7, metalMushroomCapsuleWeight7, flutterCapsuleWeight7, cannonCapsuleWeight7, snackCapsuleWeight7, lakituCapsuleWeight7, hammerBroCapsuleWeight7, plantCapsuleWeight7, spearCapsuleWeight7, kamekCapsuleWeight7, toadyCapsuleWeight7, blizzardCapsuleWeight7, banditCapsuleWeight7, pinkBooCapsuleWeight7, spinyCapsuleWeight7, zapCapsuleWeight7, tweesterCapsuleWeight7, thwompCapsuleWeight7, warpCapsuleWeight7, bombCapsuleWeight7, fireballCapsuleWeight7, flowerCapsuleWeight7, eggCapsuleWeight7, vacuumCapsuleWeight7, magicCapsuleWeight7, tripleCapsuleWeight7, koopaCapsuleWeight7]
+
+        file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
+        if file_path:
+            with open(file_path, 'w', newline='') as csvfile:
+                writer = csv.writer(csvfile)
+                writer.writerow(['Prices', 'Weights'])
+                for price, weight in zip(prices7, weights7):
+                    writer.writerow([price, weight])
+            print("MPT file saved successfully!")
+            createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
+
+
+    def loadPresetItems7(self):
+        file_path = tkinter.filedialog.askopenfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
+        if file_path:
+            prices7In = []
+            weights7In = []
+            with open(file_path, 'r', newline='') as csvfile:
+                reader = csv.reader(csvfile)
+                next(reader)
+                for row in reader:
+                    prices7In.append(float(row[0]))
+                    weights7In.append(float(row[1]))
+            
+            testVar = ""
+            # Define a list of Entry widget attributes
+            
+            pricesNames7 = [testVar, self.goldenMushroomCapsulePrice7, self.slowMushroomCapsulePrice7, self.metalMushroomCapsulePrice7, self.flutterCapsulePrice7, self.cannonCapsulePrice7, self.snackCapsulePrice7, self.lakituCapsulePrice7, self.hammerBroCapsulePrice7, self.plantCapsulePrice7, self.spearCapsulePrice7, self.kamekCapsulePrice7, self.toadyCapsulePrice7, self.blizzardCapsulePrice7, self.banditCapsulePrice7, self.pinkBooCapsulePrice7, self.spinyCapsulePrice7, self.zapCapsulePrice7, self.tweesterCapsulePrice7, self.thwompCapsulePrice7, self.warpCapsulePrice7, self.bombCapsulePrice7, self.fireballCapsulePrice7, self.flowerCapsulePrice7, self.eggCapsulePrice7, self.vacuumCapsulePrice7, self.magicCapsulePrice7, self.tripleCapsulePrice7, self.koopaCapsulePrice7]
+            weightsNames7 = [self.mushroomCapsuleWeight7, self.goldenMushroomCapsuleWeight7, self.slowMushroomCapsuleWeight7, self.metalMushroomCapsuleWeight7, self.flutterCapsuleWeight7, self.cannonCapsuleWeight7, self.snackCapsuleWeight7, self.lakituCapsuleWeight7, self.hammerBroCapsuleWeight7, self.plantCapsuleWeight7, self.spearCapsuleWeight7, self.kamekCapsuleWeight7, self.toadyCapsuleWeight7, self.blizzardCapsuleWeight7, self.banditCapsuleWeight7, self.pinkBooCapsuleWeight7, self.spinyCapsuleWeight7, self.zapCapsuleWeight7, self.tweesterCapsuleWeight7, self.thwompCapsuleWeight7, self.warpCapsuleWeight7, self.bombCapsuleWeight7, self.fireballCapsuleWeight7, self.flowerCapsuleWeight7, self.eggCapsuleWeight7, self.vacuumCapsuleWeight7, self.magicCapsuleWeight7, self.tripleCapsuleWeight7, self.koopaCapsuleWeight7]
+
+            # Update widgets with loaded values
+            for index, widget in enumerate(pricesNames7):
+                if widget and index < len(prices7In):
+                    widget.delete(0, 'end')
+                    widget.insert(0, int(prices7In[index]))
+
+            for index, widget in enumerate(weightsNames7):
+                if widget and index < len(weights7In):
+                    widget.delete(0, 'end')
+                    widget.insert(0, int(weights7In[index]))
+            print("MPT file laoded successfully!")
+            createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
+
+    def savePresetItems6(self):
+        if not self.duelCapsulePrice6.get() or not self.duelCapsuleWeight6.get() or not self.metalMushroomCapsulePrice6.get() or not self.metalMushroomCapsuleWeight6.get() or not self.mushroomCapsuleWeight6.get() or not self.goldenMushroomCapsulePrice6.get() or not self.goldenMushroomCapsuleWeight6.get() or not self.slowMushroomCapsulePrice6.get() or not self.slowMushroomCapsuleWeight6.get() or not self.bulletBillCapsulePrice6.get() or not self.bulletBillCapsuleWeight6.get() or not self.warpPipeCapsulePrice6.get() or not self.warpPipeCapsuleWeight6.get() or not self.flutterCapsulePrice6.get() or not self.flutterCapsuleWeight6.get() or not self.cursedMushroomCapsulePrice6.get() or not self.cursedMushroomCapsuleWeight6.get() or not self.spinyCapsulePrice6.get() or not self.spinyCapsuleWeight6.get() or not self.goombaCapsuleWeight6.get() or not self.goombaCapsulePrice6.get() or not self.plantCapsulePrice6.get() or not self.plantCapsuleWeight6.get() or not self.kleptoCapsuleWeight6.get() or not self.kleptoCapsulePrice6.get() or not self.kamekCapsuleWeight6.get() or not self.kamekCapsulePrice6.get() or not self.toadyCapsuleWeight6.get() or not self.toadyCapsulePrice6.get() or not self.blizzardCapsuleWeight6.get() or not self.blizzardCapsulePrice6.get() or not self.podobooCapsulePrice6.get() or not self.podobooCapsuleWeight6.get() or not self.paraTroopaCapsuleWeight6.get() or not self.paraTroopaCapsulePrice6.get() or not self.snackCapsulePrice6.get() or not self.snackCapsuleWeight6.get() or not self.zapCapsulePrice6.get() or not self.zapCapsuleWeight6.get() or not self.tweesterCapsulePrice6.get() or not self.tweesterCapsuleWeight6.get() or not self.thwompCapsulePrice6.get() or not self.thwompCapsuleWeight6.get() or not self.warpPipeCapsulePrice6.get() or not self.warpPipeCapsuleWeight6.get() or not self.bombCapsulePrice6.get() or not self.bombCapsuleWeight6.get() or not self.gaddLightCapsulePrice6.get() or not self.gaddLightCapsuleWeight6.get() or not self.chanceTimeCapsulePrice6.get() or not self.chanceTimeCapsuleWeight6.get() or not self.pinkBooCapsulePrice6.get() or not self.pinkBooCapsuleWeight6.get() or not self.bowserCapsulePrice6.get() or not self.bowserCapsuleWeight6.get() or not self.dkCapsulePrice6.get() or not self.dkCapsuleWeight6.get():
+            if sys.platform == "darwin":
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
+            else:
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
+            return
+        
+        mushroomCapsuleWeight6 = self.mushroomCapsuleWeight6.get()
+        
+        goldenMushroomCapsulePrice6 = self.goldenMushroomCapsulePrice6.get()
+        goldenMushroomCapsuleWeight6 = self.goldenMushroomCapsuleWeight6.get()
+
+        slowMushroomCapsulePrice6 = self.slowMushroomCapsulePrice6.get()
+        slowMushroomCapsuleWeight6 = self.slowMushroomCapsuleWeight6.get()
+
+        metalMushroomCapsulePrice6 = self.metalMushroomCapsulePrice6.get()
+        metalMushroomCapsuleWeight6 = self.metalMushroomCapsuleWeight6.get()
+
+        bulletBillCapsulePrice6 = self.bulletBillCapsulePrice6.get()
+        bulletBillCapsuleWeight6 = self.bulletBillCapsuleWeight6.get()
+
+        flutterCapsulePrice6 = self.flutterCapsulePrice6.get()
+        flutterCapsuleWeight6 = self.flutterCapsuleWeight6.get()
+
+        cursedMushroomCapsulePrice6 = self.cursedMushroomCapsulePrice6.get()
+        cursedMushroomCapsuleWeight6 = self.cursedMushroomCapsuleWeight6.get()
+
+        spinyCapsulePrice6 = self.spinyCapsulePrice6.get()
+        spinyCapsuleWeight6 = self.spinyCapsuleWeight6.get()
+
+        goombaCapsulePrice6 = self.goombaCapsulePrice6.get()
+        goombaCapsuleWeight6 = self.goombaCapsuleWeight6.get()
+
+        plantCapsulePrice6 = self.plantCapsulePrice6.get()
+        plantCapsuleWeight6 = self.plantCapsuleWeight6.get()
+
+        kleptoCapsulePrice6 = self.kleptoCapsulePrice6.get()
+        kleptoCapsuleWeight6 = self.kleptoCapsuleWeight6.get()
+
+        kamekCapsulePrice6 = self.kamekCapsulePrice6.get()
+        kamekCapsuleWeight6 = self.kamekCapsuleWeight6.get()
+
+        toadyCapsulePrice6 = self.toadyCapsulePrice6.get()
+        toadyCapsuleWeight6 = self.toadyCapsuleWeight6.get()
+
+        blizzardCapsulePrice6 = self.blizzardCapsulePrice6.get()
+        blizzardCapsuleWeight6 = self.blizzardCapsuleWeight6.get()
+
+        podobooCapsulePrice6 = self.podobooCapsulePrice6.get()
+        podobooCapsuleWeight6 = self.podobooCapsuleWeight6.get()
+
+        paraTroopaCapsulePrice6 = self.paraTroopaCapsulePrice6.get()
+        paraTroopaCapsuleWeight6 = self.paraTroopaCapsuleWeight6.get()
+
+        snackCapsulePrice6 = self.snackCapsulePrice6.get()
+        snackCapsuleWeight6 = self.snackCapsuleWeight6.get()
+
+        zapCapsulePrice6 = self.zapCapsulePrice6.get()
+        zapCapsuleWeight6 = self.zapCapsuleWeight6.get()
+
+        tweesterCapsulePrice6 = self.tweesterCapsulePrice6.get()
+        tweesterCapsuleWeight6 = self.tweesterCapsuleWeight6.get()
+
+        thwompCapsulePrice6 = self.thwompCapsulePrice6.get()
+        thwompCapsuleWeight6 = self.thwompCapsuleWeight6.get()
+
+        warpPipeCapsulePrice6 = self.warpPipeCapsulePrice6.get()
+        warpPipeCapsuleWeight6 = self.warpPipeCapsuleWeight6.get()
+
+        bombCapsulePrice6 = self.bombCapsulePrice6.get()
+        bombCapsuleWeight6 = self.bombCapsuleWeight6.get()
+
+        gaddLightCapsulePrice6 = self.gaddLightCapsulePrice6.get()
+        gaddLightCapsuleWeight6 = self.gaddLightCapsuleWeight6.get()
+
+        pinkBooCapsulePrice6 = self.pinkBooCapsulePrice6.get()
+        pinkBooCapsuleWeight6 = self.pinkBooCapsuleWeight6.get()
+
+        chanceTimeCapsulePrice6 = self.chanceTimeCapsulePrice6.get()
+        chanceTimeCapsuleWeight6 = self.chanceTimeCapsuleWeight6.get()
+
+        bowserCapsulePrice6 = self.bowserCapsulePrice6.get()
+        bowserCapsuleWeight6 = self.bowserCapsuleWeight6.get()
+
+        dkCapsulePrice6 = self.dkCapsulePrice6.get()
+        dkCapsuleWeight6 = self.dkCapsuleWeight6.get()
+
+        duelCapsulePrice6 = self.duelCapsulePrice6.get()
+        duelCapsuleWeight6 = self.duelCapsuleWeight6.get()
+
+
+        prices6 = ["5", goldenMushroomCapsulePrice6, slowMushroomCapsulePrice6, metalMushroomCapsulePrice6, bulletBillCapsulePrice6, flutterCapsulePrice6, cursedMushroomCapsulePrice6, spinyCapsulePrice6, goombaCapsulePrice6, plantCapsulePrice6, kleptoCapsulePrice6, kamekCapsulePrice6, toadyCapsulePrice6, blizzardCapsulePrice6, podobooCapsulePrice6, paraTroopaCapsulePrice6, snackCapsulePrice6, zapCapsulePrice6, tweesterCapsulePrice6, thwompCapsulePrice6, warpPipeCapsulePrice6, bombCapsulePrice6, gaddLightCapsulePrice6, pinkBooCapsulePrice6, chanceTimeCapsulePrice6, bowserCapsulePrice6, dkCapsulePrice6, duelCapsulePrice6]
+        weights6 = [mushroomCapsuleWeight6, goldenMushroomCapsuleWeight6, slowMushroomCapsuleWeight6, metalMushroomCapsuleWeight6, bulletBillCapsuleWeight6, flutterCapsuleWeight6, cursedMushroomCapsuleWeight6, spinyCapsuleWeight6, goombaCapsuleWeight6, plantCapsuleWeight6, kleptoCapsuleWeight6, kamekCapsuleWeight6, toadyCapsuleWeight6, blizzardCapsuleWeight6, podobooCapsuleWeight6, paraTroopaCapsuleWeight6, snackCapsuleWeight6, zapCapsuleWeight6, tweesterCapsuleWeight6, thwompCapsuleWeight6, warpPipeCapsuleWeight6, bombCapsuleWeight6, gaddLightCapsuleWeight6, pinkBooCapsuleWeight6, chanceTimeCapsuleWeight6, bowserCapsuleWeight6, dkCapsuleWeight6, duelCapsuleWeight6]
+
+        file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
+        if file_path:
+            with open(file_path, 'w', newline='') as csvfile:
+                writer = csv.writer(csvfile)
+                writer.writerow(['Prices', 'Weights'])
+                for price, weight in zip(prices6, weights6):
+                    writer.writerow([price, weight])
+            print("MPT file saved successfully!")
+            createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
+
+
+    def loadPresetItems6(self):
+        file_path = tkinter.filedialog.askopenfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
+        if file_path:
+            prices6In = []
+            weights6In = []
+            with open(file_path, 'r', newline='') as csvfile:
+                reader = csv.reader(csvfile)
+                next(reader)
+                for row in reader:
+                    prices6In.append(float(row[0]))
+                    weights6In.append(float(row[1]))
+            testVar = ""
+            # Define a list of Entry widget attributes
+            pricesNames6 = [testVar, self.goldenMushroomCapsulePrice6, self.slowMushroomCapsulePrice6, self.metalMushroomCapsulePrice6, self.bulletBillCapsulePrice6, self.flutterCapsulePrice6, self.cursedMushroomCapsulePrice6, self.spinyCapsulePrice6, self.goombaCapsulePrice6, self.plantCapsulePrice6, self.kleptoCapsulePrice6, self.kamekCapsulePrice6, self.toadyCapsulePrice6, self.blizzardCapsulePrice6, self.podobooCapsulePrice6, self.paraTroopaCapsulePrice6, self.snackCapsulePrice6, self.zapCapsulePrice6, self.tweesterCapsulePrice6, self.thwompCapsulePrice6, self.warpPipeCapsulePrice6, self.bombCapsulePrice6, self.gaddLightCapsulePrice6, self.pinkBooCapsulePrice6, self.chanceTimeCapsulePrice6, self.bowserCapsulePrice6, self.dkCapsulePrice6, self.duelCapsulePrice6]
+            weightsNames6 = [self.mushroomCapsuleWeight6, self.goldenMushroomCapsuleWeight6, self.slowMushroomCapsuleWeight6, self.metalMushroomCapsuleWeight6, self.bulletBillCapsuleWeight6, self.flutterCapsuleWeight6, self.cursedMushroomCapsuleWeight6, self.spinyCapsuleWeight6, self.goombaCapsuleWeight6, self.plantCapsuleWeight6, self.kleptoCapsuleWeight6, self.kamekCapsuleWeight6, self.toadyCapsuleWeight6, self.blizzardCapsuleWeight6, self.podobooCapsuleWeight6, self.paraTroopaCapsuleWeight6, self.snackCapsuleWeight6, self.zapCapsuleWeight6, self.tweesterCapsuleWeight6, self.thwompCapsuleWeight6, self.warpPipeCapsuleWeight6, self.bombCapsuleWeight6, self.gaddLightCapsuleWeight6, self.pinkBooCapsuleWeight6, self.chanceTimeCapsuleWeight6, self.bowserCapsuleWeight6, self.dkCapsuleWeight6, self.duelCapsuleWeight6]
+
+            # Update widgets with loaded values
+            for index, widget in enumerate(pricesNames6):
+                if widget and index < len(prices6In):
+                    widget.delete(0, 'end')
+                    widget.insert(0, int(prices6In[index]))
+
+            for index, widget in enumerate(weightsNames6):
+                if widget and index < len(weights6In):
+                    widget.delete(0, 'end')
+                    widget.insert(0, int(weights6In[index]))
+            print("MPT file laoded successfully!")
+            createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
 
     def mp1ButtonEvent(self):
         self.mario_party_1_button.configure(state="disabled")
