@@ -563,7 +563,7 @@ def getPinkBooCoinsSpaceCodeSix(amount, negAmount):
     return f'''
 MP6 - Coins Cost SIXBOOCOINS Coins when stealing with Pink Boo
 C21B1F28 00000001
-2C04{amount} 00000000
+2C03{amount} 00000000
 C21B2626 00000001
 3880{negAmount} 00000000
 '''
