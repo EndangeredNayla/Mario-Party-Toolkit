@@ -37,6 +37,8 @@ CREDITS
 
 - Nayla for Program Work
 
+- manifestrev for Program Work
+
 - Rain for Gecko Codes
 
 - Ralf for Gecko Codes
