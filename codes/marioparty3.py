@@ -1,0 +1,149 @@
+# ============================================
+# Mario Party Toolkit
+# Author: Nayla Hanegan (naylahanegan@gmail.com)
+# Date: 2/15/2024
+# License: MIT
+# ============================================
+
+def getBlueSpaceCodeThree(amount, switch):
+    return f'''
+MP3 - Blue Spaces Give THREEBLUE Coins: THREEBLUESWITCH
+810FE284 3408
+810FE286 000{switch}
+810FE288 1100
+810FE28A 0003
+810FE28C 3410
+810FE28E {amount}
+810FE290 5440
+810FE292 0001
+810FE294 0010
+810FE296 8040
+'''
+
+def getRedSpaceCodeThree(amount, switch):
+    return f'''
+MP3 - Red Spaces Take Away THREERED Coins: THREEREDSWITCH
+810FE2C0 3408
+810FE2C2 000{switch}
+810FE2C4 1100
+810FE2C6 0003
+810FE2C8 3410
+810FE2CA {amount}
+810FE2CC 5440
+810FE2CE 0001
+810FE2D0 0010
+810FE2D2 8040
+'''
+
+def getStarSpaceCodeThree(amount, negAmount):
+    return f'''
+MP3 - Stars Cost THREESTAR Coins
+D10CE202 0048
+8110A61A {amount}
+D10CE202 0048
+8110A6BE {negAmount}
+D10CE202 0048
+8110A6CA {negAmount}
+D10CE202 0049
+8110A17E {amount}
+D10CE202 0049
+8110A222 {negAmount}
+D10CE202 0049
+8110A22E {negAmount}
+D10CE202 004A
+8110AF16 {amount}
+D10CE202 004A
+8110A4F2 {negAmount}
+D10CE202 004A
+8110A4FE {negAmount}
+D10CE202 004B
+8110A1BA {amount}
+D10CE202 004B
+8110A25E {negAmount}
+D10CE202 004B
+8110A26A {negAmount}
+D10CE202 004C
+81109BC2 {amount}
+D10CE202 004C
+81109C66 {negAmount}
+D10CE202 004C
+81109C72 {negAmount}
+D10CE202 004D
+8110B9AA {amount}
+D10CE202 004D
+8110BA4E {negAmount}
+D10CE202 004D
+8110BA5A {negAmount}
+'''
+
+def getKoopaBankCodeThree(amount, negAmount):
+    return f'''
+MP3 - Koopa Bank Deposits are THREEKOOPA Coins
+D10CE202 0048
+8110AE3E {amount}
+D10CE202 0048
+8110AFB6 {amount}
+D10CE202 0048
+8110AFE6 {amount}
+D10CE202 0048
+8110AFFA {negAmount}
+D10CE202 0048
+8110B002 {negAmount}
+D10CE202 0049
+8110A9AA {amount}
+D10CE202 0049
+8110AB22 {amount}
+D10CE202 0049
+8110AB52 {amount}
+D10CE202 0049
+8110AB66 {negAmount}
+D10CE202 0049
+8110AB6E {negAmount}
+D10CE202 004A
+8110AF16 {amount}
+D10CE202 004A
+8110B08E {amount}
+D10CE202 004A
+8110B0BE {amount}
+D10CE202 004A
+8110B0D2 {negAmount}
+D10CE202 004A
+8110B0DA {negAmount}
+D10CE202 004B
+8110A9DE {amount}
+D10CE202 004B
+8110AB56 {amount}
+D10CE202 004B
+8110AB86 {amount}
+D10CE202 004B
+8110AB9A {negAmount}
+D10CE202 004B
+8110ABA2 {negAmount}
+D10CE202 004C
+8110A3EE {amount}
+D10CE202 004C
+8110A566 {amount}
+D10CE202 004C
+8110A596 {amount}
+D10CE202 004C
+8110A5AA {negAmount}
+D10CE202 004C
+8110A5B2 {negAmount}
+D10CE202 004D
+8110C1CE {amount}
+D10CE202 004D
+8110C346 {amount}
+D10CE202 004D
+8110C376 {amount}
+D10CE202 004D
+8110C38A {negAmount}
+D10CE202 004D
+8110C392 {negAmount}
+'''
+
+def getMinigameReplacement3(hexUno, hexDos, gameUno, gameDos):
+    return f'''
+MP3 - Minigame Replacement: {gameUno} -> {gameDos}
+D00CD068 00{hexUno}
+800CD068 00{hexDos}			
+'''

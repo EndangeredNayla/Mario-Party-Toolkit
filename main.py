@@ -24,7 +24,16 @@ from CTkToolTip import *
 
 from functions import *
 from credits import *
-from codes import *
+
+from codes.marioparty1 import *
+from codes.marioparty2 import *
+from codes.marioparty3 import *
+from codes.marioparty4 import *
+from codes.marioparty5 import *
+from codes.marioparty6 import *
+from codes.marioparty7 import *
+from codes.marioparty8_rev1 import *
+from codes.marioparty8_rev2 import *
 
 customtkinter.set_appearance_mode("Dark")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
