@@ -689,6 +689,7 @@ class App(customtkinter.CTk):
         tabview.add("Coins Mods")
         tabview.add("Capsule Mods")
         tabview.add("Minigame Replacement")
+        #tabview.add("Initial Items")
         tabview.set("Coins Mods")
 
         # Create blue space icon and entry
@@ -1156,6 +1157,29 @@ class App(customtkinter.CTk):
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceFive, text="Generate Codes")
         parseButtonTwo.place(x=10, y=560)
+
+        #self.items5 = ["None", "Mushroom", "Super Mushroom", "Cursed Mushroom", "Warp Pipe", "Klepto", "Bubble", "Wiggler", "Hammer Brother", "Coin Block", "Spiny", "Paratroopa", "Bullet Bill", "Goomba", "Bomomb", "Koopa Bank", "Kamek", "Mr. Blizzard", "Piranha Plant", "Magikoopa", "Ukiki", "Lakitu", "Tweester", "Duel", "Chain Chomp", "Bone", "Bowser", "Chance", "Miracle", "Donkey Kong"]
+        
+        #label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 1:  ", font=("Arial", 16))
+        #label.grid(row=0, column=0)
+
+        #self.initalItem51 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items5)
+        #self.initalItem51.grid(row=0, column=1)
+
+        #label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 2:  ", font=("Arial", 16))
+        #label.grid(row=1, column=0)
+
+        #self.initalItem52 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items5)
+        #self.initalItem52.grid(row=1, column=1)
+
+        #label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 3:  ", font=("Arial", 16))
+        #label.grid(row=2, column=0)
+
+        #self.initalItem53 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items5)
+        #self.initalItem53.grid(row=2, column=1)
+
+        parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=self.initalItems5, text="Generate Codes")
+        parseButton.place(x=10, y=560)
         return frame
 
     def create_mp6_frame(self):
@@ -1166,6 +1190,7 @@ class App(customtkinter.CTk):
         tabview.add("Orb Mods")
         tabview.add("Faire Square Mods")
         tabview.add("Minigame Replacement")
+        tabview.add("Initial Items")
         tabview.set("Coins Mods")
 
         # Create faire square grid icon and entry
@@ -1636,8 +1661,6 @@ class App(customtkinter.CTk):
         pinkBooSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when stealing a Star.", font=("Arial", 16))
         pinkBooSpaceLabel6.grid(row=7, column=4, sticky="w")
 
-        
-        
         parseButtonSix = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonSix, text="Generate Codes")
         parseButtonSix.place(x=10, y=560)
 
@@ -1669,6 +1692,29 @@ class App(customtkinter.CTk):
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceSix, text="Generate Codes")
         parseButtonTwo.place(x=10, y=560)
+
+        self.items6 = ["None", "Mushroom", "Golden Mushroom", "Sluggish 'Shroom", "Metal Mushroom", "Bullet Bill", "Warp Pipe", "Flutter", "Cursed Mushroom", "Spiny", "Goomba", "Piranha Plant", "Klepto", "Toady", "Kamek", "Mr. Blizzard", "Podoboo", "Zap", "Tweester", "Thwomp", "Bob-omb", "Paratroopa", "Snack", "Boo-away", "Duel", "Miracle", "Bowser", "Donkey Kong", "Pink Boo"]
+        
+        label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 1:  ", font=("Arial", 16))
+        label.grid(row=0, column=0)
+
+        self.initalItem61 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items6)
+        self.initalItem61.grid(row=0, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 2:  ", font=("Arial", 16))
+        label.grid(row=1, column=0)
+        
+        self.initalItem62 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items6)
+        self.initalItem62.grid(row=1, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 3:  ", font=("Arial", 16))
+        label.grid(row=2, column=0)
+
+        self.initalItem63 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items6)
+        self.initalItem63.grid(row=2, column=1)
+
+        parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=self.initalItems6, text="Generate Codes")
+        parseButton.place(x=10, y=560)
         return frame
 
     def create_mp7_frame(self):
@@ -1678,6 +1724,7 @@ class App(customtkinter.CTk):
         tabview.add("Coins Mods")
         tabview.add("Orb Mods")
         tabview.add("Minigame Replacement")
+        tabview.add("Initial Items")
         tabview.set("Coins Mods")
 
         # Create mushroom orb space icon and entry
@@ -2196,6 +2243,29 @@ class App(customtkinter.CTk):
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceSeven, text="Generate Codes")
         parseButtonTwo.place(x=10, y=560)
+
+        self.items7 = ["Mushroom", "Super Mushroom", "Slow 'Shroom", "Metal Mushroom", "Flutter", "Cannon", "Snack", "Lakitu", "Hammer Bro", "Piranha Plant", "Spear Guy", "Kamek", "Toady", "Mr. Blizzard", "Bandit", "Pink Boo", "Spiny", "Zap", "Tweester", "Thwomp", "Warp Pipe", "Bob-omb", "Fireball", "Flower", "Egg", "Vacuum", "Surprise", "Triple 'Shroom", "Koopa Kid"]
+        
+        label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 1:  ", font=("Arial", 16))
+        label.grid(row=0, column=0)
+
+        self.initalItem61 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
+        self.initalItem61.grid(row=0, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 2:  ", font=("Arial", 16))
+        label.grid(row=1, column=0)
+        
+        self.initalItem62 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
+        self.initalItem62.grid(row=1, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 3:  ", font=("Arial", 16))
+        label.grid(row=2, column=0)
+
+        self.initalItem63 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
+        self.initalItem63.grid(row=2, column=1)
+
+        parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=self.initalItems7, text="Generate Codes")
+        parseButton.place(x=10, y=560)
         return frame
     
     def create_credits_frame(self):
@@ -2316,7 +2386,6 @@ class App(customtkinter.CTk):
         starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when purchasing a Star.", font=("Arial", 16))
         starSpaceLabel6.grid(row=3, column=4, sticky="w")
         starSpaceLabelHover = CTkToolTip(starSpaceLabel, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
-        # starSpaceLabelHover = CTkToolTip(self.starSpaceAmountEight, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
         starSpaceLabelHover = CTkToolTip(starSpaceLabel6, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
 
 
@@ -2466,7 +2535,67 @@ class App(customtkinter.CTk):
         itemSlot3Num = self.items4.index(itemSlot3)
         itemSlot3Hex = itemHex[itemSlot3Num]
 
-        code = getInitialItemsFour(itemSlot1Hex, itemSlot2Hex, itemSlot3Hex)
+        code = getInitialItemsFour(itemSlot1Hex, itemSlot2Hex, itemSlot3Hex, itemSlot1, itemSlot2, itemSlot3)
+        code = code.strip()
+        pyperclip.copy(code)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
+    def initalItems5(self):
+        itemSlot1 = self.initalItem51.get()
+        itemSlot2 = self.initalItem52.get()
+        itemSlot3 = self.initalItem53.get()
+        itemHex = ["FF", "00", "01", "02", "03", "04", "05", "06", "0A", "0B", "0C", "0D", "0E", "0F", "10", "11", "14", "15", "16", "17", "18", "19", "1E", "1F", "20", "21", "22", "23", "24", "25"]
+        itemSlot1Num = self.items5.index(itemSlot1)
+        itemSlot1Hex = itemHex[itemSlot1Num]
+
+        itemSlot2Num = self.items5.index(itemSlot2)
+        itemSlot2Hex = itemHex[itemSlot2Num]
+
+        itemSlot3Num = self.items5.index(itemSlot3)
+        itemSlot3Hex = itemHex[itemSlot3Num]
+
+        code = getInitialItemsFive(itemSlot1Hex, itemSlot2Hex, itemSlot3Hex, itemSlot1, itemSlot2, itemSlot3)
+        code = code.strip()
+        pyperclip.copy(code)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
+    def initalItems6(self):
+        itemSlot1 = self.initalItem61.get()
+        itemSlot2 = self.initalItem62.get()
+        itemSlot3 = self.initalItem63.get()
+        itemHex = ["FF", "00", "01", "02", "03", "04", "05", "06", "07", "0A", "0B", "0C", "0D", "0F", "10", "11", "14", "15", "16", "17", "18", "19", "1E", "1F", "29", "2A", "2B", "2C", "2E"]
+        itemSlot1Num = self.items6.index(itemSlot1)
+        itemSlot1Hex = itemHex[itemSlot1Num]
+
+        itemSlot2Num = self.items6.index(itemSlot2)
+        itemSlot2Hex = itemHex[itemSlot2Num]
+
+        itemSlot3Num = self.items6.index(itemSlot3)
+        itemSlot3Hex = itemHex[itemSlot3Num]
+
+        code = getInitialItemsSix(itemSlot1Hex, itemSlot2Hex, itemSlot3Hex, itemSlot1, itemSlot2, itemSlot3)
+        code = code.strip()
+        pyperclip.copy(code)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
+    def initalItems7(self):
+        itemSlot1 = self.initalItem71.get()
+        itemSlot2 = self.initalItem72.get()
+        itemSlot3 = self.initalItem73.get()
+        itemHex = ["FF", "00", "01", "02", "03", "04", "05", "06", "07", "0A", "0B", "0C", "0D", "0E", "0F", "10", "11", "14", "15", "16", "17", "18", "19", "1E", "1F", "20", "21", "22", "23", "28"]
+        itemSlot1Num = self.items7.index(itemSlot1)
+        itemSlot1Hex = itemHex[itemSlot1Num]
+
+        itemSlot2Num = self.items7.index(itemSlot2)
+        itemSlot2Hex = itemHex[itemSlot2Num]
+
+        itemSlot3Num = self.items7.index(itemSlot3)
+        itemSlot3Hex = itemHex[itemSlot3Num]
+
+        code = getInitialItemsSix(itemSlot1Hex, itemSlot2Hex, itemSlot3Hex, itemSlot1, itemSlot2, itemSlot3)
         code = code.strip()
         pyperclip.copy(code)
         print("Generated codes copied to the clipboard.")

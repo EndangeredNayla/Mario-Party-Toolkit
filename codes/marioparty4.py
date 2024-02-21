@@ -315,8 +315,9 @@ MP4 - Give FOURBATTLE1, FOURBATTLE2, FOURBATTLE3, FOURBATTLE4, or FOURBATTLE5 co
 041D5DE4 {five}000000
 '''
 
-def getInitialItemsFour(one, two, three):
+def getInitialItemsFour(one, two, three, oneItem, twoItem, threeItem):
     return f'''
+MP4 - Start with {oneItem}, {twoItem}, and {threeItem}
 C2063AE0 00000013
 7C83032E 2C040007
 40820080 3DC08018
