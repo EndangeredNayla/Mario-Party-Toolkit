@@ -179,3 +179,8 @@ C20C8FA0 00000024
 001CA623 000000{twentyEightP}
 001CA63F 000000{twentyNineP}
 '''
+
+def getStockCodesFive(ticked):
+    return f'''
+
+'''
