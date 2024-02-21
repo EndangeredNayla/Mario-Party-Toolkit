@@ -658,6 +658,7 @@ class App(customtkinter.CTk):
         tabview.add("Coins Mods")
         tabview.add("Capsule Mods")
         tabview.add("Minigame Replacement")
+        tabview.add("Default Codes")
         tabview.set("Coins Mods")
 
         # Create blue space icon and entry
@@ -1102,6 +1103,9 @@ class App(customtkinter.CTk):
 
         parseButtonFiveItems = ctk.CTkButton(master=tabview.tab("Capsule Mods"), command=self.actionSpaceButtonFiveCapsule, text="Generate Codes")
         parseButtonFiveItems.place(x=10, y=560)
+
+        parseButtonFiveDefault = ctk.CTkButton(master=tabview.tab("Default Codes"), command=self.actionSpaceButtonFiveDefault, text="Generate Codes")
+        parseButtonFiveDefault.place(x=10, y=560)
 
         parseButtonFive = ctk.CTkButton(master=tabview.tab("Capsule Mods"), command=self.savePresetItems5, text="Save Preset")
         parseButtonFive.place(x=160, y=560)
@@ -6258,6 +6262,14 @@ class App(customtkinter.CTk):
             bulletBillCapsulePrice5 = "00"
 
         generatedCode = getCapsuleModsFive(mushroomCapsulePrice5, mushroomCapsuleWeight5, goldenMushroomCapsulePrice5, goldenMushroomCapsuleWeight5, cursedMushroomCapsulePrice5, cursedMushroomCapsuleWeight5, warpPipeCapsulePrice5, warpPipeCapsuleWeight5, kleptoCapsulePrice5, kleptoCapsuleWeight5, podobooCapsulePrice5, podobooCapsuleWeight5, flutterCapsulePrice5, flutterCapsuleWeight5, hammerBroCapsulePrice5, hammerBroCapsuleWeight5, coinBlockCapsulePrice5, coinBlockCapsuleWeight5, spinyCapsulePrice5, spinyCapsuleWeight5, paraTroopaCapsulePrice5, paraTroopaCapsuleWeight5, bulletBillCapsulePrice5, bulletBillCapsuleWeight5, goombaCapsulePrice5, goombaCapsuleWeight5, bombCapsulePrice5, bombCapsuleWeight5, koopaBankCapsulePrice5, koopaBankCapsuleWeight5, kamekCapsulePrice5, kamekCapsuleWeight5, blizzardCapsulePrice5, blizzardCapsuleWeight5, plantCapsulePrice5, plantCapsuleWeight5, magiKoopaCapsulePrice5, magiKoopaCapsuleWeight5, ukikiCapsulePrice5, ukikiCapsuleWeight5, lakituCapsulePrice5, lakituCapsuleWeight5, tweesterCapsulePrice5, tweesterCapsuleWeight5, duelCapsulePrice5, duelCapsuleWeight5, chainChompCapsulePrice5, chainChompCapsuleWeight5, boneCapsulePrice5, boneCapsuleWeight5, bowserCapsulePrice5, bowserCapsuleWeight5, chanceCapsulePrice5, chanceCapsuleWeight5, miracleCapsulePrice5, miracleCapsuleWeight5, dkCapsulePrice5, dkCapsuleWeight5)
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+
+        print("Generated code copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+    
+    def actionSpaceButtonFiveDefault(self):
+        generatedCode = getDefaultCodesFive()
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
 
