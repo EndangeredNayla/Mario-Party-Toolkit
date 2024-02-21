@@ -1523,7 +1523,7 @@ MP8 - Minigame Replacement: {gameUno} ➜ {gameDos}
 E2000001 80008000
 '''
 
-def getDefaultCodesFive():
+def getStockCodesFive():
     return f'''
 MP5 - Disable Advance on Results
 20478F28 4182F754

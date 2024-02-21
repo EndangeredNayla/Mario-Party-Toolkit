@@ -658,7 +658,7 @@ class App(customtkinter.CTk):
         tabview.add("Coins Mods")
         tabview.add("Capsule Mods")
         tabview.add("Minigame Replacement")
-        tabview.add("Default Codes")
+        tabview.add("Stock Codes")
         tabview.set("Coins Mods")
 
         # Create blue space icon and entry
@@ -1098,14 +1098,17 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=11, column=20)
 
+        # Create Code Checklist
+        self.disableAdvance = ctk.CTkCheckBox(master=tabview.tab("Stock Codes"), text="Disable Advance on Results", font=("Arial", 11), onvalue=1, offvalue=0)
+        
         parseButtonFive = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonFive, text="Generate Codes")
         parseButtonFive.place(x=10, y=560)
 
         parseButtonFiveItems = ctk.CTkButton(master=tabview.tab("Capsule Mods"), command=self.actionSpaceButtonFiveCapsule, text="Generate Codes")
         parseButtonFiveItems.place(x=10, y=560)
 
-        parseButtonFiveDefault = ctk.CTkButton(master=tabview.tab("Default Codes"), command=self.actionSpaceButtonFiveDefault, text="Generate Codes")
-        parseButtonFiveDefault.place(x=10, y=560)
+        parseButtonFiveStock = ctk.CTkButton(master=tabview.tab("Stock Codes"), command=self.actionSpaceButtonFiveStock, text="Generate Codes")
+        parseButtonFiveStock.place(x=10, y=560)
 
         parseButtonFive = ctk.CTkButton(master=tabview.tab("Capsule Mods"), command=self.savePresetItems5, text="Save Preset")
         parseButtonFive.place(x=160, y=560)
@@ -6268,8 +6271,8 @@ class App(customtkinter.CTk):
         print("Generated code copied to the clipboard.")
         createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
     
-    def actionSpaceButtonFiveDefault(self):
-        generatedCode = getDefaultCodesFive()
+    def actionSpaceButtonFiveStock(self):
+        generatedCode = getStockCodesFive()
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
 
