@@ -5,7 +5,6 @@
 # License: MIT
 # ============================================
 
-
 import tkinter
 import tkinter.messagebox
 import customtkinter
@@ -341,6 +340,7 @@ class App(customtkinter.CTk):
         tabview.add("Item Mods")
         tabview.add("Battle Game Mods")
         tabview.add("Minigame Replacement")
+        tabview.add("Initial Items")
         tabview.set("Coins Mods")
 
         # Create faire square grid icon and entry
@@ -657,6 +657,29 @@ class App(customtkinter.CTk):
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceFour, text="Generate Codes")
         parseButtonTwo.place(x=10, y=560)
+
+        self.items4 = ["None", "Mini Mushroom", "Mega Mushroom", "Super Mini Mushroom", "Super Mega Mushroom", "Mini-Mega Hammer", "Sparky Sticker", "Warp Pipe", "Swap Card", "Bowser Suit", "Gaddlight", "Magic Lamp", "Boo's Crystal Ball", "Chomp Call", "Item Bag"]
+        
+        label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 1:  ", font=("Arial", 16))
+        label.grid(row=0, column=0)
+
+        self.initalItem41 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items4)
+        self.initalItem41.grid(row=0, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 2:  ", font=("Arial", 16))
+        label.grid(row=1, column=0)
+
+        self.initalItem42 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items4)
+        self.initalItem42.grid(row=1, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 3:  ", font=("Arial", 16))
+        label.grid(row=2, column=0)
+
+        self.initalItem43 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items4)
+        self.initalItem43.grid(row=2, column=1)
+
+        parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=self.initalItems4, text="Generate Codes")
+        parseButton.place(x=10, y=560)
         return frame
 
     def create_mp5_frame(self):
@@ -2429,6 +2452,26 @@ class App(customtkinter.CTk):
         print("Generated codes copied to the clipboard.")
         createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
+    def initalItems4(self):
+        itemSlot1 = self.initalItem41.get()
+        itemSlot2 = self.initalItem42.get()
+        itemSlot3 = self.initalItem43.get()
+        itemHex = ["FF", "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "0A", "0B", "0C", "0D"]
+        itemSlot1Num = self.items4.index(itemSlot1)
+        itemSlot1Hex = itemHex[itemSlot1Num]
+
+        itemSlot2Num = self.items4.index(itemSlot2)
+        itemSlot2Hex = itemHex[itemSlot2Num]
+
+        itemSlot3Num = self.items4.index(itemSlot3)
+        itemSlot3Hex = itemHex[itemSlot3Num]
+
+        code = getInitialItemsFour(itemSlot1Hex, itemSlot2Hex, itemSlot3Hex)
+        code = code.strip()
+        pyperclip.copy(code)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+    
     def minigameReplaceFive(self):
         mingameSlot1 = self.comboboxMingames51.get()
         mingameSlot2 = self.comboboxMingames52.get()
