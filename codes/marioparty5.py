@@ -184,3 +184,11 @@ def getInitialItemsFive(one, two, three, oneItem, twoItem, threeItem):
     return f'''
 Not Supported
 '''
+
+def getCoinStealBaseFive(value):
+    return f'''
+MP5 - Steal SIXBOOMIN Coins Minimum from Chain Chomp[]
+C20F75A8 00000002
+3B7B{value} 7C9B00D0
+60000000 00000000
+'''

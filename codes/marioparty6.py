@@ -277,3 +277,11 @@ MP6 - Start with {oneItem}, {twoItem}, and {threeItem}
 {two}{three}{one}{two} {three}{one}{two}{three}
 04153748 4BEAFED8
 '''
+
+def getCoinStealBaseSix(value):
+    return f'''
+MP6 - Steal SIXBOOMIN Coins Minimum from Pink Boo
+C21B3498 00000002
+3884{value} 9081002C
+60000000 00000000
+'''

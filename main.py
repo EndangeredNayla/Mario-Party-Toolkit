@@ -1178,8 +1178,17 @@ class App(customtkinter.CTk):
         #self.initalItem53 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items5)
         #self.initalItem53.grid(row=2, column=1)
 
-        parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=self.initalItems5, text="Generate Codes")
-        parseButton.place(x=10, y=560)
+        #parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=self.initalItems5, text="Generate Codes")
+        #parseButton.place(x=10, y=560)
+        
+        # Create boo space icon and entry
+        chainChompCoinsSpaceIcon5 = create_image_icon(tabview.tab("Coins Mods"), "assets/chainChomp.png", 7, 1)
+        chainChompCoinsSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Steal  ", font=("Arial", 16))
+        chainChompCoinsSpaceLabel.grid(row=7, column=2)
+        self.chainChompBaseAmountFive = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
+        self.chainChompBaseAmountFive.grid(row=7, column=3)
+        chainChompCoinsSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" minimum when stealing coins ", font=("Arial", 16))
+        chainChompCoinsSpaceLabel5.grid(row=7, column=4, sticky="w")
         return frame
 
     def create_mp6_frame(self):
@@ -1652,14 +1661,23 @@ class App(customtkinter.CTk):
         pinkBooCoinsSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when stealing coins ", font=("Arial", 16))
         pinkBooCoinsSpaceLabel6.grid(row=6, column=4, sticky="w")
 
+        # Create boo space icon and entry
+        pinkBooCoinsSpaceIconSix = create_image_icon(tabview.tab("Coins Mods"), "assets/pinkBooCoins.png", 7, 1)
+        pinkBooCoinsSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Steal  ", font=("Arial", 16))
+        pinkBooCoinsSpaceLabel.grid(row=7, column=2)
+        self.pinkBooBaseAmountSix = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
+        self.pinkBooBaseAmountSix.grid(row=7, column=3)
+        pinkBooCoinsSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" minimum when stealing coins ", font=("Arial", 16))
+        pinkBooCoinsSpaceLabel6.grid(row=7, column=4, sticky="w")
+
         # Create boo space Coins icon and entry
-        pinkBooSpaceIconSix = create_image_icon(tabview.tab("Coins Mods"), "assets/pinkBooStars.png", 7, 1)
+        pinkBooSpaceIconSix = create_image_icon(tabview.tab("Coins Mods"), "assets/pinkBooStars.png", 8, 1)
         pinkBooSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Cost  ", font=("Arial", 16))
-        pinkBooSpaceLabel.grid(row=7, column=2)
+        pinkBooSpaceLabel.grid(row=8, column=2)
         self.pinkBooSpaceAmountSix = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.pinkBooSpaceAmountSix.grid(row=7, column=3)
+        self.pinkBooSpaceAmountSix.grid(row=8, column=3)
         pinkBooSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when stealing a Star.", font=("Arial", 16))
-        pinkBooSpaceLabel6.grid(row=7, column=4, sticky="w")
+        pinkBooSpaceLabel6.grid(row=8, column=4, sticky="w")
 
         parseButtonSix = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonSix, text="Generate Codes")
         parseButtonSix.place(x=10, y=560)
@@ -3080,7 +3098,7 @@ class App(customtkinter.CTk):
         createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonFive(self):
-        if not self.blueSpaceAmountFive.get() and not self.miniGameAmountFive.get() and not self.redSpaceAmountFive.get() and not self.starSpaceAmountFive.get() and not self.wigglerSpaceAmountFive.get():
+        if not self.chainChompBaseAmountFive.get() and not self.blueSpaceAmountFive.get() and not self.miniGameAmountFive.get() and not self.redSpaceAmountFive.get() and not self.starSpaceAmountFive.get() and not self.wigglerSpaceAmountFive.get():
             createDialog("Error", "error", "No information provided.", None)
             return
 
@@ -3154,6 +3172,19 @@ class App(customtkinter.CTk):
         except:
             chompSpaceAmountFive = "DUMMY"
             chompSpaceAmountNegativeFive = "DUMMY"
+            
+        chainChompStealBaseAmountFiveBase = self.chainChompBaseAmountFive.get()
+        try:
+            chainChompStealBaseAmountFiveCorrected = int(chainChompStealBaseAmountFiveBase) + 5
+            chainChompBaseAmountFive = hex(chainChompStealBaseAmountFiveCorrected)
+            if len(chainChompBaseAmountFive) == 5:
+                chainChompBaseAmountFive = "0" + chainChompBaseAmountFive[2:]
+            elif len(chainChompBaseAmountFive) == 4:
+                chainChompBaseAmountFive = "00" + chainChompBaseAmountFive[2:]
+            elif len(chainChompBaseAmountFive) == 3:
+                chainChompBaseAmountFive = "000" + chainChompBaseAmountFive[2:]
+        except:
+            chainChompBaseAmountFive = "DUMMY"
 
         try:
             wigglerSpaceAmountFive = hex(int(self.wigglerSpaceAmountFive.get()))
@@ -3174,6 +3205,7 @@ class App(customtkinter.CTk):
         marioPartyFiveStarSpace = getStarSpaceCodeFive(starSpaceAmountFive, starSpaceAmountNegativeFive)
         marioPartyFiveWigglerSpace = getWigglerSpaceCodeFive(wigglerSpaceAmountFive, wigglerSpaceAmountNegativeFive)
         marioPartyFiveChompSpace = getChompSpaceCodeFive(chompSpaceAmountFive, chompSpaceAmountNegativeFive)
+        marioPartyFiveChompBase = getCoinStealBaseFive(chainChompBaseAmountFive)
         marioPartyFiveBlueSpace = getBlueSpaceCodeFive(blueSpaceAmountFive)
         marioPartyFiveRedSpace = getRedSpaceCodeFive(redSpaceAmountFive)
         marioPartyFiveMiniGame = getMinigameCodeFive(miniGameAmountFive)
@@ -3196,21 +3228,24 @@ class App(customtkinter.CTk):
             marioPartyFiveChompSpace = ""
         if miniGameAmountFive == "DUMMY":
             marioPartyFiveMiniGame = ""
+        if chainChompBaseAmountFive == "DUMMY":
+            marioPartyFiveChompBase = ""
 
-        generatedCode = marioPartyFiveBlueSpace + marioPartyFiveRedSpace + marioPartyFiveMiniGame + marioPartyFiveStarSpace + marioPartyFiveWigglerSpace + marioPartyFiveChompSpace
+        generatedCode = marioPartyFiveBlueSpace + marioPartyFiveRedSpace + marioPartyFiveMiniGame + marioPartyFiveStarSpace + marioPartyFiveWigglerSpace + marioPartyFiveChompSpace + marioPartyFiveChompBase
         generatedCode = generatedCode.replace("FIVERED", redSpaceAmountBaseFive)
         generatedCode = generatedCode.replace("FIVEBLUE", blueSpaceAmountBaseFive)
         generatedCode = generatedCode.replace("FIVEMINIGAME", miniGameAmountBaseFive)
         generatedCode = generatedCode.replace("FIVESTAR", starSpaceAmountFiveBase)
         generatedCode = generatedCode.replace("FIVEWIGGLER", wigglerSpaceAmountFiveBase)
         generatedCode = generatedCode.replace("FIVECHOMP", chompSpaceAmountFiveBase)
+        generatedCode = generatedCode.replace("FIVECHPBASE", chainChompStealBaseAmountFiveBase)
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
         createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonSix(self):
-        if not self.blueSpaceAmountSix.get() and not self.miniGameAmountSix.get() and not self.redSpaceAmountSix.get() and not self.starSpaceAmountSix.get() and not self.pinkBooSpaceAmountSix.get() and not self.pinkBooCoinsSpaceAmountSix.get() and not self.characterSpaceAmountSix.get():
+        if not self.blueSpaceAmountSix.get() and not self.miniGameAmountSix.get() and not self.redSpaceAmountSix.get() and not self.starSpaceAmountSix.get() and not self.pinkBooSpaceAmountSix.get() and not self.pinkBooBaseAmountSix.get() and not self.pinkBooCoinsSpaceAmountSix.get() and not self.characterSpaceAmountSix.get():
             createDialog("Error", "error", "No information provided.", None)
             return
 
@@ -3265,7 +3300,9 @@ class App(customtkinter.CTk):
         pinkBooSpaceAmountSixBase = self.pinkBooSpaceAmountSix.get()
         try:
             pinkBooSpaceAmountSix = hex(int(self.pinkBooSpaceAmountSix.get()))
-            if len(pinkBooSpaceAmountSix) == 4:
+            if len(pinkBooSpaceAmountSix) == 5:
+                pinkBooSpaceAmountSix = "0" + pinkBooSpaceAmountSix[2:]
+            elif len(pinkBooSpaceAmountSix) == 4:
                 pinkBooSpaceAmountSix = "00" + pinkBooSpaceAmountSix[2:]
             elif len(pinkBooSpaceAmountSix) == 3:
                 pinkBooSpaceAmountSix = "000" + pinkBooSpaceAmountSix[2:]
@@ -3276,10 +3313,25 @@ class App(customtkinter.CTk):
             pinkBooSpaceAmountSix = "DUMMY"
             pinkBooSpaceAmountNegativeSix = "DUMMY"
 
+        pinkBooStealBaseAmountSixBase = self.pinkBooBaseAmountSix.get()
+        try:
+            pinkBooStealBaseAmountSixCorrected = int(pinkBooStealBaseAmountSixBase) + 2
+            pinkBooBaseAmountSix = hex(pinkBooStealBaseAmountSixCorrected)
+            if len(pinkBooBaseAmountSix) == 5:
+                pinkBooBaseAmountSix = "0" + pinkBooBaseAmountSix[2:]
+            elif len(pinkBooBaseAmountSix) == 4:
+                pinkBooBaseAmountSix = "00" + pinkBooBaseAmountSix[2:]
+            elif len(pinkBooBaseAmountSix) == 3:
+                pinkBooBaseAmountSix = "000" + pinkBooBaseAmountSix[2:]
+        except:
+            pinkBooBaseAmountSix = "DUMMY"
+
         pinkBooCoinsSpaceAmountBaseSix = self.pinkBooCoinsSpaceAmountSix.get()
         try:
             pinkBooCoinsSpaceAmountSix = hex(int(self.pinkBooCoinsSpaceAmountSix.get()))
-            if len(pinkBooCoinsSpaceAmountSix) == 4:
+            if len(pinkBooCoinsSpaceAmountSix) == 5:
+                pinkBooCoinsSpaceAmountSix = "0" + pinkBooCoinsSpaceAmountSix[2:]
+            elif len(pinkBooCoinsSpaceAmountSix) == 4:
                 pinkBooCoinsSpaceAmountSix = "00" + pinkBooCoinsSpaceAmountSix[2:]
             elif len(pinkBooCoinsSpaceAmountSix) == 3:
                 pinkBooCoinsSpaceAmountSix = "000" + pinkBooCoinsSpaceAmountSix[2:]
@@ -3308,6 +3360,7 @@ class App(customtkinter.CTk):
         marioPartySixStarSpace = getStarSpaceCodeSix(starSpaceAmountSix, starSpaceAmountNegativeSix)
         marioPartySixPinkBooSpace = getPinkBooSpaceCodeSix(pinkBooSpaceAmountSix, pinkBooSpaceAmountNegativeSix)
         marioPartySixPinkBooCoinsSpace = getPinkBooCoinsSpaceCodeSix(pinkBooCoinsSpaceAmountSix, pinkBooCoinsSpaceAmountNegativeSix)
+        marioPartySixPinkBooCoinsBase = getCoinStealBaseSix(pinkBooBaseAmountSix)
         marioPartySixMiniGame = getMinigameCodeSix(miniGameAmountSix)
 
         if redSpaceAmountSix == "DUMMY":
@@ -3330,8 +3383,10 @@ class App(customtkinter.CTk):
             marioPartySixPinkBooCoinsSpace = ""
         if miniGameAmountSix == "DUMMY":
             marioPartySixMiniGame = ""
+        if pinkBooBaseAmountSix == "DUMMY":
+            marioPartySixPinkBooCoinsBase = ""
         
-        generatedCode = marioPartySixBlueSpace + marioPartySixRedSpace + marioPartySixCharacterSpace + marioPartySixMiniGame + marioPartySixStarSpace + marioPartySixPinkBooCoinsSpace + marioPartySixPinkBooSpace
+        generatedCode = marioPartySixBlueSpace + marioPartySixRedSpace + marioPartySixCharacterSpace + marioPartySixMiniGame + marioPartySixStarSpace + marioPartySixPinkBooCoinsSpace + marioPartySixPinkBooSpace + marioPartySixPinkBooCoinsBase
         generatedCode = generatedCode.replace("SIXRED", redSpaceAmountBaseSix)
         generatedCode = generatedCode.replace("SIXBLUE", blueSpaceAmountBaseSix)
         generatedCode = generatedCode.replace("SIXCHARACTER", characterSpaceAmountBaseSix)
@@ -3339,6 +3394,7 @@ class App(customtkinter.CTk):
         generatedCode = generatedCode.replace("SIXSTAR", starSpaceAmountSixBase)
         generatedCode = generatedCode.replace("SIXBOOSTARS", pinkBooSpaceAmountSixBase)
         generatedCode = generatedCode.replace("SIXBOOCOINS", pinkBooCoinsSpaceAmountBaseSix)
+        generatedCode = generatedCode.replace("SIXBOOMIN", pinkBooStealBaseAmountSixBase)
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
         print("Generated codes copied to the clipboard.")
