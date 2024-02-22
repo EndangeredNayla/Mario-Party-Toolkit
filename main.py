@@ -47,7 +47,6 @@ try:
         settings = json.load(json_file)
         if 'color' in settings:
             saved_color = settings['color']
-            print("Color loaded from settings:", saved_color)
             sysColor = saved_color
             if sysColor == "#system":
                 sysColor, sysColorAlt = system_color()
