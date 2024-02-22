@@ -1177,64 +1177,124 @@ class App(customtkinter.CTk):
         # Create Code Checkboxes
         self.checkboxAdvTxt = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Automatically Advance Text Boxes", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxAdvTxt.grid(row=0, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxBattleNoStar = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Battle Minigames Don't Affect Mini-Game Star   ", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxBattleNoStar.grid(row=1, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxDisableAdv = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Disable Advance on Results", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxDisableAdv.grid(row=2, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxBoot = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Faster Boot Time", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxBoot.grid(row=3, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxBSpeed = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Increased Board Speed", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxBSpeed.grid(row=4, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxCSpeed = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Increased Capsule Throwing Speed", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxCSpeed.grid(row=5, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxTaunt = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Increased Taunt Capabilities", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxTaunt.grid(row=6, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxTxtDisplay = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Instant Text Display", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxTxtDisplay.grid(row=7, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxShowCtrl = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Show Player Who Paused", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxShowCtrl.grid(row=8, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxUnlockAll = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Unlock Everything", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxUnlockAll.grid(row=9, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxBowserNoStealCoins = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Bowser Nightmare - Bowser does not Steal Coins", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxBowserNoStealCoins.grid(row=10, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkbox60RocketShip = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Future Dream - 60 Seconds in Rocket Ship Game", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkbox60RocketShip.grid(row=11, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxFreeTaxi = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Future Dream - Free Taxi Ride", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxFreeTaxi.grid(row=12, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxFreeThwmopWhomp = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Pirate Dream - Free Thwomps & Whomps", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxFreeThwmopWhomp.grid(row=13, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxFreeBridge = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Rainbow Dream - Free Bridge Crossings", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxFreeBridge.grid(row=14, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxDisableHappening = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Sweet Dream - Disable Topmost Happening Space", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxDisableHappening.grid(row=15, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxAllDK = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="All DK Spaces are Active", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxAllDK.grid(row=0, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxCapsulesAny= ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Capsules Can Be Thrown Everywhere", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxCapsulesAny.grid(row=1, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxDoubleTurns = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Double the Amount of Turns", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxDoubleTurns.grid(row=2, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxCapsulesFinal = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Obtain Capsules on Final Turn", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxCapsulesFinal.grid(row=3, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxsameSpaceAlways = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Same Space Duels Always Happen", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxsameSpaceAlways.grid(row=4, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxsameSpaceNever = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Same Space Duels Never Happen", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxsameSpaceNever.grid(row=5, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkbox20Sec = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Beam Team - 20 Second Timer", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkbox20Sec.grid(row=6, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxNoBrick = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Bound of Music - No Bricks", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxNoBrick.grid(row=7, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkbox1Slow = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Curvy Curves - 1 Player is Slower", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkbox1Slow.grid(row=8, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxNoSlow = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Coney Island - No Slow Down", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxNoSlow.grid(row=9, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxFlowers3 = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Flower Shower - All Flowers Worth 3pts", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxFlowers3.grid(row=10, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxNoRocks = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Ground Pound Down - No Rocks Until End", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxNoRocks.grid(row=11, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxLeafDisplay = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Leaf Leap - Leaves Display Quicker", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxLeafDisplay.grid(row=12, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxHalvedTime = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Pop Star Piranhas - Halved Time to Pick", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxHalvedTime.grid(row=13, column=1, sticky="w", padx=5, pady=5)
+        
+        # Default Check Boxes
         self.checkboxDisableAdv.select()
         self.checkboxBoot.select()
         self.checkboxBSpeed.select()
