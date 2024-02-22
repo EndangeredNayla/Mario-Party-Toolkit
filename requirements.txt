@@ -2,7 +2,7 @@ customtkinter
 tk
 Pillow
 pyperclip
-pyinstaller
+pyinstaller == 5.13.2
 requests
 nuitka
 CTkToolTip
