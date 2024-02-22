@@ -20,7 +20,6 @@ import time
 import csv
 
 from CTkToolTip import *
-from customtkinterx import *
 
 from functions import *
 from credits import *
@@ -34,6 +33,9 @@ from codes.marioparty6 import *
 from codes.marioparty7 import *
 from codes.marioparty8_rev1 import *
 from codes.marioparty8_rev2 import *
+
+if sys.platform == "win32":
+    from get_system_color import *
 
 customtkinter.set_appearance_mode("System")
 
@@ -71,8 +73,14 @@ if sys.platform == "darwin":
         sysColor = "#8c8c8c" # Graphite
         sysColorAlt = "#5c5c5c"
         
-elif sys.platfomr == "win32":
-    sysColor = get_windows_system_color()
+elif sys.platform == "win32":
+    sysColor = get_windows_system_color()[4]
+    sysColor1 = get_windows_system_color()[0]
+    sysColor2 = get_windows_system_color()[1]
+    sysColor3 = get_windows_system_color()[2]
+    sysColorAlt = darken_color(sysColor1, sysColor2, sysColor3, 0.75)
+    sysColorAlt = "#{0:02x}{1:02x}{2:02x}".format(int(sysColorAlt[0]), int(sysColorAlt[1]), int(sysColorAlt[2]))
+    print(sysColorAlt)
 
 class App(customtkinter.CTk):
     def __init__(self):
