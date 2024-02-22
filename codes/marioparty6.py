@@ -265,3 +265,23 @@ MP6 - Orb Modifier
 042BD3E8 00000000
 042BD3EC 00000000
 '''
+
+def getInitialItemsSix(one, two, three, oneItem, twoItem, threeItem):
+    return f'''
+MP6 - Start with {oneItem}, {twoItem}, and {threeItem}
+06003620 00000028
+3D808000 618C363C
+1C1F0003 7C00E214
+7CAC00AE 98A30005
+48150114 {one}{two}{three}{one}
+{two}{three}{one}{two} {three}{one}{two}{three}
+04153748 4BEAFED8
+'''
+
+def getCoinStealBaseSix(value):
+    return f'''
+MP6 - Steal SIXBOOMIN Coins Minimum from Pink Boo
+C21B3498 00000002
+3884{value} 9081002C
+60000000 00000000
+'''
