@@ -8,3 +8,4 @@ nuitka
 CTkToolTip
 requests
 get-system-color; sys_platform == 'win32'
+CTkColorPicker
