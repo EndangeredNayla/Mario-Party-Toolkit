@@ -9,6 +9,7 @@ import tkinter as tk
 import customtkinter as ctk
 from PIL import Image, ImageTk
 from pathlib import Path
+from get_system_color import get_windows_system_color
 import requests
 import sys
 import webbrowser
@@ -191,10 +192,10 @@ def system_color():
             sysColorAlt = "#5c5c5c"
         return sysColor, sysColorAlt
     elif sys.platform == "win32":
-        sysColor = system_color()[4]
-        sysColor1 = system_color()[0]
-        sysColor2 = system_color()[1]
-        sysColor3 = system_color()[2]
+        sysColor = get_windows_system_color()[4]
+        sysColor1 = get_windows_system_color()[0]
+        sysColor2 = get_windows_system_color()[1]
+        sysColor3 = get_windows_system_color()[2]
         sysColorAlt = darken_color(sysColor1, sysColor2, sysColor3, 0.75)
         sysColorAlt = "#{0:02x}{1:02x}{2:02x}".format(int(sysColorAlt[0]), int(sysColorAlt[1]), int(sysColorAlt[2]))
         return sysColor, sysColorAlt
