@@ -192,7 +192,6 @@ C20F75A8 00000002
 3B7B{value} 7C9B00D0
 60000000 00000000
 '''
-
 def getOtherCodesFive(code):
     if code == "DisableAdv":
         return '''
