@@ -67,6 +67,9 @@ def run_update():
     url = "https://github.com/EndangeredNayla/Mario-Party-Toolkit/releases"
     webbrowser.open_new_tab(url)
 
+def darken_color(r,g,b, factor):
+    return [r*factor, g*factor, b*factor]
+
 def is_file_greater_than_4gb(file_path):
     # Get the size of the file in bytes
     file_size_bytes = os.path.getsize(file_path)
