@@ -20,7 +20,6 @@ import time
 import csv
 
 from CTkToolTip import *
-from customtkinterx import *
 
 from functions import *
 from credits import *
@@ -35,45 +34,41 @@ from codes.marioparty7 import *
 from codes.marioparty8_rev1 import *
 from codes.marioparty8_rev2 import *
 
+if sys.platform == "win32":
+    from get_system_color import *
+
 customtkinter.set_appearance_mode("System")
 
 global sysColor
 sysColor = None
 
-if sys.platform == "darwin":
-    try:
-        sysColor = subprocess.run(["defaults", "read", "-g", "AppleAccentColor"], capture_output=True, text=True)
-        sysColor = sysColor.stdout.strip()
-    except:
-        sysColor = "7"
-    if sysColor == "6":
-        sysColor = "#f74f9e" # Pink
-        sysColorAlt = "#c42b66"
-    elif sysColor == "5":
-        sysColor = "#a550a7" # Purple
-        sysColorAlt = "#863b7f"
-    elif sysColor == "4" or sysColor == "7":
-        sysColor = "#007aff" # Blue
-        sysColorAlt = "#0054b3"
-    elif sysColor == "3":
-        sysColor = "#62ba46" # Green
-        sysColorAlt = "#4f9e37"
-    elif sysColor == "2":
-        sysColor = "#ffc600" # Yellow
-        sysColorAlt = "#cc9200"
-    elif sysColor == "1": 
-        sysColor = "#f7821b" # Orange
-        sysColorAlt = "#ae5b14"
-    elif sysColor == "0": 
-        sysColor = "#ff5257" # Red
-        sysColorAlt = "#cc2c30"
-    elif sysColor == "-1":
-        sysColor = "#8c8c8c" # Graphite
-        sysColorAlt = "#5c5c5c"
-        
-elif sys.platfomr == "win32":
-    sysColor = get_windows_system_color()
+try:
+    with open('settings.json', 'r') as json_file:
+        settings = json.load(json_file)
+        if 'color' in settings:
+            saved_color = settings['color']
+            print("Color loaded from settings:", saved_color)
+            sysColor = saved_color
+            if sysColor == "#system":
+                sysColor, sysColorAlt = system_color()
+            else:
+                hexColorAlt = hex_to_rgb(sysColor)
+                sysColorAlt1 = hexColorAlt[0]
+                sysColorAlt2 = hexColorAlt[1]
+                sysColorAlt3 = hexColorAlt[2]
+                sysColorAlt = darken_color(sysColorAlt1, sysColorAlt2, sysColorAlt3, 0.75)
+                sysColorAlt = "#{0:02x}{1:02x}{2:02x}".format(int(sysColorAlt[0]), int(sysColorAlt[1]), int(sysColorAlt[2]))
+        else:
+            print("No color found in settings.")
+            sysColor, sysColorAlt = system_color()
 
+except FileNotFoundError:
+    print("Settings file not found. Creating a new settings file.")
+    # Create a new settings file
+    with open('settings.json', 'w') as json_file:
+        json.dump({}, json_file)
+        sysColor, sysColorAlt = system_color()
+    
 class App(customtkinter.CTk):
     def __init__(self):
         super().__init__()
@@ -2411,6 +2406,12 @@ class App(customtkinter.CTk):
         credits_widget.pack(padx=10, pady=10)
         about_widget = customtkinter.CTkLabel(tabview.tab("About"), width=80, height=20, text=(get_about_text()))
         about_widget.pack(padx=10, pady=10)
+
+        button = ctk.CTkButton(tabview, text="Choose Color", command=pick_color, fg_color=sysColor, hover_color=sysColorAlt)
+        button.place(x=10, y=10)
+
+        button = ctk.CTkButton(tabview, text="System Color", command=pick_color_system, fg_color=sysColor, hover_color=sysColorAlt)
+        button.place(x=155, y=10)
         return frame
 
     def create_mp82_frame(self):
@@ -2516,7 +2517,6 @@ class App(customtkinter.CTk):
         starSpaceLabel6.grid(row=3, column=4, sticky="w")
         starSpaceLabelHover = CTkToolTip(starSpaceLabel, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
         starSpaceLabelHover = CTkToolTip(starSpaceLabel6, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
-
 
         parseButtonEight = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonEight, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
         parseButtonEight.place(x=10, y=560)
