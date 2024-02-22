@@ -689,7 +689,7 @@ class App(customtkinter.CTk):
         tabview.add("Coins Mods")
         tabview.add("Capsule Mods")
         tabview.add("Minigame Replacement")
-        tabview.add("Stock Codes")
+        tabview.add("Other Codes")
         tabview.set("Coins Mods")
 
         # Create blue space icon and entry
@@ -1130,7 +1130,82 @@ class App(customtkinter.CTk):
         label.grid(row=11, column=20)
 
         # Create Code Checkboxes
-        checkbox = ctk.CTkCheckBox(master=tabview.tab("Stock Codes"), text="Disable Advance on Results", font=("Arial", 11), onvalue=1, offvalue=0)
+        self.checkboxDisableAdv = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Disable Advance on Results", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxDisableAdv.grid(row=1, column=1, sticky="w", padx=20, pady=10)
+        self.checkboxBoot = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Faster Boot Time", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxBoot.grid(row=2, column=1, sticky="w", padx=20, pady=10)
+        self.checkboxBSpeed = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Increased Board Speed", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxBSpeed.grid(row=3, column=1, sticky="w", padx=20, pady=10)
+        self.checkboxCSpeed = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Increased Capsule Throwing Speed", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxCSpeed.grid(row=4, column=1, sticky="w", padx=20, pady=10)
+        self.checkboxTaunt = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Increased Taunt Capabilities", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxTaunt.grid(row=5, column=1, sticky="w", padx=20, pady=10)
+        self.checkboxTxtDisplay = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Instant Text Display", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxTxtDisplay.grid(row=6, column=1, sticky="w", padx=20, pady=10)
+        self.checkboxShowCtrl = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Show Player Who Paused", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxShowCtrl.grid(row=7, column=1, sticky="w", padx=20, pady=10)
+        self.checkboxUnlockAll = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Unlock Everything", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxUnlockAll.grid(row=8, column=1, sticky="w", padx=20, pady=10)
+        self.checkboxBowserNoStealCoins = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Bowser Nightmare - Bowser does not Steal Coins", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxBowserNoStealCoins.grid(row=9, column=1, sticky="w", padx=20, pady=10)
+        self.checkbox60RocketShip = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Future Dream - 60 Seconds in Rocket Ship Game", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkbox60RocketShip.grid(row=10, column=1, sticky="w", padx=20, pady=10)
+        self.checkboxFreeTaxi = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Future Dream - Free Taxi Ride", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxFreeTaxi.grid(row=11, column=1, sticky="w", padx=20, pady=10)
+        self.checkboxFreeThwmopWhomp = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Pirate Dream - Free Thwomps & Whomps", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxFreeThwmopWhomp.grid(row=12, column=1, sticky="w", padx=20, pady=10)
+        self.checkboxFreeBridge = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Rainbow Dream - Free Bridge Crossings", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxFreeBridge.grid(row=1, column=2, sticky="w", padx=20, pady=10)
+        self.checkboxDisableHappening = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Sweet Dream - Disable Topmost Happening Space", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxDisableHappening.grid(row=2, column=2, sticky="w", padx=20, pady=10)
+        self.checkboxAdvTxt = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Automatically Advance Text Boxes", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxAdvTxt.grid(row=3, column=2, sticky="w", padx=20, pady=10)
+        self.checkboxAllDK = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="All DK Spaces are Active", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxAllDK.grid(row=4, column=2, sticky="w", padx=20, pady=10)
+        self.checkboxBattleNoStar = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Battle Minigames Don't Affect Mini-Game Star", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxBattleNoStar.grid(row=5, column=2, sticky="w", padx=20, pady=10)
+        self.checkboxCapsulesAny= ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Capsules Can Be Thrown Everywhere", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxCapsulesAny.grid(row=6, column=2, sticky="w", padx=20, pady=10)
+        self.checkboxDoubleTurns = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Double the Amount of Turns", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxDoubleTurns.grid(row=7, column=2, sticky="w", padx=20, pady=10)
+        self.checkboxCapsulesFinal = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Obtain Capsules on Final Turn", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxCapsulesFinal.grid(row=8, column=2, sticky="w", padx=20, pady=10)
+        self.checkbox20Sec = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Beam Team - 20 Second Timer", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkbox20Sec.grid(row=9, column=2, sticky="w", padx=20, pady=10)
+        self.checkboxNoBrick = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Bound of Music - No Bricks", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxNoBrick.grid(row=10, column=2, sticky="w", padx=20, pady=10)
+        self.checkbox1Slow = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Curvy Curves - 1 Player is Slower", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkbox1Slow.grid(row=11, column=2, sticky="w", padx=20, pady=10)
+        self.checkboxNoSlow = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Coney Island - No Slow Down", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxNoSlow.grid(row=12, column=2, sticky="w", padx=20, pady=10)
+        self.checkboxFlowers3 = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Flower Shower - All Flowers are worth 3 Points", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxFlowers3.grid(row=1, column=3, sticky="w", padx=20, pady=10)
+        self.checkboxNoRocks = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Ground Pound Down - No Rocks Until End", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxNoRocks.grid(row=2, column=3, sticky="w", padx=20, pady=10)
+        self.checkboxLeafDisplay = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Leaf Leap - Leaves Display Quicker", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxLeafDisplay.grid(row=3, column=3, sticky="w", padx=20, pady=10)
+        self.checkboxHalvedTime = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Pop Star Piranhas - Halved Time to Pick", font=("Arial", 14), onvalue=1, offvalue=0)
+        self.checkboxHalvedTime.grid(row=4, column=3, sticky="w", padx=20, pady=10)
+
+        self.checkboxDisableAdv.select()
+        self.checkboxBoot.select()
+        self.checkboxBSpeed.select()
+        self.checkboxCSpeed.select()
+        self.checkboxTaunt.select()
+        self.checkboxTxtDisplay.select()
+        self.checkboxShowCtrl.select()
+        self.checkboxUnlockAll.select()
+        self.checkboxBattleNoStar.select()
+        self.checkboxCapsulesAny.select()
+        self.checkboxCapsulesFinal.select()
+        self.checkbox20Sec.select()
+        self.checkboxNoBrick.select()
+        self.checkbox1Slow.select()
+        self.checkboxNoSlow.select()
+        self.checkboxFlowers3.select()
+        self.checkboxNoRocks.select()
+        self.checkboxLeafDisplay.select()
+        self.checkboxHalvedTime.select()
 
         parseButtonFive = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonFive, text="Generate Codes")
         parseButtonFive.place(x=10, y=560)
@@ -1138,8 +1213,8 @@ class App(customtkinter.CTk):
         parseButtonFiveItems = ctk.CTkButton(master=tabview.tab("Capsule Mods"), command=self.actionSpaceButtonFiveCapsule, text="Generate Codes")
         parseButtonFiveItems.place(x=10, y=560)
 
-        parseButtonFiveStock = ctk.CTkButton(master=tabview.tab("Stock Codes"), command=self.actionSpaceButtonFiveStock, text="Generate Codes")
-        parseButtonFiveStock.place(x=10, y=560)
+        parseButtonFiveOther = ctk.CTkButton(master=tabview.tab("Other Codes"), command=self.actionSpaceButtonFiveOther, text="Generate Codes")
+        parseButtonFiveOther.place(x=10, y=560)
 
         parseButtonFive = ctk.CTkButton(master=tabview.tab("Capsule Mods"), command=self.savePresetItems5, text="Save Preset")
         parseButtonFive.place(x=160, y=560)
@@ -6322,8 +6397,161 @@ class App(customtkinter.CTk):
         print("Generated code copied to the clipboard.")
         createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
-    def actionSpaceButtonFiveStock(self):
-        a
+    def actionSpaceButtonFiveOther(self):
+        if self.checkboxDisableAdv.get() == 0 and self.checkboxBoot.get() == 0 and self.checkboxBSpeed.get() == 0 and self.checkboxCSpeed.get() == 0 and self.checkboxTaunt.get() == 0 and self.checkboxTxtDisplay.get() == 0 and self.checkboxShowCtrl.get() == 0 and self.checkboxUnlockAll.get() == 0 and self.checkboxBowserNoStealCoins.get() == 0 and self.checkbox60RocketShip.get() == 0 and self.checkboxFreeTaxi.get() == 0 and self.checkboxFreeThwmopWhomp.get() == 0 and self.checkboxFreeBridge.get() == 0 and self.checkboxDisableHappening.get() == 0 and self.checkboxAdvTxt.get() == 0 and self.checkboxAllDK.get() == 0 and self.checkboxBattleNoStar.get() == 0 and self.checkboxCapsulesAny.get() == 0 and self.checkboxDoubleTurns.get() == 0 and self.checkboxCapsulesFinal.get() == 0 and self.checkbox20Sec.get() == 0 and self.checkboxNoBrick.get() == 0 and self.checkbox1Slow.get() == 0 and self.checkboxNoSlow.get() == 0 and self.checkboxFlowers3.get() == 0 and self.checkboxNoRocks.get() == 0 and self.checkboxLeafDisplay.get() == 0 and self.checkboxHalvedTime.get() == 0:
+            if sys.platform == "darwin":
+                createDialog("Error", "error", "Please check at least 1 box.", None)
+            else:
+                createDialog("Error", "error", "Please check at least 1 box.", None)
+            return
+        
+        generatedCode = ''''''
+        
+        ticked = self.checkboxDisableAdv.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("DisableAdv")
+        
+        ticked = self.checkboxBoot.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("Boot")
+        
+        ticked = self.checkboxBSpeed.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("BSpeed")
+        
+        ticked = self.checkboxCSpeed.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("CSpeed")
+        
+        ticked = self.checkboxTaunt.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("Taunt")
+        
+        ticked = self.checkboxTxtDisplay.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("TxtDisplay")
+        
+        ticked = self.checkboxShowCtrl.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("ShowCtrl")
+        
+        ticked = self.checkboxUnlockAll.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("UnlockAll")
+        
+        ticked = self.checkboxBowserNoStealCoins.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("BowserNoStealCoins")
+        
+        ticked = self.checkbox60RocketShip.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("60RocketShip")
+        
+        ticked = self.checkboxFreeTaxi.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("FreeTaxi")
+        
+        ticked = self.checkboxFreeThwmopWhomp.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("FreeThwmopWhomp")
+        
+        ticked = self.checkboxFreeBridge.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("FreeBridge")
+        
+        ticked = self.checkboxDisableHappening.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("DisableHappening")
+        
+        ticked = self.checkboxAdvTxt.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("AdvTxt")
+        
+        ticked = self.checkboxAllDK.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("AllDK")
+        
+        ticked = self.checkboxBattleNoStar.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("BattleNoStar")
+        
+        ticked = self.checkboxCapsulesAny.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("CapsulesAny")
+        
+        ticked = self.checkboxDoubleTurns.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("DoubleTurns")
+        
+        ticked = self.checkboxCapsulesFinal.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("CapsulesFinal")
+        
+        ticked = self.checkbox20Sec.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("20Sec")
+        
+        ticked = self.checkboxNoBrick.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("NoBrick")
+        
+        ticked = self.checkbox1Slow.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("1Slow")
+        
+        ticked = self.checkboxNoSlow.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("NoSlow")
+        
+        ticked = self.checkboxFlowers3.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("Flowers3")
+        
+        ticked = self.checkboxNoRocks.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("NoRocks")
+        
+        ticked = self.checkboxLeafDisplay.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("LeafDisplay")
+        
+        ticked = self.checkboxHalvedTime.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("HalvedTime")
+
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+
+        print("Generated code copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
     
     def savePresetItems7(self):
         if not self.mushroomCapsuleWeight7.get() or not self.goldenMushroomCapsulePrice7.get() or not self.goldenMushroomCapsuleWeight7.get() or not self.slowMushroomCapsulePrice7.get() or not self.slowMushroomCapsuleWeight7.get() or not self.metalMushroomCapsulePrice7.get() or not self.metalMushroomCapsuleWeight7.get() or not self.flutterCapsulePrice7.get() or not self.flutterCapsuleWeight7.get() or not self.cannonCapsulePrice7.get() or not self.cannonCapsuleWeight7.get() or not self.snackCapsulePrice7.get() or not self.snackCapsuleWeight7.get() or not self.lakituCapsulePrice7.get() or not self.lakituCapsuleWeight7.get() or not self.hammerBroCapsuleWeight7.get() or not self.hammerBroCapsulePrice7.get() or not self.plantCapsulePrice7.get() or not self.plantCapsuleWeight7.get() or not self.spearCapsuleWeight7.get() or not self.spearCapsulePrice7.get() or not self.kamekCapsuleWeight7.get() or not self.kamekCapsulePrice7.get() or not self.toadyCapsuleWeight7.get() or not self.toadyCapsulePrice7.get() or not self.blizzardCapsuleWeight7.get() or not self.blizzardCapsulePrice7.get() or not self.banditCapsulePrice7.get() or not self.banditCapsuleWeight7.get() or not self.pinkBooCapsuleWeight7.get() or not self.pinkBooCapsulePrice7.get() or not self.spinyCapsulePrice7.get() or not self.spinyCapsuleWeight7.get() or not self.zapCapsulePrice7.get() or not self.zapCapsuleWeight7.get() or not self.tweesterCapsulePrice7.get() or not self.tweesterCapsuleWeight7.get() or not self.thwompCapsulePrice7.get() or not self.thwompCapsuleWeight7.get() or not self.warpCapsulePrice7.get() or not self.warpCapsuleWeight7.get() or not self.bombCapsulePrice7.get() or not self.bombCapsuleWeight7.get() or not self.fireballCapsulePrice7.get() or not self.fireballCapsuleWeight7.get() or not self.eggCapsulePrice7.get() or not self.eggCapsuleWeight7.get() or not self.flowerCapsulePrice7.get() or not self.flowerCapsuleWeight7.get() or not self.vacuumCapsulePrice7.get() or not self.vacuumCapsuleWeight7.get() or not self.magicCapsulePrice7.get() or not self.magicCapsuleWeight7.get() or not self.tripleCapsulePrice7.get() or not self.tripleCapsuleWeight7.get() or not self.koopaCapsulePrice7.get() or not self.koopaCapsuleWeight7.get():
