@@ -50,7 +50,7 @@ def create_banner(frame, image_path, row, column):
     image = image.resize((200, 75))
     image_tk = ImageTk.PhotoImage(image)
     label = ctk.CTkLabel(frame, image=image_tk)
-    label.configure(fg_color=['#dbdbdb', '#323232'], text="") # Windows fix
+    label.configure(fg_color=['#dbdbdb', '#2b2b2b'], text="") # Windows fix
     label.image = image_tk  # Keep a reference to the image to prevent it from being garbage collected
     label.grid(row=row, column=column)
 

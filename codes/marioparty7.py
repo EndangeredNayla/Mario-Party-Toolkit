@@ -281,7 +281,7 @@ MP7 - Orb Modifer
 042EF7A4 00000000
 '''
 
-def getInitialItemsSeven(one, two, three, oneItem, twoItem, threeItem):
+def getInitialItemsSeven(one, two, three, four, five, oneItem, twoItem, threeItem, fourItem, fiveItem):
     return f'''
 MP7 - Start with {oneItem}, {twoItem}, and {threeItem}
 06003620 00000030

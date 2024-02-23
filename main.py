@@ -2367,25 +2367,43 @@ class App(customtkinter.CTk):
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceSeven, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
         parseButtonTwo.place(x=10, y=560)
 
-        self.items7 = ["Mushroom", "Super Mushroom", "Slow 'Shroom", "Metal Mushroom", "Flutter", "Cannon", "Snack", "Lakitu", "Hammer Bro", "Piranha Plant", "Spear Guy", "Kamek", "Toady", "Mr. Blizzard", "Bandit", "Pink Boo", "Spiny", "Zap", "Tweester", "Thwomp", "Warp Pipe", "Bob-omb", "Fireball", "Flower", "Egg", "Vacuum", "Surprise", "Triple 'Shroom", "Koopa Kid"]
+        self.items7 = ["None", "Mushroom", "Super Mushroom", "Slow 'Shroom", "Metal Mushroom", "Flutter", "Cannon", "Snack", "Lakitu", "Hammer Bro", "Piranha Plant", "Spear Guy", "Kamek", "Toady", "Mr. Blizzard", "Bandit", "Pink Boo", "Spiny", "Zap", "Tweester", "Thwomp", "Warp Pipe", "Bob-omb", "Fireball", "Flower", "Egg", "Vacuum", "Surprise", "Triple 'Shroom", "Koopa Kid"]
         
         label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 1:  ", font=("Arial", 16))
         label.grid(row=0, column=0)
 
-        self.initalItem61 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
-        self.initalItem61.grid(row=0, column=1)
+        self.initalItem71 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
+        self.initalItem71.grid(row=0, column=1)
 
         label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 2:  ", font=("Arial", 16))
         label.grid(row=1, column=0)
         
-        self.initalItem62 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
-        self.initalItem62.grid(row=1, column=1)
+        self.initalItem72 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
+        self.initalItem72.grid(row=1, column=1)
 
         label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 3:  ", font=("Arial", 16))
         label.grid(row=2, column=0)
 
-        self.initalItem63 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
-        self.initalItem63.grid(row=2, column=1)
+        self.initalItem73 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
+        self.initalItem73.grid(row=2, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 4:  ", font=("Arial", 16))
+        label.grid(row=3, column=0)
+
+        self.initalItem74 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
+        self.initalItem74.grid(row=3, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" (Only if Can Hold 5 Capsules in On)  ", font=("Arial", 16))
+        label.grid(row=3, column=2, sticky="w")
+
+        label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 5:  ", font=("Arial", 16))
+        label.grid(row=4, column=0)
+
+        self.initalItem75 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
+        self.initalItem75.grid(row=4, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" (Only if Can Hold 5 Capsules in On)  ", font=("Arial", 16))
+        label.grid(row=4, column=2, sticky="w")
 
         parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=self.initalItems7, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
         parseButton.place(x=10, y=560)
@@ -2713,6 +2731,8 @@ class App(customtkinter.CTk):
         itemSlot1 = self.initalItem71.get()
         itemSlot2 = self.initalItem72.get()
         itemSlot3 = self.initalItem73.get()
+        itemSlot4 = self.initalItem74.get()
+        itemSlot5 = self.initalItem75.get()
         itemHex = ["FF", "00", "01", "02", "03", "04", "05", "06", "07", "0A", "0B", "0C", "0D", "0E", "0F", "10", "11", "14", "15", "16", "17", "18", "19", "1E", "1F", "20", "21", "22", "23", "28"]
         itemSlot1Num = self.items7.index(itemSlot1)
         itemSlot1Hex = itemHex[itemSlot1Num]
@@ -2723,7 +2743,13 @@ class App(customtkinter.CTk):
         itemSlot3Num = self.items7.index(itemSlot3)
         itemSlot3Hex = itemHex[itemSlot3Num]
 
-        code = getInitialItemsSix(itemSlot1Hex, itemSlot2Hex, itemSlot3Hex, itemSlot1, itemSlot2, itemSlot3)
+        itemSlot4Num = self.items7.index(itemSlot4)
+        itemSlot4Hex = itemHex[itemSlot4Num]
+
+        itemSlot5Num = self.items7.index(itemSlot5)
+        itemSlot5Hex = itemHex[itemSlot5Num]
+
+        code = getInitialItemsSeven(itemSlot1Hex, itemSlot2Hex, itemSlot3Hex, itemSlot4Hex, itemSlot5Hex, itemSlot1, itemSlot2, itemSlot3, itemSlot4, itemSlot5)
         code = code.strip()
         pyperclip.copy(code)
         print("Generated codes copied to the clipboard.")
