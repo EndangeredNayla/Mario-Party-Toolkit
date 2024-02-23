@@ -196,7 +196,7 @@ def getOtherCodesFive(code):
     if code == "DisableAdv":
         return '''
 20478F28 4182F754
-04478F1C 48000010
+04478F1C FFFFFFFF
 E2000001 80008000'''
     if code == "Boot":
         return '''
