@@ -371,6 +371,7 @@ class App(customtkinter.CTk):
         tabview.add("Battle Game Mods")
         tabview.add("Minigame Replacement")
         tabview.add("Initial Items")
+        tabview.add("Space Replacement")
         tabview.set("Coins Mods")
 
         # Create faire square grid icon and entry
@@ -709,6 +710,41 @@ class App(customtkinter.CTk):
         self.initalItem43.grid(row=2, column=1)
 
         parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=self.initalItems4, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
+        parseButton.place(x=10, y=560)
+
+        self.spaces4 = ["None", "Invisible Space", "Blue Space", "Red Space", "Bowser Space", "Mushroom Space", "Battle Space", "Happening Space", "Chance Time Space", "Spring Space"]
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" Replace  ", font=("Arial", 16))
+        label.grid(row=0, column=0)
+
+        self.spaceRep411 = customtkinter.CTkComboBox(master=tabview.tab("Space Replacement"), values=self.spaces4)
+        self.spaceRep411.grid(row=0, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" with ", font=("Arial", 16))
+        label.grid(row=0, column=2)
+
+        self.spaceRep421 = customtkinter.CTkComboBox(master=tabview.tab("Space Replacement"), values=self.spaces4)
+        self.spaceRep421.grid(row=0, column=3)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" (Slot A) ", font=("Arial", 16))
+        label.grid(row=0, column=4)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" Replace  ", font=("Arial", 16))
+        label.grid(row=1, column=0)
+
+        self.spaceRep412 = customtkinter.CTkComboBox(master=tabview.tab("Space Replacement"), values=self.spaces4)
+        self.spaceRep412.grid(row=1, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" with ", font=("Arial", 16))
+        label.grid(row=1, column=2)
+
+        self.spaceRep422 = customtkinter.CTkComboBox(master=tabview.tab("Space Replacement"), values=self.spaces4)
+        self.spaceRep422.grid(row=1, column=3)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" (Slot B) ", font=("Arial", 16))
+        label.grid(row=1, column=4)
+
+        parseButton = ctk.CTkButton(master=tabview.tab("Space Replacement"), command=self.spaceReplace4, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
         parseButton.place(x=10, y=560)
         return frame
 
@@ -2744,6 +2780,47 @@ class App(customtkinter.CTk):
         code = getInitialItemsFour(itemSlot1Hex, itemSlot2Hex, itemSlot3Hex, itemSlot1, itemSlot2, itemSlot3)
         code = code.strip()
         pyperclip.copy(code)
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
+    def spaceReplace4(self):
+        spaceSlot1 = self.spaceRep411.get()
+        spaceSlot2 = self.spaceRep421.get()
+
+        spaceSlot3 = self.spaceRep412.get()
+        spaceSlot4 = self.spaceRep422.get()
+
+        spaceHex = ["NONE", "00", "01", "02", "03", "04", "05", "06", "07", "09"]
+
+        spaceSlot1Num = self.spaces4.index(spaceSlot1)
+        spaceSlot1Hex = spaceHex[spaceSlot1Num]
+
+        spaceSlot2Num = self.spaces4.index(spaceSlot2)
+        spaceSlot2Hex = spaceHex[spaceSlot2Num]
+
+        spaceSlot3Num = self.spaces4.index(spaceSlot3)
+        spaceSlot3Hex = spaceHex[spaceSlot3Num]
+
+        spaceSlot4Num = self.spaces4.index(spaceSlot4)
+        spaceSlot4Hex = spaceHex[spaceSlot4Num]
+
+        mpSpace41 = getSpaceReplaceFour1(spaceSlot1Hex, spaceSlot2Hex, spaceSlot1, spaceSlot2)
+        mpSpace42 = getSpaceReplaceFour2(spaceSlot3Hex, spaceSlot4Hex, spaceSlot3, spaceSlot4)
+    
+        if spaceSlot1Hex == "NONE":
+            mpSpace41 = ""
+        if spaceSlot2Hex == "NONE":
+            mpSpace41 = ""
+        if spaceSlot3Hex == "NONE":
+            mpSpace42 = ""
+        if spaceSlot4Hex == "NONE":
+            mpSpace42 = ""
+        
+        generatedCode = mpSpace41 + mpSpace42
+
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+
         print("Generated codes copied to the clipboard.")
         createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 

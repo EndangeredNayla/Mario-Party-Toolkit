@@ -9,7 +9,9 @@ import tkinter as tk
 import customtkinter as ctk
 from PIL import Image, ImageTk
 from pathlib import Path
-from get_system_color import get_windows_system_color
+import sys
+if sys.platform == "win32":
+    from get_system_color import get_windows_system_color
 import requests
 import sys
 import webbrowser
