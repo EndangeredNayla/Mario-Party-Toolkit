@@ -285,3 +285,25 @@ C21B3498 00000002
 3884{value} 9081002C
 60000000 00000000
 '''
+
+def getSpaceReplaceSix1(spaceHex1, spaceHex2, spaceName, spaceName2):
+    return f'''
+MP6 - Replace {spaceName} with {spaceName2} (Slot A)
+C217590C 00000005
+A01F0030 280000{spaceHex1}
+40820018 A09F0032
+2804FFFF 4082000C
+380000{spaceHex2} B01F0030
+88030000 00000000
+'''
+
+def getSpaceReplaceSix2(spaceHex1, spaceHex2, spaceName, spaceName2):
+    return f'''
+MP6 - Replace {spaceName} with {spaceName2} (Slot B)
+C2175910 00000005
+5418CFFE A01F0030
+280000{spaceHex1} 40820018
+A09F0032 2804FFFF
+4082000C 380000{spaceHex2}
+B01F0030 00000000
+'''
