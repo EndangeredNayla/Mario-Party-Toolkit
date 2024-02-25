@@ -141,7 +141,7 @@ def getMinigameReplacement6(hexUno, hexDos, gameUno, gameDos):
     return f'''
 MP6 - Minigame Replacement: {gameUno} ➜ {gameDos}
 28265BA8 000000{hexUno}
-0222A4C4 000000{hexDos}
+02265BA8 000000{hexDos}
 E2000001 80008000
 '''
 
