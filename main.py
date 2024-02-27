@@ -6588,15 +6588,6 @@ class App(customtkinter.CTk):
             flutterCapsulePrice5 = "00"
 
         try:
-            cursedMushroomCapsuleWeight5 = hex(int(cursedMushroomCapsuleWeight5))
-            if len(cursedMushroomCapsuleWeight5) == 4:
-                cursedMushroomCapsuleWeight5 = cursedMushroomCapsuleWeight5[2:]
-            elif len(cursedMushroomCapsuleWeight5) == 3:
-                cursedMushroomCapsuleWeight5 = "0" + cursedMushroomCapsuleWeight5[2:]
-        except:
-            cursedMushroomCapsuleWeight5 = "00"
-
-        try:
             cursedMushroomCapsulePrice5 = hex(int(cursedMushroomCapsulePrice5))
             if len(cursedMushroomCapsulePrice5) == 4:
                 cursedMushroomCapsulePrice5 = cursedMushroomCapsulePrice5[2:]
