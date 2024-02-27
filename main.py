@@ -339,6 +339,9 @@ class App(customtkinter.CTk):
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Item Mods"), command=self.itemsTwo, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
         parseButtonTwo.place(x=10, y=560)
 
+        warningLabel = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="These are not weights! 0 doesnt mean disabled.", font=("Arial", 16, "bold"))
+        warningLabel.place(x=5, y=210)
+
         return frame
 
     def create_mp3_frame(self):
@@ -347,6 +350,7 @@ class App(customtkinter.CTk):
         tabview.pack(padx=20, pady=20)
         tabview.add("Coins Mods")
         tabview.add("Minigame Replacement")
+        tabview.add("Item Mods")
         tabview.set("Coins Mods")
 
         # Create blue space icon and entry, and tickbox
@@ -408,6 +412,117 @@ class App(customtkinter.CTk):
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceThree, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
         parseButtonTwo.place(x=10, y=560)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/mushroom.png", 1, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
+        label.grid(row=1, column=2)
+        self.mushroom3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.mushroom3.grid(row=1, column=3)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/skeletonKey.png", 2, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
+        label.grid(row=2, column=2)
+        self.skeletonKey3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.skeletonKey3.grid(row=2, column=3)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/poisonMushroom.png", 3, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
+        label.grid(row=3, column=2)
+        self.poisonMushroom3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.poisonMushroom3.grid(row=3, column=3)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/reverseMushroom.png", 4, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
+        label.grid(row=4, column=2)
+        self.reverseMushroom3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.reverseMushroom3.grid(row=4, column=3)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/goldenMushroom.png", 5, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=5, column=2)
+        self.goldenMushroom3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.goldenMushroom3.grid(row=5, column=3)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/magicLamp.png", 6, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=6, column=2)
+        self.magicLamp3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.magicLamp3.grid(row=6, column=3)
+
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="    ", font=("Arial", 16))
+        label.grid(row=1, column=4)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/warpBlock.png", 1, 6)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
+        label.grid(row=1, column=7)
+        self.warpBlock3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.warpBlock3.grid(row=1, column=8)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/celluarShopper.png", 2, 6)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
+        label.grid(row=2, column=7)
+        self.celluarShopper3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.celluarShopper3.grid(row=2, column=8)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/bowserPhone.png", 3, 6)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=3, column=7)
+        self.bowserPhone3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.bowserPhone3.grid(row=3, column=8)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/duelingGlove.png", 4, 6)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=4, column=7)
+        self.duelingGlove3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.duelingGlove3.grid(row=4, column=8)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/luckyLamp.png", 5, 6)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=5, column=7)
+        self.luckyLamp3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.luckyLamp3.grid(row=5, column=8)
+
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="    ", font=("Arial", 16))
+        label.grid(row=1, column=9)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/bowserSuit.png", 1, 10)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=1, column=11)
+        self.bowserSuit3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.bowserSuit3.grid(row=1, column=12)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/plunderChest.png", 2, 10)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=2, column=11)
+        self.plunderChest3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.plunderChest3.grid(row=2, column=12)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/booBell.png", 3, 10)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=3, column=11)
+        self.booBell3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.booBell3.grid(row=3, column=12)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/booRepellent.png", 4, 10)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=4, column=11)
+        self.booRepellant3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.booRepellant3.grid(row=4, column=12)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/itemBag3.png", 5, 10)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=5, column=11)
+        self.itemBag3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.itemBag3.grid(row=5, column=12)
+
+        parseButtonThree = ctk.CTkButton(master=tabview.tab("Item Mods"), command=self.itemsThree, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
+        parseButtonThree.place(x=10, y=560)
+
+        warningLabel = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="These are not weights! 0 doesnt mean disabled.", font=("Arial", 16, "bold"))
+        warningLabel.place(x=5, y=310)
+
+        warningLabel = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="Please set the items in RED the LOWEST PRICE and the SAME PRICE.", font=("Arial", 16, "bold"))
+        warningLabel.place(x=5, y=280)
         return frame
 
 
@@ -4568,7 +4683,180 @@ class App(customtkinter.CTk):
         print("Generated code copied to the clipboard.")
         createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
+    def itemsThree(self):
+        if not self.bowserPhone3.get() or not self.mushroom3.get() or not self.skeletonKey3.get() or not self.plunderChest3.get() or not self.duelingGlove3.get() or not self.warpBlock3.get() or not self.goldenMushroom3.get() or not self.magicLamp3.get() or not self.celluarShopper3.get() or not self.itemBag3.get() or not self.poisonMushroom3.get() or not self.reverseMushroom3.get() or not self.booBell3.get() or not self.booRepellant3.get() or not self.luckyLamp3.get():
+            if sys.platform == "darwin":
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
+            else:
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
+            return
 
+        mushroom3 = self.mushroom3.get()
+        skeletonKey3 = self.skeletonKey3.get()
+        plunderChest3 = self.plunderChest3.get()
+        duelingGlove3 = self.duelingGlove3.get()
+        warpBlock3 = self.warpBlock3.get()
+        goldenMushroom3 = self.goldenMushroom3.get()
+        magicLamp3 = self.magicLamp3.get()
+        celluarShopper3 = self.celluarShopper3.get()
+        itemBag3 = self.itemBag3.get()
+        poisonMushroom3 = self.poisonMushroom3.get()
+        reverseMushroom3 = self.reverseMushroom3.get()
+        booBell3 = self.booBell3.get()
+        booRepellant3 = self.booRepellant3.get()
+        luckyLamp3 = self.luckyLamp3.get()
+        bowserPhone3 = self.bowserPhone3.get()
+
+        orbPriceMin = find_lowest_integer_with_zero(*[int(mushroom3), int(skeletonKey3), int(plunderChest3), int(duelingGlove3), int(warpBlock3), int(goldenMushroom3), int(magicLamp3), int(celluarShopper3), int(itemBag3), int(poisonMushroom3), int(reverseMushroom3), int(booBell3), int(booRepellant3), int(luckyLamp3), int(bowserPhone3)])
+
+        try:
+            mushroom3 = hex(int(mushroom3))
+            if len(mushroom3) == 4:
+                mushroom3 = mushroom3[2:]
+            elif len(mushroom3) == 3:
+                mushroom3 = "0" + mushroom3[2:]
+        except:
+            mushroom3 = "00"
+
+        try:
+            skeletonKey3 = hex(int(skeletonKey3))
+            if len(skeletonKey3) == 4:
+                skeletonKey3 = skeletonKey3[2:]
+            elif len(skeletonKey3) == 3:
+                skeletonKey3 = "0" + skeletonKey3[2:]
+        except:
+            skeletonKey3 = "00"
+
+        try:
+            plunderChest3 = hex(int(plunderChest3))
+            if len(plunderChest3) == 4:
+                plunderChest3 = plunderChest3[2:]
+            elif len(plunderChest3) == 3:
+                plunderChest3 = "0" + plunderChest3[2:]
+        except:
+            plunderChest3 = "00"
+
+        try:
+            duelingGlove3 = hex(int(duelingGlove3))
+            if len(duelingGlove3) == 4:
+                duelingGlove3 = duelingGlove3[2:]
+            elif len(duelingGlove3) == 3:
+                duelingGlove3 = "0" + duelingGlove3[2:]
+        except:
+            duelingGlove3 = "00"
+
+        try:
+            warpBlock3 = hex(int(warpBlock3))
+            if len(warpBlock3) == 4:
+                warpBlock3 = warpBlock3[2:]
+            elif len(warpBlock3) == 3:
+                warpBlock3 = "0" + warpBlock3[2:]
+        except:
+            warpBlock3 = "00"
+
+        try:
+            goldenMushroom3 = hex(int(goldenMushroom3))
+            if len(goldenMushroom3) == 4:
+                goldenMushroom3 = goldenMushroom3[2:]
+            elif len(goldenMushroom3) == 3:
+                goldenMushroom3 = "0" + goldenMushroom3[2:]
+        except:
+            goldenMushroom3 = "00"
+
+        try:
+            celluarShopper3 = hex(int(celluarShopper3))
+            if len(celluarShopper3) == 4:
+                celluarShopper3 = celluarShopper3[2:]
+            elif len(celluarShopper3) == 3:
+                celluarShopper3 = "0" + celluarShopper3[2:]
+        except:
+            celluarShopper3 = "00"
+
+        try:
+            magicLamp3 = hex(int(magicLamp3))
+            if len(magicLamp3) == 4:
+                magicLamp3 = magicLamp3[2:]
+            elif len(magicLamp3) == 3:
+                magicLamp3 = "0" + magicLamp3[2:]
+        except:
+            magicLamp3 = "00"
+
+        try:
+            poisonMushroom3 = hex(int(poisonMushroom3))
+            if len(poisonMushroom3) == 4:
+                poisonMushroom3 = poisonMushroom3[2:]
+            elif len(poisonMushroom3) == 3:
+                poisonMushroom3 = "0" + poisonMushroom3[2:]
+        except:
+            poisonMushroom3 = "00"
+
+        try:
+            reverseMushroom3 = hex(int(reverseMushroom3))
+            if len(reverseMushroom3) == 4:
+                reverseMushroom3 = reverseMushroom3[2:]
+            elif len(reverseMushroom3) == 3:
+                reverseMushroom3 = "0" + reverseMushroom3[2:]
+        except:
+            reverseMushroom3 = "00"
+
+        try:
+            booBell3 = hex(int(booBell3))
+            if len(booBell3) == 4:
+                booBell3 = booBell3[2:]
+            elif len(booBell3) == 3:
+                booBell3 = "0" + booBell3[2:]
+        except:
+            booBell3 = "00"
+
+        try:
+            booRepellant3 = hex(int(booRepellant3))
+            if len(booRepellant3) == 4:
+                booRepellant3 = booRepellant3[2:]
+            elif len(booRepellant3) == 3:
+                booRepellant3 = "0" + booRepellant3[2:]
+        except:
+            booRepellant3 = "00"
+
+        try:
+            luckyLamp3 = hex(int(luckyLamp3))
+            if len(luckyLamp3) == 4:
+                luckyLamp3 = luckyLamp3[2:]
+            elif len(luckyLamp3) == 3:
+                luckyLamp3 = "0" + luckyLamp3[2:]
+        except:
+            luckyLamp3 = "00"
+
+        try:
+            itemBag3 = hex(int(itemBag3))
+            if len(itemBag3) == 4:
+                itemBag3 = itemBag3[2:]
+            elif len(itemBag3) == 3:
+                itemBag3 = "0" + itemBag3[2:]
+        except:
+            itemBag3 = "00"
+
+        try:
+            bowserPhone3 = hex(int(bowserPhone3))
+            if len(bowserPhone3) == 4:
+                bowserPhone3 = bowserPhone3[2:]
+            elif len(bowserPhone3) == 3:
+                bowserPhone3 = "0" + bowserPhone3[2:]
+        except:
+            bowserPhone3 = "00"
+
+        
+        orbPriceMin = hex(int(orbPriceMin))
+        if len(orbPriceMin) == 4:
+            orbPriceMin = orbPriceMin[2:]
+        elif len(orbPriceMin) == 3:
+            orbPriceMin = "0" + orbPriceMin[2:]
+    
+        code = getItems3(mushroom3, skeletonKey3, plunderChest3, duelingGlove3, warpBlock3, goldenMushroom3, magicLamp3, celluarShopper3, poisonMushroom3, reverseMushroom3, booBell3, booRepellant3, luckyLamp3, bowserPhone3, itemBag3, bowserPhone3, orbPriceMin)
+        code = code.strip()
+        pyperclip.copy(code)
+
+        print("Generated code copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonFourItem(self):
         if not self.miniPrice4.get() or not self.miniWeight4.get() or not self.megaPrice4.get() or not self.megaWeight4.get() or not self.superMegaPrice4.get() or not self.superMegaWeight4.get() or not self.superMiniPrice4.get() or not self.superMiniWeight4.get() or not self.miniMegaHammerPrice4.get() or not self.miniMegaHammerWeight4.get() or not self.warpPipePrice4.get() or not self.warpPipeWeight4.get() or not self.swapCardPrice4.get() or not self.swapCardWeight4.get() or not self.sparkyStickerPrice4.get() or not self.sparkyStickerWeight4.get() or not self.bowserSuitPrice4.get() or not self.bowserSuitWeight4.get() or not self.gaddlightPrice4.get() or not self.gaddlightWeight4.get() or not self.chompCallPrice4.get() or not self.chompCallWeight4.get() or not self.crystalBallPrice4.get() or not self.crystalBallWeight4.get() or not self.magicLampPrice4.get() or not self.magicLampWeight4.get() or not self.itemBagPrice4.get()  or not self.itemBagWeight4.get():
@@ -4891,7 +5179,6 @@ class App(customtkinter.CTk):
             itemBagPrice4 = "00"
 
         orbPriceMin = hex(int(orbPriceMin))
-        print(orbPriceMin)
         if len(orbPriceMin) == 4:
             orbPriceMin = "00" + orbPriceMin[2:]
         elif len(orbPriceMin) == 3:

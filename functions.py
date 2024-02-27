@@ -97,6 +97,17 @@ def find_lowest_integer(*args):
     if lowest == float('inf'):
         return None  # If no non-zero integers were found, return None
     return lowest
+
+def find_lowest_integer_with_zero(*args):
+    if not args:
+        return None  # Return None if no arguments are provided
+    lowest = float('inf')  # Initialize lowest with positive infinity
+    for num in args:  # Iterate over arguments
+        if num < lowest:
+            lowest = num
+    if lowest == float('inf'):
+        return None  # If no non-zero integers were found, return None
+    return lowest
     
 def is_file_less_than_100mb(file_path):
     # Get the size of the file in bytes
