@@ -2145,6 +2145,7 @@ class App(customtkinter.CTk):
         tabview.add("Minigame Replacement")
         tabview.add("Initial Items")
         tabview.add("Space Replacement")
+        tabview.add("Other Codes")
         tabview.set("Coins Mods")
         
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/mushroomCapsule.png", 2, 1)
@@ -2633,6 +2634,62 @@ class App(customtkinter.CTk):
         flowerLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins per Space with the Flower.", font=("Arial", 16))
         flowerLabel.grid(row=11, column=4, sticky="w")
 
+        # Create Code Checkboxes
+        self.checkboxAdvTxt = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Auto Advance Text Boxes", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
+        self.checkboxAdvTxt.grid(row=0, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
+        self.checkboxCtrlOpAlways = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Controller Options Always Accessible", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
+        self.checkboxCtrlOpAlways.grid(row=1, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
+        self.checkboxDisableAdv = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Disable Advance on Results", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
+        self.checkboxDisableAdv.grid(row=2, column=0, sticky="w", padx=5, pady=5)
+
+        # Create Code Checkboxes
+        self.checkboxDisableCPU = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Disable CPU Icon", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
+        self.checkboxDisableCPU.grid(row=3, column=0, sticky="w", padx=5, pady=5)
+
+        # Create Code Checkboxes
+        self.checkboxBoot = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Faster Boot Time", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
+        self.checkboxBoot.grid(row=4, column=0, sticky="w", padx=5, pady=5)
+
+        # Create Code Checkboxes
+        self.checkboxBSpeed = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Increased Board Speed", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
+        self.checkboxBSpeed.grid(row=5, column=0, sticky="w", padx=5, pady=5)
+
+        # Create Code Checkboxes
+        self.checkboxOSpeed = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Increased Orb Throwing Speed", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
+        self.checkboxOSpeed.grid(row=6, column=0, sticky="w", padx=5, pady=5)
+
+        # Create Code Checkboxes
+        self.checkboxTaunt = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Increased Taunt Capabilities", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
+        self.checkboxTaunt.grid(row=7, column=0, sticky="w", padx=5, pady=5)
+
+        # Create Code Checkboxes
+        self.checkboxTxtDisplay = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Instant Text Display", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
+        self.checkboxTxtDisplay.grid(row=8, column=0, sticky="w", padx=5, pady=5)
+
+        # Create Code Checkboxes
+        self.checkboxShowCtrl = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Show Controller Port Number of Who Paused", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
+        self.checkboxShowCtrl.grid(row=9, column=0, sticky="w", padx=5, pady=5)
+
+        # Create Code Checkboxes
+        self.checkboxUnlockAll = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Unlock Everything", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
+        self.checkboxUnlockAll.grid(row=10, column=0, sticky="w", padx=5, pady=5)
+
+        # Default Codes
+        self.checkboxCtrlOpAlways.select()
+        self.checkboxDisableAdv.select()
+        self.checkboxDisableCPU.select()
+        self.checkboxBoot.select()
+        self.checkboxBSpeed.select()
+        self.checkboxOSpeed.select()
+        self.checkboxTaunt.select()
+        self.checkboxTxtDisplay.select()
+        self.checkboxShowCtrl.select()
+        self.checkboxUnlockAll.select()
+
         parseButtonSeven = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonSeven, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
         parseButtonSeven.place(x=10, y=620)
 
@@ -2644,6 +2701,9 @@ class App(customtkinter.CTk):
 
         parseButtonSevenOrbs = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=self.actionSpaceButtonSevenOrb, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
         parseButtonSevenOrbs.place(x=10, y=620)
+
+        parseButtonSevenOther = ctk.CTkButton(master=tabview.tab("Other Codes"), command=self.actionSpaceButtonSevenOther, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
+        parseButtonSevenOther.place(x=10, y=560)
 
         self.minigame7 = ["Catchy Tunes", "Bubble Brawl", "Track & Yield", "Fun Run", "Cointagious", "Snow Ride", "Picture This", "Ghost in the Hall", "Big Dripper", "Target Tag", "Pokey Pummel", "Take Me Ohm", "Kart Wheeled", "Balloon Busters", "Clock Watchers", "Dart Attack", "Oil Crisis", "La Bomba", "Spray Anything", "Balloonatic", "Spinner Cell", "Think Tank", "Flashfright", "Coin-op Bop", "Easy Pickings", "Wheel of Woe", "Boxing Day", "Be My Chum!", "StratosFEAR!", "Pogo-a-go-go", "Buzzstormer", "Tile and Error", "Battery Ram", "Cardinal Rule", "Ice Moves", "Bumper Crop", "Hop-O-Matic 4000", "Wingin' It", "Sphere Factor", "Herbicidal Maniac", "Pyramid Scheme", "World Piece", "Warp Pipe Dreams", "Weight for It", "Helipopper", "Monty's Revenge", "Deck Hands", "Mad Props", "Gimme a Sign", "Bridge Work", "Spin Doctor", "Hip Hop Drop", "Air Farce", "The Final Countdown", "Royal Rumpus", "Light Speed", "Apes of Wrath", "Fish & Cheeps", "Camp Ukiki", "Funstacle Course!", "Funderwall!", "Magmagical Journey!", "Tunnel of Lava!", "Treasure Dome!", "Slot-O-Whirl!", "Peel Out", "Bananas Faster", "Stump Change", "Jump, Man", "Vine Country", "A Bridge Too Short", "Spider Stomp", "Stick and Spin", "Bowser's Lovely Lift!"]
                 
@@ -7496,6 +7556,77 @@ class App(customtkinter.CTk):
         print("Generated code copied to the clipboard.")
         createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
     
+    def actionSpaceButtonSevenOther(self):
+        if self.checkboxAdvTxt.get() == 0 and self.checkboxCtrlOpAlways.get() == 0 and self.checkboxDisableAdv.get() == 0 and self.checkboxDisableCPU.get() == 0 and self.checkboxBoot.get() == 0 and self.checkboxBSpeed.get() == 0 and self.checkboxOSpeed.get() == 0 and self.checkboxTaunt.get() == 0 and self.checkboxTxtDisplay.get() == 0 and self.checkboxShowCtrl.get() == 0 and self.checkboxUnlockAll.get() == 0:
+            if sys.platform == "darwin":
+                createDialog("Error", "error", "Please check at least 1 box.", None)
+            else:
+                createDialog("Error", "error", "Please check at least 1 box.", None)
+            return
+        
+        generatedCode = ''''''
+        
+        ticked = self.checkboxAdvTxt.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesSeven("AdvTxt")
+
+        ticked = self.checkboxCtrlOpAlways.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesSeven("CtrlOpAlways")
+        
+        ticked = self.checkboxDisableAdv.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesSeven("DisableAdv")
+
+        ticked = self.checkboxDisableCPU.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesSeven("DisableCPU")
+        
+        ticked = self.checkboxBoot.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesSeven("Boot")
+        
+        ticked = self.checkboxBSpeed.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesSeven("BSpeed")
+        
+        ticked = self.checkboxOSpeed.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesSeven("OSpeed")
+        
+        ticked = self.checkboxTaunt.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesSeven("Taunt")
+        
+        ticked = self.checkboxTxtDisplay.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesSeven("TxtDisplay")
+        
+        ticked = self.checkboxShowCtrl.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesSeven("ShowCtrl")
+        
+        ticked = self.checkboxUnlockAll.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesSeven("UnlockAll")
+        
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+
+        print("Generated code copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
     def savePresetItems7(self):
         if not self.mushroomCapsuleWeight7.get() or not self.goldenMushroomCapsulePrice7.get() or not self.goldenMushroomCapsuleWeight7.get() or not self.slowMushroomCapsulePrice7.get() or not self.slowMushroomCapsuleWeight7.get() or not self.metalMushroomCapsulePrice7.get() or not self.metalMushroomCapsuleWeight7.get() or not self.flutterCapsulePrice7.get() or not self.flutterCapsuleWeight7.get() or not self.cannonCapsulePrice7.get() or not self.cannonCapsuleWeight7.get() or not self.snackCapsulePrice7.get() or not self.snackCapsuleWeight7.get() or not self.lakituCapsulePrice7.get() or not self.lakituCapsuleWeight7.get() or not self.hammerBroCapsuleWeight7.get() or not self.hammerBroCapsulePrice7.get() or not self.plantCapsulePrice7.get() or not self.plantCapsuleWeight7.get() or not self.spearCapsuleWeight7.get() or not self.spearCapsulePrice7.get() or not self.kamekCapsuleWeight7.get() or not self.kamekCapsulePrice7.get() or not self.toadyCapsuleWeight7.get() or not self.toadyCapsulePrice7.get() or not self.blizzardCapsuleWeight7.get() or not self.blizzardCapsulePrice7.get() or not self.banditCapsulePrice7.get() or not self.banditCapsuleWeight7.get() or not self.pinkBooCapsuleWeight7.get() or not self.pinkBooCapsulePrice7.get() or not self.spinyCapsulePrice7.get() or not self.spinyCapsuleWeight7.get() or not self.zapCapsulePrice7.get() or not self.zapCapsuleWeight7.get() or not self.tweesterCapsulePrice7.get() or not self.tweesterCapsuleWeight7.get() or not self.thwompCapsulePrice7.get() or not self.thwompCapsuleWeight7.get() or not self.warpCapsulePrice7.get() or not self.warpCapsuleWeight7.get() or not self.bombCapsulePrice7.get() or not self.bombCapsuleWeight7.get() or not self.fireballCapsulePrice7.get() or not self.fireballCapsuleWeight7.get() or not self.eggCapsulePrice7.get() or not self.eggCapsuleWeight7.get() or not self.flowerCapsulePrice7.get() or not self.flowerCapsuleWeight7.get() or not self.vacuumCapsulePrice7.get() or not self.vacuumCapsuleWeight7.get() or not self.magicCapsulePrice7.get() or not self.magicCapsuleWeight7.get() or not self.tripleCapsulePrice7.get() or not self.tripleCapsuleWeight7.get() or not self.koopaCapsulePrice7.get() or not self.koopaCapsuleWeight7.get():
             if sys.platform == "darwin":
