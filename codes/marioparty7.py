@@ -281,7 +281,7 @@ MP7 - Orb Modifer
 042EF7A4 00000000
 '''
 
-def getInitialItemsSeven(one, two, three, oneItem, twoItem, threeItem):
+def getInitialItemsSeven(one, two, three, four, five, oneItem, twoItem, threeItem, fourItem, fiveItem):
     return f'''
 MP7 - Start with {oneItem}, {twoItem}, and {threeItem}
 06003620 00000030
@@ -292,4 +292,26 @@ MP7 - Start with {oneItem}, {twoItem}, and {threeItem}
 {five}{one}{two}{three} {four}{five}{one}{two}
 {three}{four}{five}{one} {two}{three}{four}{five}
 0416796C 4BE9BCB4
+'''
+
+def getSpaceReplaceSeven1(spaceHex1, spaceHex2, spaceName, spaceName2):
+    return f'''
+MP7 - Replace {spaceName} with {spaceName2} (Slot A)
+C217942C 00000005
+A01F0030 280000{spaceHex1}
+40820018 A09F0032
+2804FFFF 4082000C
+380000{spaceHex2} B01F0030
+60000000 00000000
+'''
+
+def getSpaceReplaceSeven2(spaceHex1, spaceHex2, spaceName, spaceName2):
+    return f'''
+MP7 - Replace {spaceName} with {spaceName2} (Slot B)
+C2179430 00000005
+280000{spaceHex1} 40820018
+A09F0032 2804FFFF
+4082000C 380000{spaceHex2}
+B01F0030 5404083C
+60000000 00000000
 '''

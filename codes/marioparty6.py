@@ -98,6 +98,10 @@ E2000001 80008000
 204F0F38 3880FFEC
 044F0F38 3880{negAmount}
 E2000001 80008000
+C2184538 00000001
+2C14{amount} 00000000
+C2184544 00000001
+3880{negAmount} 00000000
 '''
 
 def getFaireSquareStarCodeSix(one, two, three, four):
@@ -141,7 +145,7 @@ def getMinigameReplacement6(hexUno, hexDos, gameUno, gameDos):
     return f'''
 MP6 - Minigame Replacement: {gameUno} ➜ {gameDos}
 28265BA8 000000{hexUno}
-0222A4C4 000000{hexDos}
+02265BA8 000000{hexDos}
 E2000001 80008000
 '''
 
@@ -284,4 +288,26 @@ MP6 - Steal SIXBOOMIN Coins Minimum from Pink Boo
 C21B3498 00000002
 3884{value} 9081002C
 60000000 00000000
+'''
+
+def getSpaceReplaceSix1(spaceHex1, spaceHex2, spaceName, spaceName2):
+    return f'''
+MP6 - Replace {spaceName} with {spaceName2} (Slot A)
+C217590C 00000005
+A01F0030 280000{spaceHex1}
+40820018 A09F0032
+2804FFFF 4082000C
+380000{spaceHex2} B01F0030
+88030000 00000000
+'''
+
+def getSpaceReplaceSix2(spaceHex1, spaceHex2, spaceName, spaceName2):
+    return f'''
+MP6 - Replace {spaceName} with {spaceName2} (Slot B)
+C2175910 00000005
+5418CFFE A01F0030
+280000{spaceHex1} 40820018
+A09F0032 2804FFFF
+4082000C 380000{spaceHex2}
+B01F0030 00000000
 '''

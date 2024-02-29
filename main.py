@@ -246,6 +246,7 @@ class App(customtkinter.CTk):
         tabview.pack(padx=20, pady=20)
         tabview.add("Coins Mods")
         tabview.add("Minigame Replacement")
+        tabview.add("Item Mods")
         tabview.set("Coins Mods")
 
         # Create blue space icon and entry, and tickbox
@@ -290,6 +291,57 @@ class App(customtkinter.CTk):
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceTwo, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
         parseButtonTwo.place(x=10, y=560)
 
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/mushroom.png", 1, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=1, column=2)
+        self.mushroom2 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.mushroom2.grid(row=1, column=3)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/skeletonKey.png", 2, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=2, column=2)
+        self.skeletonKey2 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.skeletonKey2.grid(row=2, column=3)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/plunderChest.png", 3, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=3, column=2)
+        self.plunderChest2 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.plunderChest2.grid(row=3, column=3)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/duelingGlove.png", 4, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=4, column=2)
+        self.duelingGlove2 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.duelingGlove2.grid(row=4, column=3)
+
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="    ", font=("Arial", 16))
+        label.grid(row=4, column=5)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/warpBlock.png", 1, 6)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=1, column=7)
+        self.warpBlock2 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.warpBlock2.grid(row=1, column=8)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/goldenMushroom.png", 2, 6)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=2, column=7)
+        self.goldenMushroom2 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.goldenMushroom2.grid(row=2, column=8)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/magicLamp.png", 3, 6)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=3, column=7)
+        self.magicLamp2 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.magicLamp2.grid(row=3, column=8)
+
+        parseButtonTwo = ctk.CTkButton(master=tabview.tab("Item Mods"), command=self.itemsTwo, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
+        parseButtonTwo.place(x=10, y=560)
+
+        warningLabel = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="These are not weights! 0 doesnt mean disabled.", font=("Arial", 16, "bold"))
+        warningLabel.place(x=5, y=210)
+
         return frame
 
     def create_mp3_frame(self):
@@ -298,6 +350,7 @@ class App(customtkinter.CTk):
         tabview.pack(padx=20, pady=20)
         tabview.add("Coins Mods")
         tabview.add("Minigame Replacement")
+        tabview.add("Item Mods")
         tabview.set("Coins Mods")
 
         # Create blue space icon and entry, and tickbox
@@ -359,6 +412,117 @@ class App(customtkinter.CTk):
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceThree, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
         parseButtonTwo.place(x=10, y=560)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/mushroom.png", 1, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
+        label.grid(row=1, column=2)
+        self.mushroom3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.mushroom3.grid(row=1, column=3)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/skeletonKey.png", 2, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
+        label.grid(row=2, column=2)
+        self.skeletonKey3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.skeletonKey3.grid(row=2, column=3)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/poisonMushroom.png", 3, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
+        label.grid(row=3, column=2)
+        self.poisonMushroom3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.poisonMushroom3.grid(row=3, column=3)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/reverseMushroom.png", 4, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
+        label.grid(row=4, column=2)
+        self.reverseMushroom3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.reverseMushroom3.grid(row=4, column=3)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/goldenMushroom.png", 5, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=5, column=2)
+        self.goldenMushroom3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.goldenMushroom3.grid(row=5, column=3)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/magicLamp.png", 6, 1)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=6, column=2)
+        self.magicLamp3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.magicLamp3.grid(row=6, column=3)
+
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="    ", font=("Arial", 16))
+        label.grid(row=1, column=4)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/warpBlock.png", 1, 6)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
+        label.grid(row=1, column=7)
+        self.warpBlock3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.warpBlock3.grid(row=1, column=8)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/celluarShopper.png", 2, 6)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
+        label.grid(row=2, column=7)
+        self.celluarShopper3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.celluarShopper3.grid(row=2, column=8)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/bowserPhone.png", 3, 6)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=3, column=7)
+        self.bowserPhone3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.bowserPhone3.grid(row=3, column=8)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/duelingGlove.png", 4, 6)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=4, column=7)
+        self.duelingGlove3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.duelingGlove3.grid(row=4, column=8)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/luckyLamp.png", 5, 6)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=5, column=7)
+        self.luckyLamp3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.luckyLamp3.grid(row=5, column=8)
+
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="    ", font=("Arial", 16))
+        label.grid(row=1, column=9)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/bowserSuit.png", 1, 10)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=1, column=11)
+        self.bowserSuit3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.bowserSuit3.grid(row=1, column=12)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/plunderChest.png", 2, 10)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=2, column=11)
+        self.plunderChest3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.plunderChest3.grid(row=2, column=12)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/booBell.png", 3, 10)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=3, column=11)
+        self.booBell3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.booBell3.grid(row=3, column=12)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/booRepellent.png", 4, 10)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=4, column=11)
+        self.booRepellant3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.booRepellant3.grid(row=4, column=12)
+
+        icon = create_image_icon(tabview.tab("Item Mods"), "assets/itemBag3.png", 5, 10)
+        label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=5, column=11)
+        self.itemBag3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+        self.itemBag3.grid(row=5, column=12)
+
+        parseButtonThree = ctk.CTkButton(master=tabview.tab("Item Mods"), command=self.itemsThree, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
+        parseButtonThree.place(x=10, y=560)
+
+        warningLabel = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="These are not weights! 0 doesnt mean disabled.", font=("Arial", 16, "bold"))
+        warningLabel.place(x=5, y=310)
+
+        warningLabel = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="Please set the items in RED the LOWEST PRICE and the SAME PRICE.", font=("Arial", 16, "bold"))
+        warningLabel.place(x=5, y=280)
         return frame
 
 
@@ -371,6 +535,7 @@ class App(customtkinter.CTk):
         tabview.add("Battle Game Mods")
         tabview.add("Minigame Replacement")
         tabview.add("Initial Items")
+        tabview.add("Space Replacement")
         tabview.set("Coins Mods")
 
         # Create faire square grid icon and entry
@@ -395,7 +560,7 @@ class App(customtkinter.CTk):
         self.battle45 = ctk.CTkEntry(master=tabview.tab("Battle Game Mods"), width=48, font=("Arial", 16, "bold"))
         self.battle45.grid(row=8, column=3)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Item Mods"), "assets/miniMushroom.png", 2, 1)
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=2, column=2)
@@ -408,7 +573,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=2, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Item Mods"), "assets/megaMushroom.png", 3, 1)
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=3, column=2)
@@ -421,7 +586,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=3, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Item Mods"), "assets/superMiniMushroom.png", 4, 1)
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=4, column=2)
@@ -434,7 +599,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=4, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Item Mods"), "assets/superMegaMushroom.png", 5, 1)
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=5, column=2)
@@ -447,7 +612,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=5, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Item Mods"), "assets/miniMegaHammer.png", 6, 1)
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=6, column=2)
@@ -464,7 +629,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="", font=("Arial", 16))
         label.grid(row=2, column=7)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Item Mods"), "assets/sparkySticker.png", 2, 8)
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=2, column=9)
@@ -477,7 +642,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.  ", font=("Arial", 16))
         label.grid(row=2, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Item Mods"), "assets/warpPipe.png", 3, 8)
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=3, column=9)
@@ -490,7 +655,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=3, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Item Mods"), "assets/swapCard.png", 4, 8)
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=4, column=9)
@@ -503,7 +668,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=4, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Item Mods"), "assets/bowserSuit4.png", 5, 8)
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=5, column=9)
@@ -516,7 +681,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=5, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Item Mods"), "assets/gaddlight.png", 6, 8)
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=6, column=9)
@@ -529,7 +694,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=6, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Item Mods"), "assets/magicLamp4.png", 2, 15)
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=2, column=16)
@@ -542,7 +707,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=2, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Item Mods"), "assets/crystalBall.png", 3, 15)
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=3, column=16)
@@ -555,7 +720,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=3, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Item Mods"), "assets/chompCall.png", 4, 15)
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=4, column=16)
@@ -568,7 +733,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=4, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Item Mods"), "assets/itemBag4.png", 5, 15)
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=5, column=16)
@@ -710,6 +875,41 @@ class App(customtkinter.CTk):
 
         parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=self.initalItems4, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
         parseButton.place(x=10, y=560)
+
+        self.spaces4 = ["None", "Invisible Space", "Blue Space", "Red Space", "Bowser Space", "Mushroom Space", "Battle Space", "Happening Space", "Chance Time Space", "Spring Space"]
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" Replace  ", font=("Arial", 16))
+        label.grid(row=0, column=0)
+
+        self.spaceRep411 = customtkinter.CTkComboBox(master=tabview.tab("Space Replacement"), values=self.spaces4)
+        self.spaceRep411.grid(row=0, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" with ", font=("Arial", 16))
+        label.grid(row=0, column=2)
+
+        self.spaceRep421 = customtkinter.CTkComboBox(master=tabview.tab("Space Replacement"), values=self.spaces4)
+        self.spaceRep421.grid(row=0, column=3)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" (Slot A) ", font=("Arial", 16))
+        label.grid(row=0, column=4)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" Replace  ", font=("Arial", 16))
+        label.grid(row=1, column=0)
+
+        self.spaceRep412 = customtkinter.CTkComboBox(master=tabview.tab("Space Replacement"), values=self.spaces4)
+        self.spaceRep412.grid(row=1, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" with ", font=("Arial", 16))
+        label.grid(row=1, column=2)
+
+        self.spaceRep422 = customtkinter.CTkComboBox(master=tabview.tab("Space Replacement"), values=self.spaces4)
+        self.spaceRep422.grid(row=1, column=3)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" (Slot B) ", font=("Arial", 16))
+        label.grid(row=1, column=4)
+
+        parseButton = ctk.CTkButton(master=tabview.tab("Space Replacement"), command=self.spaceReplace4, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
+        parseButton.place(x=10, y=560)
         return frame
 
     def create_mp5_frame(self):
@@ -777,7 +977,7 @@ class App(customtkinter.CTk):
         chompSpaceLabel5 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins to steal a Star.", font=("Arial", 16))
         chompSpaceLabel5.grid(row=6, column=4, sticky="w")
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/mushroomCapsule.png", 2, 1)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=2, column=2)
@@ -790,7 +990,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.   ", font=("Arial", 16))
         label.grid(row=2, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/goldenMushroomCapsule.png", 3, 1)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=3, column=2)
@@ -803,7 +1003,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=3, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/cursedMushroomCapsule.png", 4, 1)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=4, column=2)
@@ -816,7 +1016,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=4, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/warpCapsule.png", 5, 1)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=5, column=2)
@@ -829,7 +1029,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=5, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/kleptoCapsule.png", 6, 1)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=6, column=2)
@@ -842,7 +1042,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=6, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/wigglerCapsule.png", 8, 1)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=8, column=2)
@@ -855,7 +1055,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=8, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/podobooCapsule.png", 9, 1)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=9, column=2)
@@ -868,7 +1068,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=9, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/spinyCapsule.png", 10, 1)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=10, column=2)
@@ -881,7 +1081,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=10, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/coinBlockCapsule.png", 11, 1)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=11, column=2)
@@ -894,7 +1094,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=11, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/hammerBroCapsule.png", 12, 1)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=12, column=2)
@@ -910,7 +1110,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text="", font=("Arial", 16))
         label.grid(row=2, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/paraTroopaCapsule.png", 2, 8)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=2, column=9)
@@ -923,7 +1123,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.  ", font=("Arial", 16))
         label.grid(row=2, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/bulletBillCapsule.png", 3, 8)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=3, column=9)
@@ -936,7 +1136,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=3, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/blizzardCapsule.png", 4, 8)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=4, column=9)
@@ -949,7 +1149,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=4, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/kamekCapsule.png", 5, 8)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=5, column=9)
@@ -962,7 +1162,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=5, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/koopaBankCapsule.png", 6, 8)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=6, column=9)
@@ -975,75 +1175,75 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=6, column=13)
 
-        # Create mushroom orb space icon and entry
-        icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/goombaCapsule.png", 6, 8)
-        label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
-        label.grid(row=6, column=9)
-        self.goombaCapsulePrice5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
-        self.goombaCapsulePrice5.grid(row=6, column=10)
-        label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" and is ", font=("Arial", 16))
-        label.grid(row=6, column=11)
-        self.goombaCapsuleWeight5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
-        self.goombaCapsuleWeight5.grid(row=6, column=12)
-        label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
-        label.grid(row=6, column=13)
-
-        # Create mushroom orb space icon and entry
-        icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/bombCapsule.png", 8, 8)
+        
+        icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/goombaCapsule.png", 8, 8)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=8, column=9)
-        self.bombCapsulePrice5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
-        self.bombCapsulePrice5.grid(row=8, column=10)
+        self.goombaCapsulePrice5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
+        self.goombaCapsulePrice5.grid(row=8, column=10)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" and is ", font=("Arial", 16))
         label.grid(row=8, column=11)
-        self.bombCapsuleWeight5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
-        self.bombCapsuleWeight5.grid(row=8, column=12)
+        self.goombaCapsuleWeight5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
+        self.goombaCapsuleWeight5.grid(row=8, column=12)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=8, column=13)
 
-        # Create mushroom orb space icon and entry
-        icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/tweesterCapsule.png", 9, 8)
+        
+        icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/bombCapsule.png", 9, 8)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=9, column=9)
-        self.tweesterCapsulePrice5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
-        self.tweesterCapsulePrice5.grid(row=9, column=10)
+        self.bombCapsulePrice5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
+        self.bombCapsulePrice5.grid(row=9, column=10)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" and is ", font=("Arial", 16))
         label.grid(row=9, column=11)
-        self.tweesterCapsuleWeight5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
-        self.tweesterCapsuleWeight5.grid(row=9, column=12)
+        self.bombCapsuleWeight5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
+        self.bombCapsuleWeight5.grid(row=9, column=12)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=9, column=13)
 
-        # Create mushroom orb space icon and entry
-        icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/lakituCapsule.png", 10, 8)
+        
+        icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/tweesterCapsule.png", 10, 8)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=10, column=9)
-        self.lakituCapsulePrice5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
-        self.lakituCapsulePrice5.grid(row=10, column=10)
+        self.tweesterCapsulePrice5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
+        self.tweesterCapsulePrice5.grid(row=10, column=10)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" and is ", font=("Arial", 16))
         label.grid(row=10, column=11)
-        self.lakituCapsuleWeight5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
-        self.lakituCapsuleWeight5.grid(row=10, column=12)
+        self.tweesterCapsuleWeight5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
+        self.tweesterCapsuleWeight5.grid(row=10, column=12)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=10, column=13)
-    
-        # Create mushroom orb space icon and entry
-        icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/ukikiCapsule.png", 11, 8)
+
+        
+        icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/lakituCapsule.png", 11, 8)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=11, column=9)
-        self.ukikiCapsulePrice5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
-        self.ukikiCapsulePrice5.grid(row=11, column=10)
+        self.lakituCapsulePrice5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
+        self.lakituCapsulePrice5.grid(row=11, column=10)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" and is ", font=("Arial", 16))
         label.grid(row=11, column=11)
-        self.ukikiCapsuleWeight5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
-        self.ukikiCapsuleWeight5.grid(row=11, column=12)
+        self.lakituCapsuleWeight5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
+        self.lakituCapsuleWeight5.grid(row=11, column=12)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=11, column=13)
+    
+        
+        icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/ukikiCapsule.png", 12, 8)
+        label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
+        label.grid(row=12, column=9)
+        self.ukikiCapsulePrice5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
+        self.ukikiCapsulePrice5.grid(row=12, column=10)
+        label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" and is ", font=("Arial", 16))
+        label.grid(row=12, column=11)
+        self.ukikiCapsuleWeight5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
+        self.ukikiCapsuleWeight5.grid(row=12, column=12)
+        label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
+        label.grid(row=12, column=13)
 
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text="", font=("Arial", 16))
         label.grid(row=2, column=14)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/miracleCapsule.png", 2, 15)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=2, column=16)
@@ -1056,7 +1256,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=2, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/snackCapsule.png", 3, 15)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=3, column=16)
@@ -1069,7 +1269,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=3, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/plantCapsule.png", 4, 15)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=4, column=16)
@@ -1082,7 +1282,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=4, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/chainChompCapsule.png", 5, 15)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=5, column=16)
@@ -1095,7 +1295,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=5, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/chanceCapsule.png", 6, 15)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=6, column=16)
@@ -1108,7 +1308,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=6, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/dkCapsule.png", 8, 15)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=8, column=16)
@@ -1121,7 +1321,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=8, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/bowserCapsule.png", 9, 15)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=9, column=16)
@@ -1134,7 +1334,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=9, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/duelCapsule.png", 10, 15)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=10, column=16)
@@ -1147,7 +1347,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=10, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/toadyCapsule.png", 11, 15)
         label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=11, column=16)
@@ -1163,64 +1363,124 @@ class App(customtkinter.CTk):
         # Create Code Checkboxes
         self.checkboxAdvTxt = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Automatically Advance Text Boxes", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxAdvTxt.grid(row=0, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxBattleNoStar = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Battle Minigames Don't Affect Mini-Game Star   ", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxBattleNoStar.grid(row=1, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxDisableAdv = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Disable Advance on Results", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxDisableAdv.grid(row=2, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxBoot = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Faster Boot Time", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxBoot.grid(row=3, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxBSpeed = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Increased Board Speed", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxBSpeed.grid(row=4, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxCSpeed = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Increased Capsule Throwing Speed", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxCSpeed.grid(row=5, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxTaunt = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Increased Taunt Capabilities", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxTaunt.grid(row=6, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxTxtDisplay = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Instant Text Display", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxTxtDisplay.grid(row=7, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxShowCtrl = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Show Player Who Paused", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxShowCtrl.grid(row=8, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxUnlockAll = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="QOL - Unlock Everything", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxUnlockAll.grid(row=9, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxBowserNoStealCoins = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Bowser Nightmare - Bowser does not Steal Coins", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxBowserNoStealCoins.grid(row=10, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkbox60RocketShip = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Future Dream - 60 Seconds in Rocket Ship Game", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkbox60RocketShip.grid(row=11, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxFreeTaxi = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Future Dream - Free Taxi Ride", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxFreeTaxi.grid(row=12, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxFreeThwmopWhomp = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Pirate Dream - Free Thwomps & Whomps", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxFreeThwmopWhomp.grid(row=13, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxFreeBridge = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Rainbow Dream - Free Bridge Crossings", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxFreeBridge.grid(row=14, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxDisableHappening = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Sweet Dream - Disable Topmost Happening Space", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxDisableHappening.grid(row=15, column=0, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxAllDK = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="All DK Spaces are Active", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxAllDK.grid(row=0, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxCapsulesAny= ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Capsules Can Be Thrown Everywhere", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxCapsulesAny.grid(row=1, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxDoubleTurns = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Double the Amount of Turns", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxDoubleTurns.grid(row=2, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxCapsulesFinal = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Obtain Capsules on Final Turn", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxCapsulesFinal.grid(row=3, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxsameSpaceAlways = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Same Space Duels Always Happen", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxsameSpaceAlways.grid(row=4, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxsameSpaceNever = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Same Space Duels Never Happen", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxsameSpaceNever.grid(row=5, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkbox20Sec = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Beam Team - 20 Second Timer", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkbox20Sec.grid(row=6, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxNoBrick = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Bound of Music - No Bricks", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxNoBrick.grid(row=7, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkbox1Slow = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Curvy Curves - 1 Player is Slower", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkbox1Slow.grid(row=8, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxNoSlow = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Coney Island - No Slow Down", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxNoSlow.grid(row=9, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxFlowers3 = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Flower Shower - All Flowers Worth 3pts", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxFlowers3.grid(row=10, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxNoRocks = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Ground Pound Down - No Rocks Until End", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxNoRocks.grid(row=11, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxLeafDisplay = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Leaf Leap - Leaves Display Quicker", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxLeafDisplay.grid(row=12, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
         self.checkboxHalvedTime = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Pop Star Piranhas - Halved Time to Pick", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxHalvedTime.grid(row=13, column=1, sticky="w", padx=5, pady=5)
+        
+        # Default Check Boxes
         self.checkboxDisableAdv.select()
         self.checkboxBoot.select()
         self.checkboxBSpeed.select()
@@ -1305,6 +1565,7 @@ class App(customtkinter.CTk):
         tabview.add("Faire Square Mods")
         tabview.add("Minigame Replacement")
         tabview.add("Initial Items")
+        tabview.add("Space Replacement")
         tabview.set("Coins Mods")
 
         # Create faire square grid icon and entry
@@ -1353,7 +1614,7 @@ class App(customtkinter.CTk):
         characterSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when the character lands on their own Character Space.", font=("Arial", 16))
         characterSpaceLabel6.grid(row=3, column=4, sticky="w")
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/mushroomCapsule.png", 2, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=2, column=2)
@@ -1366,7 +1627,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.   ", font=("Arial", 16))
         label.grid(row=2, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/goldenMushroomCapsule.png", 3, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=3, column=2)
@@ -1379,7 +1640,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=3, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/slowMushroomCapsule.png", 4, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=4, column=2)
@@ -1392,7 +1653,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=4, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/metalMushroomCapsule.png", 5, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=5, column=2)
@@ -1405,7 +1666,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=5, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/warpCapsule.png", 6, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=6, column=2)
@@ -1418,7 +1679,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=6, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/wigglerCapsule.png", 8, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=8, column=2)
@@ -1431,7 +1692,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=8, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/cursedMushroomCapsule.png", 9, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=9, column=2)
@@ -1444,7 +1705,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=9, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/spinyCapsule.png", 10, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=10, column=2)
@@ -1457,7 +1718,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=10, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/goombaCapsule.png", 11, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=11, column=2)
@@ -1470,7 +1731,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=11, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/plantCapsule.png", 12, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=12, column=2)
@@ -1486,7 +1747,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text="", font=("Arial", 16))
         label.grid(row=2, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/kamekCapsule.png", 2, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=2, column=9)
@@ -1499,7 +1760,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.  ", font=("Arial", 16))
         label.grid(row=2, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/toadyCapsule.png", 3, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=3, column=9)
@@ -1512,7 +1773,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=3, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/blizzardCapsule.png", 4, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=4, column=9)
@@ -1525,7 +1786,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=4, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/kleptoCapsule.png", 5, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=5, column=9)
@@ -1538,7 +1799,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=5, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/pinkBooCapsule.png", 6, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=6, column=9)
@@ -1551,7 +1812,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=6, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/podobooCapsule.png", 6, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=6, column=9)
@@ -1564,7 +1825,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=6, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/zapCapsule.png", 8, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=8, column=9)
@@ -1577,7 +1838,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=8, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/tweesterCapsule.png", 9, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=9, column=9)
@@ -1590,7 +1851,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=9, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/thwompCapsule.png", 10, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=10, column=9)
@@ -1603,7 +1864,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=10, column=13)
     
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/bulletBillCapsule.png", 11, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=11, column=9)
@@ -1616,7 +1877,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=11, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/bombCapsule.png", 12, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=12, column=9)
@@ -1632,7 +1893,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text="", font=("Arial", 16))
         label.grid(row=2, column=14)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/paraTroopaCapsule.png", 2, 15)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=2, column=16)
@@ -1645,7 +1906,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=2, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/snackCapsule.png", 3, 15)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=3, column=16)
@@ -1658,7 +1919,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=3, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/gaddlightCapsule.png", 4, 15)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=4, column=16)
@@ -1671,7 +1932,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=4, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/pinkBooCapsule.png", 5, 15)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=5, column=16)
@@ -1684,7 +1945,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=5, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/chanceCapsule.png", 6, 15)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=6, column=16)
@@ -1697,7 +1958,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=6, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/dkCapsule.png", 8, 15)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=8, column=16)
@@ -1710,7 +1971,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=8, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/bowserCapsule.png", 9, 15)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=9, column=16)
@@ -1723,7 +1984,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=9, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/duelCapsule.png", 10, 15)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=10, column=16)
@@ -1838,6 +2099,41 @@ class App(customtkinter.CTk):
 
         parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=self.initalItems6, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
         parseButton.place(x=10, y=560)
+
+        self.spaces6 = ["None", "Invisible Space", "Blue Space", "Red Space", "Happening Space", "Chance Time Space", "Duel Space", "Bowser/DK Space", "Chance Time Space", "Orb Space"]
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" Replace  ", font=("Arial", 16))
+        label.grid(row=0, column=0)
+
+        self.spaceRep611 = customtkinter.CTkComboBox(master=tabview.tab("Space Replacement"), values=self.spaces6)
+        self.spaceRep611.grid(row=0, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" with ", font=("Arial", 16))
+        label.grid(row=0, column=2)
+
+        self.spaceRep621 = customtkinter.CTkComboBox(master=tabview.tab("Space Replacement"), values=self.spaces6)
+        self.spaceRep621.grid(row=0, column=3)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" (Slot A) ", font=("Arial", 16))
+        label.grid(row=0, column=4)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" Replace  ", font=("Arial", 16))
+        label.grid(row=1, column=0)
+
+        self.spaceRep612 = customtkinter.CTkComboBox(master=tabview.tab("Space Replacement"), values=self.spaces6)
+        self.spaceRep612.grid(row=1, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" with ", font=("Arial", 16))
+        label.grid(row=1, column=2)
+
+        self.spaceRep622 = customtkinter.CTkComboBox(master=tabview.tab("Space Replacement"), values=self.spaces6)
+        self.spaceRep622.grid(row=1, column=3)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" (Slot B) ", font=("Arial", 16))
+        label.grid(row=1, column=4)
+
+        parseButton = ctk.CTkButton(master=tabview.tab("Space Replacement"), command=self.spaceReplace6, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
+        parseButton.place(x=10, y=560)
         return frame
 
     def create_mp7_frame(self):
@@ -1848,9 +2144,9 @@ class App(customtkinter.CTk):
         tabview.add("Orb Mods")
         tabview.add("Minigame Replacement")
         tabview.add("Initial Items")
+        tabview.add("Space Replacement")
         tabview.set("Coins Mods")
-
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/mushroomCapsule.png", 2, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=2, column=2)
@@ -1862,8 +2158,7 @@ class App(customtkinter.CTk):
         self.mushroomCapsuleWeight7.grid(row=2, column=5)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.   ", font=("Arial", 16))
         label.grid(row=2, column=6)
-
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/goldenMushroomCapsule.png", 3, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=3, column=2)
@@ -1876,7 +2171,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=3, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/slowMushroomCapsule.png", 4, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=4, column=2)
@@ -1889,7 +2184,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=4, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/metalMushroomCapsule.png", 5, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=5, column=2)
@@ -1902,7 +2197,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=5, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/wigglerCapsule.png", 6, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=6, column=2)
@@ -1915,7 +2210,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=6, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/cannonCapsule.png", 7, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=7, column=2)
@@ -1928,7 +2223,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=7, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/snackCapsule.png", 8, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=8, column=2)
@@ -1941,7 +2236,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=8, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/lakituCapsule.png", 9, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=9, column=2)
@@ -1954,7 +2249,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=9, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/hammerBroCapsule.png", 10, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=10, column=2)
@@ -1967,7 +2262,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=10, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/spearCapsule.png", 11, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=11, column=2)
@@ -1980,7 +2275,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=11, column=6)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/plantCapsule.png", 12, 1)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=12, column=2)
@@ -1996,7 +2291,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text="", font=("Arial", 16))
         label.grid(row=2, column=7)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/kamekCapsule.png", 2, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=2, column=9)
@@ -2009,7 +2304,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.  ", font=("Arial", 16))
         label.grid(row=2, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/toadyCapsule.png", 3, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=3, column=9)
@@ -2022,7 +2317,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=3, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/blizzardCapsule.png", 4, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=4, column=9)
@@ -2035,7 +2330,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=4, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/banditCapsule.png", 5, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=5, column=9)
@@ -2048,7 +2343,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=5, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/pinkBooCapsule.png", 6, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=6, column=9)
@@ -2061,7 +2356,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=6, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/spinyCapsule.png", 7, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=7, column=9)
@@ -2074,7 +2369,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=7, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/zapCapsule.png", 8, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=8, column=9)
@@ -2087,7 +2382,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=8, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/tweesterCapsule.png", 9, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=9, column=9)
@@ -2100,7 +2395,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=9, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/thwompCapsule.png", 10, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=10, column=9)
@@ -2113,7 +2408,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=10, column=13)
     
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/warpCapsule.png", 11, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=11, column=9)
@@ -2126,7 +2421,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=11, column=13)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/bombCapsule.png", 12, 8)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=12, column=9)
@@ -2142,7 +2437,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text="", font=("Arial", 16))
         label.grid(row=2, column=14)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/fireballCapsule.png", 2, 15)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=2, column=16)
@@ -2155,7 +2450,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=2, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/flowerCapsule.png", 3, 15)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=3, column=16)
@@ -2168,7 +2463,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=3, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/eggCapsule.png", 4, 15)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=4, column=16)
@@ -2181,7 +2476,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=4, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/vacuumCapsule.png", 5, 15)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=5, column=16)
@@ -2194,7 +2489,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=5, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/magicCapsule.png", 6, 15)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=6, column=16)
@@ -2207,7 +2502,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=6, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/tripleCapsule.png", 7, 15)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=7, column=16)
@@ -2220,7 +2515,7 @@ class App(customtkinter.CTk):
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
         label.grid(row=7, column=20)
 
-        # Create mushroom orb space icon and entry
+        
         icon = create_image_icon(tabview.tab("Orb Mods"), "assets/koopaCapsule.png", 8, 15)
         label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
         label.grid(row=8, column=16)
@@ -2367,27 +2662,80 @@ class App(customtkinter.CTk):
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceSeven, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
         parseButtonTwo.place(x=10, y=560)
 
-        self.items7 = ["Mushroom", "Super Mushroom", "Slow 'Shroom", "Metal Mushroom", "Flutter", "Cannon", "Snack", "Lakitu", "Hammer Bro", "Piranha Plant", "Spear Guy", "Kamek", "Toady", "Mr. Blizzard", "Bandit", "Pink Boo", "Spiny", "Zap", "Tweester", "Thwomp", "Warp Pipe", "Bob-omb", "Fireball", "Flower", "Egg", "Vacuum", "Surprise", "Triple 'Shroom", "Koopa Kid"]
+        self.items7 = ["None", "Mushroom", "Super Mushroom", "Slow 'Shroom", "Metal Mushroom", "Flutter", "Cannon", "Snack", "Lakitu", "Hammer Bro", "Piranha Plant", "Spear Guy", "Kamek", "Toady", "Mr. Blizzard", "Bandit", "Pink Boo", "Spiny", "Zap", "Tweester", "Thwomp", "Warp Pipe", "Bob-omb", "Fireball", "Flower", "Egg", "Vacuum", "Surprise", "Triple 'Shroom", "Koopa Kid"]
         
         label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 1:  ", font=("Arial", 16))
         label.grid(row=0, column=0)
 
-        self.initalItem61 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
-        self.initalItem61.grid(row=0, column=1)
+        self.initalItem71 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
+        self.initalItem71.grid(row=0, column=1)
 
         label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 2:  ", font=("Arial", 16))
         label.grid(row=1, column=0)
         
-        self.initalItem62 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
-        self.initalItem62.grid(row=1, column=1)
+        self.initalItem72 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
+        self.initalItem72.grid(row=1, column=1)
 
         label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 3:  ", font=("Arial", 16))
         label.grid(row=2, column=0)
 
-        self.initalItem63 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
-        self.initalItem63.grid(row=2, column=1)
+        self.initalItem73 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
+        self.initalItem73.grid(row=2, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 4:  ", font=("Arial", 16))
+        label.grid(row=3, column=0)
+
+        self.initalItem74 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
+        self.initalItem74.grid(row=3, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" (Only if Can Hold 5 Capsules in On)  ", font=("Arial", 16))
+        label.grid(row=3, column=2, sticky="w")
+
+        label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 5:  ", font=("Arial", 16))
+        label.grid(row=4, column=0)
+
+        self.initalItem75 = customtkinter.CTkComboBox(master=tabview.tab("Initial Items"), values=self.items7)
+        self.initalItem75.grid(row=4, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" (Only if Can Hold 5 Capsules in On)  ", font=("Arial", 16))
+        label.grid(row=4, column=2, sticky="w")
 
         parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=self.initalItems7, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
+        parseButton.place(x=10, y=560)
+
+        self.spaces7 = ["None", "Invisible Space", "Blue Space", "Red Space", "Happening Space", "Bowser Space", "Duel Space", "DK Space", "Orb Space A", "Orb Space B", "Mic Space"]
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" Replace  ", font=("Arial", 16))
+        label.grid(row=0, column=0)
+
+        self.spaceRep711 = customtkinter.CTkComboBox(master=tabview.tab("Space Replacement"), values=self.spaces7)
+        self.spaceRep711.grid(row=0, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" with ", font=("Arial", 16))
+        label.grid(row=0, column=2)
+
+        self.spaceRep721 = customtkinter.CTkComboBox(master=tabview.tab("Space Replacement"), values=self.spaces7)
+        self.spaceRep721.grid(row=0, column=3)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" (Slot A) ", font=("Arial", 16))
+        label.grid(row=0, column=4)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" Replace  ", font=("Arial", 16))
+        label.grid(row=1, column=0)
+
+        self.spaceRep712 = customtkinter.CTkComboBox(master=tabview.tab("Space Replacement"), values=self.spaces7)
+        self.spaceRep712.grid(row=1, column=1)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" with ", font=("Arial", 16))
+        label.grid(row=1, column=2)
+
+        self.spaceRep722 = customtkinter.CTkComboBox(master=tabview.tab("Space Replacement"), values=self.spaces7)
+        self.spaceRep722.grid(row=1, column=3)
+
+        label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" (Slot B) ", font=("Arial", 16))
+        label.grid(row=1, column=4)
+
+        parseButton = ctk.CTkButton(master=tabview.tab("Space Replacement"), command=self.spaceReplace7, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
         parseButton.place(x=10, y=560)
         return frame
     
@@ -2669,6 +3017,129 @@ class App(customtkinter.CTk):
         print("Generated codes copied to the clipboard.")
         createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
+    def spaceReplace4(self):
+        spaceSlot1 = self.spaceRep411.get()
+        spaceSlot2 = self.spaceRep421.get()
+
+        spaceSlot3 = self.spaceRep412.get()
+        spaceSlot4 = self.spaceRep422.get()
+
+        spaceHex = ["NONE", "00", "01", "02", "03", "04", "05", "06", "07", "09"]
+
+        spaceSlot1Num = self.spaces4.index(spaceSlot1)
+        spaceSlot1Hex = spaceHex[spaceSlot1Num]
+
+        spaceSlot2Num = self.spaces4.index(spaceSlot2)
+        spaceSlot2Hex = spaceHex[spaceSlot2Num]
+
+        spaceSlot3Num = self.spaces4.index(spaceSlot3)
+        spaceSlot3Hex = spaceHex[spaceSlot3Num]
+
+        spaceSlot4Num = self.spaces4.index(spaceSlot4)
+        spaceSlot4Hex = spaceHex[spaceSlot4Num]
+
+        mpSpace41 = getSpaceReplaceFour1(spaceSlot1Hex, spaceSlot2Hex, spaceSlot1, spaceSlot2)
+        mpSpace42 = getSpaceReplaceFour2(spaceSlot3Hex, spaceSlot4Hex, spaceSlot3, spaceSlot4)
+    
+        if spaceSlot1Hex == "NONE":
+            mpSpace41 = ""
+        if spaceSlot2Hex == "NONE":
+            mpSpace41 = ""
+        if spaceSlot3Hex == "NONE":
+            mpSpace42 = ""
+        if spaceSlot4Hex == "NONE":
+            mpSpace42 = ""
+        
+        generatedCode = mpSpace41 + mpSpace42
+
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
+    def spaceReplace6(self):
+        spaceSlot1 = self.spaceRep611.get()
+        spaceSlot2 = self.spaceRep621.get()
+
+        spaceSlot3 = self.spaceRep612.get()
+        spaceSlot4 = self.spaceRep622.get()
+
+        spaceHex = ["NONE", "00", "01", "02", "03", "04", "05", "06", "08"]
+
+        spaceSlot1Num = self.spaces6.index(spaceSlot1)
+        spaceSlot1Hex = spaceHex[spaceSlot1Num]
+
+        spaceSlot2Num = self.spaces6.index(spaceSlot2)
+        spaceSlot2Hex = spaceHex[spaceSlot2Num]
+
+        spaceSlot3Num = self.spaces6.index(spaceSlot3)
+        spaceSlot3Hex = spaceHex[spaceSlot3Num]
+
+        spaceSlot4Num = self.spaces6.index(spaceSlot4)
+        spaceSlot4Hex = spaceHex[spaceSlot4Num]
+
+        mpSpace61 = getSpaceReplaceSix1(spaceSlot1Hex, spaceSlot2Hex, spaceSlot1, spaceSlot2)
+        mpSpace62 = getSpaceReplaceSix2(spaceSlot3Hex, spaceSlot4Hex, spaceSlot3, spaceSlot4)
+    
+        if spaceSlot1Hex == "NONE":
+            mpSpace61 = ""
+        if spaceSlot2Hex == "NONE":
+            mpSpace61 = ""
+        if spaceSlot3Hex == "NONE":
+            mpSpace62 = ""
+        if spaceSlot4Hex == "NONE":
+            mpSpace62 = ""
+        
+        generatedCode = mpSpace61 + mpSpace62
+
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
+    def spaceReplace7(self):
+        spaceSlot1 = self.spaceRep711.get()
+        spaceSlot2 = self.spaceRep721.get()
+
+        spaceSlot3 = self.spaceRep712.get()
+        spaceSlot4 = self.spaceRep722.get()
+
+        spaceHex = ["NONE", "00", "01", "02", "03", "04", "05", "06", "07", "08", "0B"]
+
+        spaceSlot1Num = self.spaces7.index(spaceSlot1)
+        spaceSlot1Hex = spaceHex[spaceSlot1Num]
+
+        spaceSlot2Num = self.spaces7.index(spaceSlot2)
+        spaceSlot2Hex = spaceHex[spaceSlot2Num]
+
+        spaceSlot3Num = self.spaces7.index(spaceSlot3)
+        spaceSlot3Hex = spaceHex[spaceSlot3Num]
+
+        spaceSlot4Num = self.spaces7.index(spaceSlot4)
+        spaceSlot4Hex = spaceHex[spaceSlot4Num]
+
+        mpSpace71 = getSpaceReplaceSeven1(spaceSlot1Hex, spaceSlot2Hex, spaceSlot1, spaceSlot2)
+        mpSpace72 = getSpaceReplaceSeven2(spaceSlot3Hex, spaceSlot4Hex, spaceSlot3, spaceSlot4)
+    
+        if spaceSlot1Hex == "NONE":
+            mpSpace71 = ""
+        if spaceSlot2Hex == "NONE":
+            mpSpace71 = ""
+        if spaceSlot3Hex == "NONE":
+            mpSpace72 = ""
+        if spaceSlot4Hex == "NONE":
+            mpSpace72 = ""
+        
+        generatedCode = mpSpace71 + mpSpace72
+
+        generatedCode = generatedCode.strip()
+        pyperclip.copy(generatedCode)
+
+        print("Generated codes copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
     def initalItems5(self):
         itemSlot1 = self.initalItem51.get()
         itemSlot2 = self.initalItem52.get()
@@ -2713,6 +3184,8 @@ class App(customtkinter.CTk):
         itemSlot1 = self.initalItem71.get()
         itemSlot2 = self.initalItem72.get()
         itemSlot3 = self.initalItem73.get()
+        itemSlot4 = self.initalItem74.get()
+        itemSlot5 = self.initalItem75.get()
         itemHex = ["FF", "00", "01", "02", "03", "04", "05", "06", "07", "0A", "0B", "0C", "0D", "0E", "0F", "10", "11", "14", "15", "16", "17", "18", "19", "1E", "1F", "20", "21", "22", "23", "28"]
         itemSlot1Num = self.items7.index(itemSlot1)
         itemSlot1Hex = itemHex[itemSlot1Num]
@@ -2723,7 +3196,13 @@ class App(customtkinter.CTk):
         itemSlot3Num = self.items7.index(itemSlot3)
         itemSlot3Hex = itemHex[itemSlot3Num]
 
-        code = getInitialItemsSix(itemSlot1Hex, itemSlot2Hex, itemSlot3Hex, itemSlot1, itemSlot2, itemSlot3)
+        itemSlot4Num = self.items7.index(itemSlot4)
+        itemSlot4Hex = itemHex[itemSlot4Num]
+
+        itemSlot5Num = self.items7.index(itemSlot5)
+        itemSlot5Hex = itemHex[itemSlot5Num]
+
+        code = getInitialItemsSeven(itemSlot1Hex, itemSlot2Hex, itemSlot3Hex, itemSlot4Hex, itemSlot5Hex, itemSlot1, itemSlot2, itemSlot3, itemSlot4, itemSlot5)
         code = code.strip()
         pyperclip.copy(code)
         print("Generated codes copied to the clipboard.")
@@ -4118,6 +4597,267 @@ class App(customtkinter.CTk):
         print("Generated codes copied to the clipboard.")
         createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
+    def itemsTwo(self):
+        if not self.mushroom2.get() or not self.skeletonKey2.get() or not self.plunderChest2.get() or not self.duelingGlove2.get() or not self.warpBlock2.get() or not self.goldenMushroom2.get() or not self.magicLamp2.get():
+            if sys.platform == "darwin":
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
+            else:
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
+            return
+
+        mushroom2 = self.mushroom2.get()
+        skeletonKey2 = self.skeletonKey2.get()
+        plunderChest2 = self.plunderChest2.get()
+        duelingGlove2 = self.duelingGlove2.get()
+        warpBlock2 = self.warpBlock2.get()
+        goldenMushroom2 = self.goldenMushroom2.get()
+        magicLamp2 = self.magicLamp2.get()
+
+        try:
+            mushroom2 = hex(int(mushroom2))
+            if len(mushroom2) == 4:
+                mushroom2 = mushroom2[2:]
+            elif len(mushroom2) == 3:
+                mushroom2 = "0" + mushroom2[2:]
+        except:
+            mushroom2 = "00"
+
+        try:
+            skeletonKey2 = hex(int(skeletonKey2))
+            if len(skeletonKey2) == 4:
+                skeletonKey2 = skeletonKey2[2:]
+            elif len(skeletonKey2) == 3:
+                skeletonKey2 = "0" + skeletonKey2[2:]
+        except:
+            skeletonKey2 = "00"
+
+        try:
+            plunderChest2 = hex(int(plunderChest2))
+            if len(plunderChest2) == 4:
+                plunderChest2 = plunderChest2[2:]
+            elif len(plunderChest2) == 3:
+                plunderChest2 = "0" + plunderChest2[2:]
+        except:
+            plunderChest2 = "00"
+
+        try:
+            duelingGlove2 = hex(int(duelingGlove2))
+            if len(duelingGlove2) == 4:
+                duelingGlove2 = duelingGlove2[2:]
+            elif len(duelingGlove2) == 3:
+                duelingGlove2 = "0" + duelingGlove2[2:]
+        except:
+            duelingGlove2 = "00"
+
+        try:
+            warpBlock2 = hex(int(warpBlock2))
+            if len(warpBlock2) == 4:
+                warpBlock2 = warpBlock2[2:]
+            elif len(warpBlock2) == 3:
+                warpBlock2 = "0" + warpBlock2[2:]
+        except:
+            warpBlock2 = "00"
+
+        try:
+            goldenMushroom2 = hex(int(goldenMushroom2))
+            if len(goldenMushroom2) == 4:
+                goldenMushroom2 = goldenMushroom2[2:]
+            elif len(goldenMushroom2) == 3:
+                goldenMushroom2 = "0" + goldenMushroom2[2:]
+        except:
+            goldenMushroom2 = "00"
+
+        try:
+            magicLamp2 = hex(int(magicLamp2))
+            if len(magicLamp2) == 4:
+                magicLamp2 = magicLamp2[2:]
+            elif len(magicLamp2) == 3:
+                magicLamp2 = "0" + magicLamp2[2:]
+        except:
+            magicLamp2 = "00"
+
+        code = getItems2(mushroom2, skeletonKey2, plunderChest2, duelingGlove2, warpBlock2, goldenMushroom2, magicLamp2)
+        code = code.strip()
+        pyperclip.copy(code)
+
+        print("Generated code copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
+    def itemsThree(self):
+        if not self.bowserPhone3.get() or not self.mushroom3.get() or not self.skeletonKey3.get() or not self.plunderChest3.get() or not self.duelingGlove3.get() or not self.warpBlock3.get() or not self.goldenMushroom3.get() or not self.magicLamp3.get() or not self.celluarShopper3.get() or not self.itemBag3.get() or not self.poisonMushroom3.get() or not self.reverseMushroom3.get() or not self.booBell3.get() or not self.booRepellant3.get() or not self.luckyLamp3.get():
+            if sys.platform == "darwin":
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
+            else:
+                createDialog("Error", "error", "Please fill out all the boxes.", None)
+            return
+
+        mushroom3 = self.mushroom3.get()
+        skeletonKey3 = self.skeletonKey3.get()
+        plunderChest3 = self.plunderChest3.get()
+        duelingGlove3 = self.duelingGlove3.get()
+        warpBlock3 = self.warpBlock3.get()
+        goldenMushroom3 = self.goldenMushroom3.get()
+        magicLamp3 = self.magicLamp3.get()
+        celluarShopper3 = self.celluarShopper3.get()
+        itemBag3 = self.itemBag3.get()
+        poisonMushroom3 = self.poisonMushroom3.get()
+        reverseMushroom3 = self.reverseMushroom3.get()
+        booBell3 = self.booBell3.get()
+        booRepellant3 = self.booRepellant3.get()
+        luckyLamp3 = self.luckyLamp3.get()
+        bowserPhone3 = self.bowserPhone3.get()
+
+        orbPriceMin = find_lowest_integer_with_zero(*[int(mushroom3), int(skeletonKey3), int(plunderChest3), int(duelingGlove3), int(warpBlock3), int(goldenMushroom3), int(magicLamp3), int(celluarShopper3), int(itemBag3), int(poisonMushroom3), int(reverseMushroom3), int(booBell3), int(booRepellant3), int(luckyLamp3), int(bowserPhone3)])
+
+        try:
+            mushroom3 = hex(int(mushroom3))
+            if len(mushroom3) == 4:
+                mushroom3 = mushroom3[2:]
+            elif len(mushroom3) == 3:
+                mushroom3 = "0" + mushroom3[2:]
+        except:
+            mushroom3 = "00"
+
+        try:
+            skeletonKey3 = hex(int(skeletonKey3))
+            if len(skeletonKey3) == 4:
+                skeletonKey3 = skeletonKey3[2:]
+            elif len(skeletonKey3) == 3:
+                skeletonKey3 = "0" + skeletonKey3[2:]
+        except:
+            skeletonKey3 = "00"
+
+        try:
+            plunderChest3 = hex(int(plunderChest3))
+            if len(plunderChest3) == 4:
+                plunderChest3 = plunderChest3[2:]
+            elif len(plunderChest3) == 3:
+                plunderChest3 = "0" + plunderChest3[2:]
+        except:
+            plunderChest3 = "00"
+
+        try:
+            duelingGlove3 = hex(int(duelingGlove3))
+            if len(duelingGlove3) == 4:
+                duelingGlove3 = duelingGlove3[2:]
+            elif len(duelingGlove3) == 3:
+                duelingGlove3 = "0" + duelingGlove3[2:]
+        except:
+            duelingGlove3 = "00"
+
+        try:
+            warpBlock3 = hex(int(warpBlock3))
+            if len(warpBlock3) == 4:
+                warpBlock3 = warpBlock3[2:]
+            elif len(warpBlock3) == 3:
+                warpBlock3 = "0" + warpBlock3[2:]
+        except:
+            warpBlock3 = "00"
+
+        try:
+            goldenMushroom3 = hex(int(goldenMushroom3))
+            if len(goldenMushroom3) == 4:
+                goldenMushroom3 = goldenMushroom3[2:]
+            elif len(goldenMushroom3) == 3:
+                goldenMushroom3 = "0" + goldenMushroom3[2:]
+        except:
+            goldenMushroom3 = "00"
+
+        try:
+            celluarShopper3 = hex(int(celluarShopper3))
+            if len(celluarShopper3) == 4:
+                celluarShopper3 = celluarShopper3[2:]
+            elif len(celluarShopper3) == 3:
+                celluarShopper3 = "0" + celluarShopper3[2:]
+        except:
+            celluarShopper3 = "00"
+
+        try:
+            magicLamp3 = hex(int(magicLamp3))
+            if len(magicLamp3) == 4:
+                magicLamp3 = magicLamp3[2:]
+            elif len(magicLamp3) == 3:
+                magicLamp3 = "0" + magicLamp3[2:]
+        except:
+            magicLamp3 = "00"
+
+        try:
+            poisonMushroom3 = hex(int(poisonMushroom3))
+            if len(poisonMushroom3) == 4:
+                poisonMushroom3 = poisonMushroom3[2:]
+            elif len(poisonMushroom3) == 3:
+                poisonMushroom3 = "0" + poisonMushroom3[2:]
+        except:
+            poisonMushroom3 = "00"
+
+        try:
+            reverseMushroom3 = hex(int(reverseMushroom3))
+            if len(reverseMushroom3) == 4:
+                reverseMushroom3 = reverseMushroom3[2:]
+            elif len(reverseMushroom3) == 3:
+                reverseMushroom3 = "0" + reverseMushroom3[2:]
+        except:
+            reverseMushroom3 = "00"
+
+        try:
+            booBell3 = hex(int(booBell3))
+            if len(booBell3) == 4:
+                booBell3 = booBell3[2:]
+            elif len(booBell3) == 3:
+                booBell3 = "0" + booBell3[2:]
+        except:
+            booBell3 = "00"
+
+        try:
+            booRepellant3 = hex(int(booRepellant3))
+            if len(booRepellant3) == 4:
+                booRepellant3 = booRepellant3[2:]
+            elif len(booRepellant3) == 3:
+                booRepellant3 = "0" + booRepellant3[2:]
+        except:
+            booRepellant3 = "00"
+
+        try:
+            luckyLamp3 = hex(int(luckyLamp3))
+            if len(luckyLamp3) == 4:
+                luckyLamp3 = luckyLamp3[2:]
+            elif len(luckyLamp3) == 3:
+                luckyLamp3 = "0" + luckyLamp3[2:]
+        except:
+            luckyLamp3 = "00"
+
+        try:
+            itemBag3 = hex(int(itemBag3))
+            if len(itemBag3) == 4:
+                itemBag3 = itemBag3[2:]
+            elif len(itemBag3) == 3:
+                itemBag3 = "0" + itemBag3[2:]
+        except:
+            itemBag3 = "00"
+
+        try:
+            bowserPhone3 = hex(int(bowserPhone3))
+            if len(bowserPhone3) == 4:
+                bowserPhone3 = bowserPhone3[2:]
+            elif len(bowserPhone3) == 3:
+                bowserPhone3 = "0" + bowserPhone3[2:]
+        except:
+            bowserPhone3 = "00"
+
+        
+        orbPriceMin = hex(int(orbPriceMin))
+        if len(orbPriceMin) == 4:
+            orbPriceMin = orbPriceMin[2:]
+        elif len(orbPriceMin) == 3:
+            orbPriceMin = "0" + orbPriceMin[2:]
+    
+        code = getItems3(mushroom3, skeletonKey3, plunderChest3, duelingGlove3, warpBlock3, goldenMushroom3, magicLamp3, celluarShopper3, poisonMushroom3, reverseMushroom3, booBell3, booRepellant3, luckyLamp3, bowserPhone3, itemBag3, bowserPhone3, orbPriceMin)
+        code = code.strip()
+        pyperclip.copy(code)
+
+        print("Generated code copied to the clipboard.")
+        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
     def actionSpaceButtonFourItem(self):
         if not self.miniPrice4.get() or not self.miniWeight4.get() or not self.megaPrice4.get() or not self.megaWeight4.get() or not self.superMegaPrice4.get() or not self.superMegaWeight4.get() or not self.superMiniPrice4.get() or not self.superMiniWeight4.get() or not self.miniMegaHammerPrice4.get() or not self.miniMegaHammerWeight4.get() or not self.warpPipePrice4.get() or not self.warpPipeWeight4.get() or not self.swapCardPrice4.get() or not self.swapCardWeight4.get() or not self.sparkyStickerPrice4.get() or not self.sparkyStickerWeight4.get() or not self.bowserSuitPrice4.get() or not self.bowserSuitWeight4.get() or not self.gaddlightPrice4.get() or not self.gaddlightWeight4.get() or not self.chompCallPrice4.get() or not self.chompCallWeight4.get() or not self.crystalBallPrice4.get() or not self.crystalBallWeight4.get() or not self.magicLampPrice4.get() or not self.magicLampWeight4.get() or not self.itemBagPrice4.get()  or not self.itemBagWeight4.get():
             if sys.platform == "darwin":
@@ -4439,7 +5179,6 @@ class App(customtkinter.CTk):
             itemBagPrice4 = "00"
 
         orbPriceMin = hex(int(orbPriceMin))
-        print(orbPriceMin)
         if len(orbPriceMin) == 4:
             orbPriceMin = "00" + orbPriceMin[2:]
         elif len(orbPriceMin) == 3:
@@ -6134,15 +6873,6 @@ class App(customtkinter.CTk):
                 flutterCapsulePrice5 = "0" + flutterCapsulePrice5[2:]
         except:
             flutterCapsulePrice5 = "00"
-
-        try:
-            cursedMushroomCapsuleWeight5 = hex(int(cursedMushroomCapsuleWeight5))
-            if len(cursedMushroomCapsuleWeight5) == 4:
-                cursedMushroomCapsuleWeight5 = cursedMushroomCapsuleWeight5[2:]
-            elif len(cursedMushroomCapsuleWeight5) == 3:
-                cursedMushroomCapsuleWeight5 = "0" + cursedMushroomCapsuleWeight5[2:]
-        except:
-            cursedMushroomCapsuleWeight5 = "00"
 
         try:
             cursedMushroomCapsulePrice5 = hex(int(cursedMushroomCapsulePrice5))

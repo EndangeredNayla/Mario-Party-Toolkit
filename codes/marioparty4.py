@@ -339,3 +339,21 @@ C2063AE0 00000013
 39C00000 39E00000
 60000000 00000000
 '''
+
+def getSpaceReplaceFour1(spaceHex1, spaceHex2, spaceName, spaceName2):
+    return f'''
+MP4 - Replace {spaceName} with {spaceName2} (Slot A)
+C2076A08 00000003
+A01F0028 280000{spaceHex1}
+4082000C 380000{spaceHex2}
+B01F0028 00000000
+'''
+
+def getSpaceReplaceFour2(spaceHex1, spaceHex2, spaceName, spaceName2):
+    return f'''
+MP4 - Replace {spaceName} with {spaceName2} (Slot B)
+C2076A0C 00000003
+280000{spaceHex1} 4082000C
+380000{spaceHex2} B01F0028
+28000000 00000000
+'''

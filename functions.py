@@ -9,7 +9,9 @@ import tkinter as tk
 import customtkinter as ctk
 from PIL import Image, ImageTk
 from pathlib import Path
-from get_system_color import get_windows_system_color
+import sys
+if sys.platform == "win32":
+    from get_system_color import get_windows_system_color
 import requests
 import sys
 import webbrowser
@@ -51,7 +53,7 @@ def create_banner(frame, image_path, row, column):
     image = image.resize((200, 75))
     image_tk = ImageTk.PhotoImage(image)
     label = ctk.CTkLabel(frame, image=image_tk)
-    label.configure(fg_color=['#dbdbdb', '#323232'], text="") # Windows fix
+    label.configure(fg_color=['#dbdbdb', '#2b2b2b'], text="") # Windows fix
     label.image = image_tk  # Keep a reference to the image to prevent it from being garbage collected
     label.grid(row=row, column=column)
 
@@ -91,6 +93,17 @@ def find_lowest_integer(*args):
     lowest = float('inf')  # Initialize lowest with positive infinity
     for num in args:  # Iterate over arguments
         if num != 0 and num < lowest:
+            lowest = num
+    if lowest == float('inf'):
+        return None  # If no non-zero integers were found, return None
+    return lowest
+
+def find_lowest_integer_with_zero(*args):
+    if not args:
+        return None  # Return None if no arguments are provided
+    lowest = float('inf')  # Initialize lowest with positive infinity
+    for num in args:  # Iterate over arguments
+        if num < lowest:
             lowest = num
     if lowest == float('inf'):
         return None  # If no non-zero integers were found, return None
