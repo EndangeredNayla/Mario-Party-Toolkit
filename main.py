@@ -1447,6 +1447,21 @@ class App(customtkinter.CTk):
         # Create Code Checkboxes
         self.checkboxsameSpaceNever = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Same Space Duels Never Happen", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxsameSpaceNever.grid(row=5, column=1, sticky="w", padx=5, pady=5)
+
+        def checkbox_callback_SameSpace():
+            if self.checkboxsameSpaceNever.get() == 1:
+                self.checkboxsameSpaceAlways.configure(state="disabled")
+            else:
+                self.checkboxsameSpaceAlways.configure(state="normal")
+
+            if self.checkboxsameSpaceAlways.get() == 1:
+                self.checkboxsameSpaceNever.configure(state="disabled")
+            else:
+                self.checkboxsameSpaceNever.configure(state="normal")
+
+        # Attach the callback function to the checkboxes
+        self.checkboxsameSpaceNever.configure(command=checkbox_callback_SameSpace)
+        self.checkboxsameSpaceAlways.configure(command=checkbox_callback_SameSpace)
         
         # Create Code Checkboxes
         self.checkbox20Sec = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Beam Team - 20 Second Timer", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
@@ -1479,7 +1494,44 @@ class App(customtkinter.CTk):
         # Create Code Checkboxes
         self.checkboxHalvedTime = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Pop Star Piranhas - Halved Time to Pick", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
         self.checkboxHalvedTime.grid(row=13, column=1, sticky="w", padx=5, pady=5)
+
+         # Create Code Checkboxes
+        self.checkboxDisableLast5 = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Disable Last 5 Turns Event", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
+        self.checkboxDisableLast5.grid(row=14, column=1, sticky="w", padx=5, pady=5)
         
+        # Create Code Checkboxes
+        self.checkboxForceLast5 = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Last 5 Turns Event - Happens on the First Turn", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
+        self.checkboxForceLast5.grid(row=15, column=1, sticky="w", padx=5, pady=5)
+
+        # Create Code Comboboxes
+        self.comboboxLast5Event = ctk.CTkComboBox(master=tabview.tab("Other Codes"), values=["Random", "x3 Coins", "5 Star Spaces", "Capsule Sapces on Every Space", "Red Spaces are Bowser Spaces"], font=("Arial", 13), fg_color=sysColor)
+        self.comboboxLast5Event.grid(row=0, column=2, sticky="w", padx=5, pady=5)
+
+        def checkbox_callback_Last5():
+            if self.checkboxDisableLast5.get() == 1:
+                self.checkboxForceLast5.configure(state="disabled")
+                self.comboboxLast5Event.configure(state="disabled")
+            else:
+                self.checkboxForceLast5.configure(state="normal")
+                self.comboboxLast5Event.configure(state="normal")
+            if self.checkboxForceLast5.get() == 1:
+                self.checkboxDisableLast5.configure(state="disabled")
+            else:
+                if self.comboboxLast5Event.get() == "Random":
+                    self.checkboxDisableLast5.configure(state="normal")
+                
+        def combobox_callback_Last5(choice):  
+            if not self.comboboxLast5Event.get() == "Random":
+                self.checkboxDisableLast5.configure(state="disabled")
+            else:
+                if not self.checkboxForceLast5.get() == 1:
+                    self.checkboxDisableLast5.configure(state="normal")
+
+        # Attach the callback function to the checkboxes
+        self.checkboxDisableLast5.configure(command=checkbox_callback_Last5)
+        self.checkboxForceLast5.configure(command=checkbox_callback_Last5)
+        self.comboboxLast5Event.configure(command=combobox_callback_Last5)
+
         # Default Check Boxes
         self.checkboxDisableAdv.select()
         self.checkboxBoot.select()
@@ -7401,7 +7453,7 @@ class App(customtkinter.CTk):
         createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
     def actionSpaceButtonFiveOther(self):
-        if self.checkboxDisableAdv.get() == 0 and self.checkboxBoot.get() == 0 and self.checkboxBSpeed.get() == 0 and self.checkboxCSpeed.get() == 0 and self.checkboxTaunt.get() == 0 and self.checkboxTxtDisplay.get() == 0 and self.checkboxShowCtrl.get() == 0 and self.checkboxUnlockAll.get() == 0 and self.checkboxBowserNoStealCoins.get() == 0 and self.checkbox60RocketShip.get() == 0 and self.checkboxFreeTaxi.get() == 0 and self.checkboxFreeThwmopWhomp.get() == 0 and self.checkboxFreeBridge.get() == 0 and self.checkboxDisableHappening.get() == 0 and self.checkboxAdvTxt.get() == 0 and self.checkboxAllDK.get() == 0 and self.checkboxBattleNoStar.get() == 0 and self.checkboxCapsulesAny.get() == 0 and self.checkboxDoubleTurns.get() == 0 and self.checkboxCapsulesFinal.get() == 0 and self.checkbox20Sec.get() == 0 and self.checkboxNoBrick.get() == 0 and self.checkbox1Slow.get() == 0 and self.checkboxNoSlow.get() == 0 and self.checkboxFlowers3.get() == 0 and self.checkboxNoRocks.get() == 0 and self.checkboxLeafDisplay.get() == 0 and self.checkboxHalvedTime.get() == 0:
+        if self.checkboxDisableAdv.get() == 0 and self.checkboxBoot.get() == 0 and self.checkboxBSpeed.get() == 0 and self.checkboxCSpeed.get() == 0 and self.checkboxTaunt.get() == 0 and self.checkboxTxtDisplay.get() == 0 and self.checkboxShowCtrl.get() == 0 and self.checkboxUnlockAll.get() == 0 and self.checkboxBowserNoStealCoins.get() == 0 and self.checkbox60RocketShip.get() == 0 and self.checkboxFreeTaxi.get() == 0 and self.checkboxFreeThwmopWhomp.get() == 0 and self.checkboxFreeBridge.get() == 0 and self.checkboxDisableHappening.get() == 0 and self.checkboxAdvTxt.get() == 0 and self.checkboxAllDK.get() == 0 and self.checkboxBattleNoStar.get() == 0 and self.checkboxCapsulesAny.get() == 0 and self.checkboxDoubleTurns.get() == 0 and self.checkboxCapsulesFinal.get() == 0 and self.checkboxsameSpaceAlways.get() == 0 and self.checkboxsameSpaceNever.get() == 0  and self.checkbox20Sec.get() == 0 and self.checkboxNoBrick.get() == 0 and self.checkbox1Slow.get() == 0 and self.checkboxNoSlow.get() == 0 and self.checkboxFlowers3.get() == 0 and self.checkboxNoRocks.get() == 0 and self.checkboxLeafDisplay.get() == 0 and self.checkboxHalvedTime.get() == 0 and self.checkboxDisableLast5.get() == 0 and self.checkboxForceLast5.get() == 0 and self.comboboxLast5Event.get() == "Random":
             if sys.platform == "darwin":
                 createDialog("Error", "error", "Please check at least 1 box.", None)
             else:
@@ -7509,6 +7561,16 @@ class App(customtkinter.CTk):
         
         if ticked == 1:
             generatedCode = generatedCode + getOtherCodesFive("CapsulesFinal")
+
+        ticked = self.checkboxsameSpaceAlways.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("sameSpaceAlways")
+
+        ticked = self.checkboxsameSpaceNever.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("sameSpaceNever")
         
         ticked = self.checkbox20Sec.get()
         
@@ -7549,6 +7611,36 @@ class App(customtkinter.CTk):
         
         if ticked == 1:
             generatedCode = generatedCode + getOtherCodesFive("HalvedTime")
+
+        ticked = self.checkboxDisableLast5.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("DisableLast5")
+
+        ticked = self.checkboxForceLast5.get()
+        
+        if ticked == 1:
+            generatedCode = generatedCode + getOtherCodesFive("ForceLast5")
+        
+        choice = self.comboboxLast5Event.get()
+
+        if choice == "x3 Coins":
+            generatedCode = generatedCode + getOtherCodesFive("x3 Coins")
+        
+        choice = self.comboboxLast5Event.get()
+
+        if choice == "5 Star Spaces":
+            generatedCode = generatedCode + getOtherCodesFive("5 Star Spaces")
+        
+        choice = self.comboboxLast5Event.get()
+
+        if choice == "Capsule Sapces on Every Space":
+            generatedCode = generatedCode + getOtherCodesFive("Capsule Sapces on Every Space")
+        
+        choice = self.comboboxLast5Event.get()
+
+        if choice == "Red Spaces are Bowser Spaces":
+            generatedCode = generatedCode + getOtherCodesFive("Red Spaces are Bowser Spaces")
 
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
