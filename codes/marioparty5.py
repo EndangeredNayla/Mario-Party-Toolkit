@@ -382,6 +382,12 @@ F6000001 80008180
 7C040040 40820024
 14000004 48000024
 E0000000 80008000'''
+    if code == "sameSpaceAlways":
+        return '''
+04094740 60000000'''
+    if code == "sameSpaceNever":
+        return '''
+04094740 48000030'''
     if code == "20Sec":
         return '''
 20288860 00000025
@@ -425,3 +431,28 @@ E2000001 80008000'''
 28541d52 0000012b
 02541d52 000000b3
 e2000002 80008000'''
+    if code == "DisableLast5":
+        return '''
+0408D1F4 41800048'''
+    if code == "ForceLast5":
+        return '''
+2080CB88 3F800000
+0480CB88 2C040001
+0408CB8C 41800048
+E2000001 80008000'''
+    if code == "x3 Coins":
+        return '''
+040FB87C 38A00000
+040FB8EC 3A600000'''
+    if code == "5 Star Spaces":
+        return '''
+040FB87C 38A00003
+040FB8EC 3A600003'''
+    if code == "Capsule Sapces on Every Space":
+        return '''
+040FB87C 38A00001
+040FB8EC 3A600001'''
+    if code == "Red Spaces are Bowser Spaces":
+        return '''
+040FB87C 38A00002
+040FB8EC 3A600002'''
