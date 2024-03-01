@@ -1504,8 +1504,10 @@ class App(customtkinter.CTk):
         self.checkboxForceLast5.grid(row=15, column=1, sticky="w", padx=5, pady=5)
 
         # Create Code Comboboxes
-        self.comboboxLast5Event = ctk.CTkComboBox(master=tabview.tab("Other Codes"), values=["Random", "x3 Coins", "5 Star Spaces", "Capsule Sapces on Every Space", "Red Spaces are Bowser Spaces"], font=("Arial", 13), fg_color=sysColor)
-        self.comboboxLast5Event.grid(row=0, column=2, sticky="w", padx=5, pady=5)
+        label = ctk.CTkLabel(master=tabview.tab("Other Codes"), text="Last 5 Turns Events")
+        label.grid(row=0, column=2, sticky="w", padx=5, pady=5)
+        self.comboboxLast5Event = ctk.CTkComboBox(master=tabview.tab("Other Codes"), values=["Random", "x3 Coins", "5 Star Spaces", "Capsule Sapces on Every Space", "Red Spaces are Bowser Spaces"], font=("Arial", 13), fg_color=sysColor, width=300)
+        self.comboboxLast5Event.grid(row=1, column=2, sticky="w", padx=5, pady=5)
 
         def checkbox_callback_Last5():
             if self.checkboxDisableLast5.get() == 1:
