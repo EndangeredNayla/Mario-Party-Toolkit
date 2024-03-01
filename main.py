@@ -219,7 +219,7 @@ class App(customtkinter.CTk):
         self.redSpaceTickboxOne.grid(row=2, column=5, padx=10, pady=10)
 
         parseButtonOne = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonOne, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonOne.place(x=10, y=560)
+        parseButtonOne.place(x=10, y=640)
 
         self.minigame1 = ["Memory Match", "Slot Machine", "Buried Treasure", "Treasure Divers", "Shell Game", "Slot Car Derby 1", "Hot Bob-omb", "Slot Car Derby 2", "Pipe Maze", "Ghost Guess", "Musical Mushroom", "Pedal Power", "Crazy Cutter", "Face Lift", "Whack-a-Plant", "Bash 'n' Cash", "Bowl Over", "Ground Pound", "Balloon Burst", "Coin Block Blitz", "Coin Block Bash", "Skateboard Scamper", "Box Mountain Mayhem", "Platform Peril", "Teetering Towers", "Mushroom Mix-Up", "Bumper Ball Maze 1", "Grab Bag", "Bobsled Run", "Bumper Balls", "TightRope Treachery", "Knock Block Tower", "Tipsy Tourney", "Bombs Away", "Crane Game", "Bumper Ball Maze 2", "Mario Bandstand", "Desert Dash", "Shy Guy Says", "Limbo Dance", "Bombsketball", "Cast Aways", "Key-pa-Way", "Running of the Bulb", "Hot Rope Jump", "Handcar Havoc", "Deep Sea Divers", "Piranha's Pursuit", "Tug o' War", "Paddle Battle", "Bumper Ball Maze 3", "Coin Shower Flower", "Hammer Drop"]
         
@@ -236,7 +236,7 @@ class App(customtkinter.CTk):
         self.comboboxMingames12.grid(row=0, column=3)
 
         parseButtonOne = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceOne, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonOne.place(x=10, y=560)
+        parseButtonOne.place(x=10, y=640)
 
         return frame
 
@@ -272,7 +272,7 @@ class App(customtkinter.CTk):
         self.redSpaceTickboxTwo.grid(row=2, column=5, padx=10, pady=10)
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonTwo, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonTwo.place(x=10, y=560)
+        parseButtonTwo.place(x=10, y=640)
         
         self.minigame2 = ["BOWSER Slots", "Roll Out the Barrels", "Coffin Congestion", "Hammer Slammer", "Give Me a Brake!", "Mallet-Go Round", "Grab Bag", "Bumper Balloon Cars", "Rakin' 'em In", "Day at the Races", "Face Lift", "Crazy Cutters", "Hot BOB-OMB", "Bowl Over", "Rainbow Run", "Crane Game", "Move to the Music", "BOB-OMB Barrage", "Look Away", "Shock Drop or Roll", "Lights Out", "Filet Relay", "Archer-ival", "TOAD Bandstand", "Bobsled Run", "Handcar Havoc", "Balloon Burst", "Sky Pilots", "Speed Hockey", "Cake Factory", "Dungeon Dash", "Magnet Carta", "Lava Tile Isle", "Hot Rope Jump", "Shell Shocked", "TOAD in the Box", "Mecha-Marathon", "Roll Call", "Abandon Ship", "Platform Peril", "Totem Pole Pound", "Bumper Balls", "Bombs Away", "Tipsy Tourney", "Honeycomb Havoc", "Hexagon Heat", "Skateboard Scamper", "Slot Car Derby", "Shy Guy Says", "Sneak 'n' Snore", "Driver's Ed", "BOWSER's Big Blast", "Looney Lumberjacks", "Torpedo Targets", "Destruction Duet", "Dizzy Dancing", "Tile Driver", "Quicksand Cache", "Deep Sea Salvage"]
 
@@ -289,7 +289,7 @@ class App(customtkinter.CTk):
         self.comboboxMingames22.grid(row=0, column=3)
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceTwo, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonTwo.place(x=10, y=560)
+        parseButtonTwo.place(x=10, y=640)
 
         icon = create_image_icon(tabview.tab("Item Mods"), "assets/mushroom.png", 1, 1)
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
@@ -337,7 +337,7 @@ class App(customtkinter.CTk):
         self.magicLamp2.grid(row=3, column=8)
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Item Mods"), command=self.itemsTwo, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonTwo.place(x=10, y=560)
+        parseButtonTwo.place(x=10, y=640)
 
         warningLabel = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="These are not weights! 0 doesnt mean disabled.", font=("Arial", 16, "bold"))
         warningLabel.place(x=5, y=210)
@@ -394,7 +394,7 @@ class App(customtkinter.CTk):
         koopaBankLabel3.grid(row=4, column=4, sticky="w")
 
         parseButtonThree = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonThree, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonThree.place(x=10, y=560)
+        parseButtonThree.place(x=10, y=640)
 
         self.minigame3 = ["Thwomp Pull", "River Raiders", "Tidal Toss", "Eatsa Pizza", "Baby Bowser Broadside", "Pump, Pump and Away", "Hyper Hydrants", "Picking Panic", "Treadmill Grill", "Toadstoll Titan", "Aces High", "Bounce 'n' Trounce", "Ice Rink Risk", "Locked Out", "Chip Shot Challenge", "Parasol Plummet", "Messy Memory", "Picture Imperfect", "Mario's Puzzle Party", "The Beat Goes On", "M. P. I. Q.", "Curtain Call", "Water Whirled", "Frigid Bridges", "Awful Tower", "Cheep Cheep Chase", "Pipe Cleaners", "Snowball Summit", "All Fired Up", "Stacked Deck", "Three Door Monty", "Rockin' Raceway", "Merry-Go-Chomp", "Slap Down", "Storm Chasers", "Eye Sore", "Vine With Me", "Popgun Pick-Off", "End of the Line", "Bowser Toss", "Baby Bowser Bonkers", "Motor Rooter", "Silly Screws", "Crowd Cover", "Tick Tock Hop", "Fowl Play", "Mecha-Marathon", "Hey, Batter, Batter!", "Bobbing Bow-loons", "Dorrie Dip", "Swinging with Sharks", "Swing 'n' Swipe", "Stardust Battle", "Game Guy's Roulette", "Game Guy's Lucky 7", "Game Guy's Magic Boxes", "Game Guy's Sweet Surprise", "Dizzy Dinghies", "Mario's Puzzle Party Pro"]
 
@@ -411,7 +411,7 @@ class App(customtkinter.CTk):
         self.comboboxMingames32.grid(row=0, column=3)
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceThree, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonTwo.place(x=10, y=560)
+        parseButtonTwo.place(x=10, y=640)
 
         icon = create_image_icon(tabview.tab("Item Mods"), "assets/mushroom.png", 1, 1)
         label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
@@ -516,7 +516,7 @@ class App(customtkinter.CTk):
         self.itemBag3.grid(row=5, column=12)
 
         parseButtonThree = ctk.CTkButton(master=tabview.tab("Item Mods"), command=self.itemsThree, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonThree.place(x=10, y=560)
+        parseButtonThree.place(x=10, y=640)
 
         warningLabel = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="These are not weights! 0 doesnt mean disabled.", font=("Arial", 16, "bold"))
         warningLabel.place(x=5, y=310)
@@ -819,19 +819,19 @@ class App(customtkinter.CTk):
         lotterySpaceLabel4.grid(row=8, column=4, sticky="w")
 
         parseButtonFour = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonFour, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonFour.place(x=10, y=560)
+        parseButtonFour.place(x=10, y=640)
 
         parseButtonFour = ctk.CTkButton(master=tabview.tab("Item Mods"), command=self.actionSpaceButtonFourItem, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonFour.place(x=10, y=560)
+        parseButtonFour.place(x=10, y=640)
 
         parseButtonFour = ctk.CTkButton(master=tabview.tab("Item Mods"), command=self.savePresetItems4, text="Save Preset", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonFour.place(x=160, y=560)
+        parseButtonFour.place(x=160, y=640)
 
         parseButtonFour = ctk.CTkButton(master=tabview.tab("Item Mods"), command=self.loadPresetItems4, text="Load Preset", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonFour.place(x=310, y=560)
+        parseButtonFour.place(x=310, y=640)
 
         parseButtonFour = ctk.CTkButton(master=tabview.tab("Battle Game Mods"), command=self.actionBattle4, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonFour.place(x=10, y=560)
+        parseButtonFour.place(x=10, y=640)
 
         warningLabel = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="There must be at least 5 items with a value higher than 0 and the Mega or Mini should be worth 5. ", font=("Arial", 16, "bold"))
         warningLabel.place(x=160, y=270)
@@ -851,7 +851,7 @@ class App(customtkinter.CTk):
         self.comboboxMingames42.grid(row=0, column=3)
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceFour, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonTwo.place(x=10, y=560)
+        parseButtonTwo.place(x=10, y=640)
 
         self.items4 = ["None", "Mini Mushroom", "Mega Mushroom", "Super Mini Mushroom", "Super Mega Mushroom", "Mini-Mega Hammer", "Sparky Sticker", "Warp Pipe", "Swap Card", "Bowser Suit", "Gaddlight", "Magic Lamp", "Boo's Crystal Ball", "Chomp Call", "Item Bag"]
         
@@ -874,7 +874,7 @@ class App(customtkinter.CTk):
         self.initalItem43.grid(row=2, column=1)
 
         parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=self.initalItems4, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButton.place(x=10, y=560)
+        parseButton.place(x=10, y=640)
 
         self.spaces4 = ["None", "Invisible Space", "Blue Space", "Red Space", "Bowser Space", "Mushroom Space", "Battle Space", "Happening Space", "Chance Time Space", "Spring Space"]
 
@@ -909,7 +909,7 @@ class App(customtkinter.CTk):
         label.grid(row=1, column=4)
 
         parseButton = ctk.CTkButton(master=tabview.tab("Space Replacement"), command=self.spaceReplace4, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButton.place(x=10, y=560)
+        parseButton.place(x=10, y=640)
         return frame
 
     def create_mp5_frame(self):
@@ -1437,16 +1437,24 @@ class App(customtkinter.CTk):
         self.checkboxDoubleTurns.grid(row=2, column=1, sticky="w", padx=5, pady=5)
         
         # Create Code Checkboxes
+        self.checkboxDisableLast5 = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Last 5 Turns Event - Disabled", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
+        self.checkboxDisableLast5.grid(row=3, column=1, sticky="w", padx=5, pady=5)
+        
+        # Create Code Checkboxes
+        self.checkboxForceLast5 = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Last 5 Turns Event - First Turn", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
+        self.checkboxForceLast5.grid(row=4, column=1, sticky="w", padx=5, pady=5)
+
+        # Create Code Checkboxes
         self.checkboxCapsulesFinal = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Obtain Capsules on Final Turn", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
-        self.checkboxCapsulesFinal.grid(row=3, column=1, sticky="w", padx=5, pady=5)
+        self.checkboxCapsulesFinal.grid(row=5, column=1, sticky="w", padx=5, pady=5)
         
         # Create Code Checkboxes
         self.checkboxsameSpaceAlways = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Same Space Duels Always Happen", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
-        self.checkboxsameSpaceAlways.grid(row=4, column=1, sticky="w", padx=5, pady=5)
+        self.checkboxsameSpaceAlways.grid(row=6, column=1, sticky="w", padx=5, pady=5)
         
         # Create Code Checkboxes
         self.checkboxsameSpaceNever = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Same Space Duels Never Happen", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
-        self.checkboxsameSpaceNever.grid(row=5, column=1, sticky="w", padx=5, pady=5)
+        self.checkboxsameSpaceNever.grid(row=7, column=1, sticky="w", padx=5, pady=5)
 
         def checkbox_callback_SameSpace():
             if self.checkboxsameSpaceNever.get() == 1:
@@ -1465,46 +1473,38 @@ class App(customtkinter.CTk):
         
         # Create Code Checkboxes
         self.checkbox20Sec = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Beam Team - 20 Second Timer", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
-        self.checkbox20Sec.grid(row=6, column=1, sticky="w", padx=5, pady=5)
+        self.checkbox20Sec.grid(row=8, column=1, sticky="w", padx=5, pady=5)
         
         # Create Code Checkboxes
         self.checkboxNoBrick = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Bound of Music - No Bricks", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
-        self.checkboxNoBrick.grid(row=7, column=1, sticky="w", padx=5, pady=5)
+        self.checkboxNoBrick.grid(row=9, column=1, sticky="w", padx=5, pady=5)
         
         # Create Code Checkboxes
         self.checkbox1Slow = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Curvy Curves - 1 Player is Slower", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
-        self.checkbox1Slow.grid(row=8, column=1, sticky="w", padx=5, pady=5)
+        self.checkbox1Slow.grid(row=10, column=1, sticky="w", padx=5, pady=5)
         
         # Create Code Checkboxes
         self.checkboxNoSlow = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Coney Island - No Slow Down", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
-        self.checkboxNoSlow.grid(row=9, column=1, sticky="w", padx=5, pady=5)
+        self.checkboxNoSlow.grid(row=11, column=1, sticky="w", padx=5, pady=5)
         
         # Create Code Checkboxes
         self.checkboxFlowers3 = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Flower Shower - All Flowers Worth 3pts", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
-        self.checkboxFlowers3.grid(row=10, column=1, sticky="w", padx=5, pady=5)
+        self.checkboxFlowers3.grid(row=12, column=1, sticky="w", padx=5, pady=5)
         
         # Create Code Checkboxes
         self.checkboxNoRocks = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Ground Pound Down - No Rocks Until End", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
-        self.checkboxNoRocks.grid(row=11, column=1, sticky="w", padx=5, pady=5)
+        self.checkboxNoRocks.grid(row=13, column=1, sticky="w", padx=5, pady=5)
         
         # Create Code Checkboxes
         self.checkboxLeafDisplay = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Leaf Leap - Leaves Display Quicker", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
-        self.checkboxLeafDisplay.grid(row=12, column=1, sticky="w", padx=5, pady=5)
+        self.checkboxLeafDisplay.grid(row=14, column=1, sticky="w", padx=5, pady=5)
         
         # Create Code Checkboxes
         self.checkboxHalvedTime = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Pop Star Piranhas - Halved Time to Pick", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
-        self.checkboxHalvedTime.grid(row=13, column=1, sticky="w", padx=5, pady=5)
-
-         # Create Code Checkboxes
-        self.checkboxDisableLast5 = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Disable Last 5 Turns Event", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
-        self.checkboxDisableLast5.grid(row=14, column=1, sticky="w", padx=5, pady=5)
-        
-        # Create Code Checkboxes
-        self.checkboxForceLast5 = ctk.CTkCheckBox(master=tabview.tab("Other Codes"), text="Last 5 Turns Event - Happens on the First Turn", font=("Arial", 13), fg_color=sysColor, hover_color=sysColorAlt)
-        self.checkboxForceLast5.grid(row=15, column=1, sticky="w", padx=5, pady=5)
+        self.checkboxHalvedTime.grid(row=15, column=1, sticky="w", padx=5, pady=5)
 
         # Create Code Comboboxes
-        label = ctk.CTkLabel(master=tabview.tab("Other Codes"), text="Last 5 Turns Events")
+        label = ctk.CTkLabel(master=tabview.tab("Other Codes"), text="Last 5 Turns Events", font=("Arial", 17, "bold"))
         label.grid(row=0, column=2, sticky="w", padx=5, pady=5)
         self.comboboxLast5Event = ctk.CTkComboBox(master=tabview.tab("Other Codes"), values=["Random", "x3 Coins", "5 Star Spaces", "Capsule Sapces on Every Space", "Red Spaces are Bowser Spaces"], font=("Arial", 13), fg_color=sysColor, width=300)
         self.comboboxLast5Event.grid(row=1, column=2, sticky="w", padx=5, pady=5)
@@ -1546,19 +1546,19 @@ class App(customtkinter.CTk):
         self.checkboxBattleNoStar.select()
 
         parseButtonFive = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonFive, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonFive.place(x=10, y=560)
+        parseButtonFive.place(x=10, y=640)
 
         parseButtonFiveItems = ctk.CTkButton(master=tabview.tab("Capsule Mods"), command=self.actionSpaceButtonFiveCapsule, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonFiveItems.place(x=10, y=560)
+        parseButtonFiveItems.place(x=10, y=640)
 
         parseButtonFiveOther = ctk.CTkButton(master=tabview.tab("Other Codes"), command=self.actionSpaceButtonFiveOther, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonFiveOther.place(x=10, y=560)
+        parseButtonFiveOther.place(x=10, y=640)
 
         parseButtonFive = ctk.CTkButton(master=tabview.tab("Capsule Mods"), command=self.savePresetItems5, text="Save Preset", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonFive.place(x=160, y=560)
+        parseButtonFive.place(x=160, y=640)
 
         parseButtonFive = ctk.CTkButton(master=tabview.tab("Capsule Mods"), command=self.loadPresetItems5, text="Load Preset", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonFive.place(x=310, y=560)
+        parseButtonFive.place(x=310, y=640)
 
         self.minigame5 = ["Coney Island", "Ground Pound Down", "Chimp Chase", "Chomp Romp", "Pushy Penguins", "Leaf Leap", "Night Light Fright", "Pop-Star Piranhas", "Mazed & Confused", "Dinger Derby", "Hydrostars", "Later Skater", "Will Flower", "Triple Jump", "Hotel Goomba", "Coin Cache", "Flatiator", "Squared Away", "Mario Mechs", "Revolving Fire", "Clock Stoppers", "Heat Stroke", "Beam Team", "Vicious Vending", "Big Top Drop", "Defuse or Lose", "ID UFO", "Mario Can-Can", "Handy Hoppers", "Berry Basket", "Bus Buffer", "Rumble Ready", "Submarathon", "Manic Mallets", "Astro-Logical", "Bill Blasters", "Tug-o-Dorrie", "Twist 'n' Out", "Lucky Lineup", "Random Ride", "Shock Absorbers", "Countdown Pound", "Whomp Maze", "Shy Guy Showdown", "Button Mashers", "Get a Rope", "Pump 'n' Jump", "Head Waiter", "Blown Away", "Merry Poppings", "Pound Peril", "Piece Out", "Bound of Music", "Wind Wavers", "Sky Survivor", "Cage-in Cookin'", "Rain of Fire", "Scaldin' Cauldron", "Frightmare", "Flower Shower", "Dodge Bomb", "Fish Upon a Star", "Rumble Fumble", "Quilt for Speed", "Tube It or Lose It", "Mathletes", "Fight Cards", "Banana Punch", "Da Vine Climb", "Mass A-peel", "Panic Pinball", "Banking Coins", "Frozen Frenzy", "Curvy Curbs", "Beach Volleyball", "Fish Sticks", "Ice Hockey"]
                 
@@ -1575,7 +1575,7 @@ class App(customtkinter.CTk):
         self.comboboxMingames52.grid(row=0, column=3)
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceFive, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonTwo.place(x=10, y=560)
+        parseButtonTwo.place(x=10, y=640)
 
         #self.items5 = ["None", "Mushroom", "Super Mushroom", "Cursed Mushroom", "Warp Pipe", "Klepto", "Bubble", "Wiggler", "Hammer Brother", "Coin Block", "Spiny", "Paratroopa", "Bullet Bill", "Goomba", "Bomomb", "Koopa Bank", "Kamek", "Mr. Blizzard", "Piranha Plant", "Magikoopa", "Ukiki", "Lakitu", "Tweester", "Duel", "Chain Chomp", "Bone", "Bowser", "Chance", "Miracle", "Donkey Kong"]
         
@@ -1598,7 +1598,7 @@ class App(customtkinter.CTk):
         #self.initalItem53.grid(row=2, column=1)
 
         #parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=self.initalItems5, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        #parseButton.place(x=10, y=560)
+        #parseButton.place(x=10, y=640)
         
         # Create boo space icon and entry
         chainChompCoinsSpaceIcon5 = create_image_icon(tabview.tab("Coins Mods"), "assets/chainChomp.png", 7, 1)
@@ -2100,10 +2100,10 @@ class App(customtkinter.CTk):
         pinkBooSpaceLabel6.grid(row=8, column=4, sticky="w")
 
         parseButtonSix = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonSix, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonSix.place(x=10, y=560)
+        parseButtonSix.place(x=10, y=640)
 
         parseFaireSquare = ctk.CTkButton(master=tabview.tab("Faire Square Mods"), command=self.actionFaireSquare, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseFaireSquare.place(x=10, y=560)
+        parseFaireSquare.place(x=10, y=640)
 
         parseButton6 = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=self.savePresetItems6, text="Save Preset", fg_color=sysColor, hover_color=sysColorAlt)
         parseButton6.place(x=160, y=620)
@@ -2129,7 +2129,7 @@ class App(customtkinter.CTk):
         self.comboboxMingames62.grid(row=0, column=3)
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceSix, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonTwo.place(x=10, y=560)
+        parseButtonTwo.place(x=10, y=640)
 
         self.items6 = ["None", "Mushroom", "Golden Mushroom", "Sluggish 'Shroom", "Metal Mushroom", "Bullet Bill", "Warp Pipe", "Flutter", "Cursed Mushroom", "Spiny", "Goomba", "Piranha Plant", "Klepto", "Toady", "Kamek", "Mr. Blizzard", "Podoboo", "Zap", "Tweester", "Thwomp", "Bob-omb", "Paratroopa", "Snack", "Boo-away", "Duel", "Miracle", "Bowser", "Donkey Kong", "Pink Boo"]
         
@@ -2152,7 +2152,7 @@ class App(customtkinter.CTk):
         self.initalItem63.grid(row=2, column=1)
 
         parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=self.initalItems6, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButton.place(x=10, y=560)
+        parseButton.place(x=10, y=640)
 
         self.spaces6 = ["None", "Invisible Space", "Blue Space", "Red Space", "Happening Space", "Chance Time Space", "Duel Space", "Bowser/DK Space", "Chance Time Space", "Orb Space"]
 
@@ -2187,7 +2187,7 @@ class App(customtkinter.CTk):
         label.grid(row=1, column=4)
 
         parseButton = ctk.CTkButton(master=tabview.tab("Space Replacement"), command=self.spaceReplace6, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButton.place(x=10, y=560)
+        parseButton.place(x=10, y=640)
         return frame
 
     def create_mp7_frame(self):
@@ -2757,7 +2757,7 @@ class App(customtkinter.CTk):
         parseButtonSevenOrbs.place(x=10, y=620)
 
         parseButtonSevenOther = ctk.CTkButton(master=tabview.tab("Other Codes"), command=self.actionSpaceButtonSevenOther, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonSevenOther.place(x=10, y=560)
+        parseButtonSevenOther.place(x=10, y=640)
 
         self.minigame7 = ["Catchy Tunes", "Bubble Brawl", "Track & Yield", "Fun Run", "Cointagious", "Snow Ride", "Picture This", "Ghost in the Hall", "Big Dripper", "Target Tag", "Pokey Pummel", "Take Me Ohm", "Kart Wheeled", "Balloon Busters", "Clock Watchers", "Dart Attack", "Oil Crisis", "La Bomba", "Spray Anything", "Balloonatic", "Spinner Cell", "Think Tank", "Flashfright", "Coin-op Bop", "Easy Pickings", "Wheel of Woe", "Boxing Day", "Be My Chum!", "StratosFEAR!", "Pogo-a-go-go", "Buzzstormer", "Tile and Error", "Battery Ram", "Cardinal Rule", "Ice Moves", "Bumper Crop", "Hop-O-Matic 4000", "Wingin' It", "Sphere Factor", "Herbicidal Maniac", "Pyramid Scheme", "World Piece", "Warp Pipe Dreams", "Weight for It", "Helipopper", "Monty's Revenge", "Deck Hands", "Mad Props", "Gimme a Sign", "Bridge Work", "Spin Doctor", "Hip Hop Drop", "Air Farce", "The Final Countdown", "Royal Rumpus", "Light Speed", "Apes of Wrath", "Fish & Cheeps", "Camp Ukiki", "Funstacle Course!", "Funderwall!", "Magmagical Journey!", "Tunnel of Lava!", "Treasure Dome!", "Slot-O-Whirl!", "Peel Out", "Bananas Faster", "Stump Change", "Jump, Man", "Vine Country", "A Bridge Too Short", "Spider Stomp", "Stick and Spin", "Bowser's Lovely Lift!"]
                 
@@ -2774,7 +2774,7 @@ class App(customtkinter.CTk):
         self.comboboxMingames72.grid(row=0, column=3)
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceSeven, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonTwo.place(x=10, y=560)
+        parseButtonTwo.place(x=10, y=640)
 
         self.items7 = ["None", "Mushroom", "Super Mushroom", "Slow 'Shroom", "Metal Mushroom", "Flutter", "Cannon", "Snack", "Lakitu", "Hammer Bro", "Piranha Plant", "Spear Guy", "Kamek", "Toady", "Mr. Blizzard", "Bandit", "Pink Boo", "Spiny", "Zap", "Tweester", "Thwomp", "Warp Pipe", "Bob-omb", "Fireball", "Flower", "Egg", "Vacuum", "Surprise", "Triple 'Shroom", "Koopa Kid"]
         
@@ -2815,7 +2815,7 @@ class App(customtkinter.CTk):
         label.grid(row=4, column=2, sticky="w")
 
         parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=self.initalItems7, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButton.place(x=10, y=560)
+        parseButton.place(x=10, y=640)
 
         self.spaces7 = ["None", "Invisible Space", "Blue Space", "Red Space", "Happening Space", "Bowser Space", "Duel Space", "DK Space", "Orb Space A", "Orb Space B", "Mic Space"]
 
@@ -2850,7 +2850,7 @@ class App(customtkinter.CTk):
         label.grid(row=1, column=4)
 
         parseButton = ctk.CTkButton(master=tabview.tab("Space Replacement"), command=self.spaceReplace7, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButton.place(x=10, y=560)
+        parseButton.place(x=10, y=640)
         return frame
     
     def create_credits_frame(self):
@@ -2937,10 +2937,10 @@ class App(customtkinter.CTk):
         self.comboboxMingames82.grid(row=0, column=3)
 
         parseButtonTwo = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=self.minigameReplaceEight2, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonTwo.place(x=10, y=560)
+        parseButtonTwo.place(x=10, y=640)
 
         parseButtonEight2 = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonEight2, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonEight2.place(x=10, y=560)
+        parseButtonEight2.place(x=10, y=640)
         return frame
         
     def create_mp8_frame(self):
@@ -2980,7 +2980,7 @@ class App(customtkinter.CTk):
         starSpaceLabelHover = CTkToolTip(starSpaceLabel6, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
 
         parseButtonEight = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonEight, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonEight.place(x=10, y=560)
+        parseButtonEight.place(x=10, y=640)
         return frame
 
     def injectCodesFunc(self):
