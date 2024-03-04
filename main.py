@@ -3750,13 +3750,9 @@ class App(customtkinter.CTk):
 
         squishAmountFourBase = self.squishAmountFour.get()
         try:
-            squishAmountFour = hex(int(self.squishAmountFour.get()))
-            if len(squishAmountFour) == 5:
-                squishAmountFour = "0" + squishAmountFour[2:]
-            elif len(squishAmountFour) == 4:
-                squishAmountFour = "00" + squishAmountFour[2:]
-            elif len(squishAmountFour) == 3:
-                squishAmountFour = "000" + squishAmountFour[2:]
+            squishAmountFour = int(squishAmountFourBase, 16)
+            negativeSquishAmountFourBase = -int(squishAmountFourBase)
+            squishAmountFour = format(negativeSquishAmountFourBase & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
         except:
             squishAmountFour = "DUMMY"
 
