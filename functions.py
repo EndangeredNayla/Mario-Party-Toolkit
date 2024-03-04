@@ -11,7 +11,7 @@ from PIL import Image, ImageTk
 from pathlib import Path
 import sys
 if sys.platform == "win32":
-    from get_system_color import get_windows_system_color
+    from get_system_color import *
 import requests
 import sys
 import webbrowser
