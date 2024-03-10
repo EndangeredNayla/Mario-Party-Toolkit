@@ -3007,7 +3007,7 @@ class App(customtkinter.CTk):
         label.grid(row=7, column=16)
 
 
-        label = ctk.CTkLabel(master=tabview.tab("Event Frenzy"), text="A mode where capsules appear on quite literally every blue/red space.\n\nClick generate code to generate a random preset of spaces per board.\n\nRequires Press R to throw Self Orbs code to fully work!", font=("Arial", 16))
+        label = ctk.CTkLabel(master=tabview.tab("Event Frenzy"), text="A mode where capsules appear on quite literally every blue/red space.\n\nClick generate code to generate a random preset of spaces per board.", font=("Arial", 16))
         label.place(x=10, y=380)
 
 
