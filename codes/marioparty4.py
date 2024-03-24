@@ -16,7 +16,7 @@ def getBlueSpaceCodeFour(amount):
     return f'''
 MP4 - Blue Spaces Give FOURBLUE Coins
 C207FBC4 00000001
-3BC03BC0{amount} 00000000
+3BC0{amount} 00000000
 '''
 
 def getMinigameCodeFour(amount):
