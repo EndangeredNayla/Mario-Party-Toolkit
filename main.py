@@ -7,6 +7,7 @@
 
 from functions import *
 from frames.marioParty1_frame import *
+from frames.marioParty2_frame import *
 
 import customtkinter
 import os
@@ -21,7 +22,6 @@ class App(customtkinter.CTk):
         self.geometry("1330x780")
 
         customtkinter.set_appearance_mode("Dark")
-
 
         # set grid layout 1x2
         self.grid_rowconfigure(0, weight=1)
@@ -137,6 +137,7 @@ class App(customtkinter.CTk):
             self.mp1_frame.grid_forget()
         if name == "mp2Frame":
             self.mp2_frame.grid(row=0, column=1, sticky="nsew")
+            create_mario_party_2_interface(self.mp2_frame)
         else:
             self.mp2_frame.grid_forget()
         if name == "mp3Frame":
