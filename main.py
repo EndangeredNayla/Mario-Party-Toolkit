@@ -8,6 +8,7 @@
 from functions import *
 from frames.marioParty1_frame import *
 from frames.marioParty2_frame import *
+from frames.marioParty3_frame import *
 
 import customtkinter
 import os
@@ -142,6 +143,7 @@ class App(customtkinter.CTk):
             self.mp2_frame.grid_forget()
         if name == "mp3Frame":
             self.mp3_frame.grid(row=0, column=1, sticky="nsew")
+            create_mario_party_3_interface(self.mp3_frame)
         else:
             self.mp3_frame.grid_forget()
         if name == "mp4Frame":

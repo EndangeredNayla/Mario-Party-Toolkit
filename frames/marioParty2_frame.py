@@ -23,21 +23,21 @@ def create_mario_party_2_interface(frame):
     tabview.set("Coins Mods")
 
     # Function to create an entry field and checkbox
-    def create_entry_and_checkbox(tab, row, icon_path, label_text, checkbox_text):
+    def create_entry_and_checkbox(tab, row, icon_path, label_text, color, checkbox_text):
         create_image_icon(tab, icon_path, row, 1)
         label = ctk.CTkLabel(master=tab, text=label_text, font=("Arial", 16))
-        label.grid(row=row, column=2)
+        label.grid(row=row, column=2, pady=15)
         entry = ctk.CTkEntry(master=tab, width=48, font=("Arial", 16, "bold"))
         entry.grid(row=row, column=3)
-        label1 = ctk.CTkLabel(master=tab, text=" Coins on a Blue Space.", font=("Arial", 16))
+        label1 = ctk.CTkLabel(master=tab, text=" Coins on a " + color + " Space. ", font=("Arial", 16))
         label1.grid(row=row, column=4)
         checkbox = ctk.CTkCheckBox(master=tab, text=checkbox_text, width=16, checkbox_width=16, checkbox_height=16)
         checkbox.grid(row=row, column=5, padx=10, pady=10)
         return entry, checkbox
 
     # Create entry fields and checkboxes for Coins Mods tab
-    blue_entry, blue_checkbox = create_entry_and_checkbox(tabview.tab("Coins Mods"), 1, "assets/eventTags/blueSpace.png", " Give  ", "Double the coins on Last 5")
-    red_entry, red_checkbox = create_entry_and_checkbox(tabview.tab("Coins Mods"), 2, "assets/eventTags/redSpace.png", " Lose  ", "Double the coins on Last 5")
+    blue_entry, blue_checkbox = create_entry_and_checkbox(tabview.tab("Coins Mods"), 1, "assets/eventTags/blueSpace.png", " Gain  ", "Blue", "Double the coins on Last 5")
+    red_entry, red_checkbox = create_entry_and_checkbox(tabview.tab("Coins Mods"), 2, "assets/eventTags/redSpace.png", " Lose  ", "Red", "Double the coins on Last 5")
 
     # Create button to generate coins modification codes
     parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp2(blue_entry, blue_checkbox, red_entry, red_checkbox), text="Generate Codes")
