@@ -6,35 +6,35 @@
 # ============================================
 
 from functions import *
-from codes.marioParty1 import *
+from codes.marioParty2 import *
 
 import pyperclip
 
 def coinsEvent_mp2(blueAmount, blueTick, redAmount, redTick):
     # Extract blue space information
-    blueSpaceAmountBaseOne = blueAmount.get()
-    blueSpaceAmountOne = hex(int(blueSpaceAmountBaseOne))[2:].zfill(4).upper() if blueSpaceAmountBaseOne else "DUMMY"
-    blueSpaceSwitchOne = "1" if blueTick.get() else "0"
+    blueSpaceAmountBaseTwo = blueAmount.get()
+    blueSpaceAmountTwo = hex(int(blueSpaceAmountBaseTwo))[2:].zfill(4).upper() if blueSpaceAmountBaseTwo else "DUMMY"
+    blueSpaceSwitchTwo = "1" if blueTick.get() else "0"
 
     # Extract red space information
-    redSpaceAmountBaseOne = redAmount.get()
-    redSpaceAmountOne = hex(int(redSpaceAmountBaseOne))[2:].zfill(4).upper() if redSpaceAmountBaseOne else "DUMMY"
-    redSpaceSwitchOne = "1" if redTick.get() else "0"
+    redSpaceAmountBaseTwo = redAmount.get()
+    redSpaceAmountTwo = hex(int(redSpaceAmountBaseTwo))[2:].zfill(4).upper() if redSpaceAmountBaseTwo else "DUMMY"
+    redSpaceSwitchTwo = "1" if redTick.get() else "0"
 
     # Generate codes for blue and red spaces
-    if blueSpaceSwitchOne == "0":
-        marioPartyOneBlueSpace = getBlueSpaceCodeOne(blueSpaceAmountOne, blueSpaceSwitchOne, blueSpaceAmountBaseOne, "Doesn't Double on Last 5") if blueSpaceAmountOne != "DUMMY" else ""
-    elif blueSpaceSwitchOne == "1":
-        marioPartyOneBlueSpace = getBlueSpaceCodeOne(blueSpaceAmountOne, blueSpaceSwitchOne, blueSpaceAmountBaseOne, "Doubles on Last 5") if blueSpaceAmountOne != "DUMMY" else ""
+    if blueSpaceSwitchTwo == "0":
+        marioPartyTwoBlueSpace = getBlueSpaceCodeTwo(blueSpaceAmountTwo, blueSpaceSwitchTwo, blueSpaceAmountBaseTwo, "Doesn't Double on Last 5") if blueSpaceAmountTwo != "DUMMY" else ""
+    elif blueSpaceSwitchTwo == "1":
+        marioPartyTwoBlueSpace = getBlueSpaceCodeTwo(blueSpaceAmountTwo, blueSpaceSwitchTwo, blueSpaceAmountBaseTwo, "Doubles on Last 5") if blueSpaceAmountTwo != "DUMMY" else ""
 
-    if redSpaceSwitchOne == "0":
-        marioPartyOneRedSpace = getRedSpaceCodeOne(redSpaceAmountOne, redSpaceSwitchOne, redSpaceAmountBaseOne, "Doesn't Double on Last 5") if redSpaceAmountOne != "DUMMY" else ""
-    elif redSpaceSwitchOne == "1":
-        marioPartyOneRedSpace = getRedSpaceCodeOne(redSpaceAmountOne, redSpaceSwitchOne, redSpaceAmountBaseOne, "Doubles on Last 5") if redSpaceAmountOne != "DUMMY" else ""
+    if redSpaceSwitchTwo == "0":
+        marioPartyTwoRedSpace = getRedSpaceCodeTwo(redSpaceAmountTwo, redSpaceSwitchTwo, redSpaceAmountBaseTwo, "Doesn't Double on Last 5") if redSpaceAmountTwo != "DUMMY" else ""
+    elif redSpaceSwitchTwo == "1":
+        marioPartyTwoRedSpace = getRedSpaceCodeTwo(redSpaceAmountTwo, redSpaceSwitchTwo, redSpaceAmountBaseTwo, "Doubles on Last 5") if redSpaceAmountTwo != "DUMMY" else ""
 
 
     # Replace placeholder in generated codes
-    generatedCode = (marioPartyOneBlueSpace + marioPartyOneRedSpace).strip()
+    generatedCode = (marioPartyTwoBlueSpace + marioPartyTwoRedSpace).strip()
 
     # Copy generated codes to clipboard
     pyperclip.copy(generatedCode)

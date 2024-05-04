@@ -5,7 +5,7 @@
 # License: MIT
 # ============================================
 
-from codes.marioParty1 import *
+from codes.marioParty2 import *
 from functions import *
 
 import pyperclip
@@ -19,7 +19,7 @@ def mgReplaceEvent_mp2(minigame1Name, minigame2Name, minigames_list):
     minigameSlot1Hex = minigameHex[minigameSlot1Num]
     minigameSlot2Num = minigames_list.index(mingameSlot2)
     minigameSlot2Hex = minigameHex[minigameSlot2Num]
-    code = getMinigameReplacement1(minigameSlot1Hex, minigameSlot2Hex, mingameSlot1, mingameSlot2)
+    code = getMinigameReplacement2(minigameSlot1Hex, minigameSlot2Hex, mingameSlot1, mingameSlot2)
     code = code.strip()
     pyperclip.copy(code)
     print("Generated codes copied to the clipboard.")
