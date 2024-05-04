@@ -9,6 +9,8 @@ from functions import *
 from frames.marioParty1_frame import *
 from frames.marioParty2_frame import *
 from frames.marioParty3_frame import *
+from frames.welcome_frame import *
+from version import *
 
 import customtkinter
 import os
@@ -21,7 +23,6 @@ class App(customtkinter.CTk):
 
         self.title("Mario Party Toolkit")
         self.geometry("1330x780")
-
         customtkinter.set_appearance_mode("Dark")
 
         # set grid layout 1x2
@@ -98,9 +99,12 @@ class App(customtkinter.CTk):
                                                    image=self.about_image, command=self.about_button_event, font=("Helvetica", 18, "bold"))
         self.about_button.grid(row=10, column=0, sticky="ew")
 
+        self.versionPanel = ctk.CTkLabel(self.navigation_frame, text=versionString, font=("Helvetica", 16, "bold"))
+        self.versionPanel.grid(row=11, column=0, sticky="ew")
+
 
         # create frames
-        self.home_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
+        self.welcome_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         self.mp1_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         self.mp2_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         self.mp3_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
@@ -110,8 +114,7 @@ class App(customtkinter.CTk):
         self.mp7_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         self.mp8_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         self.about_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
-
-        self.select_frame_by_name("home")
+        welcome_interface(self.welcome_frame)
 
     def select_frame_by_name(self, name):
         # set button color for selected button
@@ -128,9 +131,10 @@ class App(customtkinter.CTk):
 
         # show selected frame
         if name == "homeFrame":
-            self.home_frame.grid(row=0, column=1, sticky="nsew")
+            self.welcome_frame.grid(row=0, column=1, sticky="nsew")
+            welcome_interface(self.welcome_frame)
         else:
-            self.home_frame.grid_forget()
+            self.welcome_frame.grid_forget()
         if name == "mp1Frame":
             self.mp1_frame.grid(row=0, column=1, sticky="nsew")
             create_mario_party_1_interface(self.mp1_frame)
@@ -203,4 +207,6 @@ class App(customtkinter.CTk):
 
 if __name__ == "__main__":
     app = App()
+    app.resizable(width=False, height=False)
     app.mainloop()
+    
