@@ -1,0 +1,11 @@
+customtkinter
+tk
+Pillow
+pyperclip
+pyinstaller == 5.13.2
+requests
+nuitka
+CTkToolTip
+requests
+get-system-color; sys_platform == 'win32'
+CTkColorPicker

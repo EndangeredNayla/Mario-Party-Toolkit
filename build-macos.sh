@@ -1,0 +1,1 @@
+/opt/homebrew/bin/pyinstaller --onefile main.py --add-data "assets/*:assets/" --add-data "dependencies/darwin/*:dependencies/" --add-data "dependencies/bin/*:dependencies/bin/" --name="Mario Party Toolkit" --noconsole  --icon="assets/diceBlock.ico" --distpath="dist/"
