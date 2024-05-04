@@ -103,7 +103,6 @@ def is_file_less_than_100mb(file_path):
 
 def createDialog(windowTitle, warn, info, buttonTxt=None):
     completeWindow = ctk.CTkToplevel()
-    completeWindow.geometry("600x165")
     completeWindow.title(windowTitle)
 
     # Load success image and display it in the success window
@@ -112,14 +111,21 @@ def createDialog(windowTitle, warn, info, buttonTxt=None):
     imgLabel.grid(row=0, column=0, padx=10, pady=10)
     imgLabel.image = img  # Keep a reference to the image
 
-    if buttonTxt == None:
-        pass
-    else:
+    if buttonTxt is not None:
         try:
             button = ctk.CTkButton(completeWindow, command=run_update, text=buttonTxt)
             button.grid(row=1, column=0, padx=50, pady=10)
-        except:
-            pass
+        except Exception as e:
+            print("Error creating button:", e)
+
+    # Adjust geometry to place the window in the bottom right corner
+    screen_width = completeWindow.winfo_screenwidth()
+    screen_height = completeWindow.winfo_screenheight()
+    window_width = completeWindow.winfo_reqwidth()
+    window_height = completeWindow.winfo_reqheight()
+    x_coordinate = screen_width - window_width
+    y_coordinate = screen_height - window_height
+    completeWindow.geometry(f"+{x_coordinate}+{y_coordinate}")
 
     # Configure row and column weights
     completeWindow.columnconfigure(0, weight=1)
