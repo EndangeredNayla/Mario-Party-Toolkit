@@ -10,6 +10,7 @@ from functions import *
 from events.marioParty4_coins import *
 from events.marioParty4_mgreplace import *
 from events.marioParty4_items import *
+from events.marioParty4_initialItems import *
 
 # Import custom tkinter module as ctk
 import customtkinter as ctk
@@ -22,6 +23,8 @@ def create_mario_party_4_interface(frame):
     tabview.add("Coins Mods")
     tabview.add("Minigame Replacement")
     tabview.add("Item Mods")
+    tabview.add("Initial Items")
+    tabview.add("Space Replacement")
     tabview.set("Coins Mods")
 
     # Function to create an entry field and checkbox
@@ -256,5 +259,63 @@ def create_mario_party_4_interface(frame):
 
     parseButtonFour = ctk.CTkButton(master=tabview.tab("Item Mods"), command=lambda: loadPresetItems4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4), text="Load Preset")
     parseButtonFour.place(x=310, y=640)
+
+    items4 = ["None", "Mini Mushroom", "Mega Mushroom", "Super Mini Mushroom", "Super Mega Mushroom", "Mini-Mega Hammer", "Sparky Sticker", "Warp Pipe", "Swap Card", "Bowser Suit", "Gaddlight", "Magic Lamp", "Boo's Crystal Ball", "Chomp Call", "Item Bag"]
+    
+    label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 1:  ", font=("Arial", 16))
+    label.grid(row=0, column=0)
+
+    initalItem41 = ctk.CTkComboBox(master=tabview.tab("Initial Items"), values=items4)
+    initalItem41.grid(row=0, column=1)
+
+    label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 2:  ", font=("Arial", 16))
+    label.grid(row=1, column=0)
+
+    initalItem42 = ctk.CTkComboBox(master=tabview.tab("Initial Items"), values=items4)
+    initalItem42.grid(row=1, column=1)
+
+    label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 3:  ", font=("Arial", 16))
+    label.grid(row=2, column=0)
+
+    initalItem43 = ctk.CTkComboBox(master=tabview.tab("Initial Items"), values=items4)
+    initalItem43.grid(row=2, column=1)
+
+    parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=lambda: initialItemsEvent_mp4(initalItem41, initalItem42, initalItem43, items4), text="Generate Codes")
+    parseButton.place(x=10, y=640)
+
+    spaces4 = ["None", "Invisible Space", "Blue Space", "Red Space", "Bowser Space", "Mushroom Space", "Battle Space", "Happening Space", "Chance Time Space", "Spring Space"]
+
+    label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" Replace  ", font=("Arial", 16))
+    label.grid(row=0, column=0)
+
+    spaceRep411 = ctk.CTkComboBox(master=tabview.tab("Space Replacement"), values=spaces4)
+    spaceRep411.grid(row=0, column=1)
+
+    label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" with ", font=("Arial", 16))
+    label.grid(row=0, column=2)
+
+    spaceRep421 = ctk.CTkComboBox(master=tabview.tab("Space Replacement"), values=spaces4)
+    spaceRep421.grid(row=0, column=3)
+
+    label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" (Slot A) ", font=("Arial", 16))
+    label.grid(row=0, column=4)
+
+    label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" Replace  ", font=("Arial", 16))
+    label.grid(row=1, column=0)
+
+    spaceRep412 = ctk.CTkComboBox(master=tabview.tab("Space Replacement"), values=spaces4)
+    spaceRep412.grid(row=1, column=1)
+
+    label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" with ", font=("Arial", 16))
+    label.grid(row=1, column=2)
+
+    spaceRep422 = ctk.CTkComboBox(master=tabview.tab("Space Replacement"), values=spaces4)
+    spaceRep422.grid(row=1, column=3)
+
+    label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" (Slot B) ", font=("Arial", 16))
+    label.grid(row=1, column=4)
+
+    parseButton = ctk.CTkButton(master=tabview.tab("Space Replacement"), command=lambda: spaceReplace4(spaceRep411, spaceRep412, spaceRep421, spaceRep422, spaces4), text="Generate Codes")
+    parseButton.place(x=10, y=640)
 
     return frame
