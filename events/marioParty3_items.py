@@ -178,7 +178,7 @@ def itemsEvent_mp3(mushroom3, skeletonKey3, poisonMushroom3, reverseMushroom3, g
         orbPriceMin = orbPriceMin[2:]
     elif len(orbPriceMin) == 3:
         orbPriceMin = "0" + orbPriceMin[2:]
-    code = getItems3(mushroom3, skeletonKey3, plunderChest3, duelingGlove3, warpBlock3, goldenMushroom3, magicLamp3, celluarShopper3, poisonMushroom3, reverseMushroom3, booBell3, booRepellant3, luckyLamp3, bowserPhone3, itemBag3, bowserPhone3, orbPriceMin)
+    code = getItems3(mushroom3, skeletonKey3, plunderChest3, duelingGlove3, warpBlock3, goldenMushroom3, magicLamp3, celluarShopper3, poisonMushroom3, reverseMushroom3, booBell3, booRepellant3, luckyLamp3, bowserPhone3, itemBag3, bowserPhone3, orbPriceMin).upper()
     code = code.strip()
     pyperclip.copy(code)
 

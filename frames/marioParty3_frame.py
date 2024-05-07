@@ -52,7 +52,7 @@ def create_mario_party_3_interface(frame):
     blue_entry, blue_checkbox = create_entry_and_checkbox(tabview.tab("Coins Mods"), 1, "assets/eventTags/blueSpace.png", " Gain  ", "Blue", "Double the coins on Last 5")
     red_entry, red_checkbox = create_entry_and_checkbox(tabview.tab("Coins Mods"), 2, "assets/eventTags/redSpace.png", " Lose  ", "Red", "Double the coins on Last 5")
     star_entry = create_entry(tabview.tab("Coins Mods"), 3, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star.")
-    koopaBank_entry = create_entry(tabview.tab("Coins Mods"), 4, "assets/eventTags/koopaBank3.png", " Lend  ", " Coins to Koopa Bank")
+    koopaBank_entry = create_entry(tabview.tab("Coins Mods"), 4, "assets/eventTags/koopaBank3.png", " Lend  ", " Coins to Koopa Bank,")
 
     # Create button to generate coins modification codes
     parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp3(blue_entry, blue_checkbox, red_entry, red_checkbox, star_entry, koopaBank_entry), text="Generate Codes")

@@ -9,6 +9,7 @@ from functions import *
 from frames.marioParty1_frame import *
 from frames.marioParty2_frame import *
 from frames.marioParty3_frame import *
+from frames.marioParty4_frame import *
 from frames.welcome_frame import *
 from version import *
 
@@ -114,7 +115,6 @@ class App(customtkinter.CTk):
         self.mp7_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         self.mp8_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         self.about_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
-        welcome_interface(self.welcome_frame)
 
     def select_frame_by_name(self, name):
         # set button color for selected button
@@ -128,7 +128,7 @@ class App(customtkinter.CTk):
         self.mp7_button.configure(fg_color=("gray75", "gray25") if name == "mp7Frame" else "transparent")
         self.mp8_button.configure(fg_color=("gray75", "gray25") if name == "mp8Frame" else "transparent")
         self.about_button.configure(fg_color=("gray75", "gray25") if name == "aboutFrame" else "transparent")
-
+        
         # show selected frame
         if name == "homeFrame":
             self.welcome_frame.grid(row=0, column=1, sticky="nsew")
@@ -152,6 +152,7 @@ class App(customtkinter.CTk):
             self.mp3_frame.grid_forget()
         if name == "mp4Frame":
             self.mp4_frame.grid(row=0, column=1, sticky="nsew")
+            create_mario_party_4_interface(self.mp4_frame)
         else:
             self.mp4_frame.grid_forget()
         if name == "mp5Frame":
