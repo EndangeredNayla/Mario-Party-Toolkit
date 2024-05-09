@@ -8,14 +8,14 @@
 def getRedSpaceCodeFour(amount, amountDec):
     return f'''
 MP4 - Red Spaces Take Away {amountDec} Coins
-C207FBC4 00000001
+C207FD5C 00000001
 3BC0{amount} 00000000
 '''
 
 def getBlueSpaceCodeFour(amount, amountDec):
     return f'''
 MP4 - Blue Spaces Give {amountDec} Coins
-C207FD5C 00000001
+C207FBC4 00000001
 3BC0{amount} 00000000
 '''
 

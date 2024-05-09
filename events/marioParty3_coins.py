@@ -11,6 +11,9 @@ from codes.marioParty3 import *
 import pyperclip
 
 def coinsEvent_mp3(blueAmount, blueTick, redAmount, redTick, starAmount, koopaBankAmount):
+    if not blueAmount.get() and not redAmount.get() and not starAmount.get() and not koopaBankAmount.get():
+        createDialog("Error", "error", "Please fill out atleast one box.", None)
+        return
     # Extract blue space information
     blueSpaceAmountBaseThree = blueAmount.get()
     blueSpaceAmountThree = hex(int(blueSpaceAmountBaseThree))[2:].zfill(4).upper() if blueSpaceAmountBaseThree else "DUMMY"

@@ -13,10 +13,7 @@ import pyperclip
 
 def itemsEvent_mp2(mushroom2, skeletonKey2, plunderChest2, duelingGlove2, warpBlock2, goldenMushroom2, magicLamp2):
     if not mushroom2.get() or not skeletonKey2.get() or not plunderChest2.get() or not duelingGlove2.get() or not warpBlock2.get() or not goldenMushroom2.get() or not magicLamp2.get():
-        if sys.platform == "darwin":
-            createDialog("Error", "error", "Please fill out all the boxes.", None)
-        else:
-            createDialog("Error", "error", "Please fill out all the boxes.", None)
+        createDialog("Error", "error", "Please fill out all the boxes.", None)
         return
 
     mushroom2 = mushroom2.get()

@@ -13,10 +13,7 @@ import pyperclip
 
 def itemsEvent_mp4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4):
     if not miniPrice4.get() or not miniWeight4.get() or not megaPrice4.get() or not megaWeight4.get() or not superMegaPrice4.get() or not superMegaWeight4.get() or not superMiniPrice4.get() or not superMiniWeight4.get() or not miniMegaHammerPrice4.get() or not miniMegaHammerWeight4.get() or not warpPipePrice4.get() or not warpPipeWeight4.get() or not swapCardPrice4.get() or not swapCardWeight4.get() or not sparkyStickerPrice4.get() or not sparkyStickerWeight4.get() or not bowserSuitPrice4.get() or not bowserSuitWeight4.get() or not gaddlightPrice4.get() or not gaddlightWeight4.get() or not chompCallPrice4.get() or not chompCallWeight4.get() or not crystalBallPrice4.get() or not crystalBallWeight4.get() or not magicLampPrice4.get() or not magicLampWeight4.get() or not itemBagPrice4.get()  or not itemBagWeight4.get():
-        if sys.platform == "darwin":
-            createDialog("Error", "error", "Please fill out all the boxes.", None)
-        else:
-            createDialog("Error", "error", "Please fill out all the boxes.", None)
+        createDialog("Error", "error", "Please fill out all the boxes.", None)
         return
     miniPrice4 = miniPrice4.get()
     miniWeight4 = miniWeight4.get()

@@ -11,6 +11,9 @@ from codes.marioParty1 import *
 import pyperclip
 
 def coinsEvent_mp1(blueAmount, blueTick, redAmount, redTick):
+    if not blueAmount.get() and not redAmount.get():
+        createDialog("Error", "error", "Please fill out atleast one box.", None)
+        return
     # Extract blue space information
     blueSpaceAmountBaseOne = blueAmount.get()
     blueSpaceAmountOne = hex(int(blueSpaceAmountBaseOne))[2:].zfill(4).upper() if blueSpaceAmountBaseOne else "DUMMY"

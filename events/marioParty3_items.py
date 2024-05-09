@@ -13,10 +13,7 @@ import pyperclip
 
 def itemsEvent_mp3(mushroom3, skeletonKey3, poisonMushroom3, reverseMushroom3, goldenMushroom3, magicLamp3, warpBlock3, celluarShopper3, bowserPhone3, duelingGlove3, luckyLamp3, bowserSuit3, plunderChest3, booBell3, booRepellant3, itemBag3):
     if not bowserPhone3.get() or not mushroom3.get() or not skeletonKey3.get() or not plunderChest3.get() or not duelingGlove3.get() or not warpBlock3.get() or not goldenMushroom3.get() or not magicLamp3.get() or not celluarShopper3.get() or not itemBag3.get() or not poisonMushroom3.get() or not reverseMushroom3.get() or not booBell3.get() or not booRepellant3.get() or not luckyLamp3.get():
-        if sys.platform == "darwin":
-            createDialog("Error", "error", "Please fill out all the boxes.", None)
-        else:
-            createDialog("Error", "error", "Please fill out all the boxes.", None)
+        createDialog("Error", "error", "Please fill out all the boxes.", None)
         return
 
     mushroom3 = mushroom3.get()

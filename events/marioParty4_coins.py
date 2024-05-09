@@ -11,6 +11,9 @@ from codes.marioParty4 import *
 import pyperclip
 
 def coinsEvent_mp4(blueAmount, redAmount, mgAmount, starAmount, megaAmount, booStarAmount, booCoinsAmount, lotteryAmount):
+    if not blueAmount.get() and not redAmount.get() and not starAmount.get() and not mgAmount.get() and not megaAmount.get() and not booStarAmount.get() and not booCoinsAmount.get()  and not lotteryAmount.get():
+        createDialog("Error", "error", "Please fill out atleast one box.", None)
+        return
     # Extract blue space information
     blueSpaceAmountBaseFour = blueAmount.get()
     blueSpaceAmountFour = hex(int(blueSpaceAmountBaseFour))[2:].zfill(4).upper() if blueSpaceAmountBaseFour else "DUMMY"
