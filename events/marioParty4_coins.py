@@ -41,17 +41,17 @@ def coinsEvent_mp4(blueAmount, redAmount, mgAmount, starAmount, megaAmount, booS
 
     # Extract mega squish information
     megaAmountBaseFour = megaAmount.get()
-    megaAmountNegativeBaseFour = -int(megaAmountBaseFour)   
-    megaAmountNegativeBaseFour = format(megaAmountNegativeBaseFour & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+    megaAmountNegativeBaseFour = -int(megaAmountBaseFour) if megaAmountBaseFour else "DUMMY"
+    megaAmountNegativeBaseFour = format(megaAmountNegativeBaseFour & 0xFFFFFFFFFFFFFFFF, 'X')[12:] if megaAmountBaseFour else "DUMMY"
 
-    marioPartyFourBlueSpace = getBlueSpaceCodeFour(blueSpaceAmountFour, blueSpaceAmountBaseFour)
-    marioPartyFourRedSpace = getRedSpaceCodeFour(redSpaceAmountFour, blueSpaceAmountBaseFour)
-    marioPartyFourStarSpace = getStarSpaceCodeFour(starSpaceAmountFour, starSpaceAmountBaseFour)
-    marioPartyFourLotterySpace = getLotterySpaceCodeFour(lotterySpaceAmountFour, lotterySpaceAmountBaseFour)
-    marioPartyFourMGSpace = getMinigameCodeFour(mgSpaceAmountFour, mgSpaceAmountBaseFour)
-    marioPartyFourBooStar = getBooSpaceStarFour(booStarSpaceAmountFour, booStarSpaceAmountBaseFour)
-    marioPartyFourBooCoins = getBooSpaceCoinsFour(booCoinsSpaceAmountFour, booCoinsSpaceAmountBaseFour)
-    marioPartyFourSquish = getSquishCodeFour(megaAmountNegativeBaseFour, megaAmountBaseFour)
+    marioPartyFourBlueSpace = getBlueSpaceCodeFour(blueSpaceAmountFour, blueSpaceAmountBaseFour) if blueSpaceAmountFour != "DUMMY" else ""
+    marioPartyFourRedSpace = getRedSpaceCodeFour(redSpaceAmountFour, blueSpaceAmountBaseFour) if redSpaceAmountFour != "DUMMY" else ""
+    marioPartyFourStarSpace = getStarSpaceCodeFour(starSpaceAmountFour, starSpaceAmountBaseFour) if starSpaceAmountFour != "DUMMY" else ""
+    marioPartyFourLotterySpace = getLotterySpaceCodeFour(lotterySpaceAmountFour, lotterySpaceAmountBaseFour) if lotterySpaceAmountFour != "DUMMY" else ""
+    marioPartyFourMGSpace = getMinigameCodeFour(mgSpaceAmountFour, mgSpaceAmountBaseFour) if mgSpaceAmountFour != "DUMMY" else ""
+    marioPartyFourBooStar = getBooSpaceStarFour(booStarSpaceAmountFour, booStarSpaceAmountBaseFour) if booStarSpaceAmountFour != "DUMMY" else ""
+    marioPartyFourBooCoins = getBooSpaceCoinsFour(booCoinsSpaceAmountFour, booCoinsSpaceAmountBaseFour) if booCoinsSpaceAmountFour != "DUMMY" else ""
+    marioPartyFourSquish = getSquishCodeFour(megaAmountNegativeBaseFour, megaAmountBaseFour) if megaAmountNegativeBaseFour != "DUMMY" else ""
 
     # Replace placeholder in generated codes
     generatedCode = (marioPartyFourBlueSpace + marioPartyFourRedSpace + marioPartyFourMGSpace + marioPartyFourStarSpace + marioPartyFourSquish + marioPartyFourBooStar + marioPartyFourBooCoins + marioPartyFourLotterySpace).strip()

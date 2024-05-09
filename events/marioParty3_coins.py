@@ -24,14 +24,14 @@ def coinsEvent_mp3(blueAmount, blueTick, redAmount, redTick, starAmount, koopaBa
     # Extract star space information
     starSpaceAmountBaseThree = starAmount.get()
     starSpaceAmountThree = hex(int(starSpaceAmountBaseThree))[2:].zfill(4).upper() if starSpaceAmountBaseThree else "DUMMY"
-    negativeStarSpaceAmountBaseThree = -int(starSpaceAmountBaseThree)   
-    starSpaceAmountNegativeThree = format(negativeStarSpaceAmountBaseThree & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+    negativeStarSpaceAmountBaseThree = -int(starSpaceAmountBaseThree) if starSpaceAmountBaseThree else "DUMMY" 
+    starSpaceAmountNegativeThree = format(negativeStarSpaceAmountBaseThree & 0xFFFFFFFFFFFFFFFF, 'X')[12:] if starSpaceAmountBaseThree else "DUMMY"
 
     # Extract koopa bank information
     koopaBankAmountBaseThree = koopaBankAmount.get()
     koopaBankAmountThree = hex(int(koopaBankAmountBaseThree))[2:].zfill(4).upper() if koopaBankAmountBaseThree else "DUMMY"
-    kbAmountNegativeBaseThree = -int(koopaBankAmountBaseThree)   
-    kbAmountNegativeBaseThree = format(kbAmountNegativeBaseThree & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
+    kbAmountNegativeBaseThree = -int(koopaBankAmountBaseThree) if starSpaceAmountBaseThree else "DUMMY"
+    kbAmountNegativeBaseThree = format(kbAmountNegativeBaseThree & 0xFFFFFFFFFFFFFFFF, 'X')[12:] if starSpaceAmountBaseThree else "DUMMY"
 
 
     # Generate codes for blue and red spaces
@@ -45,8 +45,8 @@ def coinsEvent_mp3(blueAmount, blueTick, redAmount, redTick, starAmount, koopaBa
     elif redSpaceSwitchThree == "1":
         marioPartyThreeRedSpace = getRedSpaceCodeThree(redSpaceAmountThree, redSpaceSwitchThree, redSpaceAmountBaseThree, "Doubles on Last 5") if redSpaceAmountThree != "DUMMY" else ""
 
-    marioPartyThreeStarSpace = getStarSpaceCodeThree(starSpaceAmountThree, starSpaceAmountNegativeThree, starSpaceAmountBaseThree)
-    marioPartyThreeKoopaBank = getKoopaBankCodeThree(koopaBankAmountThree, kbAmountNegativeBaseThree, koopaBankAmountBaseThree)
+    marioPartyThreeStarSpace = getStarSpaceCodeThree(starSpaceAmountThree, starSpaceAmountNegativeThree, starSpaceAmountBaseThree) if starSpaceAmountThree != "DUMMY" else ""
+    marioPartyThreeKoopaBank = getKoopaBankCodeThree(koopaBankAmountThree, kbAmountNegativeBaseThree, koopaBankAmountBaseThree) if koopaBankAmountThree != "DUMMY" else ""
 
     # Replace placeholder in generated codes
     generatedCode = (marioPartyThreeBlueSpace + marioPartyThreeRedSpace + marioPartyThreeStarSpace + marioPartyThreeKoopaBank).strip()

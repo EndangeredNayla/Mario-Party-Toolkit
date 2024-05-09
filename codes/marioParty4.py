@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 3/10/2024
+# Date: 5/9/2024
 # License: MIT
 # ============================================
 
@@ -15,7 +15,7 @@ C207FBC4 00000001
 def getBlueSpaceCodeFour(amount, amountDec):
     return f'''
 MP4 - Blue Spaces Give {amountDec} Coins
-C207FBC4 00000001
+C207FD5C 00000001
 3BC0{amount} 00000000
 '''
 
