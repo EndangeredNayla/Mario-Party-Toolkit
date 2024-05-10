@@ -32,7 +32,6 @@ from codes.marioparty4 import *
 from codes.marioparty5 import *
 from codes.marioparty6 import *
 from codes.marioparty7 import *
-from codes.marioparty8_rev1 import *
 from codes.marioparty8_rev2 import *
 
 if sys.platform == "win32":
@@ -110,9 +109,6 @@ class App(customtkinter.CTk):
 
         self.mario_party_7_button = customtkinter.CTkButton(self.sidebar_frame, text="Mario Party 7", command=self.mp7ButtonEvent, fg_color=sysColor, hover_color=sysColorAlt)
         self.mario_party_7_button.grid(row=7, column=0, padx=20, pady=10)
-
-        self.mario_party_8_button = customtkinter.CTkButton(self.sidebar_frame, text="Mario Party 8 (Rev. 1)", command=self.mp8ButtonEvent, fg_color=sysColor, hover_color=sysColorAlt)
-        self.mario_party_8_button.grid(row=8, column=0, padx=20, pady=10)
 
         self.mario_party_82_button = customtkinter.CTkButton(self.sidebar_frame, text="Mario Party 8 (Rev. 2)", command=self.mp82ButtonEvent, fg_color=sysColor, hover_color=sysColorAlt)
         self.mario_party_82_button.grid(row=9, column=0, padx=20, pady=10)
@@ -3084,6 +3080,15 @@ class App(customtkinter.CTk):
         starSpaceLabelHover = CTkToolTip(self.starSpaceAmountEight2, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
         starSpaceLabelHover = CTkToolTip(starSpaceLabel6, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
 
+        # Create bitsize candy icon and entry
+        bitsizeSpaceIconEight2 = create_image_icon(tabview.tab("Coins Mods"), "assets/bitsizeCandy.png", 5, 1)
+        bitsizeSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Give  ", font=("Arial", 16))
+        bitsizeSpaceLabel.grid(row=5, column=2)
+        self.bitsizeAmountEight2 = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
+        self.bitsizeAmountEight2.grid(row=5, column=3)
+        bitsizeSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins per Space with Bitsize Candy.", font=("Arial", 16))
+        bitsizeSpaceLabel6.grid(row=5, column=4, sticky="w")
+
         self.minigame8 = ["Speedy Graffiti", "Swing Kings", "Water Ski Spree", "Punch-a-Bunch", "Crank to Rank", "At the Chomp Wash", "Mosh-Pit Playroom", "Mario Matrix", "Hammer de Pokari", "Grabby Giridion", "Lava or Leave 'Em", "Kartastrophe", "Ribbon Game", "Aim of the Game", "Rudder Madness", "Gun the Runner", "Grabbin' Gold", "Power Trip", "Bob-ombs Away", "Swervin' Skies", "Picture Perfect", "Snow Way Out", "Thrash 'n' Crash", "Chump Rope", "Sick and Twisted", "Bumper Balloons", "Rowed to Victory", "Winner or Dinner", "Paint Misbehavin'", "Sugar Rush", "King of the Thrill", "Shake It Up", "Lean, Mean Ravine", "Boo-ting Gallery", "Crops 'n' Robbers", "In the Nick of Time", "Cut from the Team", "Snipe for the Picking", "Saucer Swarm", "Glacial Meltdown", "Attention Grabber", "Blazing Lassos", "Wing and a Scare", "Lob to Rob", "Pumper Cars", "Cosmic Slalom", "Lava Lobbers", "Loco Motives", "Specter Inspector", "Frozen Assets", "Breakneck Building", "Surf's Way Up", "Bull Riding", "Balancing Act", "Ion the Prize", "You're the Bob-omb", "Scooter Pursuit", "Cardiators", "Rotation Station", "Eyebrawl", "Table Menace", "Flagging Rights", "Trial by Tile", "Star Carnival Bowling", "Puzzle Pillars", "Canyon Cruisers", "Settle It in Court", "Moped Mayhem", "Flip the Chimp", "Pour to Score", "Fruit Picker", "Stampede", "Superstar Showdown", "Alpine Assault", "Treacherous Tightrope"]
                 
         label = ctk.CTkLabel(master=tabview.tab("Minigame Replacement"), text=" Replace  ", font=("Arial", 16))
@@ -3105,46 +3110,6 @@ class App(customtkinter.CTk):
         parseButtonEight2.place(x=10, y=640)
         return frame
         
-    def create_mp8_frame(self):
-        frame = customtkinter.CTkFrame(self, fg_color=("#fcfcfc", "#2e2e2e"))
-        tabview = customtkinter.CTkTabview(frame, width=2000, height=750, fg_color=("#fcfcfc", "#323232"))
-        tabview.pack(padx=20, pady=20)
-        tabview.add("Coins Mods")
-        tabview.set("Coins Mods")
-
-        # Create blue space icon and entry
-        blueSpaceIconEight = create_image_icon(tabview.tab("Coins Mods"), "assets/blueSpace.png", 1, 1)
-        label = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Give  ", font=("Arial", 16))
-        label.grid(row=1, column=2)
-        self.blueSpaceAmountEight = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.blueSpaceAmountEight.grid(row=1, column=3)
-        label8 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins on a Blue Space.", font=("Arial", 16))
-        label8.grid(row=1, column=4, sticky="w")
-
-        # Create red space icon and entry
-        redSpaceIconEight = create_image_icon(tabview.tab("Coins Mods"), "assets/redSpace.png", 2, 1)
-        redSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Lose  ", font=("Arial", 16))
-        redSpaceLabel.grid(row=2, column=2)
-        self.redSpaceAmountEight = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.redSpaceAmountEight.grid(row=2, column=3)
-        redSpaceLabel8 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins on a Red Space.", font=("Arial", 16))
-        redSpaceLabel8.grid(row=2, column=4, sticky="w")
-
-        # Create star space icon and entry
-        starSpaceIconEight= create_image_icon(tabview.tab("Coins Mods"), "assets/starSpace.png", 3, 1)
-        starSpaceLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Cost  ", font=("Arial", 16))
-        starSpaceLabel.grid(row=3, column=2)
-        self.starSpaceAmountEight = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-        self.starSpaceAmountEight.grid(row=3, column=3)
-        starSpaceLabel6 = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins when purchasing a Star.", font=("Arial", 16))
-        starSpaceLabel6.grid(row=3, column=4, sticky="w")
-        starSpaceLabelHover = CTkToolTip(starSpaceLabel, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
-        starSpaceLabelHover = CTkToolTip(starSpaceLabel6, message="Works on DK's Treetop Temple, King Boo's Haunted Hideaway, and Shy Guy's Perplex Express.")
-
-        parseButtonEight = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=self.actionSpaceButtonEight, text="Generate Codes", fg_color=sysColor, hover_color=sysColorAlt)
-        parseButtonEight.place(x=10, y=640)
-        return frame
-
     def injectCodesFunc(self):
         if not self.cheatCodeEntry.get("1.0", "end"):
             createDialog("Error", "error", "No information provided.", None)
@@ -4502,73 +4467,8 @@ class App(customtkinter.CTk):
         print("Generated codes copied to the clipboard.")
         createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
-    def actionSpaceButtonEight(self):
-        if not self.blueSpaceAmountEight.get() and not self.redSpaceAmountEight.get() and not self.starSpaceAmountEight.get():
-            createDialog("Error", "error", "No information provided.", None)
-            return
-
-        blueSpaceAmountBaseEight = self.blueSpaceAmountEight.get()
-        try:
-            blueSpaceAmountEight = hex(int(self.blueSpaceAmountEight.get()))
-            if len(blueSpaceAmountEight) == 5:
-                blueSpaceAmountEight = "0" + blueSpaceAmountEight[2:]
-            elif len(blueSpaceAmountEight) == 4:
-                blueSpaceAmountEight = "00" + blueSpaceAmountEight[2:]
-            elif len(blueSpaceAmountEight) == 3:
-                blueSpaceAmountEight = "000" + blueSpaceAmountEight[2:]
-        except:
-            blueSpaceAmountEight = "DUMMY"
-
-        redSpaceAmountBaseEight = self.redSpaceAmountEight.get()
-        try:
-            redSpaceAmountEight = int(redSpaceAmountBaseEight, 16)
-            negativeRedSpaceAmountBaseEight = -int(redSpaceAmountBaseEight)
-            redSpaceAmountEight = format(negativeRedSpaceAmountBaseEight & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
-        except:
-            redSpaceAmountEight = "DUMMY"
-
-        starSpaceAmountEightBase = self.starSpaceAmountEight.get()
-
-        try:
-            starSpaceAmountEight = hex(int(self.starSpaceAmountEight.get()))
-            if len(starSpaceAmountEight) == 5:
-                starSpaceAmountEight = "0" + starSpaceAmountEight[2:]
-            if len(starSpaceAmountEight) == 4:
-                starSpaceAmountEight = "00" + starSpaceAmountEight[2:]
-            elif len(starSpaceAmountEight) == 3:
-                starSpaceAmountEight = "000" + starSpaceAmountEight[2:]
-
-            negativeRedSpaceAmountBaseEight = -int(starSpaceAmountEightBase)
-            starSpaceAmountNegativeEight = format(negativeRedSpaceAmountBaseEight & 0xFFFFFFFFFFFFFFFF, 'X')[12:]
-
-        except:
-            starSpaceAmountEight = "DUMMY"
-            starSpaceAmountNegativeEight = "DUMMY"
-
-        marioPartyEightStarSpace = getStarSpaceCodeEight(starSpaceAmountEight, starSpaceAmountNegativeEight)
-        marioPartyEightBlueSpace = getBlueSpaceCodeEight(blueSpaceAmountEight)
-        marioPartyEightRedSpace = getRedSpaceCodeEight(redSpaceAmountEight)
-
-        if redSpaceAmountEight == "DUMMY":
-            marioPartyEightRedSpace = ""
-        if blueSpaceAmountEight == "DUMMY":
-            marioPartyEightBlueSpace = ""
-        if starSpaceAmountEight == "DUMMY":
-            marioPartyFiveStarSpace = ""
-        if starSpaceAmountNegativeEight == "DUMMY":
-            marioPartyEightStarSpace = ""
-
-        generatedCode = marioPartyEightBlueSpace + marioPartyEightRedSpace + marioPartyEightStarSpace
-        generatedCode = generatedCode.replace("EIGHTRED", redSpaceAmountBaseEight)
-        generatedCode = generatedCode.replace("EIGHTBLUE", blueSpaceAmountBaseEight)
-        generatedCode = generatedCode.replace("EIGHTSTAR", starSpaceAmountEightBase)
-        generatedCode = generatedCode.strip()
-        pyperclip.copy(generatedCode)
-        print("Generated codes copied to the clipboard.")
-        createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
-
     def actionSpaceButtonEight2(self):
-        if not self.miniGameAmountEight2.get() and not self.blueSpaceAmountEight2.get() and not self.redSpaceAmountEight2.get() and not self.starSpaceAmountEight2.get():
+        if not self.miniGameAmountEight2.get() and not self.blueSpaceAmountEight2.get() and not self.redSpaceAmountEight2.get() and not self.starSpaceAmountEight2.get() and not self.bitsizeAmountEight2.get():
             createDialog("Error", "error", "No information provided.", None)
             return
         blueSpaceAmountBaseEight2 = self.blueSpaceAmountEight2.get()
@@ -4619,10 +4519,23 @@ class App(customtkinter.CTk):
         except:
             miniGameAmountEight2 = "DUMMY"
 
+        bitsizeAmountBaseEight2 = self.bitsizeAmountEight2.get()
+        try:
+            bitsizeAmountEight2 = hex(int(self.bitsizeAmountEight2.get()))
+            if len(bitsizeAmountEight2) == 5:
+                bitsizeAmountEight2 = "0" + bitsizeAmountEight2[2:]
+            elif len(bitsizeAmountEight2) == 4:
+                bitsizeAmountEight2 = "00" + bitsizeAmountEight2[2:]
+            elif len(bitsizeAmountEight2) == 3:
+                bitsizeAmountEight2 = "000" + bitsizeAmountEight2[2:]
+        except:
+            bitsizeAmountEight2 = "DUMMY"
+
         marioPartyEight2StarSpace = getStarSpaceCodeEightGC(starSpaceAmountEight2, starSpaceAmountNegativeEight2)
         marioPartyEight2BlueSpace = getBlueSpaceCodeEightGC(blueSpaceAmountEight2)
         marioPartyEight2RedSpace = getRedSpaceCodeEightGC(redSpaceAmountEight2)
         marioPartyEight2MiniGame = getMinigameCodeEight2(miniGameAmountEight2)
+        marioPartyEightBitsizeCandy = getBitsizeCode8(bitsizeAmountEight2)
 
         if redSpaceAmountEight2 == "DUMMY":
             marioPartyEight2RedSpace = ""
@@ -4634,12 +4547,15 @@ class App(customtkinter.CTk):
             marioPartyEight2StarSpace = ""
         if miniGameAmountEight2 == "DUMMY":
             marioPartyEight2MiniGame = ""
+        if bitsizeAmountEight2 == "DUMMY":
+            marioPartyEightBitsizeCandy = ""
 
-        generatedCode = marioPartyEight2BlueSpace + marioPartyEight2RedSpace + marioPartyEight2MiniGame + marioPartyEight2StarSpace
+        generatedCode = marioPartyEight2BlueSpace + marioPartyEight2RedSpace + marioPartyEight2MiniGame + marioPartyEight2StarSpace + marioPartyEightBitsizeCandy
         generatedCode = generatedCode.replace("EIGHTREDGC", redSpaceAmountBaseEight2)
         generatedCode = generatedCode.replace("EIGHTBLUEGC", blueSpaceAmountBaseEight2)
         generatedCode = generatedCode.replace("EIGHTMINIGAMEGC", miniGameAmountBaseEight2)
         generatedCode = generatedCode.replace("EIGHTSTARGC", starSpaceAmountEight2Base)
+        generatedCode = generatedCode.replace("BITSIZECANDYAMOUNT", bitsizeAmountBaseEight2)
         generatedCode = generatedCode.strip()
         pyperclip.copy(generatedCode)
 
@@ -8196,7 +8112,6 @@ class App(customtkinter.CTk):
         self.mario_party_5_button.configure(state="enabled")
         self.mario_party_6_button.configure(state="enabled")
         self.mario_party_7_button.configure(state="enabled")
-        self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="enabled")
         self.codeInjector_button.configure(state="enabled")
         self.credits_button.configure(state="enabled")
@@ -8211,7 +8126,6 @@ class App(customtkinter.CTk):
         self.mario_party_5_button.configure(state="enabled")
         self.mario_party_6_button.configure(state="enabled")
         self.mario_party_7_button.configure(state="enabled")
-        self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="enabled")
         self.codeInjector_button.configure(state="enabled")
         self.credits_button.configure(state="enabled")
@@ -8226,7 +8140,6 @@ class App(customtkinter.CTk):
         self.mario_party_5_button.configure(state="enabled")
         self.mario_party_6_button.configure(state="enabled")
         self.mario_party_7_button.configure(state="enabled")
-        self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="enabled")
         self.codeInjector_button.configure(state="enabled")
         self.reset_game_frames()
@@ -8240,7 +8153,6 @@ class App(customtkinter.CTk):
         self.mario_party_5_button.configure(state="enabled")
         self.mario_party_6_button.configure(state="enabled")
         self.mario_party_7_button.configure(state="enabled")
-        self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="enabled")
         self.codeInjector_button.configure(state="enabled")
         self.credits_button.configure(state="enabled")
@@ -8255,7 +8167,6 @@ class App(customtkinter.CTk):
         self.mario_party_5_button.configure(state="disabled")
         self.mario_party_6_button.configure(state="enabled")
         self.mario_party_7_button.configure(state="enabled")
-        self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="enabled")
         self.codeInjector_button.configure(state="enabled")
         self.credits_button.configure(state="enabled")
@@ -8270,7 +8181,6 @@ class App(customtkinter.CTk):
         self.mario_party_5_button.configure(state="enabled")
         self.mario_party_6_button.configure(state="disabled")
         self.mario_party_7_button.configure(state="enabled")
-        self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="enabled")
         self.codeInjector_button.configure(state="enabled")
         self.credits_button.configure(state="enabled")
@@ -8285,27 +8195,11 @@ class App(customtkinter.CTk):
         self.mario_party_5_button.configure(state="enabled")
         self.mario_party_6_button.configure(state="enabled")
         self.mario_party_7_button.configure(state="disabled")
-        self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="enabled")
         self.codeInjector_button.configure(state="enabled")
         self.credits_button.configure(state="enabled")
         self.reset_game_frames()
         self.create_game_frame("Mario Party 7")
-
-    def mp8ButtonEvent(self):
-        self.mario_party_1_button.configure(state="enabled")
-        self.mario_party_2_button.configure(state="enabled")
-        self.mario_party_3_button.configure(state="enabled")
-        self.mario_party_4_button.configure(state="enabled")
-        self.mario_party_5_button.configure(state="enabled")
-        self.mario_party_6_button.configure(state="enabled")
-        self.mario_party_7_button.configure(state="enabled")
-        self.mario_party_8_button.configure(state="disabled")
-        self.mario_party_82_button.configure(state="enabled")
-        self.codeInjector_button.configure(state="enabled")
-        self.credits_button.configure(state="enabled")
-        self.reset_game_frames()
-        self.create_game_frame("Mario Party 8 (Rev. 1)")
 
     def mp82ButtonEvent(self):
         self.mario_party_1_button.configure(state="enabled")
@@ -8315,7 +8209,6 @@ class App(customtkinter.CTk):
         self.mario_party_5_button.configure(state="enabled")
         self.mario_party_6_button.configure(state="enabled")
         self.mario_party_7_button.configure(state="enabled")
-        self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="disabled")
         self.codeInjector_button.configure(state="enabled")
         self.credits_button.configure(state="enabled")
@@ -8330,7 +8223,6 @@ class App(customtkinter.CTk):
         self.mario_party_5_button.configure(state="enabled")
         self.mario_party_6_button.configure(state="enabled")
         self.mario_party_7_button.configure(state="enabled")
-        self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="enabled")
         self.codeInjector_button.configure(state="enabled")
         self.credits_button.configure(state="disabled")
@@ -8345,7 +8237,6 @@ class App(customtkinter.CTk):
         self.mario_party_5_button.configure(state="enabled")
         self.mario_party_6_button.configure(state="enabled")
         self.mario_party_7_button.configure(state="enabled")
-        self.mario_party_8_button.configure(state="enabled")
         self.mario_party_82_button.configure(state="enabled")
         self.codeInjector_button.configure(state="disabled")
         self.credits_button.configure(state="enabled")
