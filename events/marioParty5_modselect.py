@@ -13,13 +13,10 @@ import pyperclip
 
 def modSelect_mp5(checkboxDisableAdv, checkboxBoot, checkboxBSpeed, checkboxCSpeed, checkboxTaunt, checkboxTxtDisplay, checkboxShowCtrl, checkboxUnlockAll, checkboxBowserNoStealCoins, checkbox60RocketShip, checkboxFreeTaxi, checkboxFreeThwmopWhomp, checkboxFreeBridge, checkboxDisableHappening, checkboxAdvTxt, checkboxAllDK, checkboxBattleNoStar, checkboxCapsulesAny, checkboxDoubleTurns, checkboxCapsulesFinal, checkboxsameSpaceAlways, checkboxsameSpaceNever, checkbox20Sec, checkboxNoBrick, checkbox1Slow, checkboxNoSlow, checkboxFlowers3, checkboxNoRocks, checkboxLeafDisplay, checkboxHalvedTime, checkboxDisableLast5, checkboxForceLast5, comboboxLast5Event):
     if checkboxDisableAdv.get() == 0 and checkboxBoot.get() == 0 and checkboxBSpeed.get() == 0 and checkboxCSpeed.get() == 0 and checkboxTaunt.get() == 0 and checkboxTxtDisplay.get() == 0 and checkboxShowCtrl.get() == 0 and checkboxUnlockAll.get() == 0 and checkboxBowserNoStealCoins.get() == 0 and checkbox60RocketShip.get() == 0 and checkboxFreeTaxi.get() == 0 and checkboxFreeThwmopWhomp.get() == 0 and checkboxFreeBridge.get() == 0 and checkboxDisableHappening.get() == 0 and checkboxAdvTxt.get() == 0 and checkboxAllDK.get() == 0 and checkboxBattleNoStar.get() == 0 and checkboxCapsulesAny.get() == 0 and checkboxDoubleTurns.get() == 0 and checkboxCapsulesFinal.get() == 0 and checkboxsameSpaceAlways.get() == 0 and checkboxsameSpaceNever.get() == 0  and checkbox20Sec.get() == 0 and checkboxNoBrick.get() == 0 and checkbox1Slow.get() == 0 and checkboxNoSlow.get() == 0 and checkboxFlowers3.get() == 0 and checkboxNoRocks.get() == 0 and checkboxLeafDisplay.get() == 0 and checkboxHalvedTime.get() == 0 and checkboxDisableLast5.get() == 0 and checkboxForceLast5.get() == 0 and comboboxLast5Event.get() == "Random":
-        if sys.platform == "darwin":
-            createDialog("Error", "error", "Please check at least 1 box.", None)
-        else:
-            createDialog("Error", "error", "Please check at least 1 box.", None)
+        createDialog("Error", "error", "Please check at least 1 box.", None)
         return
     
-    generatedCode = ''''''
+    generatedCode = '''MP5 - Mods'''
     
     ticked = checkboxDisableAdv.get()
     

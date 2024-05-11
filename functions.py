@@ -80,7 +80,7 @@ def find_lowest_integer(*args):
         return None  # If no non-zero integers were found, return None
     return lowest
 
-def find_lowest_integer_with_zero(*args):
+def findLowestIntegerWithZero(*args):
     if not args:
         return None  # Return None if no arguments are provided
     lowest = float('inf')  # Initialize lowest with positive infinity

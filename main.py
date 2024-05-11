@@ -10,6 +10,7 @@ from frames.marioParty1_frame import *
 from frames.marioParty2_frame import *
 from frames.marioParty3_frame import *
 from frames.marioParty4_frame import *
+from frames.marioParty5_frame import *
 from frames.welcome_frame import *
 from version import *
 
@@ -32,7 +33,7 @@ class App(customtkinter.CTk):
 
         # load images with light and dark mode image
         image_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "assets/logos/")
-        self.home_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "homeDark.png")), dark_image=Image.open(os.path.join(image_path, "homeLight.png")), size=(32, 32))
+        self.home_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "mpToolkit_logo.png")), size=(172, 70))
         self.about_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "infoDark.png")), dark_image=Image.open(os.path.join(image_path, "infoLight.png")), size=(32, 32))
         self.mp1_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "marioParty1.png")), size=(172, 42))
         self.mp2_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "marioParty2.png")), size=(178, 42))
@@ -48,12 +49,10 @@ class App(customtkinter.CTk):
         self.navigation_frame.grid(row=0, column=0, sticky="nsew")
         self.navigation_frame.grid_rowconfigure(11, weight=1)
 
-        self.logo_label = create_banner(self.navigation_frame, "assets/logos/mpToolkit_logo.png", 0, 0)
-
-        self.home_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10, text="Home",
-                                                   fg_color="transparent", text_color=("gray10", "gray90"), hover_color=("gray70", "gray30"),
-                                                   image=self.home_image, command=self.home_button_event, font=("Helvetica", 18, "bold"))
-        self.home_button.grid(row=1, column=0, sticky="ew")
+        self.home_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10, text=None,
+                                                   fg_color="transparent", hover_color=("gray70", "gray30"),
+                                                   image=self.home_image, anchor="w", command=self.home_button_event)
+        self.home_button.grid(row=0, column=0, sticky="ew")
 
         self.mp1_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10, text=None,
                                                    fg_color="transparent", hover_color=("gray70", "gray30"),
@@ -103,7 +102,6 @@ class App(customtkinter.CTk):
         self.versionPanel = ctk.CTkLabel(self.navigation_frame, text=versionString, font=("Helvetica", 16, "bold"))
         self.versionPanel.grid(row=11, column=0, sticky="ew")
 
-
         # create frames
         self.welcome_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         self.mp1_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
@@ -115,6 +113,10 @@ class App(customtkinter.CTk):
         self.mp7_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         self.mp8_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         self.about_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
+
+        self.welcome_frame.grid(row=0, column=1, sticky="nsew")
+        welcome_interface(self.welcome_frame)
+        self.home_button.configure(fg_color=("gray75", "gray25"))
 
     def select_frame_by_name(self, name):
         # set button color for selected button
@@ -157,6 +159,7 @@ class App(customtkinter.CTk):
             self.mp4_frame.grid_forget()
         if name == "mp5Frame":
             self.mp5_frame.grid(row=0, column=1, sticky="nsew")
+            create_mario_party_5_interface(self.mp5_frame)
         else:
             self.mp5_frame.grid_forget()
         if name == "mp6Frame":
