@@ -16,6 +16,7 @@ from version import *
 
 import customtkinter
 import os
+import sys
 from PIL import Image
 import tkinter as tk
 
@@ -32,7 +33,13 @@ class App(customtkinter.CTk):
         self.grid_columnconfigure(1, weight=1)
 
         # load images with light and dark mode image
-        image_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "assets/logos/")
+        if getattr(sys, 'frozen', False):
+            # If the application is frozen (i.e., compiled with PyInstaller)
+            # Use `sys._MEIPASS` to get the base directory
+            image_path = os.path.join(sys._MEIPASS, "assets/logos/")
+        else:
+            # If running as a script or in an environment without PyInstaller
+            image_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "assets/logos/")
         self.home_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "mpToolkit_logo.png")), size=(172, 70))
         self.about_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "infoDark.png")), dark_image=Image.open(os.path.join(image_path, "infoLight.png")), size=(32, 32))
         self.mp1_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "marioParty1.png")), size=(172, 42))
