@@ -25,7 +25,7 @@ def create_mario_party_6_interface(frame):
     tabview.add("Minigame Replacement")
     tabview.add("Orb Mods")
     tabview.add("Space Replacement")
-    tabview.add("Initial Items")
+    tabview.add("Initial Orbs")
     tabview.set("Coins Mods")
 
     # Function to create an entry field and checkbox
@@ -495,25 +495,25 @@ def create_mario_party_6_interface(frame):
 
     items6 = ["None", "Mushroom", "Golden Mushroom", "Sluggish 'Shroom", "Metal Mushroom", "Bullet Bill", "Warp Pipe", "Flutter", "Cursed Mushroom", "Spiny", "Goomba", "Piranha Plant", "Klepto", "Toady", "Kamek", "Mr. Blizzard", "Podoboo", "Zap", "Tweester", "Thwomp", "Bob-omb", "Paratroopa", "Snack", "Boo-away", "Duel", "Miracle", "Bowser", "Donkey Kong", "Pink Boo"]
     
-    label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 1:  ", font=("Arial", 16))
+    label = ctk.CTkLabel(master=tabview.tab("Initial Orbs"), text=" Item 1:  ", font=("Arial", 16))
     label.grid(row=0, column=0)
 
-    initalItem41 = ctk.CTkComboBox(master=tabview.tab("Initial Items"), values=items6)
+    initalItem41 = ctk.CTkComboBox(master=tabview.tab("Initial Orbs"), values=items6)
     initalItem41.grid(row=0, column=1)
 
-    label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 2:  ", font=("Arial", 16))
+    label = ctk.CTkLabel(master=tabview.tab("Initial Orbs"), text=" Item 2:  ", font=("Arial", 16))
     label.grid(row=1, column=0)
 
-    initalItem42 = ctk.CTkComboBox(master=tabview.tab("Initial Items"), values=items6)
+    initalItem42 = ctk.CTkComboBox(master=tabview.tab("Initial Orbs"), values=items6)
     initalItem42.grid(row=1, column=1)
 
-    label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 3:  ", font=("Arial", 16))
+    label = ctk.CTkLabel(master=tabview.tab("Initial Orbs"), text=" Item 3:  ", font=("Arial", 16))
     label.grid(row=2, column=0)
 
-    initalItem43 = ctk.CTkComboBox(master=tabview.tab("Initial Items"), values=items6)
+    initalItem43 = ctk.CTkComboBox(master=tabview.tab("Initial Orbs"), values=items6)
     initalItem43.grid(row=2, column=1)
 
-    parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=lambda: initialItemsEvent_mp6(initalItem41, initalItem42, initalItem43, items6), text="Generate Codes")
+    parseButton = ctk.CTkButton(master=tabview.tab("Initial Orbs"), command=lambda: initialItemsEvent_mp6(initalItem41, initalItem42, initalItem43, items6), text="Generate Codes")
     parseButton.place(x=10, y=640)
 
     return frame

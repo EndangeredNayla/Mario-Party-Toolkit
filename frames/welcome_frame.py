@@ -7,8 +7,6 @@
 
 # Import necessary functions and modules
 from functions import *
-from events.marioParty1_coins import *
-from events.marioParty1_mgreplace import *
 from version import *
 
 # Import custom tkinter module as ctk
