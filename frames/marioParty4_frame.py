@@ -8,6 +8,7 @@
 # Import necessary functions and modules
 from functions import *
 from events.marioParty4_coins import *
+from events.marioParty4_lotteryPrize import *
 from events.marioParty4_mgreplace import *
 from events.marioParty4_modselect import *
 from events.marioParty4_items import *
@@ -27,6 +28,7 @@ def create_mario_party_4_interface(frame):
     tabview.add("Item Mods")
     tabview.add("Initial Items")
     tabview.add("Space Replacement")
+    tabview.add("Lottery Rewards")
     tabview.set("Mod Selection")
 
     # Function to create an entry field and checkbox
@@ -283,6 +285,33 @@ def create_mario_party_4_interface(frame):
     initalItem43.grid(row=2, column=1)
 
     parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=lambda: initialItemsEvent_mp4(initalItem41, initalItem42, initalItem43, items4), text="Generate Codes")
+    parseButton.place(x=10, y=640)
+    
+    label = ctk.CTkLabel(master=tabview.tab("Lottery Rewards"), text=" 1st Place Prize (Coins):  ", font=("Arial", 16))
+    label.grid(row=0, column=0, sticky="w")
+
+    lotteryPrizeA =  ctk.CTkEntry(master=tabview.tab("Lottery Rewards"), width=48, font=("Arial", 16, "bold"), placeholder_text="100")
+    lotteryPrizeA.grid(row=0, column=1, sticky="w")
+
+    label = ctk.CTkLabel(master=tabview.tab("Lottery Rewards"), text=" 2nd Place Prize (Coins):  ", font=("Arial", 16))
+    label.grid(row=1, column=0, sticky="w")
+
+    lotteryPrizeB = ctk.CTkEntry(master=tabview.tab("Lottery Rewards"), width=48, font=("Arial", 16, "bold"), placeholder_text="30")
+    lotteryPrizeB.grid(row=1, column=1, sticky="w")
+
+    label = ctk.CTkLabel(master=tabview.tab("Lottery Rewards"), text=" 3rd Place Prize A (Item):  ", font=("Arial", 16))
+    label.grid(row=2, column=0, sticky="w")
+
+    lotteryPrizeC = ctk.CTkComboBox(master=tabview.tab("Lottery Rewards"), values=items4)
+    lotteryPrizeC.grid(row=2, column=1, sticky="w")
+
+    label = ctk.CTkLabel(master=tabview.tab("Lottery Rewards"), text=" 3rd Place Prize B (Item):  ", font=("Arial", 16))
+    label.grid(row=3, column=0, sticky="w")
+
+    lotteryPrizeD = ctk.CTkComboBox(master=tabview.tab("Lottery Rewards"), values=items4)
+    lotteryPrizeD.grid(row=3, column=1, sticky="w")
+
+    parseButton = ctk.CTkButton(master=tabview.tab("Lottery Rewards"), command=lambda: itemsLotteryEvent_mp4(lotteryPrizeA, lotteryPrizeB, lotteryPrizeC, lotteryPrizeD, items4), text="Generate Codes")
     parseButton.place(x=10, y=640)
 
     spaces4 = ["None", "Invisible Space", "Blue Space", "Red Space", "Bowser Space", "Mushroom Space", "Battle Space", "Happening Space", "Chance Time Space", "Spring Space"]

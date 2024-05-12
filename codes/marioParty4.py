@@ -348,6 +348,14 @@ C2076A0C 00000003
 28000000 00000000
 '''
 
+def getLotteryRewards4(lotteryPrizeA, lotteryPrizeB, lotteryPrizeC, lotteryPrizeD, lotteryPrizeALabel, lotteryPrizeBLabel, lotteryPrizeCLabel, lotteryPrizeDLabel):
+    return f'''
+MP4 - Lottery 1st is {lotteryPrizeALabel} - 2nd is {lotteryPrizeBLabel} - 3rd is {lotteryPrizeCLabel} or {lotteryPrizeDLabel}
+0407EA58 3B80{lotteryPrizeA}
+0407EA60 3B80{lotteryPrizeB}
+021D5678 0000{lotteryPrizeC}{lotteryPrizeD}
+'''
+
 def getOtherCodesFour(code):
     if code == "30Hz":
         return '''
