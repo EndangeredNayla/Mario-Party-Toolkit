@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 5/7/2024
+# Date: 5/12/2024
 # License: MIT
 # ============================================
 
@@ -11,18 +11,21 @@ from functions import *
 import pyperclip
 
 
-def modSelect_mp5(checkboxDisableAdv, checkboxBoot, checkboxBSpeed, checkboxCSpeed, checkboxTaunt, checkboxTxtDisplay, checkboxShowCtrl, checkboxUnlockAll, checkboxBowserNoStealCoins, checkbox60RocketShip, checkboxFreeTaxi, checkboxFreeThwmopWhomp, checkboxFreeBridge, checkboxDisableHappening, checkboxAdvTxt, checkboxAllDK, checkboxBattleNoStar, checkboxCapsulesAny, checkboxDoubleTurns, checkboxCapsulesFinal, checkboxsameSpaceAlways, checkboxsameSpaceNever, checkbox20Sec, checkboxNoBrick, checkbox1Slow, checkboxNoSlow, checkboxFlowers3, checkboxNoRocks, checkboxLeafDisplay, checkboxHalvedTime, checkboxDisableLast5, checkboxForceLast5, comboboxLast5Event):
-    if checkboxDisableAdv.get() == 0 and checkboxBoot.get() == 0 and checkboxBSpeed.get() == 0 and checkboxCSpeed.get() == 0 and checkboxTaunt.get() == 0 and checkboxTxtDisplay.get() == 0 and checkboxShowCtrl.get() == 0 and checkboxUnlockAll.get() == 0 and checkboxBowserNoStealCoins.get() == 0 and checkbox60RocketShip.get() == 0 and checkboxFreeTaxi.get() == 0 and checkboxFreeThwmopWhomp.get() == 0 and checkboxFreeBridge.get() == 0 and checkboxDisableHappening.get() == 0 and checkboxAdvTxt.get() == 0 and checkboxAllDK.get() == 0 and checkboxBattleNoStar.get() == 0 and checkboxCapsulesAny.get() == 0 and checkboxDoubleTurns.get() == 0 and checkboxCapsulesFinal.get() == 0 and checkboxsameSpaceAlways.get() == 0 and checkboxsameSpaceNever.get() == 0  and checkbox20Sec.get() == 0 and checkboxNoBrick.get() == 0 and checkbox1Slow.get() == 0 and checkboxNoSlow.get() == 0 and checkboxFlowers3.get() == 0 and checkboxNoRocks.get() == 0 and checkboxLeafDisplay.get() == 0 and checkboxHalvedTime.get() == 0 and checkboxDisableLast5.get() == 0 and checkboxForceLast5.get() == 0 and comboboxLast5Event.get() == "Random":
+def modSelect_mp5(checkboxDisableAdv, checkboxDisableMus, checkboxBoot, checkboxBSpeed, checkboxCSpeed, checkboxTaunt, checkboxTxtDisplay, checkboxShowCtrl, checkboxUnlockAll, checkboxBowserNoStealCoins, checkbox60RocketShip, checkboxFreeTaxi, checkboxFreeThwmopWhomp, checkboxFreeBridge, checkboxDisableHappening, checkboxAdvTxt, checkboxAllDK, checkboxBattleNoStar, checkboxCapsulesAny, checkboxDoubleTurns, checkboxCapsulesFinal, checkboxsameSpaceAlways, checkboxsameSpaceNever, checkbox20Sec, checkboxNoBrick, checkbox1Slow, checkboxNoSlow, checkboxFlowers3, checkboxNoRocks, checkboxLeafDisplay, checkboxHalvedTime, checkboxForceLast5, comboboxLast5Event):
+    if checkboxDisableAdv.get() == 0 and checkboxDisableMus.get() == 0 and checkboxBoot.get() == 0 and checkboxBSpeed.get() == 0 and checkboxCSpeed.get() == 0 and checkboxTaunt.get() == 0 and checkboxTxtDisplay.get() == 0 and checkboxShowCtrl.get() == 0 and checkboxUnlockAll.get() == 0 and checkboxBowserNoStealCoins.get() == 0 and checkbox60RocketShip.get() == 0 and checkboxFreeTaxi.get() == 0 and checkboxFreeThwmopWhomp.get() == 0 and checkboxFreeBridge.get() == 0 and checkboxDisableHappening.get() == 0 and checkboxAdvTxt.get() == 0 and checkboxAllDK.get() == 0 and checkboxBattleNoStar.get() == 0 and checkboxCapsulesAny.get() == 0 and checkboxDoubleTurns.get() == 0 and checkboxCapsulesFinal.get() == 0 and checkboxsameSpaceAlways.get() == 0 and checkboxsameSpaceNever.get() == 0  and checkbox20Sec.get() == 0 and checkboxNoBrick.get() == 0 and checkbox1Slow.get() == 0 and checkboxNoSlow.get() == 0 and checkboxFlowers3.get() == 0 and checkboxNoRocks.get() == 0 and checkboxLeafDisplay.get() == 0 and checkboxHalvedTime.get() == 0 and checkboxForceLast5.get() == 0 and comboboxLast5Event.get() == "Random":
         createDialog("Error", "error", "Please check at least 1 box.", None)
         return
     
     generatedCode = '''MP5 - Mods'''
     
     ticked = checkboxDisableAdv.get()
-    
     if ticked == 1:
         generatedCode = generatedCode + getOtherCodesFive("DisableAdv")
     
+    ticked = checkboxDisableMus.get()
+    if ticked == 1:
+        generatedCode = generatedCode + getOtherCodesFive("DisableMusic")
+
     ticked = checkboxBoot.get()
     
     if ticked == 1:
@@ -168,35 +171,29 @@ def modSelect_mp5(checkboxDisableAdv, checkboxBoot, checkboxBSpeed, checkboxCSpe
     if ticked == 1:
         generatedCode = generatedCode + getOtherCodesFive("HalvedTime")
 
-    ticked = checkboxDisableLast5.get()
-    
-    if ticked == 1:
-        generatedCode = generatedCode + getOtherCodesFive("DisableLast5")
-
     ticked = checkboxForceLast5.get()
-    
     if ticked == 1:
         generatedCode = generatedCode + getOtherCodesFive("ForceLast5")
     
     choice = comboboxLast5Event.get()
-
     if choice == "x3 Coins":
         generatedCode = generatedCode + getOtherCodesFive("x3 Coins")
     
     choice = comboboxLast5Event.get()
-
     if choice == "5 Star Spaces":
         generatedCode = generatedCode + getOtherCodesFive("5 Star Spaces")
     
     choice = comboboxLast5Event.get()
-
     if choice == "Capsule Sapces on Every Space":
         generatedCode = generatedCode + getOtherCodesFive("Capsule Sapces on Every Space")
     
     choice = comboboxLast5Event.get()
-
     if choice == "Red Spaces are Bowser Spaces":
         generatedCode = generatedCode + getOtherCodesFive("Red Spaces are Bowser Spaces")
+
+    choice = comboboxLast5Event.get()
+    if choice == "Disabled":
+        generatedCode = generatedCode + getOtherCodesFive("DisableLast5")
 
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)

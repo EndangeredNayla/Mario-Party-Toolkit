@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 5/7/2024
+# Date: 5/12/2024
 # License: MIT
 # ============================================
 
@@ -110,10 +110,6 @@ def modSelect_mp4(checkbox30hz, checkboxEventAcc, checkboxItemDeletion, checkbox
     if ticked == 1:
         generatedCode = generatedCode + getOtherCodesFour("ItemDeletion")
     
-    ticked = checkboxDisableLast5.get()
-    if ticked == 1:
-        generatedCode = generatedCode + getOtherCodesFour("DisableL5")
-    
     ticked = checkboxForceLast5.get()
     if ticked == 1:
         generatedCode = generatedCode + getOtherCodesFour("ForceL5")
@@ -165,6 +161,10 @@ def modSelect_mp4(checkbox30hz, checkboxEventAcc, checkboxItemDeletion, checkbox
     choice = comboboxLast5Event.get()
     if choice == "Red Spaces are Bowser Spaces":
         generatedCode = generatedCode + getOtherCodesFour("Red Spaces are Bowser Spaces")
+
+    choice = comboboxLast5Event.get()
+    if choice == "Disabled":
+        generatedCode = generatedCode + getOtherCodesFour("Disabled")
 
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)

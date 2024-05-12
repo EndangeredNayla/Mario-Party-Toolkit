@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 5/9/2024
+# Date: 5/12/2024
 # License: MIT
 # ============================================
 
@@ -467,56 +467,60 @@ def create_mario_party_5_interface(frame):
     checkboxDisableAdv.grid(row=2, column=0, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
+    checkboxDisableMus = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Disable In-game Music", font=("Arial", 13))
+    checkboxDisableMus.grid(row=3, column=0, sticky="w", padx=5, pady=5)
+
+    # Create Code Checkboxes
     checkboxBoot = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Faster Boot Time", font=("Arial", 13))
-    checkboxBoot.grid(row=3, column=0, sticky="w", padx=5, pady=5)
+    checkboxBoot.grid(row=4, column=0, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxBSpeed = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Increased Board Speed", font=("Arial", 13))
-    checkboxBSpeed.grid(row=4, column=0, sticky="w", padx=5, pady=5)
+    checkboxBSpeed.grid(row=5, column=0, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxCSpeed = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Increased Capsule Throwing Speed", font=("Arial", 13))
-    checkboxCSpeed.grid(row=5, column=0, sticky="w", padx=5, pady=5)
+    checkboxCSpeed.grid(row=6, column=0, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxTaunt = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Increased Taunt Capabilities", font=("Arial", 13))
-    checkboxTaunt.grid(row=6, column=0, sticky="w", padx=5, pady=5)
+    checkboxTaunt.grid(row=7, column=0, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxTxtDisplay = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Instant Text Display", font=("Arial", 13))
-    checkboxTxtDisplay.grid(row=7, column=0, sticky="w", padx=5, pady=5)
+    checkboxTxtDisplay.grid(row=8, column=0, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxShowCtrl = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Show Player Who Paused", font=("Arial", 13))
-    checkboxShowCtrl.grid(row=8, column=0, sticky="w", padx=5, pady=5)
+    checkboxShowCtrl.grid(row=9, column=0, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxUnlockAll = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Unlock Everything", font=("Arial", 13))
-    checkboxUnlockAll.grid(row=9, column=0, sticky="w", padx=5, pady=5)
+    checkboxUnlockAll.grid(row=10, column=0, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxBowserNoStealCoins = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Bowser Nightmare - Bowser does not Steal Coins", font=("Arial", 13))
-    checkboxBowserNoStealCoins.grid(row=10, column=0, sticky="w", padx=5, pady=5)
+    checkboxBowserNoStealCoins.grid(row=11, column=0, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkbox60RocketShip = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Future Dream - 60 Seconds in Rocket Ship Game", font=("Arial", 13))
-    checkbox60RocketShip.grid(row=11, column=0, sticky="w", padx=5, pady=5)
+    checkbox60RocketShip.grid(row=12, column=0, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxFreeTaxi = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Future Dream - Free Taxi Ride", font=("Arial", 13))
-    checkboxFreeTaxi.grid(row=12, column=0, sticky="w", padx=5, pady=5)
+    checkboxFreeTaxi.grid(row=13, column=0, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxFreeThwmopWhomp = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Pirate Dream - Free Thwomps & Whomps", font=("Arial", 13))
-    checkboxFreeThwmopWhomp.grid(row=13, column=0, sticky="w", padx=5, pady=5)
+    checkboxFreeThwmopWhomp.grid(row=14, column=0, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxFreeBridge = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Rainbow Dream - Free Bridge Crossings", font=("Arial", 13))
-    checkboxFreeBridge.grid(row=14, column=0, sticky="w", padx=5, pady=5)
+    checkboxFreeBridge.grid(row=15, column=0, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxDisableHappening = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Sweet Dream - Disable Topmost Happening Space", font=("Arial", 13))
-    checkboxDisableHappening.grid(row=15, column=0, sticky="w", padx=5, pady=5)
+    checkboxDisableHappening.grid(row=16, column=0, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxAllDK = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="All DK Spaces are Active", font=("Arial", 13))
@@ -531,24 +535,20 @@ def create_mario_party_5_interface(frame):
     checkboxDoubleTurns.grid(row=2, column=1, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
-    checkboxDisableLast5 = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Last 5 Turns Event - Disabled", font=("Arial", 13))
-    checkboxDisableLast5.grid(row=3, column=1, sticky="w", padx=5, pady=5)
-    
-    # Create Code Checkboxes
     checkboxForceLast5 = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Last 5 Turns Event - First Turn", font=("Arial", 13))
-    checkboxForceLast5.grid(row=4, column=1, sticky="w", padx=5, pady=5)
+    checkboxForceLast5.grid(row=3, column=1, sticky="w", padx=5, pady=5)
 
     # Create Code Checkboxes
     checkboxCapsulesFinal = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Obtain Capsules on Final Turn", font=("Arial", 13))
-    checkboxCapsulesFinal.grid(row=5, column=1, sticky="w", padx=5, pady=5)
+    checkboxCapsulesFinal.grid(row=4, column=1, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxsameSpaceAlways = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Same Space Duels Always Happen", font=("Arial", 13))
-    checkboxsameSpaceAlways.grid(row=6, column=1, sticky="w", padx=5, pady=5)
+    checkboxsameSpaceAlways.grid(row=5, column=1, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxsameSpaceNever = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Same Space Duels Never Happen", font=("Arial", 13))
-    checkboxsameSpaceNever.grid(row=7, column=1, sticky="w", padx=5, pady=5)
+    checkboxsameSpaceNever.grid(row=6, column=1, sticky="w", padx=5, pady=5)
 
     def checkbox_callback_SameSpace():
         if checkboxsameSpaceNever.get() == 1:
@@ -567,40 +567,40 @@ def create_mario_party_5_interface(frame):
     
     # Create Code Checkboxes
     checkbox20Sec = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Beam Team - 20 Second Timer", font=("Arial", 13))
-    checkbox20Sec.grid(row=8, column=1, sticky="w", padx=5, pady=5)
+    checkbox20Sec.grid(row=7, column=1, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxNoBrick = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Bound of Music - No Bricks", font=("Arial", 13))
-    checkboxNoBrick.grid(row=9, column=1, sticky="w", padx=5, pady=5)
+    checkboxNoBrick.grid(row=8, column=1, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkbox1Slow = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Curvy Curves - 1 Player is Slower", font=("Arial", 13))
-    checkbox1Slow.grid(row=10, column=1, sticky="w", padx=5, pady=5)
+    checkbox1Slow.grid(row=9, column=1, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxNoSlow = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Coney Island - No Slow Down", font=("Arial", 13))
-    checkboxNoSlow.grid(row=11, column=1, sticky="w", padx=5, pady=5)
+    checkboxNoSlow.grid(row=10, column=1, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxFlowers3 = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Flower Shower - All Flowers Worth 3pts", font=("Arial", 13))
-    checkboxFlowers3.grid(row=12, column=1, sticky="w", padx=5, pady=5)
+    checkboxFlowers3.grid(row=11, column=1, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxNoRocks = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Ground Pound Down - No Rocks Until End", font=("Arial", 13))
-    checkboxNoRocks.grid(row=13, column=1, sticky="w", padx=5, pady=5)
+    checkboxNoRocks.grid(row=12, column=1, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxLeafDisplay = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Leaf Leap - Leaves Display Quicker", font=("Arial", 13))
-    checkboxLeafDisplay.grid(row=14, column=1, sticky="w", padx=5, pady=5)
+    checkboxLeafDisplay.grid(row=13, column=1, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxHalvedTime = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Pop Star Piranhas - Halved Time to Pick", font=("Arial", 13))
-    checkboxHalvedTime.grid(row=15, column=1, sticky="w", padx=5, pady=5)
+    checkboxHalvedTime.grid(row=14, column=1, sticky="w", padx=5, pady=5)
 
     # Create Code Comboboxes
     label = ctk.CTkLabel(master=tabview.tab("Mod Selection"), text="Last 5 Turns Events", font=("Arial", 17, "bold"))
     label.grid(row=0, column=2, sticky="w", padx=5, pady=5)
-    comboboxLast5Event = ctk.CTkComboBox(master=tabview.tab("Mod Selection"), values=["Random", "x3 Coins", "5 Star Spaces", "Capsule Sapces on Every Space", "Red Spaces are Bowser Spaces"], font=("Arial", 13), width=300)
+    comboboxLast5Event = ctk.CTkComboBox(master=tabview.tab("Mod Selection"), values=["Random", "Disabled", "x3 Coins", "5 Star Spaces", "Capsule Sapces on Every Space", "Red Spaces are Bowser Spaces"], font=("Arial", 13), width=300)
     comboboxLast5Event.grid(row=1, column=2, sticky="w", padx=5, pady=5)
 
     def checkbox_callback_Last5():
@@ -612,19 +612,12 @@ def create_mario_party_5_interface(frame):
             comboboxLast5Event.configure(state="normal")
         if checkboxForceLast5.get() == 1:
             checkboxDisableLast5.configure(state="disabled")
-        else:
-            if comboboxLast5Event.get() == "Random":
-                checkboxDisableLast5.configure(state="normal")
             
     def combobox_callback_Last5(choice):  
-        if not comboboxLast5Event.get() == "Random":
-            checkboxDisableLast5.configure(state="disabled")
-        else:
-            if not checkboxForceLast5.get() == 1:
-                checkboxDisableLast5.configure(state="normal")
+        if comboboxLast5Event.get() == "Disabled":
+            checkboxForceLast5.configure(state="disabled")
 
     # Attach the callback function to the checkboxes
-    checkboxDisableLast5.configure(command=checkbox_callback_Last5)
     checkboxForceLast5.configure(command=checkbox_callback_Last5)
     comboboxLast5Event.configure(command=combobox_callback_Last5)
 
@@ -639,7 +632,8 @@ def create_mario_party_5_interface(frame):
     checkboxUnlockAll.select()
     checkboxBattleNoStar.select()
 
-    parseButtonFiveOther = ctk.CTkButton(master=tabview.tab("Mod Selection"), command=lambda: modSelect_mp5(checkboxDisableAdv, checkboxBoot, checkboxBSpeed, checkboxCSpeed, checkboxTaunt, checkboxTxtDisplay, checkboxShowCtrl, checkboxUnlockAll, checkboxBowserNoStealCoins, checkbox60RocketShip, checkboxFreeTaxi, checkboxFreeThwmopWhomp, checkboxFreeBridge, checkboxDisableHappening, checkboxAdvTxt, checkboxAllDK, checkboxBattleNoStar, checkboxCapsulesAny, checkboxDoubleTurns, checkboxCapsulesFinal, checkboxsameSpaceAlways, checkboxsameSpaceNever, checkbox20Sec, checkboxNoBrick, checkbox1Slow, checkboxNoSlow, checkboxFlowers3, checkboxNoRocks, checkboxLeafDisplay, checkboxHalvedTime, checkboxDisableLast5, checkboxForceLast5, comboboxLast5Event), text="Generate Codes", )
+    parseButtonFiveOther = ctk.CTkButton(master=tabview.tab("Mod Selection"), command=lambda: modSelect_mp5(checkboxDisableAdv, checkboxDisableMus, checkboxBoot, checkboxBSpeed, checkboxCSpeed, checkboxTaunt, checkboxTxtDisplay, checkboxShowCtrl, checkboxUnlockAll, checkboxBowserNoStealCoins, checkbox60RocketShip, checkboxFreeTaxi, checkboxFreeThwmopWhomp, checkboxFreeBridge, checkboxDisableHappening, checkboxAdvTxt, checkboxAllDK, checkboxBattleNoStar, checkboxCapsulesAny, checkboxDoubleTurns, checkboxCapsulesFinal, checkboxsameSpaceAlways, checkboxsameSpaceNever, checkbox20Sec, checkboxNoBrick, checkbox1Slow, checkboxNoSlow, checkboxFlowers3, checkboxNoRocks, checkboxLeafDisplay, checkboxHalvedTime, checkboxDisableLast5, checkboxForceLast5, comboboxLast5Event), text="Generate Codes", )
     parseButtonFiveOther.place(x=10, y=640)
 
     return frame
+    

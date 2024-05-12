@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 5/5/2024
+# Date: 5/12/2024
 # License: MIT
 # ============================================
 
@@ -460,53 +460,48 @@ def create_mario_party_4_interface(frame):
     # Attach the callback function to the checkboxes
     checkboxKKAlways.configure(command=checkbox_callback_BowserSpace)
     checkboxBowserAlways.configure(command=checkbox_callback_BowserSpace)
-
-    
-    # Create Code Checkboxes
-    checkboxDisableLast5 = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Last 5 Turns Event - Disabled", font=("Arial", 13))
-    checkboxDisableLast5.grid(row=7, column=1, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxForceLast5 = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Last 5 Turns Event - First Turn", font=("Arial", 13))
-    checkboxForceLast5.grid(row=8, column=1, sticky="w", padx=5, pady=5)
+    checkboxForceLast5.grid(row=7, column=1, sticky="w", padx=5, pady=5)
 
     # Create Code Comboboxes
     label = ctk.CTkLabel(master=tabview.tab("Mod Selection"), text="Last 5 Turns Events", font=("Arial", 17, "bold"))
     label.grid(row=0, column=2, sticky="w", padx=5, pady=5)
-    comboboxLast5Event = ctk.CTkComboBox(master=tabview.tab("Mod Selection"), values=["Random", "x2 Coins", "Free Stars", "Red Spaces are Fortune Spaces", "Red Spaces are Bowser Spaces"], font=("Arial", 13), width=300)
+    comboboxLast5Event = ctk.CTkComboBox(master=tabview.tab("Mod Selection"), values=["Random", "Disabled", "x2 Coins", "Free Stars", "Red Spaces are Fortune Spaces", "Red Spaces are Bowser Spaces"], font=("Arial", 13), width=300)
     comboboxLast5Event.grid(row=1, column=2, sticky="w", padx=5, pady=5)
 
     # Create Code Checkboxes
     checkboxMini2Dice = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Mini Mushroom has 2 Dice", font=("Arial", 13))
-    checkboxMini2Dice.grid(row=9, column=1, sticky="w", padx=5, pady=5)
+    checkboxMini2Dice.grid(row=8, column=1, sticky="w", padx=5, pady=5)
 
     # Create Code Checkboxes
     checkboxMiniPipeS = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Mini Pipes Work at Normal Size", font=("Arial", 13))
-    checkboxMiniPipeS.grid(row=10, column=1, sticky="w", padx=5, pady=5)
+    checkboxMiniPipeS.grid(row=9, column=1, sticky="w", padx=5, pady=5)
 
     # Create Code Checkboxes
     checkboxMiniRoll = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Mini Status Rolls 1-10", font=("Arial", 13))
-    checkboxMiniRoll.grid(row=11, column=1, sticky="w", padx=5, pady=5)
+    checkboxMiniRoll.grid(row=10, column=1, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxSuperMiniRoll = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Super Mini Mushroom has 3 Dice", font=("Arial", 13))
-    checkboxSuperMiniRoll.grid(row=12, column=1, sticky="w", padx=5, pady=5)
+    checkboxSuperMiniRoll.grid(row=11, column=1, sticky="w", padx=5, pady=5)
 
     # Create Code Checkboxes
     checkboxUseAfterBag = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Use Another Item After an Item Bag", font=("Arial", 13))
-    checkboxUseAfterBag.grid(row=13, column=1, sticky="w", padx=5, pady=5)
+    checkboxUseAfterBag.grid(row=12, column=1, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxUseMoreItems = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Use Multiple Items on the Same Turn", font=("Arial", 13))
-    checkboxUseMoreItems.grid(row=14, column=1, sticky="w", padx=5, pady=5)
+    checkboxUseMoreItems.grid(row=13, column=1, sticky="w", padx=5, pady=5)
 
     # Create Code Checkboxes
     checkboxDomination = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Domination - More Whomps", font=("Arial", 13))
-    checkboxDomination.grid(row=15, column=1, sticky="w", padx=5, pady=5)
+    checkboxDomination.grid(row=14, column=1, sticky="w", padx=5, pady=5)
     
     # Create Code Checkboxes
     checkboxHoopsEmpty = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Three Throw - All Hoops Empty", font=("Arial", 13))
-    checkboxHoopsEmpty.grid(row=16, column=1, sticky="w", padx=5, pady=5)
+    checkboxHoopsEmpty.grid(row=15, column=1, sticky="w", padx=5, pady=5)
 
     def checkbox_callback_Last5():
         if checkboxDisableLast5.get() == 1:
@@ -517,19 +512,12 @@ def create_mario_party_4_interface(frame):
             comboboxLast5Event.configure(state="normal")
         if checkboxForceLast5.get() == 1:
             checkboxDisableLast5.configure(state="disabled")
-        else:
-            if comboboxLast5Event.get() == "Random":
-                checkboxDisableLast5.configure(state="normal")
             
     def combobox_callback_Last5(choice):  
-        if not comboboxLast5Event.get() == "Random":
-            checkboxDisableLast5.configure(state="disabled")
-        else:
-            if not checkboxForceLast5.get() == 1:
-                checkboxDisableLast5.configure(state="normal")
+        if comboboxLast5Event.get() == "Disabled":
+            checkboxForceLast5.configure(state="disabled")
 
     # Attach the callback function to the checkboxes
-    checkboxDisableLast5.configure(command=checkbox_callback_Last5)
     checkboxForceLast5.configure(command=checkbox_callback_Last5)
     comboboxLast5Event.configure(command=combobox_callback_Last5)
 

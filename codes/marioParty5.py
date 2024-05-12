@@ -193,6 +193,12 @@ def getOtherCodesFive(code):
 20478F28 4182F754
 04478F1C FFFFFFFF
 E2000001 80008000'''
+    if code == "DisableMusic":
+        return '''
+042888A4 00000001
+20468E38 80630000
+04468E3C 38600000
+E2000001 80008000'''
     if code == "Boot":
         return '''
 F6000001 80008180
