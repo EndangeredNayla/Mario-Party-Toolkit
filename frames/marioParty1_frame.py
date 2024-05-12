@@ -41,7 +41,7 @@ def create_mario_party_1_interface(frame):
 
     # Create button to generate coins modification codes
     parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp1(blue_entry, blue_checkbox, red_entry, red_checkbox), text="Generate Codes")
-    parse_coins_button.place(x=10, y=640)
+    parse_coins_button.place(x=10, y=660)
 
     # List of minigame names
     minigames_list = ["Memory Match", "Slot Machine", "Buried Treasure", "Treasure Divers", "Shell Game", "Slot Car Derby 1", "Hot Bob-omb", "Slot Car Derby 2", "Pipe Maze", "Ghost Guess", "Musical Mushroom", "Pedal Power", "Crazy Cutter", "Face Lift", "Whack-a-Plant", "Bash 'n' Cash", "Bowl Over", "Ground Pound", "Balloon Burst", "Coin Block Blitz", "Coin Block Bash", "Skateboard Scamper", "Box Mountain Mayhem", "Platform Peril", "Teetering Towers", "Mushroom Mix-Up", "Bumper Ball Maze 1", "Grab Bag", "Bobsled Run", "Bumper Balls", "TightRope Treachery", "Knock Block Tower", "Tipsy Tourney", "Bombs Away", "Crane Game", "Bumper Ball Maze 2", "Mario Bandstand", "Desert Dash", "Shy Guy Says", "Limbo Dance", "Bombsketball", "Cast Aways", "Key-pa-Way", "Running of the Bulb", "Hot Rope Jump", "Handcar Havoc", "Deep Sea Divers", "Piranha's Pursuit", "Tug o' War", "Paddle Battle", "Bumper Ball Maze 3", "Coin Shower Flower", "Hammer Drop"]

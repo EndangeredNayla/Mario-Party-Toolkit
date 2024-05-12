@@ -7,28 +7,28 @@
 
 # Import necessary functions and modules
 from functions import *
-from events.marioParty6_coins import *
-from events.marioParty6_initialItems import *
-from events.marioParty6_modselect import *
-from events.marioParty6_mgreplace import *
-from events.marioParty6_items import *
-from events.marioParty6_spaceReplace import *
+from events.marioParty7_coins import *
+#from events.marioParty7_initialItems import *
+#from events.marioParty7_modselect import *
+#from events.marioParty7_mgreplace import *
+#from events.marioParty7_items import *
+#from events.marioParty7_spaceReplace import *
 
 # Import custom tkinter module as ctk
 import customtkinter as ctk
 
 # Function to create the main interface for Mario Party 1
-def create_mario_party_6_interface(frame):
+def create_mario_party_7_interface(frame):
     # Create a tabbed interface
     tabview = ctk.CTkTabview(frame, width=1110, height=752, fg_color=("#fcfcfc", "#323232"))
     tabview.grid(padx=10, pady=10)
     #tabview.add("Mod Selection")
     tabview.add("Coins Mods")
-    tabview.add("Minigame Replacement")
-    tabview.add("Orb Mods")
-    tabview.add("Space Replacement")
-    tabview.add("Initial Items")
-    tabview.set("Coins Mods")
+    #tabview.add("Minigame Replacement")
+    #tabview.add("Orb Mods")
+    #tabview.add("Space Replacement")
+    #tabview.add("Initial Items")
+    #tabview.set("Coins Mods")
 
     # Function to create an entry field and checkbox
     def create_entry(tab, row, icon_path, label_text, color):
@@ -44,15 +44,18 @@ def create_mario_party_6_interface(frame):
     # Create entry fields and checkboxes for Coins Mods tab
     blue_entry = create_entry(tabview.tab("Coins Mods"), 1, "assets/eventTags/blueSpace.png", " Gain  ", " Coins on a Blue Space.")
     red_entry = create_entry(tabview.tab("Coins Mods"), 2, "assets/eventTags/redSpace.png", " Lose  ", " Coins on a Red Space.")
-    character_entry = create_entry(tabview.tab("Coins Mods"), 3, "assets/eventTags/characterSpace.png", " Gain  ", " Coins on your own Character Space.")
+    character_entry = create_entry(tabview.tab("Coins Mods"), 3, "assets/eventTags/characterSpace7.png", " Gain  ", " Coins on your own Character Space.")
     mgWin_entry = create_entry(tabview.tab("Coins Mods"), 4, "assets/eventTags/miniGame.png", " Gain  ", " Coins when winning a Minigame.")
     star_entry = create_entry(tabview.tab("Coins Mods"), 5, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star at a Star Space and when using Flutter.")
-    pinkBooCoins_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/eventTags/pinkBooCoins.png", " Costs ", " Coins to steal Coins.")
-    pinkBooMin_entry = create_entry(tabview.tab("Coins Mods"), 7, "assets/eventTags/pinkBooCoins.png", " Steal ", " mininum when stealing Coins.")
-    pinkBooStar_entry = create_entry(tabview.tab("Coins Mods"), 8, "assets/eventTags/pinkBooStars.png", " Costs ", " Coins to steal a Star.")
+    star_last4_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star during the Last 4 Turns event (only if wheel lands on it).")
+    hammerBro_entry = create_entry(tabview.tab("Coins Mods"), 7, "assets/items/hammerBroCapsule.png", " Steal ", " Coins from Hammer Bro.")
+    zap_entry = create_entry(tabview.tab("Coins Mods"), 8, "assets/items/zapCapsule.png", " Lose ", " Coins from Zaps.")
+    fireball_entry = create_entry(tabview.tab("Coins Mods"), 9, "assets/items/firebalLCapsule.png", " Steal ", " Coins from Fireballs.")
+    vacuum_entry = create_entry(tabview.tab("Coins Mods"), 10, "assets/items/vacuumCapsule.png", " Steal ", " Coins despite Vacuum Roulette.")
+    flower_entry = create_entry(tabview.tab("Coins Mods"), 11, "assets/items/flowerCapsule.png", " Gain ", " Per Space with Flower.")
 
     # Create button to generate coins modification codes
-    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp6(blue_entry, red_entry, character_entry, mgWin_entry, star_entry, pinkBooCoins_entry, pinkBooMin_entry, pinkBooStar_entry), text="Generate Codes")
+    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp7(blue_entry, red_entry, character_entry, mgWin_entry, star_entry, star_last4_entry, hammerBro_entry, zap_entry, fireball_entry, vacuum_entry, flower_entry), text="Generate Codes")
     parse_coins_button.place(x=10, y=660)
 
     # List of minigame names
@@ -67,7 +70,7 @@ def create_mario_party_6_interface(frame):
     combobox_mingames_2 = ctk.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=minigames_list)
     combobox_mingames_2.grid(row=0, column=3)
     parse_minigame_button = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=lambda: mgReplaceEvent_mp6(combobox_mingames_1, combobox_mingames_2, minigames_list), text="Generate Codes")
-    parse_minigame_button.place(x=10, y=640)
+    parse_minigame_button.place(x=10, y=650)
 
     icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/mushroomCapsule.png", 2, 1)
     label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))

@@ -29,7 +29,7 @@ def create_mario_party_4_interface(frame):
     tabview.add("Initial Items")
     tabview.add("Space Replacement")
     tabview.add("Lottery Rewards")
-    tabview.set("Mod Selection")
+    tabview.set("Coins Mods")
 
     # Function to create an entry field and checkbox
     def create_entry(tab, row, icon_path, label_text, color):

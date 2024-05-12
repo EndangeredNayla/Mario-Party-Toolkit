@@ -56,7 +56,7 @@ def create_mario_party_3_interface(frame):
 
     # Create button to generate coins modification codes
     parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp3(blue_entry, blue_checkbox, red_entry, red_checkbox, star_entry, koopaBank_entry), text="Generate Codes")
-    parse_coins_button.place(x=10, y=640)
+    parse_coins_button.place(x=10, y=660)
 
     # List of minigame names
     minigames_list = ["Thwomp Pull", "River Raiders", "Tidal Toss", "Eatsa Pizza", "Baby Bowser Broadside", "Pump, Pump and Away", "Hyper Hydrants", "Picking Panic", "Treadmill Grill", "Toadstoll Titan", "Aces High", "Bounce 'n' Trounce", "Ice Rink Risk", "Locked Out", "Chip Shot Challenge", "Parasol Plummet", "Messy Memory", "Picture Imperfect", "Mario's Puzzle Party", "The Beat Goes On", "M. P. I. Q.", "Curtain Call", "Water Whirled", "Frigid Bridges", "Awful Tower", "Cheep Cheep Chase", "Pipe Cleaners", "Snowball Summit", "All Fired Up", "Stacked Deck", "Three Door Monty", "Rockin' Raceway", "Merry-Go-Chomp", "Slap Down", "Storm Chasers", "Eye Sore", "Vine With Me", "Popgun Pick-Off", "End of the Line", "Bowser Toss", "Baby Bowser Bonkers", "Motor Rooter", "Silly Screws", "Crowd Cover", "Tick Tock Hop", "Fowl Play", "Mecha-Marathon", "Hey, Batter, Batter!", "Bobbing Bow-loons", "Dorrie Dip", "Swinging with Sharks", "Swing 'n' Swipe", "Stardust Battle", "Game Guy's Roulette", "Game Guy's Lucky 7", "Game Guy's Magic Boxes", "Game Guy's Sweet Surprise", "Dizzy Dinghies", "Mario's Puzzle Party Pro"]

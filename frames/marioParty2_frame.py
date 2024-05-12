@@ -43,7 +43,7 @@ def create_mario_party_2_interface(frame):
 
     # Create button to generate coins modification codes
     parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp2(blue_entry, blue_checkbox, red_entry, red_checkbox), text="Generate Codes")
-    parse_coins_button.place(x=10, y=640)
+    parse_coins_button.place(x=10, y=660)
 
     # List of minigame names
     minigames_list = ["BOWSER Slots", "Roll Out the Barrels", "Coffin Congestion", "Hammer Slammer", "Give Me a Brake!", "Mallet-Go Round", "Grab Bag", "Bumper Balloon Cars", "Rakin' 'em In", "Day at the Races", "Face Lift", "Crazy Cutters", "Hot BOB-OMB", "Bowl Over", "Rainbow Run", "Crane Game", "Move to the Music", "BOB-OMB Barrage", "Look Away", "Shock Drop or Roll", "Lights Out", "Filet Relay", "Archer-ival", "TOAD Bandstand", "Bobsled Run", "Handcar Havoc", "Balloon Burst", "Sky Pilots", "Speed Hockey", "Cake Factory", "Dungeon Dash", "Magnet Carta", "Lava Tile Isle", "Hot Rope Jump", "Shell Shocked", "TOAD in the Box", "Mecha-Marathon", "Roll Call", "Abandon Ship", "Platform Peril", "Totem Pole Pound", "Bumper Balls", "Bombs Away", "Tipsy Tourney", "Honeycomb Havoc", "Hexagon Heat", "Skateboard Scamper", "Slot Car Derby", "Shy Guy Says", "Sneak 'n' Snore", "Driver's Ed", "BOWSER's Big Blast", "Looney Lumberjacks", "Torpedo Targets", "Destruction Duet", "Dizzy Dancing", "Tile Driver", "Quicksand Cache", "Deep Sea Salvage"]

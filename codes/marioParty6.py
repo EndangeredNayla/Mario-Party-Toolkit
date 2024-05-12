@@ -703,3 +703,15 @@ E2000001 80008000'''
         return '''
 040FB87C 38A00002
 040FB8EC 3A600002'''
+    if code == "Always Day":
+        return '''
+02265b80  00000000'''
+    if code == "Always Night":
+        return '''
+02265b80  00004000'''
+    if code == "Switch Every Turn":
+        return '''
+20265b80 00000300
+04265b80 00000100
+20265b80 C0000300
+04265b80 C0000100'''
