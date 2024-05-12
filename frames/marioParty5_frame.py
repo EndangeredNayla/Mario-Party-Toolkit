@@ -22,7 +22,7 @@ def create_mario_party_5_interface(frame):
     tabview.add("Coins Mods")
     tabview.add("Minigame Replacement")
     tabview.add("Capsule Mods")
-    tabview.set("Mod Selection")
+    tabview.set("Coins Mods")
 
     # Function to create an entry field and checkbox
     def create_entry(tab, row, icon_path, label_text, color):

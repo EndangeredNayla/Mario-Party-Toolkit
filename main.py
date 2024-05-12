@@ -36,26 +36,17 @@ class App(customtkinter.CTk):
         # set grid layout 1x2
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(1, weight=1)
-
-        # load images with light and dark mode image
-        if getattr(sys, 'frozen', False):
-            # If the application is frozen (i.e., compiled with PyInstaller)
-            # Use `sys._MEIPASS` to get the base directory
-            image_path = os.path.join(sys._MEIPASS, "assets/logos/")
-        else:
-            # If running as a script or in an environment without PyInstaller
-            image_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "assets/logos/")
-        self.home_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "mpToolkit_logo.png")), size=(172, 70))
-        self.about_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "info.png")), size=(32, 32))
-        self.mp1_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "marioParty1.png")), size=(172, 42))
-        self.mp2_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "marioParty2.png")), size=(178, 42))
-        self.mp3_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "marioParty3.png")), size=(172, 42))
-        self.mp4_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "marioParty4.png")), size=(172, 42))
-        self.mp5_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "marioParty5.png")), size=(172, 42))
-        self.mp6_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "marioParty6.png")), size=(172, 42))
-        self.mp7_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "marioParty7.png")), size=(172, 42))
-        self.mp8_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "marioParty8.png")), size=(172, 42))
-        self.injector_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(image_path, "injector.png")), size=(32, 32))
+        self.home_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(fetchResource("assets/logos/mpToolkit_logo.png"))), size=(172, 70))
+        self.about_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(fetchResource("assets/logos/info.png"))), size=(32, 32))
+        self.mp1_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(fetchResource("assets/logos/marioParty1.png"))), size=(172, 42))
+        self.mp2_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(fetchResource("assets/logos/marioParty2.png"))), size=(178, 42))
+        self.mp3_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(fetchResource("assets/logos/marioParty3.png"))), size=(172, 42))
+        self.mp4_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(fetchResource("assets/logos/marioParty4.png"))), size=(172, 42))
+        self.mp5_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(fetchResource("assets/logos/marioParty5.png"))), size=(172, 42))
+        self.mp6_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(fetchResource("assets/logos/marioParty6.png"))), size=(172, 42))
+        self.mp7_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(fetchResource("assets/logos/marioParty7.png"))), size=(172, 42))
+        self.mp8_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(fetchResource("assets/logos/marioParty8.png"))), size=(172, 42))
+        self.injector_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(fetchResource("assets/logos/injector.png"))), size=(32, 32))
 
         # create navigation frame
         self.navigation_frame = customtkinter.CTkFrame(self, corner_radius=0)
