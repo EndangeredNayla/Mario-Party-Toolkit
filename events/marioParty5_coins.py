@@ -1,3 +1,10 @@
+# ============================================
+# Mario Party Toolkit
+# Author: Nayla Hanegan (naylahanegan@gmail.com)
+# Date: 5/12/2024
+# License: MIT
+# ============================================
+
 from functions import *
 from codes.marioParty5 import *
 import pyperclip
@@ -30,6 +37,7 @@ def coinsEvent_mp5(blueEntry, redEntry, starEntry, mgEntry, wigglerEntry, chompW
     marioPartyFiveMiniGame = getMinigameCodeFive(mgSpaceAmountFive, mgEntry.get()) if mgSpaceAmountFive != "DUMMY" else ""
 
     generatedCode = marioPartyFiveBlueSpace + marioPartyFiveRedSpace + marioPartyFiveMiniGame + marioPartyFiveStarSpace + marioPartyFiveWigglerSpace + marioPartyFiveChompSpace + marioPartyFiveChompBase
+    generatedCode = generatedCode.strip()
 
     pyperclip.copy(generatedCode)
 

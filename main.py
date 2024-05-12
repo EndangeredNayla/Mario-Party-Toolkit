@@ -11,6 +11,7 @@ from frames.marioParty2_frame import *
 from frames.marioParty3_frame import *
 from frames.marioParty4_frame import *
 from frames.marioParty5_frame import *
+from frames.marioParty6_frame import *
 from frames.welcome_frame import *
 from version import *
 
@@ -171,6 +172,7 @@ class App(customtkinter.CTk):
             self.mp5_frame.grid_forget()
         if name == "mp6Frame":
             self.mp6_frame.grid(row=0, column=1, sticky="nsew")
+            create_mario_party_6_interface(self.mp6_frame)
         else:
             self.mp6_frame.grid_forget()
         if name == "mp7Frame":

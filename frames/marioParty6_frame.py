@@ -1,0 +1,737 @@
+# ============================================
+# Mario Party Toolkit
+# Author: Nayla Hanegan (naylahanegan@gmail.com)
+# Date: 5/12/2024
+# License: MIT
+# ============================================
+
+# Import necessary functions and modules
+from functions import *
+from events.marioParty6_coins import *
+from events.marioParty6_initialItems import *
+from events.marioParty6_modselect import *
+from events.marioParty6_mgreplace import *
+from events.marioParty6_items import *
+from events.marioParty6_spaceReplace import *
+
+# Import custom tkinter module as ctk
+import customtkinter as ctk
+
+# Function to create the main interface for Mario Party 1
+def create_mario_party_6_interface(frame):
+    # Create a tabbed interface
+    tabview = ctk.CTkTabview(frame, width=1110, height=752, fg_color=("#fcfcfc", "#323232"))
+    tabview.grid(padx=10, pady=10)
+    tabview.add("Mod Selection")
+    tabview.add("Coins Mods")
+    tabview.add("Minigame Replacement")
+    tabview.add("Orb Mods")
+    tabview.add("Space Replacement")
+    tabview.add("Initial Items")
+    tabview.set("Mod Selection")
+
+    # Function to create an entry field and checkbox
+    def create_entry(tab, row, icon_path, label_text, color):
+        create_image_icon(tab, icon_path, row, 1)
+        label = ctk.CTkLabel(master=tab, text=label_text, font=("Arial", 16))
+        label.grid(row=row, column=2, sticky="w", pady=15)
+        entry = ctk.CTkEntry(master=tab, width=48, font=("Arial", 16, "bold"))
+        entry.grid(row=row, column=3)
+        label1 = ctk.CTkLabel(master=tab, text=color, font=("Arial", 16))
+        label1.grid(row=row, column=4, sticky="w")
+        return entry
+
+    # Create entry fields and checkboxes for Coins Mods tab
+    blue_entry = create_entry(tabview.tab("Coins Mods"), 1, "assets/eventTags/blueSpace.png", " Gain  ", " Coins on a Blue Space.")
+    red_entry = create_entry(tabview.tab("Coins Mods"), 2, "assets/eventTags/redSpace.png", " Lose  ", " Coins on a Red Space.")
+    character_entry = create_entry(tabview.tab("Coins Mods"), 3, "assets/eventTags/characterSpace.png", " Gain  ", " Coins on your own Character Space.")
+    mgWin_entry = create_entry(tabview.tab("Coins Mods"), 4, "assets/eventTags/miniGame.png", " Gain  ", " Coins when winning a Minigame.")
+    star_entry = create_entry(tabview.tab("Coins Mods"), 5, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star at a Star Space and when using Flutter.")
+    pinkBooCoins_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/eventTags/pinkBooCoins.png", " Costs ", " Coins to steal Coins.")
+    pinkBooMin_entry = create_entry(tabview.tab("Coins Mods"), 7, "assets/eventTags/pinkBooCoins.png", " Steal ", " mininum when stealing Coins.")
+    pinkBooStar_entry = create_entry(tabview.tab("Coins Mods"), 8, "assets/eventTags/pinkBooStars.png", " Costs ", " Coins to steal a Star.")
+
+    # Create button to generate coins modification codes
+    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp6(blue_entry, red_entry, character_entry, mgWin_entry, star_entry, pinkBooCoins_entry, pinkBooMin_entry, pinkBooStar_entry), text="Generate Codes")
+    parse_coins_button.place(x=10, y=640)
+
+    # List of minigame names
+    minigames_list = ["Smashdance", "Odd Card Out", "Freeze Frame", "What Goes Up...", "Granite Getaway", "Circuit Maximus", "Catch You Letter", "Snow Whirled", "Daft Rafts", "Tricky Tires", "Treasure Trawlers", "Memory Lane", "Mowtown", "Cannonball Fun", "Note to Self", "Same is Lame", "Light Up My Night", "Lift Leapers", "Blooper Scooper", "Trap Ease Artist", "Pokey Punch-out", "Money Belt", "Cash Flow", "Cog Jog", "Sink or Swim", "Snow Brawl", "Ball Dozers", "Surge and Destroy", "Pop Star", "Stage Fright", "Conveyor Bolt", "Crate and Peril", "Ray of Fright", "Dust 'til Dawn", "Garden Grab", "Pixel Perfect", "Slot Trot", "Gondola Glide", "Light Breeze", "Body Builder", "Mole-it!", "Cashapult", "Jump the Gun", "Rocky Road", "Clean Team", "Hyper Sniper", "Insectiride", "Sunday Drivers", "Stamp By Me", "Throw Me a Bone", "Black Hole Boogie", "Full Tilt", "Sumo of Doom-o", "O-Zone", "Pitifall", "Mass Meteor", "Lunar-tics", "T Minus Five", "Asteroad Rage", "Boo'd Off the Stage", "Boonanza!", "Trick or Tree", "Something's Amist", "Wrasslin' Rapids", "Verbal Assault", "Shoot Yer Mouth Off", "Talkie Walkie", "Burnstile", "Word Herd", "Fruit Talktail", "Pit Boss", "Dizzy Rotisserie", "Dark 'n Crispy", "Tally Me Banana", "Banana Shake", "Pier Factor", "Seer Terror", "Block Star", "Lab Brats", "Strawberry Shortfuse", "Control Shtick", "Dunk Bros."]
+    # Create labels, comboboxes, and button for Minigame Replacement tab
+    replace_label = ctk.CTkLabel(master=tabview.tab("Minigame Replacement"), text=" Replace  ", font=("Arial", 16))
+    replace_label.grid(row=0, column=0)
+    combobox_mingames_1 = ctk.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=minigames_list)
+    combobox_mingames_1.grid(row=0, column=1)
+    with_label = ctk.CTkLabel(master=tabview.tab("Minigame Replacement"), text=" with ", font=("Arial", 16))
+    with_label.grid(row=0, column=2)
+    combobox_mingames_2 = ctk.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=minigames_list)
+    combobox_mingames_2.grid(row=0, column=3)
+    parse_minigame_button = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=lambda: mgReplaceEvent_mp6(combobox_mingames_1, combobox_mingames_2, minigames_list), text="Generate Codes")
+    parse_minigame_button.place(x=10, y=640)
+
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/mushroomCapsule.png", 2, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=2, column=2)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" 5  ", font=("Arial", 24, "bold"))
+    label.grid(row=2, column=3)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=2, column=4)
+    mushroomCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    mushroomCapsuleWeight6.grid(row=2, column=5)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.   ", font=("Arial", 16))
+    label.grid(row=2, column=6)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/goldenMushroomCapsule.png", 3, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=3, column=2)
+    goldenMushroomCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    goldenMushroomCapsulePrice6.grid(row=3, column=3)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=3, column=4)
+    goldenMushroomCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    goldenMushroomCapsuleWeight6.grid(row=3, column=5)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=3, column=6)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/slowMushroomCapsule.png", 4, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=4, column=2)
+    slowMushroomCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    slowMushroomCapsulePrice6.grid(row=4, column=3)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=4, column=4)
+    slowMushroomCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    slowMushroomCapsuleWeight6.grid(row=4, column=5)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=4, column=6)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/metalMushroomCapsule.png", 5, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=5, column=2)
+    metalMushroomCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    metalMushroomCapsulePrice6.grid(row=5, column=3)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=5, column=4)
+    metalMushroomCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    metalMushroomCapsuleWeight6.grid(row=5, column=5)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=5, column=6)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/warpCapsule.png", 6, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=6, column=2)
+    warpPipeCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    warpPipeCapsulePrice6.grid(row=6, column=3)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=6, column=4)
+    warpPipeCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    warpPipeCapsuleWeight6.grid(row=6, column=5)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=6, column=6)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/wigglerCapsule.png", 8, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=8, column=2)
+    flutterCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    flutterCapsulePrice6.grid(row=8, column=3)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=8, column=4)
+    flutterCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    flutterCapsuleWeight6.grid(row=8, column=5)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=8, column=6)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/cursedMushroomCapsule.png", 9, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=9, column=2)
+    cursedMushroomCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    cursedMushroomCapsulePrice6.grid(row=9, column=3)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=9, column=4)
+    cursedMushroomCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    cursedMushroomCapsuleWeight6.grid(row=9, column=5)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=9, column=6)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/spinyCapsule.png", 10, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=10, column=2)
+    spinyCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    spinyCapsulePrice6.grid(row=10, column=3)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=10, column=4)
+    spinyCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    spinyCapsuleWeight6.grid(row=10, column=5)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=10, column=6)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/goombaCapsule.png", 11, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=11, column=2)
+    goombaCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    goombaCapsulePrice6.grid(row=11, column=3)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=11, column=4)
+    goombaCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    goombaCapsuleWeight6.grid(row=11, column=5)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=11, column=6)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/plantCapsule.png", 12, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=12, column=2)
+    plantCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    plantCapsulePrice6.grid(row=12, column=3)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=12, column=4)
+    plantCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    plantCapsuleWeight6.grid(row=12, column=5)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.  ", font=("Arial", 16))
+    label.grid(row=12, column=6)
+
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text="", font=("Arial", 16))
+    label.grid(row=2, column=6)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/kamekCapsule.png", 2, 8)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=2, column=9)
+    kamekCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    kamekCapsulePrice6.grid(row=2, column=10)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=2, column=11)
+    kamekCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    kamekCapsuleWeight6.grid(row=2, column=12)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.  ", font=("Arial", 16))
+    label.grid(row=2, column=13)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/toadyCapsule.png", 3, 8)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=3, column=9)
+    toadyCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    toadyCapsulePrice6.grid(row=3, column=10)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=3, column=11)
+    toadyCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    toadyCapsuleWeight6.grid(row=3, column=12)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=3, column=13)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/blizzardCapsule.png", 4, 8)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=4, column=9)
+    blizzardCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    blizzardCapsulePrice6.grid(row=4, column=10)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=4, column=11)
+    blizzardCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    blizzardCapsuleWeight6.grid(row=4, column=12)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=4, column=13)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/kleptoCapsule.png", 5, 8)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=5, column=9)
+    kleptoCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    kleptoCapsulePrice6.grid(row=5, column=10)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=5, column=11)
+    kleptoCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    kleptoCapsuleWeight6.grid(row=5, column=12)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=5, column=13)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/pinkBooCapsule.png", 6, 8)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=6, column=9)
+    pinkBooCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    pinkBooCapsulePrice6.grid(row=6, column=10)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=6, column=11)
+    pinkBooCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    pinkBooCapsuleWeight6.grid(row=6, column=12)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=6, column=13)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/podobooCapsule.png", 6, 8)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=6, column=9)
+    podobooCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    podobooCapsulePrice6.grid(row=6, column=10)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=6, column=11)
+    podobooCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    podobooCapsuleWeight6.grid(row=6, column=12)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=6, column=13)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/zapCapsule.png", 8, 8)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=8, column=9)
+    zapCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    zapCapsulePrice6.grid(row=8, column=10)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=8, column=11)
+    zapCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    zapCapsuleWeight6.grid(row=8, column=12)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=8, column=13)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/tweesterCapsule.png", 9, 8)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=9, column=9)
+    tweesterCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    tweesterCapsulePrice6.grid(row=9, column=10)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=9, column=11)
+    tweesterCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    tweesterCapsuleWeight6.grid(row=9, column=12)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=9, column=13)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/thwompCapsule.png", 10, 8)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=10, column=9)
+    thwompCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    thwompCapsulePrice6.grid(row=10, column=10)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=10, column=11)
+    thwompCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    thwompCapsuleWeight6.grid(row=10, column=12)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=10, column=13)
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/bulletBillCapsule.png", 11, 8)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=11, column=9)
+    bulletBillCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    bulletBillCapsulePrice6.grid(row=11, column=10)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=11, column=11)
+    bulletBillCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    bulletBillCapsuleWeight6.grid(row=11, column=12)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=11, column=13)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/bombCapsule.png", 12, 8)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=12, column=9)
+    bombCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    bombCapsulePrice6.grid(row=12, column=10)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=12, column=11)
+    bombCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    bombCapsuleWeight6.grid(row=12, column=12)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.  ", font=("Arial", 16))
+    label.grid(row=12, column=13)
+
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text="", font=("Arial", 16))
+    label.grid(row=2, column=14)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/paraTroopaCapsule.png", 2, 15)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=2, column=16)
+    paraTroopaCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    paraTroopaCapsulePrice6.grid(row=2, column=17)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=2, column=18)
+    paraTroopaCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    paraTroopaCapsuleWeight6.grid(row=2, column=19)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=2, column=20)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/snackCapsule.png", 3, 15)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=3, column=16)
+    snackCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    snackCapsulePrice6.grid(row=3, column=17)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=3, column=18)
+    snackCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    snackCapsuleWeight6.grid(row=3, column=19)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=3, column=20)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/gaddlightCapsule.png", 4, 15)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=4, column=16)
+    gaddLightCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    gaddLightCapsulePrice6.grid(row=4, column=17)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=4, column=18)
+    gaddLightCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    gaddLightCapsuleWeight6.grid(row=4, column=19)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=4, column=20)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/pinkBooCapsule.png", 5, 15)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=5, column=16)
+    pinkBooCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    pinkBooCapsulePrice6.grid(row=5, column=17)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=5, column=18)
+    pinkBooCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    pinkBooCapsuleWeight6.grid(row=5, column=19)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=5, column=20)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/chanceCapsule.png", 6, 15)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=6, column=16)
+    chanceTimeCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    chanceTimeCapsulePrice6.grid(row=6, column=17)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=6, column=18)
+    chanceTimeCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    chanceTimeCapsuleWeight6.grid(row=6, column=19)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=6, column=20)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/dkCapsule.png", 8, 15)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=8, column=16)
+    dkCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    dkCapsulePrice6.grid(row=8, column=17)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=8, column=18)
+    dkCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    dkCapsuleWeight6.grid(row=8, column=19)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=8, column=20)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/bowserCapsule.png", 9, 15)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=9, column=16)
+    bowserCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    bowserCapsulePrice6.grid(row=9, column=17)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=9, column=18)
+    bowserCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    bowserCapsuleWeight6.grid(row=9, column=19)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=9, column=20)
+
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/duelCapsule.png", 10, 15)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=10, column=16)
+    duelCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    duelCapsulePrice6.grid(row=10, column=17)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=10, column=18)
+    duelCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    duelCapsuleWeight6.grid(row=10, column=19)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=10, column=20)
+
+
+    parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: itemsEvent_mp6(warpPipeCapsuleWeight6, warpPipeCapsulePrice6, mushroomCapsuleWeight6, goldenMushroomCapsulePrice6, goldenMushroomCapsuleWeight6, slowMushroomCapsulePrice6, slowMushroomCapsuleWeight6, metalMushroomCapsulePrice6, metalMushroomCapsuleWeight6, bulletBillCapsulePrice6, bulletBillCapsuleWeight6, flutterCapsulePrice6, flutterCapsuleWeight6, cursedMushroomCapsulePrice6, cursedMushroomCapsuleWeight6, spinyCapsulePrice6, spinyCapsuleWeight6, goombaCapsulePrice6, goombaCapsuleWeight6, plantCapsulePrice6, plantCapsuleWeight6, kleptoCapsulePrice6, kleptoCapsuleWeight6, toadyCapsulePrice6, toadyCapsuleWeight6, kamekCapsulePrice6, kamekCapsuleWeight6, blizzardCapsulePrice6, blizzardCapsuleWeight6, podobooCapsulePrice6, podobooCapsuleWeight6, zapCapsulePrice6, zapCapsuleWeight6, tweesterCapsulePrice6, tweesterCapsuleWeight6, thwompCapsulePrice6, thwompCapsuleWeight6, bombCapsulePrice6, bombCapsuleWeight6, paraTroopaCapsulePrice6, paraTroopaCapsuleWeight6, snackCapsulePrice6, snackCapsuleWeight6, gaddLightCapsulePrice6, gaddLightCapsuleWeight6, pinkBooCapsulePrice6, pinkBooCapsuleWeight6, chanceTimeCapsulePrice6, chanceTimeCapsuleWeight6, bowserCapsulePrice6, bowserCapsuleWeight6, dkCapsulePrice6, dkCapsuleWeight6, duelCapsulePrice6, duelCapsuleWeight6), text="Generate Codes")
+    parseButton.place(x=10, y=640)
+
+    parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: savePresetItems6(warpPipeCapsuleWeight6, warpPipeCapsulePrice6, mushroomCapsuleWeight6, goldenMushroomCapsulePrice6, goldenMushroomCapsuleWeight6, slowMushroomCapsulePrice6, slowMushroomCapsuleWeight6, metalMushroomCapsulePrice6, metalMushroomCapsuleWeight6, bulletBillCapsulePrice6, bulletBillCapsuleWeight6, flutterCapsulePrice6, flutterCapsuleWeight6, cursedMushroomCapsulePrice6, cursedMushroomCapsuleWeight6, spinyCapsulePrice6, spinyCapsuleWeight6, goombaCapsulePrice6, goombaCapsuleWeight6, plantCapsulePrice6, plantCapsuleWeight6, kleptoCapsulePrice6, kleptoCapsuleWeight6, toadyCapsulePrice6, toadyCapsuleWeight6, kamekCapsulePrice6, kamekCapsuleWeight6, blizzardCapsulePrice6, blizzardCapsuleWeight6, podobooCapsulePrice6, podobooCapsuleWeight6, zapCapsulePrice6, zapCapsuleWeight6, tweesterCapsulePrice6, tweesterCapsuleWeight6, thwompCapsulePrice6, thwompCapsuleWeight6, bombCapsulePrice6, bombCapsuleWeight6, paraTroopaCapsulePrice6, paraTroopaCapsuleWeight6, snackCapsulePrice6, snackCapsuleWeight6, gaddLightCapsulePrice6, gaddLightCapsuleWeight6, pinkBooCapsulePrice6, pinkBooCapsuleWeight6, chanceTimeCapsulePrice6, chanceTimeCapsuleWeight6, bowserCapsulePrice6, bowserCapsuleWeight6, dkCapsulePrice6, dkCapsuleWeight6, duelCapsulePrice6, duelCapsuleWeight6), text="Save Preset")
+    parseButton.place(x=160, y=640)
+
+    parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: loadPresetItems6(warpPipeCapsuleWeight6, warpPipeCapsulePrice6, mushroomCapsuleWeight6, goldenMushroomCapsulePrice6, goldenMushroomCapsuleWeight6, slowMushroomCapsulePrice6, slowMushroomCapsuleWeight6, metalMushroomCapsulePrice6, metalMushroomCapsuleWeight6, bulletBillCapsulePrice6, bulletBillCapsuleWeight6, flutterCapsulePrice6, flutterCapsuleWeight6, cursedMushroomCapsulePrice6, cursedMushroomCapsuleWeight6, spinyCapsulePrice6, spinyCapsuleWeight6, goombaCapsulePrice6, goombaCapsuleWeight6, plantCapsulePrice6, plantCapsuleWeight6, kleptoCapsulePrice6, kleptoCapsuleWeight6, toadyCapsulePrice6, toadyCapsuleWeight6, kamekCapsulePrice6, kamekCapsuleWeight6, blizzardCapsulePrice6, blizzardCapsuleWeight6, podobooCapsulePrice6, podobooCapsuleWeight6, zapCapsulePrice6, zapCapsuleWeight6, tweesterCapsulePrice6, tweesterCapsuleWeight6, thwompCapsulePrice6, thwompCapsuleWeight6, bombCapsulePrice6, bombCapsuleWeight6, paraTroopaCapsulePrice6, paraTroopaCapsuleWeight6, snackCapsulePrice6, snackCapsuleWeight6, gaddLightCapsulePrice6, gaddLightCapsuleWeight6, pinkBooCapsulePrice6, pinkBooCapsuleWeight6, chanceTimeCapsulePrice6, chanceTimeCapsuleWeight6, bowserCapsulePrice6, bowserCapsuleWeight6, dkCapsulePrice6, dkCapsuleWeight6, duelCapsulePrice6, duelCapsuleWeight6), text="Load Preset")
+    parseButton.place(x=310, y=640)
+
+    # Create Code Checkboxes
+    checkbox30hz = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - 30Hz Gameplay", font=("Arial", 13))
+    checkbox30hz.grid(row=0, column=0, sticky="w", padx=5, pady=5)
+
+    # Create Code Checkboxes
+    checkboxAdvTxt = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Automatically Advance Text Boxes", font=("Arial", 13))
+    checkboxAdvTxt.grid(row=1, column=0, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxChangeTurnCount = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Change Turn Count on the Fly", font=("Arial", 13))
+    checkboxChangeTurnCount.grid(row=2, column=0, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxDisableAdv = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Disable Advance on Results", font=("Arial", 13))
+    checkboxDisableAdv.grid(row=3, column=0, sticky="w", padx=5, pady=5)
+
+    # Create Code Checkboxes
+    checkboxDisableMusic = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Disable In-game Music", font=("Arial", 13))
+    checkboxDisableMusic.grid(row=4, column=0, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxBoot = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Faster Boot Time", font=("Arial", 13))
+    checkboxBoot.grid(row=5, column=0, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxBSpeed = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Increased Board Speed", font=("Arial", 13))
+    checkboxBSpeed.grid(row=6, column=0, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxOrbThrow = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Increased Orb Throwing Capabilities", font=("Arial", 13))
+    checkboxOrbThrow.grid(row=7, column=0, sticky="w", padx=5, pady=5)
+
+    # Create Code Checkboxes
+    checkboxTaunt = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Increased Taunt Capabilities", font=("Arial", 13))
+    checkboxTaunt.grid(row=8, column=0, sticky="w", padx=5, pady=5)
+
+    # Create Code Checkboxes
+    checkboxTxtDisplay = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Instant Text Display", font=("Arial", 13))
+    checkboxTxtDisplay.grid(row=9, column=0, sticky="w", padx=5, pady=5)
+
+    # Create Code Checkboxes
+    checkboxRandomMus = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Random In-game Music", font=("Arial", 13))
+    checkboxRandomMus.grid(row=10, column=0, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxShowCtrl = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Show Player Who Paused", font=("Arial", 13))
+    checkboxShowCtrl.grid(row=10, column=0, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxUnlockAll = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="QOL - Unlock Everything", font=("Arial", 13))
+    checkboxUnlockAll.grid(row=11, column=0, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxZtarCoins = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Castaway Bay - Ztar only steals Coins", font=("Arial", 13))
+    checkboxZtarCoins.grid(row=12, column=0, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxHapFaire = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Faire Square - Happening Space is Always Coins", font=("Arial", 13))
+    checkboxHapFaire.grid(row=13, column=0, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxLakeRoll = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Snowflake Lake - Chomps Roll 7 during daytime\nand 3 per dice during nighttime", font=("Arial", 13))
+    checkboxLakeRoll.grid(row=14, column=0, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxLakeSellStar = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Snowflake Lake - Chomps Sell Stars (40 Coins)\nPlayers Start with 0 Stars", font=("Arial", 13))
+    checkboxLakeSellStar.grid(row=15, column=0, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxLakeRollLowerThan5 = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Snowflake Lake - Never Roll Lower Then 5", font=("Arial", 13))
+    checkboxLakeRollLowerThan5.grid(row=16, column=0, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxLakeStart3 = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Snowflake Lake - Start with 3 Stars", font=("Arial", 13))
+    checkboxLakeStart3.grid(row=0, column=1, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxAlwaysSneeze = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Towering Treetop - Woody Always Sneezes", font=("Arial", 13))
+    checkboxAlwaysSneeze.grid(row=1, column=1, sticky="w", padx=5, pady=5)
+
+    # Create Code Checkboxes
+    checkboxPermaPaths = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Automated Path Decisions", font=("Arial", 13))
+    checkboxPermaPaths.grid(row=2, column=1, sticky="w", padx=5, pady=5)
+
+    # Create Code Comboboxes
+    label = ctk.CTkLabel(master=tabview.tab("Mod Selection"), text="Day / Night Cycle", font=("Arial", 17, "bold"))
+    label.grid(row=3, column=2, sticky="w", padx=5, pady=5)
+    comboboxDayNightEvent = ctk.CTkComboBox(master=tabview.tab("Mod Selection"), values=["Normal (3 Turns)", "Switch Every Turn", "Always Day", "Always Night"], font=("Arial", 13), width=300)
+    comboboxDayNightEvent.grid(row=4, column=2, sticky="w", padx=5, pady=5)
+
+    # Create Code Checkboxes
+    checkboxBattlMinigame = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Battle Minigames Don't Affect Mini-Game Star", font=("Arial", 13))
+    checkboxBattlMinigame.grid(row=3, column=1, sticky="w", padx=5, pady=5)
+
+    # Create Code Checkboxes
+    checkboxCoinStar = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Coin Star Replaces Orb Star", font=("Arial", 13))
+    checkboxCoinStar.grid(row=4, column=1, sticky="w", padx=5, pady=5)
+
+    # Create Code Checkboxes
+    checkboxDoubleTurns = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Double the Amount of Turns", font=("Arial", 13))
+    checkboxDoubleTurns.grid(row=4, column=1, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxForceLast5 = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Last 5 Turns Event - First Turn", font=("Arial", 13))
+    checkboxForceLast5.grid(row=5, column=1, sticky="w", padx=5, pady=5)
+
+    # Create Code Comboboxes
+    label = ctk.CTkLabel(master=tabview.tab("Mod Selection"), text="Last 5 Turns Events", font=("Arial", 17, "bold"))
+    label.grid(row=0, column=2, sticky="w", padx=5, pady=5)
+    comboboxLast5Event = ctk.CTkComboBox(master=tabview.tab("Mod Selection"), values=["Random", "Disabled", "x3 Coins", "40 Coins", "5 Character Spaces", "Bowser Revolution"], font=("Arial", 13), width=300)
+    comboboxLast5Event.grid(row=1, column=2, sticky="w", padx=5, pady=5)
+
+    # Create Code Checkboxes
+    checkboxLastTOrbs = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Obtain Orbs on Final Turn", font=("Arial", 13))
+    checkboxLastTOrbs.grid(row=6, column=1, sticky="w", padx=5, pady=5)
+
+    # Create Code Checkboxes
+    checkboxPPALL = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Piranha Plant Steals ALL Coins", font=("Arial", 13))
+    checkboxPPALL.grid(row=7, column=1, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxsameSpaceAlways = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Same Space Duels Always Happen", font=("Arial", 13))
+    checkboxsameSpaceAlways.grid(row=8, column=1, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxsameSpaceNever = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Same Space Duels Never Happen", font=("Arial", 13))
+    checkboxsameSpaceNever.grid(row=9, column=1, sticky="w", padx=5, pady=5)
+
+    def checkbox_callback_SameSpace():
+        if checkboxsameSpaceNever.get() == 1:
+            checkboxsameSpaceAlways.configure(state="disabled")
+        else:
+            checkboxsameSpaceAlways.configure(state="normal")
+
+        if checkboxsameSpaceAlways.get() == 1:
+            checkboxsameSpaceNever.configure(state="disabled")
+        else:
+            checkboxsameSpaceNever.configure(state="normal")
+
+    # Attach the callback function to the checkboxes
+    checkboxsameSpaceNever.configure(command=checkbox_callback_SameSpace)
+    checkboxsameSpaceAlways.configure(command=checkbox_callback_SameSpace)
+
+    # Create Code Checkboxes
+    checkbox3Jump = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Crate & Peril - 3 Can Jump", font=("Arial", 13))
+    checkbox3Jump.grid(row=10, column=1, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxDizzy = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Dizzy Rotisserie - 20 Second Timer", font=("Arial", 13))
+    checkboxDizzy.grid(row=11, column=1, sticky="w", padx=5, pady=5)
+
+    # Create Code Checkboxes
+    checkboxInsectiride = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Insectiride - Balance Changes", font=("Arial", 13))
+    checkboxInsectiride.grid(row=12, column=1, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxQuickerFinish = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Mass Meteor - Quicker Finish", font=("Arial", 13))
+    checkboxQuickerFinish.grid(row=13, column=1, sticky="w", padx=5, pady=5)
+
+    # Create Code Checkboxes
+    checkboxTiesareTies = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Mass Meteor - Ties are Always Ties", font=("Arial", 13))
+    checkboxTiesareTies.grid(row=14, column=1, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxNoTrail = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Memory Lane - No Trail", font=("Arial", 13))
+    checkboxNoTrail.grid(row=15, column=1, sticky="w", padx=5, pady=5)
+
+    # Create Code Checkboxes
+    checkboxPermDeath = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Odd Card Out - Permadeath", font=("Arial", 13))
+    checkboxPermDeath.grid(row=16, column=1, sticky="w", padx=5, pady=5)
+
+    # Create Code Checkboxes
+    checkboxSlowerLazer = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Ray of Fright - Slower Laser", font=("Arial", 13))
+    checkboxSlowerLazer.grid(row=6, column=2, sticky="w", padx=5, pady=5)
+
+    # Create Code Checkboxes
+    checkboxTankAir = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Sink or Swim - Half Air Tank & Less Air Recovery", font=("Arial", 13))
+    checkboxTankAir.grid(row=7, column=2, sticky="w", padx=5, pady=5)
+    
+    # Create Code Checkboxes
+    checkboxStageFright = ctk.CTkCheckBox(master=tabview.tab("Mod Selection"), text="Stage Fright - 25 Second Timer", font=("Arial", 13))
+    checkboxStageFright.grid(row=7, column=2, sticky="w", padx=5, pady=5)
+
+    def checkbox_callback_Last5():
+        if checkboxDisableLast5.get() == 1:
+            checkboxForceLast5.configure(state="disabled")
+            comboboxLast5Event.configure(state="disabled")
+        else:
+            checkboxForceLast5.configure(state="normal")
+            comboboxLast5Event.configure(state="normal")
+            
+    def combobox_callback_Last5(choice):  
+        if comboboxLast5Event.get() == "Disabled":
+            checkboxForceLast5.configure(state="disabled")
+
+    # Attach the callback function to the checkboxes
+    checkboxForceLast5.configure(command=checkbox_callback_Last5)
+    comboboxLast5Event.configure(command=combobox_callback_Last5)
+
+    # Default Check Boxes
+    checkboxDisableAdv.select()
+    checkboxBoot.select()
+    checkboxBSpeed.select()
+    checkboxChangeTurnCount.select()
+    checkboxTaunt.select()
+    checkboxOrbThrow.select()
+    checkboxTxtDisplay.select()
+    checkboxShowCtrl.select()
+    checkboxUnlockAll.select()
+    checkboxRandomMus.select()
+
+    parseButtonSixOther = ctk.CTkButton(master=tabview.tab("Mod Selection"), command=lambda: modSelect_mp6(checkboxTankAir, checkboxsameSpaceNever, checkboxsameSpaceAlways, checkbox30hz, checkboxBattlMinigame, checkboxCoinStar, checkboxPermaPaths, checkboxRandomMus, checkboxAdvTxt, checkboxChangeTurnCount, checkboxDisableAdv, checkboxDisableMusic, checkboxBoot, checkboxBSpeed, checkboxTaunt, checkboxOrbThrow, checkboxTxtDisplay, checkboxShowCtrl, checkboxUnlockAll, checkboxZtarCoins, checkboxHapFaire, checkboxLakeRoll, checkboxLakeSellStar, checkboxLakeRollLowerThan5, checkboxAlwaysSneeze, checkboxDoubleTurns, checkboxLakeStart3, checkboxForceLast5, comboboxLast5Event, checkboxLastTOrbs, checkboxPPALL, checkbox3Jump, checkboxDizzy, checkboxInsectiride, checkboxQuickerFinish, checkboxTiesareTies, checkboxPermDeath, checkboxSlowerLazer, checkboxStageFright, checkboxNoTrail), text="Generate Codes")
+    parseButtonSixOther.place(x=10, y=640)
+
+
+    spaces6 = ["None", "Invisible Space", "Blue Space", "Red Space", "Happening Space", "Chance Time Space", "Duel Space", "Bowser/DK Space", "Orb Space"]
+    
+    label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" Replace  ", font=("Arial", 16))
+    label.grid(row=0, column=0)
+
+    spaceRep411 = ctk.CTkComboBox(master=tabview.tab("Space Replacement"), values=spaces6)
+    spaceRep411.grid(row=0, column=1)
+
+    label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" with ", font=("Arial", 16))
+    label.grid(row=0, column=2)
+
+    spaceRep421 = ctk.CTkComboBox(master=tabview.tab("Space Replacement"), values=spaces6)
+    spaceRep421.grid(row=0, column=3)
+
+    label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" (Slot A) ", font=("Arial", 16))
+    label.grid(row=0, column=4)
+
+    label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" Replace  ", font=("Arial", 16))
+    label.grid(row=1, column=0)
+
+    spaceRep412 = ctk.CTkComboBox(master=tabview.tab("Space Replacement"), values=spaces6)
+    spaceRep412.grid(row=1, column=1)
+
+    label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" with ", font=("Arial", 16))
+    label.grid(row=1, column=2)
+
+    spaceRep422 = ctk.CTkComboBox(master=tabview.tab("Space Replacement"), values=spaces6)
+    spaceRep422.grid(row=1, column=3)
+
+    label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" (Slot B) ", font=("Arial", 16))
+    label.grid(row=1, column=4)
+
+    parseButton = ctk.CTkButton(master=tabview.tab("Space Replacement"), command=lambda: spaceReplaceEvent_mp6(spaceRep411, spaceRep412, spaceRep421, spaceRep422, spaces6), text="Generate Codes")
+    parseButton.place(x=10, y=640)
+
+    items6 = ["None", "Mushroom", "Golden Mushroom", "Sluggish 'Shroom", "Metal Mushroom", "Bullet Bill", "Warp Pipe", "Flutter", "Cursed Mushroom", "Spiny", "Goomba", "Piranha Plant", "Klepto", "Toady", "Kamek", "Mr. Blizzard", "Podoboo", "Zap", "Tweester", "Thwomp", "Bob-omb", "Paratroopa", "Snack", "Boo-away", "Duel", "Miracle", "Bowser", "Donkey Kong", "Pink Boo"]
+    
+    label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 1:  ", font=("Arial", 16))
+    label.grid(row=0, column=0)
+
+    initalItem41 = ctk.CTkComboBox(master=tabview.tab("Initial Items"), values=items6)
+    initalItem41.grid(row=0, column=1)
+
+    label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 2:  ", font=("Arial", 16))
+    label.grid(row=1, column=0)
+
+    initalItem42 = ctk.CTkComboBox(master=tabview.tab("Initial Items"), values=items6)
+    initalItem42.grid(row=1, column=1)
+
+    label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 3:  ", font=("Arial", 16))
+    label.grid(row=2, column=0)
+
+    initalItem43 = ctk.CTkComboBox(master=tabview.tab("Initial Items"), values=items6)
+    initalItem43.grid(row=2, column=1)
+
+    parseButton = ctk.CTkButton(master=tabview.tab("Initial Items"), command=lambda: initialItemsEvent_mp6(initalItem41, initalItem42, initalItem43, items6), text="Generate Codes")
+    parseButton.place(x=10, y=640)
+
+    return frame
+    
