@@ -462,51 +462,6 @@ def create_mario_party_7_interface(frame):
     label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
     label.grid(row=8, column=20)
 
-    # Create hammer bro
-    hammerBroIconSeven = create_image_icon(tabview.tab("Coins Mods"), "assets/items/hammerBroCapsule.png", 7, 1)
-    hammerBroLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Lose  ", font=("Arial", 16))
-    hammerBroLabel.grid(row=7, column=2)
-    hammerBroAmountSeven = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-    hammerBroAmountSeven.grid(row=7, column=3)
-    hammerBroLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins from Hammer Bro.", font=("Arial", 16))
-    hammerBroLabel.grid(row=7, column=4, sticky="w")
-
-    # Create zap
-    zapIconSeven = create_image_icon(tabview.tab("Coins Mods"), "assets/items/zapCapsule.png", 8, 1)
-    zapLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Lose  ", font=("Arial", 16))
-    zapLabel.grid(row=8, column=2)
-    zapAmountSeven = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-    zapAmountSeven.grid(row=8, column=3)
-    zapLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins from Zaps.", font=("Arial", 16))
-    zapLabel.grid(row=8, column=4, sticky="w")
-
-    # create fireball
-    fireballIconSeven = create_image_icon(tabview.tab("Coins Mods"), "assets/items/fireballCapsule.png", 9, 1)
-    fireballLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Lose  ", font=("Arial", 16))
-    fireballLabel.grid(row=9, column=2)
-    fireballAmountSeven = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-    fireballAmountSeven.grid(row=9, column=3)
-    fireballLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins from Fireballs.", font=("Arial", 16))
-    fireballLabel.grid(row=9, column=4, sticky="w")
-
-    # Create vacuum
-    vacuumIconSeven = create_image_icon(tabview.tab("Coins Mods"), "assets/items/vacuumCapsule.png", 10, 1)
-    vacuumLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Steal  ", font=("Arial", 16))
-    vacuumLabel.grid(row=10, column=2)
-    vacuumAmountSeven = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-    vacuumAmountSeven.grid(row=10, column=3)
-    vacuumLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins with the Vacuum.", font=("Arial", 16))
-    vacuumLabel.grid(row=10, column=4, sticky="w")
-
-    # create fireball
-    flowerIconSeven = create_image_icon(tabview.tab("Coins Mods"), "assets/items/flowerCapsule.png", 11, 1)
-    flowerLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Gain  ", font=("Arial", 16))
-    flowerLabel.grid(row=11, column=2)
-    flowerAmountSeven = ctk.CTkEntry(master=tabview.tab("Coins Mods"), width=48, font=("Arial", 16, "bold"))
-    flowerAmountSeven.grid(row=11, column=3)
-    flowerLabel = ctk.CTkLabel(master=tabview.tab("Coins Mods"), text=" Coins per Space with the Flower.", font=("Arial", 16))
-    flowerLabel.grid(row=11, column=4, sticky="w")
-
     parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7), text="Generate Codes")
     parseButton.place(x=10, y=640)
 
