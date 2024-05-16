@@ -312,6 +312,38 @@ A09F0032 2804FFFF
 B01F0030 00000000
 '''
 
+def getStarHandicapP1(amount, amountDec):
+    return f'''
+MP6 - P1 Starts With {amountDec} Stars
+28265772 00000000
+02265780 0000{amount}
+E2000001 80008000
+'''
+
+def getStarHandicapP2(amount, amountDec):
+    return f'''
+MP6 - P2 Starts With {amountDec} Stars
+28265772 00000000
+02265788 0000{amount}
+E2000001 80008000
+'''
+
+def getStarHandicapP3(amount, amountDec):
+    return f'''
+MP6 - P3 Starts With {amountDec} Stars
+28265772 00000000
+02265790 0000{amount}
+E2000001 80008000
+'''
+
+def getStarHandicapP4(amount, amountDec):
+    return f'''
+MP6 - P4 Starts With {amountDec} Stars
+28265772 00000000
+02265798 0000{amount}
+E2000001 80008000
+'''
+
 def getOtherCodesSix(code):
     if code == "30Hz":
         return '''

@@ -222,3 +222,27 @@ D111135E 0005
 D1110DEE 0005
 81110DEE 00{min}
 '''
+
+def getStarHandicapP1(amount, amountDec):
+    return f'''
+MP3 - P1 Starts With {amountDec} Stars
+8011AA3C {amount}	
+'''
+
+def getStarHandicapP2(amount, amountDec):
+    return f'''
+MP3 - P2 Starts With {amountDec} Stars
+8011AA3D {amount}	
+'''
+
+def getStarHandicapP3(amount, amountDec):
+    return f'''
+MP3 - P3 Starts With {amountDec} Stars
+8011AA3E {amount}	
+'''
+
+def getStarHandicapP4(amount, amountDec):
+    return f'''
+MP3 - P4 Starts With {amountDec} Stars
+8011AA3F {amount}
+'''

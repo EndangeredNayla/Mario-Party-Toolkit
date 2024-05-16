@@ -62,3 +62,31 @@ D00CC006 0014
 D00CC009 001E
 800CC009 00{ten}
 '''
+
+def getStarHandicapP1(amount, amountDec):
+    return f'''
+MP2 - P1 Starts With {amountDec} Stars
+D10FD2EA 0000
+810FD2CE {amount}	
+'''
+
+def getStarHandicapP2(amount, amountDec):
+    return f'''
+MP2 - P2 Starts With {amountDec} Stars
+D10FD2EA 0000
+810FD302 {amount}	
+'''
+
+def getStarHandicapP3(amount, amountDec):
+    return f'''
+MP2 - P3 Starts With {amountDec} Stars
+D10FD2EA 0000
+810FD336 {amount}	
+'''
+
+def getStarHandicapP4(amount, amountDec):
+    return f'''
+MP2 - P4 Starts With {amountDec} Stars
+D10FD2EA 0000
+810FD36A {amount}	
+'''
