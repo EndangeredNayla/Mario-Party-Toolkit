@@ -859,7 +859,7 @@ def loadPresetItems5(bombCapsulePrice5, bombCapsuleWeight5, koopaBankCapsulePric
         print("MPT file laoded successfully!")
         createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
 
-def codeToPresetItems5():
+def fillViaCode5(bombCapsulePrice5, bombCapsuleWeight5, koopaBankCapsulePrice5, koopaBankCapsuleWeight5, bulletBillCapsulePrice5, bulletBillCapsuleWeight5, hammerBroCapsulePrice5, hammerBroCapsuleWeight5, coinBlockCapsulePrice5, coinBlockCapsuleWeight5, duelCapsulePrice5, duelCapsuleWeight5, mushroomCapsulePrice5, mushroomCapsuleWeight5, goldenMushroomCapsulePrice5, goldenMushroomCapsuleWeight5, cursedMushroomCapsulePrice5, cursedMushroomCapsuleWeight5, flutterCapsulePrice5, flutterCapsuleWeight5, spinyCapsulePrice5, spinyCapsuleWeight5, goombaCapsuleWeight5, goombaCapsulePrice5, plantCapsulePrice5, plantCapsuleWeight5, kleptoCapsuleWeight5, kleptoCapsulePrice5, kamekCapsuleWeight5, kamekCapsulePrice5, magiKoopaCapsuleWeight5, magiKoopaCapsulePrice5, blizzardCapsuleWeight5, blizzardCapsulePrice5, podobooCapsulePrice5, podobooCapsuleWeight5, paraTroopaCapsuleWeight5, paraTroopaCapsulePrice5, ukikiCapsulePrice5, ukikiCapsuleWeight5, tweesterCapsulePrice5, tweesterCapsuleWeight5, lakituCapsulePrice5, lakituCapsuleWeight5, warpPipeCapsulePrice5, warpPipeCapsuleWeight5, miracleCapsulePrice5, miracleCapsuleWeight5, boneCapsulePrice5, boneCapsuleWeight5, chanceCapsulePrice5, chanceCapsuleWeight5, chainChompCapsulePrice5, chainChompCapsuleWeight5, bowserCapsulePrice5, bowserCapsuleWeight5, dkCapsulePrice5, dkCapsuleWeight5):
     file_path = tkinter.filedialog.askopenfilename(defaultextension=".txt", filetypes=[("Text Files", "*.txt")])
     if file_path:
         code5 = []
@@ -870,6 +870,7 @@ def codeToPresetItems5():
         weights5In = []
         prices5 = []
         prices5In = []
+        names = ["Mushroom", "Super Mushroom", "Cursed Mushroom", "Warp Pipe", "Klepto", "Bubble", "Wiggler", "Hammer Brother", "Coin Block", "Spiny", "Paratroopa", "Bullet Bill", "Goomba", "Bomomb", "Koopa Bank", "Kamek", "Mr. Blizzard", "Piranha Plant", "Magikoopa", "Ukiki", "Lakitu", "Tweester", "Duel", "Chain Chomp", "Bone", "Bowser", "Chance", "Miracle", "Donkey Kong"]
         current_line5 = ""
         with open(file_path, 'r', newline='') as csvfile:
             reader = csv.reader(csvfile)
@@ -909,19 +910,67 @@ def codeToPresetItems5():
         for price in prices5:
             prices5In.append(int(price, 16))
 
-        file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
-        if file_path:
-            with open(file_path, 'w', newline='') as csvfile:
-                writer = csv.writer(csvfile)
-                writer.writerow(['Prices', 'Weights'])
-                for price, weight in zip(prices5In, weights5In):
-                    writer.writerow([price, weight])
-        
-        print("MPT file saved successfully!")
-        createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
+        weights5In.insert(1, weights5In.pop(15))
+        weights5In.insert(4, weights5In.pop(13))
+        weights5In.insert(5, weights5In.pop(6))
+        weights5In.insert(6, weights5In.pop(8))
+        weights5In.insert(7, weights5In.pop(8))
+        weights5In.insert(8, weights5In.pop(11))
+        weights5In.insert(9, weights5In.pop(11))
+        weights5In.insert(10, weights5In.pop(17))
+        weights5In.insert(11, weights5In.pop(12))
+        weights5In.insert(12, weights5In.pop(14))
+        weights5In.insert(13, weights5In.pop(17))
+        weights5In.insert(14, weights5In.pop(15))
+        weights5In.insert(15, weights5In.pop(18))
+        weights5In.insert(16, weights5In.pop(19))
+        weights5In.insert(17, weights5In.pop(21))
+        weights5In.insert(18, weights5In.pop(21))
+        weights5In.insert(20, weights5In.pop(27))
+        weights5In.insert(21, weights5In.pop(25))
+        weights5In.insert(22, weights5In.pop(25))
+        weights5In.insert(23, weights5In.pop(27))
+        weights5In.insert(24, weights5In.pop(27))
+        weights5In.insert(25, weights5In.pop(28))
+        weights5In.insert(26, weights5In.pop(28))
+        weights5In.insert(27, weights5In.pop(28))
+
+        prices5In.insert(1, prices5In.pop(15))
+        prices5In.insert(4, prices5In.pop(13))
+        prices5In.insert(5, prices5In.pop(6))
+        prices5In.insert(6, prices5In.pop(8))
+        prices5In.insert(7, prices5In.pop(8))
+        prices5In.insert(8, prices5In.pop(11))
+        prices5In.insert(9, prices5In.pop(11))
+        prices5In.insert(10, prices5In.pop(17))
+        prices5In.insert(11, prices5In.pop(12))
+        prices5In.insert(12, prices5In.pop(14))
+        prices5In.insert(13, prices5In.pop(17))
+        prices5In.insert(14, prices5In.pop(15))
+        prices5In.insert(15, prices5In.pop(18))
+        prices5In.insert(16, prices5In.pop(19))
+        prices5In.insert(17, prices5In.pop(21))
+        prices5In.insert(18, prices5In.pop(21))
+        prices5In.insert(20, prices5In.pop(27))
+        prices5In.insert(21, prices5In.pop(25))
+        prices5In.insert(22, prices5In.pop(25))
+        prices5In.insert(23, prices5In.pop(27))
+        prices5In.insert(24, prices5In.pop(27))
+        prices5In.insert(25, prices5In.pop(28))
+        prices5In.insert(26, prices5In.pop(28))
+        prices5In.insert(27, prices5In.pop(28))
             
-        print(weights5In)
-        print(len(weights5In))
-        
-        print(prices5In)
-        print(len(prices5In))
+        # Define a list of Entry widget attributes
+        pricesNames5 = [mushroomCapsulePrice5, kamekCapsulePrice5, goldenMushroomCapsulePrice5, cursedMushroomCapsulePrice5, goombaCapsulePrice5, kleptoCapsulePrice5, flutterCapsulePrice5, podobooCapsulePrice5, spinyCapsulePrice5, coinBlockCapsulePrice5, plantCapsulePrice5, hammerBroCapsulePrice5, bulletBillCapsulePrice5, blizzardCapsulePrice5, paraTroopaCapsulePrice5, magiKoopaCapsulePrice5, ukikiCapsulePrice5, tweesterCapsulePrice5, lakituCapsulePrice5, warpPipeCapsulePrice5, miracleCapsulePrice5, boneCapsulePrice5, chainChompCapsulePrice5, chanceCapsulePrice5, bowserCapsulePrice5, dkCapsulePrice5, duelCapsulePrice5, koopaBankCapsulePrice5, bombCapsulePrice5]
+        weightsNames5 = [mushroomCapsuleWeight5, kamekCapsuleWeight5, goldenMushroomCapsuleWeight5, cursedMushroomCapsuleWeight5, goombaCapsuleWeight5, kleptoCapsuleWeight5, flutterCapsuleWeight5, podobooCapsuleWeight5, spinyCapsuleWeight5, coinBlockCapsuleWeight5, plantCapsuleWeight5, hammerBroCapsuleWeight5, bulletBillCapsuleWeight5, blizzardCapsuleWeight5, paraTroopaCapsuleWeight5, magiKoopaCapsuleWeight5, ukikiCapsuleWeight5, tweesterCapsuleWeight5, lakituCapsuleWeight5, warpPipeCapsuleWeight5, miracleCapsuleWeight5, boneCapsuleWeight5, chainChompCapsuleWeight5, chanceCapsuleWeight5, bowserCapsuleWeight5, dkCapsuleWeight5, duelCapsuleWeight5, koopaBankCapsuleWeight5, bombCapsuleWeight5]
+        # Update widgets with loaded values
+        for index, widget in enumerate(pricesNames5):
+            if widget and index < len(prices5In):
+                widget.delete(0, 'end')
+                widget.insert(0, int(prices5In[index]))
+        for index, widget in enumerate(weightsNames5):
+            if widget and index < len(weights5In):
+                widget.delete(0, 'end')
+                widget.insert(0, int(weights5In[index]))
+        print("Code loaded successfully!")
+        createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
