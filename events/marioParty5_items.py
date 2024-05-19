@@ -858,3 +858,70 @@ def loadPresetItems5(bombCapsulePrice5, bombCapsuleWeight5, koopaBankCapsulePric
                 widget.insert(0, int(weights5In[index]))
         print("MPT file laoded successfully!")
         createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
+
+def codeToPresetItems5():
+    file_path = tkinter.filedialog.askopenfilename(defaultextension=".txt", filetypes=[("Text Files", "*.txt")])
+    if file_path:
+        code5 = []
+        code_single5 = []
+        weight_code5 = []
+        price_code5 = []
+        weights5 = []
+        weights5In = []
+        prices5 = []
+        prices5In = []
+        current_line5 = ""
+        with open(file_path, 'r', newline='') as csvfile:
+            reader = csv.reader(csvfile)
+            for row in reader:
+                code5.append(row[0])
+        for line in code5:
+            for char in line:
+                if char == " ":
+                    code_single5.append(current_line5)
+                    current_line5 = ""
+                else:
+                    current_line5 = current_line5 + char
+            code_single5.append(current_line5)
+            current_line5 = ""
+        
+        del code_single5[0:8]
+        del code_single5[29:67]
+
+        for i in range(30, 58):
+            del code_single5[i]
+        
+        for i in range(29):
+            weight_code5.append(code_single5[i])
+        
+        for i in range(29):
+            price_code5.append(code_single5[i + 29])
+
+        for line in weight_code5:
+            weights5.append(line[2:4])
+        
+        for line in price_code5:
+            prices5.append(line[6:8])
+        
+        for weight in weights5:
+            weights5In.append(int(weight, 16))
+        
+        for price in prices5:
+            prices5In.append(int(price, 16))
+
+        file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
+        if file_path:
+            with open(file_path, 'w', newline='') as csvfile:
+                writer = csv.writer(csvfile)
+                writer.writerow(['Prices', 'Weights'])
+                for price, weight in zip(prices5In, weights5In):
+                    writer.writerow([price, weight])
+        
+        print("MPT file saved successfully!")
+        createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
+            
+        print(weights5In)
+        print(len(weights5In))
+        
+        print(prices5In)
+        print(len(prices5In))
