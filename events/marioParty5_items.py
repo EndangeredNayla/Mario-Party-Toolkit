@@ -9,6 +9,7 @@ from codes.marioParty5 import *
 from functions import *
 
 import csv
+import math
 import pyperclip
 
 def itemsEvent_mp5(bombCapsulePrice5, bombCapsuleWeight5, koopaBankCapsulePrice5, koopaBankCapsuleWeight5, bulletBillCapsulePrice5, bulletBillCapsuleWeight5, hammerBroCapsulePrice5, hammerBroCapsuleWeight5, coinBlockCapsulePrice5, coinBlockCapsuleWeight5, duelCapsulePrice5, duelCapsuleWeight5, mushroomCapsulePrice5, mushroomCapsuleWeight5, goldenMushroomCapsulePrice5, goldenMushroomCapsuleWeight5, cursedMushroomCapsulePrice5, cursedMushroomCapsuleWeight5, flutterCapsulePrice5, flutterCapsuleWeight5, spinyCapsulePrice5, spinyCapsuleWeight5, goombaCapsuleWeight5, goombaCapsulePrice5, plantCapsulePrice5, plantCapsuleWeight5, kleptoCapsuleWeight5, kleptoCapsulePrice5, kamekCapsuleWeight5, kamekCapsulePrice5, magiKoopaCapsuleWeight5, magiKoopaCapsulePrice5, blizzardCapsuleWeight5, blizzardCapsulePrice5, podobooCapsulePrice5, podobooCapsuleWeight5, paraTroopaCapsuleWeight5, paraTroopaCapsulePrice5, ukikiCapsulePrice5, ukikiCapsuleWeight5, tweesterCapsulePrice5, tweesterCapsuleWeight5, lakituCapsulePrice5, lakituCapsuleWeight5, warpPipeCapsulePrice5, warpPipeCapsuleWeight5, miracleCapsulePrice5, miracleCapsuleWeight5, boneCapsulePrice5, boneCapsuleWeight5, chanceCapsulePrice5, chanceCapsuleWeight5, chainChompCapsulePrice5, chainChompCapsuleWeight5, bowserCapsulePrice5, bowserCapsuleWeight5, dkCapsulePrice5, dkCapsuleWeight5):
@@ -103,37 +104,43 @@ def itemsEvent_mp5(bombCapsulePrice5, bombCapsuleWeight5, koopaBankCapsulePrice5
     bombCapsulePrice5 = bombCapsulePrice5.get()
     bombCapsuleWeight5 = bombCapsuleWeight5.get()
 
-    orbWeightTotal = int(hammerBroCapsuleWeight5) + int(bulletBillCapsuleWeight5) + int(koopaBankCapsuleWeight5) + int(coinBlockCapsuleWeight5) + int(mushroomCapsuleWeight5) + int(goldenMushroomCapsuleWeight5) + int(cursedMushroomCapsuleWeight5) + int(warpPipeCapsuleWeight5) + int(flutterCapsuleWeight5) + int(spinyCapsuleWeight5) + int(goombaCapsuleWeight5) + int(plantCapsuleWeight5) + int(kleptoCapsuleWeight5) + int(kamekCapsuleWeight5) + int(blizzardCapsuleWeight5) + int(podobooCapsuleWeight5) + int(paraTroopaCapsuleWeight5) + int(magiKoopaCapsuleWeight5) + int(ukikiCapsuleWeight5) + int(tweesterCapsuleWeight5) + int(lakituCapsuleWeight5) + int(miracleCapsuleWeight5) + int(boneCapsuleWeight5) + int(chainChompCapsuleWeight5) + int(chanceCapsuleWeight5) + int(bowserCapsuleWeight5) + int(dkCapsuleWeight5) + int(duelCapsuleWeight5) + int(bombCapsuleWeight5)
+    orbWeightTotal = int(hammerBroCapsuleWeight5) + int(bulletBillCapsuleWeight5) + int(koopaBankCapsuleWeight5) + int(coinBlockCapsuleWeight5) + int(mushroomCapsuleWeight5) + int(goldenMushroomCapsuleWeight5) + int(cursedMushroomCapsuleWeight5) + int(warpPipeCapsuleWeight5) + int(flutterCapsuleWeight5) + int(spinyCapsuleWeight5) + int(goombaCapsuleWeight5) + int(plantCapsuleWeight5) + int(kleptoCapsuleWeight5) + int(kamekCapsuleWeight5) + int(blizzardCapsuleWeight5) + int(podobooCapsuleWeight5) + int(paraTroopaCapsuleWeight5) + int(magiKoopaCapsuleWeight5) + int(ukikiCapsuleWeight5) + int(tweesterCapsuleWeight5) + int(lakituCapsuleWeight5) + int(miracleCapsuleWeight5) + int(boneCapsuleWeight5) + int(chainChompCapsulePrice5) + int(chanceCapsuleWeight5) + int(bowserCapsuleWeight5) + int(dkCapsuleWeight5) + int(duelCapsuleWeight5) + int(bombCapsuleWeight5)
 
-    mushroomCapsuleWeight5 = (int(mushroomCapsuleWeight5) / orbWeightTotal) * 100
-    goldenMushroomCapsuleWeight5 = (int(goldenMushroomCapsuleWeight5) / orbWeightTotal) * 100
-    warpPipeCapsuleWeight5 = (int(warpPipeCapsuleWeight5) / orbWeightTotal) * 100
-    flutterCapsuleWeight5 = (int(flutterCapsuleWeight5) / orbWeightTotal) * 100
-    cursedMushroomCapsuleWeight5 = (int(cursedMushroomCapsuleWeight5) / orbWeightTotal) * 100
-    spinyCapsuleWeight5 = (int(spinyCapsuleWeight5) / orbWeightTotal) * 100
-    goombaCapsuleWeight5 = (int(goombaCapsuleWeight5) / orbWeightTotal) * 100
-    plantCapsuleWeight5 = (int(plantCapsuleWeight5) / orbWeightTotal) * 100
-    kleptoCapsuleWeight5 = (int(kleptoCapsuleWeight5) / orbWeightTotal) * 100
-    kamekCapsuleWeight5 = (int(kamekCapsuleWeight5) / orbWeightTotal) * 100
-    blizzardCapsuleWeight5 = (int(blizzardCapsuleWeight5) / orbWeightTotal) * 100
-    podobooCapsuleWeight5 = (int(podobooCapsuleWeight5) / orbWeightTotal) * 100
-    paraTroopaCapsuleWeight5 = (int(paraTroopaCapsuleWeight5) / orbWeightTotal) * 100
-    magiKoopaCapsuleWeight5 = (int(magiKoopaCapsuleWeight5) / orbWeightTotal) * 100
-    ukikiCapsuleWeight5 = (int(ukikiCapsuleWeight5) / orbWeightTotal) * 100
-    tweesterCapsuleWeight5 = (int(tweesterCapsuleWeight5) / orbWeightTotal) * 100
-    lakituCapsuleWeight5 = (int(lakituCapsuleWeight5) / orbWeightTotal) * 100
-    miracleCapsuleWeight5 = (int(miracleCapsuleWeight5) / orbWeightTotal) * 100
-    boneCapsuleWeight5 = (int(boneCapsuleWeight5) / orbWeightTotal) * 100
-    chainChompCapsuleWeight5 = (int(chainChompCapsuleWeight5) / orbWeightTotal) * 100
-    chanceCapsuleWeight5 = (int(chanceCapsuleWeight5) / orbWeightTotal) * 100
-    bowserCapsuleWeight5 = (int(bowserCapsuleWeight5) / orbWeightTotal) * 100
-    dkCapsuleWeight5 = (int(dkCapsuleWeight5) / orbWeightTotal) * 100
-    duelCapsuleWeight5 = (int(duelCapsuleWeight5) / orbWeightTotal) * 100
-    hammerBroCapsuleWeight5 = (int(hammerBroCapsuleWeight5) / orbWeightTotal) * 100
-    bulletBillCapsuleWeight5 = (int(bulletBillCapsuleWeight5) / orbWeightTotal) * 100
-    koopaBankCapsuleWeight5 = (int(koopaBankCapsuleWeight5) / orbWeightTotal) * 100
-    coinBlockCapsuleWeight5 = (int(coinBlockCapsuleWeight5) / orbWeightTotal) * 100
-    bombCapsuleWeight5 = (int(bombCapsuleWeight5) / orbWeightTotal) * 100
+    def calculateWeight(weight):
+        percentage = (int(weight) / orbWeightTotal) * 100
+        if 0< percentage < 1:
+            return str(math.ceil(percentage))
+        return str(round(percentage))
+
+    mushroomCapsuleWeight5 = calculateWeight(mushroomCapsuleWeight5)
+    goldenMushroomCapsuleWeight5 = calculateWeight(goldenMushroomCapsuleWeight5)
+    warpPipeCapsuleWeight5 = calculateWeight(warpPipeCapsuleWeight5)
+    flutterCapsuleWeight5 = calculateWeight(flutterCapsuleWeight5)
+    cursedMushroomCapsuleWeight5 = calculateWeight(cursedMushroomCapsuleWeight5)
+    spinyCapsuleWeight5 = calculateWeight(spinyCapsuleWeight5)
+    goombaCapsuleWeight5 = calculateWeight(goombaCapsuleWeight5)
+    plantCapsuleWeight5 = calculateWeight(plantCapsuleWeight5)
+    kleptoCapsuleWeight5 = calculateWeight(kleptoCapsuleWeight5)
+    kamekCapsuleWeight5 = calculateWeight(kamekCapsuleWeight5)
+    blizzardCapsuleWeight5 = calculateWeight(blizzardCapsuleWeight5)
+    podobooCapsuleWeight5 = calculateWeight(podobooCapsuleWeight5)
+    paraTroopaCapsuleWeight5 = calculateWeight(paraTroopaCapsuleWeight5)
+    magiKoopaCapsuleWeight5 = calculateWeight(magiKoopaCapsuleWeight5)
+    ukikiCapsuleWeight5 = calculateWeight(ukikiCapsuleWeight5)
+    tweesterCapsuleWeight5 = calculateWeight(tweesterCapsuleWeight5)
+    lakituCapsuleWeight5 = calculateWeight(lakituCapsuleWeight5)
+    miracleCapsuleWeight5 = calculateWeight(miracleCapsuleWeight5)
+    boneCapsuleWeight5 = calculateWeight(boneCapsuleWeight5)
+    chainChompCapsuleWeight5 = calculateWeight(chainChompCapsuleWeight5)
+    chanceCapsuleWeight5 = calculateWeight(chanceCapsuleWeight5)
+    bowserCapsuleWeight5 = calculateWeight(bowserCapsuleWeight5)
+    dkCapsuleWeight5 = calculateWeight(dkCapsuleWeight5)
+    duelCapsuleWeight5 = calculateWeight(duelCapsuleWeight5)
+    hammerBroCapsuleWeight5 = calculateWeight(hammerBroCapsuleWeight5)
+    bulletBillCapsuleWeight5 = calculateWeight(bulletBillCapsuleWeight5)
+    koopaBankCapsuleWeight5 = calculateWeight(koopaBankCapsuleWeight5)
+    coinBlockCapsuleWeight5 = calculateWeight(coinBlockCapsuleWeight5)
+    bombCapsuleWeight5 = calculateWeight(bombCapsuleWeight5)
 
 
     try:
@@ -963,24 +970,14 @@ def fillViaCode5(bombCapsulePrice5, bombCapsuleWeight5, koopaBankCapsulePrice5, 
         # Define a list of Entry widget attributes
         pricesNames5 = [mushroomCapsulePrice5, kamekCapsulePrice5, goldenMushroomCapsulePrice5, cursedMushroomCapsulePrice5, goombaCapsulePrice5, kleptoCapsulePrice5, flutterCapsulePrice5, podobooCapsulePrice5, spinyCapsulePrice5, coinBlockCapsulePrice5, plantCapsulePrice5, hammerBroCapsulePrice5, bulletBillCapsulePrice5, blizzardCapsulePrice5, paraTroopaCapsulePrice5, magiKoopaCapsulePrice5, ukikiCapsulePrice5, tweesterCapsulePrice5, lakituCapsulePrice5, warpPipeCapsulePrice5, miracleCapsulePrice5, boneCapsulePrice5, chainChompCapsulePrice5, chanceCapsulePrice5, bowserCapsulePrice5, dkCapsulePrice5, duelCapsulePrice5, koopaBankCapsulePrice5, bombCapsulePrice5]
         weightsNames5 = [mushroomCapsuleWeight5, kamekCapsuleWeight5, goldenMushroomCapsuleWeight5, cursedMushroomCapsuleWeight5, goombaCapsuleWeight5, kleptoCapsuleWeight5, flutterCapsuleWeight5, podobooCapsuleWeight5, spinyCapsuleWeight5, coinBlockCapsuleWeight5, plantCapsuleWeight5, hammerBroCapsuleWeight5, bulletBillCapsuleWeight5, blizzardCapsuleWeight5, paraTroopaCapsuleWeight5, magiKoopaCapsuleWeight5, ukikiCapsuleWeight5, tweesterCapsuleWeight5, lakituCapsuleWeight5, warpPipeCapsuleWeight5, miracleCapsuleWeight5, boneCapsuleWeight5, chainChompCapsuleWeight5, chanceCapsuleWeight5, bowserCapsuleWeight5, dkCapsuleWeight5, duelCapsuleWeight5, koopaBankCapsuleWeight5, bombCapsuleWeight5]
-        
-        # Normalize the weights
-        orbWeightTotal = sum(weights5In)
-        weightsNormalized5 = [(weight / orbWeightTotal) * 100 for weight in weights5In]
-
-        # Revert the normalization to original weights
-        weightsOriginal5 = [(weight / 100) * orbWeightTotal for weight in weightsNormalized5]
-        
         # Update widgets with loaded values
         for index, widget in enumerate(pricesNames5):
             if widget and index < len(prices5In):
                 widget.delete(0, 'end')
                 widget.insert(0, int(prices5In[index]))
-        
         for index, widget in enumerate(weightsNames5):
-            if widget and index < len(weightsOriginal5):
+            if widget and index < len(weights5In):
                 widget.delete(0, 'end')
-                widget.insert(0, int(weightsOriginal5[index]))
-
+                widget.insert(0, int(weights5In[index]))
         print("Code loaded successfully!")
         createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
