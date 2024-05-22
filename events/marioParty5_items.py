@@ -103,7 +103,7 @@ def itemsEvent_mp5(bombCapsulePrice5, bombCapsuleWeight5, koopaBankCapsulePrice5
     bombCapsulePrice5 = bombCapsulePrice5.get()
     bombCapsuleWeight5 = bombCapsuleWeight5.get()
 
-    orbWeightTotal = int(hammerBroCapsuleWeight5) + int(bulletBillCapsuleWeight5) + int(koopaBankCapsuleWeight5) + int(coinBlockCapsuleWeight5) + int(mushroomCapsuleWeight5) + int(goldenMushroomCapsuleWeight5) + int(cursedMushroomCapsuleWeight5) + int(warpPipeCapsuleWeight5) + int(flutterCapsuleWeight5) + int(spinyCapsuleWeight5) + int(goombaCapsuleWeight5) + int(plantCapsuleWeight5) + int(kleptoCapsuleWeight5) + int(kamekCapsuleWeight5) + int(blizzardCapsuleWeight5) + int(podobooCapsuleWeight5) + int(paraTroopaCapsuleWeight5) + int(magiKoopaCapsuleWeight5) + int(ukikiCapsuleWeight5) + int(tweesterCapsuleWeight5) + int(lakituCapsuleWeight5) + int(miracleCapsuleWeight5) + int(boneCapsuleWeight5) + int(chainChompCapsulePrice5) + int(chanceCapsuleWeight5) + int(bowserCapsuleWeight5) + int(dkCapsuleWeight5) + int(duelCapsuleWeight5) + int(bombCapsuleWeight5)
+    orbWeightTotal = int(hammerBroCapsuleWeight5) + int(bulletBillCapsuleWeight5) + int(koopaBankCapsuleWeight5) + int(coinBlockCapsuleWeight5) + int(mushroomCapsuleWeight5) + int(goldenMushroomCapsuleWeight5) + int(cursedMushroomCapsuleWeight5) + int(warpPipeCapsuleWeight5) + int(flutterCapsuleWeight5) + int(spinyCapsuleWeight5) + int(goombaCapsuleWeight5) + int(plantCapsuleWeight5) + int(kleptoCapsuleWeight5) + int(kamekCapsuleWeight5) + int(blizzardCapsuleWeight5) + int(podobooCapsuleWeight5) + int(paraTroopaCapsuleWeight5) + int(magiKoopaCapsuleWeight5) + int(ukikiCapsuleWeight5) + int(tweesterCapsuleWeight5) + int(lakituCapsuleWeight5) + int(miracleCapsuleWeight5) + int(boneCapsuleWeight5) + int(chainChompCapsuleWeight5) + int(chanceCapsuleWeight5) + int(bowserCapsuleWeight5) + int(dkCapsuleWeight5) + int(duelCapsuleWeight5) + int(bombCapsuleWeight5)
 
     mushroomCapsuleWeight5 = (int(mushroomCapsuleWeight5) / orbWeightTotal) * 100
     goldenMushroomCapsuleWeight5 = (int(goldenMushroomCapsuleWeight5) / orbWeightTotal) * 100
@@ -963,14 +963,24 @@ def fillViaCode5(bombCapsulePrice5, bombCapsuleWeight5, koopaBankCapsulePrice5, 
         # Define a list of Entry widget attributes
         pricesNames5 = [mushroomCapsulePrice5, kamekCapsulePrice5, goldenMushroomCapsulePrice5, cursedMushroomCapsulePrice5, goombaCapsulePrice5, kleptoCapsulePrice5, flutterCapsulePrice5, podobooCapsulePrice5, spinyCapsulePrice5, coinBlockCapsulePrice5, plantCapsulePrice5, hammerBroCapsulePrice5, bulletBillCapsulePrice5, blizzardCapsulePrice5, paraTroopaCapsulePrice5, magiKoopaCapsulePrice5, ukikiCapsulePrice5, tweesterCapsulePrice5, lakituCapsulePrice5, warpPipeCapsulePrice5, miracleCapsulePrice5, boneCapsulePrice5, chainChompCapsulePrice5, chanceCapsulePrice5, bowserCapsulePrice5, dkCapsulePrice5, duelCapsulePrice5, koopaBankCapsulePrice5, bombCapsulePrice5]
         weightsNames5 = [mushroomCapsuleWeight5, kamekCapsuleWeight5, goldenMushroomCapsuleWeight5, cursedMushroomCapsuleWeight5, goombaCapsuleWeight5, kleptoCapsuleWeight5, flutterCapsuleWeight5, podobooCapsuleWeight5, spinyCapsuleWeight5, coinBlockCapsuleWeight5, plantCapsuleWeight5, hammerBroCapsuleWeight5, bulletBillCapsuleWeight5, blizzardCapsuleWeight5, paraTroopaCapsuleWeight5, magiKoopaCapsuleWeight5, ukikiCapsuleWeight5, tweesterCapsuleWeight5, lakituCapsuleWeight5, warpPipeCapsuleWeight5, miracleCapsuleWeight5, boneCapsuleWeight5, chainChompCapsuleWeight5, chanceCapsuleWeight5, bowserCapsuleWeight5, dkCapsuleWeight5, duelCapsuleWeight5, koopaBankCapsuleWeight5, bombCapsuleWeight5]
+        
+        # Normalize the weights
+        orbWeightTotal = sum(weights5In)
+        weightsNormalized5 = [(weight / orbWeightTotal) * 100 for weight in weights5In]
+
+        # Revert the normalization to original weights
+        weightsOriginal5 = [(weight / 100) * orbWeightTotal for weight in weightsNormalized5]
+        
         # Update widgets with loaded values
         for index, widget in enumerate(pricesNames5):
             if widget and index < len(prices5In):
                 widget.delete(0, 'end')
                 widget.insert(0, int(prices5In[index]))
+        
         for index, widget in enumerate(weightsNames5):
-            if widget and index < len(weights5In):
+            if widget and index < len(weightsOriginal5):
                 widget.delete(0, 'end')
-                widget.insert(0, int(weights5In[index]))
+                widget.insert(0, int(weightsOriginal5[index]))
+
         print("Code loaded successfully!")
         createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
