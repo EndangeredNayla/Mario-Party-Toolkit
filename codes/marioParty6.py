@@ -284,7 +284,7 @@ MP6 - Start with {oneItem}, {twoItem}, and {threeItem}
 
 def getCoinStealBaseSix(value, amountDec):
     return f'''
-MP6 - Steal SIXBOOMIN Coins Minimum from Pink Boo
+MP6 - Steal Minimum Of {amountDec} Coins from Pink Boo
 C21B3498 00000002
 3884{value} 9081002C
 60000000 00000000

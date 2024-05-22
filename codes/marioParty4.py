@@ -114,6 +114,16 @@ MP4 - Minigame Replacement: {gameUno} ➜ {gameDos}
 E2000001 80008000
 '''
 
+def getBooHouseMinimum(min, minDec):
+    return f'''
+MP4 - Steal Minimum of {minDec} Coins from Boo
+C20A19CC 00000003
+7C1D0000 4181000C
+7C1D0378 3BBD0001
+7C00E850 00000000
+040A19B0 3BA0{min}
+'''
+
 def getItemModsFour(oneP, oneW, twoP, twoW, threeP, threeW, fourP, fourW, fiveP, fiveW, sixP, sixW, sevenP, sevenW, eightP, eightW, nineP, nineW, tenP, tenW, elevenP, elevenW, twelveP, twelveW, thirteenP, thirteenW, fourteenP, fourteenW, minCoins):
     return f'''
 MP4 - Item Modifer

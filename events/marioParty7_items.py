@@ -114,35 +114,35 @@ def itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMu
             return str(math.ceil(percentage))
         return str(round(percentage))
         
-    mushroomCapsuleWeight7 = calculateWeight(mushroomCapsuleWeight7) / orbWeightTotal) * 100
-    goldenMushroomCapsuleWeight7 = calculateWeight(goldenMushroomCapsuleWeight7) / orbWeightTotal) * 100
-    metalMushroomCapsuleWeight7 = calculateWeight(metalMushroomCapsuleWeight7) / orbWeightTotal) * 100
-    slowMushroomCapsuleWeight7 = calculateWeight(slowMushroomCapsuleWeight7) / orbWeightTotal) * 100
-    flutterCapsuleWeight7 = calculateWeight(flutterCapsuleWeight7) / orbWeightTotal) * 100
-    cannonCapsuleWeight7 = calculateWeight(cannonCapsuleWeight7) / orbWeightTotal) * 100
-    snackCapsuleWeight7 = calculateWeight(snackCapsuleWeight7) / orbWeightTotal) * 100
-    lakituCapsuleWeight7 = calculateWeight(lakituCapsuleWeight7) / orbWeightTotal) * 100
-    hammerBroCapsuleWeight7 = calculateWeight(hammerBroCapsuleWeight7) / orbWeightTotal) * 100
-    plantCapsuleWeight7 = calculateWeight(plantCapsuleWeight7) / orbWeightTotal) * 100
-    spearCapsuleWeight7 = calculateWeight(spearCapsuleWeight7) / orbWeightTotal) * 100
-    kamekCapsuleWeight7 = calculateWeight(kamekCapsuleWeight7) / orbWeightTotal) * 100
-    toadyCapsuleWeight7 = calculateWeight(toadyCapsuleWeight7) / orbWeightTotal) * 100
-    blizzardCapsuleWeight7 = calculateWeight(blizzardCapsuleWeight7) / orbWeightTotal) * 100
-    banditCapsuleWeight7 = calculateWeight(banditCapsuleWeight7) / orbWeightTotal) * 100
-    pinkBooCapsuleWeight7 = calculateWeight(pinkBooCapsuleWeight7) / orbWeightTotal) * 100
-    spinyCapsuleWeight7 = calculateWeight(spinyCapsuleWeight7) / orbWeightTotal) * 100
-    zapCapsuleWeight7 = calculateWeight(zapCapsuleWeight7) / orbWeightTotal) * 100
-    tweesterCapsuleWeight7 = calculateWeight(tweesterCapsuleWeight7) / orbWeightTotal) * 100
-    thwompCapsuleWeight7 = calculateWeight(thwompCapsuleWeight7) / orbWeightTotal) * 100
-    warpCapsuleWeight7 = calculateWeight(warpCapsuleWeight7) / orbWeightTotal) * 100
-    bombCapsuleWeight7 = calculateWeight(bombCapsuleWeight7) / orbWeightTotal) * 100
-    fireballCapsuleWeight7 = calculateWeight(fireballCapsuleWeight7) / orbWeightTotal) * 100
-    flowerCapsuleWeight7 = calculateWeight(flowerCapsuleWeight7) / orbWeightTotal) * 100
-    eggCapsuleWeight7 = calculateWeight(eggCapsuleWeight7) / orbWeightTotal) * 100
-    vacuumCapsuleWeight7 = calculateWeight(vacuumCapsuleWeight7) / orbWeightTotal) * 100
-    magicCapsuleWeight7 = calculateWeight(magicCapsuleWeight7) / orbWeightTotal) * 100
-    tripleCapsuleWeight7 = calculateWeight(tripleCapsuleWeight7) / orbWeightTotal) * 100
-    koopaCapsuleWeight7 = calculateWeight(koopaCapsuleWeight7) / orbWeightTotal) * 100
+    mushroomCapsuleWeight7 = calculateWeight(mushroomCapsuleWeight7)
+    goldenMushroomCapsuleWeight7 = calculateWeight(goldenMushroomCapsuleWeight7)
+    metalMushroomCapsuleWeight7 = calculateWeight(metalMushroomCapsuleWeight7)
+    slowMushroomCapsuleWeight7 = calculateWeight(slowMushroomCapsuleWeight7)
+    flutterCapsuleWeight7 = calculateWeight(flutterCapsuleWeight7)
+    cannonCapsuleWeight7 = calculateWeight(cannonCapsuleWeight7)
+    snackCapsuleWeight7 = calculateWeight(snackCapsuleWeight7)
+    lakituCapsuleWeight7 = calculateWeight(lakituCapsuleWeight7)
+    hammerBroCapsuleWeight7 = calculateWeight(hammerBroCapsuleWeight7)
+    plantCapsuleWeight7 = calculateWeight(plantCapsuleWeight7)
+    spearCapsuleWeight7 = calculateWeight(spearCapsuleWeight7)
+    kamekCapsuleWeight7 = calculateWeight(kamekCapsuleWeight7)
+    toadyCapsuleWeight7 = calculateWeight(toadyCapsuleWeight7)
+    blizzardCapsuleWeight7 = calculateWeight(blizzardCapsuleWeight7)
+    banditCapsuleWeight7 = calculateWeight(banditCapsuleWeight7)
+    pinkBooCapsuleWeight7 = calculateWeight(pinkBooCapsuleWeight7)
+    spinyCapsuleWeight7 = calculateWeight(spinyCapsuleWeight7)
+    zapCapsuleWeight7 = calculateWeight(zapCapsuleWeight7)
+    tweesterCapsuleWeight7 = calculateWeight(tweesterCapsuleWeight7)
+    thwompCapsuleWeight7 = calculateWeight(thwompCapsuleWeight7)
+    warpCapsuleWeight7 = calculateWeight(warpCapsuleWeight7)
+    bombCapsuleWeight7 = calculateWeight(bombCapsuleWeight7)
+    fireballCapsuleWeight7 = calculateWeight(fireballCapsuleWeight7)
+    flowerCapsuleWeight7 = calculateWeight(flowerCapsuleWeight7)
+    eggCapsuleWeight7 = calculateWeight(eggCapsuleWeight7)
+    vacuumCapsuleWeight7 = calculateWeight(vacuumCapsuleWeight7)
+    magicCapsuleWeight7 = calculateWeight(magicCapsuleWeight7)
+    tripleCapsuleWeight7 = calculateWeight(tripleCapsuleWeight7)
+    koopaCapsuleWeight7 = calculateWeight(koopaCapsuleWeight7)
     try:
         mushroomCapsuleWeight7 = hex(int(mushroomCapsuleWeight7))
         if len(mushroomCapsuleWeight7) == 4:

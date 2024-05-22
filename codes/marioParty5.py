@@ -182,7 +182,7 @@ C20C8FA0 00000024
 
 def getCoinStealBaseFive(value, amountDec):
     return f'''
-MP5 - Steal {amountDec} Coins Minimum from Chain Chomp
+MP5 - Steal Minimum Of {amountDec} Coins from Chain Chomp
 C20F75A8 00000002
 3B7B{value} 7C9B00D0
 60000000 00000000
