@@ -9,6 +9,7 @@ from codes.marioParty4 import *
 from functions import *
 
 import csv
+import math
 import pyperclip
 
 def itemsEvent_mp4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4):
@@ -45,20 +46,28 @@ def itemsEvent_mp4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPr
     itemBagWeight4 = itemBagWeight4.get()
     orbWeightTotal = int(miniWeight4) + int(megaWeight4) + int(superMiniWeight4) + int(superMegaWeight4) + int(miniMegaHammerWeight4) + int(warpPipeWeight4) + int(swapCardWeight4) + int(sparkyStickerWeight4) + int(gaddlightWeight4) + int(chompCallWeight4) + int(bowserSuitWeight4) + int(crystalBallWeight4) + int(magicLampWeight4) + int(itemBagWeight4)
     orbPriceMin = find_lowest_integer(*[int(miniPrice4), int(megaPrice4), int(superMiniPrice4), int(superMegaPrice4), int(miniMegaHammerPrice4), int(warpPipePrice4), int(swapCardPrice4), int(sparkyStickerPrice4), int(gaddlightPrice4), int(chompCallPrice4), int(bowserSuitPrice4), int(crystalBallPrice4), int(magicLampPrice4), int(itemBagPrice4)])
-    miniWeight4 = (int(miniWeight4) / orbWeightTotal) * 100
-    megaWeight4 = (int(megaWeight4) / orbWeightTotal) * 100
-    superMegaWeight4 = (int(superMegaWeight4) / orbWeightTotal) * 100
-    superMiniWeight4 = (int(superMiniWeight4) / orbWeightTotal) * 100
-    miniMegaHammerWeight4 = (int(miniMegaHammerWeight4) / orbWeightTotal) * 100
-    warpPipeWeight4 = (int(warpPipeWeight4) / orbWeightTotal) * 100
-    swapCardWeight4 = (int(swapCardWeight4) / orbWeightTotal) * 100
-    sparkyStickerWeight4 = (int(sparkyStickerWeight4) / orbWeightTotal) * 100
-    gaddlightWeight4 = (int(gaddlightWeight4) / orbWeightTotal) * 100
-    chompCallWeight4 = (int(chompCallWeight4) / orbWeightTotal) * 100
-    bowserSuitWeight4 = (int(bowserSuitWeight4) / orbWeightTotal) * 100
-    crystalBallWeight4 = (int(crystalBallWeight4) / orbWeightTotal) * 100
-    magicLampWeight4 = (int(magicLampWeight4) / orbWeightTotal) * 100
-    itemBagWeight4 = (int(itemBagWeight4) / orbWeightTotal) * 100
+    
+    def calculateWeight(weight):
+        percentage = (int(weight) / orbWeightTotal) * 100
+        if 0< percentage < 1:
+            return str(math.ceil(percentage))
+        return str(round(percentage))
+
+    miniWeight4 = calculateweight(miniWeight4)
+    megaWeight4 = calculateweight(megaWeight4)
+    superMegaWeight4 = calculateweight(superMegaWeight4)
+    superMiniWeight4 = calculateweight(superMiniWeight4)
+    miniMegaHammerWeight4 = calculateweight(miniMegaHammerWeight4)
+    warpPipeWeight4 = calculateweight(warpPipeWeight4)
+    swapCardWeight4 = calculateweight(swapCardWeight4)
+    sparkyStickerWeight4 = calculateweight(sparkyStickerWeight4)
+    gaddlightWeight4 = calculateweight(gaddlightWeight4)
+    chompCallWeight4 = calculateweight(chompCallWeight4)
+    bowserSuitWeight4 = calculateweight(bowserSuitWeight4)
+    crystalBallWeight4 = calculateweight(crystalBallWeight4)
+    magicLampWeight4 = calculateweight(magicLampWeight4)
+    itemBagWeight4 = calculateweight(itemBagWeight4)
+    
     try:
         miniWeight4 = hex(int(miniWeight4))
         if len(miniWeight4) == 4:

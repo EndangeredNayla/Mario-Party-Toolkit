@@ -9,6 +9,7 @@ from codes.marioParty7 import *
 from functions import *
 
 import csv
+import math
 import pyperclip
 
 def itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7):
@@ -107,35 +108,41 @@ def itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMu
 
     orbWeightTotal = int(mushroomCapsuleWeight7) + int(goldenMushroomCapsuleWeight7) + int(metalMushroomCapsuleWeight7) + int(slowMushroomCapsuleWeight7) + int(flutterCapsuleWeight7) + int(cannonCapsuleWeight7) + int(snackCapsuleWeight7) + int(lakituCapsuleWeight7) + int(hammerBroCapsuleWeight7) + int(plantCapsuleWeight7) + int(spearCapsuleWeight7) + int(kamekCapsuleWeight7) + int(toadyCapsuleWeight7) + int(blizzardCapsuleWeight7) + int(banditCapsuleWeight7) + int(pinkBooCapsuleWeight7) + int(spinyCapsuleWeight7) + int(zapCapsuleWeight7) + int(tweesterCapsuleWeight7) + int(thwompCapsuleWeight7) + int(warpCapsuleWeight7) + int(bombCapsuleWeight7) + int(fireballCapsuleWeight7) + int(flowerCapsuleWeight7) + int(eggCapsuleWeight7) + int(vacuumCapsuleWeight7) + int(magicCapsuleWeight7) + int(tripleCapsuleWeight7) + int(koopaCapsuleWeight7)
 
-    mushroomCapsuleWeight7 = (int(mushroomCapsuleWeight7) / orbWeightTotal) * 100
-    goldenMushroomCapsuleWeight7 = (int(goldenMushroomCapsuleWeight7) / orbWeightTotal) * 100
-    metalMushroomCapsuleWeight7 = (int(metalMushroomCapsuleWeight7) / orbWeightTotal) * 100
-    slowMushroomCapsuleWeight7 = (int(slowMushroomCapsuleWeight7) / orbWeightTotal) * 100
-    flutterCapsuleWeight7 = (int(flutterCapsuleWeight7) / orbWeightTotal) * 100
-    cannonCapsuleWeight7 = (int(cannonCapsuleWeight7) / orbWeightTotal) * 100
-    snackCapsuleWeight7 = (int(snackCapsuleWeight7) / orbWeightTotal) * 100
-    lakituCapsuleWeight7 = (int(lakituCapsuleWeight7) / orbWeightTotal) * 100
-    hammerBroCapsuleWeight7 = (int(hammerBroCapsuleWeight7) / orbWeightTotal) * 100
-    plantCapsuleWeight7 = (int(plantCapsuleWeight7) / orbWeightTotal) * 100
-    spearCapsuleWeight7 = (int(spearCapsuleWeight7) / orbWeightTotal) * 100
-    kamekCapsuleWeight7 = (int(kamekCapsuleWeight7) / orbWeightTotal) * 100
-    toadyCapsuleWeight7 = (int(toadyCapsuleWeight7) / orbWeightTotal) * 100
-    blizzardCapsuleWeight7 = (int(blizzardCapsuleWeight7) / orbWeightTotal) * 100
-    banditCapsuleWeight7 = (int(banditCapsuleWeight7) / orbWeightTotal) * 100
-    pinkBooCapsuleWeight7 = (int(pinkBooCapsuleWeight7) / orbWeightTotal) * 100
-    spinyCapsuleWeight7 = (int(spinyCapsuleWeight7) / orbWeightTotal) * 100
-    zapCapsuleWeight7 = (int(zapCapsuleWeight7) / orbWeightTotal) * 100
-    tweesterCapsuleWeight7 = (int(tweesterCapsuleWeight7) / orbWeightTotal) * 100
-    thwompCapsuleWeight7 = (int(thwompCapsuleWeight7) / orbWeightTotal) * 100
-    warpCapsuleWeight7 = (int(warpCapsuleWeight7) / orbWeightTotal) * 100
-    bombCapsuleWeight7 = (int(bombCapsuleWeight7) / orbWeightTotal) * 100
-    fireballCapsuleWeight7 = (int(fireballCapsuleWeight7) / orbWeightTotal) * 100
-    flowerCapsuleWeight7 = (int(flowerCapsuleWeight7) / orbWeightTotal) * 100
-    eggCapsuleWeight7 = (int(eggCapsuleWeight7) / orbWeightTotal) * 100
-    vacuumCapsuleWeight7 = (int(vacuumCapsuleWeight7) / orbWeightTotal) * 100
-    magicCapsuleWeight7 = (int(magicCapsuleWeight7) / orbWeightTotal) * 100
-    tripleCapsuleWeight7 = (int(tripleCapsuleWeight7) / orbWeightTotal) * 100
-    koopaCapsuleWeight7 = (int(koopaCapsuleWeight7) / orbWeightTotal) * 100
+    def calculateWeight(weight):
+        percentage = (int(weight) / orbWeightTotal) * 100
+        if 0< percentage < 1:
+            return str(math.ceil(percentage))
+        return str(round(percentage))
+        
+    mushroomCapsuleWeight7 = calculateWeight(mushroomCapsuleWeight7) / orbWeightTotal) * 100
+    goldenMushroomCapsuleWeight7 = calculateWeight(goldenMushroomCapsuleWeight7) / orbWeightTotal) * 100
+    metalMushroomCapsuleWeight7 = calculateWeight(metalMushroomCapsuleWeight7) / orbWeightTotal) * 100
+    slowMushroomCapsuleWeight7 = calculateWeight(slowMushroomCapsuleWeight7) / orbWeightTotal) * 100
+    flutterCapsuleWeight7 = calculateWeight(flutterCapsuleWeight7) / orbWeightTotal) * 100
+    cannonCapsuleWeight7 = calculateWeight(cannonCapsuleWeight7) / orbWeightTotal) * 100
+    snackCapsuleWeight7 = calculateWeight(snackCapsuleWeight7) / orbWeightTotal) * 100
+    lakituCapsuleWeight7 = calculateWeight(lakituCapsuleWeight7) / orbWeightTotal) * 100
+    hammerBroCapsuleWeight7 = calculateWeight(hammerBroCapsuleWeight7) / orbWeightTotal) * 100
+    plantCapsuleWeight7 = calculateWeight(plantCapsuleWeight7) / orbWeightTotal) * 100
+    spearCapsuleWeight7 = calculateWeight(spearCapsuleWeight7) / orbWeightTotal) * 100
+    kamekCapsuleWeight7 = calculateWeight(kamekCapsuleWeight7) / orbWeightTotal) * 100
+    toadyCapsuleWeight7 = calculateWeight(toadyCapsuleWeight7) / orbWeightTotal) * 100
+    blizzardCapsuleWeight7 = calculateWeight(blizzardCapsuleWeight7) / orbWeightTotal) * 100
+    banditCapsuleWeight7 = calculateWeight(banditCapsuleWeight7) / orbWeightTotal) * 100
+    pinkBooCapsuleWeight7 = calculateWeight(pinkBooCapsuleWeight7) / orbWeightTotal) * 100
+    spinyCapsuleWeight7 = calculateWeight(spinyCapsuleWeight7) / orbWeightTotal) * 100
+    zapCapsuleWeight7 = calculateWeight(zapCapsuleWeight7) / orbWeightTotal) * 100
+    tweesterCapsuleWeight7 = calculateWeight(tweesterCapsuleWeight7) / orbWeightTotal) * 100
+    thwompCapsuleWeight7 = calculateWeight(thwompCapsuleWeight7) / orbWeightTotal) * 100
+    warpCapsuleWeight7 = calculateWeight(warpCapsuleWeight7) / orbWeightTotal) * 100
+    bombCapsuleWeight7 = calculateWeight(bombCapsuleWeight7) / orbWeightTotal) * 100
+    fireballCapsuleWeight7 = calculateWeight(fireballCapsuleWeight7) / orbWeightTotal) * 100
+    flowerCapsuleWeight7 = calculateWeight(flowerCapsuleWeight7) / orbWeightTotal) * 100
+    eggCapsuleWeight7 = calculateWeight(eggCapsuleWeight7) / orbWeightTotal) * 100
+    vacuumCapsuleWeight7 = calculateWeight(vacuumCapsuleWeight7) / orbWeightTotal) * 100
+    magicCapsuleWeight7 = calculateWeight(magicCapsuleWeight7) / orbWeightTotal) * 100
+    tripleCapsuleWeight7 = calculateWeight(tripleCapsuleWeight7) / orbWeightTotal) * 100
+    koopaCapsuleWeight7 = calculateWeight(koopaCapsuleWeight7) / orbWeightTotal) * 100
     try:
         mushroomCapsuleWeight7 = hex(int(mushroomCapsuleWeight7))
         if len(mushroomCapsuleWeight7) == 4:

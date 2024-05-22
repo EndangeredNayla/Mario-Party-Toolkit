@@ -9,6 +9,7 @@ from codes.marioParty6 import *
 from functions import *
 
 import csv
+import math
 import pyperclip
 
 def itemsEvent_mp6(warpPipeCapsuleWeight6, warpPipeCapsulePrice6, mushroomCapsuleWeight6, goldenMushroomCapsulePrice6, goldenMushroomCapsuleWeight6, slowMushroomCapsulePrice6, slowMushroomCapsuleWeight6, metalMushroomCapsulePrice6, metalMushroomCapsuleWeight6, bulletBillCapsulePrice6, bulletBillCapsuleWeight6, flutterCapsulePrice6, flutterCapsuleWeight6, cursedMushroomCapsulePrice6, cursedMushroomCapsuleWeight6, spinyCapsulePrice6, spinyCapsuleWeight6, goombaCapsulePrice6, goombaCapsuleWeight6, plantCapsulePrice6, plantCapsuleWeight6, kleptoCapsulePrice6, kleptoCapsuleWeight6, toadyCapsulePrice6, toadyCapsuleWeight6, kamekCapsulePrice6, kamekCapsuleWeight6, blizzardCapsulePrice6, blizzardCapsuleWeight6, podobooCapsulePrice6, podobooCapsuleWeight6, zapCapsulePrice6, zapCapsuleWeight6, tweesterCapsulePrice6, tweesterCapsuleWeight6, thwompCapsulePrice6, thwompCapsuleWeight6, bombCapsulePrice6, bombCapsuleWeight6, paraTroopaCapsulePrice6, paraTroopaCapsuleWeight6, snackCapsulePrice6, snackCapsuleWeight6, gaddLightCapsulePrice6, gaddLightCapsuleWeight6, pinkBooCapsulePrice6, pinkBooCapsuleWeight6, chanceTimeCapsulePrice6, chanceTimeCapsuleWeight6, bowserCapsulePrice6, bowserCapsuleWeight6, dkCapsulePrice6, dkCapsuleWeight6, duelCapsulePrice6, duelCapsuleWeight6):
@@ -102,35 +103,41 @@ def itemsEvent_mp6(warpPipeCapsuleWeight6, warpPipeCapsulePrice6, mushroomCapsul
 
     orbWeightTotal = int(mushroomCapsuleWeight6) + int(goldenMushroomCapsuleWeight6) + int(bulletBillCapsuleWeight6) + int(slowMushroomCapsuleWeight6) + int(warpPipeCapsuleWeight6) + int(flutterCapsuleWeight6) + int(cursedMushroomCapsuleWeight6) + int(spinyCapsuleWeight6) + int(goombaCapsuleWeight6) + int(plantCapsuleWeight6) + int(kleptoCapsuleWeight6) + int(kamekCapsuleWeight6) + int(toadyCapsuleWeight6) + int(blizzardCapsuleWeight6) + int(podobooCapsuleWeight6) + int(paraTroopaCapsuleWeight6) + int(snackCapsuleWeight6) + int(zapCapsuleWeight6) + int(tweesterCapsuleWeight6) + int(thwompCapsuleWeight6) + int(warpPipeCapsuleWeight6) + int(bombCapsuleWeight6) + int(gaddLightCapsuleWeight6) + int(pinkBooCapsulePrice6) + int(chanceTimeCapsuleWeight6) + int(bowserCapsuleWeight6) + int(dkCapsuleWeight6) + int(metalMushroomCapsuleWeight6) + int(duelCapsuleWeight6)
 
-    mushroomCapsuleWeight6 = (int(mushroomCapsuleWeight6) / orbWeightTotal) * 100
-    goldenMushroomCapsuleWeight6 = (int(goldenMushroomCapsuleWeight6) / orbWeightTotal) * 100
-    bulletBillCapsuleWeight6 = (int(bulletBillCapsuleWeight6) / orbWeightTotal) * 100
-    slowMushroomCapsuleWeight6 = (int(slowMushroomCapsuleWeight6) / orbWeightTotal) * 100
-    warpPipeCapsuleWeight6 = (int(warpPipeCapsuleWeight6) / orbWeightTotal) * 100
-    flutterCapsuleWeight6 = (int(flutterCapsuleWeight6) / orbWeightTotal) * 100
-    cursedMushroomCapsuleWeight6 = (int(cursedMushroomCapsuleWeight6) / orbWeightTotal) * 100
-    spinyCapsuleWeight6 = (int(spinyCapsuleWeight6) / orbWeightTotal) * 100
-    goombaCapsuleWeight6 = (int(goombaCapsuleWeight6) / orbWeightTotal) * 100
-    plantCapsuleWeight6 = (int(plantCapsuleWeight6) / orbWeightTotal) * 100
-    kleptoCapsuleWeight6 = (int(kleptoCapsuleWeight6) / orbWeightTotal) * 100
-    kamekCapsuleWeight6 = (int(kamekCapsuleWeight6) / orbWeightTotal) * 100
-    toadyCapsuleWeight6 = (int(toadyCapsuleWeight6) / orbWeightTotal) * 100
-    blizzardCapsuleWeight6 = (int(blizzardCapsuleWeight6) / orbWeightTotal) * 100
-    podobooCapsuleWeight6 = (int(podobooCapsuleWeight6) / orbWeightTotal) * 100
-    paraTroopaCapsuleWeight6 = (int(paraTroopaCapsuleWeight6) / orbWeightTotal) * 100
-    snackCapsuleWeight6 = (int(snackCapsuleWeight6) / orbWeightTotal) * 100
-    zapCapsuleWeight6 = (int(zapCapsuleWeight6) / orbWeightTotal) * 100
-    tweesterCapsuleWeight6 = (int(tweesterCapsuleWeight6) / orbWeightTotal) * 100
-    thwompCapsuleWeight6 = (int(thwompCapsuleWeight6) / orbWeightTotal) * 100
-    warpPipeCapsuleWeight6 = (int(warpPipeCapsuleWeight6) / orbWeightTotal) * 100
-    bombCapsuleWeight6 = (int(bombCapsuleWeight6) / orbWeightTotal) * 100
-    gaddLightCapsuleWeight6 = (int(gaddLightCapsuleWeight6) / orbWeightTotal) * 100
-    pinkBooCapsuleWeight6 = (int(pinkBooCapsuleWeight6) / orbWeightTotal) * 100
-    chanceTimeCapsuleWeight6 = (int(chanceTimeCapsuleWeight6) / orbWeightTotal) * 100
-    bowserCapsuleWeight6 = (int(bowserCapsuleWeight6) / orbWeightTotal) * 100
-    dkCapsuleWeight6 = (int(dkCapsuleWeight6) / orbWeightTotal) * 100
-    metalMushroomCapsuleWeight6 = (int(metalMushroomCapsuleWeight6) / orbWeightTotal) * 100
-    duelCapsuleWeight6 = (int(duelCapsuleWeight6) / orbWeightTotal) * 100
+    def calculateWeight(weight):
+        percentage = (int(weight) / orbWeightTotal) * 100
+        if 0< percentage < 1:
+            return str(math.ceil(percentage))
+        return str(round(percentage))
+
+    mushroomCapsuleWeight6 = calculateWeight(mushroomCapsuleWeight6)
+    goldenMushroomCapsuleWeight6 = calculateWeight(goldenMushroomCapsuleWeight6)
+    bulletBillCapsuleWeight6 = calculateWeight(bulletBillCapsuleWeight6)
+    slowMushroomCapsuleWeight6 = calculateWeight(slowMushroomCapsuleWeight6)
+    warpPipeCapsuleWeight6 = calculateWeight(warpPipeCapsuleWeight6)
+    flutterCapsuleWeight6 = calculateWeight(flutterCapsuleWeight6)
+    cursedMushroomCapsuleWeight6 = calculateWeight(cursedMushroomCapsuleWeight6)
+    spinyCapsuleWeight6 = calculateWeight(spinyCapsuleWeight6)
+    goombaCapsuleWeight6 = calculateWeight(goombaCapsuleWeight6)
+    plantCapsuleWeight6 = calculateWeight(plantCapsuleWeight6)
+    kleptoCapsuleWeight6 = calculateWeight(kleptoCapsuleWeight6)
+    kamekCapsuleWeight6 = calculateWeight(kamekCapsuleWeight6)
+    toadyCapsuleWeight6 = calculateWeight(toadyCapsuleWeight6)
+    blizzardCapsuleWeight6 = calculateWeight(blizzardCapsuleWeight6)
+    podobooCapsuleWeight6 = calculateWeight(podobooCapsuleWeight6)
+    paraTroopaCapsuleWeight6 = calculateWeight(paraTroopaCapsuleWeight6)
+    snackCapsuleWeight6 = calculateWeight(snackCapsuleWeight6)
+    zapCapsuleWeight6 = calculateWeight(zapCapsuleWeight6)
+    tweesterCapsuleWeight6 = calculateWeight(tweesterCapsuleWeight6)
+    thwompCapsuleWeight6 = calculateWeight(thwompCapsuleWeight6)
+    warpPipeCapsuleWeight6 = calculateweight(warpPipeCapsuleWeight6)
+    bombCapsuleWeight6 = calculateWeight(bombCapsuleWeight6)
+    gaddLightCapsuleWeight6 = calculateWeight(gaddLightCapsuleWeight6)
+    pinkBooCapsuleWeight6 = calculateWeight(pinkBooCapsuleWeight6)
+    chanceTimeCapsuleWeight6 = calculateWeight(chanceTimeCapsuleWeight6)
+    bowserCapsuleWeight6 = calculateWeight(bowserCapsuleWeight6)
+    dkCapsuleWeight6 = calculateWeight(dkCapsuleWeight6)
+    metalMushroomCapsuleWeight6 = calculateWeight(metalMushroomCapsuleWeight6)
+    duelCapsuleWeight6 = calculateWeight(duelCapsuleWeight6)
 
     try:
         mushroomCapsuleWeight6 = hex(int(mushroomCapsuleWeight6))
