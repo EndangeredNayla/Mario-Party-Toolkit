@@ -10,6 +10,8 @@ from functions import *
 from events.marioParty8_coins import *
 from events.marioParty8_mgreplace import *
 
+from CTkToolTip import *
+
 # Import custom tkinter module as ctk
 import customtkinter as ctk
 
@@ -39,9 +41,11 @@ def create_mario_party_8_interface(frame):
     mgWin_entry = create_entry(tabview.tab("Coins Mods"), 3, "assets/eventTags/miniGame.png", " Gain  ", " Coins when winning a Minigame.")
     star_entry = create_entry(tabview.tab("Coins Mods"), 4, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star.")
     bitsize_entry = create_entry(tabview.tab("Coins Mods"), 5, "assets/eventTags/bitsizeCandy.png", " Gain ", " Coins when Bitsized.")
+    hotel_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/eventTags/hotel.png", " Max ", " coins.")
+    hotel_entryTooltip = CTkToolTip(hotel_entry, message="MAX 255")
 
     # Create button to generate coins modification codes
-    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp8(blue_entry, red_entry, mgWin_entry, star_entry, bitsize_entry), text="Generate Codes")
+    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp8(blue_entry, red_entry, mgWin_entry, star_entry, bitsize_entry, hotel_entry), text="Generate Codes")
     parse_coins_button.place(x=10, y=660)
 
     # List of minigame names

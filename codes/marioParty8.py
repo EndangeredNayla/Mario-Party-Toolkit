@@ -218,3 +218,23 @@ E0000000 80008000
 04532E30 38C0{value}
 E0000000 80008000
 '''
+
+def hotelMaxInvest(value, valueDec):
+    return f'''
+MP8 - Invest Up To {valueDec} in Hotels
+203CB930 2C000064
+043CB930 2C00{value}
+043CB950 2C00{value}
+043CBBE4 2C00{value}
+043CBD6C 2C00{value}
+043CE480 2C00{value}
+043CE52C 2C00{value}
+043CE564 2C00{value}
+043CE5B0 2C00{value}
+043CE9F8 2C00{value}
+043CEAB0 2C00{value}
+043D2F7C 2C00{value}
+043D34B4 2C00{value}
+043D254C 2C1D{value}
+E2000001 80008000
+'''
