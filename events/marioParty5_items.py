@@ -111,7 +111,7 @@ def itemsEvent_mp5(bombCapsulePrice5, bombCapsuleWeight5, koopaBankCapsulePrice5
         if 0< percentage < 1:
             return str(math.ceil(percentage))
         return str(round(percentage))
-
+    
     mushroomCapsuleWeight5 = calculateWeight(mushroomCapsuleWeight5)
     goldenMushroomCapsuleWeight5 = calculateWeight(goldenMushroomCapsuleWeight5)
     warpPipeCapsuleWeight5 = calculateWeight(warpPipeCapsuleWeight5)
