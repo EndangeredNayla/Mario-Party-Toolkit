@@ -8,8 +8,7 @@
 from functions import *
 from codes.marioParty7 import *
 import pyperclip
-
-def coinsEvent_mp7(windmillEntry, blueEntry, redEntry, characterEntry, mgEntry, starEntry, startLast5, hammerBroEntry, zapEntry, fireballEntry, vacuumEntry, flowerEntry):
+def coinsEvent_mp7(blueEntry, redEntry, characterEntry, mgEntry, starEntry, startLast5, hammerBroEntry, zapEntry, fireballEntry, vacuumEntry, flowerEntry, windmillEntry):
     if not any((windmillEntry.get(), blueEntry.get(), redEntry.get(), characterEntry.get(), mgEntry.get(), starEntry.get(), startLast5.get(), hammerBroEntry.get(), zapEntry.get(), fireballEntry.get(), vacuumEntry.get(), flowerEntry.get())):
         createDialog("Error", "error", "Please fill out at least one box.", None)
         return

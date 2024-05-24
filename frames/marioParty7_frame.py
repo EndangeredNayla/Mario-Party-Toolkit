@@ -68,7 +68,7 @@ def create_mario_party_7_interface(frame):
     windmill_entry = create_entry2(tabview.tab("Coins Mods"), 6, "assets/eventTags/willmillville.png", " Max ", " coins.")
     windmill_entryTooltip = CTkToolTip(windmill_entry, message="MAX 255")
 
-    # Create button to generate coins modification codes
+    # Create button to generate coins modification codes  
     parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp7(blue_entry, red_entry, character_entry, mgWin_entry, star_entry, star_last4_entry, hammerBro_entry, zap_entry, fireball_entry, vacuum_entry, flower_entry, windmill_entry), text="Generate Codes")
     parse_coins_button.place(x=10, y=660)
 
