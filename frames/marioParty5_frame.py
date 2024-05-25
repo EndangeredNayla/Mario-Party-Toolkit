@@ -40,12 +40,13 @@ def create_mario_party_5_interface(frame):
     red_entry = create_entry(tabview.tab("Coins Mods"), 2, "assets/eventTags/redSpace.png", " Lose  ", " Coins on a Red Space.")
     mgWin_entry = create_entry(tabview.tab("Coins Mods"), 3, "assets/eventTags/miniGame.png", " Gain  ", " Coins when winning a Minigame.")
     star_entry = create_entry(tabview.tab("Coins Mods"), 4, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star at a Star Space.")
-    wiggler_entry = create_entry(tabview.tab("Coins Mods"), 5, "assets/eventTags/wigglerCapsule.png", " Costs ", " Coins to buy a Star with Wiggler.")
-    chompCost_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/eventTags/chainChomp.png", " Costs ", " Coins to Steal a Star.")
-    chompMin_entry = create_entry(tabview.tab("Coins Mods"), 7, "assets/eventTags/chainChomp.png", " Steal ", " Mininum when stealing Coins.")
+    koopaBank_entry = create_entry(tabview.tab("Coins Mods"), 5, "assets/items/koopaBankCapsule.png", " Lend ", " Coins to Koopa Bank.")
+    wiggler_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/eventTags/wigglerCapsule.png", " Costs ", " Coins to buy a Star with Wiggler.")
+    chompCost_entry = create_entry(tabview.tab("Coins Mods"), 7, "assets/eventTags/chainChomp.png", " Costs ", " Coins to Steal a Star.")
+    chompMin_entry = create_entry(tabview.tab("Coins Mods"), 8, "assets/eventTags/chainChomp.png", " Steal ", " Mininum when stealing Coins.")
 
     # Create button to generate coins modification codes
-    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp5(blue_entry, red_entry, mgWin_entry, star_entry, wiggler_entry, chompCost_entry, chompMin_entry), text="Generate Codes")
+    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp5(blue_entry, red_entry, mgWin_entry, star_entry, wiggler_entry, chompCost_entry, chompMin_entry, koopaBank_entry), text="Generate Codes")
     parse_coins_button.place(x=10, y=640)
 
     # List of minigame names

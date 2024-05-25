@@ -83,6 +83,12 @@ C20AFF9C 00000001
 3880{negAmount} 00000000
 '''
 
+def getKoopaBankFive(amount, amountDec):
+    return f'''
+MP5 - Koopa Bank Deposits are {amountDec} Coins
+040E7090 3B20{amount}
+'''
+
 def getWigglerSpaceCodeFive(amount, negAmount, amountDec):
     return f'''
 MP5 - Stars Cost {amountDec} Coins from Wiggler

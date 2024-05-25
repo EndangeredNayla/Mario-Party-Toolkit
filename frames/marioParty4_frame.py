@@ -45,14 +45,15 @@ def create_mario_party_4_interface(frame):
     red_entry = create_entry(tabview.tab("Coins Mods"), 2, "assets/eventTags/redSpace.png", " Lose  ", " Coins on a Red Space.")
     mgWin_entry = create_entry(tabview.tab("Coins Mods"), 3, "assets/eventTags/miniGame.png", " Gain  ", " Coins when winning a Minigame.")
     star_entry = create_entry(tabview.tab("Coins Mods"), 4, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star.")
-    mega_entry = create_entry(tabview.tab("Coins Mods"), 5, "assets/eventTags/megaMushroom.png", " Gain ", " Coins when squishing a player.")
-    booHouseStar_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/eventTags/booHouseStars.png", " Costs ", " Coins when stealing a Star.")
-    booHouseCoins_entry = create_entry(tabview.tab("Coins Mods"), 7, "assets/eventTags/booHouseCoins.png", " Costs ", " Coins when stealing coins.")
-    booHouseCoinsMin_entry = create_entry(tabview.tab("Coins Mods"), 8, "assets/eventTags/booHouseCoins.png", " Steal ", " Minimum when stealing coins.")
-    lottery_entry = create_entry(tabview.tab("Coins Mods"), 9, "assets/eventTags/lottery4.png", " Costs ", " Coins to play the Lottery.")
+    mega_entry = create_entry(tabview.tab("Coins Mods"), 5, "assets/items/megaMushroom.png", " Gain ", " Coins when squishing a player.")
+    bowser_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/items/bowserSuit4.png", " Gain ", " Coins when squishing a player.")
+    booHouseStar_entry = create_entry(tabview.tab("Coins Mods"), 7, "assets/eventTags/booHouseStars.png", " Costs ", " Coins when stealing a Star.")
+    booHouseCoins_entry = create_entry(tabview.tab("Coins Mods"), 8, "assets/eventTags/booHouseCoins.png", " Costs ", " Coins when stealing coins.")
+    booHouseCoinsMin_entry = create_entry(tabview.tab("Coins Mods"), 9, "assets/eventTags/booHouseCoins.png", " Steal ", " Minimum when stealing coins.")
+    lottery_entry = create_entry(tabview.tab("Coins Mods"), 10, "assets/eventTags/lottery4.png", " Costs ", " Coins to play the Lottery.")
 
     # Create button to generate coins modification codes
-    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp4(blue_entry, red_entry, mgWin_entry, star_entry, mega_entry, booHouseStar_entry, booHouseCoins_entry, lottery_entry, booHouseCoinsMin_entry), text="Generate Codes")
+    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp4(blue_entry, red_entry, mgWin_entry, star_entry, mega_entry, booHouseStar_entry, booHouseCoins_entry, lottery_entry, booHouseCoinsMin_entry, bowser_entry), text="Generate Codes")
     parse_coins_button.place(x=10, y=660)
 
     # List of minigame names
@@ -263,7 +264,7 @@ def create_mario_party_4_interface(frame):
     parseButtonFour = ctk.CTkButton(master=tabview.tab("Item Mods"), command=lambda: loadPresetItems4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4), text="Load Preset")
     parseButtonFour.place(x=310, y=640)
 
-    items4 = ["None", "Mini Mushroom", "Mega Mushroom", "Super Mini Mushroom", "Super Mega Mushroom", "Mini-Mega Hammer", "Sparky Sticker", "Warp Pipe", "Swap Card", "Bowser Suit", "Gaddlight", "Magic Lamp", "Boo's Crystal Ball", "Chomp Call", "Item Bag"]
+    items4 = ["None", "Mini Mushroom", "Mega Mushroom", "Super Mini Mushroom", "Super Mega Mushroom", "Mini-Mega Hammer", "Warp Pipe", "Swap Card", "Sparky Sticker", "Gaddlight", "Chomp Call", "Bowser Suit", "Boo's Crystal Ball", "Magic Lamp", "Item Bag"]
     
     label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 1:  ", font=("Arial", 16))
     label.grid(row=0, column=0)

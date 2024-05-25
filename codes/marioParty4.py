@@ -97,7 +97,15 @@ MP4 - Stars Cost {amountDec} Coins
 def getSquishCodeFour(amount, amountDec):
     return f'''
 MP4 - Mega Mushroom Steals {amountDec} Coins
-0406BE90 3800{amountDec}
+0406BE88 2C00{amount}
+0406BE90 3800{amount}
+'''
+
+def getBowserSuitCodeFour(amount, amountDec):
+    return f'''
+MP4 - Bowser Suit Steals {amountDec} Coins
+0406C788 2C00{amount}
+0406C790 38000005
 '''
 
 def getLotterySpaceCodeFour(amount, amountDec):
