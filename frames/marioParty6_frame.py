@@ -16,6 +16,7 @@ from events.marioParty6_spaceReplace import *
 
 # Import custom tkinter module as ctk
 import customtkinter as ctk
+from CTkToolTip import *
 
 # Function to create the main interface for Mario Party 1
 def create_mario_party_6_interface(frame):
@@ -48,7 +49,7 @@ def create_mario_party_6_interface(frame):
     mgWin_entry = create_entry(tabview.tab("Coins Mods"), 4, "assets/eventTags/miniGame.png", " Gain  ", " Coins when winning a Minigame.")
     
     star_entry = create_entry(tabview.tab("Coins Mods"), 5, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star at a Star Space and when using Flutter.")
-    star_entryTooltip = CTkToolTip(hotel_entry, message="Works on Treetop, Garage, Castaway, and Clockwork.")
+    star_entryTooltip = CTkToolTip(star_entry, message="Works on Treetop, Garage, Castaway, and Clockwork.")
     
     pinkBooCoins_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/eventTags/pinkBooCoins.png", " Costs ", " Coins to steal Coins.")
     pinkBooMin_entry = create_entry(tabview.tab("Coins Mods"), 7, "assets/eventTags/pinkBooCoins.png", " Steal ", " Mininum when stealing Coins.")
