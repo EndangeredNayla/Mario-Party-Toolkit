@@ -38,14 +38,20 @@ def create_mario_party_8_interface(frame):
     # Create entry fields and checkboxes for Coins Mods tab
     blue_entry = create_entry(tabview.tab("Coins Mods"), 1, "assets/eventTags/blueSpace.png", " Gain  ", " Coins on a Blue Space.")
     red_entry = create_entry(tabview.tab("Coins Mods"), 2, "assets/eventTags/redSpace.png", " Lose  ", " Coins on a Red Space.")
+
     mgWin_entry = create_entry(tabview.tab("Coins Mods"), 3, "assets/eventTags/miniGame.png", " Gain  ", " Coins when winning a Minigame.")
+    mgWin_entryTT = CTkToolTip(mgWin_entry, message="Some minigames may be broken. Please report if so.")
+
     star_entry = create_entry(tabview.tab("Coins Mods"), 4, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star.")
+    star_entryTT = CTkToolTip(mgWin_entry, message="Works on DK's, Goomba's, King Boo's and Shy Guy's.")
+
     bitsize_entry = create_entry(tabview.tab("Coins Mods"), 5, "assets/eventTags/bitsizeCandy.png", " Gain ", " Coins when Bitsized.")
-    hotel_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/eventTags/hotel.png", " Max ", " coins.")
-    hotel_entryTooltip = CTkToolTip(hotel_entry, message="MAX 255")
+    bowlo_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/eventTags/bowloCandy.png", " Lose ", " Coins when Bowloed.")
+    hotel_entry = create_entry(tabview.tab("Coins Mods"), 7, "assets/eventTags/hotel.png", " Max ", " coins.")
+    hotel_entryTooltip = CTkToolTip(hotel_entry, message="Max Coin Value is 255")
 
     # Create button to generate coins modification codes
-    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp8(blue_entry, red_entry, mgWin_entry, star_entry, bitsize_entry, hotel_entry), text="Generate Codes")
+    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp8(blue_entry, red_entry, mgWin_entry, star_entry, bitsize_entry, hotel_entry, bowlo_entry), text="Generate Codes")
     parse_coins_button.place(x=10, y=660)
 
     # List of minigame names
