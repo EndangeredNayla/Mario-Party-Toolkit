@@ -267,7 +267,7 @@ E0000000 80008000
 
 def getVampireCode8(value, amountDec):
     return f'''
-MP8 - Bowlo Candy Gives {amountDec} Coins Per Player Bowled
+MP8 - Vampire Candy Gives {amountDec} Despite Roulette
 42000000 90000000
 2827C586 FF00000A
 0427C586 0000{value}
