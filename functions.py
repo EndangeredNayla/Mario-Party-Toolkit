@@ -10,8 +10,6 @@ import customtkinter as ctk
 from PIL import Image, ImageTk
 from pathlib import Path
 import sys
-if sys.platform == "win32":
-    from get_system_color import *
 import requests
 import sys
 import webbrowser
@@ -20,8 +18,6 @@ import os
 import threading
 import json
 import subprocess
-
-from CTkColorPicker import *
 
 # Create a function for file selection
 def select_file(file_label):
