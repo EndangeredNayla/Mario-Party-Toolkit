@@ -7,6 +7,7 @@
 
 # Import necessary functions and modules
 from functions import *
+from events.marioParty6_bonusStarReplace import *
 from events.marioParty6_coins import *
 from events.marioParty6_initialItems import *
 from events.marioParty6_mgreplace import *
@@ -29,6 +30,7 @@ def create_mario_party_6_interface(frame):
     tabview.add("Space Replacement")
     tabview.add("Initial Orbs")
     tabview.add("Star Handicaps")
+    tabview.add("Bonus Star Replacement")
     tabview.set("Coins Mods")
 
     # Function to create an entry field and checkbox
@@ -557,6 +559,29 @@ def create_mario_party_6_interface(frame):
 
     parse_stars_button = ctk.CTkButton(master=tabview.tab("Star Handicaps"), command=lambda: handicapEvent_mp6(p1Stars, p2Stars, p3Stars, p4Stars), text="Generate Codes")
     parse_stars_button.place(x=10, y=640)
+
+    stars6 = ["None", "Blue Star", "Red Star", "Character Space Star", "Happening Star", "Duel Star", "Chance Time Star", "Bowser Star", "DK Star", "Minigame Star", "Current Coins Star", "Coin Star", "Star Star", "Orb Star"]
+    
+    label = ctk.CTkLabel(master=tabview.tab("Bonus Star Replacement"), text=" Replace Minigame Star with:  ", font=("Arial", 16))
+    label.grid(row=0, column=0, sticky="w")
+
+    star1 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars6)
+    star1.grid(row=0, column=1)
+
+    label = ctk.CTkLabel(master=tabview.tab("Bonus Star Replacement"), text=" Replace Orb Star with:  ", font=("Arial", 16))
+    label.grid(row=1, column=0, sticky="w")
+
+    star2 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars6)
+    star2.grid(row=1, column=1)
+
+    label = ctk.CTkLabel(master=tabview.tab("Bonus Star Replacement"), text=" Replace Happening Star with:  ", font=("Arial", 16))
+    label.grid(row=2, column=0, sticky="w")
+
+    star3 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars6)
+    star3.grid(row=2, column=1)
+
+    parseButton = ctk.CTkButton(master=tabview.tab("Bonus Star Replacement"), command=lambda: customBonusStarEvent_mp6(star1, star2, star3, stars6), text="Generate Codes")
+    parseButton.place(x=10, y=640)
 
     return frame
     

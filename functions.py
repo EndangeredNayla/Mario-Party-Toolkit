@@ -119,8 +119,12 @@ def createDialog(windowTitle, warn, info, buttonTxt=None):
     screen_height = completeWindow.winfo_screenheight()
     window_width = completeWindow.winfo_reqwidth()
     window_height = completeWindow.winfo_reqheight()
-    x_coordinate = screen_width - window_width
-    y_coordinate = screen_height - window_height
+    if sys.platform == "darwin":
+        x_coordinate = screen_width - window_width
+        y_coordinate = screen_height - window_height
+    else:
+        x_coordinate = screen_width - window_width - 230
+        y_coordinate = screen_height - window_height - 20
     completeWindow.geometry(f"+{x_coordinate}+{y_coordinate}")
 
     # Configure row and column weights
