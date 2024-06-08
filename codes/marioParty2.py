@@ -90,3 +90,85 @@ MP2 - P4 Starts With {amountDec} Stars
 D10FD2EA 0000
 810FD36A {amount}	
 '''
+
+def getStarSpaceCodeTwo(amount, negAmount, starPrice):
+    return f'''
+MP2 - Stars Cost {starPrice} Coins
+D10FA63E 0041
+81107742 {amount}
+D10FA63E 0041
+811077BA {negAmount}
+D10FA63E 0041
+811077C6 {negAmount}
+D10FA63E 003E
+81108FDA {amount} 
+D10FA63E 003E
+81109052 {negAmount}
+D10FA63E 003E
+8110905E {negAmount}
+D10FA63E 0045
+81107CAE {amount} 
+D10FA63E 0045
+81107D26 {negAmount}
+D10FA63E 0045
+81107D32 {negAmount}
+D10FA63E 0047
+81107AFE {amount} 
+D10FA63E 0047
+81107B76 {negAmount}
+D10FA63E 0047
+81107B82 {negAmount}
+D10FA63E 0043
+811080CA {amount} 
+D10FA63E 0043
+81108142 {negAmount}
+D10FA63E 0043
+8110814E {negAmount}
+D10FA63E 0049
+81107FDE {amount} 
+D10FA63E 0049
+81108056 {negAmount}
+D10FA63E 0049
+81108062 {negAmount}
+'''
+
+def getKoopaBankCodeTwo(amount, negAmount, koopaPrice):
+    return f'''
+MP2 - Koopa Bank Deposits are {koopaPrice} Coins
+D10FA63E 0041
+81107EA6 {amount}
+D10FA63E 0041
+8110808A {negAmount}
+D10FA63E 0041
+81108092 {negAmount}
+D10FA63E 003E
+8110973E {amount} 
+D10FA63E 003E
+81109922 {negAmount}
+D10FA63E 003E
+8110992A {negAmount}
+D10FA63E 0045
+8110841A {amount} 
+D10FA63E 0045
+811085FE {negAmount}
+D10FA63E 0045
+81108606 {negAmount}
+D10FA63E 0047
+81108262 {amount} 
+D10FA63E 0047
+81108446 {negAmount}
+D10FA63E 0047
+8110844E {negAmount}
+D10FA63E 0043
+81108836 {amount} 
+D10FA63E 0043
+81108A1A {negAmount}
+D10FA63E 0043
+81108A22 {negAmount}
+D10FA63E 0049
+81108AB2 {amount}
+D10FA63E 0049
+81108AFE {amount}
+D10FA63E 0049
+81108B0A {amount}
+'''
