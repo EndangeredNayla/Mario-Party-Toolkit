@@ -109,10 +109,14 @@ def itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMu
     orbWeightTotal = int(mushroomCapsuleWeight7) + int(goldenMushroomCapsuleWeight7) + int(metalMushroomCapsuleWeight7) + int(slowMushroomCapsuleWeight7) + int(flutterCapsuleWeight7) + int(cannonCapsuleWeight7) + int(snackCapsuleWeight7) + int(lakituCapsuleWeight7) + int(hammerBroCapsuleWeight7) + int(plantCapsuleWeight7) + int(spearCapsuleWeight7) + int(kamekCapsuleWeight7) + int(toadyCapsuleWeight7) + int(blizzardCapsuleWeight7) + int(banditCapsuleWeight7) + int(pinkBooCapsuleWeight7) + int(spinyCapsuleWeight7) + int(zapCapsuleWeight7) + int(tweesterCapsuleWeight7) + int(thwompCapsuleWeight7) + int(warpCapsuleWeight7) + int(bombCapsuleWeight7) + int(fireballCapsuleWeight7) + int(flowerCapsuleWeight7) + int(eggCapsuleWeight7) + int(vacuumCapsuleWeight7) + int(magicCapsuleWeight7) + int(tripleCapsuleWeight7) + int(koopaCapsuleWeight7)
 
     def calculateWeight(weight):
-        percentage = (int(weight) / orbWeightTotal) * 100
-        if 0< percentage < 1:
-            return str(math.ceil(percentage))
-        return str(round(percentage))
+        if orbWeightTotal < 100:
+            percentage = int(weight)
+            return percentage
+        else:
+            percentage = (int(weight) / orbWeightTotal) * 100
+            if 0< percentage < 1:
+                return math.ceil(percentage)
+            return round(percentage)
         
     mushroomCapsuleWeight7 = calculateWeight(mushroomCapsuleWeight7)
     goldenMushroomCapsuleWeight7 = calculateWeight(goldenMushroomCapsuleWeight7)
@@ -143,6 +147,130 @@ def itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMu
     magicCapsuleWeight7 = calculateWeight(magicCapsuleWeight7)
     tripleCapsuleWeight7 = calculateWeight(tripleCapsuleWeight7)
     koopaCapsuleWeight7 = calculateWeight(koopaCapsuleWeight7)
+    
+    orbWeightTotal = mushroomCapsuleWeight7 + goldenMushroomCapsuleWeight7 + metalMushroomCapsuleWeight7 + slowMushroomCapsuleWeight7 + flutterCapsuleWeight7 + cannonCapsuleWeight7 + snackCapsuleWeight7 + lakituCapsuleWeight7 + hammerBroCapsuleWeight7 + plantCapsuleWeight7 + spearCapsuleWeight7 + kamekCapsuleWeight7 + toadyCapsuleWeight7 + blizzardCapsuleWeight7 + banditCapsuleWeight7 + pinkBooCapsuleWeight7 + spinyCapsuleWeight7 + zapCapsuleWeight7 + tweesterCapsuleWeight7 + thwompCapsuleWeight7 + warpCapsuleWeight7 + bombCapsuleWeight7 + fireballCapsuleWeight7 + flowerCapsuleWeight7 + eggCapsuleWeight7 + vacuumCapsuleWeight7 + magicCapsuleWeight7 + tripleCapsuleWeight7 + koopaCapsuleWeight7
+    
+    if orbWeightTotal < 100:
+        var_names = ['mushroomCapsuleWeight7', 'goldenMushroomCapsuleWeight7', 'metalMushroomCapsuleWeight7', 'slowMushroomCapsuleWeight7', 'flutterCapsuleWeight7', 'cannonCapsuleWeight7', 'snackCapsuleWeight7', 'lakituCapsuleWeight7', 'hammerBroCapsuleWeight7', 'plantCapsuleWeight7', 'spearCapsuleWeight7', 'kamekCapsuleWeight7', 'toadyCapsuleWeight7', 'blizzardCapsuleWeight7', 'banditCapsuleWeight7', 'pinkBooCapsuleWeight7', 'spinyCapsuleWeight7', 'zapCapsuleWeight7', 'tweesterCapsuleWeight7', 'thwompCapsuleWeight7', 'warpCapsuleWeight7', 'bombCapsuleWeight7', 'fireballCapsuleWeight7', 'flowerCapsuleWeight7', 'eggCapsuleWeight7', 'vacuumCapsuleWeight7', 'magicCapsuleWeight7', 'tripleCapsuleWeight7', 'koopaCapsuleWeight7']
+        max_var = max(zip(var_names, (map(eval, var_names))), key=lambda tuple: tuple[1])[0]
+
+        if max_var == 'mushroomCapsuleWeight7':
+            mushroomCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'goldenMushroomCapsuleWeight7':
+            goldenMushroomCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'metalMushroomCapsuleWeight7':
+            metalMushroomCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'slowMushroomCapsuleWeight7':
+            slowMushroomCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'flutterCapsuleWeight7':
+            flutterCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'cannonCapsuleWeight7':
+            cannonCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'snackCapsuleWeight7':
+            snackCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'lakituCapsuleWeight7':
+            lakituCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'hammerBroCapsuleWeight7':
+            hammerBroCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'plantCapsuleWeight7':
+            plantCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'spearCapsuleWeight7':
+            spearCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'kamekCapsuleWeight7':
+            kamekCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'toadyCapsuleWeight7':
+            toadyCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'blizzardCapsuleWeight7':
+            blizzardCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'banditCapsuleWeight7':
+            banditCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'pinkBooCapsuleWeight7':
+            pinkBooCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'spinyCapsuleWeight7':
+            spinyCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'zapCapsuleWeight7':
+            zapCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'tweesterCapsuleWeight7':
+            tweesterCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'thwompCapsuleWeight7':
+            thwompCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'warpCapsuleWeight7':
+            warpCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'bombCapsuleWeight7':
+            bombCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'fireballCapsuleWeight7':
+            fireballCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'flowerCapsuleWeight7':
+            flowerCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'eggCapsuleWeight7':
+            eggCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'vacuumCapsuleWeight7':
+            vacuumCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'magicCapsuleWeight7':
+            magicCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'tripleCapsuleWeight7':
+            tripleCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'koopaCapsuleWeight7':
+            koopaCapsuleWeight7 += (100 - orbWeightTotal)
+
+    mushroomCapsuleWeight7 = str(mushroomCapsuleWeight7)
+    goldenMushroomCapsuleWeight7 = str(goldenMushroomCapsuleWeight7)
+    metalMushroomCapsuleWeight7 = str(metalMushroomCapsuleWeight7)
+    slowMushroomCapsuleWeight7 = str(slowMushroomCapsuleWeight7)
+    flutterCapsuleWeight7 = str(flutterCapsuleWeight7)
+    cannonCapsuleWeight7 = str(cannonCapsuleWeight7)
+    snackCapsuleWeight7 = str(snackCapsuleWeight7)
+    lakituCapsuleWeight7 = str(lakituCapsuleWeight7)
+    hammerBroCapsuleWeight7 = str(hammerBroCapsuleWeight7)
+    plantCapsuleWeight7 = str(plantCapsuleWeight7)
+    spearCapsuleWeight7 = str(spearCapsuleWeight7)
+    kamekCapsuleWeight7 = str(kamekCapsuleWeight7)
+    toadyCapsuleWeight7 = str(toadyCapsuleWeight7)
+    blizzardCapsuleWeight7 = str(blizzardCapsuleWeight7)
+    banditCapsuleWeight7 = str(banditCapsuleWeight7)
+    pinkBooCapsuleWeight7 = str(pinkBooCapsuleWeight7)
+    spinyCapsuleWeight7 = str(spinyCapsuleWeight7)
+    zapCapsuleWeight7 = str(zapCapsuleWeight7)
+    tweesterCapsuleWeight7 = str(tweesterCapsuleWeight7)
+    thwompCapsuleWeight7 = str(thwompCapsuleWeight7)
+    warpCapsuleWeight7 = str(warpCapsuleWeight7)
+    bombCapsuleWeight7 = str(bombCapsuleWeight7)
+    fireballCapsuleWeight7 = str(fireballCapsuleWeight7)
+    flowerCapsuleWeight7 = str(flowerCapsuleWeight7)
+    eggCapsuleWeight7 = str(eggCapsuleWeight7)
+    vacuumCapsuleWeight7 = str(vacuumCapsuleWeight7)
+    magicCapsuleWeight7 = str(magicCapsuleWeight7)
+    tripleCapsuleWeight7 = str(tripleCapsuleWeight7)
+    koopaCapsuleWeight7 = str(koopaCapsuleWeight7)
+
     try:
         mushroomCapsuleWeight7 = hex(int(mushroomCapsuleWeight7))
         if len(mushroomCapsuleWeight7) == 4:
