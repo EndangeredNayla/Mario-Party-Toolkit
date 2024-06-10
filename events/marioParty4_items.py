@@ -48,10 +48,14 @@ def itemsEvent_mp4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPr
     orbPriceMin = find_lowest_integer(*[int(miniPrice4), int(megaPrice4), int(superMiniPrice4), int(superMegaPrice4), int(miniMegaHammerPrice4), int(warpPipePrice4), int(swapCardPrice4), int(sparkyStickerPrice4), int(gaddlightPrice4), int(chompCallPrice4), int(bowserSuitPrice4), int(crystalBallPrice4), int(magicLampPrice4), int(itemBagPrice4)])
     
     def calculateWeight(weight):
-        percentage = (int(weight) / orbWeightTotal) * 100
-        if 0< percentage < 1:
-            return str(math.ceil(percentage))
-        return str(round(percentage))
+        if orbWeightTotal < 100:
+            percentage = int(weight)
+            return percentage
+        else:
+            percentage = (int(weight) / orbWeightTotal) * 100
+            if 0< percentage < 1:
+                return math.ceil(percentage)
+            return round(percentage)
 
     miniWeight4 = calculateWeight(miniWeight4)
     megaWeight4 = calculateWeight(megaWeight4)
@@ -67,6 +71,70 @@ def itemsEvent_mp4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPr
     crystalBallWeight4 = calculateWeight(crystalBallWeight4)
     magicLampWeight4 = calculateWeight(magicLampWeight4)
     itemBagWeight4 = calculateWeight(itemBagWeight4)
+
+    orbWeightTotal = miniWeight4 + megaWeight4 + superMiniWeight4 + superMegaWeight4 + miniMegaHammerWeight4 + warpPipeWeight4 + swapCardWeight4 + sparkyStickerWeight4 + gaddlightWeight4 + chompCallWeight4 + bowserSuitWeight4 + crystalBallWeight4 + magicLampWeight4 + itemBagWeight4
+
+    if orbWeightTotal < 100:
+        var_names = ['miniWeight4', 'megaWeight4', 'superMegaWeight4', 'superMiniWeight4', 'miniMegaHammerWeight4', 'warpPipeWeight4', 'swapCardWeight4', 'sparkyStickerWeight4', 'gaddlightWeight4', 'chompCallWeight4', 'bowserSuitWeight4', 'crystalBallWeight4', 'magicLampWeight4', 'itemBagWeight4']
+        max_var = max(zip(var_names, (map(eval, var_names))), key=lambda tuple: tuple[1])[0]
+
+        if max_var == 'miniWeight4':
+            miniWeight4 += (100 - orbWeightTotal)
+        
+        if max_var == 'megaWeight4':
+            megaWeight4 += (100 - orbWeightTotal)
+        
+        if max_var == 'superMegaWeight4':
+            superMegaWeight4 += (100 - orbWeightTotal)
+        
+        if max_var == 'superMiniWeight4':
+            superMiniWeight4 += (100 - orbWeightTotal)
+        
+        if max_var == 'miniMegaHammerWeight4':
+            miniMegaHammerWeight4 += (100 - orbWeightTotal)
+        
+        if max_var == 'warpPipeWeight4':
+            warpPipeWeight4 += (100 - orbWeightTotal)
+        
+        if max_var == 'swapCardWeight4':
+            swapCardWeight4 += (100 - orbWeightTotal)
+        
+        if max_var == 'sparkyStickerWeight4':
+            sparkyStickerWeight4 += (100 - orbWeightTotal)
+        
+        if max_var == 'gaddlightWeight4':
+            gaddlightWeight4 += (100 - orbWeightTotal)
+        
+        if max_var == 'chompCallWeight4':
+            chompCallWeight4 += (100 - orbWeightTotal)
+        
+        if max_var == 'bowserSuitWeight4':
+            bowserSuitWeight4 += (100 - orbWeightTotal)
+        
+        if max_var == 'crystalBallWeight4':
+            crystalBallWeight4 += (100 - orbWeightTotal)
+        
+        if max_var == 'magicLampWeight4':
+            magicLampWeight4 += (100 - orbWeightTotal)
+        
+        if max_var == 'itemBagWeight4':
+            itemBagWeight4 += (100 - orbWeightTotal)
+
+    miniWeight4 = str(miniWeight4)
+    megaWeight4 = str(megaWeight4)
+    superMegaWeight4 = str(superMegaWeight4)
+    superMiniWeight4 = str(superMiniWeight4)
+    miniMegaHammerWeight4 = str(miniMegaHammerWeight4)
+    warpPipeWeight4 = str(warpPipeWeight4)
+    swapCardWeight4 = str(swapCardWeight4)
+    sparkyStickerWeight4 = str(sparkyStickerWeight4)
+    gaddlightWeight4 = str(gaddlightWeight4)
+    chompCallWeight4 = str(chompCallWeight4)
+    bowserSuitWeight4 = str(bowserSuitWeight4)
+    crystalBallWeight4 = str(crystalBallWeight4)
+    magicLampWeight4 = str(magicLampWeight4)
+    itemBagWeight4 = str(itemBagWeight4)
+
     
     try:
         miniWeight4 = hex(int(miniWeight4))
