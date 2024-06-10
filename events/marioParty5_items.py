@@ -104,13 +104,17 @@ def itemsEvent_mp5(bombCapsulePrice5, bombCapsuleWeight5, koopaBankCapsulePrice5
     bombCapsulePrice5 = bombCapsulePrice5.get()
     bombCapsuleWeight5 = bombCapsuleWeight5.get()
 
-    orbWeightTotal = int(hammerBroCapsuleWeight5) + int(bulletBillCapsuleWeight5) + int(koopaBankCapsuleWeight5) + int(coinBlockCapsuleWeight5) + int(mushroomCapsuleWeight5) + int(goldenMushroomCapsuleWeight5) + int(cursedMushroomCapsuleWeight5) + int(warpPipeCapsuleWeight5) + int(flutterCapsuleWeight5) + int(spinyCapsuleWeight5) + int(goombaCapsuleWeight5) + int(plantCapsuleWeight5) + int(kleptoCapsuleWeight5) + int(kamekCapsuleWeight5) + int(blizzardCapsuleWeight5) + int(podobooCapsuleWeight5) + int(paraTroopaCapsuleWeight5) + int(magiKoopaCapsuleWeight5) + int(ukikiCapsuleWeight5) + int(tweesterCapsuleWeight5) + int(lakituCapsuleWeight5) + int(miracleCapsuleWeight5) + int(boneCapsuleWeight5) + int(chainChompCapsulePrice5) + int(chanceCapsuleWeight5) + int(bowserCapsuleWeight5) + int(dkCapsuleWeight5) + int(duelCapsuleWeight5) + int(bombCapsuleWeight5)
+    orbWeightTotal = int(hammerBroCapsuleWeight5) + int(bulletBillCapsuleWeight5) + int(koopaBankCapsuleWeight5) + int(coinBlockCapsuleWeight5) + int(mushroomCapsuleWeight5) + int(goldenMushroomCapsuleWeight5) + int(cursedMushroomCapsuleWeight5) + int(warpPipeCapsuleWeight5) + int(flutterCapsuleWeight5) + int(spinyCapsuleWeight5) + int(goombaCapsuleWeight5) + int(plantCapsuleWeight5) + int(kleptoCapsuleWeight5) + int(kamekCapsuleWeight5) + int(blizzardCapsuleWeight5) + int(podobooCapsuleWeight5) + int(paraTroopaCapsuleWeight5) + int(magiKoopaCapsuleWeight5) + int(ukikiCapsuleWeight5) + int(tweesterCapsuleWeight5) + int(lakituCapsuleWeight5) + int(miracleCapsuleWeight5) + int(boneCapsuleWeight5) + int(chainChompCapsuleWeight5) + int(chanceCapsuleWeight5) + int(bowserCapsuleWeight5) + int(dkCapsuleWeight5) + int(duelCapsuleWeight5) + int(bombCapsuleWeight5)
 
     def calculateWeight(weight):
-        percentage = (int(weight) / orbWeightTotal) * 100
-        if 0< percentage < 1:
-            return str(math.ceil(percentage))
-        return str(round(percentage))
+        if orbWeightTotal < 100:
+            percentage = int(weight)
+            return percentage
+        else:
+            percentage = (int(weight) / orbWeightTotal) * 100
+            if 0< percentage < 1:
+                return math.ceil(percentage)
+            return round(percentage)
     
     mushroomCapsuleWeight5 = calculateWeight(mushroomCapsuleWeight5)
     goldenMushroomCapsuleWeight5 = calculateWeight(goldenMushroomCapsuleWeight5)
@@ -142,6 +146,128 @@ def itemsEvent_mp5(bombCapsulePrice5, bombCapsuleWeight5, koopaBankCapsulePrice5
     coinBlockCapsuleWeight5 = calculateWeight(coinBlockCapsuleWeight5)
     bombCapsuleWeight5 = calculateWeight(bombCapsuleWeight5)
 
+    orbWeightTotal = hammerBroCapsuleWeight5 + bulletBillCapsuleWeight5 + koopaBankCapsuleWeight5 + coinBlockCapsuleWeight5 + mushroomCapsuleWeight5 + goldenMushroomCapsuleWeight5 + cursedMushroomCapsuleWeight5 + warpPipeCapsuleWeight5 + flutterCapsuleWeight5 + spinyCapsuleWeight5 + goombaCapsuleWeight5 + plantCapsuleWeight5 + kleptoCapsuleWeight5 + kamekCapsuleWeight5 + blizzardCapsuleWeight5 + podobooCapsuleWeight5 + paraTroopaCapsuleWeight5 + magiKoopaCapsuleWeight5 + ukikiCapsuleWeight5 + tweesterCapsuleWeight5 + lakituCapsuleWeight5 + miracleCapsuleWeight5 + boneCapsuleWeight5 + chainChompCapsuleWeight5 + chanceCapsuleWeight5 + bowserCapsuleWeight5 + dkCapsuleWeight5 + duelCapsuleWeight5 + bombCapsuleWeight5
+    
+    if orbWeightTotal < 100:
+        var_names = ['mushroomCapsuleWeight5', 'goldenMushroomCapsuleWeight5', 'warpPipeCapsuleWeight5', 'flutterCapsuleWeight5', 'cursedMushroomCapsuleWeight5', 'spinyCapsuleWeight5', 'goombaCapsuleWeight5', 'plantCapsuleWeight5', 'kleptoCapsuleWeight5', 'kamekCapsuleWeight5', 'blizzardCapsuleWeight5', 'podobooCapsuleWeight5', 'paraTroopaCapsuleWeight5', 'magiKoopaCapsuleWeight5', 'ukikiCapsuleWeight5', 'tweesterCapsuleWeight5', 'lakituCapsuleWeight5', 'miracleCapsuleWeight5', 'boneCapsuleWeight5', 'chainChompCapsuleWeight5', 'chanceCapsuleWeight5', 'bowserCapsuleWeight5', 'dkCapsuleWeight5', 'duelCapsuleWeight5', 'hammerBroCapsuleWeight5', 'bulletBillCapsuleWeight5', 'koopaBankCapsuleWeight5', 'coinBlockCapsuleWeight5', 'bombCapsuleWeight5']
+        max_var = max(zip(var_names, (map(eval, var_names))), key=lambda tuple: tuple[1])[0]
+        
+        if max_var == 'mushroomCapsuleWeight5':
+            mushroomCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'goldenMushroomCapsuleWeight5':
+            goldenMushroomCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'warpPipeCapsuleWeight5':
+            warpPipeCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'flutterCapsuleWeight5':
+            flutterCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'cursedMushroomCapsuleWeight5':
+            cursedMushroomCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'spinyCapsuleWeight5':
+            spinyCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'goombaCapsuleWeight5':
+            goombaCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'plantCapsuleWeight5':
+            plantCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'kleptoCapsuleWeight5':
+            kleptoCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'kamekCapsuleWeight5':
+            kamekCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'blizzardCapsuleWeight5':
+            blizzardCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'podobooCapsuleWeight5':
+            podobooCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'paraTroopaCapsuleWeight5':
+            paraTroopaCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'magiKoopaCapsuleWeight5':
+            magiKoopaCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'ukikiCapsuleWeight5':
+            ukikiCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'tweesterCapsuleWeight5':
+            tweesterCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'lakituCapsuleWeight5':
+            lakituCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'miracleCapsuleWeight5':
+            miracleCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'boneCapsuleWeight5':
+            boneCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'chainChompCapsuleWeight5':
+            chainChompCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'chanceCapsuleWeight5':
+            chanceCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'bowserCapsuleWeight5':
+            bowserCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'dkCapsuleWeight5':
+            dkCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'duelCapsuleWeight5':
+            duelCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'hammerBroCapsuleWeight5':
+            hammerBroCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'bulletBillCapsuleWeight5':
+            bulletBillCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'koopaBankCapsuleWeight5':
+            koopaBankCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'coinBlockCapsuleWeight5':
+            coinBlockCapsuleWeight5 += (100 - orbWeightTotal)
+
+        if max_var == 'bombCapsuleWeight5':
+            bombCapsuleWeight5 += (100 - orbWeightTotal)
+
+    mushroomCapsuleWeight5 = str(mushroomCapsuleWeight5)
+    goldenMushroomCapsuleWeight5 = str(goldenMushroomCapsuleWeight5)
+    warpPipeCapsuleWeight5 = str(warpPipeCapsuleWeight5)
+    flutterCapsuleWeight5 = str(flutterCapsuleWeight5)
+    cursedMushroomCapsuleWeight5 = str(cursedMushroomCapsuleWeight5)
+    spinyCapsuleWeight5 = str(spinyCapsuleWeight5)
+    goombaCapsuleWeight5 = str(goombaCapsuleWeight5)
+    plantCapsuleWeight5 = str(plantCapsuleWeight5)
+    kleptoCapsuleWeight5 = str(kleptoCapsuleWeight5)
+    kamekCapsuleWeight5 = str(kamekCapsuleWeight5)
+    blizzardCapsuleWeight5 = str(blizzardCapsuleWeight5)
+    podobooCapsuleWeight5 = str(podobooCapsuleWeight5)
+    paraTroopaCapsuleWeight5 = str(paraTroopaCapsuleWeight5)
+    magiKoopaCapsuleWeight5 = str(magiKoopaCapsuleWeight5)
+    ukikiCapsuleWeight5 = str(ukikiCapsuleWeight5)
+    tweesterCapsuleWeight5 = str(tweesterCapsuleWeight5)
+    lakituCapsuleWeight5 = str(lakituCapsuleWeight5)
+    miracleCapsuleWeight5 = str(miracleCapsuleWeight5)
+    boneCapsuleWeight5 = str(boneCapsuleWeight5)
+    chainChompCapsuleWeight5 = str(chainChompCapsuleWeight5)
+    chanceCapsuleWeight5 = str(chanceCapsuleWeight5)
+    bowserCapsuleWeight5 = str(bowserCapsuleWeight5)
+    dkCapsuleWeight5 = str(dkCapsuleWeight5)
+    duelCapsuleWeight5 = str(duelCapsuleWeight5)
+    hammerBroCapsuleWeight5 = str(hammerBroCapsuleWeight5)
+    bulletBillCapsuleWeight5 = str(bulletBillCapsuleWeight5)
+    koopaBankCapsuleWeight5 = str(koopaBankCapsuleWeight5)
+    coinBlockCapsuleWeight5 = str(coinBlockCapsuleWeight5)
+    bombCapsuleWeight5 = str(bombCapsuleWeight5)
 
     try:
         mushroomCapsuleWeight5 = hex(int(mushroomCapsuleWeight5))
@@ -880,27 +1006,31 @@ def fillViaCode5(top, codeText, bombCapsulePrice5, bombCapsuleWeight5, koopaBank
 
     code5.append(codeText.get("1.0", "end"))
     
-    for i in range(0, 21):
-        current_line5 = current_line5 + code5[0][i]
+    try:
+        for i in range(0, 21):
+            current_line5 = current_line5 + code5[0][i]
 
-    if current_line5 == "MP5 - Capsule Modifer":
-        current_line5 = ""
-        
-        for i in range(22, 1210):
-            if code5[0][i] != " " and code5[0][i] != "\n":
-                current_line5 = current_line5 + code5[0][i]
-            else:
-                code_single5.append(current_line5)
-                current_line5 = ""
-    else:
-        current_line5 = ""
-        
-        for i in range(0, 1188):
-            if code5[0][i] != " " and code5[0][i] != "\n":
-                current_line5 = current_line5 + code5[0][i]
-            else:
-                code_single5.append(current_line5)
-                current_line5 = ""
+        if current_line5 == "MP5 - Capsule Modifer":
+            current_line5 = ""
+            
+            for i in range(22, 1210):
+                if code5[0][i] != " " and code5[0][i] != "\n":
+                    current_line5 = current_line5 + code5[0][i]
+                else:
+                    code_single5.append(current_line5)
+                    current_line5 = ""
+        else:
+            current_line5 = ""
+            
+            for i in range(0, 1188):
+                if code5[0][i] != " " and code5[0][i] != "\n":
+                    current_line5 = current_line5 + code5[0][i]
+                else:
+                    code_single5.append(current_line5)
+                    current_line5 = ""
+    except IndexError:
+        createDialog("Error", "error", "Invalid Code", None)
+        return
     
     del code_single5[0:8]
     del code_single5[29:67]
