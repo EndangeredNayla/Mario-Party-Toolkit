@@ -391,71 +391,6 @@ def create_mario_party_6_interface(frame):
     label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
     label.grid(row=4, column=20)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/pinkBooCapsule.png", 5, 15)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=5, column=16)
-    pinkBooCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    pinkBooCapsulePrice6.grid(row=5, column=17)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=5, column=18)
-    pinkBooCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    pinkBooCapsuleWeight6.grid(row=5, column=19)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=5, column=20)
-
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/chanceCapsule.png", 6, 15)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=6, column=16)
-    chanceTimeCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    chanceTimeCapsulePrice6.grid(row=6, column=17)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=6, column=18)
-    chanceTimeCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    chanceTimeCapsuleWeight6.grid(row=6, column=19)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=6, column=20)
-
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/dkCapsule.png", 8, 15)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=8, column=16)
-    dkCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    dkCapsulePrice6.grid(row=8, column=17)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=8, column=18)
-    dkCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    dkCapsuleWeight6.grid(row=8, column=19)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=8, column=20)
-
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/bowserCapsule.png", 9, 15)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=9, column=16)
-    bowserCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    bowserCapsulePrice6.grid(row=9, column=17)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=9, column=18)
-    bowserCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    bowserCapsuleWeight6.grid(row=9, column=19)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=9, column=20)
-
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/duelCapsule.png", 10, 15)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=10, column=16)
-    duelCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    duelCapsulePrice6.grid(row=10, column=17)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=10, column=18)
-    duelCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    duelCapsuleWeight6.grid(row=10, column=19)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=10, column=20)
-
 
     parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: itemsEvent_mp6(warpPipeCapsuleWeight6, warpPipeCapsulePrice6, mushroomCapsuleWeight6, goldenMushroomCapsulePrice6, goldenMushroomCapsuleWeight6, slowMushroomCapsulePrice6, slowMushroomCapsuleWeight6, metalMushroomCapsulePrice6, metalMushroomCapsuleWeight6, bulletBillCapsulePrice6, bulletBillCapsuleWeight6, flutterCapsulePrice6, flutterCapsuleWeight6, cursedMushroomCapsulePrice6, cursedMushroomCapsuleWeight6, spinyCapsulePrice6, spinyCapsuleWeight6, goombaCapsulePrice6, goombaCapsuleWeight6, plantCapsulePrice6, plantCapsuleWeight6, kleptoCapsulePrice6, kleptoCapsuleWeight6, toadyCapsulePrice6, toadyCapsuleWeight6, kamekCapsulePrice6, kamekCapsuleWeight6, blizzardCapsulePrice6, blizzardCapsuleWeight6, podobooCapsulePrice6, podobooCapsuleWeight6, zapCapsulePrice6, zapCapsuleWeight6, tweesterCapsulePrice6, tweesterCapsuleWeight6, thwompCapsulePrice6, thwompCapsuleWeight6, bombCapsulePrice6, bombCapsuleWeight6, paraTroopaCapsulePrice6, paraTroopaCapsuleWeight6, snackCapsulePrice6, snackCapsuleWeight6, gaddLightCapsulePrice6, gaddLightCapsuleWeight6, pinkBooCapsulePrice6, pinkBooCapsuleWeight6, chanceTimeCapsulePrice6, chanceTimeCapsuleWeight6, bowserCapsulePrice6, bowserCapsuleWeight6, dkCapsulePrice6, dkCapsuleWeight6, duelCapsulePrice6, duelCapsuleWeight6), text="Generate Codes")
     parseButton.place(x=10, y=640)
@@ -466,6 +401,94 @@ def create_mario_party_6_interface(frame):
     parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: loadPresetItems6(warpPipeCapsuleWeight6, warpPipeCapsulePrice6, mushroomCapsuleWeight6, goldenMushroomCapsulePrice6, goldenMushroomCapsuleWeight6, slowMushroomCapsulePrice6, slowMushroomCapsuleWeight6, metalMushroomCapsulePrice6, metalMushroomCapsuleWeight6, bulletBillCapsulePrice6, bulletBillCapsuleWeight6, flutterCapsulePrice6, flutterCapsuleWeight6, cursedMushroomCapsulePrice6, cursedMushroomCapsuleWeight6, spinyCapsulePrice6, spinyCapsuleWeight6, goombaCapsulePrice6, goombaCapsuleWeight6, plantCapsulePrice6, plantCapsuleWeight6, kleptoCapsulePrice6, kleptoCapsuleWeight6, toadyCapsulePrice6, toadyCapsuleWeight6, kamekCapsulePrice6, kamekCapsuleWeight6, blizzardCapsulePrice6, blizzardCapsuleWeight6, podobooCapsulePrice6, podobooCapsuleWeight6, zapCapsulePrice6, zapCapsuleWeight6, tweesterCapsulePrice6, tweesterCapsuleWeight6, thwompCapsulePrice6, thwompCapsuleWeight6, bombCapsulePrice6, bombCapsuleWeight6, paraTroopaCapsulePrice6, paraTroopaCapsuleWeight6, snackCapsulePrice6, snackCapsuleWeight6, gaddLightCapsulePrice6, gaddLightCapsuleWeight6, pinkBooCapsulePrice6, pinkBooCapsuleWeight6, chanceTimeCapsulePrice6, chanceTimeCapsuleWeight6, bowserCapsulePrice6, bowserCapsuleWeight6, dkCapsulePrice6, dkCapsuleWeight6, duelCapsulePrice6, duelCapsuleWeight6), text="Load Preset")
     parseButton.place(x=310, y=640)
 
+    pinkBooCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    pinkBooCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    chanceTimeCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    chanceTimeCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    dkCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    dkCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    bowserCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    bowserCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    duelCapsulePrice6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    duelCapsuleWeight6 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    
+# Function to toggle the visibility of custom orbs' grids
+    def toggle_orbs_visibility(state):
+        global custom_orb_widgets
+        if state.get() == "on":
+            # Show custom orbs
+            custom_orb_widgets = {}
+
+            custom_orb_widgets['pinkBooIcon'] = create_image_icon(tabview.tab("Orb Mods"), "assets/items/pinkBooCapsule.png", 5, 15)
+            custom_orb_widgets['pinkBooLabel'] = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+            custom_orb_widgets['pinkBooLabel'].grid(row=5, column=16)
+            custom_orb_widgets['pinkBooCapsulePrice6'] = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+            custom_orb_widgets['pinkBooCapsulePrice6'].grid(row=5, column=17)
+            custom_orb_widgets['pinkBooWeightLabel'] = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+            custom_orb_widgets['pinkBooWeightLabel'].grid(row=5, column=18)
+            custom_orb_widgets['pinkBooCapsuleWeight6'] = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+            custom_orb_widgets['pinkBooCapsuleWeight6'].grid(row=5, column=19)
+            custom_orb_widgets['pinkBooCommonLabel'] = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+            custom_orb_widgets['pinkBooCommonLabel'].grid(row=5, column=20)
+
+            custom_orb_widgets['chanceIcon'] = create_image_icon(tabview.tab("Orb Mods"), "assets/items/chanceCapsule.png", 6, 15)
+            custom_orb_widgets['chanceLabel'] = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+            custom_orb_widgets['chanceLabel'].grid(row=6, column=16)
+            custom_orb_widgets['chanceTimeCapsulePrice6'] = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+            custom_orb_widgets['chanceTimeCapsulePrice6'].grid(row=6, column=17)
+            custom_orb_widgets['chanceWeightLabel'] = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+            custom_orb_widgets['chanceWeightLabel'].grid(row=6, column=18)
+            custom_orb_widgets['chanceTimeCapsuleWeight6'] = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+            custom_orb_widgets['chanceTimeCapsuleWeight6'].grid(row=6, column=19)
+            custom_orb_widgets['chanceCommonLabel'] = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+            custom_orb_widgets['chanceCommonLabel'].grid(row=6, column=20)
+
+            custom_orb_widgets['dkIcon'] = create_image_icon(tabview.tab("Orb Mods"), "assets/items/dkCapsule.png", 8, 15)
+            custom_orb_widgets['dkLabel'] = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+            custom_orb_widgets['dkLabel'].grid(row=8, column=16)
+            custom_orb_widgets['dkCapsulePrice6'] = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+            custom_orb_widgets['dkCapsulePrice6'].grid(row=8, column=17)
+            custom_orb_widgets['dkWeightLabel'] = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+            custom_orb_widgets['dkWeightLabel'].grid(row=8, column=18)
+            custom_orb_widgets['dkCapsuleWeight6'] = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+            custom_orb_widgets['dkCapsuleWeight6'].grid(row=8, column=19)
+            custom_orb_widgets['dkCommonLabel'] = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+            custom_orb_widgets['dkCommonLabel'].grid(row=8, column=20)
+
+            custom_orb_widgets['bowserIcon'] = create_image_icon(tabview.tab("Orb Mods"), "assets/items/bowserCapsule.png", 9, 15)
+            custom_orb_widgets['bowserLabel'] = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+            custom_orb_widgets['bowserLabel'].grid(row=9, column=16)
+            custom_orb_widgets['bowserCapsulePrice6'] = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+            custom_orb_widgets['bowserCapsulePrice6'].grid(row=9, column=17)
+            custom_orb_widgets['bowserWeightLabel'] = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+            custom_orb_widgets['bowserWeightLabel'].grid(row=9, column=18)
+            custom_orb_widgets['bowserCapsuleWeight6'] = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+            custom_orb_widgets['bowserCapsuleWeight6'].grid(row=9, column=19)
+            custom_orb_widgets['bowserCommonLabel'] = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+            custom_orb_widgets['bowserCommonLabel'].grid(row=9, column=20)
+
+            custom_orb_widgets['duelIcon'] = create_image_icon(tabview.tab("Orb Mods"), "assets/items/duelCapsule.png", 10, 15)
+            custom_orb_widgets['duelLabel'] = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+            custom_orb_widgets['duelLabel'].grid(row=10, column=16)
+            custom_orb_widgets['duelCapsulePrice6'] = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+            custom_orb_widgets['duelCapsulePrice6'].grid(row=10, column=17)
+            custom_orb_widgets['duelWeightLabel'] = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+            custom_orb_widgets['duelWeightLabel'].grid(row=10, column=18)
+            custom_orb_widgets['duelCapsuleWeight6'] = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+            custom_orb_widgets['duelCapsuleWeight6'].grid(row=10, column=19)
+            custom_orb_widgets['duelCommonLabel'] = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+            custom_orb_widgets['duelCommonLabel'].grid(row=10, column=20)
+
+        elif state.get() == "off":
+            # Hide custom orbs
+            for widget in custom_orb_widgets.values():
+                if widget is not None and hasattr(widget, 'grid_remove'):
+                    widget.grid_remove()
+
+    # Add the switch to the interface
+    toggle_orbs_switch = ctk.CTkSwitch(master=tabview.tab("Orb Mods"), text="Show Custom Orbs", command=lambda: toggle_orbs_visibility(toggle_orbs_switch), onvalue="on", offvalue="off")
+    toggle_orbs_switch.place(x=10, y=600)
+    
     spaces6 = ["None", "Invisible Space", "Blue Space", "Red Space", "Happening Space", "Chance Time Space", "Duel Space", "Bowser/DK Space", "Orb Space"]
     
     label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" Replace  ", font=("Arial", 16))
