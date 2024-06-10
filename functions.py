@@ -32,7 +32,7 @@ def fetchResource(resource_path: Path) -> Path:
     else:   # Return temp resource path
         return base_path.joinpath(resource_path)
 
-def create_image_icon(frame, image_path, row, column, hide=False):
+def create_image_icon(frame, image_path, row, column):
     # Create and configure the canvas with the provided image
     image = Image.open(fetchResource(image_path))
     image = image.resize((48, 48))
@@ -41,11 +41,6 @@ def create_image_icon(frame, image_path, row, column, hide=False):
     label.configure(fg_color=['#fcfcfc', '#323232'], text="") # Windows fix
     label.image = image_tk  # Keep a reference to the image to prevent it from being garbage collected
     label.grid(row=row, column=column)
-    
-    if hide:
-        label.grid_remove()  # Hide the label if hide is True
-
-    return label  # Return the label so it can be managed later
 
 def create_banner(frame, image_path, row, column):
     # Create and configure the canvas with the provided image
