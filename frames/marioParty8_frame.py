@@ -23,8 +23,8 @@ def create_mario_party_8_interface(frame):
     tabview = ctk.CTkTabview(frame, width=1110, height=752, fg_color=("#fcfcfc", "#323232"))
     tabview.grid(padx=10, pady=10)
     tabview.add("Coins Mods")
-    tabview.add("Candy Mods")
     tabview.add("Minigame Replacement")
+    tabview.add("Candy Mods")
     tabview.set("Coins Mods")
 
     # Function to create an entry field and checkbox

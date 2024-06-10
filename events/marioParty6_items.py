@@ -101,13 +101,17 @@ def itemsEvent_mp6(warpPipeCapsuleWeight6, warpPipeCapsulePrice6, mushroomCapsul
     duelCapsuleWeight6 = duelCapsuleWeight6.get()
 
 
-    orbWeightTotal = int(mushroomCapsuleWeight6) + int(goldenMushroomCapsuleWeight6) + int(bulletBillCapsuleWeight6) + int(slowMushroomCapsuleWeight6) + int(warpPipeCapsuleWeight6) + int(flutterCapsuleWeight6) + int(cursedMushroomCapsuleWeight6) + int(spinyCapsuleWeight6) + int(goombaCapsuleWeight6) + int(plantCapsuleWeight6) + int(kleptoCapsuleWeight6) + int(kamekCapsuleWeight6) + int(toadyCapsuleWeight6) + int(blizzardCapsuleWeight6) + int(podobooCapsuleWeight6) + int(paraTroopaCapsuleWeight6) + int(snackCapsuleWeight6) + int(zapCapsuleWeight6) + int(tweesterCapsuleWeight6) + int(thwompCapsuleWeight6) + int(warpPipeCapsuleWeight6) + int(bombCapsuleWeight6) + int(gaddLightCapsuleWeight6) + int(pinkBooCapsulePrice6) + int(chanceTimeCapsuleWeight6) + int(bowserCapsuleWeight6) + int(dkCapsuleWeight6) + int(metalMushroomCapsuleWeight6) + int(duelCapsuleWeight6)
+    orbWeightTotal = int(mushroomCapsuleWeight6) + int(goldenMushroomCapsuleWeight6) + int(bulletBillCapsuleWeight6) + int(slowMushroomCapsuleWeight6) + int(warpPipeCapsuleWeight6) + int(flutterCapsuleWeight6) + int(cursedMushroomCapsuleWeight6) + int(spinyCapsuleWeight6) + int(goombaCapsuleWeight6) + int(plantCapsuleWeight6) + int(kleptoCapsuleWeight6) + int(kamekCapsuleWeight6) + int(toadyCapsuleWeight6) + int(blizzardCapsuleWeight6) + int(podobooCapsuleWeight6) + int(paraTroopaCapsuleWeight6) + int(snackCapsuleWeight6) + int(zapCapsuleWeight6) + int(tweesterCapsuleWeight6) + int(thwompCapsuleWeight6) + int(warpPipeCapsuleWeight6) + int(bombCapsuleWeight6) + int(gaddLightCapsuleWeight6) + int(pinkBooCapsuleWeight6) + int(chanceTimeCapsuleWeight6) + int(bowserCapsuleWeight6) + int(dkCapsuleWeight6) + int(metalMushroomCapsuleWeight6) + int(duelCapsuleWeight6)
 
     def calculateWeight(weight):
-        percentage = (int(weight) / orbWeightTotal) * 100
-        if 0< percentage < 1:
-            return str(math.ceil(percentage))
-        return str(round(percentage))
+        if orbWeightTotal < 100:
+            percentage = int(weight)
+            return percentage
+        else:
+            percentage = (int(weight) / orbWeightTotal) * 100
+            if 0< percentage < 1:
+                return math.ceil(percentage)
+            return round(percentage)
 
     mushroomCapsuleWeight6 = calculateWeight(mushroomCapsuleWeight6)
     goldenMushroomCapsuleWeight6 = calculateWeight(goldenMushroomCapsuleWeight6)
@@ -129,7 +133,7 @@ def itemsEvent_mp6(warpPipeCapsuleWeight6, warpPipeCapsulePrice6, mushroomCapsul
     zapCapsuleWeight6 = calculateWeight(zapCapsuleWeight6)
     tweesterCapsuleWeight6 = calculateWeight(tweesterCapsuleWeight6)
     thwompCapsuleWeight6 = calculateWeight(thwompCapsuleWeight6)
-    warpPipeCapsuleWeight6 = calculateweight(warpPipeCapsuleWeight6)
+    warpPipeCapsuleWeight6 = calculateWeight(warpPipeCapsuleWeight6)
     bombCapsuleWeight6 = calculateWeight(bombCapsuleWeight6)
     gaddLightCapsuleWeight6 = calculateWeight(gaddLightCapsuleWeight6)
     pinkBooCapsuleWeight6 = calculateWeight(pinkBooCapsuleWeight6)
@@ -138,6 +142,129 @@ def itemsEvent_mp6(warpPipeCapsuleWeight6, warpPipeCapsulePrice6, mushroomCapsul
     dkCapsuleWeight6 = calculateWeight(dkCapsuleWeight6)
     metalMushroomCapsuleWeight6 = calculateWeight(metalMushroomCapsuleWeight6)
     duelCapsuleWeight6 = calculateWeight(duelCapsuleWeight6)
+
+    orbWeightTotal = mushroomCapsuleWeight6 + goldenMushroomCapsuleWeight6 + bulletBillCapsuleWeight6 + slowMushroomCapsuleWeight6 + warpPipeCapsuleWeight6 + flutterCapsuleWeight6 + cursedMushroomCapsuleWeight6 + spinyCapsuleWeight6 + goombaCapsuleWeight6 + plantCapsuleWeight6 + kleptoCapsuleWeight6 + kamekCapsuleWeight6 + toadyCapsuleWeight6 + blizzardCapsuleWeight6 + podobooCapsuleWeight6 + paraTroopaCapsuleWeight6 + snackCapsuleWeight6 + zapCapsuleWeight6 + tweesterCapsuleWeight6 + thwompCapsuleWeight6 + warpPipeCapsuleWeight6 + bombCapsuleWeight6 + gaddLightCapsuleWeight6 + pinkBooCapsuleWeight6 + chanceTimeCapsuleWeight6 + bowserCapsuleWeight6 + dkCapsuleWeight6 + metalMushroomCapsuleWeight6 + duelCapsuleWeight6
+
+    if orbWeightTotal < 100:
+        var_names = ['mushroomCapsuleWeight6', 'goldenMushroomCapsuleWeight6', 'bulletBillCapsuleWeight6', 'slowMushroomCapsuleWeight6', 'warpPipeCapsuleWeight6', 'flutterCapsuleWeight6', 'cursedMushroomCapsuleWeight6', 'spinyCapsuleWeight6', 'goombaCapsuleWeight6', 'plantCapsuleWeight6', 'kleptoCapsuleWeight6', 'kamekCapsuleWeight6', 'toadyCapsuleWeight6', 'blizzardCapsuleWeight6', 'podobooCapsuleWeight6', 'paraTroopaCapsuleWeight6', 'snackCapsuleWeight6', 'zapCapsuleWeight6', 'tweesterCapsuleWeight6', 'thwompCapsuleWeight6', 'warpPipeCapsuleWeight6', 'bombCapsuleWeight6', 'gaddLightCapsuleWeight6', 'pinkBooCapsuleWeight6', 'chanceTimeCapsuleWeight6', 'bowserCapsuleWeight6', 'dkCapsuleWeight6', 'metalMushroomCapsuleWeight6', 'duelCapsuleWeight6']
+        max_var = max(zip(var_names, (map(eval, var_names))), key=lambda tuple: tuple[1])[0]
+
+        if max_var == 'mushroomCapsuleWeight6':
+            mushroomCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'goldenMushroomCapsuleWeight6':
+            goldenMushroomCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'bulletBillCapsuleWeight6':
+            bulletBillCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'slowMushroomCapsuleWeight6':
+            slowMushroomCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'warpPipeCapsuleWeight6':
+            warpPipeCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'flutterCapsuleWeight6':
+            flutterCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'cursedMushroomCapsuleWeight6':
+            cursedMushroomCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'spinyCapsuleWeight6':
+            spinyCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'goombaCapsuleWeight6':
+            goombaCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'plantCapsuleWeight6':
+            plantCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'kleptoCapsuleWeight6':
+            kleptoCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'kamekCapsuleWeight6':
+            kamekCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'toadyCapsuleWeight6':
+            toadyCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'blizzardCapsuleWeight6':
+            blizzardCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'podobooCapsuleWeight6':
+            podobooCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'paraTroopaCapsuleWeight6':
+            paraTroopaCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'snackCapsuleWeight6':
+            snackCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'zapCapsuleWeight6':
+            zapCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'tweesterCapsuleWeight6':
+            tweesterCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'thwompCapsuleWeight6':
+            thwompCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'warpPipeCapsuleWeight6':
+            warpPipeCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'bombCapsuleWeight6':
+            bombCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'gaddLightCapsuleWeight6':
+            gaddLightCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'pinkBooCapsulePrice6':
+            pinkBooCapsulePrice6 += (100 - orbWeightTotal)
+
+        if max_var == 'chanceTimeCapsuleWeight6':
+            chanceTimeCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'bowserCapsuleWeight6':
+            bowserCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'dkCapsuleWeight6':
+            dkCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'metalMushroomCapsuleWeight6':
+            metalMushroomCapsuleWeight6 += (100 - orbWeightTotal)
+
+        if max_var == 'duelCapsuleWeight6':
+            duelCapsuleWeight6 += (100 - orbWeightTotal)
+    
+    mushroomCapsuleWeight6 = str(mushroomCapsuleWeight6)
+    goldenMushroomCapsuleWeight6 = str(goldenMushroomCapsuleWeight6)
+    bulletBillCapsuleWeight6 = str(bulletBillCapsuleWeight6)
+    slowMushroomCapsuleWeight6 = str(slowMushroomCapsuleWeight6)
+    warpPipeCapsuleWeight6 = str(warpPipeCapsuleWeight6)
+    flutterCapsuleWeight6 = str(flutterCapsuleWeight6)
+    cursedMushroomCapsuleWeight6 = str(cursedMushroomCapsuleWeight6)
+    spinyCapsuleWeight6 = str(spinyCapsuleWeight6)
+    goombaCapsuleWeight6 = str(goombaCapsuleWeight6)
+    plantCapsuleWeight6 = str(plantCapsuleWeight6)
+    kleptoCapsuleWeight6 = str(kleptoCapsuleWeight6)
+    kamekCapsuleWeight6 = str(kamekCapsuleWeight6)
+    toadyCapsuleWeight6 = str(toadyCapsuleWeight6)
+    blizzardCapsuleWeight6 = str(blizzardCapsuleWeight6)
+    podobooCapsuleWeight6 = str(podobooCapsuleWeight6)
+    paraTroopaCapsuleWeight6 = str(paraTroopaCapsuleWeight6)
+    snackCapsuleWeight6 = str(snackCapsuleWeight6)
+    zapCapsuleWeight6 = str(zapCapsuleWeight6)
+    tweesterCapsuleWeight6 = str(tweesterCapsuleWeight6)
+    thwompCapsuleWeight6 = str(thwompCapsuleWeight6)
+    warpPipeCapsuleWeight6 = str(warpPipeCapsuleWeight6)
+    bombCapsuleWeight6 = str(bombCapsuleWeight6)
+    gaddLightCapsuleWeight6 = str(gaddLightCapsuleWeight6)
+    pinkBooCapsuleWeight6 = str(pinkBooCapsuleWeight6)
+    chanceTimeCapsuleWeight6 = str(chanceTimeCapsuleWeight6)
+    bowserCapsuleWeight6 = str(bowserCapsuleWeight6)
+    dkCapsuleWeight6 = str(dkCapsuleWeight6)
+    metalMushroomCapsuleWeight6 = str(metalMushroomCapsuleWeight6)
+    duelCapsuleWeight6 = str(duelCapsuleWeight6)
 
     try:
         mushroomCapsuleWeight6 = hex(int(mushroomCapsuleWeight6))
