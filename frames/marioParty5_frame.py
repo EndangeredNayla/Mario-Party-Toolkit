@@ -459,6 +459,7 @@ def create_mario_party_5_interface(frame):
     def fillViaCode5Actions():
         top = ctk.CTkToplevel(height=500, width=500)
         top.attributes('-topmost', True)
+        top.title("Enter Code")
         
         enterCodeLabel = ctk.CTkLabel(master=top, text="Enter Code")
         enterCodeLabel.place(x=10, y=10)

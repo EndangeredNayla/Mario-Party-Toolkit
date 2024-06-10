@@ -1006,27 +1006,31 @@ def fillViaCode5(top, codeText, bombCapsulePrice5, bombCapsuleWeight5, koopaBank
 
     code5.append(codeText.get("1.0", "end"))
     
-    for i in range(0, 21):
-        current_line5 = current_line5 + code5[0][i]
+    try:
+        for i in range(0, 21):
+            current_line5 = current_line5 + code5[0][i]
 
-    if current_line5 == "MP5 - Capsule Modifer":
-        current_line5 = ""
-        
-        for i in range(22, 1210):
-            if code5[0][i] != " " and code5[0][i] != "\n":
-                current_line5 = current_line5 + code5[0][i]
-            else:
-                code_single5.append(current_line5)
-                current_line5 = ""
-    else:
-        current_line5 = ""
-        
-        for i in range(0, 1188):
-            if code5[0][i] != " " and code5[0][i] != "\n":
-                current_line5 = current_line5 + code5[0][i]
-            else:
-                code_single5.append(current_line5)
-                current_line5 = ""
+        if current_line5 == "MP5 - Capsule Modifer":
+            current_line5 = ""
+            
+            for i in range(22, 1210):
+                if code5[0][i] != " " and code5[0][i] != "\n":
+                    current_line5 = current_line5 + code5[0][i]
+                else:
+                    code_single5.append(current_line5)
+                    current_line5 = ""
+        else:
+            current_line5 = ""
+            
+            for i in range(0, 1188):
+                if code5[0][i] != " " and code5[0][i] != "\n":
+                    current_line5 = current_line5 + code5[0][i]
+                else:
+                    code_single5.append(current_line5)
+                    current_line5 = ""
+    except IndexError:
+        createDialog("Error", "error", "Invalid Code", None)
+        return
     
     del code_single5[0:8]
     del code_single5[29:67]
