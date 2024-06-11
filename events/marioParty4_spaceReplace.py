@@ -10,7 +10,7 @@ from functions import *
 
 import pyperclip
 
-def spaceReplaceEvent_mp4(spaceReplace411, spaceReplace421, spaceRep421, spaceReplace421, spaces4):
+def spaceReplaceEvent_mp4(spaceRep411, spaceRep412, spaceRep421, spaceRep422, spaces4):
     spaceSlot1 = spaceRep411.get()
     spaceSlot2 = spaceRep421.get()
 

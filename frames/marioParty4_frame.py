@@ -12,6 +12,7 @@ from events.marioParty4_lotteryPrize import *
 from events.marioParty4_mgreplace import *
 from events.marioParty4_items import *
 from events.marioParty4_initialItems import *
+from events.marioParty4_spaceReplace import *
 
 # Import custom tkinter module as ctk
 import customtkinter as ctk
@@ -346,7 +347,7 @@ def create_mario_party_4_interface(frame):
     label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" (Slot B) ", font=("Arial", 16))
     label.grid(row=1, column=4)
 
-    parseButton = ctk.CTkButton(master=tabview.tab("Space Replacement"), command=lambda: spaceReplace4(spaceRep411, spaceRep412, spaceRep421, spaceRep422, spaces4), text="Generate Codes")
+    parseButton = ctk.CTkButton(master=tabview.tab("Space Replacement"), command=lambda: spaceReplaceEvent_mp4(spaceRep411, spaceRep412, spaceRep421, spaceRep422, spaces4), text="Generate Codes")
     parseButton.place(x=10, y=640)
 
     return frame
