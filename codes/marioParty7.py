@@ -331,15 +331,15 @@ E2000001 80008000
 def getStarHandicapP1(amount, amountDec):
     return f'''
 MP7 - P1 Starts With {amountDec} Stars
-28265772 00000000
-02265780 0000{amount}
+20290CC4 00000000
+02290CD0 0000{amount}
 E2000001 80008000
 '''
 
 def getStarHandicapP2(amount, amountDec):
     return f'''
 MP7 - P2 Starts With {amountDec} Stars
-28265772 00000000
+20290CC4 00000000
 02290DE0 0000{amount}
 E2000001 80008000
 '''
@@ -348,7 +348,7 @@ def getStarHandicapP3(amount, amountDec):
     return f'''
 MP7 - P3 Starts With {amountDec} Stars
 20290CC4 00000000
-02290EF0 0000{amountDec}
+02290EF0 0000{amount}
 E2000001 80008000
 '''
 
@@ -356,6 +356,6 @@ def getStarHandicapP4(amount, amountDec):
     return f'''
 MP7 - P4 Starts With {amountDec} Stars
 20290CC4 00000000
-02291000 0000{amountDec}
+02291000 0000{amount}
 E2000001 80008000
 '''
