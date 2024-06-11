@@ -45,28 +45,28 @@ D10ED5DE 00{hexUno}
 
 def getStarHandicapP1(amount, amountDec):
     return f'''
-MP1 - P1 Starts With {amountDec} Stars
+MP1 - Top Left Starts With {amountDec} Stars
 D10F32D6 0000
 810F32BC {amount}	
 '''
 
 def getStarHandicapP2(amount, amountDec):
     return f'''
-MP1 - P2 Starts With {amountDec} Stars
+MP1 - Top Right Starts With {amountDec} Stars
 D10F32D6 0000
 810F32EC {amount}	
 '''
 
 def getStarHandicapP3(amount, amountDec):
     return f'''
-MP1 - P3 Starts With {amountDec} Stars
+MP1 - Bottom Left Starts With {amountDec} Stars
 D10F32D6 0000
 810F331C {amount}	
 '''
 
 def getStarHandicapP4(amount, amountDec):
     return f'''
-MP1 - P4 Starts With {amountDec} Stars
+MP1 - Bottom Right Starts With {amountDec} Stars
 D10F32D6 0000
 810F334C {amount}	
 '''
