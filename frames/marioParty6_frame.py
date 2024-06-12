@@ -498,7 +498,7 @@ def create_mario_party_6_interface(frame):
     label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" (Slot B) ", font=("Arial", 16))
     label.grid(row=1, column=4)
 
-    parseButton = ctk.CTkButton(master=tabview.tab("Space Replacement"), command=lambda: spaceReplaceEvent_mp6(spaceRep411, spaceRep412, spaceRep421, spaceRep422, spaces6), text="Generate Codes")
+    parseButton = ctk.CTkButton(master=tabview.tab("Space Replacement"), command=lambda: spaceReplaceEvent_mp6(spaceRep411, spaceRep421, spaceRep412, spaceRep422, spaces6), text="Generate Codes")
     parseButton.place(x=10, y=640)
 
     items6 = ["None", "Mushroom", "Golden Mushroom", "Sluggish 'Shroom", "Metal Mushroom", "Bullet Bill", "Warp Pipe", "Flutter", "Cursed Mushroom", "Spiny", "Goomba", "Piranha Plant", "Klepto", "Toady", "Kamek", "Mr. Blizzard", "Podoboo", "Zap", "Tweester", "Thwomp", "Bob-omb", "Paratroopa", "Snack", "Boo-away", "Duel", "Miracle", "Bowser", "Donkey Kong", "Pink Boo"]
