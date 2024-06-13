@@ -362,23 +362,19 @@ def itemsEvent_mp8(board, twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice
             dueloPrice4 = "0" + dueloPrice4[2:]
     except:
         dueloPrice4 = "00"
-    orbPriceMin = hex(int(orbPriceMin))
-    if len(orbPriceMin) == 4:
-        orbPriceMin = "00" + orbPriceMin[2:]
-    elif len(orbPriceMin) == 3:
-        orbPriceMin = "000" + orbPriceMin[2:]
+
     if board == "DK's Treetop Temple":
-        generatedCode = getCandyCodeDK(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, springoWeight4, springoPrice4, slowgoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, bitsizeWeight4, bitsizePrice4, blowayWeight4, blowayPrice4, vampireWeight4, bowloPrice4, weegleWeight4, weeglePrice4, bowserWeight4, thwompPrice4, bowloWeight4, bulletPrice4, bulletWeight4, bowserPrice4, thwompWeight4, dueloPrice4, dueloWeight4, orbPriceMin)
+        generatedCode = getCandyCodeDK(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, springoWeight4, springoPrice4, slowgoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, bitsizeWeight4, bitsizePrice4, blowayWeight4, blowayPrice4, vampireWeight4, bowloPrice4, weegleWeight4, weeglePrice4, bowserWeight4, thwompPrice4, bowloWeight4, bulletPrice4, bulletWeight4, bowserPrice4, thwompWeight4, dueloPrice4, dueloWeight4,)
     elif board == "Goomba's Booty Boardwalk":
-        generatedCode = getCandyCodeGoomba(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, springoWeight4, springoPrice4, slowgoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, bitsizeWeight4, bitsizePrice4, blowayWeight4, blowayPrice4, vampireWeight4, bowloPrice4, weegleWeight4, weeglePrice4, bowserWeight4, thwompPrice4, bowloWeight4, bulletPrice4, bulletWeight4, bowserPrice4, thwompWeight4, dueloPrice4, dueloWeight4, orbPriceMin)
+        generatedCode = getCandyCodeGoomba(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, springoWeight4, springoPrice4, slowgoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, bitsizeWeight4, bitsizePrice4, blowayWeight4, blowayPrice4, vampireWeight4, bowloPrice4, weegleWeight4, weeglePrice4, bowserWeight4, thwompPrice4, bowloWeight4, bulletPrice4, bulletWeight4, bowserPrice4, thwompWeight4, dueloPrice4, dueloWeight4)
     elif board == "King Boo's Haunted Hideaway":
-        generatedCode = getCandyCodeBoo(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, springoWeight4, springoPrice4, slowgoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, bitsizeWeight4, bitsizePrice4, blowayWeight4, blowayPrice4, vampireWeight4, bowloPrice4, weegleWeight4, weeglePrice4, bowserWeight4, thwompPrice4, bowloWeight4, bulletPrice4, bulletWeight4, bowserPrice4, thwompWeight4, dueloPrice4, dueloWeight4, orbPriceMin)
+        generatedCode = getCandyCodeBoo(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, springoWeight4, springoPrice4, slowgoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, bitsizeWeight4, bitsizePrice4, blowayWeight4, blowayPrice4, vampireWeight4, bowloPrice4, weegleWeight4, weeglePrice4, bowserWeight4, thwompPrice4, bowloWeight4, bulletPrice4, bulletWeight4, bowserPrice4, thwompWeight4, dueloPrice4, dueloWeight4)
     elif board == "Shy Guy's Perplex Express":
-        generatedCode = getCandyCodeShyGuy(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, springoWeight4, springoPrice4, slowgoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, bitsizeWeight4, bitsizePrice4, blowayWeight4, blowayPrice4, vampireWeight4, bowloPrice4, weegleWeight4, weeglePrice4, bowserWeight4, thwompPrice4, bowloWeight4, bulletPrice4, bulletWeight4, bowserPrice4, thwompWeight4, dueloPrice4, dueloWeight4, orbPriceMin)
+        generatedCode = getCandyCodeShyGuy(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, springoWeight4, springoPrice4, slowgoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, bitsizeWeight4, bitsizePrice4, blowayWeight4, blowayPrice4, vampireWeight4, bowloPrice4, weegleWeight4, weeglePrice4, bowserWeight4, thwompPrice4, bowloWeight4, bulletPrice4, bulletWeight4, bowserPrice4, thwompWeight4, dueloPrice4, dueloWeight4)
     elif board == "Koopa's Tycoon Town":
-        generatedCode = getCandyCodeKoopa(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, springoWeight4, springoPrice4, slowgoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, bitsizeWeight4, bitsizePrice4, blowayWeight4, blowayPrice4, vampireWeight4, bowloPrice4, weegleWeight4, weeglePrice4, bowserWeight4, thwompPrice4, bowloWeight4, bulletPrice4, bulletWeight4, bowserPrice4, thwompWeight4, dueloPrice4, dueloWeight4, orbPriceMin)
+        generatedCode = getCandyCodeKoopa(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, springoWeight4, springoPrice4, slowgoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, bitsizeWeight4, bitsizePrice4, blowayWeight4, blowayPrice4, vampireWeight4, bowloPrice4, weegleWeight4, weeglePrice4, bowserWeight4, thwompPrice4, bowloWeight4, bulletPrice4, bulletWeight4, bowserPrice4, thwompWeight4, dueloPrice4, dueloWeight4)
     elif board == "Bowser's Warped Orbit":
-        generatedCode = getCandyCodeBowser(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, springoWeight4, springoPrice4, slowgoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, bitsizeWeight4, bitsizePrice4, blowayWeight4, blowayPrice4, vampireWeight4, bowloPrice4, weegleWeight4, weeglePrice4, bowserWeight4, thwompPrice4, bowloWeight4, bulletPrice4, bulletWeight4, bowserPrice4, thwompWeight4, dueloPrice4, dueloWeight4, orbPriceMin)
+        generatedCode = getCandyCodeBowser(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, springoWeight4, springoPrice4, slowgoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, bitsizeWeight4, bitsizePrice4, blowayWeight4, blowayPrice4, vampireWeight4, bowloPrice4, weegleWeight4, weeglePrice4, bowserWeight4, thwompPrice4, bowloWeight4, bulletPrice4, bulletWeight4, bowserPrice4, thwompWeight4, dueloPrice4, dueloWeight4)
 
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)
