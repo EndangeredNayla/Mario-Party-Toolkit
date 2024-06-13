@@ -9,6 +9,7 @@ from functions import *
 from codes.marioParty1 import *
 
 import pyperclip
+import shutil
 
 def general_injection(file_label, cheatCodeEntry):
     if not cheatCodeEntry.get("1.0", "end"):
