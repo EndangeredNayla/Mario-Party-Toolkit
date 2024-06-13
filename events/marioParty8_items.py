@@ -19,7 +19,6 @@ def itemsEvent_mp8(board, twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice
     
     board = board.get()
 
-    twiceWeight4 = twiceWeight4.get()
     thricePrice4 = thricePrice4.get()
     thriceWeight4 = thriceWeight4.get()
     slowgoPrice4 = slowgoPrice4.get()
@@ -46,7 +45,8 @@ def itemsEvent_mp8(board, twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice
     thwompWeight4 = thwompWeight4.get()
     dueloPrice4 = dueloPrice4.get()
     dueloWeight4 = dueloWeight4.get()
-    
+    twiceWeight4 = twiceWeight4.get()
+
     orbWeightTotal = int(twiceWeight4) + int(thriceWeight4) + int(slowgoWeight4) + int(springoWeight4) + int(cashzapWeight4) + int(bitsizeWeight4) + int(blowayWeight4) + int(vampireWeight4) + int(weegleWeight4) + int(bowserWeight4) + int(bowloWeight4) + int(bulletWeight4) + int(thwompWeight4) + int(dueloWeight4)
     
     def calculateWeight(weight):
@@ -59,7 +59,6 @@ def itemsEvent_mp8(board, twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice
                 return math.ceil(percentage)
             return round(percentage)
 
-    twiceWeight4 = calculateWeight(twiceWeight4)
     thriceWeight4 = calculateWeight(thriceWeight4)
     slowgoWeight4 = calculateWeight(slowgoWeight4)
     springoWeight4 = calculateWeight(springoWeight4)
@@ -73,6 +72,7 @@ def itemsEvent_mp8(board, twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice
     bulletWeight4 = calculateWeight(bulletWeight4)
     thwompWeight4 = calculateWeight(thwompWeight4)
     dueloWeight4 = calculateWeight(dueloWeight4)
+    twiceWeight4 = calculateWeight(twiceWeight4)
 
     orbWeightTotal = twiceWeight4 + thriceWeight4 + springoWeight4 + slowgoWeight4 + cashzapWeight4 + bitsizeWeight4 + blowayWeight4 + vampireWeight4 + weegleWeight4 + bowserWeight4 + bowloWeight4 + bulletWeight4 + thwompWeight4 + dueloWeight4
 
@@ -80,9 +80,6 @@ def itemsEvent_mp8(board, twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice
         var_names = ['twiceWeight4', 'thriceWeight4', 'slowgoWeight4', 'springoWeight4', 'cashzapWeight4', 'bitsizeWeight4', 'blowayWeight4', 'vampireWeight4', 'weegleWeight4', 'bowserWeight4', 'bowloWeight4', 'bulletWeight4', 'thwompWeight4', 'dueloWeight4']
         max_var = max(zip(var_names, (map(eval, var_names))), key=lambda tuple: tuple[1])[0]
 
-        if max_var == 'twiceWeight4':
-            twiceWeight4 += (100 - orbWeightTotal)
-        
         if max_var == 'thriceWeight4':
             thriceWeight4 += (100 - orbWeightTotal)
         
@@ -122,7 +119,9 @@ def itemsEvent_mp8(board, twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice
         if max_var == 'dueloWeight4':
             dueloWeight4 += (100 - orbWeightTotal)
 
-    twiceWeight4 = str(twiceWeight4)
+        if max_var == 'twiceWeight4':
+            twiceWeight4 += (100 - orbWeightTotal)
+
     thriceWeight4 = str(thriceWeight4)
     slowgoWeight4 = str(slowgoWeight4)
     springoWeight4 = str(springoWeight4)
@@ -136,24 +135,8 @@ def itemsEvent_mp8(board, twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice
     bulletWeight4 = str(bulletWeight4)
     thwompWeight4 = str(thwompWeight4)
     dueloWeight4 = str(dueloWeight4)
+    twiceWeight4 = str(twiceWeight4)
 
-    
-    try:
-        twiceWeight4 = hex(int(twiceWeight4))
-        if len(twiceWeight4) == 4:
-            twiceWeight4 = twiceWeight4[2:]
-        elif len(twiceWeight4) == 3:
-            twiceWeight4 = "0" + twiceWeight4[2:]
-    except:
-        twiceWeight4 = "00"
-    try:
-        twicePrice4 = hex(int(twicePrice4))
-        if len(twicePrice4) == 4:
-            twicePrice4 = twicePrice4[2:]
-        elif len(twicePrice4) == 3:
-            twicePrice4 = "0" + twicePrice4[2:]
-    except:
-        twicePrice4 = "00"        
     try:
         thriceWeight4 = hex(int(thriceWeight4))
         if len(thriceWeight4) == 4:
@@ -363,18 +346,27 @@ def itemsEvent_mp8(board, twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice
     except:
         dueloPrice4 = "00"
 
+    try:
+        twiceWeight4 = hex(int(twiceWeight4))
+        if len(twiceWeight4) == 4:
+            twiceWeight4 = twiceWeight4[2:]
+        elif len(twiceWeight4) == 3:
+            twiceWeight4 = "0" + twiceWeight4[2:]
+    except:
+        twiceWeight4 = "00"
+
     if board == "DK's Treetop Temple":
-        generatedCode = getCandyCodeDK(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, springoWeight4, springoPrice4, slowgoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, bitsizeWeight4, bitsizePrice4, blowayWeight4, blowayPrice4, vampireWeight4, bowloPrice4, weegleWeight4, weeglePrice4, bowserWeight4, thwompPrice4, bowloWeight4, bulletPrice4, bulletWeight4, bowserPrice4, thwompWeight4, dueloPrice4, dueloWeight4,)
+        generatedCode = getCandyCodeDK(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, slowgoWeight4, springoPrice4, springoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, vampireWeight4, bitsizePrice4, bitsizeWeight4, blowayPrice4, blowayWeight4, bowloPrice4, bowloWeight4, weeglePrice4, weegleWeight4, thwompPrice4, thwompWeight4, bulletPrice4, bulletWeight4, bowserPrice4, bowserWeight4, dueloPrice4, dueloWeight4)
     elif board == "Goomba's Booty Boardwalk":
-        generatedCode = getCandyCodeGoomba(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, springoWeight4, springoPrice4, slowgoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, bitsizeWeight4, bitsizePrice4, blowayWeight4, blowayPrice4, vampireWeight4, bowloPrice4, weegleWeight4, weeglePrice4, bowserWeight4, thwompPrice4, bowloWeight4, bulletPrice4, bulletWeight4, bowserPrice4, thwompWeight4, dueloPrice4, dueloWeight4)
+        generatedCode = getCandyCodeDK(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, slowgoWeight4, springoPrice4, springoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, vampireWeight4, bitsizePrice4, bitsizeWeight4, blowayPrice4, blowayWeight4, bowloPrice4, bowloWeight4, weeglePrice4, weegleWeight4, thwompPrice4, thwompWeight4, bulletPrice4, bulletWeight4, bowserPrice4, bowserWeight4, dueloPrice4, dueloWeight4)
     elif board == "King Boo's Haunted Hideaway":
-        generatedCode = getCandyCodeBoo(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, springoWeight4, springoPrice4, slowgoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, bitsizeWeight4, bitsizePrice4, blowayWeight4, blowayPrice4, vampireWeight4, bowloPrice4, weegleWeight4, weeglePrice4, bowserWeight4, thwompPrice4, bowloWeight4, bulletPrice4, bulletWeight4, bowserPrice4, thwompWeight4, dueloPrice4, dueloWeight4)
+        generatedCode = getCandyCodeDK(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, slowgoWeight4, springoPrice4, springoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, vampireWeight4, bitsizePrice4, bitsizeWeight4, blowayPrice4, blowayWeight4, bowloPrice4, bowloWeight4, weeglePrice4, weegleWeight4, thwompPrice4, thwompWeight4, bulletPrice4, bulletWeight4, bowserPrice4, bowserWeight4, dueloPrice4, dueloWeight4)
     elif board == "Shy Guy's Perplex Express":
-        generatedCode = getCandyCodeShyGuy(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, springoWeight4, springoPrice4, slowgoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, bitsizeWeight4, bitsizePrice4, blowayWeight4, blowayPrice4, vampireWeight4, bowloPrice4, weegleWeight4, weeglePrice4, bowserWeight4, thwompPrice4, bowloWeight4, bulletPrice4, bulletWeight4, bowserPrice4, thwompWeight4, dueloPrice4, dueloWeight4)
+        generatedCode = getCandyCodeDK(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, slowgoWeight4, springoPrice4, springoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, vampireWeight4, bitsizePrice4, bitsizeWeight4, blowayPrice4, blowayWeight4, bowloPrice4, bowloWeight4, weeglePrice4, weegleWeight4, thwompPrice4, thwompWeight4, bulletPrice4, bulletWeight4, bowserPrice4, bowserWeight4, dueloPrice4, dueloWeight4)
     elif board == "Koopa's Tycoon Town":
-        generatedCode = getCandyCodeKoopa(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, springoWeight4, springoPrice4, slowgoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, bitsizeWeight4, bitsizePrice4, blowayWeight4, blowayPrice4, vampireWeight4, bowloPrice4, weegleWeight4, weeglePrice4, bowserWeight4, thwompPrice4, bowloWeight4, bulletPrice4, bulletWeight4, bowserPrice4, thwompWeight4, dueloPrice4, dueloWeight4)
+        generatedCode = getCandyCodeDK(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, slowgoWeight4, springoPrice4, springoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, vampireWeight4, bitsizePrice4, bitsizeWeight4, blowayPrice4, blowayWeight4, bowloPrice4, bowloWeight4, weeglePrice4, weegleWeight4, thwompPrice4, thwompWeight4, bulletPrice4, bulletWeight4, bowserPrice4, bowserWeight4, dueloPrice4, dueloWeight4)
     elif board == "Bowser's Warped Orbit":
-        generatedCode = getCandyCodeBowser(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, springoWeight4, springoPrice4, slowgoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, bitsizeWeight4, bitsizePrice4, blowayWeight4, blowayPrice4, vampireWeight4, bowloPrice4, weegleWeight4, weeglePrice4, bowserWeight4, thwompPrice4, bowloWeight4, bulletPrice4, bulletWeight4, bowserPrice4, thwompWeight4, dueloPrice4, dueloWeight4)
+        generatedCode = getCandyCodeDK(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, slowgoWeight4, springoPrice4, springoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, vampireWeight4, bitsizePrice4, bitsizeWeight4, blowayPrice4, blowayWeight4, bowloPrice4, bowloWeight4, weeglePrice4, weegleWeight4, thwompPrice4, thwompWeight4, bulletPrice4, bulletWeight4, bowserPrice4, bowserWeight4, dueloPrice4, dueloWeight4)
 
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)
@@ -382,11 +374,10 @@ def itemsEvent_mp8(board, twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice
     createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
 
-def savePresetItems4(board, twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, slowgoWeight4, springoPrice4, springoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, vampireWeight4, bitsizePrice4, bitsizeWeight4, blowayPrice4, blowayWeight4, bowloPrice4, bowloWeight4, weeglePrice4, weegleWeight4, thwompPrice4, thwompWeight4, bulletPrice4, bulletWeight4, bowserPrice4, bowserWeight4, dueloPrice4, dueloWeight4):
-    if not twiceWeight4.get() or not thricePrice4.get() or not thriceWeight4.get() or not springoPrice4.get() or not springoWeight4.get() or not slowgoPrice4.get() or not slowgoWeight4.get() or not cashzapPrice4.get() or not cashzapWeight4.get() or not bitsizePrice4.get() or not bitsizeWeight4.get() or not blowayPrice4.get() or not blowayWeight4.get() or not vampirePrice4.get() or not vampireWeight4.get() or not bowloPrice4.get() or not bowloWeight4.get() or not weeglePrice4.get() or not weegleWeight4.get() or not bowserPrice4.get() or not bowserWeight4.get() or not bulletPrice4.get() or not bulletWeight4.get() or not thwompPrice4.get() or not thwompWeight4.get() or not dueloPrice4.get()  or not dueloWeight4.get():
+def savePresetItems4(board, thricePrice4, thriceWeight4, slowgoPrice4, slowgoWeight4, springoPrice4, springoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, vampireWeight4, bitsizePrice4, bitsizeWeight4, blowayPrice4, blowayWeight4, bowloPrice4, bowloWeight4, weeglePrice4, weegleWeight4, thwompPrice4, thwompWeight4, bulletPrice4, bulletWeight4, bowserPrice4, bowserWeight4, dueloPrice4, dueloWeight4):
+    if not thricePrice4.get() or not thriceWeight4.get() or not springoPrice4.get() or not springoWeight4.get() or not slowgoPrice4.get() or not slowgoWeight4.get() or not cashzapPrice4.get() or not cashzapWeight4.get() or not bitsizePrice4.get() or not bitsizeWeight4.get() or not blowayPrice4.get() or not blowayWeight4.get() or not vampirePrice4.get() or not vampireWeight4.get() or not bowloPrice4.get() or not bowloWeight4.get() or not weeglePrice4.get() or not weegleWeight4.get() or not bowserPrice4.get() or not bowserWeight4.get() or not bulletPrice4.get() or not bulletWeight4.get() or not thwompPrice4.get() or not thwompWeight4.get() or not dueloPrice4.get()  or not dueloWeight4.get():
         createDialog("Error", "error", "Please fill out all the boxes.", None)
         return
-    twiceWeight4 = twiceWeight4.get()
     thricePrice4 = thricePrice4.get()
     thriceWeight4 = thriceWeight4.get()
     slowgoPrice4 = slowgoPrice4.get()
@@ -413,8 +404,8 @@ def savePresetItems4(board, twiceWeight4, thricePrice4, thriceWeight4, slowgoPri
     bowserWeight4 = bowserWeight4.get()
     dueloPrice4 = dueloPrice4.get()
     dueloWeight4 = dueloWeight4.get()
-    prices4 = [twicePrice4, thricePrice4, slowgoPrice4, springoPrice4, cashzapPrice4, vampirePrice4, bitsizePrice4, blowayPrice4, bowloPrice4, weeglePrice4, thwompPrice4, bulletPrice4, bowserPrice4, dueloPrice4]
-    weights4 = [twiceWeight4, thriceWeight4, slowgoWeight4, springoWeight4, cashzapWeight4, vampireWeight4, bitsizeWeight4, blowayWeight4, bowloWeight4, weegleWeight4, thwompWeight4, bulletWeight4, bowserWeight4, dueloWeight4]
+    prices4 = [thricePrice4, slowgoPrice4, springoPrice4, cashzapPrice4, vampirePrice4, bitsizePrice4, blowayPrice4, bowloPrice4, weeglePrice4, thwompPrice4, bulletPrice4, bowserPrice4, dueloPrice4]
+    weights4 = [thriceWeight4, slowgoWeight4, springoWeight4, cashzapWeight4, vampireWeight4, bitsizeWeight4, blowayWeight4, bowloWeight4, weegleWeight4, thwompWeight4, bulletWeight4, bowserWeight4, dueloWeight4]
  
     file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
     if file_path:
@@ -426,7 +417,7 @@ def savePresetItems4(board, twiceWeight4, thricePrice4, thriceWeight4, slowgoPri
         print("MPT file saved successfully!")
         createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
 
-def loadPresetItems4(board, twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, slowgoWeight4, springoPrice4, springoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, vampireWeight4, bitsizePrice4, bitsizeWeight4, blowayPrice4, blowayWeight4, bowloPrice4, bowloWeight4, weeglePrice4, weegleWeight4, thwompPrice4, thwompWeight4, bulletPrice4, bulletWeight4, bowserPrice4, bowserWeight4, dueloPrice4, dueloWeight4):
+def loadPresetItems4(board, thricePrice4, thriceWeight4, slowgoPrice4, slowgoWeight4, springoPrice4, springoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, vampireWeight4, bitsizePrice4, bitsizeWeight4, blowayPrice4, blowayWeight4, bowloPrice4, bowloWeight4, weeglePrice4, weegleWeight4, thwompPrice4, thwompWeight4, bulletPrice4, bulletWeight4, bowserPrice4, bowserWeight4, dueloPrice4, dueloWeight4):
     file_path = tkinter.filedialog.askopenfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
     if file_path:
         prices4In = []
@@ -439,7 +430,7 @@ def loadPresetItems4(board, twiceWeight4, thricePrice4, thriceWeight4, slowgoPri
                 weights4In.append(float(row[1]))
         # Define a list of Entry widget attributes
         pricesNames4 = [twicePrice4, thricePrice4, slowgoPrice4, springoPrice4, cashzapPrice4, vampirePrice4, bitsizePrice4, blowayPrice4, bowloPrice4, weeglePrice4, thwompPrice4, bulletPrice4, bowserPrice4, dueloPrice4]
-        weightsNames4 = [twiceWeight4, thriceWeight4, slowgoWeight4, springoWeight4, cashzapWeight4, vampireWeight4, bitsizeWeight4, blowayWeight4, bowloWeight4, weegleWeight4, thwompWeight4, bulletWeight4, bowserWeight4, dueloWeight4]
+        weightsNames4 = [thriceWeight4, slowgoWeight4, springoWeight4, cashzapWeight4, vampireWeight4, bitsizeWeight4, blowayWeight4, bowloWeight4, weegleWeight4, thwompWeight4, bulletWeight4, bowserWeight4, dueloWeight4]
         # Update widgets with loaded values
         for index, widget in enumerate(pricesNames4):
             if widget and index < len(prices4In):
