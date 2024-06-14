@@ -369,3 +369,80 @@ def itemsEvent_mp8(board, twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice
     pyperclip.copy(generatedCode)
     print("Generated code copied to the clipboard.")
     createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
+def savePresetItems8(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, slowgoWeight4, springoPrice4, springoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, vampireWeight4, bitsizePrice4, bitsizeWeight4, blowayPrice4, blowayWeight4, bowloPrice4, bowloWeight4, weegleePrice4, weegleeWeight4, thwompPrice4, thwompWeight4, bulletPrice4, bulletWeight4, bowserPrice4, bowserWeight4, dueloPrice4, dueloWeight4):
+    if not twiceWeight4.get() or not thricePrice4.get() or not twiceWeight4.get() or not thricePrice4.get() or not thriceWeight4.get() or not slowgoPrice4.get() or not slowgoWeight4.get() or not springoPrice4.get() or not springoWeight4.get() or not cashzapPrice4.get() or not cashzapWeight4.get() or not vampirePrice4.get() or not vampireWeight4.get() or not bitsizePrice4.get() or not bitsizeWeight4.get() or not blowayPrice4.get() or not blowayWeight4.get() or not bowloPrice4.get() or not bowloWeight4.get() or not weegleePrice4.get() or not weegleeWeight4.get() or not thwompPrice4.get() or not thwompWeight4.get() or not bulletPrice4.get() or not bulletWeight4.get() or not bowserPrice4.get() or not bowserWeight4.get() or not dueloPrice4.get() or not dueloWeight4.get():
+        if sys.platform == "darwin":
+            createDialog("Error", "error", "Please fill out all the boxes.", None)
+        else:
+            createDialog("Error", "error", "Please fill out all the boxes.", None)
+        return
+    
+    twiceWeight4 = twiceWeight4.get()
+    
+    thricePrice4 = thricePrice4.get()
+    thriceWeight4 = thriceWeight4.get()
+    slowgoPrice4 = slowgoPrice4.get()
+    slowgoWeight4 = slowgoWeight4.get()
+    springoPrice4 = springoPrice4.get()
+    springoWeight4 = springoWeight4.get()
+    cashzapPrice4 = cashzapPrice4.get()
+    cashzapWeight4 = cashzapWeight4.get()
+    vampirePrice4 = vampirePrice4.get()
+    vampireWeight4 = vampireWeight4.get()
+    bitsizePrice4 = bitsizePrice4.get()
+    bitsizeWeight4 = bitsizeWeight4.get()
+    blowayPrice4 = blowayPrice4.get()
+    blowayWeight4 = blowayWeight4.get()
+    bowloPrice4 = bowloPrice4.get()
+    bowloWeight4 = bowloWeight4.get()
+    weegleePrice4 = weegleePrice4.get()
+    weegleeWeight4 = weegleeWeight4.get()
+    thwompPrice4 = thwompPrice4.get()
+    thwompWeight4 = thwompWeight4.get()
+    bulletPrice4 = bulletPrice4.get()
+    bulletWeight4 = bulletWeight4.get()
+    bowserPrice4 = bowserPrice4.get()
+    bowserWeight4 = bowserWeight4.get()
+    dueloPrice4 = dueloPrice4.get()
+    dueloWeight4 = dueloWeight4.get()
+    prices8 = ["5", thricePrice4, slowgoPrice4, springoPrice4, cashzapPrice4, vampirePrice4, bitsizePrice4, blowayPrice4, bowloPrice4, weegleePrice4, thwompPrice4, bulletPrice4, bowserPrice4, dueloPrice4]
+    weights8 = [twiceWeight4, thriceWeight4, slowgoWeight4, springoWeight4, cashzapWeight4, vampireWeight4, bitsizeWeight4, blowayWeight4, bowloWeight4, weegleeWeight4, thwompWeight4, bulletWeight4, bowserWeight4, dueloWeight4]
+    file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
+    if file_path:
+        with open(file_path, 'w', newline='') as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow(['Prices', 'Weights'])
+            for price, weight in zip(prices8, weights8):
+                writer.writerow([price, weight])
+        print("MPT file saved successfully!")
+        createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
+
+def loadPresetItems8(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, slowgoWeight4, springoPrice4, springoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, vampireWeight4, bitsizePrice4, bitsizeWeight4, blowayPrice4, blowayWeight4, bowloPrice4, bowloWeight4, weegleePrice4, weegleeWeight4, thwompPrice4, thwompWeight4, bulletPrice4, bulletWeight4, bowserPrice4, bowserWeight4, dueloPrice4, dueloWeight4):
+    file_path = tkinter.filedialog.askopenfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
+    if file_path:
+        prices8In = []
+        weights8In = []
+        with open(file_path, 'r', newline='') as csvfile:
+            reader = csv.reader(csvfile)
+            next(reader)
+            for row in reader:
+                prices8In.append(float(row[0]))
+                weights8In.append(float(row[1]))
+        
+        testVar = ""
+        # Define a list of Entry widget attributes
+        
+        pricesNames8 = [testVar, thricePrice4, slowgoPrice4, springoPrice4, cashzapPrice4, vampirePrice4, bitsizePrice4, blowayPrice4, bowloPrice4, weegleePrice4, thwompPrice4, bulletPrice4, bowserPrice4, dueloPrice4]
+        weightsNames8 = [twiceWeight4, thriceWeight4, slowgoWeight4, springoWeight4, cashzapWeight4, vampireWeight4, bitsizeWeight4, blowayWeight4, bowloWeight4, weegleeWeight4, thwompWeight4, bulletWeight4, bowserWeight4, dueloWeight4]
+        # Update widgets with loaded values
+        for index, widget in enumerate(pricesNames8):
+            if widget and index < len(prices8In):
+                widget.delete(0, 'end')
+                widget.insert(0, int(prices8In[index]))
+        for index, widget in enumerate(weightsNames8):
+            if widget and index < len(weights8In):
+                widget.delete(0, 'end')
+                widget.insert(0, int(weights8In[index]))
+        print("MPT file laoded successfully!")
+        createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
