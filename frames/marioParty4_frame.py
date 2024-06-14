@@ -347,7 +347,7 @@ def create_mario_party_4_interface(frame):
     label = ctk.CTkLabel(master=tabview.tab("Space Replacement"), text=" (Slot B) ", font=("Arial", 16))
     label.grid(row=1, column=4)
 
-    parseButton = ctk.CTkButton(master=tabview.tab("Space Replacement"), command=lambda: spaceReplaceEvent_mp4(spaceRep411, spaceRep412, spaceRep421, spaceRep422, spaces4), text="Generate Codes")
+    parseButton = ctk.CTkButton(master=tabview.tab("Space Replacement"), command=lambda: spaceReplaceEvent_mp4(spaceRep411, spaceRep421, spaceRep412, spaceRep422, spaces4), text="Generate Codes")
     parseButton.place(x=10, y=640)
 
     return frame

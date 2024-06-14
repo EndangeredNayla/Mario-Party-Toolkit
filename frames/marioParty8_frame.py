@@ -240,8 +240,10 @@ def create_mario_party_8_interface(frame):
     label = ctk.CTkLabel(master=tabview.tab("Candy Mods"), text=" % common.", font=("Arial", 16))
     label.grid(row=5, column=20)
 
-    boardComboBox = ctk.CTkComboBox(master=tabview.tab("Candy Mods"), values=["DK's Treetop Temple", "Goomba's Booty Boardwalk", "King Boo's Haunted Hideaway", "Shy Guy's Perplex Express", "Koopa's Tycoon Town", "Bowser's Warped Orbit"], width=250)
-    boardComboBox.place(x=10, y= 400)
+    label = ctk.CTkLabel(master=tabview.tab("Candy Mods"), text="Board: ", font=("Arial", 16, "bold"))
+    label.place(x=10, y=260)
+    boardComboBox = ctk.CTkComboBox(master=tabview.tab("Candy Mods"), values=["DK's Treetop Temple"], width=250) # "Goomba's Booty Boardwalk", "King Boo's Haunted Hideaway", "Shy Guy's Perplex Express", "Koopa's Tycoon Town", "Bowser's Warped Orbit"
+    boardComboBox.place(x=70, y=260)
 
     parseButton = ctk.CTkButton(master=tabview.tab("Candy Mods"), command=lambda: itemsEvent_mp8(boardComboBox, twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, slowgoWeight4, springoPrice4, springoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, vampireWeight4, bitsizePrice4, bitsizeWeight4, blowayPrice4, blowayWeight4, bowloPrice4, bowloWeight4, weegleePrice4, weegleeWeight4, thwompPrice4, thwompWeight4, bulletPrice4, bulletWeight4, bowserPrice4, bowserWeight4, dueloPrice4, dueloWeight4), text="Generate Codes")
     parseButton.place(x=10, y=640)
