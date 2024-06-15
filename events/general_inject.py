@@ -24,8 +24,8 @@ def general_injection(file_label, cheatCodeEntry):
         file.write("$MPToolkit\n" + cheatCodeEntry.get("1.0", "end"))
     iso_path = file_label.cget("text")
     gameName = os.path.basename(iso_path)
-    
-    if is_file_greater_than_4gb(iso_path):
+    _, gameExt = os.path.splitext(gameName)
+    if gameExt == ".iso" and is_file_greater_than_4gb(iso_path) or gameExt == ".wbfs":
         if sys.platform == "win32":
             subprocess.run([fetchResource("dependencies/win32/wit.exe"), "extract", iso_path, "tmp/tmpROM/"], check=True)
         else:
@@ -42,13 +42,13 @@ def general_injection(file_label, cheatCodeEntry):
         os.remove(folder_path)
         shutil.move("tmp/tmpDOL/main.dol", folder_path)
         if sys.platform == "win32":
-            subprocess.run([fetchResource("dependencies/win32/wit.exe"), "copy", folder_path_raw, "--dest=tmp/game.iso"], check=True)
+            subprocess.run([fetchResource("dependencies/win32/wit.exe"), "copy", folder_path_raw, "--dest=tmp/game.wbfs"], check=True)
         else:
-            subprocess.run([fetchResource("dependencies/darwin/wit"), "copy", folder_path_raw, "--dest=tmp/game.iso"], check=True)
-        file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".iso", initialfile=gameName[:-4] + " (Modded).iso", filetypes=[("ISO Files", "*.iso")])
+            subprocess.run([fetchResource("dependencies/darwin/wit"), "copy", folder_path_raw, "--dest=tmp/game.wbfs"], check=True)
+        file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".wbfs", initialfile=gameName[:-4] + " (Modded).wbfs", filetypes=[("WBFS Files", "*.wbfs")])
         shutil.move("tmp/game.iso", file_path)
         shutil.rmtree("tmp/") 
-    elif is_file_less_than_100mb(iso_path):
+    elif is_file_less_than_100mb(iso_path): # assuming N64 Rom
         if sys.platform == "win32":
             subprocess.run([fetchResource("dependencies/win32/GSInject.exe"), "tmp/codes.txt", iso_path, "tmp/game.z64"], check=True)
         else:
