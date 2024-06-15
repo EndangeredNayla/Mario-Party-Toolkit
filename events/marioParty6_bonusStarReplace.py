@@ -28,7 +28,7 @@ def customBonusStarEvent_mp6(star1, star2, star3, stars6):
 
     mpStar41 = getStarReplaceSix1(starSlot1Hex, starSlot1)
     mpStar42 = getStarReplaceSix2(starSlot2Hex, starSlot2)
-    mpStar43 = getStarReplaceSix2(starSlot3Hex, starSlot3)
+    mpStar43 = getStarReplaceSix3(starSlot3Hex, starSlot3)
 
     if starSlot1Hex == "NONE":
         mpStar41 = ""

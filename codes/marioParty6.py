@@ -354,14 +354,6 @@ E2000001 80008000
 
 def getStarReplaceSix2(amount, amountDec):
     return f'''
-MP6 - Replace Minigame Star with {amountDec}
-204ECF10 A883001E
-044ECF10 {amount}
-E2000001 80008000
-'''
-
-def getStarReplaceSix3(amount, amountDec):
-    return f'''
 MP6 - Replace Orb Star with {amountDec}
 204ECF4C A8C70034
 044ECF4C {amount}
