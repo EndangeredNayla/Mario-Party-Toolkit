@@ -21,7 +21,7 @@ import subprocess
 
 # Create a function for file selection
 def select_file(file_label):
-    filename = tkinter.filedialog.askopenfilename(filetypes=[("Z64 Files", "*.z64"), ("ISO Files", "*.iso"), ("All Files", "*.*")])    # Do something with the selected filename, e.g., display it in the entry
+    filename = tkinter.filedialog.askopenfilename(filetypes=[("Z64 Files", "*.z64"), ("ISO Files", "*.iso"), ("WBFS Files", "*.wbfs"), ("All Files", "*.*")])    # Do something with the selected filename, e.g., display it in the entry
     file_label.configure(text=filename)
 
 def fetchResource(resource_path: Path) -> Path:
