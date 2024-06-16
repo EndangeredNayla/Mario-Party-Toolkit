@@ -15,10 +15,9 @@ Unleash your creativity, elevate your gameplay, and redefine the rules of Mario 
 ## Downloads
 
 ##### Stable Release
-  - [Windows (static)](https://github.com/EndangeredNayla/Mario-Party-Toolkit/releases/download/latest/MarioPartyToolkit-win32-static.zip)
-  - [Windows (dynamic)](https://github.com/EndangeredNayla/Mario-Party-Toolkit/releases/download/latest/MarioPartyToolkit-win32-dynamic.zip)
-  - [macOS](https://github.com/EndangeredNayla/Mario-Party-Toolkit/releases/download/latest/MarioPartyToolkit-darwin.zip) (universal)
+  - [Windows](https://github.com/EndangeredNayla/Mario-Party-Toolkit/releases/download/latest/MarioPartyToolkit-win32.zip)
+  - [macOS (arm64)](https://github.com/EndangeredNayla/Mario-Party-Toolkit/releases/download/latest/MarioPartyToolkit-darwin_arm64.zip)
 
 ##### Development Release
-  - [Windows (static)](https://nightly.link/EndangeredNayla/Mario-Party-Toolkit/workflows/ci/master/MarioPartyToolkit-win32-static.zip)
-  - [Windows (dynamic)](https://nightly.link/EndangeredNayla/Mario-Party-Toolkit/workflows/ci/master/MarioPartyToolkit-win32-dynamic.zip)
+  - [Windows](https://nightly.link/EndangeredNayla/Mario-Party-Toolkit/workflows/ci/master/MarioPartyToolkit-win32.zip)
+  - [macOS (arm64)](https://nightly.link/EndangeredNayla/Mario-Party-Toolkit/workflows/ci/master/MarioPartyToolkit-darwin_arm64.zip)
