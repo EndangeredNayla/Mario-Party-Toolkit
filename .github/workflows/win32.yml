@@ -1,4 +1,4 @@
-name: CI
+name: Windows CI
 
 on:
   push:
@@ -23,3 +23,5 @@ jobs:
       with:
         name: MarioPartyToolkit-win32
         path: D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\dist
+
+

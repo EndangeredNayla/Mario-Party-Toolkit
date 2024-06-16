@@ -1,4 +1,4 @@
-name: CI
+name: macOS Apple Silicon CI
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-win32:
-    name: "Windows Build"
+    name: "macOS Apple Silicon Build"
     runs-on: macos-14
     steps:
     - name: Checkout repository
@@ -16,7 +16,7 @@ jobs:
       run: python -m pip install -r requirements.txt
 
     - name: Build Project
-      run: pyinstaller --onefile .\main.py --add-data "assets/eventTags/*;assets/eventTags/" --add-data "assets/icons/*;assets/icons/" --add-data "assets/items/*;assets/items/" --add-data "assets/logos/*;assets/logos/" --add-data "assets/operation/*;assets/operation/" --add-data "dependencies/win32/*;dependencies/win32/" --add-data "dependencies/bin/*;dependencies/win32/bin/"  --name="Mario Party Toolkit" -w --icon="assets/icons/diceBlock.ico"
+      run: pyinstaller --onefile main.py --add-data "assets/eventTags/*:assets/eventTags/" --add-data "assets/icons/*:/icons/" --add-data "assets/items/*:assets/items/" --add-data "assets/logos/*:assets/logos/" --add-data "assets/operation/*:assets/operation/" --add-data "dependencies/darwin_arm64/*:dependencies/win32/" --add-data "dependencies/bin/*:dependencies/darwin/bin/"  --name="Mario Party Toolkit" -w --icon="assets/icons/diceBlock.ico"
 
     - name: Purge Files
       run: cd "/Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist/" && rm "Mario Party Toolkit"
@@ -24,6 +24,6 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: MarioPartyToolkit-win32
+        name: MarioPartyToolkit-darwin_arm64
         path: /Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist
 
