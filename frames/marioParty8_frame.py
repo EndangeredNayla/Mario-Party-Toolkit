@@ -20,7 +20,7 @@ from CTkToolTip import *
 # Function to create the main interface for Mario Party 1
 def create_mario_party_8_interface(frame):
     # Create a tabbed interface
-    tabview = ctk.CTkTabview(frame, width=1110, height=752, fg_color=("#fcfcfc", "#323232"))
+    tabview = ctk.CTkTabview(frame, width=1110, height=885, fg_color=("#fcfcfc", "#323232"))
     tabview.grid(padx=10, pady=10)
     tabview.add("Coins Mods")
     tabview.add("Minigame Replacement")
@@ -57,7 +57,7 @@ def create_mario_party_8_interface(frame):
 
     # Create button to generate coins modification codes
     parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp8(blue_entry, red_entry, mgWin_entry, star_entry, bitsize_entry, hotel_entry, bowlo_entry, vampire_entry), text="Generate Codes")
-    parse_coins_button.place(x=10, y=660)
+    parse_coins_button.place(x=10, y=800)
 
     # Create entry fields and dropdowns for Candy Mods Tab
     icon = create_image_icon(tabview.tab("Candy Mods"), "assets/items/twice.png", 2, 1)
@@ -246,13 +246,13 @@ def create_mario_party_8_interface(frame):
     boardComboBox.place(x=70, y=260)
 
     parseButton = ctk.CTkButton(master=tabview.tab("Candy Mods"), command=lambda: itemsEvent_mp8(boardComboBox, twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, slowgoWeight4, springoPrice4, springoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, vampireWeight4, bitsizePrice4, bitsizeWeight4, blowayPrice4, blowayWeight4, bowloPrice4, bowloWeight4, weegleePrice4, weegleeWeight4, thwompPrice4, thwompWeight4, bulletPrice4, bulletWeight4, bowserPrice4, bowserWeight4, dueloPrice4, dueloWeight4), text="Generate Codes")
-    parseButton.place(x=10, y=640)
+    parseButton.place(x=10, y=800)
 
     parseButton = ctk.CTkButton(master=tabview.tab("Candy Mods"), command=lambda: savePresetItems8(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, slowgoWeight4, springoPrice4, springoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, vampireWeight4, bitsizePrice4, bitsizeWeight4, blowayPrice4, blowayWeight4, bowloPrice4, bowloWeight4, weegleePrice4, weegleeWeight4, thwompPrice4, thwompWeight4, bulletPrice4, bulletWeight4, bowserPrice4, bowserWeight4, dueloPrice4, dueloWeight4), text="Save Preset")
-    parseButton.place(x=160, y=640)
+    parseButton.place(x=160, y=800)
 
     parseButton = ctk.CTkButton(master=tabview.tab("Candy Mods"), command=lambda: loadPresetItems8(twiceWeight4, thricePrice4, thriceWeight4, slowgoPrice4, slowgoWeight4, springoPrice4, springoWeight4, cashzapPrice4, cashzapWeight4, vampirePrice4, vampireWeight4, bitsizePrice4, bitsizeWeight4, blowayPrice4, blowayWeight4, bowloPrice4, bowloWeight4, weegleePrice4, weegleeWeight4, thwompPrice4, thwompWeight4, bulletPrice4, bulletWeight4, bowserPrice4, bowserWeight4, dueloPrice4, dueloWeight4), text="Load Preset")
-    parseButton.place(x=310, y=640)
+    parseButton.place(x=310, y=800)
 
     # List of minigame names
     minigames_list = ["Speedy Graffiti", "Swing Kings", "Water Ski Spree", "Punch-a-Bunch", "Crank to Rank", "At the Chomp Wash", "Mosh-Pit Playroom", "Mario Matrix", "Hammer de Pokari", "Grabby Giridion", "Lava or Leave 'Em", "Kartastrophe", "Ribbon Game", "Aim of the Game", "Rudder Madness", "Gun the Runner", "Grabbin' Gold", "Power Trip", "Bob-ombs Away", "Swervin' Skies", "Picture Perfect", "Snow Way Out", "Thrash 'n' Crash", "Chump Rope", "Sick and Twisted", "Bumper Balloons", "Rowed to Victory", "Winner or Dinner", "Paint Misbehavin'", "Sugar Rush", "King of the Thrill", "Shake It Up", "Lean, Mean Ravine", "Boo-ting Gallery", "Crops 'n' Robbers", "In the Nick of Time", "Cut from the Team", "Snipe for the Picking", "Saucer Swarm", "Glacial Meltdown", "Attention Grabber", "Blazing Lassos", "Wing and a Scare", "Lob to Rob", "Pumper Cars", "Cosmic Slalom", "Lava Lobbers", "Loco Motives", "Specter Inspector", "Frozen Assets", "Breakneck Building", "Surf's Way Up", "Bull Riding", "Balancing Act", "Ion the Prize", "You're the Bob-omb", "Scooter Pursuit", "Cardiators", "Rotation Station", "Eyebrawl", "Table Menace", "Flagging Rights", "Trial by Tile", "Star Carnival Bowling", "Puzzle Pillars", "Canyon Cruisers", "Settle It in Court", "Moped Mayhem", "Flip the Chimp", "Pour to Score", "Fruit Picker", "Stampede", "Superstar Showdown", "Alpine Assault", "Treacherous Tightrope"]    # Create labels, comboboxes, and button for Minigame Replacement tab
@@ -265,7 +265,7 @@ def create_mario_party_8_interface(frame):
     combobox_mingames_2 = ctk.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=minigames_list)
     combobox_mingames_2.grid(row=0, column=3)
     parse_minigame_button = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=lambda: mgReplaceEvent_mp8(combobox_mingames_1, combobox_mingames_2, minigames_list), text="Generate Codes")
-    parse_minigame_button.place(x=10, y=650)
+    parse_minigame_button.place(x=10, y=800)
     
     return frame
     

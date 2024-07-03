@@ -18,7 +18,7 @@ import customtkinter as ctk
 # Function to create the main interface for Mario Party 1
 def create_mario_party_3_interface(frame):
     # Create a tabbed interface
-    tabview = ctk.CTkTabview(frame, width=1110, height=752, fg_color=("#fcfcfc", "#323232"))
+    tabview = ctk.CTkTabview(frame, width=1110, height=885, fg_color=("#fcfcfc", "#323232"))
     tabview.grid(padx=10, pady=10)
     tabview.add("Coins Mods")
     tabview.add("Minigame Replacement")
@@ -58,7 +58,7 @@ def create_mario_party_3_interface(frame):
 
     # Create button to generate coins modification codes
     parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp3(blue_entry, blue_checkbox, red_entry, red_checkbox, star_entry, koopaBank_entry), text="Generate Codes")
-    parse_coins_button.place(x=10, y=660)
+    parse_coins_button.place(x=10, y=800)
 
     # List of minigame names
     minigames_list = ["Thwomp Pull", "River Raiders", "Tidal Toss", "Eatsa Pizza", "Baby Bowser Broadside", "Pump, Pump and Away", "Hyper Hydrants", "Picking Panic", "Treadmill Grill", "Toadstoll Titan", "Aces High", "Bounce 'n' Trounce", "Ice Rink Risk", "Locked Out", "Chip Shot Challenge", "Parasol Plummet", "Messy Memory", "Picture Imperfect", "Mario's Puzzle Party", "The Beat Goes On", "M. P. I. Q.", "Curtain Call", "Water Whirled", "Frigid Bridges", "Awful Tower", "Cheep Cheep Chase", "Pipe Cleaners", "Snowball Summit", "All Fired Up", "Stacked Deck", "Three Door Monty", "Rockin' Raceway", "Merry-Go-Chomp", "Slap Down", "Storm Chasers", "Eye Sore", "Vine With Me", "Popgun Pick-Off", "End of the Line", "Bowser Toss", "Baby Bowser Bonkers", "Motor Rooter", "Silly Screws", "Crowd Cover", "Tick Tock Hop", "Fowl Play", "Mecha-Marathon", "Hey, Batter, Batter!", "Bobbing Bow-loons", "Dorrie Dip", "Swinging with Sharks", "Swing 'n' Swipe", "Stardust Battle", "Game Guy's Roulette", "Game Guy's Lucky 7", "Game Guy's Magic Boxes", "Game Guy's Sweet Surprise", "Dizzy Dinghies", "Mario's Puzzle Party Pro"]
@@ -73,7 +73,7 @@ def create_mario_party_3_interface(frame):
     combobox_mingames_2 = ctk.CTkComboBox(master=tabview.tab("Minigame Replacement"), values=minigames_list)
     combobox_mingames_2.grid(row=0, column=3)
     parse_minigame_button = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=lambda: mgReplaceEvent_mp3(combobox_mingames_1, combobox_mingames_2, minigames_list), text="Generate Codes")
-    parse_minigame_button.place(x=10, y=640)
+    parse_minigame_button.place(x=10, y=800)
 
     icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/mushroom.png", 1, 1)
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
@@ -178,7 +178,7 @@ def create_mario_party_3_interface(frame):
     itemBag3.grid(row=5, column=12)
 
     parseButtonThree = ctk.CTkButton(master=tabview.tab("Item Mods"), command=lambda: itemsEvent_mp3(mushroom3, skeletonKey3, poisonMushroom3, reverseMushroom3, goldenMushroom3, magicLamp3, warpBlock3, celluarShopper3, bowserPhone3, duelingGlove3, luckyLamp3, bowserSuit3, plunderChest3, booBell3, booRepellant3, itemBag3), text="Generate Codes")
-    parseButtonThree.place(x=10, y=640)
+    parseButtonThree.place(x=10, y=800)
 
     warningLabel = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="These are not weights! 0 doesnt mean disabled.", font=("Arial", 16, "bold"))
     warningLabel.place(x=5, y=310)
@@ -219,6 +219,6 @@ def create_mario_party_3_interface(frame):
     label.grid(row=3, column=3)
 
     parse_stars_button = ctk.CTkButton(master=tabview.tab("Star Handicaps"), command=lambda: handicapEvent_mp3(p1Stars, p2Stars, p3Stars, p4Stars), text="Generate Codes")
-    parse_stars_button.place(x=10, y=640)
+    parse_stars_button.place(x=10, y=800)
 
     return frame

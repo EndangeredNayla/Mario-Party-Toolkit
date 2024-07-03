@@ -16,6 +16,8 @@ from frames.marioParty5_frame import *
 from frames.marioParty6_frame import *
 from frames.marioParty7_frame import *
 from frames.marioParty8_frame import *
+from frames.marioParty9_frame import *
+from frames.marioPartyDS_frame import *
 from frames.welcome_frame import *
 from version import *
 
@@ -30,7 +32,7 @@ class App(customtkinter.CTk):
         super().__init__()
 
         self.title("Mario Party Toolkit")
-        self.geometry("1330x780")
+        self.geometry("1330x900")
         customtkinter.set_appearance_mode("Dark")
 
         # set grid layout 1x2
@@ -46,12 +48,14 @@ class App(customtkinter.CTk):
         self.mp6_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(fetchResource("assets/logos/marioParty6.png"))), size=(172, 42))
         self.mp7_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(fetchResource("assets/logos/marioParty7.png"))), size=(172, 42))
         self.mp8_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(fetchResource("assets/logos/marioParty8.png"))), size=(172, 42))
+        self.mp9_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(fetchResource("assets/logos/marioParty9.png"))), size=(172, 42))
+        self.mpds_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(fetchResource("assets/logos/marioPartyDS.png"))), size=(172, 42))
         self.injector_image = customtkinter.CTkImage(light_image=Image.open(os.path.join(fetchResource("assets/logos/injector.png"))), size=(32, 32))
 
         # create navigation frame
         self.navigation_frame = customtkinter.CTkFrame(self, corner_radius=0)
         self.navigation_frame.grid(row=0, column=0, sticky="nsew")
-        self.navigation_frame.grid_rowconfigure(12, weight=2)
+        self.navigation_frame.grid_rowconfigure(14, weight=2)
 
         self.home_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10, text=None,
                                                    fg_color="transparent", hover_color=("gray70", "gray30"),
@@ -98,19 +102,28 @@ class App(customtkinter.CTk):
                                                       image=self.mp8_image, anchor="w", command=self.mp8_button_event)
         self.mp8_button.grid(row=9, column=0, sticky="ew")
 
+        self.mp9_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10, text=None,
+                                                      fg_color="transparent", hover_color=("gray70", "gray30"),
+                                                      image=self.mp9_image, anchor="w", command=self.mp9_button_event)
+        self.mp9_button.grid(row=10, column=0, sticky="ew")
+        
+        self.mpDS_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10, text=None,
+                                                      fg_color="transparent", hover_color=("gray70", "gray30"),
+                                                      image=self.mpds_image, anchor="w", command=self.mpDS_button_event)
+        self.mpDS_button.grid(row=11, column=0, sticky="ew")
 
         self.injector_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10, text="Injector",
                                                    fg_color="transparent", text_color=("gray10", "gray90"), hover_color=("gray70", "gray30"),
                                                    image=self.injector_image, command=self.injector_button_event, font=("Helvetica", 18, "bold"))
-        self.injector_button.grid(row=10, column=0, sticky="ew")
+        self.injector_button.grid(row=13, column=0, sticky="ew")
 
         self.about_button = customtkinter.CTkButton(self.navigation_frame, corner_radius=0, height=40, border_spacing=10, text="About",
                                                    fg_color="transparent", text_color=("gray10", "gray90"), hover_color=("gray70", "gray30"),
                                                    image=self.about_image, command=self.about_button_event, font=("Helvetica", 18, "bold"))
-        self.about_button.grid(row=11, column=0, sticky="ew")
+        self.about_button.grid(row=14, column=0, sticky="ew")
 
         self.versionPanel = ctk.CTkLabel(self.navigation_frame, text=versionString, font=("Helvetica", 18, "bold"))
-        self.versionPanel.grid(row=12, column=0, sticky="ew")
+        self.versionPanel.grid(row=15, column=0, sticky="ew")
 
         # create frames
         self.welcome_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
@@ -122,6 +135,8 @@ class App(customtkinter.CTk):
         self.mp6_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         self.mp7_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         self.mp8_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
+        self.mp9_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
+        self.mpDS_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         self.about_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         self.injector_frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
 
@@ -140,6 +155,8 @@ class App(customtkinter.CTk):
         self.mp6_button.configure(fg_color=("gray75", "gray25") if name == "mp6Frame" else "transparent")
         self.mp7_button.configure(fg_color=("gray75", "gray25") if name == "mp7Frame" else "transparent")
         self.mp8_button.configure(fg_color=("gray75", "gray25") if name == "mp8Frame" else "transparent")
+        self.mp9_button.configure(fg_color=("gray75", "gray25") if name == "mp9Frame" else "transparent")
+        self.mpDS_button.configure(fg_color=("gray75", "gray25") if name == "mpDSFrame" else "transparent")
         self.about_button.configure(fg_color=("gray75", "gray25") if name == "aboutFrame" else "transparent")
         self.injector_button.configure(fg_color=("gray75", "gray25") if name == "injectorFrame" else "transparent")
 
@@ -189,6 +206,16 @@ class App(customtkinter.CTk):
             create_mario_party_8_interface(self.mp8_frame)
         else:
             self.mp8_frame.grid_forget()
+        if name == "mp9Frame":
+            self.mp9_frame.grid(row=0, column=1, sticky="nsew")
+            create_mario_party_9_interface(self.mp9_frame)
+        else:
+            self.mp8_frame.grid_forget()
+        if name == "mpDSFrame":
+            self.mpDS_frame.grid(row=0, column=1, sticky="nsew")
+            create_mario_party_DS_interface(self.mpDS_frame)
+        else:
+            self.mp8_frame.grid_forget()
         if name == "aboutFrame":
             self.about_frame.grid(row=0, column=1, sticky="nsew")
             about_interface(self.about_frame)
@@ -226,6 +253,12 @@ class App(customtkinter.CTk):
 
     def mp8_button_event(self):
         self.select_frame_by_name("mp8Frame")
+
+    def mp9_button_event(self):
+        self.select_frame_by_name("mp9Frame")
+
+    def mpDS_button_event(self):
+        self.select_frame_by_name("mpDSFrame")
 
     def injector_button_event(self):
         self.select_frame_by_name("injectorFrame")
