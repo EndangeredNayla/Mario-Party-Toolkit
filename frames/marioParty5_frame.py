@@ -492,6 +492,15 @@ def create_mario_party_5_interface(frame):
     star3 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars6)
     star3.grid(row=2, column=1)
 
+    #checkbox1 = ctk.CTkCheckBox(master=tabview.tab("Bonus Star Replacement"), text="Bonus Ztar", width=16, checkbox_width=16, checkbox_height=16)
+    #checkbox1.grid(row=0, column=2, padx=10, pady=10)
+
+    #checkbox2 = ctk.CTkCheckBox(master=tabview.tab("Bonus Star Replacement"), text="Bonus Ztar", width=16, checkbox_width=16, checkbox_height=16)
+    #checkbox2.grid(row=1, column=2, padx=10, pady=10)
+
+    #checkbox3 = ctk.CTkCheckBox(master=tabview.tab("Bonus Star Replacement"), text="Bonus Ztar", width=16, checkbox_width=16, checkbox_height=16)
+    #checkbox3.grid(row=2, column=2, padx=10, pady=10)
+    
     parseButton = ctk.CTkButton(master=tabview.tab("Bonus Star Replacement"), command=lambda: customBonusStarEvent_mp5(star1, star2, star3, stars6), text="Generate Codes")
     parseButton.place(x=10, y=800)
 

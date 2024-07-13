@@ -31,27 +31,27 @@ def create_mario_party_4_interface(frame):
     tabview.set("Coins Mods")
 
     # Function to create an entry field and checkbox
-    def create_entry(tab, row, icon_path, label_text, color):
+    def create_entry(tab, row, icon_path, label_text, color, placerholder):
         create_image_icon(tab, icon_path, row, 1)
         label = ctk.CTkLabel(master=tab, text=label_text, font=("Arial", 16))
         label.grid(row=row, column=2, sticky="w", pady=15)
-        entry = ctk.CTkEntry(master=tab, width=48, font=("Arial", 16, "bold"))
+        entry = ctk.CTkEntry(master=tab, width=48, font=("Arial", 16, "bold"), placerholder_text=placerholder)
         entry.grid(row=row, column=3)
         label1 = ctk.CTkLabel(master=tab, text=color, font=("Arial", 16))
         label1.grid(row=row, column=4, sticky="w")
         return entry
 
     # Create entry fields and checkboxes for Coins Mods tab
-    blue_entry = create_entry(tabview.tab("Coins Mods"), 1, "assets/eventTags/blueSpace.png", " Gain  ", " Coins on a Blue Space.")
-    red_entry = create_entry(tabview.tab("Coins Mods"), 2, "assets/eventTags/redSpace.png", " Lose  ", " Coins on a Red Space.")
-    mgWin_entry = create_entry(tabview.tab("Coins Mods"), 3, "assets/eventTags/miniGame.png", " Gain  ", " Coins when winning a Minigame.")
-    star_entry = create_entry(tabview.tab("Coins Mods"), 4, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star.")
-    mega_entry = create_entry(tabview.tab("Coins Mods"), 5, "assets/items/megaMushroom.png", " Gain ", " Coins when squishing a player.")
-    bowser_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/items/bowserSuit4.png", " Gain ", " Coins when squishing a player.")
-    booHouseStar_entry = create_entry(tabview.tab("Coins Mods"), 7, "assets/eventTags/booHouseStars.png", " Costs ", " Coins when stealing a Star.")
-    booHouseCoins_entry = create_entry(tabview.tab("Coins Mods"), 8, "assets/eventTags/booHouseCoins.png", " Costs ", " Coins when stealing coins.")
+    blue_entry = create_entry(tabview.tab("Coins Mods"), 1, "assets/eventTags/blueSpace.png", " Gain  ", " Coins on a Blue Space.", "3")
+    red_entry = create_entry(tabview.tab("Coins Mods"), 2, "assets/eventTags/redSpace.png", " Lose  ", " Coins on a Red Space.", "3")
+    mgWin_entry = create_entry(tabview.tab("Coins Mods"), 3, "assets/eventTags/miniGame.png", " Gain  ", " Coins when winning a Minigame.", "10")
+    star_entry = create_entry(tabview.tab("Coins Mods"), 4, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star.", "20")
+    mega_entry = create_entry(tabview.tab("Coins Mods"), 5, "assets/items/megaMushroom.png", " Gain ", " Coins when squishing a player.", "10")
+    bowser_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/items/bowserSuit4.png", " Gain ", " Coins when squishing a player.", "30")
+    booHouseStar_entry = create_entry(tabview.tab("Coins Mods"), 7, "assets/eventTags/booHouseStars.png", " Costs ", " Coins when stealing a Star.", "50")
+    booHouseCoins_entry = create_entry(tabview.tab("Coins Mods"), 8, "assets/eventTags/booHouseCoins.png", " Costs ", " Coins when stealing coins.", "5")
     booHouseCoinsMin_entry = create_entry(tabview.tab("Coins Mods"), 9, "assets/eventTags/booHouseCoins.png", " Steal ", " Minimum when stealing coins.")
-    lottery_entry = create_entry(tabview.tab("Coins Mods"), 10, "assets/eventTags/lottery4.png", " Costs ", " Coins to play the Lottery.")
+    lottery_entry = create_entry(tabview.tab("Coins Mods"), 10, "assets/eventTags/lottery4.png", " Costs ", " Coins to play the Lottery.", "5")
 
     # Create button to generate coins modification codes
     parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp4(blue_entry, red_entry, mgWin_entry, star_entry, mega_entry, booHouseStar_entry, booHouseCoins_entry, lottery_entry, booHouseCoinsMin_entry, bowser_entry), text="Generate Codes")

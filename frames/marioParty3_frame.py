@@ -27,11 +27,11 @@ def create_mario_party_3_interface(frame):
     tabview.set("Coins Mods")
 
     # Function to create an entry field and checkbox
-    def create_entry_and_checkbox(tab, row, icon_path, label_text, color, checkbox_text):
+    def create_entry_and_checkbox(tab, row, icon_path, label_text, color, checkbox_text, placeholder):
         create_image_icon(tab, icon_path, row, 1)
         label = ctk.CTkLabel(master=tab, text=label_text, font=("Arial", 16))
         label.grid(row=row, column=2, sticky="w", pady=15)
-        entry = ctk.CTkEntry(master=tab, width=48, font=("Arial", 16, "bold"))
+        entry = ctk.CTkEntry(master=tab, width=48, font=("Arial", 16, "bold"), placeholder_text=placeholder)
         entry.grid(row=row, column=3)
         label1 = ctk.CTkLabel(master=tab, text=" Coins on a " + color + " Space. ", font=("Arial", 16))
         label1.grid(row=row, column=4, sticky="w")
@@ -40,21 +40,21 @@ def create_mario_party_3_interface(frame):
         return entry, checkbox
 
     # Function to create an entry field and checkbox
-    def create_entry(tab, row, icon_path, label_text, color):
+    def create_entry(tab, row, icon_path, label_text, color, placeholder):
         create_image_icon(tab, icon_path, row, 1)
         label = ctk.CTkLabel(master=tab, text=label_text, font=("Arial", 16))
         label.grid(row=row, column=2, sticky="w", pady=15)
-        entry = ctk.CTkEntry(master=tab, width=48, font=("Arial", 16, "bold"))
+        entry = ctk.CTkEntry(master=tab, width=48, font=("Arial", 16, "bold"), placeholder_text=placeholder)
         entry.grid(row=row, column=3)
         label1 = ctk.CTkLabel(master=tab, text=color, font=("Arial", 16))
         label1.grid(row=row, column=4, sticky="w")
         return entry
 
     # Create entry fields and checkboxes for Coins Mods tab
-    blue_entry, blue_checkbox = create_entry_and_checkbox(tabview.tab("Coins Mods"), 1, "assets/eventTags/blueSpace.png", " Gain  ", "Blue", "Double the coins on Last 5")
-    red_entry, red_checkbox = create_entry_and_checkbox(tabview.tab("Coins Mods"), 2, "assets/eventTags/redSpace.png", " Lose  ", "Red", "Double the coins on Last 5")
-    star_entry = create_entry(tabview.tab("Coins Mods"), 3, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star.")
-    koopaBank_entry = create_entry(tabview.tab("Coins Mods"), 4, "assets/eventTags/koopaBank3.png", " Lend  ", " Coins to Koopa Bank,")
+    blue_entry, blue_checkbox = create_entry_and_checkbox(tabview.tab("Coins Mods"), 1, "assets/eventTags/blueSpace.png", " Gain  ", "Blue", "Double the coins on Last 5", "3")
+    red_entry, red_checkbox = create_entry_and_checkbox(tabview.tab("Coins Mods"), 2, "assets/eventTags/redSpace.png", " Lose  ", "Red", "Double the coins on Last 5", "3")
+    star_entry = create_entry(tabview.tab("Coins Mods"), 3, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star.", "20")
+    koopaBank_entry = create_entry(tabview.tab("Coins Mods"), 4, "assets/eventTags/koopaBank3.png", " Lend  ", " Coins to Koopa Bank,", "5")
 
     # Create button to generate coins modification codes
     parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp3(blue_entry, blue_checkbox, red_entry, red_checkbox, star_entry, koopaBank_entry), text="Generate Codes")
@@ -78,37 +78,37 @@ def create_mario_party_3_interface(frame):
     icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/mushroom.png", 1, 1)
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
     label.grid(row=1, column=2)
-    mushroom3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    mushroom3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="5")
     mushroom3.grid(row=1, column=3)
 
     icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/skeletonKey.png", 2, 1)
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
     label.grid(row=2, column=2)
-    skeletonKey3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    skeletonKey3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="5")
     skeletonKey3.grid(row=2, column=3)
 
     icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/poisonMushroom.png", 3, 1)
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
     label.grid(row=3, column=2)
-    poisonMushroom3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    poisonMushroom3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="5")
     poisonMushroom3.grid(row=3, column=3)
 
     icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/reverseMushroom.png", 4, 1)
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
     label.grid(row=4, column=2)
-    reverseMushroom3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    reverseMushroom3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="5")
     reverseMushroom3.grid(row=4, column=3)
 
     icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/goldenMushroom.png", 5, 1)
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=5, column=2)
-    goldenMushroom3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    goldenMushroom3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="10")
     goldenMushroom3.grid(row=5, column=3)
 
     icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/magicLamp.png", 6, 1)
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=6, column=2)
-    magicLamp3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    magicLamp3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="20")
     magicLamp3.grid(row=6, column=3)
 
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="    ", font=("Arial", 16))
@@ -117,31 +117,31 @@ def create_mario_party_3_interface(frame):
     icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/warpBlock.png", 1, 6)
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
     label.grid(row=1, column=7)
-    warpBlock3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    warpBlock3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="5")
     warpBlock3.grid(row=1, column=8)
 
     icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/celluarShopper.png", 2, 6)
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16), text_color="red")
     label.grid(row=2, column=7)
-    celluarShopper3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    celluarShopper3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="5")
     celluarShopper3.grid(row=2, column=8)
 
     icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/bowserPhone.png", 3, 6)
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=3, column=7)
-    bowserPhone3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    bowserPhone3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="10")
     bowserPhone3.grid(row=3, column=8)
 
     icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/duelingGlove.png", 4, 6)
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=4, column=7)
-    duelingGlove3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    duelingGlove3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="10")
     duelingGlove3.grid(row=4, column=8)
 
     icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/luckyLamp.png", 5, 6)
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=5, column=7)
-    luckyLamp3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    luckyLamp3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="10")
     luckyLamp3.grid(row=5, column=8)
 
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="    ", font=("Arial", 16))
@@ -150,31 +150,31 @@ def create_mario_party_3_interface(frame):
     icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/bowserSuit.png", 1, 10)
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=1, column=11)
-    bowserSuit3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    bowserSuit3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="5")
     bowserSuit3.grid(row=1, column=12)
 
     icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/plunderChest.png", 2, 10)
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=2, column=11)
-    plunderChest3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    plunderChest3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="10")
     plunderChest3.grid(row=2, column=12)
 
     icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/booBell.png", 3, 10)
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=3, column=11)
-    booBell3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    booBell3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="15")
     booBell3.grid(row=3, column=12)
 
     icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/booRepellent.png", 4, 10)
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=4, column=11)
-    booRepellant3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    booRepellant3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="10")
     booRepellant3.grid(row=4, column=12)
 
     icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/itemBag3.png", 5, 10)
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=5, column=11)
-    itemBag3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    itemBag3 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="30")
     itemBag3.grid(row=5, column=12)
 
     parseButtonThree = ctk.CTkButton(master=tabview.tab("Item Mods"), command=lambda: itemsEvent_mp3(mushroom3, skeletonKey3, poisonMushroom3, reverseMushroom3, goldenMushroom3, magicLamp3, warpBlock3, celluarShopper3, bowserPhone3, duelingGlove3, luckyLamp3, bowserSuit3, plunderChest3, booBell3, booRepellant3, itemBag3), text="Generate Codes")

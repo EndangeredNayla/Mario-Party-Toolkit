@@ -25,11 +25,11 @@ def create_mario_party_1_interface(frame):
     tabview.set("Coins Mods")
 
     # Function to create an entry field and checkbox
-    def create_entry_and_checkbox(tab, row, icon_path, label_text, color, checkbox_text):
+    def create_entry_and_checkbox(tab, row, icon_path, label_text, color, checkbox_text, placeholder):
         create_image_icon(tab, icon_path, row, 1)
         label = ctk.CTkLabel(master=tab, text=label_text, font=("Arial", 16))
         label.grid(row=row, column=2, pady=15)
-        entry = ctk.CTkEntry(master=tab, width=48, font=("Arial", 16, "bold"))
+        entry = ctk.CTkEntry(master=tab, width=48, font=("Arial", 16, "bold"), placeholder_text=placeholder)
         entry.grid(row=row, column=3)
         label1 = ctk.CTkLabel(master=tab, text=" Coins on a " + color + " Space. ", font=("Arial", 16))
         label1.grid(row=row, column=4)
@@ -38,8 +38,8 @@ def create_mario_party_1_interface(frame):
         return entry, checkbox
 
     # Create entry fields and checkboxes for Coins Mods tab
-    blue_entry, blue_checkbox = create_entry_and_checkbox(tabview.tab("Coins Mods"), 1, "assets/eventTags/blueSpace.png", " Gain  ", "Blue", "Double the coins on Last 5")
-    red_entry, red_checkbox = create_entry_and_checkbox(tabview.tab("Coins Mods"), 2, "assets/eventTags/redSpace.png", " Lose  ", "Red", "Double the coins on Last 5")
+    blue_entry, blue_checkbox = create_entry_and_checkbox(tabview.tab("Coins Mods"), 1, "assets/eventTags/blueSpace.png", " Gain  ", "Blue", "Double the coins on Last 5", "3")
+    red_entry, red_checkbox = create_entry_and_checkbox(tabview.tab("Coins Mods"), 2, "assets/eventTags/redSpace.png", " Lose  ", "Red", "Double the coins on Last 5", "3")
 
     # Create button to generate coins modification codes
     parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp1(blue_entry, blue_checkbox, red_entry, red_checkbox), text="Generate Codes")

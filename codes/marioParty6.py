@@ -364,7 +364,40 @@ def getStarReplaceSix3(amount, amountDec):
     return f'''
 MP6 - Replace Happening Star with {amountDec}
 204ECF88 88040017
-204ECF88 {amount}
+044ECF88 {amount}
+E2000001 80008000
+204ECF8C 7C060774
+044ECF8C 7C060378
+E2000001 80008000
+'''
+
+def getZtarReplaceSix1(amount, amountDec):
+    return f'''
+MP6 - Replace Minigame Star with {amountDec}
+204ECF10 A883001E
+044ECF10 {amount}
+044FE404 3884FFFF
+044FEC94 3865FFFF
+E2000001 80008000
+'''
+
+def getZtarReplaceSix2(amount, amountDec):
+    return f'''
+MP6 - Replace Orb Star with {amountDec}
+204ECF4C A8C70034
+044ECF4C {amount}
+044FE404 3884FFFF
+044FEC94 3865FFFF
+E2000001 80008000
+'''
+
+def getZtarReplaceSix3(amount, amountDec):
+    return f'''
+MP6 - Replace Happening Star with {amountDec}
+204ECF88 88040017
+044ECF88 {amount}
+044FE404 3884FFFF
+044FEC94 3865FFFF
 E2000001 80008000
 204ECF8C 7C060774
 044ECF8C 7C060378
