@@ -1,12 +1,13 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 5/9/2024
+# Date: 7/12/2024
 # License: MIT
 # ============================================
 
 # Import necessary functions and modules
 from functions import *
+from events.marioParty5_bonusStarReplace import *
 from events.marioParty5_coins import *
 from events.marioParty5_mgreplace import *
 from events.marioParty5_items import *
@@ -22,6 +23,7 @@ def create_mario_party_5_interface(frame):
     tabview.add("Coins Mods")
     tabview.add("Minigame Replacement")
     tabview.add("Capsule Mods")
+    tabview.add("Bonus Star Replacement")
     tabview.set("Coins Mods")
 
     # Function to create an entry field and checkbox
@@ -469,5 +471,28 @@ def create_mario_party_5_interface(frame):
 
         submitButton = ctk.CTkButton(master=top, command=lambda: fillViaCode5(top, codeText, bombCapsulePrice5, bombCapsuleWeight5, koopaBankCapsulePrice5, koopaBankCapsuleWeight5, bulletBillCapsulePrice5, bulletBillCapsuleWeight5, hammerBroCapsulePrice5, hammerBroCapsuleWeight5, coinBlockCapsulePrice5, coinBlockCapsuleWeight5, duelCapsulePrice5, duelCapsuleWeight5, mushroomCapsulePrice5, mushroomCapsuleWeight5, goldenMushroomCapsulePrice5, goldenMushroomCapsuleWeight5, cursedMushroomCapsulePrice5, cursedMushroomCapsuleWeight5, flutterCapsulePrice5, flutterCapsuleWeight5, spinyCapsulePrice5, spinyCapsuleWeight5, goombaCapsuleWeight5, goombaCapsulePrice5, plantCapsulePrice5, plantCapsuleWeight5, kleptoCapsuleWeight5, kleptoCapsulePrice5, kamekCapsuleWeight5, kamekCapsulePrice5, magiKoopaCapsuleWeight5, magiKoopaCapsulePrice5, blizzardCapsuleWeight5, blizzardCapsulePrice5, podobooCapsulePrice5, podobooCapsuleWeight5, paraTroopaCapsuleWeight5, paraTroopaCapsulePrice5, ukikiCapsulePrice5, ukikiCapsuleWeight5, tweesterCapsulePrice5, tweesterCapsuleWeight5, lakituCapsulePrice5, lakituCapsuleWeight5, warpPipeCapsulePrice5, warpPipeCapsuleWeight5, miracleCapsulePrice5, miracleCapsuleWeight5, boneCapsulePrice5, boneCapsuleWeight5, chanceCapsulePrice5, chanceCapsuleWeight5, chainChompCapsulePrice5, chainChompCapsuleWeight5, bowserCapsulePrice5, bowserCapsuleWeight5, dkCapsulePrice5, dkCapsuleWeight5), text="Submit")
         submitButton.place(x=250, y=425)
+
+    stars6 = ["None", "Blue Star", "Red Star", "Capsule Space Star", "Happening Star", "Bowser Star", "Donkey Kong Star", "Current Coins Star", "Minigame Star", "Coin Star", "Star Star"]
+    
+    label = ctk.CTkLabel(master=tabview.tab("Bonus Star Replacement"), text=" Replace Minigame Star with:  ", font=("Arial", 16))
+    label.grid(row=0, column=0, sticky="w")
+
+    star1 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars6)
+    star1.grid(row=0, column=1)
+
+    label = ctk.CTkLabel(master=tabview.tab("Bonus Star Replacement"), text=" Replace Coin Star with:  ", font=("Arial", 16))
+    label.grid(row=1, column=0, sticky="w")
+
+    star2 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars6)
+    star2.grid(row=1, column=1)
+
+    label = ctk.CTkLabel(master=tabview.tab("Bonus Star Replacement"), text=" Replace Happening Star with:  ", font=("Arial", 16))
+    label.grid(row=2, column=0, sticky="w")
+
+    star3 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars6)
+    star3.grid(row=2, column=1)
+
+    parseButton = ctk.CTkButton(master=tabview.tab("Bonus Star Replacement"), command=lambda: customBonusStarEvent_mp5(star1, star2, star3, stars6), text="Generate Codes")
+    parseButton.place(x=10, y=800)
 
     return frame

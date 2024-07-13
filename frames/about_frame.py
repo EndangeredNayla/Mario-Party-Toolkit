@@ -56,7 +56,7 @@ CREDITS
 
 def get_about_text():
         about_text = """
-About Mario Party Toolkit
+Mario Party Toolkit
 
 Originally Created for DarkSpine's Code Chaos now known as Mario Party Mayhem
 
@@ -65,17 +65,17 @@ Expanding to be a all in one modding toolkit for many variables thats should be 
         return about_text
 
 def about_interface(frame):
-    tabview = ctk.CTkTabview(frame, width=2000, height=750)
+    tabview = ctk.CTkTabview(frame, width=2000, height=850)
     tabview.pack(padx=20, pady=20)
     tabview.add("Credits")
-    tabview.add("About")
+    tabview.add("800")
     tabview.add("License")
-    tabview.set("About")
+    tabview.set("800")
     mit_license_widget = ctk.CTkLabel(tabview.tab("License"), width=80, height=20, text=(get_mit_license_text()))
     mit_license_widget.pack(padx=10, pady=10)
     credits_widget = ctk.CTkLabel(tabview.tab("Credits"), width=80, height=20, text=(get_credits_text()))
     credits_widget.pack(padx=10, pady=10)
-    about_widget = ctk.CTkLabel(tabview.tab("About"), width=80, height=20, text=(get_about_text()))
+    about_widget = ctk.CTkLabel(tabview.tab("800"), width=80, height=20, text=(get_about_text()))
     about_widget.pack(padx=10, pady=10)
 
     return frame

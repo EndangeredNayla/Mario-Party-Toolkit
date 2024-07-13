@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 5/9/2024
+# Date: 7/12/2024
 # License: MIT
 # ============================================
 
@@ -192,4 +192,29 @@ MP5 - Steal Minimum Of {amountDec} Coins from Chain Chomp
 C20F75A8 00000002
 3B7B{value} 7C9B00D0
 60000000 00000000
+'''
+
+def getStarReplaceFive1(amount, amountDec):
+    return f'''
+MP5 - Replace Minigame Star with {amountDec}
+2046871C A81D0022
+044ECF10 {amount}
+E2000001 80008000
+'''
+
+def getStarReplaceFive2(amount, amountDec):
+    return f'''
+MP5 - Replace Orb Star with {amountDec}
+20468724 A81D0026
+04468724 {amount}
+E2000001 80008000
+'''
+
+def getStarReplaceFive3(amount, amountDec):
+    return f'''
+MP5 - Replace Happening Star with {amountDec}
+2046872C 881D0017
+0446872C {amount}
+04468730 7C000378
+E2000001 80008000
 '''

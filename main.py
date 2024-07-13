@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 5/4/2024
+# Date: 7/12/2024
 # License: MIT
 # ============================================
 
@@ -210,12 +210,12 @@ class App(customtkinter.CTk):
             self.mp9_frame.grid(row=0, column=1, sticky="nsew")
             create_mario_party_9_interface(self.mp9_frame)
         else:
-            self.mp8_frame.grid_forget()
+            self.mp9_frame.grid_forget()
         if name == "mpDSFrame":
             self.mpDS_frame.grid(row=0, column=1, sticky="nsew")
             create_mario_party_DS_interface(self.mpDS_frame)
         else:
-            self.mp8_frame.grid_forget()
+            self.mpDS_frame.grid_forget()
         if name == "aboutFrame":
             self.about_frame.grid(row=0, column=1, sticky="nsew")
             about_interface(self.about_frame)
