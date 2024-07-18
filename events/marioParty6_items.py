@@ -13,7 +13,7 @@ import math
 import pyperclip
 
 def itemsEvent_mp6(warpPipeCapsuleWeight6, warpPipeCapsulePrice6, mushroomCapsuleWeight6, goldenMushroomCapsulePrice6, goldenMushroomCapsuleWeight6, slowMushroomCapsulePrice6, slowMushroomCapsuleWeight6, metalMushroomCapsulePrice6, metalMushroomCapsuleWeight6, bulletBillCapsulePrice6, bulletBillCapsuleWeight6, flutterCapsulePrice6, flutterCapsuleWeight6, cursedMushroomCapsulePrice6, cursedMushroomCapsuleWeight6, spinyCapsulePrice6, spinyCapsuleWeight6, goombaCapsulePrice6, goombaCapsuleWeight6, plantCapsulePrice6, plantCapsuleWeight6, kleptoCapsulePrice6, kleptoCapsuleWeight6, toadyCapsulePrice6, toadyCapsuleWeight6, kamekCapsulePrice6, kamekCapsuleWeight6, blizzardCapsulePrice6, blizzardCapsuleWeight6, podobooCapsulePrice6, podobooCapsuleWeight6, zapCapsulePrice6, zapCapsuleWeight6, tweesterCapsulePrice6, tweesterCapsuleWeight6, thwompCapsulePrice6, thwompCapsuleWeight6, bombCapsulePrice6, bombCapsuleWeight6, paraTroopaCapsulePrice6, paraTroopaCapsuleWeight6, snackCapsulePrice6, snackCapsuleWeight6, gaddLightCapsulePrice6, gaddLightCapsuleWeight6, pinkBooCapsulePrice6, pinkBooCapsuleWeight6, chanceTimeCapsulePrice6, chanceTimeCapsuleWeight6, bowserCapsulePrice6, bowserCapsuleWeight6, dkCapsulePrice6, dkCapsuleWeight6, duelCapsulePrice6, duelCapsuleWeight6):
-    if not duelCapsulePrice6.get() or not duelCapsuleWeight6.get() or not metalMushroomCapsulePrice6.get() or not metalMushroomCapsuleWeight6.get() or not mushroomCapsuleWeight6.get() or not goldenMushroomCapsulePrice6.get() or not goldenMushroomCapsuleWeight6.get() or not slowMushroomCapsulePrice6.get() or not slowMushroomCapsuleWeight6.get() or not bulletBillCapsulePrice6.get() or not bulletBillCapsuleWeight6.get() or not warpPipeCapsulePrice6.get() or not warpPipeCapsuleWeight6.get() or not flutterCapsulePrice6.get() or not flutterCapsuleWeight6.get() or not cursedMushroomCapsulePrice6.get() or not cursedMushroomCapsuleWeight6.get() or not spinyCapsulePrice6.get() or not spinyCapsuleWeight6.get() or not goombaCapsuleWeight6.get() or not goombaCapsulePrice6.get() or not plantCapsulePrice6.get() or not plantCapsuleWeight6.get() or not kleptoCapsuleWeight6.get() or not kleptoCapsulePrice6.get() or not kamekCapsuleWeight6.get() or not kamekCapsulePrice6.get() or not toadyCapsuleWeight6.get() or not toadyCapsulePrice6.get() or not blizzardCapsuleWeight6.get() or not blizzardCapsulePrice6.get() or not podobooCapsulePrice6.get() or not podobooCapsuleWeight6.get() or not paraTroopaCapsuleWeight6.get() or not paraTroopaCapsulePrice6.get() or not snackCapsulePrice6.get() or not snackCapsuleWeight6.get() or not zapCapsulePrice6.get() or not zapCapsuleWeight6.get() or not tweesterCapsulePrice6.get() or not tweesterCapsuleWeight6.get() or not thwompCapsulePrice6.get() or not thwompCapsuleWeight6.get() or not warpPipeCapsulePrice6.get() or not warpPipeCapsuleWeight6.get() or not bombCapsulePrice6.get() or not bombCapsuleWeight6.get() or not gaddLightCapsulePrice6.get() or not gaddLightCapsuleWeight6.get() or not chanceTimeCapsulePrice6.get() or not chanceTimeCapsuleWeight6.get() or not pinkBooCapsulePrice6.get() or not pinkBooCapsuleWeight6.get() or not bowserCapsulePrice6.get() or not bowserCapsuleWeight6.get() or not dkCapsulePrice6.get() or not dkCapsuleWeight6.get():
+    if not metalMushroomCapsulePrice6.get() or not metalMushroomCapsuleWeight6.get() or not mushroomCapsuleWeight6.get() or not goldenMushroomCapsulePrice6.get() or not goldenMushroomCapsuleWeight6.get() or not slowMushroomCapsulePrice6.get() or not slowMushroomCapsuleWeight6.get() or not bulletBillCapsulePrice6.get() or not bulletBillCapsuleWeight6.get() or not warpPipeCapsulePrice6.get() or not warpPipeCapsuleWeight6.get() or not flutterCapsulePrice6.get() or not flutterCapsuleWeight6.get() or not cursedMushroomCapsulePrice6.get() or not cursedMushroomCapsuleWeight6.get() or not spinyCapsulePrice6.get() or not spinyCapsuleWeight6.get() or not goombaCapsuleWeight6.get() or not goombaCapsulePrice6.get() or not plantCapsulePrice6.get() or not plantCapsuleWeight6.get() or not kleptoCapsuleWeight6.get() or not kleptoCapsulePrice6.get() or not kamekCapsuleWeight6.get() or not kamekCapsulePrice6.get() or not toadyCapsuleWeight6.get() or not toadyCapsulePrice6.get() or not blizzardCapsuleWeight6.get() or not blizzardCapsulePrice6.get() or not podobooCapsulePrice6.get() or not podobooCapsuleWeight6.get() or not paraTroopaCapsuleWeight6.get() or not paraTroopaCapsulePrice6.get() or not snackCapsulePrice6.get() or not snackCapsuleWeight6.get() or not zapCapsulePrice6.get() or not zapCapsuleWeight6.get() or not tweesterCapsulePrice6.get() or not tweesterCapsuleWeight6.get() or not thwompCapsulePrice6.get() or not thwompCapsuleWeight6.get() or not warpPipeCapsulePrice6.get() or not warpPipeCapsuleWeight6.get() or not bombCapsulePrice6.get() or not bombCapsuleWeight6.get() or not gaddLightCapsulePrice6.get() or not gaddLightCapsuleWeight6.get():
         createDialog("Error", "error", "Please fill out all the boxes.", None)
         return
     
@@ -85,20 +85,55 @@ def itemsEvent_mp6(warpPipeCapsuleWeight6, warpPipeCapsulePrice6, mushroomCapsul
     gaddLightCapsulePrice6 = gaddLightCapsulePrice6.get()
     gaddLightCapsuleWeight6 = gaddLightCapsuleWeight6.get()
 
-    pinkBooCapsulePrice6 = pinkBooCapsulePrice6.get()
-    pinkBooCapsuleWeight6 = pinkBooCapsuleWeight6.get()
+    try:
+        pinkBooCapsulePrice6 = pinkBooCapsulePrice6.get()
+    except:
+        pinkBooCapsulePrice6 = 0
 
-    chanceTimeCapsulePrice6 = chanceTimeCapsulePrice6.get()
-    chanceTimeCapsuleWeight6 = chanceTimeCapsuleWeight6.get()
+    try:
+        pinkBooCapsuleWeight6 = pinkBooCapsuleWeight6.get()
+    except:
+        pinkBooCapsuleWeight6 = 0
 
-    bowserCapsulePrice6 = bowserCapsulePrice6.get()
-    bowserCapsuleWeight6 = bowserCapsuleWeight6.get()
+    try:
+        chanceTimeCapsulePrice6 = chanceTimeCapsulePrice6.get()
+    except:
+        chanceTimeCapsulePrice6 = 0
 
-    dkCapsulePrice6 = dkCapsulePrice6.get()
-    dkCapsuleWeight6 = dkCapsuleWeight6.get()
+    try:
+        chanceTimeCapsuleWeight6 = chanceTimeCapsuleWeight6.get()
+    except:
+        chanceTimeCapsuleWeight6 = 0
 
-    duelCapsulePrice6 = duelCapsulePrice6.get()
-    duelCapsuleWeight6 = duelCapsuleWeight6.get()
+    try:
+        bowserCapsulePrice6 = bowserCapsulePrice6.get()
+    except:
+        bowserCapsulePrice6 = 0
+
+    try:
+        bowserCapsuleWeight6 = bowserCapsuleWeight6.get()
+    except:
+        bowserCapsuleWeight6 = 0
+
+    try:
+        dkCapsulePrice6 = dkCapsulePrice6.get()
+    except:
+        dkCapsulePrice6 = 0
+
+    try:
+        dkCapsuleWeight6 = dkCapsuleWeight6.get()
+    except:
+        dkCapsuleWeight6 = 0
+
+    try:
+        duelCapsulePrice6 = duelCapsulePrice6.get()
+    except:
+        duelCapsulePrice6 = 0
+
+    try:
+        duelCapsuleWeight6 = duelCapsuleWeight6.get()
+    except:
+        duelCapsuleWeight6 = 0
 
 
     orbWeightTotal = int(mushroomCapsuleWeight6) + int(goldenMushroomCapsuleWeight6) + int(bulletBillCapsuleWeight6) + int(slowMushroomCapsuleWeight6) + int(warpPipeCapsuleWeight6) + int(flutterCapsuleWeight6) + int(cursedMushroomCapsuleWeight6) + int(spinyCapsuleWeight6) + int(goombaCapsuleWeight6) + int(plantCapsuleWeight6) + int(kleptoCapsuleWeight6) + int(kamekCapsuleWeight6) + int(toadyCapsuleWeight6) + int(blizzardCapsuleWeight6) + int(podobooCapsuleWeight6) + int(paraTroopaCapsuleWeight6) + int(snackCapsuleWeight6) + int(zapCapsuleWeight6) + int(tweesterCapsuleWeight6) + int(thwompCapsuleWeight6) + int(warpPipeCapsuleWeight6) + int(bombCapsuleWeight6) + int(gaddLightCapsuleWeight6) + int(pinkBooCapsuleWeight6) + int(chanceTimeCapsuleWeight6) + int(bowserCapsuleWeight6) + int(dkCapsuleWeight6) + int(metalMushroomCapsuleWeight6) + int(duelCapsuleWeight6)
@@ -788,7 +823,7 @@ def itemsEvent_mp6(warpPipeCapsuleWeight6, warpPipeCapsulePrice6, mushroomCapsul
     createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
 def savePresetItems6(warpPipeCapsuleWeight6, warpPipeCapsulePrice6, mushroomCapsuleWeight6, goldenMushroomCapsulePrice6, goldenMushroomCapsuleWeight6, slowMushroomCapsulePrice6, slowMushroomCapsuleWeight6, metalMushroomCapsulePrice6, metalMushroomCapsuleWeight6, bulletBillCapsulePrice6, bulletBillCapsuleWeight6, flutterCapsulePrice6, flutterCapsuleWeight6, cursedMushroomCapsulePrice6, cursedMushroomCapsuleWeight6, spinyCapsulePrice6, spinyCapsuleWeight6, goombaCapsulePrice6, goombaCapsuleWeight6, plantCapsulePrice6, plantCapsuleWeight6, kleptoCapsulePrice6, kleptoCapsuleWeight6, toadyCapsulePrice6, toadyCapsuleWeight6, kamekCapsulePrice6, kamekCapsuleWeight6, blizzardCapsulePrice6, blizzardCapsuleWeight6, podobooCapsulePrice6, podobooCapsuleWeight6, zapCapsulePrice6, zapCapsuleWeight6, tweesterCapsulePrice6, tweesterCapsuleWeight6, thwompCapsulePrice6, thwompCapsuleWeight6, bombCapsulePrice6, bombCapsuleWeight6, paraTroopaCapsulePrice6, paraTroopaCapsuleWeight6, snackCapsulePrice6, snackCapsuleWeight6, gaddLightCapsulePrice6, gaddLightCapsuleWeight6, pinkBooCapsulePrice6, pinkBooCapsuleWeight6, chanceTimeCapsulePrice6, chanceTimeCapsuleWeight6, bowserCapsulePrice6, bowserCapsuleWeight6, dkCapsulePrice6, dkCapsuleWeight6, duelCapsulePrice6, duelCapsuleWeight6):
-    if not duelCapsulePrice6.get() or not duelCapsuleWeight6.get() or not metalMushroomCapsulePrice6.get() or not metalMushroomCapsuleWeight6.get() or not mushroomCapsuleWeight6.get() or not goldenMushroomCapsulePrice6.get() or not goldenMushroomCapsuleWeight6.get() or not slowMushroomCapsulePrice6.get() or not slowMushroomCapsuleWeight6.get() or not bulletBillCapsulePrice6.get() or not bulletBillCapsuleWeight6.get() or not warpPipeCapsulePrice6.get() or not warpPipeCapsuleWeight6.get() or not flutterCapsulePrice6.get() or not flutterCapsuleWeight6.get() or not cursedMushroomCapsulePrice6.get() or not cursedMushroomCapsuleWeight6.get() or not spinyCapsulePrice6.get() or not spinyCapsuleWeight6.get() or not goombaCapsuleWeight6.get() or not goombaCapsulePrice6.get() or not plantCapsulePrice6.get() or not plantCapsuleWeight6.get() or not kleptoCapsuleWeight6.get() or not kleptoCapsulePrice6.get() or not kamekCapsuleWeight6.get() or not kamekCapsulePrice6.get() or not toadyCapsuleWeight6.get() or not toadyCapsulePrice6.get() or not blizzardCapsuleWeight6.get() or not blizzardCapsulePrice6.get() or not podobooCapsulePrice6.get() or not podobooCapsuleWeight6.get() or not paraTroopaCapsuleWeight6.get() or not paraTroopaCapsulePrice6.get() or not snackCapsulePrice6.get() or not snackCapsuleWeight6.get() or not zapCapsulePrice6.get() or not zapCapsuleWeight6.get() or not tweesterCapsulePrice6.get() or not tweesterCapsuleWeight6.get() or not thwompCapsulePrice6.get() or not thwompCapsuleWeight6.get() or not warpPipeCapsulePrice6.get() or not warpPipeCapsuleWeight6.get() or not bombCapsulePrice6.get() or not bombCapsuleWeight6.get() or not gaddLightCapsulePrice6.get() or not gaddLightCapsuleWeight6.get() or not chanceTimeCapsulePrice6.get() or not chanceTimeCapsuleWeight6.get() or not pinkBooCapsulePrice6.get() or not pinkBooCapsuleWeight6.get() or not bowserCapsulePrice6.get() or not bowserCapsuleWeight6.get() or not dkCapsulePrice6.get() or not dkCapsuleWeight6.get():
+    if not metalMushroomCapsulePrice6.get() or not metalMushroomCapsuleWeight6.get() or not mushroomCapsuleWeight6.get() or not goldenMushroomCapsulePrice6.get() or not goldenMushroomCapsuleWeight6.get() or not slowMushroomCapsulePrice6.get() or not slowMushroomCapsuleWeight6.get() or not bulletBillCapsulePrice6.get() or not bulletBillCapsuleWeight6.get() or not warpPipeCapsulePrice6.get() or not warpPipeCapsuleWeight6.get() or not flutterCapsulePrice6.get() or not flutterCapsuleWeight6.get() or not cursedMushroomCapsulePrice6.get() or not cursedMushroomCapsuleWeight6.get() or not spinyCapsulePrice6.get() or not spinyCapsuleWeight6.get() or not goombaCapsuleWeight6.get() or not goombaCapsulePrice6.get() or not plantCapsulePrice6.get() or not plantCapsuleWeight6.get() or not kleptoCapsuleWeight6.get() or not kleptoCapsulePrice6.get() or not kamekCapsuleWeight6.get() or not kamekCapsulePrice6.get() or not toadyCapsuleWeight6.get() or not toadyCapsulePrice6.get() or not blizzardCapsuleWeight6.get() or not blizzardCapsulePrice6.get() or not podobooCapsulePrice6.get() or not podobooCapsuleWeight6.get() or not paraTroopaCapsuleWeight6.get() or not paraTroopaCapsulePrice6.get() or not snackCapsulePrice6.get() or not snackCapsuleWeight6.get() or not zapCapsulePrice6.get() or not zapCapsuleWeight6.get() or not tweesterCapsulePrice6.get() or not tweesterCapsuleWeight6.get() or not thwompCapsulePrice6.get() or not thwompCapsuleWeight6.get() or not warpPipeCapsulePrice6.get() or not warpPipeCapsuleWeight6.get() or not bombCapsulePrice6.get() or not bombCapsuleWeight6.get() or not gaddLightCapsulePrice6.get() or not gaddLightCapsuleWeight6.get():
         createDialog("Error", "error", "Please fill out all the boxes.", None)
         return
     
@@ -838,16 +873,57 @@ def savePresetItems6(warpPipeCapsuleWeight6, warpPipeCapsulePrice6, mushroomCaps
     bombCapsuleWeight6 = bombCapsuleWeight6.get()
     gaddLightCapsulePrice6 = gaddLightCapsulePrice6.get()
     gaddLightCapsuleWeight6 = gaddLightCapsuleWeight6.get()
-    pinkBooCapsulePrice6 = pinkBooCapsulePrice6.get()
-    pinkBooCapsuleWeight6 = pinkBooCapsuleWeight6.get()
-    chanceTimeCapsulePrice6 = chanceTimeCapsulePrice6.get()
-    chanceTimeCapsuleWeight6 = chanceTimeCapsuleWeight6.get()
-    bowserCapsulePrice6 = bowserCapsulePrice6.get()
-    bowserCapsuleWeight6 = bowserCapsuleWeight6.get()
-    dkCapsulePrice6 = dkCapsulePrice6.get()
-    dkCapsuleWeight6 = dkCapsuleWeight6.get()
-    duelCapsulePrice6 = duelCapsulePrice6.get()
-    duelCapsuleWeight6 = duelCapsuleWeight6.get()
+    
+    try:
+        pinkBooCapsulePrice6 = pinkBooCapsulePrice6.get()
+    except:
+        pinkBooCapsulePrice6 = 0
+
+    try:
+        pinkBooCapsuleWeight6 = pinkBooCapsuleWeight6.get()
+    except:
+        pinkBooCapsuleWeight6 = 0
+
+    try:
+        chanceTimeCapsulePrice6 = chanceTimeCapsulePrice6.get()
+    except:
+        chanceTimeCapsulePrice6 = 0
+
+    try:
+        chanceTimeCapsuleWeight6 = chanceTimeCapsuleWeight6.get()
+    except:
+        chanceTimeCapsuleWeight6 = 0
+
+    try:
+        bowserCapsulePrice6 = bowserCapsulePrice6.get()
+    except:
+        bowserCapsulePrice6 = 0
+
+    try:
+        bowserCapsuleWeight6 = bowserCapsuleWeight6.get()
+    except:
+        bowserCapsuleWeight6 = 0
+
+    try:
+        dkCapsulePrice6 = dkCapsulePrice6.get()
+    except:
+        dkCapsulePrice6 = 0
+
+    try:
+        dkCapsuleWeight6 = dkCapsuleWeight6.get()
+    except:
+        dkCapsuleWeight6 = 0
+
+    try:
+        duelCapsulePrice6 = duelCapsulePrice6.get()
+    except:
+        duelCapsulePrice6 = 0
+
+    try:
+        duelCapsuleWeight6 = duelCapsuleWeight6.get()
+    except:
+        duelCapsuleWeight6 = 0
+
     prices6 = ["5", goldenMushroomCapsulePrice6, slowMushroomCapsulePrice6, metalMushroomCapsulePrice6, bulletBillCapsulePrice6, flutterCapsulePrice6, cursedMushroomCapsulePrice6, spinyCapsulePrice6, goombaCapsulePrice6, plantCapsulePrice6, kleptoCapsulePrice6, kamekCapsulePrice6, toadyCapsulePrice6, blizzardCapsulePrice6, podobooCapsulePrice6, paraTroopaCapsulePrice6, snackCapsulePrice6, zapCapsulePrice6, tweesterCapsulePrice6, thwompCapsulePrice6, warpPipeCapsulePrice6, bombCapsulePrice6, gaddLightCapsulePrice6, pinkBooCapsulePrice6, chanceTimeCapsulePrice6, bowserCapsulePrice6, dkCapsulePrice6, duelCapsulePrice6]
     weights6 = [mushroomCapsuleWeight6, goldenMushroomCapsuleWeight6, slowMushroomCapsuleWeight6, metalMushroomCapsuleWeight6, bulletBillCapsuleWeight6, flutterCapsuleWeight6, cursedMushroomCapsuleWeight6, spinyCapsuleWeight6, goombaCapsuleWeight6, plantCapsuleWeight6, kleptoCapsuleWeight6, kamekCapsuleWeight6, toadyCapsuleWeight6, blizzardCapsuleWeight6, podobooCapsuleWeight6, paraTroopaCapsuleWeight6, snackCapsuleWeight6, zapCapsuleWeight6, tweesterCapsuleWeight6, thwompCapsuleWeight6, warpPipeCapsuleWeight6, bombCapsuleWeight6, gaddLightCapsuleWeight6, pinkBooCapsuleWeight6, chanceTimeCapsuleWeight6, bowserCapsuleWeight6, dkCapsuleWeight6, duelCapsuleWeight6]
     file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
@@ -878,13 +954,20 @@ def loadPresetItems6(warpPipeCapsuleWeight6, warpPipeCapsulePrice6, mushroomCaps
 
         # Update widgets with loaded values
         for index, widget in enumerate(pricesNames6):
-            if widget and index < len(prices6In):
-                widget.delete(0, 'end')
-                widget.insert(0, int(prices6In[index]))
-
+            try:
+                if widget and index < len(prices6In):
+                    widget.delete(0, 'end')
+                    widget.insert(0, int(prices6In[index]))
+            except AttributeError:
+                pricesNames6[index] = "0"
+        
         for index, widget in enumerate(weightsNames6):
-            if widget and index < len(weights6In):
-                widget.delete(0, 'end')
-                widget.insert(0, int(weights6In[index]))
-        print("MPT file laoded successfully!")
-        createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
+            try:
+                if widget and index < len(weights6In):
+                    widget.delete(0, 'end')
+                    widget.insert(0, int(weights6In[index]))
+            except AttributeError:
+                weightsNames6[index] = "0"
+        
+        print("MPT file loaded successfully!")
+        createDialog("Operation Successful", "success", "Presets file loaded successfully!", None)
