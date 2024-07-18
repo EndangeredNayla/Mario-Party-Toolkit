@@ -37,8 +37,8 @@ def create_image_icon(frame, image_path, row, column):
     image = Image.open(fetchResource(image_path))
     image = image.resize((48, 48))
     image_tk = ImageTk.PhotoImage(image)
-    label = ctk.CTkLabel(frame, image=image_tk)
-    label.configure(fg_color=['#fcfcfc', '#323232'], text="") # Windows fix
+    label = ctk.CTkLabel(frame, image=image_tk, font=("Arial", 1))
+    label.configure(fg_color=['#fcfcfc', '#323232'], text=str(row)+":"+str(column)) # Windows fix
     label.image = image_tk  # Keep a reference to the image to prevent it from being garbage collected
     label.grid(row=row, column=column)
 
