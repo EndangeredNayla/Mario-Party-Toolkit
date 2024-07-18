@@ -50,7 +50,7 @@ def create_mario_party_4_interface(frame):
     bowser_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/items/bowserSuit4.png", " Gain ", " Coins when squishing a player.", "30")
     booHouseStar_entry = create_entry(tabview.tab("Coins Mods"), 7, "assets/eventTags/booHouseStars.png", " Costs ", " Coins when stealing a Star.", "50")
     booHouseCoins_entry = create_entry(tabview.tab("Coins Mods"), 8, "assets/eventTags/booHouseCoins.png", " Costs ", " Coins when stealing coins.", "5")
-    booHouseCoinsMin_entry = create_entry(tabview.tab("Coins Mods"), 9, "assets/eventTags/booHouseCoins.png", " Steal ", " Minimum when stealing coins.")
+    booHouseCoinsMin_entry = create_entry(tabview.tab("Coins Mods"), 9, "assets/eventTags/booHouseCoins.png", " Steal ", " Minimum when stealing coins.", "")
     lottery_entry = create_entry(tabview.tab("Coins Mods"), 10, "assets/eventTags/lottery4.png", " Costs ", " Coins to play the Lottery.", "5")
 
     # Create button to generate coins modification codes
