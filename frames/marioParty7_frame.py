@@ -229,9 +229,20 @@ def create_mario_party_7_interface(frame):
     label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.  ", font=("Arial", 16))
     label.grid(row=12, column=6)
 
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/koopaCapsule.png", 13, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    label.grid(row=13, column=2)
+    koopaCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    koopaCapsulePrice7.grid(row=13, column=3)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label.grid(row=13, column=4)
+    koopaCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    koopaCapsuleWeight7.grid(row=13, column=5)
+    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    label.grid(row=13, column=6)
+
     label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text="", font=("Arial", 16))
     label.grid(row=2, column=7)
-
     
     icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/kamekCapsule.png", 2, 8)
     label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
@@ -455,29 +466,148 @@ def create_mario_party_7_interface(frame):
     label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
     label.grid(row=7, column=20)
     
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/koopaCapsule.png", 8, 15)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=8, column=16)
-    koopaCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    koopaCapsulePrice7.grid(row=8, column=17)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=8, column=18)
-    koopaCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    koopaCapsuleWeight7.grid(row=8, column=19)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=8, column=20)
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/cursedMushroomCapsule7.png", 9, 15)
+    labelPoison1 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    poisonMushroomPrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    labelPoison2 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    poisonMushroomWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    labelPoison3 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
 
-    parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7), text="Generate Codes")
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/duelCapsule.png", 10, 15)
+    labelDuel1 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    duelCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    labelDuel2 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    duelCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    labelDuel3 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/dkCapsule.png", 11, 15)
+    labelDK1 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    dkCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    labelDK2 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    dkCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    labelDK3 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/orbBagCapsule.png", 12, 15)
+    labelOrbBag1 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    orbBagCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    labelOrbBag2 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    orbBagCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    labelOrbBag3 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/mysteryCapsule.png", 8, 15)
+    labelMystery1 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    mysteryCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    labelMystery2 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    mysteryCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
+    labelMystery3 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+
+    parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7, poisonMushroomPrice7 if hide_custom == False else "0", poisonMushroomWeight7 if hide_custom == False else "0", orbBagCapsulePrice7 if hide_custom == False else "0", orbBagCapsuleWeight7 if hide_custom == False else "0", mysteryCapsulePrice7 if hide_custom == False else "0", mysteryCapsuleWeight7 if hide_custom == False else "0", mysteryCapsulePrice7 if hide_custom == False else "0", dkCapsuleWeight7 if hide_custom == False else "0", duelCapsulePrice7 if hide_custom == False else "0", duelCapsuleWeight7  if hide_custom == False else "0"), text="Generate Codes")
     parseButton.place(x=10, y=800)
 
-    parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: savePresetItems7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7), text="Save Preset")
+    parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: savePresetItems7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7, poisonMushroomPrice7 if hide_custom == False else "0", poisonMushroomWeight7 if hide_custom == False else "0", orbBagCapsulePrice7 if hide_custom == False else "0", orbBagCapsuleWeight7 if hide_custom == False else "0", mysteryCapsulePrice7 if hide_custom == False else "0", mysteryCapsuleWeight7 if hide_custom == False else "0", mysteryCapsulePrice7 if hide_custom == False else "0", dkCapsuleWeight7 if hide_custom == False else "0", duelCapsulePrice7 if hide_custom == False else "0", duelCapsuleWeight7  if hide_custom == False else "0"), text="Save Preset")
     parseButton.place(x=160, y=800)
 
-    parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: loadPresetItems7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7), text="Load Preset")
+    parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: loadPresetItems7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7, poisonMushroomPrice7 if hide_custom == False else "0", poisonMushroomWeight7 if hide_custom == False else "0", orbBagCapsulePrice7 if hide_custom == False else "0", orbBagCapsuleWeight7 if hide_custom == False else "0", mysteryCapsulePrice7 if hide_custom == False else "0", mysteryCapsuleWeight7 if hide_custom == False else "0", mysteryCapsulePrice7 if hide_custom == False else "0", dkCapsuleWeight7 if hide_custom == False else "0", duelCapsulePrice7 if hide_custom == False else "0", duelCapsuleWeight7  if hide_custom == False else "0"), text="Load Preset")
     parseButton.place(x=310, y=800)
 
     parseButtonSevenFillViaCode = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: fillViaCode7Actions(), text="Fill Via Code")
     parseButtonSevenFillViaCode.place(x=460, y=800)
+
+    hideCustomSwitch = ctk.CTkSwitch(master=tabview.tab("Orb Mods"), text="Show Custom Orbs")
+    hideCustomSwitch.place(x=610, y=800)
+
+    global hide_custom
+    hide_custom = False
+
+    def toggle_hide_custom():
+        global hide_custom
+        hide_custom = not hide_custom
+
+        if hide_custom:
+            mysteryCapsulePrice7.grid_forget()
+            mysteryCapsuleWeight7.grid_forget()
+            dkCapsulePrice7.grid_forget()
+            dkCapsuleWeight7.grid_forget()
+            orbBagCapsulePrice7.grid_forget()
+            orbBagCapsuleWeight7.grid_forget()
+            duelCapsulePrice7.grid_forget()
+            duelCapsuleWeight7.grid_forget()
+            poisonMushroomPrice7.grid_forget()
+            poisonMushroomWeight7.grid_forget()
+            labelMystery1.grid_forget()
+            labelMystery2.grid_forget()
+            labelMystery3.grid_forget()
+            labelDK1.grid_forget()
+            labelDK2.grid_forget()
+            labelDK3.grid_forget()
+            labelOrbBag1.grid_forget()
+            labelOrbBag2.grid_forget()
+            labelOrbBag3.grid_forget()
+            labelDuel1.grid_forget()
+            labelDuel2.grid_forget()
+            labelDuel3.grid_forget()
+            labelPoison1.grid_forget()
+            labelPoison2.grid_forget()
+            labelPoison3.grid_forget()
+            for widget in tabview.tab("Orb Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "10:15":
+                    widget.grid_forget()
+            for widget in tabview.tab("Orb Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "9:15":
+                    widget.grid_forget()
+            for widget in tabview.tab("Orb Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "8:15":
+                    widget.grid_forget()
+            for widget in tabview.tab("Orb Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "11:15":
+                    widget.grid_forget()
+            for widget in tabview.tab("Orb Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "12:15":
+                    widget.grid_forget()
+        else:
+            for widget in tabview.tab("Orb Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "8:15":
+                    widget.grid(row=8, column=15)
+            for widget in tabview.tab("Orb Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "9:15":
+                    widget.grid(row=9, column=15)
+            for widget in tabview.tab("Orb Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "10:15":
+                    widget.grid(row=10, column=15)
+            for widget in tabview.tab("Orb Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "11:15":
+                    widget.grid(row=11, column=15)
+            for widget in tabview.tab("Orb Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "12:15":
+                    widget.grid(row=12, column=15)
+            mysteryCapsulePrice7.grid(row=12, column=17)
+            mysteryCapsuleWeight7.grid(row=12, column=19)
+            orbBagCapsulePrice7.grid(row=11, column=17)
+            orbBagCapsuleWeight7.grid(row=11, column=19)
+            dkCapsulePrice7.grid(row=10, column=17)
+            dkCapsuleWeight7.grid(row=10, column=19)
+            duelCapsulePrice7.grid(row=9, column=17)
+            duelCapsuleWeight7.grid(row=9, column=19)
+            poisonMushroomPrice7.grid(row=8, column=17)
+            poisonMushroomWeight7.grid(row=8, column=19)
+            labelMystery1.grid(row=12, column=16)
+            labelMystery2.grid(row=12, column=18)
+            labelMystery3.grid(row=12, column=20)
+            labelOrbBag1.grid(row=11, column=16)
+            labelOrbBag2.grid(row=11, column=18)
+            labelOrbBag3.grid(row=11, column=20)
+            labelDK1.grid(row=10, column=16)
+            labelDK2.grid(row=10, column=18)
+            labelDK3.grid(row=10, column=20)
+            labelDuel1.grid(row=9, column=16)
+            labelDuel2.grid(row=9, column=18)
+            labelDuel3.grid(row=9, column=20)
+            labelPoison1.grid(row=8, column=16)
+            labelPoison2.grid(row=8, column=18)
+            labelPoison3.grid(row=8, column=20)
+
+    hideCustomSwitch.configure(command=toggle_hide_custom)
+    toggle_hide_custom()
 
     def fillViaCode7Actions():
         top = ctk.CTkToplevel(height=500, width=500)

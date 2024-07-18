@@ -12,7 +12,7 @@ import csv
 import math
 import pyperclip
 
-def itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7):
+def itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7, posionMushroomPrice7, posionMushroomWeight7, dkCapsulePrice7, dkCapsuleWeight7, orbBagCapsulePrice7, orbBagCapsuleWeight7, duelCapsulePrice7, duelCapsuleWeight7, mysteryCapsulePrice7, mysteryCapsuleWeight7):
     if not mushroomCapsuleWeight7.get() or not goldenMushroomCapsulePrice7.get() or not goldenMushroomCapsuleWeight7.get() or not slowMushroomCapsulePrice7.get() or not slowMushroomCapsuleWeight7.get() or not metalMushroomCapsulePrice7.get() or not metalMushroomCapsuleWeight7.get() or not flutterCapsulePrice7.get() or not flutterCapsuleWeight7.get() or not cannonCapsulePrice7.get() or not cannonCapsuleWeight7.get() or not snackCapsulePrice7.get() or not snackCapsuleWeight7.get() or not lakituCapsulePrice7.get() or not lakituCapsuleWeight7.get() or not hammerBroCapsuleWeight7.get() or not hammerBroCapsulePrice7.get() or not plantCapsulePrice7.get() or not plantCapsuleWeight7.get() or not spearCapsuleWeight7.get() or not spearCapsulePrice7.get() or not kamekCapsuleWeight7.get() or not kamekCapsulePrice7.get() or not toadyCapsuleWeight7.get() or not toadyCapsulePrice7.get() or not blizzardCapsuleWeight7.get() or not blizzardCapsulePrice7.get() or not banditCapsulePrice7.get() or not banditCapsuleWeight7.get() or not pinkBooCapsuleWeight7.get() or not pinkBooCapsulePrice7.get() or not spinyCapsulePrice7.get() or not spinyCapsuleWeight7.get() or not zapCapsulePrice7.get() or not zapCapsuleWeight7.get() or not tweesterCapsulePrice7.get() or not tweesterCapsuleWeight7.get() or not thwompCapsulePrice7.get() or not thwompCapsuleWeight7.get() or not warpCapsulePrice7.get() or not warpCapsuleWeight7.get() or not bombCapsulePrice7.get() or not bombCapsuleWeight7.get() or not fireballCapsulePrice7.get() or not fireballCapsuleWeight7.get() or not eggCapsulePrice7.get() or not eggCapsuleWeight7.get() or not flowerCapsulePrice7.get() or not flowerCapsuleWeight7.get() or not vacuumCapsulePrice7.get() or not vacuumCapsuleWeight7.get() or not magicCapsulePrice7.get() or not magicCapsuleWeight7.get() or not tripleCapsulePrice7.get() or not tripleCapsuleWeight7.get() or not koopaCapsulePrice7.get() or not koopaCapsuleWeight7.get():
         if sys.platform == "darwin":
             createDialog("Error", "error", "Please fill out all the boxes.", None)
@@ -106,7 +106,57 @@ def itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMu
     koopaCapsulePrice7 = koopaCapsulePrice7.get()
     koopaCapsuleWeight7 = koopaCapsuleWeight7.get()
 
-    orbWeightTotal = int(mushroomCapsuleWeight7) + int(goldenMushroomCapsuleWeight7) + int(metalMushroomCapsuleWeight7) + int(slowMushroomCapsuleWeight7) + int(flutterCapsuleWeight7) + int(cannonCapsuleWeight7) + int(snackCapsuleWeight7) + int(lakituCapsuleWeight7) + int(hammerBroCapsuleWeight7) + int(plantCapsuleWeight7) + int(spearCapsuleWeight7) + int(kamekCapsuleWeight7) + int(toadyCapsuleWeight7) + int(blizzardCapsuleWeight7) + int(banditCapsuleWeight7) + int(pinkBooCapsuleWeight7) + int(spinyCapsuleWeight7) + int(zapCapsuleWeight7) + int(tweesterCapsuleWeight7) + int(thwompCapsuleWeight7) + int(warpCapsuleWeight7) + int(bombCapsuleWeight7) + int(fireballCapsuleWeight7) + int(flowerCapsuleWeight7) + int(eggCapsuleWeight7) + int(vacuumCapsuleWeight7) + int(magicCapsuleWeight7) + int(tripleCapsuleWeight7) + int(koopaCapsuleWeight7)
+    try:
+        orbBagCapsulePrice7 = orbBagCapsulePrice7.get()
+    except:
+        orbBagCapsulePrice7 = 00
+
+    try:
+        orbBagCapsuleWeight7 = orbBagCapsuleWeight7.get()
+    except:
+        orbBagCapsuleWeight7 = 00
+
+    try:
+        dkCapsulePrice7 = dkCapsulePrice7.get()
+    except:
+        dkCapsulePrice7 = 00
+
+    try:
+        dkCapsuleWeight7 = dkCapsuleWeight7.get()
+    except:
+        dkCapsuleWeight7 = 00
+
+    try:
+        posionMushroomPrice7 = posionMushroomPrice7.get()
+    except:
+        posionMushroomPrice7 = 00
+
+    try:
+        posionMushroomWeight7 = posionMushroomWeight7.get()
+    except:
+        posionMushroomWeight7 = 00
+
+    try:
+        duelCapsulePrice7 = duelCapsulePrice7.get()
+    except:
+        duelCapsulePrice7 = 00
+
+    try:
+        duelCapsuleWeight7 = duelCapsuleWeight7.get()
+    except:
+        duelCapsuleWeight7 = 00
+
+    try:
+        mysteryCapsulePrice7 = mysteryCapsulePrice7.get()
+    except:
+        mysteryCapsulePrice7 = 00
+
+    try:
+        mysteryCapsuleWeight7 = mysteryCapsuleWeight7.get()
+    except:
+        mysteryCapsuleWeight7 = 00
+    
+    orbWeightTotal = int(mushroomCapsuleWeight7) + int(goldenMushroomCapsuleWeight7) + int(metalMushroomCapsuleWeight7) + int(slowMushroomCapsuleWeight7) + int(flutterCapsuleWeight7) + int(cannonCapsuleWeight7) + int(snackCapsuleWeight7) + int(lakituCapsuleWeight7) + int(hammerBroCapsuleWeight7) + int(plantCapsuleWeight7) + int(spearCapsuleWeight7) + int(kamekCapsuleWeight7) + int(toadyCapsuleWeight7) + int(blizzardCapsuleWeight7) + int(banditCapsuleWeight7) + int(pinkBooCapsuleWeight7) + int(spinyCapsuleWeight7) + int(zapCapsuleWeight7) + int(tweesterCapsuleWeight7) + int(thwompCapsuleWeight7) + int(warpCapsuleWeight7) + int(bombCapsuleWeight7) + int(fireballCapsuleWeight7) + int(flowerCapsuleWeight7) + int(eggCapsuleWeight7) + int(vacuumCapsuleWeight7) + int(magicCapsuleWeight7) + int(tripleCapsuleWeight7) + int(koopaCapsuleWeight7) + int(mysteryCapsuleWeight7) + int(duelCapsuleWeight7) + int(dkCapsuleWeight7) + int(mysteryCapsuleWeight7) + int(orbBagCapsuleWeight7)
 
     def calculateWeight(weight):
         if orbWeightTotal < 100:
@@ -146,12 +196,17 @@ def itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMu
     vacuumCapsuleWeight7 = calculateWeight(vacuumCapsuleWeight7)
     magicCapsuleWeight7 = calculateWeight(magicCapsuleWeight7)
     tripleCapsuleWeight7 = calculateWeight(tripleCapsuleWeight7)
+    orbBagCapsuleWeight7 = calculateWeight(orbBagCapsuleWeight7)
+    posionMushroomWeight7 = calculateWeight(posionMushroomWeight7)
+    dkCapsuleWeight7 = calculateWeight(dkCapsuleWeight7)
+    duelCapsuleWeight7 = calculateWeight(duelCapsuleWeight7)
+    mysteryCapsuleWeight7 = calculateWeight(mysteryCapsuleWeight7)
     koopaCapsuleWeight7 = calculateWeight(koopaCapsuleWeight7)
-    
-    orbWeightTotal = mushroomCapsuleWeight7 + goldenMushroomCapsuleWeight7 + metalMushroomCapsuleWeight7 + slowMushroomCapsuleWeight7 + flutterCapsuleWeight7 + cannonCapsuleWeight7 + snackCapsuleWeight7 + lakituCapsuleWeight7 + hammerBroCapsuleWeight7 + plantCapsuleWeight7 + spearCapsuleWeight7 + kamekCapsuleWeight7 + toadyCapsuleWeight7 + blizzardCapsuleWeight7 + banditCapsuleWeight7 + pinkBooCapsuleWeight7 + spinyCapsuleWeight7 + zapCapsuleWeight7 + tweesterCapsuleWeight7 + thwompCapsuleWeight7 + warpCapsuleWeight7 + bombCapsuleWeight7 + fireballCapsuleWeight7 + flowerCapsuleWeight7 + eggCapsuleWeight7 + vacuumCapsuleWeight7 + magicCapsuleWeight7 + tripleCapsuleWeight7 + koopaCapsuleWeight7
+
+    orbWeightTotal = mushroomCapsuleWeight7 + goldenMushroomCapsuleWeight7 + metalMushroomCapsuleWeight7 + slowMushroomCapsuleWeight7 + flutterCapsuleWeight7 + cannonCapsuleWeight7 + snackCapsuleWeight7 + lakituCapsuleWeight7 + hammerBroCapsuleWeight7 + plantCapsuleWeight7 + spearCapsuleWeight7 + kamekCapsuleWeight7 + toadyCapsuleWeight7 + blizzardCapsuleWeight7 + banditCapsuleWeight7 + pinkBooCapsuleWeight7 + spinyCapsuleWeight7 + zapCapsuleWeight7 + tweesterCapsuleWeight7 + thwompCapsuleWeight7 + warpCapsuleWeight7 + bombCapsuleWeight7 + fireballCapsuleWeight7 + flowerCapsuleWeight7 + eggCapsuleWeight7 + vacuumCapsuleWeight7 + magicCapsuleWeight7 + tripleCapsuleWeight7 + koopaCapsuleWeight7 + mysteryCapsuleWeight7 + duelCapsuleWeight7 + dkCapsuleWeight7 + orbBagCapsuleWeight7 + posionMushroomWeight7
     
     if orbWeightTotal < 100:
-        var_names = ['mushroomCapsuleWeight7', 'goldenMushroomCapsuleWeight7', 'metalMushroomCapsuleWeight7', 'slowMushroomCapsuleWeight7', 'flutterCapsuleWeight7', 'cannonCapsuleWeight7', 'snackCapsuleWeight7', 'lakituCapsuleWeight7', 'hammerBroCapsuleWeight7', 'plantCapsuleWeight7', 'spearCapsuleWeight7', 'kamekCapsuleWeight7', 'toadyCapsuleWeight7', 'blizzardCapsuleWeight7', 'banditCapsuleWeight7', 'pinkBooCapsuleWeight7', 'spinyCapsuleWeight7', 'zapCapsuleWeight7', 'tweesterCapsuleWeight7', 'thwompCapsuleWeight7', 'warpCapsuleWeight7', 'bombCapsuleWeight7', 'fireballCapsuleWeight7', 'flowerCapsuleWeight7', 'eggCapsuleWeight7', 'vacuumCapsuleWeight7', 'magicCapsuleWeight7', 'tripleCapsuleWeight7', 'koopaCapsuleWeight7']
+        var_names = ['mushroomCapsuleWeight7', 'goldenMushroomCapsuleWeight7', 'metalMushroomCapsuleWeight7', 'slowMushroomCapsuleWeight7', 'flutterCapsuleWeight7', 'cannonCapsuleWeight7', 'snackCapsuleWeight7', 'lakituCapsuleWeight7', 'hammerBroCapsuleWeight7', 'plantCapsuleWeight7', 'spearCapsuleWeight7', 'kamekCapsuleWeight7', 'toadyCapsuleWeight7', 'blizzardCapsuleWeight7', 'banditCapsuleWeight7', 'pinkBooCapsuleWeight7', 'spinyCapsuleWeight7', 'zapCapsuleWeight7', 'tweesterCapsuleWeight7', 'thwompCapsuleWeight7', 'warpCapsuleWeight7', 'bombCapsuleWeight7', 'fireballCapsuleWeight7', 'flowerCapsuleWeight7', 'eggCapsuleWeight7', 'vacuumCapsuleWeight7', 'magicCapsuleWeight7', 'tripleCapsuleWeight7', 'koopaCapsuleWeight7', 'mysteryCapsuleWeight7', 'duelCapsuleWeight7', 'dkCapsuleWeight7', 'orbBagCapsuleWeight7', 'posionMushroomWeight7']
         max_var = max(zip(var_names, (map(eval, var_names))), key=lambda tuple: tuple[1])[0]
 
         if max_var == 'mushroomCapsuleWeight7':
@@ -241,6 +296,21 @@ def itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMu
         if max_var == 'koopaCapsuleWeight7':
             koopaCapsuleWeight7 += (100 - orbWeightTotal)
 
+        if max_var == 'duelCapsuleWeight7':
+            duelCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'dkCapsuleWeight7':
+            dkCapsuleWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'posionMushroomWeight7':
+            posionMushroomWeight7 += (100 - orbWeightTotal)
+
+        if max_var == 'mysteryCapsulePrice7':
+            mysteryCapsulePrice7 += (100 - orbWeightTotal)
+
+        if max_var == 'orbBagCapsulePrice7':
+            orbBagCapsulePrice7 += (100 - orbWeightTotal)
+
     mushroomCapsuleWeight7 = str(mushroomCapsuleWeight7)
     goldenMushroomCapsuleWeight7 = str(goldenMushroomCapsuleWeight7)
     metalMushroomCapsuleWeight7 = str(metalMushroomCapsuleWeight7)
@@ -270,6 +340,11 @@ def itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMu
     magicCapsuleWeight7 = str(magicCapsuleWeight7)
     tripleCapsuleWeight7 = str(tripleCapsuleWeight7)
     koopaCapsuleWeight7 = str(koopaCapsuleWeight7)
+    duelCapsuleWeight7 = str(duelCapsuleWeight7)
+    dkCapsuleWeight7 = str(dkCapsuleWeight7)
+    posionMushroomWeight7 = str(posionMushroomWeight7)
+    mysteryCapsulePrice7 = str(mysteryCapsulePrice7)
+    orbBagCapsulePrice7 = str(orbBagCapsulePrice7)
 
     try:
         mushroomCapsuleWeight7 = hex(int(mushroomCapsuleWeight7))
@@ -785,14 +860,100 @@ def itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMu
     except:
         koopaCapsulePrice7 = "00"
 
-    generatedCode = getOrbModsSeven(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7)
+    try:
+        dkCapsuleWeight7 = hex(int(dkCapsuleWeight7))
+        if len(dkCapsuleWeight7) == 4:
+            dkCapsuleWeight7 = dkCapsuleWeight7[2:]
+        elif len(dkCapsuleWeight7) == 3:
+            dkCapsuleWeight7 = "0" + dkCapsuleWeight7[2:]
+    except:
+        dkCapsuleWeight7 = "00"
+
+    try:
+        dkCapsulePrice7 = hex(int(dkCapsulePrice7))
+        if len(dkCapsulePrice7) == 4:
+            dkCapsulePrice7 = dkCapsulePrice7[2:]
+        elif len(dkCapsulePrice7) == 3:
+            dkCapsulePrice7 = "0" + dkCapsulePrice7[2:]
+    except:
+        dkCapsulePrice7 = "00"
+
+    try:
+        duelCapsuleWeight7 = hex(int(duelCapsuleWeight7))
+        if len(duelCapsuleWeight7) == 4:
+            duelCapsuleWeight7 = duelCapsuleWeight7[2:]
+        elif len(duelCapsuleWeight7) == 3:
+            duelCapsuleWeight7 = "0" + duelCapsuleWeight7[2:]
+    except:
+        duelCapsuleWeight7 = "00"
+    try:
+        duelCapsulePrice7 = hex(int(duelCapsulePrice7))
+        if len(duelCapsulePrice7) == 4:
+            duelCapsulePrice7 = duelCapsulePrice7[2:]
+        elif len(duelCapsulePrice7) == 3:
+            duelCapsulePrice7 = "0" + duelCapsulePrice7[2:]
+    except:
+        duelCapsulePrice7 = "00"
+
+    try:
+        orbBagCapsuleWeight7 = hex(int(orbBagCapsuleWeight7))
+        if len(orbBagCapsuleWeight7) == 4:
+            orbBagCapsuleWeight7 = orbBagCapsuleWeight7[2:]
+        elif len(orbBagCapsuleWeight7) == 3:
+            orbBagCapsuleWeight7 = "0" + orbBagCapsuleWeight7[2:]
+    except:
+        orbBagCapsuleWeight7 = "00"
+    try:
+        orbBagCapsulePrice7 = hex(int(orbBagCapsulePrice7))
+        if len(orbBagCapsulePrice7) == 4:
+            orbBagCapsulePrice7 = orbBagCapsulePrice7[2:]
+        elif len(orbBagCapsulePrice7) == 3:
+            orbBagCapsulePrice7 = "0" + orbBagCapsulePrice7[2:]
+    except:
+        orbBagCapsulePrice7 = "00"
+
+    try:
+        mysteryCapsuleWeight7 = hex(int(mysteryCapsuleWeight7))
+        if len(mysteryCapsuleWeight7) == 4:
+            mysteryCapsuleWeight7 = mysteryCapsuleWeight7[2:]
+        elif len(mysteryCapsuleWeight7) == 3:
+            mysteryCapsuleWeight7 = "0" + mysteryCapsuleWeight7[2:]
+    except:
+        mysteryCapsuleWeight7 = "00"
+    try:
+        mysteryCapsulePrice7 = hex(int(mysteryCapsulePrice7))
+        if len(mysteryCapsulePrice7) == 4:
+            mysteryCapsulePrice7 = mysteryCapsulePrice7[2:]
+        elif len(mysteryCapsulePrice7) == 3:
+            mysteryCapsulePrice7 = "0" + mysteryCapsulePrice7[2:]
+    except:
+        mysteryCapsulePrice7 = "00"
+
+    try:
+        posionMushroomWeight7 = hex(int(posionMushroomWeight7))
+        if len(posionMushroomWeight7) == 4:
+            posionMushroomWeight7 = posionMushroomWeight7[2:]
+        elif len(posionMushroomWeight7) == 3:
+            posionMushroomWeight7 = "0" + posionMushroomWeight7[2:]
+    except:
+        posionMushroomWeight7 = "00"
+    try:
+        posionMushroomPrice7 = hex(int(posionMushroomPrice7))
+        if len(posionMushroomPrice7) == 4:
+            posionMushroomPrice7 = posionMushroomPrice7[2:]
+        elif len(posionMushroomPrice7) == 3:
+            posionMushroomPrice7 = "0" + posionMushroomPrice7[2:]
+    except:
+        posionMushroomPrice7 = "00"
+
+    generatedCode = getOrbModsSeven(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7, orbBagCapsulePrice7, orbBagCapsuleWeight7, dkCapsulePrice7, dkCapsuleWeight7, duelCapsulePrice7, duelCapsuleWeight7, mysteryCapsulePrice7, mysteryCapsuleWeight7, posionMushroomPrice7, posionMushroomWeight7)
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)
 
     print("Generated code copied to the clipboard.")
     createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
-def savePresetItems7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7):
+def savePresetItems7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7, posionMushroomPrice7, posionMushroomWeight7, dkCapsulePrice7, dkCapsuleWeight7, orbBagCapsulePrice7, orbBagCapsuleWeight7, duelCapsulePrice7, duelCapsuleWeight7, mysteryCapsulePrice7, mysteryCapsuleWeight7):
     if not mushroomCapsuleWeight7.get() or not goldenMushroomCapsulePrice7.get() or not goldenMushroomCapsuleWeight7.get() or not slowMushroomCapsulePrice7.get() or not slowMushroomCapsuleWeight7.get() or not metalMushroomCapsulePrice7.get() or not metalMushroomCapsuleWeight7.get() or not flutterCapsulePrice7.get() or not flutterCapsuleWeight7.get() or not cannonCapsulePrice7.get() or not cannonCapsuleWeight7.get() or not snackCapsulePrice7.get() or not snackCapsuleWeight7.get() or not lakituCapsulePrice7.get() or not lakituCapsuleWeight7.get() or not hammerBroCapsuleWeight7.get() or not hammerBroCapsulePrice7.get() or not plantCapsulePrice7.get() or not plantCapsuleWeight7.get() or not spearCapsuleWeight7.get() or not spearCapsulePrice7.get() or not kamekCapsuleWeight7.get() or not kamekCapsulePrice7.get() or not toadyCapsuleWeight7.get() or not toadyCapsulePrice7.get() or not blizzardCapsuleWeight7.get() or not blizzardCapsulePrice7.get() or not banditCapsulePrice7.get() or not banditCapsuleWeight7.get() or not pinkBooCapsuleWeight7.get() or not pinkBooCapsulePrice7.get() or not spinyCapsulePrice7.get() or not spinyCapsuleWeight7.get() or not zapCapsulePrice7.get() or not zapCapsuleWeight7.get() or not tweesterCapsulePrice7.get() or not tweesterCapsuleWeight7.get() or not thwompCapsulePrice7.get() or not thwompCapsuleWeight7.get() or not warpCapsulePrice7.get() or not warpCapsuleWeight7.get() or not bombCapsulePrice7.get() or not bombCapsuleWeight7.get() or not fireballCapsulePrice7.get() or not fireballCapsuleWeight7.get() or not eggCapsulePrice7.get() or not eggCapsuleWeight7.get() or not flowerCapsulePrice7.get() or not flowerCapsuleWeight7.get() or not vacuumCapsulePrice7.get() or not vacuumCapsuleWeight7.get() or not magicCapsulePrice7.get() or not magicCapsuleWeight7.get() or not tripleCapsulePrice7.get() or not tripleCapsuleWeight7.get() or not koopaCapsulePrice7.get() or not koopaCapsuleWeight7.get():
         if sys.platform == "darwin":
             createDialog("Error", "error", "Please fill out all the boxes.", None)
@@ -858,8 +1019,58 @@ def savePresetItems7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, golden
     tripleCapsuleWeight7 = tripleCapsuleWeight7.get()
     koopaCapsulePrice7 = koopaCapsulePrice7.get()
     koopaCapsuleWeight7 = koopaCapsuleWeight7.get()
-    prices7 = ["5", goldenMushroomCapsulePrice7, slowMushroomCapsulePrice7, metalMushroomCapsulePrice7, flutterCapsulePrice7, cannonCapsulePrice7, snackCapsulePrice7, lakituCapsulePrice7, hammerBroCapsulePrice7, plantCapsulePrice7, spearCapsulePrice7, kamekCapsulePrice7, toadyCapsulePrice7, blizzardCapsulePrice7, banditCapsulePrice7, pinkBooCapsulePrice7, spinyCapsulePrice7, zapCapsulePrice7, tweesterCapsulePrice7, thwompCapsulePrice7, warpCapsulePrice7, bombCapsulePrice7, fireballCapsulePrice7, flowerCapsulePrice7, eggCapsulePrice7, vacuumCapsulePrice7, magicCapsulePrice7, tripleCapsulePrice7, koopaCapsulePrice7]
-    weights7 = [mushroomCapsuleWeight7, goldenMushroomCapsuleWeight7, slowMushroomCapsuleWeight7, metalMushroomCapsuleWeight7, flutterCapsuleWeight7, cannonCapsuleWeight7, snackCapsuleWeight7, lakituCapsuleWeight7, hammerBroCapsuleWeight7, plantCapsuleWeight7, spearCapsuleWeight7, kamekCapsuleWeight7, toadyCapsuleWeight7, blizzardCapsuleWeight7, banditCapsuleWeight7, pinkBooCapsuleWeight7, spinyCapsuleWeight7, zapCapsuleWeight7, tweesterCapsuleWeight7, thwompCapsuleWeight7, warpCapsuleWeight7, bombCapsuleWeight7, fireballCapsuleWeight7, flowerCapsuleWeight7, eggCapsuleWeight7, vacuumCapsuleWeight7, magicCapsuleWeight7, tripleCapsuleWeight7, koopaCapsuleWeight7]
+    
+    try:
+        dkCapsulePrice7 = dkCapsulePrice7.get()
+    except:
+        dkCapsulePrice7 = 0
+
+    try:
+        dkCapsuleWeight7 = dkCapsuleWeight7.get()
+    except:
+        dkCapsuleWeight7 = 0
+
+    try:
+        posionMushroomPrice7 = posionMushroomPrice7.get()
+    except:
+        posionMushroomPrice7 = 0
+
+    try:
+        posionMushroomWeight7 = posionMushroomWeight7.get()
+    except:
+        posionMushroomWeight7 = 0
+    try:
+        duelCapsulePrice7 = duelCapsulePrice7.get()
+    except:
+        duelCapsulePrice7 = 0
+
+    try:
+        duelCapsuleWeight7 = duelCapsuleWeight7.get()
+    except:
+        duelCapsuleWeight7 = 0
+
+    try:
+        mysteryCapsulePrice7 = mysteryCapsulePrice7.get()
+    except:
+        mysteryCapsulePrice7 = 0
+
+    try:
+        mysteryCapsuleWeight7 = mysteryCapsuleWeight7.get()
+    except:
+        mysteryCapsuleWeight7 = 0
+    
+    try:
+        orbBagCapsulePrice7 = orbBagCapsulePrice7.get()
+    except:
+        orbBagCapsulePrice7 = 0
+
+    try:
+        orbBagCapsuleWeight7 = orbBagCapsuleWeight7.get()
+    except:
+        orbBagCapsuleWeight7 = 0
+
+    prices7 = ["5", goldenMushroomCapsulePrice7, slowMushroomCapsulePrice7, metalMushroomCapsulePrice7, flutterCapsulePrice7, cannonCapsulePrice7, snackCapsulePrice7, lakituCapsulePrice7, hammerBroCapsulePrice7, plantCapsulePrice7, spearCapsulePrice7, kamekCapsulePrice7, toadyCapsulePrice7, blizzardCapsulePrice7, banditCapsulePrice7, pinkBooCapsulePrice7, spinyCapsulePrice7, zapCapsulePrice7, tweesterCapsulePrice7, thwompCapsulePrice7, warpCapsulePrice7, bombCapsulePrice7, fireballCapsulePrice7, flowerCapsulePrice7, eggCapsulePrice7, vacuumCapsulePrice7, magicCapsulePrice7, tripleCapsulePrice7, koopaCapsulePrice7, dkCapsulePrice7, posionMushroomPrice7, duelCapsulePrice7, mysteryCapsulePrice7, orbBagCapsulePrice7]
+    weights7 = [mushroomCapsuleWeight7, goldenMushroomCapsuleWeight7, slowMushroomCapsuleWeight7, metalMushroomCapsuleWeight7, flutterCapsuleWeight7, cannonCapsuleWeight7, snackCapsuleWeight7, lakituCapsuleWeight7, hammerBroCapsuleWeight7, plantCapsuleWeight7, spearCapsuleWeight7, kamekCapsuleWeight7, toadyCapsuleWeight7, blizzardCapsuleWeight7, banditCapsuleWeight7, pinkBooCapsuleWeight7, spinyCapsuleWeight7, zapCapsuleWeight7, tweesterCapsuleWeight7, thwompCapsuleWeight7, warpCapsuleWeight7, bombCapsuleWeight7, fireballCapsuleWeight7, flowerCapsuleWeight7, eggCapsuleWeight7, vacuumCapsuleWeight7, magicCapsuleWeight7, tripleCapsuleWeight7, koopaCapsuleWeight7, dkCapsuleWeight7, posionMushroomWeight7, duelCapsuleWeight7, mysteryCapsuleWeight7, orbBagCapsuleWeight7]
     file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
     if file_path:
         with open(file_path, 'w', newline='') as csvfile:
@@ -870,7 +1081,7 @@ def savePresetItems7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, golden
         print("MPT file saved successfully!")
         createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
 
-def loadPresetItems7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7):
+def loadPresetItems7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7, posionMushroomPrice7, posionMushroomWeight7, dkCapsulePrice7, dkCapsuleWeight7, orbBagCapsulePrice7, orbBagCapsuleWeight7, duelCapsulePrice7, duelCapsuleWeight7, mysteryCapsulePrice7, mysteryCapsuleWeight7):
     file_path = tkinter.filedialog.askopenfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
     if file_path:
         prices7In = []

@@ -877,52 +877,52 @@ def savePresetItems6(warpPipeCapsuleWeight6, warpPipeCapsulePrice6, mushroomCaps
     try:
         pinkBooCapsulePrice6 = pinkBooCapsulePrice6.get()
     except:
-        pinkBooCapsulePrice6 = 0
+        pinkBooCapsulePrice6 = 00
 
     try:
         pinkBooCapsuleWeight6 = pinkBooCapsuleWeight6.get()
     except:
-        pinkBooCapsuleWeight6 = 0
+        pinkBooCapsuleWeight6 = 00
 
     try:
         chanceTimeCapsulePrice6 = chanceTimeCapsulePrice6.get()
     except:
-        chanceTimeCapsulePrice6 = 0
+        chanceTimeCapsulePrice6 = 00
 
     try:
         chanceTimeCapsuleWeight6 = chanceTimeCapsuleWeight6.get()
     except:
-        chanceTimeCapsuleWeight6 = 0
+        chanceTimeCapsuleWeight6 = 00
 
     try:
         bowserCapsulePrice6 = bowserCapsulePrice6.get()
     except:
-        bowserCapsulePrice6 = 0
+        bowserCapsulePrice6 = 00
 
     try:
         bowserCapsuleWeight6 = bowserCapsuleWeight6.get()
     except:
-        bowserCapsuleWeight6 = 0
+        bowserCapsuleWeight6 = 00
 
     try:
         dkCapsulePrice6 = dkCapsulePrice6.get()
     except:
-        dkCapsulePrice6 = 0
+        dkCapsulePrice6 = 00
 
     try:
         dkCapsuleWeight6 = dkCapsuleWeight6.get()
     except:
-        dkCapsuleWeight6 = 0
+        dkCapsuleWeight6 = 00
 
     try:
         duelCapsulePrice6 = duelCapsulePrice6.get()
     except:
-        duelCapsulePrice6 = 0
+        duelCapsulePrice6 = 00
 
     try:
         duelCapsuleWeight6 = duelCapsuleWeight6.get()
     except:
-        duelCapsuleWeight6 = 0
+        duelCapsuleWeight6 = 00
 
     prices6 = ["5", goldenMushroomCapsulePrice6, slowMushroomCapsulePrice6, metalMushroomCapsulePrice6, bulletBillCapsulePrice6, flutterCapsulePrice6, cursedMushroomCapsulePrice6, spinyCapsulePrice6, goombaCapsulePrice6, plantCapsulePrice6, kleptoCapsulePrice6, kamekCapsulePrice6, toadyCapsulePrice6, blizzardCapsulePrice6, podobooCapsulePrice6, paraTroopaCapsulePrice6, snackCapsulePrice6, zapCapsulePrice6, tweesterCapsulePrice6, thwompCapsulePrice6, warpPipeCapsulePrice6, bombCapsulePrice6, gaddLightCapsulePrice6, pinkBooCapsulePrice6, chanceTimeCapsulePrice6, bowserCapsulePrice6, dkCapsulePrice6, duelCapsulePrice6]
     weights6 = [mushroomCapsuleWeight6, goldenMushroomCapsuleWeight6, slowMushroomCapsuleWeight6, metalMushroomCapsuleWeight6, bulletBillCapsuleWeight6, flutterCapsuleWeight6, cursedMushroomCapsuleWeight6, spinyCapsuleWeight6, goombaCapsuleWeight6, plantCapsuleWeight6, kleptoCapsuleWeight6, kamekCapsuleWeight6, toadyCapsuleWeight6, blizzardCapsuleWeight6, podobooCapsuleWeight6, paraTroopaCapsuleWeight6, snackCapsuleWeight6, zapCapsuleWeight6, tweesterCapsuleWeight6, thwompCapsuleWeight6, warpPipeCapsuleWeight6, bombCapsuleWeight6, gaddLightCapsuleWeight6, pinkBooCapsuleWeight6, chanceTimeCapsuleWeight6, bowserCapsuleWeight6, dkCapsuleWeight6, duelCapsuleWeight6]

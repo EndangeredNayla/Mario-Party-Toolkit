@@ -140,7 +140,7 @@ MP7 - Minigame Replacement: {gameUno} ➜ {gameDos}
 E2000001 80008000
 '''
 
-def getOrbModsSeven(oneW, twoP, twoW, threeP, threeW, fourP, fourW, fiveP, fiveW, sixP, sixW, sevenP, sevenW, eightP, eightW, nineP, nineW, tenP, tenW, elevenP, elevenW, twelveP, twelveW, thirteenP, thirteenW, fourteenP, fourteenW, fifteenP, fifteenW, sixteenP, sixteenW, seventeenP, seventeenW, eighteenP, eighteenW, ninteenP, ninteenW, twentyP, twentyW, twentyOneP, twentyOneW, twentyTwoP, twentyTwoW, twentyThreeP, twentyThreeW, twentyFourP, twentyFourW, twentyFiveP, twentyFiveW, twentySixP, twentySixW, twentySevenP, twentySevenW, twentyEightP, twentyEightW, twentyNineP, twentyNineW):
+def getOrbModsSeven(oneW, twoP, twoW, threeP, threeW, fourP, fourW, fiveP, fiveW, sixP, sixW, sevenP, sevenW, eightP, eightW, nineP, nineW, tenP, tenW, elevenP, elevenW, twelveP, twelveW, thirteenP, thirteenW, fourteenP, fourteenW, fifteenP, fifteenW, sixteenP, sixteenW, seventeenP, seventeenW, eighteenP, eighteenW, ninteenP, ninteenW, twentyP, twentyW, twentyOneP, twentyOneW, twentyTwoP, twentyTwoW, twentyThreeP, twentyThreeW, twentyFourP, twentyFourW, twentyFiveP, twentyFiveW, twentySixP, twentySixW, twentySevenP, twentySevenW, twentyEightP, twentyEightW, twentyNineP, twentyNineW, thirtyP, thirtyW, thirtyOneP, thirtyOneW, thirtyTwoP, thirtyTwoW, thirtyThreeP, thirtyThreeW, thirtyFourP, thirtyFourW):
     return f'''
 MP7 - Orb Modifer
 042EF588 00050505
@@ -259,26 +259,30 @@ MP7 - Orb Modifer
 042EF74C {twentyNineW}{twentyNineW}{twentyNineW}{twentyNineW}
 042EF750 {twentyNineW}{twentyNineW}{twentyNineW}{twentyNineW}
 042EF754 {twentyNineW}{twentyNineW}0000
-042EF758 32000000
-042EF75C 00000000
-042EF760 00000000
-042EF764 00000000
-042EF768 33000000
-042EF76C 00000000
-042EF770 00000000
-042EF774 00000000
-042EF778 34000000
-042EF77C 00000000
-042EF780 00000000
-042EF784 00000000
-042EF788 35000000
-042EF78C 00000000
-042EF790 00000000
-042EF794 00000000
-042EF798 FF000000
-042EF79C 00000000
-042EF7A0 00000000
-042EF7A4 00000000
+042EF758 32{thirtyFourP}{thirtyFourP}{thirtyFourP}
+042EF75C {thirtyFourW}{thirtyFourW}{thirtyFourW}{thirtyFourW}
+042EF760 {thirtyFourW}{thirtyFourW}{thirtyFourW}{thirtyFourW}
+042EF764 {thirtyFourW}{thirtyFourW}0000
+042EF768 08{thirtyTwoP}{thirtyTwoP}{thirtyTwoP}
+042EF76C {thirtyTwoW}{thirtyTwoW}{thirtyTwoW}{thirtyTwoW}
+042EF770 {thirtyTwoW}{thirtyTwoW}{thirtyTwoW}{thirtyTwoW}
+042EF774 {thirtyTwoW}{thirtyTwoW}0000
+042EF778 09{thirtyOneP}{thirtyOneP}{thirtyOneP}
+042EF78C {thirtyOneW}{thirtyOneW}{thirtyOneW}{thirtyOneW}
+042EF790 {thirtyOneW}{thirtyOneW}{thirtyOneW}{thirtyOneW}
+042EF794 {thirtyOneW}{thirtyOneW}0000
+042EF788 33{thirtyP}{thirtyP}{thirtyP}
+042EF78C {thirtyW}{thirtyW}{thirtyW}{thirtyW}
+042EF790 {thirtyW}{thirtyW}{thirtyW}{thirtyW}
+042EF794 {thirtyW}{thirtyW}0000
+042EF798 35{thirtyThreeP}{thirtyThreeP}{thirtyThreeP}
+042EF79C {thirtyThreeW}{thirtyThreeW}{thirtyThreeW}{thirtyThreeW}
+042EF7A0 {thirtyThreeW}{thirtyThreeW}{thirtyThreeW}{thirtyThreeW}
+042EF7A4 {thirtyThreeW}{thirtyThreeW}0000
+042EF7A8 FF000000
+042EF7AC 00000000
+042EF7B0 00000000
+042EF7B4 00000000
 '''
 
 def getInitialItemsSeven(one, two, three, four, five, oneItem, twoItem, threeItem, fourItem, fiveItem):

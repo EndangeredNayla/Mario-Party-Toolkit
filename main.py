@@ -32,7 +32,7 @@ class App(customtkinter.CTk):
         super().__init__()
 
         self.title("Mario Party Toolkit")
-        self.geometry("1330x900")
+        self.geometry("1342x900")
         customtkinter.set_appearance_mode("Dark")
 
         # set grid layout 1x2
