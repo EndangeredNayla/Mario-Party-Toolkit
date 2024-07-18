@@ -100,7 +100,7 @@ C20DBB40 00000001
 
 def getChompSpaceCodeFive(amount, negAmount, amountDec):
     return f'''
-MP5 - Stars Cost {amountDec} Coins when stealing with Chain Chomp
+MP4 - Star Stealing Costs {amountDec} with Chain Chomp.
 C20F5F34 00000001
 2C03{amount} 00000000
 C20F630C 00000001
@@ -216,33 +216,5 @@ MP5 - Replace Happening Star with {amountDec}
 2046872C 881D0017
 0446872C {amount}
 04468730 7C000378
-E2000001 80008000
-'''
-
-def getZtarReplaceFive1(amount, amountDec):
-    return f'''
-MP5 - Replace Minigame Star with {amountDec}
-2046871C A81D0022
-044ECF10 {amount}
-0446DB8C 3883FFFF
-E2000001 80008000
-'''
-
-def getZtarReplaceFive2(amount, amountDec):
-    return f'''
-MP5 - Replace Orb Star with {amountDec}
-20468724 A81D0026
-04468724 {amount}
-0446DB8C 3883FFFF
-E2000001 80008000
-'''
-
-def getZtarReplaceFive3(amount, amountDec):
-    return f'''
-MP5 - Replace Happening Star with {amountDec}
-2046872C 881D0017
-0446872C {amount}
-04468730 7C000378
-0446DB8C 3883FFFF
 E2000001 80008000
 '''

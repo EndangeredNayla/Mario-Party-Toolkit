@@ -74,13 +74,13 @@ E0000000 80008000
 
 def getBooSpaceStarFour(amount, amountDec):
     return f'''
-MP4 - Stars Cost {amountDec} Coins when stealing at the Boo House
+MP4 - Star Stealing Costs {amountDec} at the Boo House.
 040A5F30 2C1E{amount}
 '''
 
 def getBooSpaceCoinsFour(amount, amountDec):
     return f'''
-MP4 - Coins Cost {amountDec} Coins when stealing at the Boo House
+MP4 - Coin Stealing Costs {amountDec} at the Boo House.
 040A61DC 2C1E{amount}
 040A517C 2C03{amount}
 '''

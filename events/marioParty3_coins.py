@@ -10,8 +10,8 @@ from codes.marioParty3 import *
 
 import pyperclip
 
-def coinsEvent_mp3(blueAmount, blueTick, redAmount, redTick, starAmount, koopaBankAmount):
-    if not blueAmount.get() and not redAmount.get() and not starAmount.get() and not koopaBankAmount.get():
+def coinsEvent_mp3(blueAmount, blueTick, redAmount, redTick, starAmount, booCoins, booStars, koopaBankAmount):
+    if not blueAmount.get() and not redAmount.get() and not starAmount.get() and not koopaBankAmount.get() and not booStars.get() and not booCoins.get():
         createDialog("Error", "error", "Please fill out atleast one box.", None)
         return
     # Extract blue space information
@@ -36,6 +36,18 @@ def coinsEvent_mp3(blueAmount, blueTick, redAmount, redTick, starAmount, koopaBa
     kbAmountNegativeBaseThree = -int(koopaBankAmountBaseThree) if starSpaceAmountBaseThree else "DUMMY"
     kbAmountNegativeBaseThree = format(kbAmountNegativeBaseThree & 0xFFFFFFFFFFFFFFFF, 'X')[12:] if starSpaceAmountBaseThree else "DUMMY"
 
+    # Extract Boo Coins information
+    booCoinsAmountBaseThree = booCoins.get()
+    booCoinsAmountThree = hex(int(booCoinsAmountBaseThree))[2:].zfill(4).upper() if booCoinsAmountBaseThree else "DUMMY"
+    negativeBooCoinsAmountBaseThree = -int(booCoinsAmountBaseThree) if booCoinsAmountBaseThree else "DUMMY" 
+    booCoinsAmountNegativeThree = format(negativeBooCoinsAmountBaseThree & 0xFFFFFFFFFFFFFFFF, 'X')[12:] if booCoinsAmountBaseThree else "DUMMY"
+
+    # Extract Boo Stars information
+    booStarsAmountBaseThree = booStars.get()
+    booStarsAmountThree = hex(int(booStarsAmountBaseThree))[2:].zfill(4).upper() if booStarsAmountBaseThree else "DUMMY"
+    negativeBooStarsAmountBaseThree = -int(booStarsAmountBaseThree) if booStarsAmountBaseThree else "DUMMY" 
+    booStarsAmountNegativeThree = format(negativeBooStarsAmountBaseThree & 0xFFFFFFFFFFFFFFFF, 'X')[12:] if booStarsAmountBaseThree else "DUMMY"
+
 
     # Generate codes for blue and red spaces
     if blueSpaceSwitchThree == "0":
@@ -50,9 +62,11 @@ def coinsEvent_mp3(blueAmount, blueTick, redAmount, redTick, starAmount, koopaBa
 
     marioPartyThreeStarSpace = getStarSpaceCodeThree(starSpaceAmountThree, starSpaceAmountNegativeThree, starSpaceAmountBaseThree) if starSpaceAmountThree != "DUMMY" else ""
     marioPartyThreeKoopaBank = getKoopaBankCodeThree(koopaBankAmountThree, kbAmountNegativeBaseThree, koopaBankAmountBaseThree) if koopaBankAmountThree != "DUMMY" else ""
+    marioPartyThreeStarBoo = getBooStarPrice(booStarsAmountThree, negativeBooStarsAmountBaseThree, booStarsAmountBaseThree) if booStarsAmountThree != "DUMMY" else ""
+    marioPartyThreeCoinBoo = getBooCoinsPrice(booCoinsAmountThree, negativeBooCoinsAmountBaseThree, booCoinsAmountBaseThree) if booCoinsAmountThree != "DUMMY" else ""
 
     # Replace placeholder in generated codes
-    generatedCode = (marioPartyThreeBlueSpace + marioPartyThreeRedSpace + marioPartyThreeStarSpace + marioPartyThreeKoopaBank).strip()
+    generatedCode = (marioPartyThreeBlueSpace + marioPartyThreeRedSpace + marioPartyThreeStarSpace + marioPartyThreeKoopaBank + marioPartyThreeCoinBoo + marioPartyThreeStarBoo).strip()
 
     # Copy generated codes to clipboard
     pyperclip.copy(generatedCode)

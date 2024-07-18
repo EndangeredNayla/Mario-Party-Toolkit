@@ -246,3 +246,85 @@ def getStarHandicapP4(amount, amountDec):
 MP3 - P4 Starts With {amountDec} Stars
 8011AA3F {amount}
 '''
+
+def getBooStarPrice(amount, amountNeg, amountDec):
+    return f'''
+MP3 - Star Stealing Costs {amountDec} at Boo.
+D110E4D2 0032
+8110E4D2 {amount}
+D110E8D6 FFCE
+8110E8D6 {amountNeg}
+D110E8DE FFCE
+8110E8DE {amountNeg}
+D110E03A 0032
+8110E03A {amount}
+D110E43E FFCE
+8110E43E {amountNeg}
+D110E446 FFCE
+8110E446 {amountNeg}
+D110E072 0032
+8110E072 {amount}
+D110E476 FFCE
+8110E476 {amountNeg}
+D110E47E FFCE
+8110E47E {amountNeg}
+D110E5AA 0032
+8110E5AA {amount}
+D110E9AE FFCE
+8110E9AE {amountNeg}
+D110E9B6 FFCE
+8110E9B6 {amountNeg}
+D110DA7E 0032
+8110DA7E {amount}
+D110DE82 FFCE
+8110DE82 {amountNeg}
+D110DE8A FFCE
+8110DE8A {amountNeg}
+D110F862 0032
+8110F862 {amount}
+D110FC66 FFCE
+8110FC66 {amountNeg}
+D110FC6E FFCE
+8110FC6E {amountNeg}
+'''
+
+def getBooCoinsPrice(amount, amountNeg, amountDec):
+    return f'''
+MP3 - Coin Stealing Costs {amountDec} at Boo.
+D110E38A 0005
+8110E38A {amount}
+D110E8BE FFFB
+8110E8BE {amountNeg}
+D110E8CA FFFB
+8110E8CA {amountNeg}
+D110DEF2 0005
+8110DEF2 {amount}
+D110E426 FFFB
+8110E426 {amountNeg}
+D110E432 FFFB
+8110E432 {amountNeg}
+D110DF2A 0005
+8110DF2A {amount}
+D110E45E FFFB
+8110E45E {amountNeg}
+D110E46A FFFB
+8110E46A {amountNeg}
+D110E462 0005
+8110E462 {amount}
+D110E996 FFFB
+8110E996 {amountNeg}
+D110E9A2 FFFB
+8110E9A2 {amountNeg}
+D110D936 0005
+8110D936 {amount}
+D110DE6A FFFB
+8110DE6A {amountNeg}
+D110DE76 FFFB
+8110DE76 {amountNeg}
+D110F71A 0005
+8110F71A {amount}
+D110FC4E FFFB
+8110FC4E {amountNeg}
+D110FC5A FFFB
+8110FC5A {amountNeg}
+'''

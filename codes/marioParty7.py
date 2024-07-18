@@ -327,7 +327,6 @@ E2000001 80008000
 E2000001 80008000
 '''
 
-
 def getStarHandicapP1(amount, amountDec):
     return f'''
 MP7 - P1 Starts With {amountDec} Stars

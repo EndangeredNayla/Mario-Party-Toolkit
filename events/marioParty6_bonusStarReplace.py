@@ -28,23 +28,8 @@ def customBonusStarEvent_mp6(star1, star2, star3, stars6):
     starSlot3Num = stars6.index(starSlot3)
     starSlot3Hex = starHex3[starSlot3Num]
 
-
-    #if ztarType1.get():
-    #    starSlot1 = starSlot1.replace("Star", "Ztar")
-    #    mpStar41 = getZtarReplaceSix1(starSlot1Hex, starSlot1)
-    #else:
     mpStar41 = getStarReplaceSix1(starSlot1Hex, starSlot1)
-    
-    #if ztarType2.get():
-    #    starSlot2 = starSlot2.replace("Star", "Ztar")
-    #    mpStar43 = getZtarReplaceSix2(starSlot3Hex, starSlot3)
-    #else:
     mpStar42 = getStarReplaceSix2(starSlot2Hex, starSlot2)
-    
-    #if ztarType3.get():
-    #    starSlot3 = starSlot3.replace("Star", "Ztar")
-    #    mpStar43 = getZtarReplaceSixx3(starSlot3Hex, starSlot3)
-    #else:
     mpStar43 = getStarReplaceSix3(starSlot3Hex, starSlot3)
 
     if starSlot1Hex == "NONE":

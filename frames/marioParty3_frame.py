@@ -55,9 +55,11 @@ def create_mario_party_3_interface(frame):
     red_entry, red_checkbox = create_entry_and_checkbox(tabview.tab("Coins Mods"), 2, "assets/eventTags/redSpace.png", " Lose  ", "Red", "Double the coins on Last 5", "3")
     star_entry = create_entry(tabview.tab("Coins Mods"), 3, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star.", "20")
     koopaBank_entry = create_entry(tabview.tab("Coins Mods"), 4, "assets/eventTags/koopaBank3.png", " Lend  ", " Coins to Koopa Bank,", "5")
+    booHouseStar_entry = create_entry(tabview.tab("Coins Mods"), 5, "assets/eventTags/booHouseStars.png", " Costs ", " Coins when stealing a Star.", "50")
+    booHouseCoins_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/eventTags/booHouseCoins.png", " Costs ", " Coins when stealing coins.", "5")
 
     # Create button to generate coins modification codes
-    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp3(blue_entry, blue_checkbox, red_entry, red_checkbox, star_entry, koopaBank_entry), text="Generate Codes")
+    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp3(blue_entry, blue_checkbox, red_entry, red_checkbox, star_entry, booHouseCoins_entry, booHouseStar_entry, koopaBank_entry), text="Generate Codes")
     parse_coins_button.place(x=10, y=800)
 
     # List of minigame names
