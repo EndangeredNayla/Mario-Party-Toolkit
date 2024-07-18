@@ -75,7 +75,7 @@ def about_interface(frame):
     mit_license_widget.pack(padx=10, pady=10)
     credits_widget = ctk.CTkLabel(tabview.tab("Credits"), width=80, height=20, text=(get_credits_text()))
     credits_widget.pack(padx=10, pady=10)
-    about_widget = ctk.CTkLabel(tabview.tab("800"), width=80, height=20, text=(get_about_text()))
+    about_widget = ctk.CTkLabel(tabview.tab("About"), width=80, height=20, text=(get_about_text()))
     about_widget.pack(padx=10, pady=10)
 
     return frame
