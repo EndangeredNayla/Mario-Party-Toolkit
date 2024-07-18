@@ -165,7 +165,7 @@ def create_mario_party_7_interface(frame):
     label.grid(row=7, column=6)
 
     
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/snackCapsule.png", 8, 1)
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/snackCapsule7.png", 8, 1)
     label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=8, column=2)
     snackCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
@@ -337,7 +337,7 @@ def create_mario_party_7_interface(frame):
     label.grid(row=9, column=13)
 
     
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/thwompCapsule.png", 10, 8)
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/thwompCapsule7.png", 10, 8)
     label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=10, column=9)
     thwompCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
@@ -362,7 +362,7 @@ def create_mario_party_7_interface(frame):
     label.grid(row=11, column=13)
 
     
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/bombCapsule.png", 12, 8)
+    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/bombCapsule7.png", 12, 8)
     label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=12, column=9)
     bombCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))

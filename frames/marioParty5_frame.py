@@ -143,7 +143,7 @@ def create_mario_party_5_interface(frame):
     label.grid(row=8, column=6)
 
     
-    icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/items/podobooCapsule.png", 9, 1)
+    icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/items/podobooCapsule5.png", 9, 1)
     label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=9, column=2)
     podobooCapsulePrice5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
@@ -198,7 +198,7 @@ def create_mario_party_5_interface(frame):
     label.grid(row=2, column=6)
 
     
-    icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/items/paraTroopaCapsule.png", 2, 8)
+    icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/items/paraTroopaCapsule5.png", 2, 8)
     label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=2, column=9)
     paraTroopaCapsulePrice5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
@@ -302,7 +302,7 @@ def create_mario_party_5_interface(frame):
     label.grid(row=10, column=13)
 
     
-    icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/items/lakituCapsule.png", 11, 8)
+    icon = create_image_icon(tabview.tab("Capsule Mods"), "assets/items/lakituCapsule5.png", 11, 8)
     label = ctk.CTkLabel(master=tabview.tab("Capsule Mods"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=11, column=9)
     lakituCapsulePrice5 = ctk.CTkEntry(master=tabview.tab("Capsule Mods"), width=48, font=("Arial", 16, "bold"))
