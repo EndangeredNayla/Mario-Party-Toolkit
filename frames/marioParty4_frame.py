@@ -35,7 +35,7 @@ def create_mario_party_4_interface(frame):
         create_image_icon(tab, icon_path, row, 1)
         label = ctk.CTkLabel(master=tab, text=label_text, font=("Arial", 16))
         label.grid(row=row, column=2, sticky="w", pady=15)
-        entry = ctk.CTkEntry(master=tab, width=48, font=("Arial", 16, "bold"), placerholder_text=placerholder)
+        entry = ctk.CTkEntry(master=tab, width=48, font=("Arial", 16, "bold"), placeholder_text=placerholder)
         entry.grid(row=row, column=3)
         label1 = ctk.CTkLabel(master=tab, text=color, font=("Arial", 16))
         label1.grid(row=row, column=4, sticky="w")
