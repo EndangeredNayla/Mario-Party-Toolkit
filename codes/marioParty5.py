@@ -198,7 +198,7 @@ def getStarReplaceFive1(amount, amountDec):
     return f'''
 MP5 - Replace Minigame Star with {amountDec}
 2046871C A81D0022
-044ECF10 {amount}
+0446871C {amount}
 E2000001 80008000
 '''
 
