@@ -33,8 +33,8 @@ def coinsEvent_mp3(blueAmount, blueTick, redAmount, redTick, starAmount, booCoin
     # Extract koopa bank information
     koopaBankAmountBaseThree = koopaBankAmount.get()
     koopaBankAmountThree = hex(int(koopaBankAmountBaseThree))[2:].zfill(4).upper() if koopaBankAmountBaseThree else "DUMMY"
-    kbAmountNegativeBaseThree = -int(koopaBankAmountBaseThree) if starSpaceAmountBaseThree else "DUMMY"
-    kbAmountNegativeBaseThree = format(kbAmountNegativeBaseThree & 0xFFFFFFFFFFFFFFFF, 'X')[12:] if starSpaceAmountBaseThree else "DUMMY"
+    kbAmountNegativeBaseThree = -int(koopaBankAmountBaseThree) if koopaBankAmountBaseThree else "DUMMY"
+    kbAmountNegativeBaseThree = format(kbAmountNegativeBaseThree & 0xFFFFFFFFFFFFFFFF, 'X')[12:] if koopaBankAmountBaseThree else "DUMMY"
 
     # Extract Boo Coins information
     booCoinsAmountBaseThree = booCoins.get()
@@ -62,8 +62,8 @@ def coinsEvent_mp3(blueAmount, blueTick, redAmount, redTick, starAmount, booCoin
 
     marioPartyThreeStarSpace = getStarSpaceCodeThree(starSpaceAmountThree, starSpaceAmountNegativeThree, starSpaceAmountBaseThree) if starSpaceAmountThree != "DUMMY" else ""
     marioPartyThreeKoopaBank = getKoopaBankCodeThree(koopaBankAmountThree, kbAmountNegativeBaseThree, koopaBankAmountBaseThree) if koopaBankAmountThree != "DUMMY" else ""
-    marioPartyThreeStarBoo = getBooStarPrice(booStarsAmountThree, negativeBooStarsAmountBaseThree, booStarsAmountBaseThree) if booStarsAmountThree != "DUMMY" else ""
-    marioPartyThreeCoinBoo = getBooCoinsPrice(booCoinsAmountThree, negativeBooCoinsAmountBaseThree, booCoinsAmountBaseThree) if booCoinsAmountThree != "DUMMY" else ""
+    marioPartyThreeStarBoo = getBooStarPrice(booStarsAmountThree, booCoinsAmountNegativeThree, booStarsAmountBaseThree) if booStarsAmountThree != "DUMMY" else ""
+    marioPartyThreeCoinBoo = getBooCoinsPrice(booCoinsAmountThree, booStarsAmountNegativeThree, booCoinsAmountBaseThree) if booCoinsAmountThree != "DUMMY" else ""
 
     # Replace placeholder in generated codes
     generatedCode = (marioPartyThreeBlueSpace + marioPartyThreeRedSpace + marioPartyThreeStarSpace + marioPartyThreeKoopaBank + marioPartyThreeCoinBoo + marioPartyThreeStarBoo).strip()
