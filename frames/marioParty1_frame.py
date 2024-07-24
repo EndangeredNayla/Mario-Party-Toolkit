@@ -1,7 +1,7 @@
 # ============================================
 # Mario Party Toolkit
 # Author: Nayla Hanegan (naylahanegan@gmail.com)
-# Date: 5/4/2024
+# Date: 7/24/2024
 # License: MIT
 # ============================================
 
@@ -10,6 +10,7 @@ from functions import *
 from events.marioParty1_coins import *
 from events.marioParty1_handicap import *
 from events.marioParty1_mgreplace import *
+from events.marioParty1_items import *
 
 # Import custom tkinter module as ctk
 import customtkinter as ctk
@@ -20,6 +21,7 @@ def create_mario_party_1_interface(frame):
     tabview = ctk.CTkTabview(frame, width=1110, height=885, fg_color=("#fcfcfc", "#323232"))
     tabview.grid(padx=10, pady=10)
     tabview.add("Coins Mods")
+    tabview.add("Block Weights")
     tabview.add("Minigame Replacement")
     tabview.add("Star Handicaps")
     tabview.set("Coins Mods")
@@ -94,4 +96,41 @@ def create_mario_party_1_interface(frame):
 
     parse_stars_button = ctk.CTkButton(master=tabview.tab("Star Handicaps"), command=lambda: handicapEvent_mp1(p1Stars, p2Stars, p3Stars, p4Stars), text="Generate Codes")
     parse_stars_button.place(x=10, y=800)
+
+    icon = create_image_icon(tabview.tab("Block Weights"), "assets/items/plusBlock.png", 1, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Block Weights"), text=" Weight:  ", font=("Arial", 16))
+    label.grid(row=1, column=2)
+    plus = ctk.CTkEntry(master=tabview.tab("Block Weights"), width=48, font=("Arial", 16, "bold"))
+    plus.grid(row=1, column=3)
+
+    icon = create_image_icon(tabview.tab("Block Weights"), "assets/items/minusBlock.png", 2, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Block Weights"), text=" Weight:  ", font=("Arial", 16))
+    label.grid(row=2, column=2)
+    minus = ctk.CTkEntry(master=tabview.tab("Block Weights"), width=48, font=("Arial", 16, "bold"))
+    minus.grid(row=2, column=3)
+
+    icon = create_image_icon(tabview.tab("Block Weights"), "assets/items/speedBlock.png", 3, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Block Weights"), text=" Weight:  ", font=("Arial", 16))
+    label.grid(row=3, column=2)
+    speed = ctk.CTkEntry(master=tabview.tab("Block Weights"), width=48, font=("Arial", 16, "bold"))
+    speed.grid(row=3, column=3)
+
+    icon = create_image_icon(tabview.tab("Block Weights"), "assets/items/slowBlock.png", 4, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Block Weights"), text=" Weight:  ", font=("Arial", 16))
+    label.grid(row=4, column=2)
+    slow = ctk.CTkEntry(master=tabview.tab("Block Weights"), width=48, font=("Arial", 16, "bold"))
+    slow.grid(row=4, column=3)
+
+    icon = create_image_icon(tabview.tab("Block Weights"), "assets/items/warpBlock1.png", 5, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Block Weights"), text=" Weight:  ", font=("Arial", 16))
+    label.grid(row=5, column=2)
+    warp1 = ctk.CTkEntry(master=tabview.tab("Block Weights"), width=48, font=("Arial", 16, "bold"))
+    warp1.grid(row=5, column=3)
+
+    warningLabel = ctk.CTkLabel(master=tabview.tab("Block Weights"), text="These are weights. Closer to 100 means more likely\nto show instead of a dice.", font=("Arial", 16, "bold"))
+    warningLabel.place(x=5, y=280)
+
+    parseButtonTwo = ctk.CTkButton(master=tabview.tab("Block Weights"), command=lambda: itemsEvent_mp1(plus, minus, speed, slow, warp1), text="Generate Codes")
+    parseButtonTwo.place(x=10, y=800)
+
     return frame
