@@ -305,11 +305,11 @@ def itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMu
         if max_var == 'posionMushroomWeight7':
             posionMushroomWeight7 += (100 - orbWeightTotal)
 
-        if max_var == 'mysteryCapsulePrice7':
-            mysteryCapsulePrice7 += (100 - orbWeightTotal)
+        if max_var == 'mysteryCapsuleWeight7':
+            mysteryCapsuleWeight7 += (100 - orbWeightTotal)
 
-        if max_var == 'orbBagCapsulePrice7':
-            orbBagCapsulePrice7 += (100 - orbWeightTotal)
+        if max_var == 'orbBagCapsuleWeight7':
+            orbBagCapsuleWeight7 += (100 - orbWeightTotal)
 
     mushroomCapsuleWeight7 = str(mushroomCapsuleWeight7)
     goldenMushroomCapsuleWeight7 = str(goldenMushroomCapsuleWeight7)
@@ -343,8 +343,8 @@ def itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMu
     duelCapsuleWeight7 = str(duelCapsuleWeight7)
     dkCapsuleWeight7 = str(dkCapsuleWeight7)
     posionMushroomWeight7 = str(posionMushroomWeight7)
-    mysteryCapsulePrice7 = str(mysteryCapsulePrice7)
-    orbBagCapsulePrice7 = str(orbBagCapsulePrice7)
+    mysteryCapsuleWeight7 = str(mysteryCapsuleWeight7)
+    orbBagCapsuleWeight7 = str(orbBagCapsuleWeight7)
 
     try:
         mushroomCapsuleWeight7 = hex(int(mushroomCapsuleWeight7))
@@ -903,6 +903,7 @@ def itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMu
             orbBagCapsuleWeight7 = "0" + orbBagCapsuleWeight7[2:]
     except:
         orbBagCapsuleWeight7 = "00"
+
     try:
         orbBagCapsulePrice7 = hex(int(orbBagCapsulePrice7))
         if len(orbBagCapsulePrice7) == 4:
@@ -1039,6 +1040,7 @@ def savePresetItems7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, golden
         posionMushroomWeight7 = posionMushroomWeight7.get()
     except:
         posionMushroomWeight7 = 0
+
     try:
         duelCapsulePrice7 = duelCapsulePrice7.get()
     except:
