@@ -21,6 +21,10 @@ def coinsEvent_mp7(blueEntry, redEntry, characterEntry, mgEntry, starEntry, star
     starSpaceAmountSevenLast5 = hex(int(startLast5.get()))[2:].zfill(4).upper() if startLast5.get() else "DUMMY"
     zapSeven = hex(int(zapEntry.get()))[2:].zfill(4).upper() if zapEntry.get() else "DUMMY"
     
+    starSpacex2 = hex(int(starEntry.get()) * 2)[2:].zfill(4).upper() if starEntry.get() else "DUMMY"
+    starSpacex3 = hex(int(starEntry.get()) * 3)[2:].zfill(4).upper() if starEntry.get() else "DUMMY"
+    starSpacex4 = hex(int(starEntry.get()) * 4)[2:].zfill(4).upper() if starEntry.get() else "DUMMY"
+
     fireballSeven = hex(int(fireballEntry.get()))[2:].zfill(4).upper() if fireballEntry.get() else "DUMMY"
     fireballSevenNeg = format(-int(fireballEntry.get()) & 0xFFFFFFFFFFFFFFFF, 'X')[12:] if fireballEntry.get() else "DUMMY"
     
@@ -35,7 +39,7 @@ def coinsEvent_mp7(blueEntry, redEntry, characterEntry, mgEntry, starEntry, star
     marioPartySevenRedSpace = getRedSpaceCodeSeven(redSpaceAmountNegativeSeven, redEntry.get()) if redSpaceAmountNegativeSeven != "DUMMY" else ""
     marioPartySevenCharSpace = getCharacterSpaceCodeSeven(characterSpaceAmountSeven, characterEntry.get()) if characterSpaceAmountSeven != "DUMMY" else ""
     marioPartySevenMiniGame = getMinigameCodeSeven(mgSpaceAmountSeven, mgEntry.get()) if mgSpaceAmountSeven != "DUMMY" else ""
-    marioPartySevenStarSpace = getStarSpaceCodeSeven(starSpaceAmountSeven, starEntry.get()) if starSpaceAmountSeven != "DUMMY" else ""
+    marioPartySevenStarSpace = getStarSpaceCodeSeven(starSpaceAmountSeven, starEntry.get(), starSpacex2, starSpacex3, starSpacex4, ) if starSpaceAmountSeven != "DUMMY" else ""
     marioPartySevenStarSpaceLast5 = getStarSpaceCodeSevenLastFive(starSpaceAmountSevenLast5, startLast5.get()) if starSpaceAmountSevenLast5 != "DUMMY" else ""
     marioPartySevenZap = getZapSpaceCodeSeven(zapSeven, zapEntry.get()) if zapSeven != "DUMMY" else ""
     marioPartySevenFireball = getFireballSpaceCodeSeven(fireballSeven, fireballSevenNeg, fireballEntry.get()) if fireballSeven != "DUMMY" else ""

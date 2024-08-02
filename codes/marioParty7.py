@@ -75,7 +75,7 @@ E2000001 80008000
 E2000001 80008000
 '''
 
-def getStarSpaceCodeSeven(amount, amountDec):
+def getStarSpaceCodeSeven(amount, amountDec, x2, x3, x4):
     return f'''
 MP7 - Stars Cost {amountDec} Coins
 04188774 3B80{amount}
@@ -86,6 +86,12 @@ MP7 - Stars Cost {amountDec} Coins
 044E09B8 1C00000A
 044E0BAC 38A0{amount}
 044E0C8C 1C60000A
+E2000001 80008000
+204F92AC 804F929D
+044F9268 0000{amount}
+044F926C 0000{x2}
+044F9270 0000{x3}
+044F9274 0000{x4}
 E2000001 80008000
 '''
 

@@ -76,7 +76,7 @@ MP6 - Character Spaces Give {amountDec} Coins
 0415F230 3880{amount}
 '''
 
-def getStarSpaceCodeSix(amount, negAmount, amountDec):
+def getStarSpaceCodeSix(amount, negAmount, amountDec, y4, y2, x2, x4):
     return f'''
 MP6 - Stars Cost {amountDec} Coins
 0418333C 2C03{amount}
@@ -102,25 +102,25 @@ C2184538 00000001
 2C14{amount} 00000000
 C2184544 00000001
 3880{negAmount} 00000000
-'''
-
-def getFaireSquareStarCodeSix(one, two, three, four):
-    return f'''
-MP6 - Stars Can Cost SIXONE, SIXTWO, SIXTHREE, or SIXFOUR During Faire Square's Nightime
-04248064 0000{one}
-04248068 0000{two}
-04248070 0000{three}
-04248074 0000{four}
-04248D3C 0000{one}
-04248D40 0000{two}
-04248D48 0000{three}
-04248D4C 0000{four}
-204DDF60 465F6C00
-044DDF74 0000{one}
-044DDF78 0000{two}
-044DDF80 0000{three}
-044DDF84 0000{four}
+28265B8A 00000014
+00265B8B 000000{amount}
 E2000001 80008000
+04248064 000000{y4}
+04248068 000000{y2}
+04248070 000000{amount}
+04248074 000000{x2}
+04248D3C 000000{x4}
+04248D40 000000XX
+04248D48 000000YY
+04248D4C 000000ZZ
+204DDF60 465F6C00
+044DDF74 000000WW
+044DDF78 000000XX
+044DDF80 000000YY
+044DDF84 000000ZZ
+E2000001 80008000
+
+
 '''
 
 def getPinkBooSpaceCodeSix(amount, negAmount, amountDec):
