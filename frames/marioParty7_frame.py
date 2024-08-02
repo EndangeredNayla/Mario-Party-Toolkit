@@ -10,6 +10,7 @@ from functions import *
 from events.marioParty7_coins import *
 from events.marioParty7_initialItems import *
 from events.marioParty7_mgreplace import *
+from events.marioParty7_boardSpecific import *
 from events.marioParty7_handicap import *
 from events.marioParty7_items import *
 from events.marioParty7_spaceReplace import *
@@ -29,6 +30,7 @@ def create_mario_party_7_interface(frame):
     tabview.add("Space Replacement")
     tabview.add("Initial Orbs")
     tabview.add("Star Handicaps")
+    tabview.add("Board Specific")
     tabview.set("Coins Mods")
 
     # Function to create an entry field and checkbox
@@ -68,11 +70,11 @@ def create_mario_party_7_interface(frame):
     fireball_entry = create_entry2(tabview.tab("Coins Mods"), 3, "assets/items/fireballCapsule.png", " Steal ", " Coins from Fireballs.")
     vacuum_entry = create_entry2(tabview.tab("Coins Mods"), 4, "assets/items/vacuumCapsule.png", " Steal ", " Coins despite Vacuum Roulette.")
     flower_entry = create_entry2(tabview.tab("Coins Mods"), 5, "assets/items/flowerCapsule.png", " Gain ", " Per Space with Flower.")
-    windmill_entry = create_entry2(tabview.tab("Coins Mods"), 6, "assets/eventTags/willmillville.png", " Max ", " coins.")
-    windmill_entryTooltip = CTkToolTip(windmill_entry, message="Max Coin Value is 255")
+    #windmill_entry = create_entry2(tabview.tab("Coins Mods"), 6, "assets/eventTags/willmillville.png", " Max ", " coins.")
+    #windmill_entryTooltip = CTkToolTip(windmill_entry, message="Max Coin Value is 255")
 
     # Create button to generate coins modification codes  
-    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp7(blue_entry, red_entry, character_entry, mgWin_entry, star_entry, star_last4_entry, hammerBro_entry, zap_entry, fireball_entry, vacuum_entry, flower_entry, windmill_entry), text="Generate Codes")
+    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp7(blue_entry, red_entry, character_entry, mgWin_entry, star_entry, star_last4_entry, hammerBro_entry, zap_entry, fireball_entry, vacuum_entry, flower_entry), text="Generate Codes")
     parse_coins_button.place(x=10, y=800)
 
     # List of minigame names
@@ -734,6 +736,51 @@ def create_mario_party_7_interface(frame):
 
     parse_stars_button = ctk.CTkButton(master=tabview.tab("Star Handicaps"), command=lambda: handicapEvent_mp7(p1Stars, p2Stars, p3Stars, p4Stars), text="Generate Codes")
     parse_stars_button.place(x=10, y=800)
+
+    spinx_list = ["Do Nothing", "Blue to Red Spaces", "Half Chomp Price", "Coin Equality"]
+    label = ctk.CTkLabel(master=tabview.tab("Board Specific"), text="Pyramid Park - Spinx Event is               ", font=("Arial", 16))
+    label.grid(row=0, column=0, pady=10)
+    comboSpinx = ctk.CTkComboBox(master=tabview.tab("Board Specific"), values=spinx_list)
+    comboSpinx.grid(row=0, column=1)
+    spinx_button = ctk.CTkButton(master=tabview.tab("Board Specific"), command=lambda: spinxEvent_mp7(comboSpinx, spinx_list), text="Generate Code")
+    spinx_button.place(x=430, y=10)
+
+    label = ctk.CTkLabel(master=tabview.tab("Board Specific"), text=" Pyramid Park - Standard Chomp Costs", font=("Arial", 16))
+    label.grid(row=1, column=0, pady=10)
+    coinAmount = ctk.CTkEntry(master=tabview.tab("Board Specific"), width=100, font=("Arial", 16, "bold"), placeholder_text="10")
+    coinAmount.grid(row=1, column=1)
+    chomp_button = ctk.CTkButton(master=tabview.tab("Board Specific"), command=lambda: chompEvent_mp7(coinAmount), text="Generate Code")
+    chomp_button.place(x=430, y=57)
+
+    label = ctk.CTkLabel(master=tabview.tab("Board Specific"), text=" Pyramid Park - Red Chomp Costs        ", font=("Arial", 16))
+    label.grid(row=2, column=0, pady=10)
+    coin2Amount = ctk.CTkEntry(master=tabview.tab("Board Specific"), width=100, font=("Arial", 16, "bold"), placeholder_text="10")
+    coin2Amount.grid(row=2, column=1)
+    chomp_button = ctk.CTkButton(master=tabview.tab("Board Specific"), command=lambda: redChompEvent_mp7(coin2Amount), text="Generate Code")
+    chomp_button.place(x=430, y=104)
+
+    glider_list = ["1 Star (right)", "2 Star (left)", "3 Star (center)"]
+    label = ctk.CTkLabel(master=tabview.tab("Board Specific"), text="Windmillville - Flower Glider Goes To    ", font=("Arial", 16))
+    label.grid(row=3, column=0, pady=10)
+    comboGlider = ctk.CTkComboBox(master=tabview.tab("Board Specific"), values=glider_list)
+    comboGlider.grid(row=3, column=1)
+    spinx_button = ctk.CTkButton(master=tabview.tab("Board Specific"), command=lambda: gliderEvent_mp7(comboSpinx, spinx_list), text="Generate Code")
+    spinx_button.place(x=430, y=152)
+
+    label = ctk.CTkLabel(master=tabview.tab("Board Specific"), text="Windmillville - Flower Glider Costs       ", font=("Arial", 16))
+    label.grid(row=4, column=0, pady=10)
+    coin3Amount = ctk.CTkEntry(master=tabview.tab("Board Specific"), width=100, font=("Arial", 16, "bold"), placeholder_text="10")
+    coin3Amount.grid(row=4, column=1)
+    chomp_button = ctk.CTkButton(master=tabview.tab("Board Specific"), command=lambda: gliderCostEvent_mp7(coin3Amount), text="Generate Code")
+    chomp_button.place(x=430, y=200)
+
+    label = ctk.CTkLabel(master=tabview.tab("Board Specific"), text="Windmillville - Invest Up Too                 ", font=("Arial", 16))
+    label.grid(row=5, column=0, pady=10)
+    coin4Amount = ctk.CTkEntry(master=tabview.tab("Board Specific"), width=100, font=("Arial", 16, "bold"), placeholder_text="100")
+    coin4Amount.grid(row=5, column=1)
+    chomp_button = ctk.CTkButton(master=tabview.tab("Board Specific"), command=lambda: gliderCostEvent_mp7(coin4Amount), text="Generate Code")
+    chomp_button.place(x=430, y=252)
+
 
     return frame
     

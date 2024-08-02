@@ -535,11 +535,11 @@ def create_mario_party_5_interface(frame):
     parse_stars_button.place(x=10, y=800)
 
     item_list = ["Nothing", "Golden Mushroom", "Poison Mushroom", "Warp Pipe", "Klepto", "Bubble", "Wiggler", "Hammer Bro", "Coin Block", "Spiny", "Paratroopa", "Goomba", "Bob-omb", "Koopa Bank", "Kamek", "Mr. Blizzard", "Piranha Plant", "Magikoopa", "Ukiki", "Lakitu","Tweester", "Duel", "Chain Chomp", "Bone", "Bowser", "Chance", "Miracle", "Donkey Kong"]   
-    item_label = ctk.CTkLabel(master=tabview.tab("Board Specific"), text="Undersea - Seashell Always Gives  ", font=("Arial", 16))
-    item_label.grid(row=0, column=0)
+    item_label = ctk.CTkLabel(master=tabview.tab("Board Specific"), text="Undersea Dream - Seashell Always Gives  ", font=("Arial", 16))
+    item_label.grid(row=0, column=0, pady=10)
     comboItem = ctk.CTkComboBox(master=tabview.tab("Board Specific"), values=item_list)
     comboItem.grid(row=0, column=1)
-    parse_minigame_button = ctk.CTkButton(master=tabview.tab("Board Specific"), command=lambda: underseaEvent_mp5(comboItem, item_list), text="Generate Code")
-    parse_minigame_button.place(x=10, y=800)
+    spinx_button = ctk.CTkButton(master=tabview.tab("Board Specific"), command=lambda: underseaEvent_mp5(comboSpinx, spinx_list), text="Generate Code")
+    spinx_button.place(x=450, y=10)
 
     return frame
