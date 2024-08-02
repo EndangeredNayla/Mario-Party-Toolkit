@@ -8,8 +8,8 @@
 from functions import *
 from codes.marioParty7 import *
 import pyperclip
-def coinsEvent_mp7(blueEntry, redEntry, characterEntry, mgEntry, starEntry, startLast5, hammerBroEntry, zapEntry, fireballEntry, vacuumEntry, flowerEntry, windmillEntry):
-    if not any((windmillEntry.get(), blueEntry.get(), redEntry.get(), characterEntry.get(), mgEntry.get(), starEntry.get(), startLast5.get(), hammerBroEntry.get(), zapEntry.get(), fireballEntry.get(), vacuumEntry.get(), flowerEntry.get())):
+def coinsEvent_mp7(blueEntry, redEntry, characterEntry, mgEntry, starEntry, startLast5, hammerBroEntry, zapEntry, fireballEntry, vacuumEntry, flowerEntry):
+    if not any((blueEntry.get(), redEntry.get(), characterEntry.get(), mgEntry.get(), starEntry.get(), startLast5.get(), hammerBroEntry.get(), zapEntry.get(), fireballEntry.get(), vacuumEntry.get(), flowerEntry.get())):
         createDialog("Error", "error", "Please fill out at least one box.", None)
         return
     
@@ -31,9 +31,6 @@ def coinsEvent_mp7(blueEntry, redEntry, characterEntry, mgEntry, starEntry, star
     hammerBroSevenNegative = format(-int(hammerBroEntry.get()) & 0xFFFFFFFFFFFFFFFF, 'X')[12:] if hammerBroEntry.get() else "DUMMY"
     hammerBroSevenHalf = format((-int(hammerBroEntry.get()) // 2) & 0xFFFFFFFFFFFFFFFF, 'X')[12:] if hammerBroEntry.get() else "DUMMY"
 
-    windmillSeven = hex(int(windmillEntry.get()))[2:].zfill(4).upper() if windmillEntry.get() else "DUMMY"
-
-
     marioPartySevenBlueSpace = getBlueSpaceCodeSeven(blueSpaceAmountSeven, blueEntry.get()) if blueSpaceAmountSeven != "DUMMY" else ""
     marioPartySevenRedSpace = getRedSpaceCodeSeven(redSpaceAmountNegativeSeven, redEntry.get()) if redSpaceAmountNegativeSeven != "DUMMY" else ""
     marioPartySevenCharSpace = getCharacterSpaceCodeSeven(characterSpaceAmountSeven, characterEntry.get()) if characterSpaceAmountSeven != "DUMMY" else ""
@@ -45,9 +42,8 @@ def coinsEvent_mp7(blueEntry, redEntry, characterEntry, mgEntry, starEntry, star
     marioPartySevenFlower = getFlowerSpaceCodeSeven(flowerSeven, flowerEntry.get()) if flowerSeven != "DUMMY" else ""
     marioPartySevenVacuum = getVacuumSpaceCodeSeven(vacuumSeven, vacuumEntry.get()) if vacuumSeven != "DUMMY" else ""
     marioPartySevenHammerBro = getHammerBroSpaceCodeSeven(hammerBroSeven, hammerBroSevenNegative, hammerBroSevenHalf, hammerBroEntry.get()) if hammerBroSeven != "DUMMY" else ""
-    marioPartySevenWindmille = getWindmillMaxSeven(windmillSeven, windmillEntry.get()) if windmillSeven != "DUMMY" else ""
-
-    generatedCode = marioPartySevenBlueSpace + marioPartySevenRedSpace + marioPartySevenCharSpace + marioPartySevenMiniGame + marioPartySevenStarSpace + marioPartySevenStarSpaceLast5 + marioPartySevenZap + marioPartySevenFireball + marioPartySevenFlower + marioPartySevenHammerBro + marioPartySevenVacuum + marioPartySevenWindmille
+    
+    generatedCode = marioPartySevenBlueSpace + marioPartySevenRedSpace + marioPartySevenCharSpace + marioPartySevenMiniGame + marioPartySevenStarSpace + marioPartySevenStarSpaceLast5 + marioPartySevenZap + marioPartySevenFireball + marioPartySevenFlower + marioPartySevenHammerBro + marioPartySevenVacuum
     generatedCode = generatedCode.strip()
 
     pyperclip.copy(generatedCode)
