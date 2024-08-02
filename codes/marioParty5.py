@@ -229,3 +229,9 @@ MP5 - Star Handicap
 00455842 0000{p4}
 E2000001 80008000
 '''
+
+def getUnderseaShell(value, text):
+    return f'''
+MP5 - Undersea Dream: Seashells Only Give {text}
+004886EF 000000{value}
+'''

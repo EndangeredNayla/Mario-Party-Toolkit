@@ -12,6 +12,7 @@ from events.marioParty5_coins import *
 from events.marioParty5_handicap import *
 from events.marioParty5_mgreplace import *
 from events.marioParty5_items import *
+from events.marioParty5_boardSpecific import *
 
 # Import custom tkinter module as ctk
 import customtkinter as ctk
@@ -26,6 +27,7 @@ def create_mario_party_5_interface(frame):
     tabview.add("Capsule Mods")
     tabview.add("Bonus Star Replacement")
     tabview.add("Star Handicaps")
+    tabview.add("Board Specific")
     tabview.set("Coins Mods")
 
     # Function to create an entry field and checkbox
@@ -531,5 +533,13 @@ def create_mario_party_5_interface(frame):
 
     parse_stars_button = ctk.CTkButton(master=tabview.tab("Star Handicaps"), command=lambda: handicapEvent_mp5(p1Stars, p2Stars, p3Stars, p4Stars), text="Generate Codes")
     parse_stars_button.place(x=10, y=800)
+
+    item_list = ["Nothing", "Golden Mushroom", "Poison Mushroom", "Warp Pipe", "Klepto", "Bubble", "Wiggler", "Hammer Bro", "Coin Block", "Spiny", "Paratroopa", "Goomba", "Bob-omb", "Koopa Bank", "Kamek", "Mr. Blizzard", "Piranha Plant", "Magikoopa", "Ukiki", "Lakitu","Tweester", "Duel", "Chain Chomp", "Bone", "Bowser", "Chance", "Miracle", "Donkey Kong"]   
+    item_label = ctk.CTkLabel(master=tabview.tab("Board Specific"), text="Undersea - Seashell Always Gives  ", font=("Arial", 16))
+    item_label.grid(row=0, column=0)
+    comboItem = ctk.CTkComboBox(master=tabview.tab("Board Specific"), values=item_list)
+    comboItem.grid(row=0, column=1)
+    parse_minigame_button = ctk.CTkButton(master=tabview.tab("Board Specific"), command=lambda: underseaEvent_mp5(comboItem, item_list), text="Generate Code")
+    parse_minigame_button.place(x=10, y=800)
 
     return frame
