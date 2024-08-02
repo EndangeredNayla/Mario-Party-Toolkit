@@ -622,7 +622,6 @@ def create_mario_party_6_interface(frame):
     parseButton = ctk.CTkButton(master=tabview.tab("Initial Orbs"), command=lambda: initialItemsEvent_mp6(initalItem41, initalItem42, initalItem43, items6), text="Generate Codes")
     parseButton.place(x=10, y=800)
 
-
     icon = create_image_icon(tabview.tab("Star Handicaps"), "assets/eventTags/starSpace.png", 0, 0)
     label = ctk.CTkLabel(master=tabview.tab("Star Handicaps"), text=" P1 Starts with  ", font=("Arial", 16))
     label.grid(row=0, column=1)

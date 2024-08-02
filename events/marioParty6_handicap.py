@@ -15,19 +15,16 @@ def handicapEvent_mp6(p1, p2, p3, p4):
         createDialog("Error", "error", "Please fill out atleast one box.", None)
         return
     
-    p1Handicap = hex(int(p1.get()))[2:].zfill(4).upper() if p1.get() else "DUMMY"
-    p2Handicap = hex(int(p2.get()))[2:].zfill(4).upper() if p2.get() else "DUMMY"
-    p3Handicap = hex(int(p3.get()))[2:].zfill(4).upper() if p3.get() else "DUMMY"
-    p4Handicap = hex(int(p4.get()))[2:].zfill(4).upper() if p4.get() else "DUMMY"
+    p1Handicap = hex(int(p1.get()))[2:].zfill(4).upper() if p1.get() else "0000"
+    p2Handicap = hex(int(p2.get()))[2:].zfill(4).upper() if p2.get() else "0000"
+    p3Handicap = hex(int(p3.get()))[2:].zfill(4).upper() if p3.get() else "0000"
+    p4Handicap = hex(int(p4.get()))[2:].zfill(4).upper() if p4.get() else "0000"
 
     # Generate codes for blue and red spaces
-    marioPartySixP1Handicap = getStarHandicapP1(p1Handicap, p1.get()) if p1Handicap != "DUMMY" else ""
-    marioPartySixP2Handicap = getStarHandicapP2(p2Handicap, p2.get()) if p2Handicap != "DUMMY" else ""
-    marioPartySixP3Handicap = getStarHandicapP3(p3Handicap, p3.get()) if p3Handicap != "DUMMY" else ""
-    marioPartySixP4Handicap = getStarHandicapP4(p4Handicap, p4.get()) if p4Handicap != "DUMMY" else ""
+    marioPartySixHandicap = getStarHandicap(p1Handicap, p2Handicap, p3Handicap, p4Handicap)
 
     # Replace placeholder in generated codes
-    generatedCode = (marioPartySixP1Handicap + marioPartySixP2Handicap + marioPartySixP3Handicap + marioPartySixP4Handicap).strip()
+    generatedCode = (marioPartySixHandicap).strip()
 
     # Copy generated codes to clipboard
     pyperclip.copy(generatedCode)

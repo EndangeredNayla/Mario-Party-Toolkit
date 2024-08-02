@@ -331,34 +331,13 @@ E2000001 80008000
 E2000001 80008000
 '''
 
-def getStarHandicapP1(amount, amountDec):
+def getStarHandicap(p1, p2, p3, p4):
     return f'''
-MP7 - P1 Starts With {amountDec} Stars
+MP7 - Star Handicap
 20290CC4 00000000
-02290CD0 0000{amount}
-E2000001 80008000
-'''
-
-def getStarHandicapP2(amount, amountDec):
-    return f'''
-MP7 - P2 Starts With {amountDec} Stars
-20290CC4 00000000
-02290DE0 0000{amount}
-E2000001 80008000
-'''
-
-def getStarHandicapP3(amount, amountDec):
-    return f'''
-MP7 - P3 Starts With {amountDec} Stars
-20290CC4 00000000
-02290EF0 0000{amount}
-E2000001 80008000
-'''
-
-def getStarHandicapP4(amount, amountDec):
-    return f'''
-MP7 - P4 Starts With {amountDec} Stars
-20290CC4 00000000
-02291000 0000{amount}
+02290CD0 0000{p1}
+02290DE0 0000{p2}
+02290EF0 0000{p3}
+02291000 0000{p4}
 E2000001 80008000
 '''

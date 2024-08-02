@@ -373,3 +373,19 @@ MP4 - Lottery 1st is {lotteryPrizeALabel} - 2nd is {lotteryPrizeBLabel} - 3rd is
 0407EA60 3B80{lotteryPrizeB}
 021D5678 0000{lotteryPrizeC}{lotteryPrizeD}
 '''
+
+def getStarHandicap(p1, p2, p3, p4):
+    return f'''
+MP4 - Custom Star Handicap
+2C1D3CE2 00000058
+2E1D3CE2 00000060
+C200EBFC 00000003
+2C050000 4082000C
+60000000 48000008
+B0BF0006 00000000
+0014C81B 0000{p1}
+0014CE5B 0000{p2}
+0014D49B 0000{p3}
+0014DADB 0000{p4}
+E2000002 80008000
+'''

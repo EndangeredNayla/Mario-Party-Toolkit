@@ -8,6 +8,7 @@
 # Import necessary functions and modules
 from functions import *
 from events.marioParty4_coins import *
+from events.marioParty4_handicap import *
 from events.marioParty4_lotteryPrize import *
 from events.marioParty4_mgreplace import *
 from events.marioParty4_items import *
@@ -28,6 +29,7 @@ def create_mario_party_4_interface(frame):
     tabview.add("Initial Items")
     tabview.add("Space Replacement")
     tabview.add("Lottery Rewards")
+    tabview.add("Star Handicaps")
     tabview.set("Coins Mods")
 
     # Function to create an entry field and checkbox
@@ -349,5 +351,40 @@ def create_mario_party_4_interface(frame):
 
     parseButton = ctk.CTkButton(master=tabview.tab("Space Replacement"), command=lambda: spaceReplaceEvent_mp4(spaceRep411, spaceRep421, spaceRep412, spaceRep422, spaces4), text="Generate Codes")
     parseButton.place(x=10, y=800)
+
+    icon = create_image_icon(tabview.tab("Star Handicaps"), "assets/eventTags/starSpace.png", 0, 0)
+    label = ctk.CTkLabel(master=tabview.tab("Star Handicaps"), text=" P1 Starts with  ", font=("Arial", 16))
+    label.grid(row=0, column=1)
+    p1Stars = ctk.CTkEntry(master=tabview.tab("Star Handicaps"), width=48, font=("Arial", 16, "bold"))
+    p1Stars.grid(row=0, column=2)
+    label = ctk.CTkLabel(master=tabview.tab("Star Handicaps"), text=" Stars ", font=("Arial", 16))
+    label.grid(row=0, column=3)
+    
+    icon = create_image_icon(tabview.tab("Star Handicaps"), "assets/eventTags/starSpace.png", 1, 0)
+    label = ctk.CTkLabel(master=tabview.tab("Star Handicaps"), text=" P2 Starts with  ", font=("Arial", 16))
+    label.grid(row=1, column=1)
+    p2Stars = ctk.CTkEntry(master=tabview.tab("Star Handicaps"), width=48, font=("Arial", 16, "bold"))
+    p2Stars.grid(row=1, column=2)
+    label = ctk.CTkLabel(master=tabview.tab("Star Handicaps"), text=" Stars ", font=("Arial", 16))
+    label.grid(row=1, column=3)
+
+    icon = create_image_icon(tabview.tab("Star Handicaps"), "assets/eventTags/starSpace.png", 2, 0)
+    label = ctk.CTkLabel(master=tabview.tab("Star Handicaps"), text=" P3 Starts with  ", font=("Arial", 16))
+    label.grid(row=2, column=1)
+    p3Stars = ctk.CTkEntry(master=tabview.tab("Star Handicaps"), width=48, font=("Arial", 16, "bold"))
+    p3Stars.grid(row=2, column=2)
+    label = ctk.CTkLabel(master=tabview.tab("Star Handicaps"), text=" Stars ", font=("Arial", 16))
+    label.grid(row=2, column=3)
+
+    icon = create_image_icon(tabview.tab("Star Handicaps"), "assets/eventTags/starSpace.png", 3, 0)
+    label = ctk.CTkLabel(master=tabview.tab("Star Handicaps"), text=" P4 Starts with  ", font=("Arial", 16))
+    label.grid(row=3, column=1)
+    p4Stars = ctk.CTkEntry(master=tabview.tab("Star Handicaps"), width=48, font=("Arial", 16, "bold"))
+    p4Stars.grid(row=3, column=2)
+    label = ctk.CTkLabel(master=tabview.tab("Star Handicaps"), text=" Stars ", font=("Arial", 16))
+    label.grid(row=3, column=3)
+
+    parse_stars_button = ctk.CTkButton(master=tabview.tab("Star Handicaps"), command=lambda: handicapEvent_mp4(p1Stars, p2Stars, p3Stars, p4Stars), text="Generate Codes")
+    parse_stars_button.place(x=10, y=800)
 
     return frame

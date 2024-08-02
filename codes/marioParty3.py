@@ -223,28 +223,13 @@ D1110DEE 0005
 81110DEE 00{min}
 '''
 
-def getStarHandicapP1(amount, amountDec):
+def getStarHandicap(p1, p2, p3, p4):
     return f'''
-MP3 - P1 Starts With {amountDec} Stars
-8011AA3C {amount}	
-'''
-
-def getStarHandicapP2(amount, amountDec):
-    return f'''
-MP3 - P2 Starts With {amountDec} Stars
-8011AA3D {amount}	
-'''
-
-def getStarHandicapP3(amount, amountDec):
-    return f'''
-MP3 - P3 Starts With {amountDec} Stars
-8011AA3E {amount}	
-'''
-
-def getStarHandicapP4(amount, amountDec):
-    return f'''
-MP3 - P4 Starts With {amountDec} Stars
-8011AA3F {amount}
+MP3 - Star Handicap
+8011AA3C {p1}
+8011AA3D {p2}
+8011AA3E {p3}
+8011AA3F {p4}
 '''
 
 def getBooStarPrice(amount, amountNeg, amountDec):

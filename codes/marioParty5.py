@@ -218,3 +218,14 @@ MP5 - Replace Happening Star with {amountDec}
 04468730 7C000378
 E2000001 80008000
 '''
+
+def getStarHandicap(p1, p2, p3, p4):
+    return f'''
+MP5 - Star Handicap
+28288862 00000060
+0045583F 0000{p1}
+00455840 0000{p2}
+00455841 0000{p3}
+00455842 0000{p4}
+E2000001 80008000
+'''
