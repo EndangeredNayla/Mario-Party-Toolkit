@@ -19,6 +19,14 @@ def coinsEvent_mp6(blueEntry, redEntry, characterEntry, mgEntry, starEntry, pink
     mgSpaceAmountSix = hex(int(mgEntry.get()))[2:].zfill(4).upper() if mgEntry.get() else "DUMMY"
     starSpaceAmountSix = hex(int(starEntry.get()))[2:].zfill(4).upper() if starEntry.get() else "DUMMY"
     starSpaceAmountNegativeSix = format(-int(starEntry.get()) & 0xFFFFFFFFFFFFFFFF, 'X')[12:] if starEntry.get() else "DUMMY"
+    
+    starSpacex2 = hex(int(starEntry.get()) * 2)[2:].zfill(4).upper() if starEntry.get() else "DUMMY"
+    starSpacex4 = hex(int(starEntry.get()) * 4)[2:].zfill(4).upper() if starEntry.get() else "DUMMY"
+    starSpacey2 = hex(int(starEntry.get()) / 2)[2:].zfill(4).upper() if starEntry.get() else "DUMMY"
+    starSpacey4 = hex(int(starEntry.get()) / 4)[2:].zfill(4).upper() if starEntry.get() else "DUMMY"
+
+    
+    
     characterSpaceAmountSix = hex(int(characterEntry.get()))[2:].zfill(4).upper() if characterEntry.get() else "DUMMY"
     
     pinkBooCoinsSix = hex(int(pinkBooCoinsEntry.get()))[2:].zfill(4).upper() if pinkBooCoinsEntry.get() else "DUMMY"
@@ -33,7 +41,7 @@ def coinsEvent_mp6(blueEntry, redEntry, characterEntry, mgEntry, starEntry, pink
     marioPartySixRedSpace = getRedSpaceCodeSix(redSpaceAmountNegativeSix, redEntry.get()) if redSpaceAmountNegativeSix != "DUMMY" else ""
     marioPartySixCharSpace = getCharacterSpaceCodeSix(characterSpaceAmountSix, characterEntry.get()) if characterSpaceAmountSix != "DUMMY" else ""
     marioPartySixMiniGame = getMinigameCodeSix(mgSpaceAmountSix, mgEntry.get()) if mgSpaceAmountSix != "DUMMY" else ""
-    marioPartySixStarSpace = getStarSpaceCodeSix(starSpaceAmountSix, starSpaceAmountNegativeSix, starEntry.get()) if starSpaceAmountSix != "DUMMY" else ""
+    marioPartySixStarSpace = getStarSpaceCodeSix(starSpaceAmountSix, starSpaceAmountNegativeSix, starEntry.get(), starSpacey4, starSpacey2, starSpacex2, starSpacex4) if starSpaceAmountSix != "DUMMY" else ""
     marioPartySixChompCoins = getPinkBooCoinsSpaceCodeSix(pinkBooCoinsSix, pinkBooCoinsSixNeg, pinkBooCoinsEntry.get()) if pinkBooCoinsSix != "DUMMY" else ""
     marioPartySixChompStars = getPinkBooSpaceCodeSix(pinkBooStarsSix, pinkBooStarsSixNeg, pinkBooStarEntry.get()) if pinkBooStarsSix != "DUMMY" else ""
     marioPartySixChompBase = getCoinStealBaseSix(pinkBooCoinsMinSix, pinkBooMinEntry.get()) if pinkBooCoinsMinSix != "DUMMY" else ""

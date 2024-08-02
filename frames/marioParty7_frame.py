@@ -62,7 +62,7 @@ def create_mario_party_7_interface(frame):
     mgWin_entry = create_entry(tabview.tab("Coins Mods"), 4, "assets/eventTags/miniGame.png", " Gain  ", " Coins when winning a Minigame.")
 
     star_entry = create_entry(tabview.tab("Coins Mods"), 5, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star at a Star Space and when using Flutter.  ")
-    windmill_entryTooltip = CTkToolTip(star_entry, message="Works on Canal, Neon, and Bowser.")
+    windmill_entryTooltip = CTkToolTip(star_entry, message="Works on Canal, Pagoda, Neon Heights, and Bowser.")
 
     star_last4_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star during Last 4 Turns.")
     hammerBro_entry = create_entry2(tabview.tab("Coins Mods"), 1, "assets/items/hammerBroCapsule.png", " Steal ", " Coins from Hammer Bro.")
@@ -70,8 +70,6 @@ def create_mario_party_7_interface(frame):
     fireball_entry = create_entry2(tabview.tab("Coins Mods"), 3, "assets/items/fireballCapsule.png", " Steal ", " Coins from Fireballs.")
     vacuum_entry = create_entry2(tabview.tab("Coins Mods"), 4, "assets/items/vacuumCapsule.png", " Steal ", " Coins despite Vacuum Roulette.")
     flower_entry = create_entry2(tabview.tab("Coins Mods"), 5, "assets/items/flowerCapsule.png", " Gain ", " Per Space with Flower.")
-    #windmill_entry = create_entry2(tabview.tab("Coins Mods"), 6, "assets/eventTags/willmillville.png", " Max ", " coins.")
-    #windmill_entryTooltip = CTkToolTip(windmill_entry, message="Max Coin Value is 255")
 
     # Create button to generate coins modification codes  
     parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp7(blue_entry, red_entry, character_entry, mgWin_entry, star_entry, star_last4_entry, hammerBro_entry, zap_entry, fireball_entry, vacuum_entry, flower_entry), text="Generate Codes")
