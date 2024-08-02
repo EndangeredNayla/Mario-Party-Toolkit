@@ -1083,7 +1083,7 @@ def savePresetItems7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, golden
         print("MPT file saved successfully!")
         createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
 
-def loadPresetItems7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7, posionMushroomPrice7, posionMushroomWeight7, dkCapsulePrice7, dkCapsuleWeight7, orbBagCapsulePrice7, orbBagCapsuleWeight7, duelCapsulePrice7, duelCapsuleWeight7, mysteryCapsulePrice7, mysteryCapsuleWeight7):
+def loadPresetItems7(hide_custom, mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7, posionMushroomPrice7, posionMushroomWeight7, dkCapsulePrice7, dkCapsuleWeight7, orbBagCapsulePrice7, orbBagCapsuleWeight7, duelCapsulePrice7, duelCapsuleWeight7, mysteryCapsulePrice7, mysteryCapsuleWeight7):
     file_path = tkinter.filedialog.askopenfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
     if file_path:
         prices7In = []
@@ -1100,6 +1100,11 @@ def loadPresetItems7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, golden
         
         pricesNames7 = [testVar, goldenMushroomCapsulePrice7, slowMushroomCapsulePrice7, metalMushroomCapsulePrice7, flutterCapsulePrice7, cannonCapsulePrice7, snackCapsulePrice7, lakituCapsulePrice7, hammerBroCapsulePrice7, plantCapsulePrice7, spearCapsulePrice7, kamekCapsulePrice7, toadyCapsulePrice7, blizzardCapsulePrice7, banditCapsulePrice7, pinkBooCapsulePrice7, spinyCapsulePrice7, zapCapsulePrice7, tweesterCapsulePrice7, thwompCapsulePrice7, warpCapsulePrice7, bombCapsulePrice7, fireballCapsulePrice7, flowerCapsulePrice7, eggCapsulePrice7, vacuumCapsulePrice7, magicCapsulePrice7, tripleCapsulePrice7, koopaCapsulePrice7]
         weightsNames7 = [mushroomCapsuleWeight7, goldenMushroomCapsuleWeight7, slowMushroomCapsuleWeight7, metalMushroomCapsuleWeight7, flutterCapsuleWeight7, cannonCapsuleWeight7, snackCapsuleWeight7, lakituCapsuleWeight7, hammerBroCapsuleWeight7, plantCapsuleWeight7, spearCapsuleWeight7, kamekCapsuleWeight7, toadyCapsuleWeight7, blizzardCapsuleWeight7, banditCapsuleWeight7, pinkBooCapsuleWeight7, spinyCapsuleWeight7, zapCapsuleWeight7, tweesterCapsuleWeight7, thwompCapsuleWeight7, warpCapsuleWeight7, bombCapsuleWeight7, fireballCapsuleWeight7, flowerCapsuleWeight7, eggCapsuleWeight7, vacuumCapsuleWeight7, magicCapsuleWeight7, tripleCapsuleWeight7, koopaCapsuleWeight7]
+        
+        if not hide_custom:
+            pricesNames7.extend([dkCapsulePrice7, posionMushroomPrice7, duelCapsulePrice7, mysteryCapsulePrice7, orbBagCapsulePrice7])
+            weightsNames7.extend([dkCapsuleWeight7, posionMushroomWeight7, duelCapsuleWeight7, mysteryCapsuleWeight7, orbBagCapsuleWeight7])
+        
         # Update widgets with loaded values
         for index, widget in enumerate(pricesNames7):
             if widget and index < len(prices7In):
@@ -1112,7 +1117,7 @@ def loadPresetItems7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, golden
         print("MPT file laoded successfully!")
         createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
 
-def fillViaCode7(top, codeText, mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7):
+def fillViaCode7(hide_custom, top, codeText, mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7, posionMushroomPrice7, posionMushroomWeight7, dkCapsulePrice7, dkCapsuleWeight7, orbBagCapsulePrice7, orbBagCapsuleWeight7, duelCapsulePrice7, duelCapsuleWeight7, mysteryCapsulePrice7, mysteryCapsuleWeight7):
     code7 = []
     code_single7 = []
     weight_code7 = []
@@ -1133,7 +1138,7 @@ def fillViaCode7(top, codeText, mushroomCapsuleWeight7, goldenMushroomCapsulePri
         if current_line7 == "MP7 - Orb Modifer":
             current_line7 = ""
             
-            for i in range(18, 2466):
+            for i in range(18, 2538):
                 if code7[0][i] != " " and code7[0][i] != "\n":
                     current_line7 = current_line7 + code7[0][i]
                 else:
@@ -1142,7 +1147,7 @@ def fillViaCode7(top, codeText, mushroomCapsuleWeight7, goldenMushroomCapsulePri
         else:
             current_line7 = ""
             
-            for i in range(0, 2448):
+            for i in range(0, 2520):
                 if code7[0][i] != " " and code7[0][i] != "\n":
                     current_line7 = current_line7 + code7[0][i]
                 else:
@@ -1153,14 +1158,14 @@ def fillViaCode7(top, codeText, mushroomCapsuleWeight7, goldenMushroomCapsulePri
         return
     
     del code_single7[0:3]
-    del code_single7[229::]
+    del code_single7[269::]
 
-    for i in range(1, 115):
-        del code_single7[i]
-    
+    for i in range(1, 135):
+        del code_single7[i] 
+
     x = 1
     
-    for i in range(29):
+    for i in range(34):
         for n in range(2):
             del code_single7[x]
         x += 2
@@ -1169,13 +1174,13 @@ def fillViaCode7(top, codeText, mushroomCapsuleWeight7, goldenMushroomCapsulePri
     
     x = 1
 
-    for i in range(29):
+    for i in range(34):
         weight_code7.append(code_single7[x])
         x += 2
     
     x = 0
 
-    for i in range(29):
+    for i in range(34):
         price_code7.append(code_single7[x])
         x += 2
 
@@ -1190,12 +1195,23 @@ def fillViaCode7(top, codeText, mushroomCapsuleWeight7, goldenMushroomCapsulePri
     
     for price in prices7:
         prices7In.append(int(price, 16))
-        
+
+    print(prices7In)
+    print(weights7In)
+    
+    prices7In.insert(31, prices7In.pop(32))
+    weights7In.insert(31, prices7In.pop(32))
+    
     testVar = ""
     
     # Define a list of Entry widget attributes
     pricesNames7 = [testVar, goldenMushroomCapsulePrice7, slowMushroomCapsulePrice7, metalMushroomCapsulePrice7, flutterCapsulePrice7, cannonCapsulePrice7, snackCapsulePrice7, lakituCapsulePrice7, hammerBroCapsulePrice7, plantCapsulePrice7, spearCapsulePrice7, kamekCapsulePrice7, toadyCapsulePrice7, blizzardCapsulePrice7, banditCapsulePrice7, pinkBooCapsulePrice7, spinyCapsulePrice7, zapCapsulePrice7, tweesterCapsulePrice7, thwompCapsulePrice7, warpCapsulePrice7, bombCapsulePrice7, fireballCapsulePrice7, flowerCapsulePrice7, eggCapsulePrice7, vacuumCapsulePrice7, magicCapsulePrice7, tripleCapsulePrice7, koopaCapsulePrice7]
     weightsNames7 = [mushroomCapsuleWeight7, goldenMushroomCapsuleWeight7, slowMushroomCapsuleWeight7, metalMushroomCapsuleWeight7, flutterCapsuleWeight7, cannonCapsuleWeight7, snackCapsuleWeight7, lakituCapsuleWeight7, hammerBroCapsuleWeight7, plantCapsuleWeight7, spearCapsuleWeight7, kamekCapsuleWeight7, toadyCapsuleWeight7, blizzardCapsuleWeight7, banditCapsuleWeight7, pinkBooCapsuleWeight7, spinyCapsuleWeight7, zapCapsuleWeight7, tweesterCapsuleWeight7, thwompCapsuleWeight7, warpCapsuleWeight7, bombCapsuleWeight7, fireballCapsuleWeight7, flowerCapsuleWeight7, eggCapsuleWeight7, vacuumCapsuleWeight7, magicCapsuleWeight7, tripleCapsuleWeight7, koopaCapsuleWeight7]
+    
+    if not hide_custom:
+        pricesNames7.extend([dkCapsulePrice7, posionMushroomPrice7, duelCapsulePrice7, mysteryCapsulePrice7, orbBagCapsulePrice7])
+        weightsNames7.extend([dkCapsuleWeight7, posionMushroomWeight7, duelCapsuleWeight7, mysteryCapsuleWeight7, orbBagCapsuleWeight7])
+
     # Update widgets with loaded values
     for index, widget in enumerate(pricesNames7):
         if widget and index < len(prices7In):
