@@ -22,8 +22,8 @@ def coinsEvent_mp6(blueEntry, redEntry, characterEntry, mgEntry, starEntry, pink
     
     starSpacex2 = hex(int(starEntry.get()) * 2)[2:].zfill(4).upper() if starEntry.get() else "DUMMY"
     starSpacex4 = hex(int(starEntry.get()) * 4)[2:].zfill(4).upper() if starEntry.get() else "DUMMY"
-    starSpacey2 = hex(int(starEntry.get()) / 2)[2:].zfill(4).upper() if starEntry.get() else "DUMMY"
-    starSpacey4 = hex(int(starEntry.get()) / 4)[2:].zfill(4).upper() if starEntry.get() else "DUMMY"
+    starSpacey2 = hex(int(starEntry.get()) // 2)[2:].zfill(4).upper() if starEntry.get() else "DUMMY"
+    starSpacey4 = hex(int(starEntry.get()) // 4)[2:].zfill(4).upper() if starEntry.get() else "DUMMY"
 
     
     
