@@ -10,7 +10,7 @@ from codes.marioParty1 import *
 
 import pyperclip
 
-def coinsEvent_mp1(blueAmount, blueTick, redAmount, redTick):
+def coinsEvent_mp1(blueAmount, blueTick, redAmount, redTick, starAmount):
     if not blueAmount.get() and not redAmount.get():
         createDialog("Error", "error", "Please fill out atleast one box.", None)
         return
