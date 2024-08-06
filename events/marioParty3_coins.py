@@ -63,7 +63,7 @@ def coinsEvent_mp3(blueAmount, blueTick, redAmount, redTick, starAmount, booCoin
     marioPartyThreeStarSpace = getStarSpaceCodeThree(starSpaceAmountThree, starSpaceAmountNegativeThree, starSpaceAmountBaseThree) if starSpaceAmountThree != "DUMMY" else ""
     marioPartyThreeKoopaBank = getKoopaBankCodeThree(koopaBankAmountThree, kbAmountNegativeBaseThree, koopaBankAmountBaseThree) if koopaBankAmountThree != "DUMMY" else ""
     marioPartyThreeStarBoo = getBooStarPrice(booStarsAmountThree, booCoinsAmountNegativeThree, booStarsAmountBaseThree) if booStarsAmountThree != "DUMMY" else ""
-    marioPartyThreeCoinBoo = getBooCoinsPrice(booCoinsAmountThree, booStarsAmountNegativeThree, booCoinsAmountBaseThree) if booCoinsAmountThree != "DUMMY" else ""
+    marioPartyThreeCoinBoo = getBooCoinsPrice(booCoinsAmountThree, booCoinsAmountNegativeThree, booCoinsAmountBaseThree) if booCoinsAmountThree != "DUMMY" else ""
 
     # Replace placeholder in generated codes
     generatedCode = (marioPartyThreeBlueSpace + marioPartyThreeRedSpace + marioPartyThreeStarSpace + marioPartyThreeKoopaBank + marioPartyThreeCoinBoo + marioPartyThreeStarBoo).strip()
