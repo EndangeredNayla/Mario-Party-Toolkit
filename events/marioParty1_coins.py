@@ -24,6 +24,13 @@ def coinsEvent_mp1(blueAmount, blueTick, redAmount, redTick):
     redSpaceAmountOne = hex(int(redSpaceAmountBaseOne))[2:].zfill(4).upper() if redSpaceAmountBaseOne else "DUMMY"
     redSpaceSwitchOne = "1" if redTick.get() else "0"
 
+
+    # Extract star space information
+    starSpaceAmountBaseOne = starAmount.get()
+    starSpaceAmountOne = hex(int(starSpaceAmountBaseOne))[2:].zfill(4).upper() if starSpaceAmountBaseOne else "DUMMY"
+    negativeStarSpaceAmountBaseOne = -int(starSpaceAmountBaseOne) if starSpaceAmountBaseOne else "DUMMY" 
+    starSpaceAmountNegativeOne = format(negativeStarSpaceAmountBaseOne & 0xFFFFFFFFFFFFFFFF, 'X')[12:] if starSpaceAmountBaseOne else "DUMMY"
+
     # Generate codes for blue and red spaces
     if blueSpaceSwitchOne == "0":
         marioPartyOneBlueSpace = getBlueSpaceCodeOne(blueSpaceAmountOne, blueSpaceSwitchOne, blueSpaceAmountBaseOne, "Doesn't Double on Last 5") if blueSpaceAmountOne != "DUMMY" else ""
@@ -35,9 +42,11 @@ def coinsEvent_mp1(blueAmount, blueTick, redAmount, redTick):
     elif redSpaceSwitchOne == "1":
         marioPartyOneRedSpace = getRedSpaceCodeOne(redSpaceAmountOne, redSpaceSwitchOne, redSpaceAmountBaseOne, "Doubles on Last 5") if redSpaceAmountOne != "DUMMY" else ""
 
+    marioPartyOneStarSpace = getStarSpaceCodeOne(starSpaceAmountOne, starSpaceAmountNegativeOne, starSpaceAmountBaseOne) if starSpaceAmountOne != "DUMMY" else ""
+
 
     # Replace placeholder in generated codes
-    generatedCode = (marioPartyOneBlueSpace + marioPartyOneRedSpace).strip()
+    generatedCode = (marioPartyOneBlueSpace + marioPartyOneRedSpace + marioPartyOneStarSpace).strip()
 
     # Copy generated codes to clipboard
     pyperclip.copy(generatedCode)

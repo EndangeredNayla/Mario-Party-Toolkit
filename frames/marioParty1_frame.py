@@ -39,12 +39,24 @@ def create_mario_party_1_interface(frame):
         checkbox.grid(row=row, column=5, padx=10, pady=10)
         return entry, checkbox
 
+    # Function to create an entry field and checkbox
+    def create_entry(tab, row, icon_path, label_text, color, placeholder):
+        create_image_icon(tab, icon_path, row, 1)
+        label = ctk.CTkLabel(master=tab, text=label_text, font=("Arial", 16))
+        label.grid(row=row, column=2, sticky="w", pady=15)
+        entry = ctk.CTkEntry(master=tab, width=48, font=("Arial", 16, "bold"), placeholder_text=placeholder)
+        entry.grid(row=row, column=3)
+        label1 = ctk.CTkLabel(master=tab, text=color, font=("Arial", 16))
+        label1.grid(row=row, column=4, sticky="w")
+        return entry
+    
     # Create entry fields and checkboxes for Coins Mods tab
     blue_entry, blue_checkbox = create_entry_and_checkbox(tabview.tab("Coins Mods"), 1, "assets/eventTags/blueSpace.png", " Gain  ", "Blue", "Double the coins on Last 5", "3")
     red_entry, red_checkbox = create_entry_and_checkbox(tabview.tab("Coins Mods"), 2, "assets/eventTags/redSpace.png", " Lose  ", "Red", "Double the coins on Last 5", "3")
+    star_entry = create_entry(tabview.tab("Coins Mods"), 3, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star.", "20")
 
     # Create button to generate coins modification codes
-    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp1(blue_entry, blue_checkbox, red_entry, red_checkbox), text="Generate Codes")
+    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp1(blue_entry, blue_checkbox, red_entry, red_checkbox, star_entry), text="Generate Codes")
     parse_coins_button.place(x=10, y=800)
 
     # List of minigame names

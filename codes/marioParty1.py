@@ -101,3 +101,20 @@ MP1 - Custom Item Block Weights
 8104091C 9044
 8104091E 0968
 '''
+
+def getStarSpaceCodeOne(amount, negAmount, starPrice):
+    return f'''
+MP1 - Stars Cost {starPrice} Coins
+D10F778E 0014
+810F778E {amount}
+D10F6D5A 0014
+810F6D5A {amount}
+D10F6CD2 0014
+810F6CD2 {amount}
+D10F6C58 0014
+810F6C58 {amount}
+D10F6E9A FFEC
+810F6E9A {negAmount}
+D10F6E12 FFEC
+810F6E12 {negAmount}
+'''
