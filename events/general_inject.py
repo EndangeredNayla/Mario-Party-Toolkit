@@ -18,8 +18,14 @@ def general_injection(file_label, cheatCodeEntry):
     if not os.path.exists("tmp"):
         os.mkdir("tmp")
     else:
-        shutil.rmtree("tmp")
-        os.mkdir("tmp")
+        try:
+            shutil.rmtree("tmp")
+        except:
+            pass
+        try:
+            os.mkdir("tmp")
+        except:
+            pass
     with open("tmp/codes.txt", 'w') as file:
         file.write("$MPToolkit\n" + cheatCodeEntry.get("1.0", "end"))
     iso_path = file_label.cget("text")
