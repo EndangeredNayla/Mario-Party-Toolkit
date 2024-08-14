@@ -120,7 +120,7 @@ def create_mario_party_2_interface(frame):
     magicLamp2 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="30")
     magicLamp2.grid(row=3, column=8)
 
-    parseButtonTwo = ctk.CTkButton(master=tabview.tab("Item Mods"), command=lambda: itemsTwo(mushroom2, skeletonKey2, plunderChest2, duelingGlove2, warpBlock2, goldenMushroom2, magicLamp2), text="Generate Codes")
+    parseButtonTwo = ctk.CTkButton(master=tabview.tab("Item Mods"), command=lambda: itemsEvent_mp2(mushroom2, skeletonKey2, plunderChest2, duelingGlove2, warpBlock2, goldenMushroom2, magicLamp2), text="Generate Codes")
     parseButtonTwo.place(x=10, y=800)
 
     warningLabel = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="These are not weights! 0 doesnt mean disabled.", font=("Arial", 16, "bold"))
