@@ -313,3 +313,32 @@ D110FC4E FFFB
 D110FC5A FFFB
 8110FC5A {amountNeg}
 '''
+
+def getItemReplaceThree(itemHex1, itemHex2, spaceName, spaceName2):
+    return f'''
+MP3 - Replace {spaceName} with {spaceName2}
+D00D1120 00{itemHex1}
+800D1120 00{itemHex2}
+D00D1121 00{itemHex1}
+800D1121 00{itemHex2}
+D00D1122 00{itemHex1}
+800D1122 00{itemHex2}
+D00D1158 00{itemHex1}
+800D1158 00{itemHex2}
+D00D1159 00{itemHex1}
+800D1159 00{itemHex2}
+D00D115A 00{itemHex1}
+800D115A 00{itemHex2}
+D00D1190 00{itemHex1}
+800D1190 00{itemHex2}
+D00D1191 00{itemHex1}
+800D1191 00{itemHex2}
+D00D1192 00{itemHex1}
+800D1192 00{itemHex2}
+D00D11C8 00{itemHex1}
+800D11C8 00{itemHex2}
+D00D11C9 00{itemHex1}
+800D11C9 00{itemHex2}
+D00D11CA 00{itemHex1}
+800D11CA 00{itemHex2}
+'''
