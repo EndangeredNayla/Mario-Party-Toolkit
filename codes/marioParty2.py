@@ -172,3 +172,16 @@ D10FA63E 0049
 D10FA63E 0049
 81108B0A {amount}
 '''
+
+def getItemReplaceTwo(itemHex1, itemHex2, spaceName, spaceName2):
+    return f'''
+MP2 - Replace {spaceName} with {spaceName2}
+D00FD2D9 00{itemHex1}
+800FD2D9 00{itemHex2}
+D00FD30D 00{itemHex1}
+800FD30D 00{itemHex2}
+D00FD341 00{itemHex1}
+800FD341 00{itemHex2}
+D00FD375 00{itemHex1}
+800FD375 00{itemHex2}
+'''

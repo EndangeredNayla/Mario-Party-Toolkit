@@ -9,6 +9,7 @@
 from functions import *
 from events.marioParty2_coins import *
 from events.marioParty2_items import *
+from events.marioParty2_itemReplace import *
 from events.marioParty2_handicap import *
 from events.marioParty2_mgreplace import *
 
@@ -22,7 +23,8 @@ def create_mario_party_2_interface(frame):
     tabview.grid(padx=10, pady=10)
     tabview.add("Coins Mods")
     tabview.add("Minigame Replacement")
-    tabview.add("Item Mods")
+    tabview.add("Item Prices")
+    tabview.add("Item Replacement")
     tabview.add("Star Handicaps")
     tabview.set("Coins Mods")
 
@@ -75,55 +77,73 @@ def create_mario_party_2_interface(frame):
     parse_minigame_button = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=lambda: mgReplaceEvent_mp2(combobox_mingames_1, combobox_mingames_2, minigames_list), text="Generate Codes")
     parse_minigame_button.place(x=10, y=800)
 
-    icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/mushroom.png", 1, 1)
-    label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+    # List of minigame names
+    items2 = ["None", "Mushroom", "Skeleton Key", "Plunder Chest", "Bowser BOMB", "Dueling Glove", "Warp Block", "Golden Mushroom", "Boo Bell", "Bowser Suit", "Magic Lamp"]
+   
+    label = ctk.CTkLabel(master=tabview.tab("Item Replacement"), text=" Replace  ", font=("Arial", 16))
+    label.grid(row=0, column=0)
+
+    itemSwap411 = ctk.CTkComboBox(master=tabview.tab("Item Replacement"), values=items2)
+    itemSwap411.grid(row=0, column=1)
+
+    label = ctk.CTkLabel(master=tabview.tab("Item Replacement"), text=" with ", font=("Arial", 16))
+    label.grid(row=0, column=2)
+
+    itemSwap412 = ctk.CTkComboBox(master=tabview.tab("Item Replacement"), values=items2)
+    itemSwap412.grid(row=0, column=3)
+
+    parseButton = ctk.CTkButton(master=tabview.tab("Item Replacement"), command=lambda: itemReplace_mp2(itemSwap411, itemSwap412, items2), text="Generate Codes")
+    parseButton.place(x=10, y=800)
+
+    icon = create_image_icon(tabview.tab("Item Prices"), "assets/items/mushroom.png", 1, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Item Prices"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=1, column=2)
-    mushroom2 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="10")
+    mushroom2 = ctk.CTkEntry(master=tabview.tab("Item Prices"), width=48, font=("Arial", 16, "bold"), placeholder_text="10")
     mushroom2.grid(row=1, column=3)
 
-    icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/skeletonKey.png", 2, 1)
-    label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+    icon = create_image_icon(tabview.tab("Item Prices"), "assets/items/skeletonKey.png", 2, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Item Prices"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=2, column=2)
-    skeletonKey2 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="10")
+    skeletonKey2 = ctk.CTkEntry(master=tabview.tab("Item Prices"), width=48, font=("Arial", 16, "bold"), placeholder_text="10")
     skeletonKey2.grid(row=2, column=3)
 
-    icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/plunderChest.png", 3, 1)
-    label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+    icon = create_image_icon(tabview.tab("Item Prices"), "assets/items/plunderChest.png", 3, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Item Prices"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=3, column=2)
-    plunderChest2 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="15")
+    plunderChest2 = ctk.CTkEntry(master=tabview.tab("Item Prices"), width=48, font=("Arial", 16, "bold"), placeholder_text="15")
     plunderChest2.grid(row=3, column=3)
 
-    icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/duelingGlove.png", 4, 1)
-    label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+    icon = create_image_icon(tabview.tab("Item Prices"), "assets/items/duelingGlove.png", 4, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Item Prices"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=4, column=2)
-    duelingGlove2 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="15")
+    duelingGlove2 = ctk.CTkEntry(master=tabview.tab("Item Prices"), width=48, font=("Arial", 16, "bold"), placeholder_text="15")
     duelingGlove2.grid(row=4, column=3)
 
-    label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="    ", font=("Arial", 16))
+    label = ctk.CTkLabel(master=tabview.tab("Item Prices"), text="    ", font=("Arial", 16))
     label.grid(row=4, column=5)
 
-    icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/warpBlock.png", 1, 6)
-    label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+    icon = create_image_icon(tabview.tab("Item Prices"), "assets/items/warpBlock.png", 1, 6)
+    label = ctk.CTkLabel(master=tabview.tab("Item Prices"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=1, column=7)
-    warpBlock2 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="15")
+    warpBlock2 = ctk.CTkEntry(master=tabview.tab("Item Prices"), width=48, font=("Arial", 16, "bold"), placeholder_text="15")
     warpBlock2.grid(row=1, column=8)
 
-    icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/goldenMushroom.png", 2, 6)
-    label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+    icon = create_image_icon(tabview.tab("Item Prices"), "assets/items/goldenMushroom.png", 2, 6)
+    label = ctk.CTkLabel(master=tabview.tab("Item Prices"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=2, column=7)
-    goldenMushroom2 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="20")
+    goldenMushroom2 = ctk.CTkEntry(master=tabview.tab("Item Prices"), width=48, font=("Arial", 16, "bold"), placeholder_text="20")
     goldenMushroom2.grid(row=2, column=8)
 
-    icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/magicLamp.png", 3, 6)
-    label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+    icon = create_image_icon(tabview.tab("Item Prices"), "assets/items/magicLamp.png", 3, 6)
+    label = ctk.CTkLabel(master=tabview.tab("Item Prices"), text=" Costs  ", font=("Arial", 16))
     label.grid(row=3, column=7)
-    magicLamp2 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"), placeholder_text="30")
+    magicLamp2 = ctk.CTkEntry(master=tabview.tab("Item Prices"), width=48, font=("Arial", 16, "bold"), placeholder_text="30")
     magicLamp2.grid(row=3, column=8)
 
-    parseButtonTwo = ctk.CTkButton(master=tabview.tab("Item Mods"), command=lambda: itemsEvent_mp2(mushroom2, skeletonKey2, plunderChest2, duelingGlove2, warpBlock2, goldenMushroom2, magicLamp2), text="Generate Codes")
+    parseButtonTwo = ctk.CTkButton(master=tabview.tab("Item Prices"), command=lambda: itemsEvent_mp2(mushroom2, skeletonKey2, plunderChest2, duelingGlove2, warpBlock2, goldenMushroom2, magicLamp2), text="Generate Codes")
     parseButtonTwo.place(x=10, y=800)
 
-    warningLabel = ctk.CTkLabel(master=tabview.tab("Item Mods"), text="These are not weights! 0 doesnt mean disabled.", font=("Arial", 16, "bold"))
+    warningLabel = ctk.CTkLabel(master=tabview.tab("Item Prices"), text="These are not weights! 0 doesnt mean disabled.", font=("Arial", 16, "bold"))
     warningLabel.place(x=5, y=210)
 
     icon = create_image_icon(tabview.tab("Star Handicaps"), "assets/eventTags/starSpace.png", 0, 0)
