@@ -14,7 +14,7 @@ def itemReplace_mp3(spaceRep411, spaceRep412, spaces4):
     spaceSlot1 = spaceRep411.get()
     spaceSlot2 = spaceRep412.get()
 
-    spaceHex = ["FF", "00", "01", "02", "03", "04", "05", "06", "07", "09", "0A", "0B", "0C", "0D", "0E", "0F", "10", "11", "12"]
+    spaceHex = ["FF", "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "0A", "0B", "0C", "0D", "0E", "0F", "10", "11", "12"]
 
     spaceSlot1Num = spaces4.index(spaceSlot1)
     spaceSlot1Hex = spaceHex[spaceSlot1Num]
