@@ -34,7 +34,7 @@ def itemsEvent_mp3(mushroom, skeletonKey, poisonMushroom, reverseMushroom, golde
     orbPriceMin = findLowestIntegerWithZero(int(mushroom.get()), int(skeletonKey.get()), int(plunderChest.get()), int(duelingGlove.get()), int(warpBlock.get()), int(goldenMushroom.get()), int(magicLamp.get()), int(cellularShopper.get()), int(itemBag.get()), int(poisonMushroom.get()), int(reverseMushroom.get()), int(booBell.get()), int(booRepellent.get()), int(luckyLamp.get()), int(bowserPhone.get()))
     orbPriceMin_hex = to_hex(orbPriceMin)
 
-    code = getItems3(mushroom_hex, skeletonKey_hex, poisonMushroom_hex, reverseMushroom_hex, goldenMushroom_hex, magicLamp_hex, warpBlock_hex, cellularShopper_hex, bowserPhone_hex, duelingGlove_hex, luckyLamp_hex, bowserSuit_hex, plunderChest_hex, booBell_hex, booRepellent_hex, itemBag_hex, orbPriceMin_hex).strip()
+    code = getItems3(mushroom_hex.upper(), skeletonKey_hex.upper(), poisonMushroom_hex.upper(), reverseMushroom_hex.upper(), goldenMushroom_hex.upper(), magicLamp_hex.upper(), warpBlock_hex.upper(), cellularShopper_hex.upper(), bowserPhone_hex.upper(), duelingGlove_hex.upper(), luckyLamp_hex.upper(), bowserSuit_hex.upper(), plunderChest_hex.upper(), booBell_hex.upper(), booRepellent_hex.upper(), itemBag_hex.upper(), orbPriceMin_hex.upper()).strip()
     pyperclip.copy(code)
 
     print("Generated code copied to the clipboard.")

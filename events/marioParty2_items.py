@@ -87,7 +87,7 @@ def itemsEvent_mp2(mushroom2, skeletonKey2, plunderChest2, duelingGlove2, warpBl
     except:
         magicLamp2 = "00"
 
-    code = getItems2(mushroom2, skeletonKey2, plunderChest2, duelingGlove2, warpBlock2, goldenMushroom2, magicLamp2)
+    code = getItems2(mushroom2.upper(), skeletonKey2.upper(), plunderChest2.upper(), duelingGlove2.upper(), warpBlock2.upper(), goldenMushroom2.upper(), magicLamp2.upper())
     code = code.strip()
     pyperclip.copy(code)
 
