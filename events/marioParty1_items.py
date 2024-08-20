@@ -18,33 +18,34 @@ def itemsEvent_mp1(plus, minus, speed, slow, warp):
 
     try:
         plusWeight = float(plus.get())
-        minusWeight = plusWeight + float(minus.get())
-        speedWeight = minusWeight + float(speed.get())
-        slowWeight = speedWeight + float(slow.get())
-        warpWeight = slowWeight + float(warp.get())
+        minusWeight = float(minus.get())
+        speedWeight = float(speed.get())
+        slowWeight = float(slow.get())
+        warpWeight = float(warp.get())
     except ValueError:
         createDialog("Error", "error", "Please enter valid integers.", None)
         return
 
-    weights = [plusWeight, minusWeight, speedWeight, slowWeight, warpWeight]
-    weights = [min(weight * 2.56 / 10, 256) for weight in weights]  # Apply hard cap at 256
+    # Define cumulative weights
+    cumulative_weights = [
+        plusWeight,
+        plusWeight + minusWeight,
+        plusWeight + minusWeight + speedWeight,
+        plusWeight + minusWeight + speedWeight + slowWeight,
+        plusWeight + minusWeight + speedWeight + slowWeight + warpWeight
+    ]
 
-    # Sort weights and adjust duplicates to the smallest possible unique values
-    sorted_weights = sorted(weights)
-    for i in range(1, len(sorted_weights)):
-        if sorted_weights[i] <= sorted_weights[i - 1]:
-            sorted_weights[i] = sorted_weights[i - 1] + 0.01
-            if sorted_weights[i] > 256:
-                createDialog("Error", "error", "Adjusted weight value exceeds 256. Adjust inputs.", None)
-                return
+    # Scale cumulative weights and ensure they do not exceed 255
+    weights = [min(cumulative_weight * 2.56, 255) for cumulative_weight in cumulative_weights]
 
-    # Map sorted weights back to their original positions
-    weights_map = {original: adjusted for original, adjusted in zip(weights, sorted_weights)}
-    adjusted_weights = [weights_map[weight] for weight in weights]
+    # Ensure weights do not exceed 255
+    if any(weight > 255 for weight in weights):
+        createDialog("Error", "error", "One or more weight values exceed 255. Adjust inputs.", None)
+        return
 
     hex_weights = []
-    for weight in adjusted_weights:
-        hex_weight = hex(int(weight))[2:].zfill(2)
+    for weight in weights:
+        hex_weight = hex(int(weight))[2:].zfill(2)  # Convert to hex and ensure two digits
         hex_weights.append(hex_weight.upper())  # Ensure uppercase for consistency
 
     code = getBlockWeights(*hex_weights).strip()
