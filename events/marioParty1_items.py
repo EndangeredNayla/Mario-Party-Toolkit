@@ -28,6 +28,8 @@ def itemsEvent_mp1(plus, minus, speed, slow, warp):
 
     # Calculate total weight
     total_weight = plusWeight + minusWeight + speedWeight + slowWeight + warpWeight
+    
+    all_dice_weight = 255 - total_weight
 
     # Normalize weights to ensure they sum to 100%
     if total_weight > 0:
@@ -43,7 +45,8 @@ def itemsEvent_mp1(plus, minus, speed, slow, warp):
         plusWeight + minusWeight,
         plusWeight + minusWeight + speedWeight,
         plusWeight + minusWeight + speedWeight + slowWeight,
-        plusWeight + minusWeight + speedWeight + slowWeight + warpWeight
+        plusWeight + minusWeight + speedWeight + slowWeight + warpWeight,
+        all_dice_weight
     ]
 
     # Scale cumulative weights and ensure they do not exceed 255
