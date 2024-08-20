@@ -50,9 +50,10 @@ def create_mario_party_5_interface(frame):
     wiggler_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/eventTags/wigglerCapsule.png", " Costs ", " Coins to buy a Star with Wiggler.")
     chompCost_entry = create_entry(tabview.tab("Coins Mods"), 7, "assets/eventTags/chainChomp.png", " Costs ", " Coins to Steal a Star.")
     chompMin_entry = create_entry(tabview.tab("Coins Mods"), 8, "assets/eventTags/chainChomp.png", " Steal ", " Mininum when stealing Coins.")
+    initial_entry = create_entry(tabview.tab("Coins Mods"), 9, "assets/eventTags/initialCoins.png", " Gain ", " Coins at the start of the game.")
 
     # Create button to generate coins modification codes
-    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp5(blue_entry, red_entry, mgWin_entry, star_entry, wiggler_entry, chompCost_entry, chompMin_entry, koopaBank_entry), text="Generate Codes")
+    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp5(blue_entry, red_entry, mgWin_entry, star_entry, wiggler_entry, chompCost_entry, chompMin_entry, koopaBank_entry, initial_entry), text="Generate Codes")
     parse_coins_button.place(x=10, y=800)
 
     # List of minigame names

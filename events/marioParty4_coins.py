@@ -2,8 +2,8 @@ from functions import *
 from codes.marioParty4 import *
 import pyperclip
 
-def coinsEvent_mp4(blueEntry, redEntry, mgEntry, starEntry, megaEntry, booStarEntry, booCoinsEntry, lotteryEntry, booCoinsMinimum, bowserEntry):
-    if not any((booCoinsMinimum.get(), blueEntry.get(), redEntry.get(), starEntry.get(), mgEntry.get(), megaEntry.get(), booStarEntry.get(), booCoinsEntry.get(), lotteryEntry.get(), bowserEntry.get())):
+def coinsEvent_mp4(blueEntry, redEntry, mgEntry, starEntry, megaEntry, booStarEntry, booCoinsEntry, lotteryEntry, booCoinsMinimum, bowserEntry, initialEntry):
+    if not any((booCoinsMinimum.get(), blueEntry.get(), redEntry.get(), starEntry.get(), mgEntry.get(), megaEntry.get(), booStarEntry.get(), booCoinsEntry.get(), lotteryEntry.get(), bowserEntry.get(), initialEntry.get())):
         createDialog("Error", "error", "Please fill out at least one box.", None)
         return
     
@@ -17,6 +17,7 @@ def coinsEvent_mp4(blueEntry, redEntry, mgEntry, starEntry, megaEntry, booStarEn
     megaAmountFour = hex(int(megaEntry.get()))[2:].zfill(4).upper() if megaEntry.get() else "DUMMY"
     booMinimumFour = hex(int(booCoinsMinimum.get()) + 5)[2:].zfill(4).upper() if booCoinsMinimum.get() else "DUMMY"
     bowserAmountFour = hex(int(bowserEntry.get()))[2:].zfill(4).upper() if bowserEntry.get() else "DUMMY"
+    initialCoinsAmountFour = hex(int(initialEntry.get()))[2:].zfill(4).upper() if initialEntry.get() else "DUMMY"
 
     marioPartyFourBlueSpace = getBlueSpaceCodeFour(blueSpaceAmountFour, blueEntry.get()) if blueSpaceAmountFour != "DUMMY" else ""
     marioPartyFourRedSpace = getRedSpaceCodeFour(redSpaceAmountFour, redEntry.get()) if redSpaceAmountFour != "DUMMY" else ""
@@ -28,8 +29,9 @@ def coinsEvent_mp4(blueEntry, redEntry, mgEntry, starEntry, megaEntry, booStarEn
     marioPartyFourSquish = getSquishCodeFour(megaAmountFour, megaEntry.get()) if megaAmountFour != "DUMMY" else ""
     marioPartyFourBooMinimumCoins = getBooHouseMinimum(booMinimumFour, booCoinsMinimum.get()) if booMinimumFour != "DUMMY" else ""
     marioPartyFourBowser = getBowserSuitCodeFour(bowserAmountFour, bowserEntry.get()) if bowserAmountFour != "DUMMY" else ""
+    marioPartyFourInitialCoins = initialCoinsMod4(initialCoinsAmountFour, initialEntry.get()) if initialCoinsAmountFour != "DUMMY" else ""
 
-    generatedCode = (marioPartyFourBlueSpace + marioPartyFourRedSpace + marioPartyFourMGSpace + marioPartyFourStarSpace + marioPartyFourSquish + marioPartyFourBowser + marioPartyFourBooStar + marioPartyFourBooCoins + marioPartyFourBooMinimumCoins +  marioPartyFourLotterySpace).strip()
+    generatedCode = (marioPartyFourBlueSpace + marioPartyFourRedSpace + marioPartyFourInitialCoins + marioPartyFourMGSpace + marioPartyFourStarSpace + marioPartyFourSquish + marioPartyFourBowser + marioPartyFourBooStar + marioPartyFourBooCoins + marioPartyFourBooMinimumCoins +  marioPartyFourLotterySpace).strip()
 
     pyperclip.copy(generatedCode)
 

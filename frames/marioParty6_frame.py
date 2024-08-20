@@ -56,9 +56,10 @@ def create_mario_party_6_interface(frame):
     pinkBooCoins_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/eventTags/pinkBooCoins.png", " Costs ", " Coins to steal Coins.")
     pinkBooMin_entry = create_entry(tabview.tab("Coins Mods"), 7, "assets/eventTags/pinkBooCoins.png", " Steal ", " Mininum when stealing Coins.")
     pinkBooStar_entry = create_entry(tabview.tab("Coins Mods"), 8, "assets/eventTags/pinkBooStars.png", " Costs ", " Coins to steal a Star.")
+    initial_entry = create_entry(tabview.tab("Coins Mods"), 9, "assets/eventTags/initialCoins.png", " Gain ", " Coins at the start of the game.")
 
     # Create button to generate coins modification codes
-    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp6(blue_entry, red_entry, character_entry, mgWin_entry, star_entry, pinkBooCoins_entry, pinkBooMin_entry, pinkBooStar_entry), text="Generate Codes")
+    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp6(blue_entry, red_entry, character_entry, mgWin_entry, star_entry, pinkBooCoins_entry, pinkBooMin_entry, pinkBooStar_entry, initial_entry), text="Generate Codes")
     parse_coins_button.place(x=10, y=800)
 
     # List of minigame names

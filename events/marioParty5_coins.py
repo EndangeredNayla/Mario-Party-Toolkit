@@ -8,8 +8,8 @@
 from functions import *
 from codes.marioParty5 import *
 import pyperclip
-def coinsEvent_mp5(blueEntry, redEntry, mgEntry, starEntry, wigglerEntry, chompStarEntry, chompWeightEntry, koopaEntry):
-    if not any((blueEntry.get(), redEntry.get(), starEntry.get(), mgEntry.get(), wigglerEntry.get(), chompWeightEntry.get(), chompStarEntry.get(), koopaEntry.get())):
+def coinsEvent_mp5(blueEntry, redEntry, mgEntry, starEntry, wigglerEntry, chompStarEntry, chompWeightEntry, koopaEntry, initialEntry):
+    if not any((blueEntry.get(), redEntry.get(), starEntry.get(), mgEntry.get(), wigglerEntry.get(), chompWeightEntry.get(), chompStarEntry.get(), koopaEntry.get(), initialEntry.get())):
         createDialog("Error", "error", "Please fill out at least one box.", None)
         return
     
@@ -27,6 +27,7 @@ def coinsEvent_mp5(blueEntry, redEntry, mgEntry, starEntry, wigglerEntry, chompS
     chompStarStealFive = hex(int(chompStarEntry.get()))[2:].zfill(4).upper() if chompStarEntry.get() else "DUMMY"
     chompStarStealNegBase = -int(chompStarEntry.get()) if chompStarEntry.get() else "DUMMY"
     chompSpaceAmountNegativeFive = format(chompStarStealNegBase & 0xFFFFFFFFFFFFFFFF, 'X')[12:] if chompStarEntry.get() else "DUMMY"
+    initialCoins = hex(int(initialEntry.get()))[2:].zfill(4).upper() if initialEntry.get() else "DUMMY"
 
     marioPartyFiveStarSpace = getStarSpaceCodeFive(starSpaceAmountFive, starSpaceAmountNegativeFive, starEntry.get()) if starSpaceAmountFive != "DUMMY" else ""
     marioPartyFiveWigglerSpace = getWigglerSpaceCodeFive(wigglerSpaceAmountFive, wigglerSpaceAmountNegativeFive, wigglerEntry.get()) if wigglerSpaceAmountFive != "DUMMY" else ""
@@ -36,8 +37,9 @@ def coinsEvent_mp5(blueEntry, redEntry, mgEntry, starEntry, wigglerEntry, chompS
     marioPartyFiveRedSpace = getRedSpaceCodeFive(redSpaceAmountNegativeFive, redEntry.get()) if redSpaceAmountNegativeFive != "DUMMY" else ""
     marioPartyFiveMiniGame = getMinigameCodeFive(mgSpaceAmountFive, mgEntry.get()) if mgSpaceAmountFive != "DUMMY" else ""
     marioPartyFiveKoopaBank = getKoopaBankFive(koopaAmountFive, koopaEntry.get()) if koopaAmountFive != "DUMMY" else ""
+    marioPartyFourInitialCoins = initialCoinsMod5(initialCoins, initialEntry.get()) if initialCoins != "DUMMY" else ""
 
-    generatedCode = marioPartyFiveBlueSpace + marioPartyFiveRedSpace + marioPartyFiveKoopaBank + marioPartyFiveMiniGame + marioPartyFiveStarSpace + marioPartyFiveWigglerSpace + marioPartyFiveChompSpace + marioPartyFiveChompBase
+    generatedCode = marioPartyFiveBlueSpace + marioPartyFiveRedSpace + marioPartyFiveKoopaBank + marioPartyFiveMiniGame + marioPartyFiveStarSpace + marioPartyFiveWigglerSpace + marioPartyFiveChompSpace + marioPartyFiveChompBase + marioPartyFourInitialCoins
     generatedCode = generatedCode.strip()
 
     pyperclip.copy(generatedCode)

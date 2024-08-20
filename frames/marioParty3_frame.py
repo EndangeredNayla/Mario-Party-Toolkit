@@ -226,7 +226,7 @@ def create_mario_party_3_interface(frame):
     parse_stars_button.place(x=10, y=800)
 
     # List of minigame names
-    items3 = ["None", "Mushroom", "Skeleton Key", "Poison Mushroom", "Reverse Mushroo", "Cellular Shopper", "Warp Block", "Plunder Chest", "Bowser Phone", "Dueling Glove", "Lucky Lamp", "Golden Mushroom", "Boo Bell", "Boo Repellant", "Bowser Suit", "Magic Lamp", "Koopa Kard", "Barter Box", "Lucky Char", "Wacky Watch"]
+    items3 = ["None", "Mushroom", "Skeleton Key", "Poison Mushroom", "Reverse Mushroo", "Cellular Shopper", "Warp Block", "Plunder Chest", "Bowser Phone", "Dueling Glove", "Lucky Lamp", "Golden Mushroom", "Boo Bell", "Boo Repellant", "Bowser Suit", "Magic Lamp", "Koopa Kard", "Barter Box", "Lucky Charm", "Wacky Watch"]
    
     label = ctk.CTkLabel(master=tabview.tab("Item Replacement"), text=" Replace  ", font=("Arial", 16))
     label.grid(row=0, column=0)

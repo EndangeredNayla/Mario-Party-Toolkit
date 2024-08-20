@@ -54,9 +54,10 @@ def create_mario_party_4_interface(frame):
     booHouseCoins_entry = create_entry(tabview.tab("Coins Mods"), 8, "assets/eventTags/booHouseCoins.png", " Costs ", " Coins when stealing coins.", "5")
     booHouseCoinsMin_entry = create_entry(tabview.tab("Coins Mods"), 9, "assets/eventTags/booHouseCoins.png", " Steal ", " Minimum when stealing coins.", "")
     lottery_entry = create_entry(tabview.tab("Coins Mods"), 10, "assets/eventTags/lottery4.png", " Costs ", " Coins to play the Lottery.", "5")
+    initial_entry = create_entry(tabview.tab("Coins Mods"), 11, "assets/eventTags/initialCoins.png", " Gain ", " Coins at the start of the game.", "10")
 
     # Create button to generate coins modification codes
-    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp4(blue_entry, red_entry, mgWin_entry, star_entry, mega_entry, booHouseStar_entry, booHouseCoins_entry, lottery_entry, booHouseCoinsMin_entry, bowser_entry), text="Generate Codes")
+    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp4(blue_entry, red_entry, mgWin_entry, star_entry, mega_entry, booHouseStar_entry, booHouseCoins_entry, lottery_entry, booHouseCoinsMin_entry, bowser_entry, initial_entry), text="Generate Codes")
     parse_coins_button.place(x=10, y=800)
 
     # List of minigame names

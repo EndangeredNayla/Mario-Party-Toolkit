@@ -390,3 +390,9 @@ C2063AE4 0000000B
 39C00000 39E00000
 60000000 00000000
 '''
+
+def initialCoinsMod4(hex, hexDec):
+    return f'''
+MP4 - Gain {hexDec} Coins at the Start of the Game
+020A8F0E 0000{hex}
+'''

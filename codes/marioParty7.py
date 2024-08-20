@@ -421,3 +421,10 @@ MP7 - Pyramid Park: Red Chomp Costs {b}
 02511726 0000{a}
 E2000002 80008000
 '''
+
+def initialCoinsMod7(hex, hexDec):
+    return f'''
+MP7 - Gain {hexDec} Coins at the Start of the Game
+02196D12 0000{hex}
+02151DEB 0000{hex}
+'''

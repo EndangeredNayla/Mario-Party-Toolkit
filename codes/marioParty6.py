@@ -349,3 +349,9 @@ E2000001 80008000
 044ECF8C 7C060378
 E2000001 80008000
 '''
+
+def initialCoinsMod6(hex, hexDec):
+    return f'''
+MP6 - Gain {hexDec} Coins at the Start of the Game
+0214B3AE 0000{hex}
+'''

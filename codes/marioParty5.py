@@ -235,3 +235,9 @@ def getUnderseaShell(value, text):
 MP5 - Undersea Dream: Seashells Only Give {text}
 004886EF 000000{value}
 '''
+
+def initialCoinsMod5(hex, hexDec):
+    return f'''
+MP5 - Gain {hexDec} Coins at the Start of the Game
+0208C8E4 0000{hex}
+'''
