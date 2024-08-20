@@ -21,13 +21,10 @@ def handicapEvent_mp1(p1, p2, p3, p4):
     p4Handicap = hex(int(p4.get()))[2:].zfill(4).upper() if p4.get() else "DUMMY"
 
     # Generate codes for blue and red spaces
-    marioPartyOneP1Handicap = getStarHandicapP1(p1Handicap, p1.get()) if p1Handicap != "DUMMY" else ""
-    marioPartyOneP2Handicap = getStarHandicapP2(p2Handicap, p2.get()) if p2Handicap != "DUMMY" else ""
-    marioPartyOneP3Handicap = getStarHandicapP3(p3Handicap, p3.get()) if p3Handicap != "DUMMY" else ""
-    marioPartyOneP4Handicap = getStarHandicapP4(p4Handicap, p4.get()) if p4Handicap != "DUMMY" else ""
+    marioPartyThreeHandicap = getStarHandicapP1(p1Handicap, p2Handicap, p3Handicap, p4Handicap)
 
     # Replace placeholder in generated codes
-    generatedCode = (marioPartyOneP1Handicap + marioPartyOneP2Handicap + marioPartyOneP3Handicap + marioPartyOneP4Handicap).strip()
+    generatedCode = (marioPartyThreeHandicap).strip()
 
     # Copy generated codes to clipboard
     pyperclip.copy(generatedCode)

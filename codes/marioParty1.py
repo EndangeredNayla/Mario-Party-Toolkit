@@ -43,32 +43,29 @@ D10ED5DE 00{hexUno}
 810ED5DE 00{hexDos}		
 '''
 
-def getStarHandicapP1(amount, amountDec):
+def getStarHandicapP1(p1, p2, p3, p4):
     return f'''
-MP1 - Top Left Starts With {amountDec} Stars
-D10F32D6 0000
-810F32BC {amount}	
-'''
-
-def getStarHandicapP2(amount, amountDec):
-    return f'''
-MP1 - Top Right Starts With {amountDec} Stars
-D10F32D6 0000
-810F32EC {amount}	
-'''
-
-def getStarHandicapP3(amount, amountDec):
-    return f'''
-MP1 - Bottom Left Starts With {amountDec} Stars
-D10F32D6 0000
-810F331C {amount}	
-'''
-
-def getStarHandicapP4(amount, amountDec):
-    return f'''
-MP1 - Bottom Right Starts With {amountDec} Stars
-D10F32D6 0000
-810F334C {amount}	
+MP1 - Star Handicap
+D10FCDA8 0000
+D10F09F6 0062
+D10FCDB2 0000
+D10F32B8 0000
+810F32BC {p1}
+D10FCDA8 0000
+D10F09F6 0062
+D10FCDB2 0000
+D10F32B8 0000
+810F32EC {p2}
+D10FCDA8 0000
+D10F09F6 0062
+D10FCDB2 0000
+D10F32B8 0000
+810F331C {p3}
+D10FCDA8 0000
+D10F09F6 0062
+D10FCDB2 0000
+D10F32B8 0000
+810F334C {p4}
 '''
 
 def getBlockWeights(one, two, three, four, five, six):

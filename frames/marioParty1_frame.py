@@ -75,7 +75,7 @@ def create_mario_party_1_interface(frame):
     parse_minigame_button.place(x=10, y=800)
 
     icon = create_image_icon(tabview.tab("Star Handicaps"), "assets/eventTags/starSpace.png", 0, 0)
-    label = ctk.CTkLabel(master=tabview.tab("Star Handicaps"), text=" Top Left Starts with  ", font=("Arial", 16))
+    label = ctk.CTkLabel(master=tabview.tab("Star Handicaps"), text=" P1 Starts with  ", font=("Arial", 16))
     label.grid(row=0, column=1)
     p1Stars = ctk.CTkEntry(master=tabview.tab("Star Handicaps"), width=48, font=("Arial", 16, "bold"))
     p1Stars.grid(row=0, column=2)
@@ -83,7 +83,7 @@ def create_mario_party_1_interface(frame):
     label.grid(row=0, column=3)
     
     icon = create_image_icon(tabview.tab("Star Handicaps"), "assets/eventTags/starSpace.png", 1, 0)
-    label = ctk.CTkLabel(master=tabview.tab("Star Handicaps"), text=" Top Right Starts with  ", font=("Arial", 16))
+    label = ctk.CTkLabel(master=tabview.tab("Star Handicaps"), text=" P2 Starts with  ", font=("Arial", 16))
     label.grid(row=1, column=1)
     p2Stars = ctk.CTkEntry(master=tabview.tab("Star Handicaps"), width=48, font=("Arial", 16, "bold"))
     p2Stars.grid(row=1, column=2)
@@ -91,7 +91,7 @@ def create_mario_party_1_interface(frame):
     label.grid(row=1, column=3)
 
     icon = create_image_icon(tabview.tab("Star Handicaps"), "assets/eventTags/starSpace.png", 2, 0)
-    label = ctk.CTkLabel(master=tabview.tab("Star Handicaps"), text=" Bottom Left Starts with  ", font=("Arial", 16))
+    label = ctk.CTkLabel(master=tabview.tab("Star Handicaps"), text=" P3 Starts with  ", font=("Arial", 16))
     label.grid(row=2, column=1)
     p3Stars = ctk.CTkEntry(master=tabview.tab("Star Handicaps"), width=48, font=("Arial", 16, "bold"))
     p3Stars.grid(row=2, column=2)
@@ -99,7 +99,7 @@ def create_mario_party_1_interface(frame):
     label.grid(row=2, column=3)
 
     icon = create_image_icon(tabview.tab("Star Handicaps"), "assets/eventTags/starSpace.png", 3, 0)
-    label = ctk.CTkLabel(master=tabview.tab("Star Handicaps"), text=" Bottom Right Starts with  ", font=("Arial", 16))
+    label = ctk.CTkLabel(master=tabview.tab("Star Handicaps"), text=" P4 Starts with  ", font=("Arial", 16))
     label.grid(row=3, column=1)
     p4Stars = ctk.CTkEntry(master=tabview.tab("Star Handicaps"), width=48, font=("Arial", 16, "bold"))
     p4Stars.grid(row=3, column=2)
