@@ -239,5 +239,5 @@ MP5 - Undersea Dream: Seashells Only Give {text}
 def initialCoinsMod5(hex, hexDec):
     return f'''
 MP5 - Gain {hexDec} Coins at the Start of the Game
-0208C8E4 0000{hex}
+0208C8E6 0000{hex}
 '''
