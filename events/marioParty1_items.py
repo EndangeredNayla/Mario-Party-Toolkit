@@ -26,6 +26,17 @@ def itemsEvent_mp1(plus, minus, speed, slow, warp):
         createDialog("Error", "error", "Please enter valid integers.", None)
         return
 
+    # Calculate total weight
+    total_weight = plusWeight + minusWeight + speedWeight + slowWeight + warpWeight
+
+    # Normalize weights to ensure they sum to 100%
+    if total_weight > 0:
+        plusWeight = (plusWeight / total_weight) * 100
+        minusWeight = (minusWeight / total_weight) * 100
+        speedWeight = (speedWeight / total_weight) * 100
+        slowWeight = (slowWeight / total_weight) * 100
+        warpWeight = (warpWeight / total_weight) * 100
+
     # Define cumulative weights
     cumulative_weights = [
         plusWeight,
@@ -47,6 +58,7 @@ def itemsEvent_mp1(plus, minus, speed, slow, warp):
     for weight in weights:
         hex_weight = hex(int(weight))[2:].zfill(2)  # Convert to hex and ensure two digits
         hex_weights.append(hex_weight.upper())  # Ensure uppercase for consistency
+
 
     code = getBlockWeights(*hex_weights).strip()
     pyperclip.copy(code)
