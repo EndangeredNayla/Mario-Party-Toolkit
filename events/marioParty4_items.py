@@ -444,3 +444,85 @@ def loadPresetItems4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMini
                 widget.insert(0, int(weights4In[index]))
         print("MPT file laoded successfully!")
         createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
+
+def fillViaCode4(top, codeText, miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4):
+    code4 = []
+    code_single4 = []
+    weight_code4 = []
+    price_code4 = []
+    weights4 = []
+    weights4In = []
+    prices4 = []
+    prices4In = []
+    current_line4 = ""
+
+    code4.append(codeText.get("1.0", "end"))
+    
+    try:
+        for i in range(0, 18):
+            current_line4 = current_line4 + code4[0][i]
+
+        if current_line4 == "MP4 - Item Modifer":
+            current_line4 = ""
+            
+            for i in range(19, 3367):
+                if code4[0][i] != " " and code4[0][i] != "\n":
+                    current_line4 = current_line4 + code4[0][i]
+                else:
+                    code_single4.append(current_line4)
+                    current_line4 = ""
+        else:
+            current_line4 = ""
+            
+            for i in range(0, 3348):
+                if code4[0][i] != " " and code4[0][i] != "\n":
+                    current_line4 = current_line4 + code4[0][i]
+                else:
+                    code_single4.append(current_line4)
+                    current_line4 = ""
+    except IndexError:
+        createDialog("Error", "error", "Invalid Code", None)
+        return
+    
+    del code_single4[0:4]
+    del code_single4[14:196]
+    del code_single4[42::]
+
+    for i in range(14, 28):
+        del code_single4[i]
+    
+    for i in range(14):
+        weight_code4.append(code_single4[i])
+    
+    for i in range(14):
+        price_code4.append(code_single4[i + 14])
+
+    for line in weight_code4:
+        weights4.append(line[2:4])
+    
+    for line in price_code4:
+        prices4.append(line[6:8])
+    
+    for weight in weights4:
+        weights4In.append(int(weight, 16))
+    
+    for price in prices4:
+        prices4In.append(int(price, 16))
+        
+    # Define a list of Entry widget attributes
+    pricesNames4 = [miniPrice4, megaPrice4, superMiniPrice4, superMegaPrice4, miniMegaHammerPrice4, warpPipePrice4, swapCardPrice4, sparkyStickerPrice4, gaddlightPrice4, chompCallPrice4, bowserSuitPrice4, crystalBallPrice4, magicLampPrice4, itemBagPrice4]
+    weightsNames4 = [miniWeight4, megaWeight4, superMiniWeight4, superMegaWeight4, miniMegaHammerWeight4, warpPipeWeight4, swapCardWeight4, sparkyStickerWeight4, gaddlightWeight4, chompCallWeight4, bowserSuitWeight4, crystalBallWeight4, magicLampWeight4, itemBagWeight4]
+    # Update widgets with loaded values
+    for index, widget in enumerate(pricesNames4):
+        if widget and index < len(prices4In):
+            widget.delete(0, 'end')
+            widget.insert(0, int(prices4In[index]))
+    for index, widget in enumerate(weightsNames4):
+        if widget and index < len(weights4In):
+            widget.delete(0, 'end')
+            widget.insert(0, int(weights4In[index]))
+    print("Code loaded successfully!")
+    
+    top.destroy()
+
+    createDialog("Operation Sucessful", "success", "Code loaded successfully!.", None)
