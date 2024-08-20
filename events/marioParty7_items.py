@@ -1200,7 +1200,7 @@ def fillViaCode7(hide_custom, top, codeText, mushroomCapsuleWeight7, goldenMushr
     print(weights7In)
     
     prices7In.insert(31, prices7In.pop(32))
-    weights7In.insert(31, prices7In.pop(32))
+    weights7In.insert(31, weights7In.pop(32))
     
     testVar = ""
     
