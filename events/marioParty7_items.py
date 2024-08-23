@@ -1126,7 +1126,6 @@ def fillViaCode7(hide_custom, top, codeText, mushroomCapsuleWeight7, goldenMushr
     weights7In = []
     prices7 = []
     prices7In = []
-    names = ['Mushroom Orb', "Super Mushroom Orb", "Slow 'Shroom Orb", "Metal Mushroom Orb", "Flutter Orb", "Cannon Orb", "Snack Orb", "Lakitu Orb", "Hammer Bro Orb", "Piranha Plant Orb", "Spear Guy Orb", "Kamek Orb", "Toady Orb", "Mr. Blizzard Orb", "Bandit Orb", "Pink Boo Orb", "Spiny Orb", "Zap Orb", "Tweester Orb", "Thwomp Orb", "Warp Pipe Orb", "Bob-omb Orb", "Fireball Orb", "Flower Orb", "Egg Orb", "Vacuum Orb", "Surprise Orb", "Triple 'Shroom Orb", "Koopa Kid Orb"]
     current_line7 = ""
 
     code7.append(codeText.get("1.0", "end"))
@@ -1200,7 +1199,7 @@ def fillViaCode7(hide_custom, top, codeText, mushroomCapsuleWeight7, goldenMushr
     print(weights7In)
     
     prices7In.insert(31, prices7In.pop(32))
-    weights7In.insert(31, prices7In.pop(32))
+    weights7In.insert(31, weights7In.pop(32))
     
     testVar = ""
     
