@@ -270,6 +270,23 @@ def create_mario_party_4_interface(frame):
 
     items4 = ["None", "Mini Mushroom", "Mega Mushroom", "Super Mini Mushroom", "Super Mega Mushroom", "Mini-Mega Hammer", "Warp Pipe", "Swap Card", "Sparky Sticker", "Gaddlight", "Chomp Call", "Bowser Suit", "Boo's Crystal Ball", "Magic Lamp", "Item Bag"]
     
+    parseButtonFiveFillViaCode = ctk.CTkButton(master=tabview.tab("Item Mods"), command=lambda: fillViaCode4Actions(), text="Fill Via Code")
+    parseButtonFiveFillViaCode.place(x=460, y=800)
+
+    def fillViaCode4Actions():
+        top = ctk.CTkToplevel(height=500, width=500)
+        top.attributes('-topmost', True)
+        top.title("Enter Code")
+        
+        enterCodeLabel = ctk.CTkLabel(master=top, text="Enter Code")
+        enterCodeLabel.place(x=10, y=10)
+        
+        codeText = ctk.CTkTextbox(master=top, width=200, height=400)
+        codeText.place(x=10, y=65)
+
+        submitButton = ctk.CTkButton(master=top, command=lambda: fillViaCode4(top, codeText, miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4), text="Submit")
+        submitButton.place(x=250, y=425)
+
     label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 1:  ", font=("Arial", 16))
     label.grid(row=0, column=0)
 
