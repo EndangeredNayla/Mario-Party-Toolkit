@@ -252,18 +252,18 @@ MP7 - Orb Modifer
 042EF78C {thirtyOneW}{thirtyOneW}{thirtyOneW}{thirtyOneW}
 042EF790 {thirtyOneW}{thirtyOneW}{thirtyOneW}{thirtyOneW}
 042EF794 {thirtyOneW}{thirtyOneW}0000
-042EF788 33{thirtyP}{thirtyP}{thirtyP}
-042EF78C {thirtyW}{thirtyW}{thirtyW}{thirtyW}
-042EF790 {thirtyW}{thirtyW}{thirtyW}{thirtyW}
-042EF794 {thirtyW}{thirtyW}0000
-042EF798 35{thirtyThreeP}{thirtyThreeP}{thirtyThreeP}
-042EF79C {thirtyThreeW}{thirtyThreeW}{thirtyThreeW}{thirtyThreeW}
-042EF7A0 {thirtyThreeW}{thirtyThreeW}{thirtyThreeW}{thirtyThreeW}
-042EF7A4 {thirtyThreeW}{thirtyThreeW}0000
-042EF7A8 FF000000
-042EF7AC 00000000
-042EF7B0 00000000
-042EF7B4 00000000
+042EF798 33{thirtyP}{thirtyP}{thirtyP}
+042EF79C {thirtyW}{thirtyW}{thirtyW}{thirtyW}
+042EF7A0 {thirtyW}{thirtyW}{thirtyW}{thirtyW}
+042EF7A4 {thirtyW}{thirtyW}0000
+042EF7A8 35{thirtyThreeP}{thirtyThreeP}{thirtyThreeP}
+042EF7AC {thirtyThreeW}{thirtyThreeW}{thirtyThreeW}{thirtyThreeW}
+042EF7B0 {thirtyThreeW}{thirtyThreeW}{thirtyThreeW}{thirtyThreeW}
+042EF7B4 {thirtyThreeW}{thirtyThreeW}0000
+042EF7B8 FF000000
+042EF7BC 00000000
+042EF7C0 00000000
+042EF7C4 00000000
 '''
 
 def getInitialItemsSeven(one, two, three, four, five, oneItem, twoItem, threeItem, fourItem, fiveItem):
