@@ -401,5 +401,10 @@ def initialCoinsMod7(hex, hexDec):
     return f'''
 MP7 - Gain {hexDec} Coins at the Start of the Game
 02196D12 0000{hex}
+<<<<<<< HEAD
 02151DEA 0000{hex}
 '''
+=======
+02151DEB 0000{hex}
+'''
+>>>>>>> b5de1aa02ec72ef5e18bebec4176e73cbb01f859
