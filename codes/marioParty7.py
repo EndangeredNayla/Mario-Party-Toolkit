@@ -392,7 +392,7 @@ def getRedChomp(a, b):
     return f'''
 MP7 - Pyramid Park: Red Chomp Costs {b}
 282F2F3E 0000007C
-28511726 00000005
+28511726 0000000A
 02511726 0000{a}
 E2000002 80008000
 '''
