@@ -11,8 +11,8 @@ from functions import *
 import pyperclip
 
 
-def itemsEvent_mp1(plus, minus, speed, slow, warp):
-    if not all([plus.get(), minus.get(), speed.get(), slow.get(), warp.get()]):
+def itemsEvent_mp1(plus, minus, speed, slow, warp, stock):
+    if not all([plus.get(), minus.get(), speed.get(), slow.get(), warp.get(), stock.get()]):
         createDialog("Error", "error", "Please fill out all the boxes.", None)
         return
 
@@ -22,14 +22,12 @@ def itemsEvent_mp1(plus, minus, speed, slow, warp):
         speedWeight = float(speed.get())
         slowWeight = float(slow.get())
         warpWeight = float(warp.get())
+        stockWeight = float(stock.get())
     except ValueError:
         createDialog("Error", "error", "Please enter valid integers.", None)
         return
 
-    # Calculate total weight
-    total_weight = plusWeight + minusWeight + speedWeight + slowWeight + warpWeight
-    
-    all_dice_weight = 255 - total_weight
+    total_weight = plusWeight + minusWeight + speedWeight + slowWeight + warpWeight + stockWeight
 
     # Normalize weights to ensure they sum to 100%
     if total_weight > 0:
@@ -38,6 +36,7 @@ def itemsEvent_mp1(plus, minus, speed, slow, warp):
         speedWeight = (speedWeight / total_weight) * 100
         slowWeight = (slowWeight / total_weight) * 100
         warpWeight = (warpWeight / total_weight) * 100
+        stockWeight = (stockWeight / total_weight) * 100
 
     # Define cumulative weights
     cumulative_weights = [
@@ -46,7 +45,7 @@ def itemsEvent_mp1(plus, minus, speed, slow, warp):
         plusWeight + minusWeight + speedWeight,
         plusWeight + minusWeight + speedWeight + slowWeight,
         plusWeight + minusWeight + speedWeight + slowWeight + warpWeight,
-        all_dice_weight
+        plusWeight + minusWeight + speedWeight + slowWeight + warpWeight + stockWeight,
     ]
 
     # Scale cumulative weights and ensure they do not exceed 255

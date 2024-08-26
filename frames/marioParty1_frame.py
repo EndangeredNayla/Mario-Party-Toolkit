@@ -139,10 +139,16 @@ def create_mario_party_1_interface(frame):
     warp1 = ctk.CTkEntry(master=tabview.tab("Block Weights"), width=48, font=("Arial", 16, "bold"))
     warp1.grid(row=5, column=3)
 
-    warningLabel = ctk.CTkLabel(master=tabview.tab("Block Weights"), text="These are weights. Closer to 100 means more likely\nto show instead of a dice.", font=("Arial", 16, "bold"))
-    warningLabel.place(x=5, y=280)
+    icon = create_image_icon(tabview.tab("Block Weights"), "assets/icons/diceBlock.png", 6, 1)
+    label = ctk.CTkLabel(master=tabview.tab("Block Weights"), text=" Weight:  ", font=("Arial", 16))
+    label.grid(row=6, column=2)
+    stock1 = ctk.CTkEntry(master=tabview.tab("Block Weights"), width=48, font=("Arial", 16, "bold"))
+    stock1.grid(row=6, column=3)
 
-    parseButtonTwo = ctk.CTkButton(master=tabview.tab("Block Weights"), command=lambda: itemsEvent_mp1(plus, minus, speed, slow, warp1), text="Generate Codes")
+    warningLabel = ctk.CTkLabel(master=tabview.tab("Block Weights"), text="These are weights. These are the\nodds of dice showing.", font=("Arial", 16, "bold"))
+    warningLabel.place(x=5, y=330)
+
+    parseButtonTwo = ctk.CTkButton(master=tabview.tab("Block Weights"), command=lambda: itemsEvent_mp1(plus, minus, speed, slow, warp1, stock1), text="Generate Codes")
     parseButtonTwo.place(x=10, y=800)
 
     return frame
