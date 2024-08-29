@@ -403,3 +403,15 @@ MP7 - Gain {hexDec} Coins at the Start of the Game
 02196D12 0000{hex}
 02151DEA 0000{hex}
 '''
+
+def getBattleGame7(p1, p2, p3, p4, p5, s1, s2, s3, s4, s5):
+    return f'''
+MP7 - Battle Minigames Bounties are {s1}, {s2}, {s3}, {s4}, and {s5}
+04276F34 0000{p1}
+04276F38 0000{p2}
+04276F3C 0000{p3}
+04276F40 0000{p4}
+04276F44 0000{p5}
+04276F48 0000{p5}
+042215E0 60000000
+'''

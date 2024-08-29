@@ -213,3 +213,13 @@ def initialCoinsMod5(hex, hexDec):
 MP5 - Gain {hexDec} Coins at the Start of the Game
 0208C8E6 0000{hex}
 '''
+
+def getBattleGame5(p1, p2, p3, p4, p5, s1, s2, s3, s4, s5):
+    return f'''
+MP5 - Battle Minigames Bounties are {s1}, {s2}, {s3}, {s4}, and {s5}
+041CBFFC 0000{p1}
+041CC000 0000{p2}
+041CC004 0000{p3}
+041C0008 0000{p4}
+041C000C 0000{p5}
+'''

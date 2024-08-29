@@ -396,3 +396,10 @@ def initialCoinsMod4(hex, hexDec):
 MP4 - Gain {hexDec} Coins at the Start of the Game
 020A8F0E 0000{hex}
 '''
+
+def getBattleGame4(p1, p2, p3, p4, p5, s1, s2, s3, s4, s5):
+    return f'''
+MP4 - Battle Minigames Bounties are {s1}, {s2}, {s3}, {s4}, and {s5}
+041D5DE0 {p1}{p2}{p3}{p4}
+041D5DE4 {p5}000000
+'''

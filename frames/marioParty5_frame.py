@@ -13,6 +13,7 @@ from events.marioParty5_handicap import *
 from events.marioParty5_mgreplace import *
 from events.marioParty5_items import *
 from events.marioParty5_boardSpecific import *
+from events.marioParty5_battle import *
 
 # Import custom tkinter module as ctk
 import customtkinter as ctk
@@ -27,6 +28,7 @@ def create_mario_party_5_interface(frame):
     tabview.add("Capsule Mods")
     tabview.add("Bonus Star Replacement")
     tabview.add("Star Handicaps")
+    tabview.add("Battle Minigame")
     tabview.add("Board Specific")
     tabview.set("Coins Mods")
 
@@ -542,5 +544,43 @@ def create_mario_party_5_interface(frame):
     comboItem.grid(row=0, column=1)
     spinx_button = ctk.CTkButton(master=tabview.tab("Board Specific"), command=lambda: underseaEvent_mp5(comboSpinx, spinx_list), text="Generate Code")
     spinx_button.place(x=450, y=10)
+
+    label = ctk.CTkLabel(master=tabview.tab("Battle Minigame"), text=" Replace 5 Coins with  ", font=("Arial", 16))
+    label.grid(row=0, column=1, pady=10)
+    fiveCoins = ctk.CTkEntry(master=tabview.tab("Battle Minigame"), width=48, font=("Arial", 16, "bold"))
+    fiveCoins.grid(row=0, column=2)
+    label = ctk.CTkLabel(master=tabview.tab("Battle Minigame"), text=" Coins ", font=("Arial", 16))
+    label.grid(row=0, column=3)
+    
+    label = ctk.CTkLabel(master=tabview.tab("Battle Minigame"), text=" Replace 10 Coins with  ", font=("Arial", 16))
+    label.grid(row=1, column=1, pady=10)
+    tenCoins = ctk.CTkEntry(master=tabview.tab("Battle Minigame"), width=48, font=("Arial", 16, "bold"))
+    tenCoins.grid(row=1, column=2)
+    label = ctk.CTkLabel(master=tabview.tab("Battle Minigame"), text=" Coins ", font=("Arial", 16))
+    label.grid(row=1, column=3)
+
+    label = ctk.CTkLabel(master=tabview.tab("Battle Minigame"), text=" Replace 20 Coins with  ", font=("Arial", 16))
+    label.grid(row=2, column=1, pady=10)
+    twentyCoins = ctk.CTkEntry(master=tabview.tab("Battle Minigame"), width=48, font=("Arial", 16, "bold"))
+    twentyCoins.grid(row=2, column=2)
+    label = ctk.CTkLabel(master=tabview.tab("Battle Minigame"), text=" Coins ", font=("Arial", 16))
+    label.grid(row=2, column=3)
+
+    label = ctk.CTkLabel(master=tabview.tab("Battle Minigame"), text=" Replace 30 Coins with  ", font=("Arial", 16))
+    label.grid(row=3, column=1, pady=10)
+    thirtyCoins = ctk.CTkEntry(master=tabview.tab("Battle Minigame"), width=48, font=("Arial", 16, "bold"))
+    thirtyCoins.grid(row=3, column=2)
+    label = ctk.CTkLabel(master=tabview.tab("Battle Minigame"), text=" Coins ", font=("Arial", 16))
+    label.grid(row=3, column=3)
+
+    label = ctk.CTkLabel(master=tabview.tab("Battle Minigame"), text=" Replace 50 Coins with  ", font=("Arial", 16))
+    label.grid(row=4, column=1, pady=10)
+    fiftyCoins = ctk.CTkEntry(master=tabview.tab("Battle Minigame"), width=48, font=("Arial", 16, "bold"))
+    fiftyCoins.grid(row=4, column=2)
+    label = ctk.CTkLabel(master=tabview.tab("Battle Minigame"), text=" Coins ", font=("Arial", 16))
+    label.grid(row=4, column=3)
+
+    parse_stars_button = ctk.CTkButton(master=tabview.tab("Battle Minigame"), command=lambda: battleCoins_mp5(fiveCoins, tenCoins, twentyCoins, thirtyCoins, fiftyCoins), text="Generate Codes")
+    parse_stars_button.place(x=10, y=800)
 
     return frame
