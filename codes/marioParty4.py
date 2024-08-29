@@ -105,7 +105,7 @@ def getBowserSuitCodeFour(amount, amountDec):
     return f'''
 MP4 - Bowser Suit Steals {amountDec} Coins
 0406C788 2C00{amount}
-0406C790 38000005
+0406C790 3800{amount}
 '''
 
 def getLotterySpaceCodeFour(amount, amountDec):
