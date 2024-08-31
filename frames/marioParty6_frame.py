@@ -34,7 +34,7 @@ def create_mario_party_6_interface(frame):
     tabview.add("Star Handicaps")
     tabview.add("Bonus Star Replacement")
     tabview.set("Coins Mods")
-
+    
     # Function to create an entry field and checkbox
     def create_entry(tab, row, icon_path, label_text, color):
         create_image_icon(tab, icon_path, row, 1)
@@ -45,23 +45,34 @@ def create_mario_party_6_interface(frame):
         label1 = ctk.CTkLabel(master=tab, text=color, font=("Arial", 16))
         label1.grid(row=row, column=4, sticky="w")
         return entry
+    
+    # Function to create an entry field and checkbox
+    def create_entry2(tab, row, icon_path, label_text, color):
+        create_image_icon(tab, icon_path, row, 5)
+        label = ctk.CTkLabel(master=tab, text=label_text, font=("Arial", 16))
+        label.grid(row=row, column=6, sticky="w", pady=15)
+        entry = ctk.CTkEntry(master=tab, width=48, font=("Arial", 16, "bold"))
+        entry.grid(row=row, column=7)
+        label1 = ctk.CTkLabel(master=tab, text=color, font=("Arial", 16))
+        label1.grid(row=row, column=8, sticky="w")
+        return entry
 
     # Create entry fields and checkboxes for Coins Mods tab
     blue_entry = create_entry(tabview.tab("Coins Mods"), 1, "assets/eventTags/blueSpace.png", " Gain  ", " Coins on a Blue Space.")
     red_entry = create_entry(tabview.tab("Coins Mods"), 2, "assets/eventTags/redSpace.png", " Lose  ", " Coins on a Red Space.")
     character_entry = create_entry(tabview.tab("Coins Mods"), 3, "assets/eventTags/characterSpace.png", " Gain  ", " Coins on your own Character Space.")
     mgWin_entry = create_entry(tabview.tab("Coins Mods"), 4, "assets/eventTags/miniGame.png", " Gain  ", " Coins when winning a Minigame.")
-    
-    star_entry = create_entry(tabview.tab("Coins Mods"), 5, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star at a Star Space and when using Flutter.")
+    star_entry = create_entry(tabview.tab("Coins Mods"), 5, "assets/eventTags/starSpace.png", " Costs ", " Coins to buy a Star at a Star Space and Flutter.       ")
     star_entryTooltip = CTkToolTip(star_entry, message="Works on Treetop, Garage, Castaway, and Clockwork.")
     
-    pinkBooCoins_entry = create_entry(tabview.tab("Coins Mods"), 6, "assets/eventTags/pinkBooCoins.png", " Costs ", " Coins to steal Coins.")
-    pinkBooMin_entry = create_entry(tabview.tab("Coins Mods"), 7, "assets/eventTags/pinkBooCoins.png", " Steal ", " Mininum when stealing Coins.")
-    pinkBooStar_entry = create_entry(tabview.tab("Coins Mods"), 8, "assets/eventTags/pinkBooStars.png", " Costs ", " Coins to steal a Star.")
-    initial_entry = create_entry(tabview.tab("Coins Mods"), 9, "assets/eventTags/initialCoins.png", " Gain ", " Coins at the start of the game.")
+    pinkBooCoins_entry = create_entry2(tabview.tab("Coins Mods"), 1, "assets/eventTags/pinkBooCoins.png", " Costs ", " Coins to steal Coins.")
+    pinkBooMin_entry = create_entry2(tabview.tab("Coins Mods"), 2, "assets/eventTags/pinkBooCoins.png", " Steal ", " Mininum when stealing Coins.")
+    pinkBooStar_entry = create_entry2(tabview.tab("Coins Mods"), 3, "assets/eventTags/pinkBooStars.png", " Costs ", " Coins to steal a Star.")
+    initial_entry = create_entry2(tabview.tab("Coins Mods"), 4, "assets/eventTags/initialCoins.png", " Gain ", " Coins at the start of the game.")
+    zap_entry = create_entry2(tabview.tab("Coins Mods"), 5, "assets/items/zapCapsule.png", " Lose ", " Coins from Zaps.")
 
     # Create button to generate coins modification codes
-    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp6(blue_entry, red_entry, character_entry, mgWin_entry, star_entry, pinkBooCoins_entry, pinkBooMin_entry, pinkBooStar_entry, initial_entry), text="Generate Codes")
+    parse_coins_button = ctk.CTkButton(master=tabview.tab("Coins Mods"), command=lambda: coinsEvent_mp6(blue_entry, red_entry, character_entry, mgWin_entry, star_entry, pinkBooCoins_entry, pinkBooMin_entry, pinkBooStar_entry, initial_entry, zap_entry), text="Generate Codes")
     parse_coins_button.place(x=10, y=800)
 
     # List of minigame names

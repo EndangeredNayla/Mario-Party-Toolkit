@@ -365,3 +365,9 @@ MP6 - Battle Minigames Bounties are {s1}, {s2}, {s3}, {s4}, and {s5}
 0424BABC 0000{p4}
 0424BAC0 0000{p5}
 '''
+
+def getZapOrb6(hex, amountDec):
+    return f'''
+MP6 - Zap Takes {amountDec} Coins
+041AE1B8 3B60{hex}
+'''

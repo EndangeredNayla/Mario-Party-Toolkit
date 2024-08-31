@@ -9,8 +9,8 @@ from functions import *
 from codes.marioParty6 import *
 import pyperclip
 
-def coinsEvent_mp6(blueEntry, redEntry, characterEntry, mgEntry, starEntry, pinkBooCoinsEntry, pinkBooMinEntry, pinkBooStarEntry, initialEntry):
-    if not any((blueEntry.get(), redEntry.get(), characterEntry.get(), starEntry.get(), mgEntry.get(), pinkBooCoinsEntry.get(), pinkBooMinEntry.get(), pinkBooStarEntry.get(), initialEntry.get())):
+def coinsEvent_mp6(blueEntry, redEntry, characterEntry, mgEntry, starEntry, pinkBooCoinsEntry, pinkBooMinEntry, pinkBooStarEntry, initialEntry, zapEntry):
+    if not any((blueEntry.get(), redEntry.get(), characterEntry.get(), starEntry.get(), mgEntry.get(), pinkBooCoinsEntry.get(), pinkBooMinEntry.get(), pinkBooStarEntry.get(), initialEntry.get(), zapEntry.get())):
         createDialog("Error", "error", "Please fill out at least one box.", None)
         return
     
@@ -25,8 +25,6 @@ def coinsEvent_mp6(blueEntry, redEntry, characterEntry, mgEntry, starEntry, pink
     starSpacey2 = hex(int(starEntry.get()) // 2)[2:].zfill(4).upper() if starEntry.get() else "DUMMY"
     starSpacey4 = hex(int(starEntry.get()) // 4)[2:].zfill(4).upper() if starEntry.get() else "DUMMY"
 
-    
-    
     characterSpaceAmountSix = hex(int(characterEntry.get()))[2:].zfill(4).upper() if characterEntry.get() else "DUMMY"
     
     pinkBooCoinsSix = hex(int(pinkBooCoinsEntry.get()))[2:].zfill(4).upper() if pinkBooCoinsEntry.get() else "DUMMY"
@@ -38,6 +36,8 @@ def coinsEvent_mp6(blueEntry, redEntry, characterEntry, mgEntry, starEntry, pink
     pinkBooCoinsMinSix = hex(int(pinkBooMinEntry.get())+ 2)[2:].zfill(4).upper() if pinkBooMinEntry.get() else "DUMMY"
     
     initialCoins = hex(int(initialEntry.get()))[2:].zfill(4).upper() if initialEntry.get() else "DUMMY"
+    
+    zap = hex(int(zapEntry.get()))[2:].zfill(4).upper() if zapEntry.get() else "DUMMY"
 
     marioPartySixBlueSpace = getBlueSpaceCodeSix(blueSpaceAmountSix, blueEntry.get()) if blueSpaceAmountSix != "DUMMY" else ""
     marioPartySixRedSpace = getRedSpaceCodeSix(redSpaceAmountNegativeSix, redEntry.get()) if redSpaceAmountNegativeSix != "DUMMY" else ""
@@ -47,9 +47,10 @@ def coinsEvent_mp6(blueEntry, redEntry, characterEntry, mgEntry, starEntry, pink
     marioPartySixChompCoins = getPinkBooCoinsSpaceCodeSix(pinkBooCoinsSix, pinkBooCoinsSixNeg, pinkBooCoinsEntry.get()) if pinkBooCoinsSix != "DUMMY" else ""
     marioPartySixChompStars = getPinkBooSpaceCodeSix(pinkBooStarsSix, pinkBooStarsSixNeg, pinkBooStarEntry.get()) if pinkBooStarsSix != "DUMMY" else ""
     marioPartySixChompBase = getCoinStealBaseSix(pinkBooCoinsMinSix, pinkBooMinEntry.get()) if pinkBooCoinsMinSix != "DUMMY" else ""
-    marioPartyFourInitialCoins = initialCoinsMod6(initialCoins, initialEntry.get()) if initialCoins != "DUMMY" else ""
+    marioPartySixInitialCoins = initialCoinsMod6(initialCoins, initialEntry.get()) if initialCoins != "DUMMY" else ""
+    marioPartySixZap = getZapOrb6(zap, zapEntry.get()) if zap != "DUMMY" else ""
 
-    generatedCode = marioPartySixBlueSpace + marioPartySixRedSpace + marioPartySixCharSpace + marioPartySixMiniGame + marioPartySixStarSpace + marioPartySixChompCoins + marioPartySixChompStars + marioPartySixChompBase + marioPartyFourInitialCoins
+    generatedCode = marioPartySixBlueSpace + marioPartySixRedSpace + marioPartySixCharSpace + marioPartySixMiniGame + marioPartySixStarSpace + marioPartySixChompCoins + marioPartySixChompStars + marioPartySixChompBase + marioPartySixInitialCoins + marioPartySixZap
     generatedCode = generatedCode.strip()
 
     pyperclip.copy(generatedCode)
