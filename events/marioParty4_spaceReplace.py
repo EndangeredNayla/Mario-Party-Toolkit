@@ -12,9 +12,9 @@ import pyperclip
 
 def spaceReplaceEvent_mp4(spaceRep411, spaceRep412, spaceRep421, spaceRep422, spaces4):
     spaceSlot1 = spaceRep411.get()
-    spaceSlot2 = spaceRep421.get()
+    spaceSlot2 = spaceRep412.get()
 
-    spaceSlot3 = spaceRep412.get()
+    spaceSlot3 = spaceRep421.get()
     spaceSlot4 = spaceRep422.get()
 
     spaceHex = ["NONE", "00", "01", "02", "03", "04", "05", "06", "07", "09"]
