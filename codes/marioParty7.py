@@ -415,3 +415,57 @@ MP7 - Battle Minigames Bounties are {s1}, {s2}, {s3}, {s4}, and {s5}
 04276F48 0000{p5}
 042215E0 60000000
 '''
+
+def getStarReplaceSeven1(amount, amountDec):
+    return f'''
+MP7 - Replace Minigame Star with {amountDec}
+204E185C A8A70028
+044E185C {amount}
+E2000001 80008000
+'''
+
+def getStarReplaceSeven2(amount, amountDec):
+    return f'''
+MP7 - Replace Orb Star with {amountDec}
+204E18D4 A8C3003C
+044E18D4 {amount}
+E2000001 80008000
+'''
+
+def getStarReplaceSeven3(amount, amountDec):
+    return f'''
+MP7 - Replace Happening Star with {amountDec}
+204E1A0C 8903001F
+044E1A0C {amount}
+E2000001 80008000
+204E1A10 7D060774
+044E1A10 7D064378
+E2000001 80008000
+'''
+
+def getStarReplaceSeven4(amount, amountDec):
+    return f'''
+MP7 - Replace Shopping Star with {amountDec}
+204E1898 A885003E
+044E1898 {amount}
+E2000001 80008000
+'''
+
+def getStarReplaceSeven5(amount, amountDec):
+    return f'''
+MP7 - Replace Running Star with {amountDec}
+204E1910 A8C40018
+044E1910 {amount}
+E2000001 80008000
+'''
+
+def getStarReplaceSeven6(amount, amountDec):
+    return f'''
+MP7 - Replace Running Star with {amountDec}
+204E198C 8904001D
+044E198C {amount}
+E2000001 80008000
+204E1990 7D060774
+044E1990 7D064378
+E2000001 80008000
+'''

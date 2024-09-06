@@ -14,6 +14,7 @@ from events.marioParty7_boardSpecific import *
 from events.marioParty7_handicap import *
 from events.marioParty7_items import *
 from events.marioParty7_spaceReplace import *
+from events.marioParty7_bonusStarReplace import *
 from events.marioParty7_battle import *
 
 # Import custom tkinter module as ctk
@@ -32,6 +33,7 @@ def create_mario_party_7_interface(frame):
     tabview.add("Initial Orbs")
     tabview.add("Battle Minigame")
     tabview.add("Star Handicaps")
+    tabview.add("Bonus Star Replacement")
     tabview.add("Board Specific")
     tabview.set("Coins Mods")
 
@@ -819,6 +821,47 @@ def create_mario_party_7_interface(frame):
 
     parse_stars_button = ctk.CTkButton(master=tabview.tab("Battle Minigame"), command=lambda: battleCoins_mp7(fiveCoins, tenCoins, twentyCoins, thirtyCoins, fiftyCoins), text="Generate Codes")
     parse_stars_button.place(x=10, y=800)
+
+    stars7 = ["None", "Blue Star", "Red Star", "Character Space Star", "Happening Star", "Duel Star", "Mic Star", "Bowser Star", "DK Star", "Minigame Star", "Coin Star", "Star Star", "Orb Star", "Shopping Star", "Running Star"]
+    
+    label = ctk.CTkLabel(master=tabview.tab("Bonus Star Replacement"), text=" Replace Minigame Star with:  ", font=("Arial", 16))
+    label.grid(row=0, column=0, sticky="w")
+
+    star1 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars7)
+    star1.grid(row=0, column=1, pady=10)
+
+    label = ctk.CTkLabel(master=tabview.tab("Bonus Star Replacement"), text=" Replace Orb Star with:  ", font=("Arial", 16))
+    label.grid(row=1, column=0, sticky="w")
+
+    star2 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars7)
+    star2.grid(row=1, column=1, pady=10)
+
+    label = ctk.CTkLabel(master=tabview.tab("Bonus Star Replacement"), text=" Replace Happening Star with:  ", font=("Arial", 16))
+    label.grid(row=2, column=0, sticky="w")
+
+    star3 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars7)
+    star3.grid(row=2, column=1, pady=10)
+
+    label = ctk.CTkLabel(master=tabview.tab("Bonus Star Replacement"), text=" Replace Red Star with:  ", font=("Arial", 16))
+    label.grid(row=3, column=0, sticky="w")
+
+    star4 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars7)
+    star4.grid(row=3, column=1, pady=10)
+
+    label = ctk.CTkLabel(master=tabview.tab("Bonus Star Replacement"), text=" Replace Running Star with:  ", font=("Arial", 16))
+    label.grid(row=4, column=0, sticky="w")
+
+    star5 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars7)
+    star5.grid(row=4, column=1, pady=10)
+
+    label = ctk.CTkLabel(master=tabview.tab("Bonus Star Replacement"), text=" Replace Shopping Star with:  ", font=("Arial", 16))
+    label.grid(row=5, column=0, sticky="w")
+
+    star6 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars7)
+    star6.grid(row=5, column=1, pady=10)
+
+    parseButton = ctk.CTkButton(master=tabview.tab("Bonus Star Replacement"), command=lambda: customBonusStarEvent_mp7(star1, star2, star3, star4, star5, star6, stars7), text="Generate Codes")
+    parseButton.place(x=10, y=800)
 
     return frame
     

@@ -488,19 +488,19 @@ def create_mario_party_5_interface(frame):
     label.grid(row=0, column=0, sticky="w")
 
     star1 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars6)
-    star1.grid(row=0, column=1)
+    star1.grid(row=0, column=1, pady=10)
 
     label = ctk.CTkLabel(master=tabview.tab("Bonus Star Replacement"), text=" Replace Coin Star with:  ", font=("Arial", 16))
     label.grid(row=1, column=0, sticky="w")
 
     star2 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars6)
-    star2.grid(row=1, column=1)
+    star2.grid(row=1, column=1, pady=10)
 
     label = ctk.CTkLabel(master=tabview.tab("Bonus Star Replacement"), text=" Replace Happening Star with:  ", font=("Arial", 16))
     label.grid(row=2, column=0, sticky="w")
 
     star3 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars6)
-    star3.grid(row=2, column=1)
+    star3.grid(row=2, column=1, pady=10)
     
     parseButton = ctk.CTkButton(master=tabview.tab("Bonus Star Replacement"), command=lambda: customBonusStarEvent_mp5(star1, star2, star3, stars6), text="Generate Codes")
     parseButton.place(x=10, y=800)

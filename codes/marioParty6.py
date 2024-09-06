@@ -125,7 +125,7 @@ E2000001 80008000
 
 def getPinkBooSpaceCodeSix(amount, negAmount, amountDec):
     return f'''
-MP4 - Star Stealing Costs {amountDec} with Pink Boo.
+MP6 - Star Stealing Costs {amountDec} with Pink Boo.
 C21B1FB4 00000001
 2C04{amount} 00000000
 C21B2634 00000001
@@ -134,7 +134,7 @@ C21B2634 00000001
 
 def getPinkBooCoinsSpaceCodeSix(amount, negAmount, amountDec):
     return f'''
-MP4 - Coin Stealing Costs {amountDec} with Pink Boo.
+MP6 - Coin Stealing Costs {amountDec} with Pink Boo.
 C21B1F28 00000001
 2C03{amount} 00000000
 C21B2626 00000001
