@@ -1,23 +1,10 @@
 # Mario Party Toolkit
 ![mptoolkit](https://github.com/EndangeredNayla/Mario-Party-Toolkit/assets/48419040/0dde2000-cfa9-41d6-b996-dbf1d3652bcc)
 
+This project was originally developed to help a friend easily make modifications to Mario Party. Unfortunately, the server associated with this project has taken a disturbing shift toward a bigoted, right-leaning ideology that is openly hostile to transgender individuals. This is a deeply unethical stance that runs counter to the values of equality, respect, and inclusion that I hold dear. Trans rights are human rights, and the mistreatment of anyone based on their gender identity is unacceptable.
 
-Introducing the Mario Party Toolkit, a versatile piece of software designed to revolutionize your Mario Party gaming experience. Developed by a collaborative effort of various talented code creators, this toolkit grants you unprecedented control over the intricacies of your Mario Party sessions. Released initially on GitHub in late 2022, it has now undergone extensive refinement to ensure stability and usability for all enthusiasts.
+What makes this situation even more troubling is that, despite a significant outcry from the community regarding the harmful behavior and discriminatory attitudes, the server's leadership has failed to take any meaningful action to address the issue. Instead of supporting those who stood up against the injustice, the individuals who took a stand were demoted or silenced, while the people spreading bigotry were elevated and promoted. This kind of systemic discrimination is not just wrong; it is a betrayal of the community’s trust and a reinforcement of harmful, oppressive dynamics.
 
-With the Mario Party Toolkit, gone are the days of passive gameplay, as you wield the power to customize key game elements to your liking. Want to tweak the coin gains anmd losses of Blue Spaces or Red Spaces to intensify the competition? Simply adjust the values with ease. Tired of relying on luck for item acquisition? Take charge of the Item RNGs and tailor them to suit your strategic preferences.
+I do not condone or tolerate such behavior. By locking this repository, I am taking a firm stance against this injustice. This project will remain locked until the server's leadership addresses the issue and creates an inclusive and safe environment for all people, especially transgender and marginalized individuals. Everyone deserves the right to exist without fear of hatred or exclusion, and it is our duty to call out and act against these wrongs wherever we see them.
 
-But the customization doesn't stop there. Minigame Wins, Item Prices, and countless other variables are at your command, allowing for endless possibilities to tailor your Mario Party experience to perfection. Whether you seek to level the playing field for all players or create unique challenges for yourself, the Mario Party Toolkit empowers you to do so effortlessly.
-
-Behind the intuitive graphical user interface (GUI) lies the collaborative efforts of numerous code creators, each contributing their expertise to craft a seamless and comprehensive toolkit. While the codes were meticulously crafted by these talented individuals, the user-friendly interface was brought to life by its creator, ensuring accessibility for all users.
-
-Unleash your creativity, elevate your gameplay, and redefine the rules of Mario Party with the Mario Party Toolkit. Get ready to embark on an adventure like never before, where every decision is yours to make, and every outcome is within your control. Download now and join the ranks of Mario Party enthusiasts who refuse to settle for anything less than perfection.
-
-## Downloads
-
-##### Stable Release
-  - [Windows](https://github.com/EndangeredNayla/Mario-Party-Toolkit/releases/download/latest/MarioPartyToolkit-win32.zip)
-  - [macOS (arm64)](https://github.com/EndangeredNayla/Mario-Party-Toolkit/releases/download/latest/MarioPartyToolkit-darwin_arm64.zip)
-
-##### Development Release
-  - [Windows](https://nightly.link/EndangeredNayla/Mario-Party-Toolkit/workflows/win32/master/MarioPartyToolkit-win32.zip)
-  - [macOS (arm64)](https://nightly.link/EndangeredNayla/Mario-Party-Toolkit/workflows/darwin-arm64/master/MarioPartyToolkit-darwin_arm64.zip)
+![credit](https://github.com/user-attachments/assets/fc7a6d7a-8566-42c4-8d4a-a9478b2d4d6c)
