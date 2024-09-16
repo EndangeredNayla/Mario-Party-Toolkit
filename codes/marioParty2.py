@@ -236,3 +236,42 @@ D00FD341 00{itemHex1}
 D00FD375 00{itemHex1}
 800FD375 00{itemHex2}
 '''
+
+def getStarReplaceTwo1(amount, amountDec):
+    return f'''
+MP5 - Replace Minigame Star with {amountDec}
+D10FA63E 0052
+80103F04 0080
+D10FA63E 0052
+80103F07 00{amount}
+D10FA63E 0052
+80103F50 0080
+D10FA63E 0052
+80103F53 00{amount}
+'''
+
+def getStarReplaceTwo2(amount, amountDec):
+    return f'''
+MP5 - Replace Coin Star with {amountDec}
+D10FA63E 0052
+80104314 0080
+D10FA63E 0052
+80104317 00{amount}
+D10FA63E 0052
+80104360 0080
+D10FA63E 0052
+80104363 00{amount}
+'''
+
+def getStarReplaceTwo3(amount, amountDec):
+    return f'''
+MP5 - Replace Happening Star with {amountDec}
+D10FA63E 0052
+80104724 0080
+D10FA63E 0052
+80104727 00{amount}
+D10FA63E 0052
+80104770 0080
+D10FA63E 0052
+80104773 00{amount}
+'''

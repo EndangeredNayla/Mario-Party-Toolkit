@@ -12,6 +12,7 @@ from events.marioParty2_items import *
 from events.marioParty2_itemReplace import *
 from events.marioParty2_handicap import *
 from events.marioParty2_mgreplace import *
+from events.marioParty2_bonusStarReplace import *
 
 # Import custom tkinter module as ctk
 import customtkinter as ctk
@@ -26,6 +27,7 @@ def create_mario_party_2_interface(frame):
     tabview.add("Item Prices")
     tabview.add("Item Replacement")
     tabview.add("Star Handicaps")
+    tabview.add("Bonus Star Replacement")
     tabview.set("Coins Mods")
 
     # Function to create an entry field and checkbox
@@ -180,4 +182,27 @@ def create_mario_party_2_interface(frame):
 
     parse_stars_button = ctk.CTkButton(master=tabview.tab("Star Handicaps"), command=lambda: handicapEvent_mp2(p1Stars, p2Stars, p3Stars, p4Stars), text="Generate Codes")
     parse_stars_button.place(x=10, y=800)
+    
+    stars2 = ["None", "Minigame Star", "Coin Star", "Happening Star", "Red Star", "Blue Star", "Chance Time Star", "Bowser Space Star", "Battle Space Star", "Item Space Star", "Bank Space Star"]
+    
+    label = ctk.CTkLabel(master=tabview.tab("Bonus Star Replacement"), text=" Replace Minigame Star with:  ", font=("Arial", 16))
+    label.grid(row=0, column=0, sticky="w")
+
+    star1 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars2)
+    star1.grid(row=0, column=1, pady=10)
+
+    label = ctk.CTkLabel(master=tabview.tab("Bonus Star Replacement"), text=" Replace Coin Star with:  ", font=("Arial", 16))
+    label.grid(row=1, column=0, sticky="w")
+
+    star2 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars2)
+    star2.grid(row=1, column=1, pady=10)
+
+    label = ctk.CTkLabel(master=tabview.tab("Bonus Star Replacement"), text=" Replace Happening Star with:  ", font=("Arial", 16))
+    label.grid(row=2, column=0, sticky="w")
+
+    star3 = ctk.CTkComboBox(master=tabview.tab("Bonus Star Replacement"), values=stars2)
+    star3.grid(row=2, column=1, pady=10)
+    
+    parseButton = ctk.CTkButton(master=tabview.tab("Bonus Star Replacement"), command=lambda: customBonusStarEvent_mp2(star1, star2, star3, stars2), text="Generate Codes")
+    parseButton.place(x=10, y=800)
     return frame
