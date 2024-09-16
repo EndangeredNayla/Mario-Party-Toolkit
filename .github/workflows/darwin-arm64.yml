@@ -22,7 +22,7 @@ jobs:
       run: cd "/Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist/" && rm "Mario Party Toolkit"
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: MarioPartyToolkit-darwin_arm64
         path: /Users/runner/work/Mario-Party-Toolkit/Mario-Party-Toolkit/dist
