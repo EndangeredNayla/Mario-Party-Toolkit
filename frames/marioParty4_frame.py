@@ -260,20 +260,156 @@ def create_mario_party_4_interface(frame):
     itemBagWeight4.grid(row=5, column=19)
     label = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.", font=("Arial", 16))
     label.grid(row=5, column=20)
+
+    icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/mushroom4.png", 6, 15)
+    labelMushroom1 = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+    mushroomPrice4 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    labelMushroom2 = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" and is ", font=("Arial", 16))
+    mushroomWeight4 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    labelMushroom3 = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.", font=("Arial", 16))
+
+    icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/goldenMushroom4.png", 7, 1)
+    labelGoldenMushroom1 = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+    goldenMushroomPrice4 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    labelGoldenMushroom2 = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" and is ", font=("Arial", 16))
+    goldenMushroomWeight4 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    labelGoldenMushroom3 = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.", font=("Arial", 16))
+
+    icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/celluarShopper.png", 7, 8)
+    labelCelluarShopper1 = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+    celluarShopperPrice4 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    labelCelluarShopper2 = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" and is ", font=("Arial", 16))
+    celluarShopperWeight4 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    labelCelluarShopper3 = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.", font=("Arial", 16))
+
+    icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/bowserPhone.png", 7, 15)
+    labelBowserPhone1 = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+    bowserPhonePrice4 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    labelBowserPhone2 = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" and is ", font=("Arial", 16))
+    bowserPhoneWeight4 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    labelBowserPhone3 = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.", font=("Arial", 16))
     
-    parseButtonThree = ctk.CTkButton(master=tabview.tab("Item Mods"), command=lambda: itemsEvent_mp4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4), text="Generate Codes")
+    icon = create_image_icon(tabview.tab("Item Mods"), "assets/items/hiddenBlockCard.png", 8, 1)
+    labelHiddenBlockCard1 = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" Costs  ", font=("Arial", 16))
+    hiddenBlockCardPrice4 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    labelHiddenBlockCard2 = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" and is ", font=("Arial", 16))
+    hiddenBlockCardWeight4 = ctk.CTkEntry(master=tabview.tab("Item Mods"), width=48, font=("Arial", 16, "bold"))
+    labelHiddenBlockCard3 = ctk.CTkLabel(master=tabview.tab("Item Mods"), text=" % common.", font=("Arial", 16))
+
+    parseButtonThree = ctk.CTkButton(master=tabview.tab("Item Mods"), command=lambda: itemsEvent_mp4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4, mushroomPrice4 if hide_custom == False else "0", mushroomWeight4 if hide_custom == False else "0", goldenMushroomPrice4 if hide_custom == False else "0", goldenMushroomWeight4 if hide_custom == False else "0", bowserPhonePrice4 if hide_custom == False else "0", bowserPhoneWeight4 if hide_custom == False else "0", celluarShopperPrice4 if hide_custom == False else "0", celluarShopperWeight4 if hide_custom == False else "0", hiddenBlockCardPrice4 if hide_custom == False else "0", hiddenBlockCardWeight4 if hide_custom == False else "0"), text="Generate Codes")
     parseButtonThree.place(x=10, y=800)
 
-    parseButtonFour = ctk.CTkButton(master=tabview.tab("Item Mods"), command=lambda: savePresetItems4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4), text="Save Preset")
+    parseButtonFour = ctk.CTkButton(master=tabview.tab("Item Mods"), command=lambda: savePresetItems4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4, mushroomPrice4 if hide_custom == False else "0", mushroomWeight4 if hide_custom == False else "0", goldenMushroomPrice4 if hide_custom == False else "0", goldenMushroomWeight4 if hide_custom == False else "0", bowserPhonePrice4 if hide_custom == False else "0", bowserPhoneWeight4 if hide_custom == False else "0", celluarShopperPrice4 if hide_custom == False else "0", celluarShopperWeight4 if hide_custom == False else "0", hiddenBlockCardPrice4 if hide_custom == False else "0", hiddenBlockCardWeight4 if hide_custom == False else "0"), text="Save Preset")
     parseButtonFour.place(x=160, y=800)
 
-    parseButtonFour = ctk.CTkButton(master=tabview.tab("Item Mods"), command=lambda: loadPresetItems4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4), text="Load Preset")
+    parseButtonFour = ctk.CTkButton(master=tabview.tab("Item Mods"), command=lambda: loadPresetItems4(hide_custom, miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4, mushroomPrice4 if hide_custom == False else "0", mushroomWeight4 if hide_custom == False else "0", goldenMushroomPrice4 if hide_custom == False else "0", goldenMushroomWeight4 if hide_custom == False else "0", bowserPhonePrice4 if hide_custom == False else "0", bowserPhoneWeight4 if hide_custom == False else "0", celluarShopperPrice4 if hide_custom == False else "0", celluarShopperWeight4 if hide_custom == False else "0", hiddenBlockCardPrice4 if hide_custom == False else "0", hiddenBlockCardWeight4 if hide_custom == False else "0"), text="Load Preset")
     parseButtonFour.place(x=310, y=800)
 
-    items4 = ["None", "Mini Mushroom", "Mega Mushroom", "Super Mini Mushroom", "Super Mega Mushroom", "Mini-Mega Hammer", "Warp Pipe", "Swap Card", "Sparky Sticker", "Gaddlight", "Chomp Call", "Bowser Suit", "Boo's Crystal Ball", "Magic Lamp", "Item Bag"]
+    hideCustomSwitch = ctk.CTkSwitch(master=tabview.tab("Item Mods"), text="Show Custom Items")
+    hideCustomSwitch.place(x=610, y=800)
     
     parseButtonFiveFillViaCode = ctk.CTkButton(master=tabview.tab("Item Mods"), command=lambda: fillViaCode4Actions(), text="Fill Via Code")
     parseButtonFiveFillViaCode.place(x=460, y=800)
+
+    global hide_custom
+    hide_custom = False
+
+    def toggle_hide_custom():
+        global hide_custom
+        hide_custom = not hide_custom
+
+        if hide_custom:
+            mushroomPrice4.grid_forget()
+            mushroomWeight4.grid_forget()
+            goldenMushroomPrice4.grid_forget()
+            goldenMushroomWeight4.grid_forget()
+            celluarShopperPrice4.grid_forget()
+            celluarShopperWeight4.grid_forget()
+            bowserPhonePrice4.grid_forget()
+            bowserPhoneWeight4.grid_forget()
+            hiddenBlockCardPrice4.grid_forget()
+            hiddenBlockCardWeight4.grid_forget()
+            labelMushroom1.grid_forget()
+            labelMushroom2.grid_forget()
+            labelMushroom3.grid_forget()
+            labelGoldenMushroom1.grid_forget()
+            labelGoldenMushroom2.grid_forget()
+            labelGoldenMushroom3.grid_forget()
+            labelCelluarShopper1.grid_forget()
+            labelCelluarShopper2.grid_forget()
+            labelCelluarShopper3.grid_forget()
+            labelBowserPhone1.grid_forget()
+            labelBowserPhone2.grid_forget()
+            labelBowserPhone3.grid_forget()
+            labelHiddenBlockCard1.grid_forget()
+            labelHiddenBlockCard2.grid_forget()
+            labelHiddenBlockCard3.grid_forget()
+            for widget in tabview.tab("Item Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "8:1":
+                    widget.grid_forget()
+            for widget in tabview.tab("Item Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "7:1":
+                    widget.grid_forget()
+            for widget in tabview.tab("Item Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "7:8":
+                    widget.grid_forget()
+            for widget in tabview.tab("Item Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "7:15":
+                    widget.grid_forget()
+            for widget in tabview.tab("Item Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "6:15":
+                    widget.grid_forget()
+        else:
+            for widget in tabview.tab("Item Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "8:1":
+                    widget.grid(row=8, column=1)
+            for widget in tabview.tab("Item Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "7:1":
+                    widget.grid(row=7, column=1)
+            for widget in tabview.tab("Item Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "7:8":
+                    widget.grid(row=7, column=8)
+            for widget in tabview.tab("Item Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "7:15":
+                    widget.grid(row=7, column=15)
+            for widget in tabview.tab("Item Mods").winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "6:15":
+                    widget.grid(row=6, column=15)
+            labelMushroom1.grid(row=6, column=16)
+            mushroomPrice4.grid(row=6, column=17)  
+            labelMushroom2.grid(row=6, column=18)  
+            mushroomWeight4.grid(row=6, column=19) 
+            labelMushroom3.grid(row=6, column=20)  
+            
+            labelGoldenMushroom1.grid(row=7, column=2)  
+            goldenMushroomPrice4.grid(row=7, column=3)  
+            labelGoldenMushroom2.grid(row=7, column=4)  
+            goldenMushroomWeight4.grid(row=7, column=5) 
+            labelGoldenMushroom3.grid(row=7, column=6)  
+            
+            labelCelluarShopper1.grid(row=7, column=9)  
+            celluarShopperPrice4.grid(row=7, column=10)  
+            labelCelluarShopper2.grid(row=7, column=11) 
+            celluarShopperWeight4.grid(row=7, column=12)
+            labelCelluarShopper3.grid(row=7, column=13) 
+            
+            labelBowserPhone1.grid(row=7, column=16)  
+            bowserPhonePrice4.grid(row=7, column=17)  
+            labelBowserPhone2.grid(row=7, column=18)  
+            bowserPhoneWeight4.grid(row=7, column=19) 
+            labelBowserPhone3.grid(row=7, column=20)  
+            
+            labelHiddenBlockCard1.grid(row=8, column=2)  
+            hiddenBlockCardPrice4.grid(row=8, column=3)  
+            labelHiddenBlockCard2.grid(row=8, column=4)  
+            hiddenBlockCardWeight4.grid(row=8, column=5) 
+            labelHiddenBlockCard3.grid(row=8, column=6)  
+
+    hideCustomSwitch.configure(command=toggle_hide_custom)
+    toggle_hide_custom()
+
+
+    items4 = ["None", "Mini Mushroom", "Mega Mushroom", "Super Mini Mushroom", "Super Mega Mushroom", "Mini-Mega Hammer", "Warp Pipe", "Swap Card", "Sparky Sticker", "Gaddlight", "Chomp Call", "Bowser Suit", "Boo's Crystal Ball", "Magic Lamp", "Item Bag"]
 
     def fillViaCode4Actions():
         top = ctk.CTkToplevel(height=500, width=500)
@@ -286,7 +422,7 @@ def create_mario_party_4_interface(frame):
         codeText = ctk.CTkTextbox(master=top, width=200, height=400)
         codeText.place(x=10, y=65)
 
-        submitButton = ctk.CTkButton(master=top, command=lambda: fillViaCode4(top, codeText, miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4), text="Submit")
+        submitButton = ctk.CTkButton(master=top, command=lambda: fillViaCode4(hide_custom, top, codeText, miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4,  mushroomPrice4 if hide_custom == False else "0", mushroomWeight4 if hide_custom == False else "0", goldenMushroomPrice4 if hide_custom == False else "0", goldenMushroomWeight4 if hide_custom == False else "0", bowserPhonePrice4 if hide_custom == False else "0", bowserPhoneWeight4 if hide_custom == False else "0", celluarShopperPrice4 if hide_custom == False else "0", celluarShopperWeight4 if hide_custom == False else "0", hiddenBlockCardPrice4 if hide_custom == False else "0", hiddenBlockCardWeight4 if hide_custom == False else "0"), text="Submit")
         submitButton.place(x=250, y=425)
 
     label = ctk.CTkLabel(master=tabview.tab("Initial Items"), text=" Item 1:  ", font=("Arial", 16))
