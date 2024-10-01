@@ -137,11 +137,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=2, column=4)
     label = ctk.CTkLabel(master=content_frame, text=" 5 ", font=("Arial", 24, "bold"))
     label.grid(row=2, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=2, column=6)
     mushroomCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     mushroomCapsuleShopOdds12.grid(row=2, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=2, column=8)
     mushroomCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     mushroomCapsuleShopOdds34.grid(row=2, column=9)
@@ -164,11 +164,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=3, column=4)
     goldenMushroomCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     goldenMushroomCapsulePrice34.grid(row=3, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=3, column=6)
     goldenMushroomCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     goldenMushroomCapsuleShopOdds12.grid(row=3, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=3, column=8)
     goldenMushroomCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     goldenMushroomCapsuleShopOdds34.grid(row=3, column=9)
@@ -191,11 +191,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=4, column=4)
     slowMushroomCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     slowMushroomCapsulePrice34.grid(row=4, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=4, column=6)
     slowMushroomCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     slowMushroomCapsuleShopOdds12.grid(row=4, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=4, column=8)
     slowMushroomCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     slowMushroomCapsuleShopOdds34.grid(row=4, column=9)
@@ -218,11 +218,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=5, column=4)
     metalMushroomCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     metalMushroomCapsulePrice34.grid(row=5, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=5, column=6)
     metalMushroomCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     metalMushroomCapsuleShopOdds12.grid(row=5, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=5, column=8)
     metalMushroomCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     metalMushroomCapsuleShopOdds34.grid(row=5, column=9)
@@ -245,11 +245,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=6, column=4)
     flutterCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     flutterCapsulePrice34.grid(row=6, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=6, column=6)
     flutterCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     flutterCapsuleShopOdds12.grid(row=6, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=6, column=8)
     flutterCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     flutterCapsuleShopOdds34.grid(row=6, column=9)
@@ -272,11 +272,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=7, column=4)
     cannonCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     cannonCapsulePrice34.grid(row=7, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=7, column=6)
     cannonCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     cannonCapsuleShopOdds12.grid(row=7, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=7, column=8)
     cannonCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     cannonCapsuleShopOdds34.grid(row=7, column=9)
@@ -299,11 +299,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=8, column=4)
     snackCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     snackCapsulePrice34.grid(row=8, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=8, column=6)
     snackCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     snackCapsuleShopOdds12.grid(row=8, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=8, column=8)
     snackCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     snackCapsuleShopOdds34.grid(row=8, column=9)
@@ -326,11 +326,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=9, column=4)
     lakituCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     lakituCapsulePrice34.grid(row=9, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=9, column=6)
     lakituCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     lakituCapsuleShopOdds12.grid(row=9, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=9, column=8)
     lakituCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     lakituCapsuleShopOdds34.grid(row=9, column=9)
@@ -353,11 +353,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=10, column=4)
     hammerBroCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     hammerBroCapsulePrice34.grid(row=10, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=10, column=6)
     hammerBroCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     hammerBroCapsuleShopOdds12.grid(row=10, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=10, column=8)
     hammerBroCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     hammerBroCapsuleShopOdds34.grid(row=10, column=9)
@@ -380,11 +380,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=11, column=4)
     piranhaPlantCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     piranhaPlantCapsulePrice34.grid(row=11, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=11, column=6)
     piranhaPlantCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     piranhaPlantCapsuleShopOdds12.grid(row=11, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=11, column=8)
     piranhaPlantCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     piranhaPlantCapsuleShopOdds34.grid(row=11, column=9)
@@ -407,11 +407,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=12, column=4)
     spearGuyCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     spearGuyCapsulePrice34.grid(row=12, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=12, column=6)
     spearGuyCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     spearGuyCapsuleShopOdds12.grid(row=12, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=12, column=8)
     spearGuyCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     spearGuyCapsuleShopOdds34.grid(row=12, column=9)
@@ -434,11 +434,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=13, column=4)
     kamekCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     kamekCapsulePrice34.grid(row=13, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=13, column=6)
     kamekCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     kamekCapsuleShopOdds12.grid(row=13, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=13, column=8)
     kamekCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     kamekCapsuleShopOdds34.grid(row=13, column=9)
@@ -461,11 +461,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=14, column=4)
     toadyCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     toadyCapsulePrice34.grid(row=14, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=14, column=6)
     toadyCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     toadyCapsuleShopOdds12.grid(row=14, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=14, column=8)
     toadyCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     toadyCapsuleShopOdds34.grid(row=14, column=9)
@@ -488,11 +488,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=15, column=4)
     mrBlizzardCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     mrBlizzardCapsulePrice34.grid(row=15, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=15, column=6)
     mrBlizzardCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     mrBlizzardCapsuleShopOdds12.grid(row=15, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=15, column=8)
     mrBlizzardCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     mrBlizzardCapsuleShopOdds34.grid(row=15, column=9)
@@ -515,11 +515,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=16, column=4)
     banditCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     banditCapsulePrice34.grid(row=16, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=16, column=6)
     banditCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     banditCapsuleShopOdds12.grid(row=16, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=16, column=8)
     banditCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     banditCapsuleShopOdds34.grid(row=16, column=9)
@@ -542,11 +542,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=17, column=4)
     pinkBooCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     pinkBooCapsulePrice34.grid(row=17, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=17, column=6)
     pinkBooCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     pinkBooCapsuleShopOdds12.grid(row=17, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=17, column=8)
     pinkBooCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     pinkBooCapsuleShopOdds34.grid(row=17, column=9)
@@ -569,11 +569,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=18, column=4)
     spinyCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     spinyCapsulePrice34.grid(row=18, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=18, column=6)
     spinyCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     spinyCapsuleShopOdds12.grid(row=18, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=18, column=8)
     spinyCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     spinyCapsuleShopOdds34.grid(row=18, column=9)
@@ -596,11 +596,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=19, column=4)
     zapCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     zapCapsulePrice34.grid(row=19, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=19, column=6)
     zapCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     zapCapsuleShopOdds12.grid(row=19, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=19, column=8)
     zapCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     zapCapsuleShopOdds34.grid(row=19, column=9)
@@ -623,11 +623,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=20, column=4)
     tweesterCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     tweesterCapsulePrice34.grid(row=20, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=20, column=6)
     tweesterCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     tweesterCapsuleShopOdds12.grid(row=20, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=20, column=8)
     tweesterCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     tweesterCapsuleShopOdds34.grid(row=20, column=9)
@@ -650,11 +650,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=21, column=4)
     thwompCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     thwompCapsulePrice34.grid(row=21, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=21, column=6)
     thwompCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     thwompCapsuleShopOdds12.grid(row=21, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=21, column=8)
     thwompCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     thwompCapsuleShopOdds34.grid(row=21, column=9)
@@ -677,11 +677,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=22, column=4)
     warpCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     warpCapsulePrice34.grid(row=22, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=22, column=6)
     warpCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     warpCapsuleShopOdds12.grid(row=22, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=22, column=8)
     warpCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     warpCapsuleShopOdds34.grid(row=22, column=9)
@@ -704,11 +704,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=23, column=4)
     bombCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     bombCapsulePrice34.grid(row=23, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=23, column=6)
     bombCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     bombCapsuleShopOdds12.grid(row=23, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=23, column=8)
     bombCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     bombCapsuleShopOdds34.grid(row=23, column=9)
@@ -731,11 +731,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=24, column=4)
     fireballCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     fireballCapsulePrice34.grid(row=24, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=24, column=6)
     fireballCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     fireballCapsuleShopOdds12.grid(row=24, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=24, column=8)
     fireballCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     fireballCapsuleShopOdds34.grid(row=24, column=9)
@@ -758,11 +758,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=25, column=4)
     flowerCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     flowerCapsulePrice34.grid(row=25, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=25, column=6)
     flowerCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     flowerCapsuleShopOdds12.grid(row=25, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=25, column=8)
     flowerCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     flowerCapsuleShopOdds34.grid(row=25, column=9)
@@ -785,11 +785,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=26, column=4)
     eggCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     eggCapsulePrice34.grid(row=26, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=26, column=6)
     eggCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     eggCapsuleShopOdds12.grid(row=26, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=26, column=8)
     eggCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     eggCapsuleShopOdds34.grid(row=26, column=9)
@@ -812,11 +812,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=27, column=4)
     vacuumCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     vacuumCapsulePrice34.grid(row=27, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=27, column=6)
     vacuumCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     vacuumCapsuleShopOdds12.grid(row=27, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=27, column=8)
     vacuumCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     vacuumCapsuleShopOdds34.grid(row=27, column=9)
@@ -839,11 +839,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=28, column=4)
     magicCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     magicCapsulePrice34.grid(row=28, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=28, column=6)
     magicCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     magicCapsuleShopOdds12.grid(row=28, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=28, column=8)
     magicCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     magicCapsuleShopOdds34.grid(row=28, column=9)
@@ -866,11 +866,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=29, column=4)
     tripleCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     tripleCapsulePrice34.grid(row=29, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=29, column=6)
     tripleCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     tripleCapsuleShopOdds12.grid(row=29, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=29, column=8)
     tripleCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     tripleCapsuleShopOdds34.grid(row=29, column=9)
@@ -893,11 +893,11 @@ def create_mario_party_7_interface(frame):
     label.grid(row=30, column=4)
     koopaCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     koopaCapsulePrice34.grid(row=30, column=5)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=30, column=6)
     koopaCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     koopaCapsuleShopOdds12.grid(row=30, column=7)
-    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     label.grid(row=30, column=8)
     koopaCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     koopaCapsuleShopOdds34.grid(row=30, column=9)
@@ -920,11 +920,11 @@ def create_mario_party_7_interface(frame):
     labelPoison2.grid(row=31, column=4)
     poisonMushroomPrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     poisonMushroomPrice34.grid(row=31, column=5)
-    labelPoison3 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    labelPoison3 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     labelPoison3.grid(row=31, column=6)
     poisonMushroomShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     poisonMushroomShopOdds12.grid(row=31, column=7)
-    labelPoison4 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    labelPoison4 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     labelPoison4.grid(row=31, column=8)
     poisonMushroomShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     poisonMushroomShopOdds34.grid(row=31, column=9)
@@ -947,11 +947,11 @@ def create_mario_party_7_interface(frame):
     labelDuel2.grid(row=32, column=4)
     duelCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     duelCapsulePrice34.grid(row=32, column=5)
-    labelDuel3 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    labelDuel3 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     labelDuel3.grid(row=32, column=6)
     duelCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     duelCapsuleShopOdds12.grid(row=32, column=7)
-    labelDuel4 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    labelDuel4 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     labelDuel4.grid(row=32, column=8)
     duelCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     duelCapsuleShopOdds34.grid(row=32, column=9)
@@ -974,11 +974,11 @@ def create_mario_party_7_interface(frame):
     labelDK2.grid(row=33, column=4)
     dkCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     dkCapsulePrice34.grid(row=33, column=5)
-    labelDK3 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    labelDK3 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     labelDK3.grid(row=33, column=6)
     dkCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     dkCapsuleShopOdds12.grid(row=33, column=7)
-    labelDK4 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    labelDK4 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     labelDK4.grid(row=33, column=8)
     dkCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     dkCapsuleShopOdds34.grid(row=33, column=9)
@@ -1001,11 +1001,11 @@ def create_mario_party_7_interface(frame):
     labelOrbBag2.grid(row=34, column=4)
     orbBagCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     orbBagCapsulePrice34.grid(row=34, column=5)
-    labelOrbBag3 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    labelOrbBag3 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     labelOrbBag3.grid(row=34, column=6)
     orbBagCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     orbBagCapsuleShopOdds12.grid(row=34, column=7)
-    labelOrbBag4 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    labelOrbBag4 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     labelOrbBag4.grid(row=34, column=8)
     orbBagCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     orbBagCapsuleShopOdds34.grid(row=34, column=9)
@@ -1028,11 +1028,11 @@ def create_mario_party_7_interface(frame):
     labelMystery2.grid(row=35, column=4)
     mysteryCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     mysteryCapsulePrice34.grid(row=35, column=5)
-    labelMystery3 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    1st / 2nd  ", font=("Arial", 14))
+    labelMystery3 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     labelMystery3.grid(row=35, column=6)
     mysteryCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     mysteryCapsuleShopOdds12.grid(row=35, column=7)
-    labelMystery4 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    3rd / 4th  ", font=("Arial", 14))
+    labelMystery4 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
     labelMystery4.grid(row=35, column=8)
     mysteryCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
     mysteryCapsuleShopOdds34.grid(row=35, column=9)
@@ -1165,256 +1165,256 @@ def create_mario_party_7_interface(frame):
         duelCapsuleShopOdds34 if hide_custom == False else "0", 
         duelCapsuleSpaceOdds12 if hide_custom == False else "0", 
         duelCapsuleSpaceOdds34 if hide_custom == False else "0"
-    ), text="Save Preset")
-    parseButton.place(x=160, y=800)
+    ), text="Generate Code")
+    parseButton.place(x=10, y=800)
 
 
-    parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: savePresetItems7(
-        mushroomCapsuleShopOdds12, mushroomCapsuleShopOdds34,
-        mushroomCapsuleSpaceOdds12, mushroomCapsuleSpaceOdds34,
-        goldenMushroomCapsulePrice12, goldenMushroomCapsulePrice34, 
-        goldenMushroomCapsuleShopOdds12, goldenMushroomCapsuleShopOdds34, 
-        goldenMushroomCapsuleSpaceOdds12, goldenMushroomCapsuleSpaceOdds34,
-        slowMushroomCapsulePrice12, slowMushroomCapsulePrice34, 
-        slowMushroomCapsuleShopOdds12, slowMushroomCapsuleShopOdds34, 
-        slowMushroomCapsuleSpaceOdds12, slowMushroomCapsuleSpaceOdds34,
-        metalMushroomCapsulePrice12, metalMushroomCapsulePrice34, 
-        metalMushroomCapsuleShopOdds12, metalMushroomCapsuleShopOdds34, 
-        metalMushroomCapsuleSpaceOdds12, metalMushroomCapsuleSpaceOdds34,
-        flutterCapsulePrice12, flutterCapsulePrice34, 
-        flutterCapsuleShopOdds12, flutterCapsuleShopOdds34, 
-        flutterCapsuleSpaceOdds12, flutterCapsuleSpaceOdds34,
-        cannonCapsulePrice12, cannonCapsulePrice34, 
-        cannonCapsuleShopOdds12, cannonCapsuleShopOdds34, 
-        cannonCapsuleSpaceOdds12, cannonCapsuleSpaceOdds34,
-        snackCapsulePrice12, snackCapsulePrice34, 
-        snackCapsuleShopOdds12, snackCapsuleShopOdds34, 
-        snackCapsuleSpaceOdds12, snackCapsuleSpaceOdds34,
-        lakituCapsulePrice12, lakituCapsulePrice34, 
-        lakituCapsuleShopOdds12, lakituCapsuleShopOdds34, 
-        lakituCapsuleSpaceOdds12, lakituCapsuleSpaceOdds34,
-        hammerBroCapsulePrice12, hammerBroCapsulePrice34, 
-        hammerBroCapsuleShopOdds12, hammerBroCapsuleShopOdds34, 
-        hammerBroCapsuleSpaceOdds12, hammerBroCapsuleSpaceOdds34,
-        piranhaPlantCapsulePrice12, piranhaPlantCapsulePrice34, 
-        piranhaPlantCapsuleShopOdds12, piranhaPlantCapsuleShopOdds34, 
-        piranhaPlantCapsuleSpaceOdds12, piranhaPlantCapsuleSpaceOdds34,
-        spearGuyCapsulePrice12, spearGuyCapsulePrice34, 
-        spearGuyCapsuleShopOdds12, spearGuyCapsuleShopOdds34, 
-        spearGuyCapsuleSpaceOdds12, spearGuyCapsuleSpaceOdds34,
-        kamekCapsulePrice12, kamekCapsulePrice34, 
-        kamekCapsuleShopOdds12, kamekCapsuleShopOdds34, 
-        kamekCapsuleSpaceOdds12, kamekCapsuleSpaceOdds34,
-        toadyCapsulePrice12, toadyCapsulePrice34, 
-        toadyCapsuleShopOdds12, toadyCapsuleShopOdds34, 
-        toadyCapsuleSpaceOdds12, toadyCapsuleSpaceOdds34,
-        mrBlizzardCapsulePrice12, mrBlizzardCapsulePrice34, 
-        mrBlizzardCapsuleShopOdds12, mrBlizzardCapsulePrice34, 
-        mrBlizzardCapsuleSpaceOdds12, mrBlizzardCapsulePrice34,
-        banditCapsulePrice12, banditCapsulePrice34, 
-        banditCapsuleShopOdds12, banditCapsuleShopOdds34, 
-        banditCapsuleSpaceOdds12, banditCapsuleSpaceOdds34,
-        pinkBooCapsulePrice12, pinkBooCapsulePrice34, 
-        pinkBooCapsuleShopOdds12, pinkBooCapsuleShopOdds34, 
-        pinkBooCapsuleSpaceOdds12, pinkBooCapsuleSpaceOdds34,
-        spinyCapsulePrice12, spinyCapsulePrice34, 
-        spinyCapsuleShopOdds12, spinyCapsuleShopOdds34, 
-        spinyCapsuleSpaceOdds12, spinyCapsuleSpaceOdds34,
-        zapCapsulePrice12, zapCapsulePrice34, 
-        zapCapsuleShopOdds12, zapCapsuleShopOdds34, 
-        zapCapsuleSpaceOdds12, zapCapsuleSpaceOdds34,
-        tweesterCapsulePrice12, tweesterCapsulePrice34, 
-        tweesterCapsuleShopOdds12, tweesterCapsuleShopOdds34, 
-        tweesterCapsuleSpaceOdds12, tweesterCapsuleSpaceOdds34,
-        thwompCapsulePrice12, thwompCapsulePrice34, 
-        thwompCapsuleShopOdds12, thwompCapsuleShopOdds34, 
-        thwompCapsuleSpaceOdds12, thwompCapsuleSpaceOdds34,
-        warpCapsulePrice12, warpCapsulePrice34, 
-        warpCapsuleShopOdds12, warpCapsuleShopOdds34, 
-        warpCapsuleSpaceOdds12, warpCapsuleSpaceOdds34,
-        bombCapsulePrice12, bombCapsulePrice34, 
-        bombCapsuleShopOdds12, bombCapsuleShopOdds34, 
-        bombCapsuleSpaceOdds12, bombCapsuleSpaceOdds34,
-        fireballCapsulePrice12, fireballCapsulePrice34, 
-        fireballCapsuleShopOdds12, fireballCapsuleShopOdds34, 
-        fireballCapsuleSpaceOdds12, fireballCapsuleSpaceOdds34,
-        flowerCapsulePrice12, flowerCapsulePrice34, 
-        flowerCapsuleShopOdds12, flowerCapsuleShopOdds34, 
-        flowerCapsuleSpaceOdds12, flowerCapsuleSpaceOdds34,
-        eggCapsulePrice12, eggCapsulePrice34, 
-        eggCapsuleShopOdds12, eggCapsuleShopOdds34, 
-        eggCapsuleSpaceOdds12, eggCapsuleSpaceOdds34,
-        vacuumCapsulePrice12, vacuumCapsulePrice34, 
-        vacuumCapsuleShopOdds12, vacuumCapsuleShopOdds34, 
-        vacuumCapsuleSpaceOdds12, vacuumCapsuleSpaceOdds34,
-        magicCapsulePrice12, magicCapsulePrice34, 
-        magicCapsuleShopOdds12, magicCapsuleShopOdds34, 
-        magicCapsuleSpaceOdds12, magicCapsuleSpaceOdds34,
-        tripleCapsulePrice12, tripleCapsulePrice34, 
-        tripleCapsuleShopOdds12, tripleCapsuleShopOdds34, 
-        tripleCapsuleSpaceOdds12, tripleCapsuleSpaceOdds34,
-        koopaCapsulePrice12, koopaCapsulePrice34, 
-        koopaCapsuleShopOdds12, koopaCapsuleShopOdds34, 
-        koopaCapsuleSpaceOdds12, koopaCapsuleSpaceOdds34,
-        poisonMushroomPrice34 if hide_custom == False else "0", 
-        poisonMushroomPrice12 if hide_custom == False else "0", 
-        poisonMushroomShopOdds12 if hide_custom == False else "0", 
-        poisonMushroomShopOdds34 if hide_custom == False else "0", 
-        poisonMushroomSpaceOdds12 if hide_custom == False else "0", 
-        poisonMushroomSpaceOdds34 if hide_custom == False else "0", 
-        orbBagCapsulePrice34 if hide_custom == False else "0", 
-        orbBagCapsulePrice12 if hide_custom == False else "0", 
-        orbBagCapsuleShopOdds12 if hide_custom == False else "0", 
-        orbBagCapsuleShopOdds34 if hide_custom == False else "0", 
-        orbBagCapsuleSpaceOdds12 if hide_custom == False else "0", 
-        orbBagCapsuleSpaceOdds34 if hide_custom == False else "0", 
-        mysteryCapsulePrice34 if hide_custom == False else "0", 
-        mysteryCapsulePrice12 if hide_custom == False else "0", 
-        mysteryCapsuleShopOdds12 if hide_custom == False else "0", 
-        mysteryCapsuleShopOdds34 if hide_custom == False else "0", 
-        mysteryCapsuleSpaceOdds12 if hide_custom == False else "0", 
-        mysteryCapsuleSpaceOdds34 if hide_custom == False else "0", 
-        dkCapsulePrice34 if hide_custom == False else "0", 
-        dkCapsulePrice12 if hide_custom == False else "0", 
-        dkCapsuleShopOdds12 if hide_custom == False else "0", 
-        dkCapsuleShopOdds34 if hide_custom == False else "0", 
-        dkCapsuleSpaceOdds12 if hide_custom == False else "0", 
-        dkCapsuleSpaceOdds34 if hide_custom == False else "0", 
-        duelCapsulePrice34 if hide_custom == False else "0", 
-        duelCapsulePrice12 if hide_custom == False else "0", 
-        duelCapsuleShopOdds12 if hide_custom == False else "0", 
-        duelCapsuleShopOdds34 if hide_custom == False else "0", 
-        duelCapsuleSpaceOdds12 if hide_custom == False else "0", 
-        duelCapsuleSpaceOdds34 if hide_custom == False else "0"
-    ), text="Save Preset")
-    parseButton.place(x=160, y=800)
+    #parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: savePresetItems7(
+    #    mushroomCapsuleShopOdds12, mushroomCapsuleShopOdds34,
+    #    mushroomCapsuleSpaceOdds12, mushroomCapsuleSpaceOdds34,
+    #    goldenMushroomCapsulePrice12, goldenMushroomCapsulePrice34, 
+    #    goldenMushroomCapsuleShopOdds12, goldenMushroomCapsuleShopOdds34, 
+    #    goldenMushroomCapsuleSpaceOdds12, goldenMushroomCapsuleSpaceOdds34,
+    #    slowMushroomCapsulePrice12, slowMushroomCapsulePrice34, 
+    #    slowMushroomCapsuleShopOdds12, slowMushroomCapsuleShopOdds34, 
+    #    slowMushroomCapsuleSpaceOdds12, slowMushroomCapsuleSpaceOdds34,
+    #    metalMushroomCapsulePrice12, metalMushroomCapsulePrice34, 
+    #    metalMushroomCapsuleShopOdds12, metalMushroomCapsuleShopOdds34, 
+    #    metalMushroomCapsuleSpaceOdds12, metalMushroomCapsuleSpaceOdds34,
+    #    flutterCapsulePrice12, flutterCapsulePrice34, 
+    #    flutterCapsuleShopOdds12, flutterCapsuleShopOdds34, 
+    #    flutterCapsuleSpaceOdds12, flutterCapsuleSpaceOdds34,
+    #    cannonCapsulePrice12, cannonCapsulePrice34, 
+    #    cannonCapsuleShopOdds12, cannonCapsuleShopOdds34, 
+    #    cannonCapsuleSpaceOdds12, cannonCapsuleSpaceOdds34,
+    #    snackCapsulePrice12, snackCapsulePrice34, 
+    #    snackCapsuleShopOdds12, snackCapsuleShopOdds34, 
+    #    snackCapsuleSpaceOdds12, snackCapsuleSpaceOdds34,
+    #    lakituCapsulePrice12, lakituCapsulePrice34, 
+    #    lakituCapsuleShopOdds12, lakituCapsuleShopOdds34, 
+    #    lakituCapsuleSpaceOdds12, lakituCapsuleSpaceOdds34,
+    #    hammerBroCapsulePrice12, hammerBroCapsulePrice34, 
+    #    hammerBroCapsuleShopOdds12, hammerBroCapsuleShopOdds34, 
+    #    hammerBroCapsuleSpaceOdds12, hammerBroCapsuleSpaceOdds34,
+    #    piranhaPlantCapsulePrice12, piranhaPlantCapsulePrice34, 
+    #    piranhaPlantCapsuleShopOdds12, piranhaPlantCapsuleShopOdds34, 
+    #    piranhaPlantCapsuleSpaceOdds12, piranhaPlantCapsuleSpaceOdds34,
+    #    spearGuyCapsulePrice12, spearGuyCapsulePrice34, 
+    #    spearGuyCapsuleShopOdds12, spearGuyCapsuleShopOdds34, 
+    #    spearGuyCapsuleSpaceOdds12, spearGuyCapsuleSpaceOdds34,
+    #    kamekCapsulePrice12, kamekCapsulePrice34, 
+    #    kamekCapsuleShopOdds12, kamekCapsuleShopOdds34, 
+    #    kamekCapsuleSpaceOdds12, kamekCapsuleSpaceOdds34,
+    #    toadyCapsulePrice12, toadyCapsulePrice34, 
+    #    toadyCapsuleShopOdds12, toadyCapsuleShopOdds34, 
+    #    toadyCapsuleSpaceOdds12, toadyCapsuleSpaceOdds34,
+    #    mrBlizzardCapsulePrice12, mrBlizzardCapsulePrice34, 
+    #    mrBlizzardCapsuleShopOdds12, mrBlizzardCapsulePrice34, 
+    #    mrBlizzardCapsuleSpaceOdds12, mrBlizzardCapsulePrice34,
+    #    banditCapsulePrice12, banditCapsulePrice34, 
+    #    banditCapsuleShopOdds12, banditCapsuleShopOdds34, 
+    #    banditCapsuleSpaceOdds12, banditCapsuleSpaceOdds34,
+    #    pinkBooCapsulePrice12, pinkBooCapsulePrice34, 
+    #    pinkBooCapsuleShopOdds12, pinkBooCapsuleShopOdds34, 
+    #    pinkBooCapsuleSpaceOdds12, pinkBooCapsuleSpaceOdds34,
+    #    spinyCapsulePrice12, spinyCapsulePrice34, 
+    #    spinyCapsuleShopOdds12, spinyCapsuleShopOdds34, 
+    #    spinyCapsuleSpaceOdds12, spinyCapsuleSpaceOdds34,
+    #    zapCapsulePrice12, zapCapsulePrice34, 
+    #    zapCapsuleShopOdds12, zapCapsuleShopOdds34, 
+    #    zapCapsuleSpaceOdds12, zapCapsuleSpaceOdds34,
+    #    tweesterCapsulePrice12, tweesterCapsulePrice34, 
+    #    tweesterCapsuleShopOdds12, tweesterCapsuleShopOdds34, 
+    #    tweesterCapsuleSpaceOdds12, tweesterCapsuleSpaceOdds34,
+    #    thwompCapsulePrice12, thwompCapsulePrice34, 
+    #    thwompCapsuleShopOdds12, thwompCapsuleShopOdds34, 
+    #    thwompCapsuleSpaceOdds12, thwompCapsuleSpaceOdds34,
+    #    warpCapsulePrice12, warpCapsulePrice34, 
+    #    warpCapsuleShopOdds12, warpCapsuleShopOdds34, 
+    #    warpCapsuleSpaceOdds12, warpCapsuleSpaceOdds34,
+    #    bombCapsulePrice12, bombCapsulePrice34, 
+    #    bombCapsuleShopOdds12, bombCapsuleShopOdds34, 
+    #    bombCapsuleSpaceOdds12, bombCapsuleSpaceOdds34,
+    #    fireballCapsulePrice12, fireballCapsulePrice34, 
+    #    fireballCapsuleShopOdds12, fireballCapsuleShopOdds34, 
+    #    fireballCapsuleSpaceOdds12, fireballCapsuleSpaceOdds34,
+    #    flowerCapsulePrice12, flowerCapsulePrice34, 
+    #    flowerCapsuleShopOdds12, flowerCapsuleShopOdds34, 
+    #    flowerCapsuleSpaceOdds12, flowerCapsuleSpaceOdds34,
+    #    eggCapsulePrice12, eggCapsulePrice34, 
+    #    eggCapsuleShopOdds12, eggCapsuleShopOdds34, 
+    #    eggCapsuleSpaceOdds12, eggCapsuleSpaceOdds34,
+    #    vacuumCapsulePrice12, vacuumCapsulePrice34, 
+    #    vacuumCapsuleShopOdds12, vacuumCapsuleShopOdds34, 
+    #    vacuumCapsuleSpaceOdds12, vacuumCapsuleSpaceOdds34,
+    #    magicCapsulePrice12, magicCapsulePrice34, 
+    #    magicCapsuleShopOdds12, magicCapsuleShopOdds34, 
+    #    magicCapsuleSpaceOdds12, magicCapsuleSpaceOdds34,
+    #    tripleCapsulePrice12, tripleCapsulePrice34, 
+    #    tripleCapsuleShopOdds12, tripleCapsuleShopOdds34, 
+    #    tripleCapsuleSpaceOdds12, tripleCapsuleSpaceOdds34,
+    #    koopaCapsulePrice12, koopaCapsulePrice34, 
+    #    koopaCapsuleShopOdds12, koopaCapsuleShopOdds34, 
+    #    koopaCapsuleSpaceOdds12, koopaCapsuleSpaceOdds34,
+    #    poisonMushroomPrice34 if hide_custom == False else "0", 
+    #    poisonMushroomPrice12 if hide_custom == False else "0", 
+    #    poisonMushroomShopOdds12 if hide_custom == False else "0", 
+    #    poisonMushroomShopOdds34 if hide_custom == False else "0", 
+    #    poisonMushroomSpaceOdds12 if hide_custom == False else "0", 
+    #    poisonMushroomSpaceOdds34 if hide_custom == False else "0", 
+    #    orbBagCapsulePrice34 if hide_custom == False else "0", 
+    #    orbBagCapsulePrice12 if hide_custom == False else "0", 
+    #    orbBagCapsuleShopOdds12 if hide_custom == False else "0", 
+    #    orbBagCapsuleShopOdds34 if hide_custom == False else "0", 
+    #    orbBagCapsuleSpaceOdds12 if hide_custom == False else "0", 
+    #    orbBagCapsuleSpaceOdds34 if hide_custom == False else "0", 
+    #    mysteryCapsulePrice34 if hide_custom == False else "0", 
+    #    mysteryCapsulePrice12 if hide_custom == False else "0", 
+    #    mysteryCapsuleShopOdds12 if hide_custom == False else "0", 
+    #    mysteryCapsuleShopOdds34 if hide_custom == False else "0", 
+    #    mysteryCapsuleSpaceOdds12 if hide_custom == False else "0", 
+    #    mysteryCapsuleSpaceOdds34 if hide_custom == False else "0", 
+    #    dkCapsulePrice34 if hide_custom == False else "0", 
+    #    dkCapsulePrice12 if hide_custom == False else "0", 
+    #    dkCapsuleShopOdds12 if hide_custom == False else "0", 
+    #    dkCapsuleShopOdds34 if hide_custom == False else "0", 
+    #    dkCapsuleSpaceOdds12 if hide_custom == False else "0", 
+    #    dkCapsuleSpaceOdds34 if hide_custom == False else "0", 
+    #    duelCapsulePrice34 if hide_custom == False else "0", 
+    #    duelCapsulePrice12 if hide_custom == False else "0", 
+    #    duelCapsuleShopOdds12 if hide_custom == False else "0", 
+    #    duelCapsuleShopOdds34 if hide_custom == False else "0", 
+    #    duelCapsuleSpaceOdds12 if hide_custom == False else "0", 
+    #    duelCapsuleSpaceOdds34 if hide_custom == False else "0"
+    #), text="Save Preset")
+    #parseButton.place(x=160, y=800)
 
-    parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: loadPresetItems7(
-        mushroomCapsuleShopOdds12, mushroomCapsuleShopOdds34,
-        mushroomCapsuleSpaceOdds12, mushroomCapsuleSpaceOdds34,
-        goldenMushroomCapsulePrice12, goldenMushroomCapsulePrice34, 
-        goldenMushroomCapsuleShopOdds12, goldenMushroomCapsuleShopOdds34, 
-        goldenMushroomCapsuleSpaceOdds12, goldenMushroomCapsuleSpaceOdds34,
-        slowMushroomCapsulePrice12, slowMushroomCapsulePrice34, 
-        slowMushroomCapsuleShopOdds12, slowMushroomCapsuleShopOdds34, 
-        slowMushroomCapsuleSpaceOdds12, slowMushroomCapsuleSpaceOdds34,
-        metalMushroomCapsulePrice12, metalMushroomCapsulePrice34, 
-        metalMushroomCapsuleShopOdds12, metalMushroomCapsuleShopOdds34, 
-        metalMushroomCapsuleSpaceOdds12, metalMushroomCapsuleSpaceOdds34,
-        flutterCapsulePrice12, flutterCapsulePrice34, 
-        flutterCapsuleShopOdds12, flutterCapsuleShopOdds34, 
-        flutterCapsuleSpaceOdds12, flutterCapsuleSpaceOdds34,
-        cannonCapsulePrice12, cannonCapsulePrice34, 
-        cannonCapsuleShopOdds12, cannonCapsuleShopOdds34, 
-        cannonCapsuleSpaceOdds12, cannonCapsuleSpaceOdds34,
-        snackCapsulePrice12, snackCapsulePrice34, 
-        snackCapsuleShopOdds12, snackCapsuleShopOdds34, 
-        snackCapsuleSpaceOdds12, snackCapsuleSpaceOdds34,
-        lakituCapsulePrice12, lakituCapsulePrice34, 
-        lakituCapsuleShopOdds12, lakituCapsuleShopOdds34, 
-        lakituCapsuleSpaceOdds12, lakituCapsuleSpaceOdds34,
-        hammerBroCapsulePrice12, hammerBroCapsulePrice34, 
-        hammerBroCapsuleShopOdds12, hammerBroCapsuleShopOdds34, 
-        hammerBroCapsuleSpaceOdds12, hammerBroCapsuleSpaceOdds34,
-        piranhaPlantCapsulePrice12, piranhaPlantCapsulePrice34, 
-        piranhaPlantCapsuleShopOdds12, piranhaPlantCapsuleShopOdds34, 
-        piranhaPlantCapsuleSpaceOdds12, piranhaPlantCapsuleSpaceOdds34,
-        spearGuyCapsulePrice12, spearGuyCapsulePrice34, 
-        spearGuyCapsuleShopOdds12, spearGuyCapsuleShopOdds34, 
-        spearGuyCapsuleSpaceOdds12, spearGuyCapsuleSpaceOdds34,
-        kamekCapsulePrice12, kamekCapsulePrice34, 
-        kamekCapsuleShopOdds12, kamekCapsuleShopOdds34, 
-        kamekCapsuleSpaceOdds12, kamekCapsuleSpaceOdds34,
-        toadyCapsulePrice12, toadyCapsulePrice34, 
-        toadyCapsuleShopOdds12, toadyCapsuleShopOdds34, 
-        toadyCapsuleSpaceOdds12, toadyCapsuleSpaceOdds34,
-        mrBlizzardCapsulePrice12, mrBlizzardCapsulePrice34, 
-        mrBlizzardCapsuleShopOdds12, mrBlizzardCapsulePrice34, 
-        mrBlizzardCapsuleSpaceOdds12, mrBlizzardCapsulePrice34,
-        banditCapsulePrice12, banditCapsulePrice34, 
-        banditCapsuleShopOdds12, banditCapsuleShopOdds34, 
-        banditCapsuleSpaceOdds12, banditCapsuleSpaceOdds34,
-        pinkBooCapsulePrice12, pinkBooCapsulePrice34, 
-        pinkBooCapsuleShopOdds12, pinkBooCapsuleShopOdds34, 
-        pinkBooCapsuleSpaceOdds12, pinkBooCapsuleSpaceOdds34,
-        spinyCapsulePrice12, spinyCapsulePrice34, 
-        spinyCapsuleShopOdds12, spinyCapsuleShopOdds34, 
-        spinyCapsuleSpaceOdds12, spinyCapsuleSpaceOdds34,
-        zapCapsulePrice12, zapCapsulePrice34, 
-        zapCapsuleShopOdds12, zapCapsuleShopOdds34, 
-        zapCapsuleSpaceOdds12, zapCapsuleSpaceOdds34,
-        tweesterCapsulePrice12, tweesterCapsulePrice34, 
-        tweesterCapsuleShopOdds12, tweesterCapsuleShopOdds34, 
-        tweesterCapsuleSpaceOdds12, tweesterCapsuleSpaceOdds34,
-        thwompCapsulePrice12, thwompCapsulePrice34, 
-        thwompCapsuleShopOdds12, thwompCapsuleShopOdds34, 
-        thwompCapsuleSpaceOdds12, thwompCapsuleSpaceOdds34,
-        warpCapsulePrice12, warpCapsulePrice34, 
-        warpCapsuleShopOdds12, warpCapsuleShopOdds34, 
-        warpCapsuleSpaceOdds12, warpCapsuleSpaceOdds34,
-        bombCapsulePrice12, bombCapsulePrice34, 
-        bombCapsuleShopOdds12, bombCapsuleShopOdds34, 
-        bombCapsuleSpaceOdds12, bombCapsuleSpaceOdds34,
-        fireballCapsulePrice12, fireballCapsulePrice34, 
-        fireballCapsuleShopOdds12, fireballCapsuleShopOdds34, 
-        fireballCapsuleSpaceOdds12, fireballCapsuleSpaceOdds34,
-        flowerCapsulePrice12, flowerCapsulePrice34, 
-        flowerCapsuleShopOdds12, flowerCapsuleShopOdds34, 
-        flowerCapsuleSpaceOdds12, flowerCapsuleSpaceOdds34,
-        eggCapsulePrice12, eggCapsulePrice34, 
-        eggCapsuleShopOdds12, eggCapsuleShopOdds34, 
-        eggCapsuleSpaceOdds12, eggCapsuleSpaceOdds34,
-        vacuumCapsulePrice12, vacuumCapsulePrice34, 
-        vacuumCapsuleShopOdds12, vacuumCapsuleShopOdds34, 
-        vacuumCapsuleSpaceOdds12, vacuumCapsuleSpaceOdds34,
-        magicCapsulePrice12, magicCapsulePrice34, 
-        magicCapsuleShopOdds12, magicCapsuleShopOdds34, 
-        magicCapsuleSpaceOdds12, magicCapsuleSpaceOdds34,
-        tripleCapsulePrice12, tripleCapsulePrice34, 
-        tripleCapsuleShopOdds12, tripleCapsuleShopOdds34, 
-        tripleCapsuleSpaceOdds12, tripleCapsuleSpaceOdds34,
-        koopaCapsulePrice12, koopaCapsulePrice34, 
-        koopaCapsuleShopOdds12, koopaCapsuleShopOdds34, 
-        koopaCapsuleSpaceOdds12, koopaCapsuleSpaceOdds34,
-        poisonMushroomPrice34 if hide_custom == False else "0", 
-        poisonMushroomPrice12 if hide_custom == False else "0", 
-        poisonMushroomShopOdds12 if hide_custom == False else "0", 
-        poisonMushroomShopOdds34 if hide_custom == False else "0", 
-        poisonMushroomSpaceOdds12 if hide_custom == False else "0", 
-        poisonMushroomSpaceOdds34 if hide_custom == False else "0", 
-        orbBagCapsulePrice34 if hide_custom == False else "0", 
-        orbBagCapsulePrice12 if hide_custom == False else "0", 
-        orbBagCapsuleShopOdds12 if hide_custom == False else "0", 
-        orbBagCapsuleShopOdds34 if hide_custom == False else "0", 
-        orbBagCapsuleSpaceOdds12 if hide_custom == False else "0", 
-        orbBagCapsuleSpaceOdds34 if hide_custom == False else "0", 
-        mysteryCapsulePrice34 if hide_custom == False else "0", 
-        mysteryCapsulePrice12 if hide_custom == False else "0", 
-        mysteryCapsuleShopOdds12 if hide_custom == False else "0", 
-        mysteryCapsuleShopOdds34 if hide_custom == False else "0", 
-        mysteryCapsuleSpaceOdds12 if hide_custom == False else "0", 
-        mysteryCapsuleSpaceOdds34 if hide_custom == False else "0", 
-        dkCapsulePrice34 if hide_custom == False else "0", 
-        dkCapsulePrice12 if hide_custom == False else "0", 
-        dkCapsuleShopOdds12 if hide_custom == False else "0", 
-        dkCapsuleShopOdds34 if hide_custom == False else "0", 
-        dkCapsuleSpaceOdds12 if hide_custom == False else "0", 
-        dkCapsuleSpaceOdds34 if hide_custom == False else "0", 
-        duelCapsulePrice34 if hide_custom == False else "0", 
-        duelCapsulePrice12 if hide_custom == False else "0", 
-        duelCapsuleShopOdds12 if hide_custom == False else "0", 
-        duelCapsuleShopOdds34 if hide_custom == False else "0", 
-        duelCapsuleSpaceOdds12 if hide_custom == False else "0", 
-        duelCapsuleSpaceOdds34 if hide_custom == False else "0"
-    ), text="Save Preset")
-    parseButton.place(x=160, y=800)
+    #parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: loadPresetItems7(
+    #    mushroomCapsuleShopOdds12, mushroomCapsuleShopOdds34,
+    #    mushroomCapsuleSpaceOdds12, mushroomCapsuleSpaceOdds34,
+    #    goldenMushroomCapsulePrice12, goldenMushroomCapsulePrice34, 
+    #    goldenMushroomCapsuleShopOdds12, goldenMushroomCapsuleShopOdds34, 
+    #    goldenMushroomCapsuleSpaceOdds12, goldenMushroomCapsuleSpaceOdds34,
+    #    slowMushroomCapsulePrice12, slowMushroomCapsulePrice34, 
+    #    slowMushroomCapsuleShopOdds12, slowMushroomCapsuleShopOdds34, 
+    #    slowMushroomCapsuleSpaceOdds12, slowMushroomCapsuleSpaceOdds34,
+    #    metalMushroomCapsulePrice12, metalMushroomCapsulePrice34, 
+    #    metalMushroomCapsuleShopOdds12, metalMushroomCapsuleShopOdds34, 
+    #    metalMushroomCapsuleSpaceOdds12, metalMushroomCapsuleSpaceOdds34,
+    #    flutterCapsulePrice12, flutterCapsulePrice34, 
+    #    flutterCapsuleShopOdds12, flutterCapsuleShopOdds34, 
+    #    flutterCapsuleSpaceOdds12, flutterCapsuleSpaceOdds34,
+    #    cannonCapsulePrice12, cannonCapsulePrice34, 
+    #    cannonCapsuleShopOdds12, cannonCapsuleShopOdds34, 
+    #    cannonCapsuleSpaceOdds12, cannonCapsuleSpaceOdds34,
+    #    snackCapsulePrice12, snackCapsulePrice34, 
+    #    snackCapsuleShopOdds12, snackCapsuleShopOdds34, 
+    #    snackCapsuleSpaceOdds12, snackCapsuleSpaceOdds34,
+    #    lakituCapsulePrice12, lakituCapsulePrice34, 
+    #    lakituCapsuleShopOdds12, lakituCapsuleShopOdds34, 
+    #    lakituCapsuleSpaceOdds12, lakituCapsuleSpaceOdds34,
+    #    hammerBroCapsulePrice12, hammerBroCapsulePrice34, 
+    #    hammerBroCapsuleShopOdds12, hammerBroCapsuleShopOdds34, 
+    #    hammerBroCapsuleSpaceOdds12, hammerBroCapsuleSpaceOdds34,
+    #    piranhaPlantCapsulePrice12, piranhaPlantCapsulePrice34, 
+    #    piranhaPlantCapsuleShopOdds12, piranhaPlantCapsuleShopOdds34, 
+    #    piranhaPlantCapsuleSpaceOdds12, piranhaPlantCapsuleSpaceOdds34,
+    #    spearGuyCapsulePrice12, spearGuyCapsulePrice34, 
+    #    spearGuyCapsuleShopOdds12, spearGuyCapsuleShopOdds34, 
+    #    spearGuyCapsuleSpaceOdds12, spearGuyCapsuleSpaceOdds34,
+    #    kamekCapsulePrice12, kamekCapsulePrice34, 
+    #    kamekCapsuleShopOdds12, kamekCapsuleShopOdds34, 
+    #    kamekCapsuleSpaceOdds12, kamekCapsuleSpaceOdds34,
+    #    toadyCapsulePrice12, toadyCapsulePrice34, 
+    #    toadyCapsuleShopOdds12, toadyCapsuleShopOdds34, 
+    #    toadyCapsuleSpaceOdds12, toadyCapsuleSpaceOdds34,
+    #    mrBlizzardCapsulePrice12, mrBlizzardCapsulePrice34, 
+    #    mrBlizzardCapsuleShopOdds12, mrBlizzardCapsulePrice34, 
+    #    mrBlizzardCapsuleSpaceOdds12, mrBlizzardCapsulePrice34,
+    #    banditCapsulePrice12, banditCapsulePrice34, 
+    #    banditCapsuleShopOdds12, banditCapsuleShopOdds34, 
+    #    banditCapsuleSpaceOdds12, banditCapsuleSpaceOdds34,
+    #    pinkBooCapsulePrice12, pinkBooCapsulePrice34, 
+    #    pinkBooCapsuleShopOdds12, pinkBooCapsuleShopOdds34, 
+    #    pinkBooCapsuleSpaceOdds12, pinkBooCapsuleSpaceOdds34,
+    #    spinyCapsulePrice12, spinyCapsulePrice34, 
+    #    spinyCapsuleShopOdds12, spinyCapsuleShopOdds34, 
+    #    spinyCapsuleSpaceOdds12, spinyCapsuleSpaceOdds34,
+    #    zapCapsulePrice12, zapCapsulePrice34, 
+    #    zapCapsuleShopOdds12, zapCapsuleShopOdds34, 
+    #    zapCapsuleSpaceOdds12, zapCapsuleSpaceOdds34,
+    #    tweesterCapsulePrice12, tweesterCapsulePrice34, 
+    #    tweesterCapsuleShopOdds12, tweesterCapsuleShopOdds34, 
+    #    tweesterCapsuleSpaceOdds12, tweesterCapsuleSpaceOdds34,
+    #    thwompCapsulePrice12, thwompCapsulePrice34, 
+    #    thwompCapsuleShopOdds12, thwompCapsuleShopOdds34, 
+    #    thwompCapsuleSpaceOdds12, thwompCapsuleSpaceOdds34,
+    #    warpCapsulePrice12, warpCapsulePrice34, 
+    #    warpCapsuleShopOdds12, warpCapsuleShopOdds34, 
+    #    warpCapsuleSpaceOdds12, warpCapsuleSpaceOdds34,
+    #    bombCapsulePrice12, bombCapsulePrice34, 
+    #    bombCapsuleShopOdds12, bombCapsuleShopOdds34, 
+    #    bombCapsuleSpaceOdds12, bombCapsuleSpaceOdds34,
+    #    fireballCapsulePrice12, fireballCapsulePrice34, 
+    #    fireballCapsuleShopOdds12, fireballCapsuleShopOdds34, 
+    #    fireballCapsuleSpaceOdds12, fireballCapsuleSpaceOdds34,
+    #    flowerCapsulePrice12, flowerCapsulePrice34, 
+    #    flowerCapsuleShopOdds12, flowerCapsuleShopOdds34, 
+    #    flowerCapsuleSpaceOdds12, flowerCapsuleSpaceOdds34,
+    #    eggCapsulePrice12, eggCapsulePrice34, 
+    #    eggCapsuleShopOdds12, eggCapsuleShopOdds34, 
+    #    eggCapsuleSpaceOdds12, eggCapsuleSpaceOdds34,
+    #    vacuumCapsulePrice12, vacuumCapsulePrice34, 
+    #    vacuumCapsuleShopOdds12, vacuumCapsuleShopOdds34, 
+    #    vacuumCapsuleSpaceOdds12, vacuumCapsuleSpaceOdds34,
+    #    magicCapsulePrice12, magicCapsulePrice34, 
+    #    magicCapsuleShopOdds12, magicCapsuleShopOdds34, 
+    #    magicCapsuleSpaceOdds12, magicCapsuleSpaceOdds34,
+    #    tripleCapsulePrice12, tripleCapsulePrice34, 
+    #    tripleCapsuleShopOdds12, tripleCapsuleShopOdds34, 
+    #    tripleCapsuleSpaceOdds12, tripleCapsuleSpaceOdds34,
+    #    koopaCapsulePrice12, koopaCapsulePrice34, 
+    #    koopaCapsuleShopOdds12, koopaCapsuleShopOdds34, 
+    #    koopaCapsuleSpaceOdds12, koopaCapsuleSpaceOdds34,
+    #    poisonMushroomPrice34 if hide_custom == False else "0", 
+    #    poisonMushroomPrice12 if hide_custom == False else "0", 
+    #    poisonMushroomShopOdds12 if hide_custom == False else "0", 
+    #    poisonMushroomShopOdds34 if hide_custom == False else "0", 
+    #    poisonMushroomSpaceOdds12 if hide_custom == False else "0", 
+    #    poisonMushroomSpaceOdds34 if hide_custom == False else "0", 
+    #    orbBagCapsulePrice34 if hide_custom == False else "0", 
+    #    orbBagCapsulePrice12 if hide_custom == False else "0", 
+    #    orbBagCapsuleShopOdds12 if hide_custom == False else "0", 
+    #    orbBagCapsuleShopOdds34 if hide_custom == False else "0", 
+    #    orbBagCapsuleSpaceOdds12 if hide_custom == False else "0", 
+    #    orbBagCapsuleSpaceOdds34 if hide_custom == False else "0", 
+    #    mysteryCapsulePrice34 if hide_custom == False else "0", 
+    #    mysteryCapsulePrice12 if hide_custom == False else "0", 
+    #    mysteryCapsuleShopOdds12 if hide_custom == False else "0", 
+    #    mysteryCapsuleShopOdds34 if hide_custom == False else "0", 
+    #    mysteryCapsuleSpaceOdds12 if hide_custom == False else "0", 
+    #    mysteryCapsuleSpaceOdds34 if hide_custom == False else "0", 
+    #    dkCapsulePrice34 if hide_custom == False else "0", 
+    #    dkCapsulePrice12 if hide_custom == False else "0", 
+    #    dkCapsuleShopOdds12 if hide_custom == False else "0", 
+    #    dkCapsuleShopOdds34 if hide_custom == False else "0", 
+    #    dkCapsuleSpaceOdds12 if hide_custom == False else "0", 
+    #    dkCapsuleSpaceOdds34 if hide_custom == False else "0", 
+    #    duelCapsulePrice34 if hide_custom == False else "0", 
+    #    duelCapsulePrice12 if hide_custom == False else "0", 
+    #    duelCapsuleShopOdds12 if hide_custom == False else "0", 
+    #    duelCapsuleShopOdds34 if hide_custom == False else "0", 
+    #    duelCapsuleSpaceOdds12 if hide_custom == False else "0", 
+    #    duelCapsuleSpaceOdds34 if hide_custom == False else "0"
+    #), text="Load Preset")
+    #parseButton.place(x=310, y=800)
 
 
     #parseButtonSevenFillViaCode = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: fillViaCode7Actions(), text="Fill Via Code")
     #parseButtonSevenFillViaCode.place(x=460, y=800)
 
     hideCustomSwitch = ctk.CTkSwitch(master=tabview.tab("Orb Mods"), text="Show Custom Orbs")
-    hideCustomSwitch.place(x=460, y=800) # x=610
+    hideCustomSwitch.place(x=160, y=800) # x=610
 
     def toggle_hide_custom():
         global hide_custom
