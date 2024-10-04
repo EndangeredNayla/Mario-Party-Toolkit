@@ -671,7 +671,7 @@ def create_mario_party_6_interface(frame):
     parse_stars_button = ctk.CTkButton(master=tabview.tab("Star Handicaps"), command=lambda: handicapEvent_mp6(p1Stars, p2Stars, p3Stars, p4Stars), text="Generate Codes")
     parse_stars_button.place(x=10, y=800)
 
-    stars6 = ["None", "Blue Star", "Red Star", "Character Space Star", "Happening Star", "Duel Star", "Chance Time Star", "Bowser Star", "DK Star", "Minigame Star", "Current Coins Star", "Coin Star", "Star Star", "Orb Star"]
+    stars6 = ["None", "Blue Star", "Red Star", "Character Space Star", "Happening Star", "Bowser Star", "Chance Time Star", "Duel Star", "DK Star", "Minigame Star", "Current Coins Star", "Coin Star", "Star Star", "Orb Star"]
     
     label = ctk.CTkLabel(master=tabview.tab("Bonus Star Replacement"), text=" Replace Minigame Star with:  ", font=("Arial", 16))
     label.grid(row=0, column=0, sticky="w")

@@ -19,7 +19,7 @@ jobs:
       run: pyinstaller --onefile .\main.py --add-data "assets/eventTags/*;assets/eventTags/" --add-data "assets/icons/*;assets/icons/" --add-data "assets/items/*;assets/items/" --add-data "assets/logos/*;assets/logos/" --add-data "assets/operation/*;assets/operation/" --add-data "dependencies/win32/*;dependencies/win32/" --add-data "dependencies/bin/*;dependencies/win32/bin/"  --name="Mario Party Toolkit" -w --icon="assets/icons/diceBlock.ico"
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: MarioPartyToolkit-win32
         path: D:\a\Mario-Party-Toolkit\Mario-Party-Toolkit\dist
