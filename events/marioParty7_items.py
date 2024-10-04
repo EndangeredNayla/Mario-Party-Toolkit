@@ -19,8 +19,8 @@ def itemsEvent_mp7(mushroomCapsuleShopOdds12 = "0", mushroomCapsuleShopOdds34 = 
         except:
             return 0
 
-    mushroomCapsulePrice12 = "5"
-    mushroomCapsulePrice34 = "5"
+    mushroomCapsulePrice12 = "05"
+    mushroomCapsulePrice34 = "05"
     mushroomCapsuleShopOdds12 = get_capsule_value(mushroomCapsuleShopOdds12)
     mushroomCapsuleShopOdds34 = get_capsule_value(mushroomCapsuleShopOdds34)
     mushroomCapsuleSpaceOdds12 = get_capsule_value(mushroomCapsuleSpaceOdds12)
@@ -282,22 +282,25 @@ def itemsEvent_mp7(mushroomCapsuleShopOdds12 = "0", mushroomCapsuleShopOdds34 = 
         duelCapsuleSpaceOdds34, dkCapsuleSpaceOdds34, orbBagCapsuleSpaceOdds34
     ]
 
-
-    shopOdds12Weights = sum(int(weight) for weight in shopOdds12)
-    shopOdds34Weights = sum(int(weight) for weight in shopOdds34)
-    spaceOdds12Weights = sum(int(weight) for weight in spaceOdds12)
-    spaceOdds34Weights = sum(int(weight) for weight in spaceOdds34)
+    shopOdds12Weights = sum(int(weight) if weight else 0 for weight in shopOdds12)
+    shopOdds34Weights = sum(int(weight) if weight else 0 for weight in shopOdds34)
+    spaceOdds12Weights = sum(int(weight) if weight else 0 for weight in spaceOdds12)
+    spaceOdds34Weights = sum(int(weight) if weight else 0 for weight in spaceOdds34)
 
     def calculateWeight(weight, total):
-       if total < 100:
-           percentage = int(weight)
-           return percentage
-       else:
-           percentage = (int(weight) / total) * 100
-           if 0< percentage < 1:
-               return math.ceil(percentage)
-           return round(percentage)
-       
+        # Convert weight to int, default to 0 if empty or None
+        weight = int(weight) if weight else 0
+        # Check for total being zero to avoid division by zero
+        if total <= 0:
+            return 0  # Return 0 if total is zero or negative
+        if total < 100:
+            return weight  # Return the weight directly if total is less than 100
+        else:
+            percentage = (weight / total) * 100
+            if 0 < percentage < 1:
+                return math.ceil(percentage)
+            return round(percentage)
+
     # Calculate weights for shop odds 12
     mushroomCapsuleShopOdds12 = calculateWeight(mushroomCapsuleShopOdds12, shopOdds12Weights)
     goldenMushroomCapsuleShopOdds12 = calculateWeight(goldenMushroomCapsuleShopOdds12, shopOdds12Weights)
@@ -502,16 +505,16 @@ def itemsEvent_mp7(mushroomCapsuleShopOdds12 = "0", mushroomCapsuleShopOdds34 = 
     shopOdds34Weights = sum(weight for weight in shopOdds34)
 
     if spaceOdds12Weights < 100:
-        spaceOdds12Max = max(zip(spaceOdds12, (map(eval, spaceOdds12))), key=lambda tuple: tuple[1])[0]
+        spaceOdds12Max = max(zip(spaceOdds12, spaceOdds12), key=lambda tuple: tuple[1])[0]
 
     if spaceOdds34Weights < 100:
-        spaceOdds34Max = max(zip(spaceOdds34, (map(eval, spaceOdds34))), key=lambda tuple: tuple[1])[0]
+        spaceOdds34Max = max(zip(spaceOdds34, spaceOdds34), key=lambda tuple: tuple[1])[0]
 
     if shopOdds12Weights < 100:
-        shopOdds12Max = max(zip(shopOdds12, (map(eval, shopOdds12))), key=lambda tuple: tuple[1])[0]
+        shopOdds12Max = max(zip(shopOdds12, shopOdds12), key=lambda tuple: tuple[1])[0]
 
     if shopOdds34Weights < 100:
-        shopOdds34Max = max(zip(shopOdds34, (map(eval, shopOdds34))), key=lambda tuple: tuple[1])[0]
+        shopOdds34Max = max(zip(shopOdds34, shopOdds34), key=lambda tuple: tuple[1])[0]
 
     if shopOdds12Max == 'mushroomCapsuleShopOdds12':
         mushroomCapsuleShopOdds12 += (100 - mushroomCapsuleShopOdds12)
@@ -1774,8 +1777,8 @@ def savePresetItems7(mushroomCapsuleShopOdds12 = "0", mushroomCapsuleShopOdds34 
         with open(file_path, 'w', newline='') as csvfile:
             writer = csv.writer(csvfile)
             writer.writerow(['Prices12', 'Prices34', "ShopOdds12", "ShopOdds34", "SpaceOdds12", "SpaceOdds34"])
-            for price, weight in zip(prices12, prices34, shopOdds12, shopOdds34, spaceOdds12, spaceOdds34):
-                writer.writerow([price, weight])
+            for prices12, prices34, shopOdds12, shopOdds34, spaceOdds12, spaceOdds34 in zip(prices12, prices34, shopOdds12, shopOdds34, spaceOdds12, spaceOdds34):
+                writer.writerow([prices12, prices34, shopOdds12, shopOdds34, spaceOdds12, spaceOdds34])
         print("MPT file saved successfully!")
         createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
 
@@ -1792,12 +1795,12 @@ def loadPresetItems7(hide_custom, mushroomCapsuleShopOdds12, mushroomCapsuleShop
             reader = csv.reader(csvfile)
             next(reader)
             for row in reader:
-                prices12In.append(float(row[0]))
-                prices34In.append(float(row[1]))
-                shopOdds12In.append(float(row[2]))
-                shopOdds34In.append(float(row[3]))
-                spaceOdds12In.append(float(row[4]))
-                spaceOdds34In.append(float(row[5]))
+                prices12In.append(float(row[0]) if row[0] else 0)
+                prices34In.append(float(row[1]) if row[1] else 0)
+                shopOdds12In.append(float(row[2]) if row[2] else 0)
+                shopOdds34In.append(float(row[3]) if row[3] else 0)
+                spaceOdds12In.append(float(row[4]) if row[4] else 0)
+                spaceOdds34In.append(float(row[5]) if row[5] else 0)
 
         mushroomCapsulePrice12 = ""
         mushroomCapsulePrice34 = ""
@@ -1859,7 +1862,7 @@ def loadPresetItems7(hide_custom, mushroomCapsuleShopOdds12, mushroomCapsuleShop
         ]
     
         prices12 = [
-            mushroomCapsulePrice12, goldenMushroomCapsulePrice12, metalMushroomCapsulePrice12,
+            None, mushroomCapsulePrice12, goldenMushroomCapsulePrice12, metalMushroomCapsulePrice12,
             slowMushroomCapsulePrice12, flutterCapsulePrice12, cannonCapsulePrice12,
             snackCapsulePrice12, lakituCapsulePrice12, hammerBroCapsulePrice12,
             piranhaPlantCapsulePrice12, spearGuyCapsulePrice12, kamekCapsulePrice12,
@@ -1872,7 +1875,7 @@ def loadPresetItems7(hide_custom, mushroomCapsuleShopOdds12, mushroomCapsuleShop
         ]
     
         prices34 = [
-            mushroomCapsulePrice34, goldenMushroomCapsulePrice34, metalMushroomCapsulePrice34,
+            None, mushroomCapsulePrice34, goldenMushroomCapsulePrice34, metalMushroomCapsulePrice34,
             slowMushroomCapsulePrice34, flutterCapsulePrice34, cannonCapsulePrice34,
             snackCapsulePrice34, lakituCapsulePrice34, hammerBroCapsulePrice34,
             piranhaPlantCapsulePrice34, spearGuyCapsulePrice34, kamekCapsulePrice34,
@@ -1903,56 +1906,96 @@ def loadPresetItems7(hide_custom, mushroomCapsuleShopOdds12, mushroomCapsuleShop
                 poisonMushroomShopOdds12,
                 orbBagCapsuleShopOdds12,
                 mysteryCapsuleShopOdds12,
-                dkCapsuleShopOdds12
+                dkCapsuleShopOdds12,
+                duelCapsuleShopOdds12
             ])
             shopOdds34.extend([
                 poisonMushroomShopOdds34,
                 orbBagCapsuleShopOdds34,
                 mysteryCapsuleShopOdds34,
-                dkCapsuleShopOdds34
+                dkCapsuleShopOdds34,
+                duelCapsuleShopOdds34
             ])
             spaceOdds12.extend([
                 poisonMushroomSpaceOdds12,
                 orbBagCapsuleSpaceOdds12,
                 mysteryCapsuleSpaceOdds12,
-                dkCapsuleSpaceOdds12
+                dkCapsuleSpaceOdds12,
+                duelCapsuleSpaceOdds12
             ])
             spaceOdds34.extend([
                 poisonMushroomSpaceOdds34,
                 orbBagCapsuleSpaceOdds34,
                 mysteryCapsuleSpaceOdds34,
-                dkCapsuleSpaceOdds34
+                dkCapsuleSpaceOdds34,
+                duelCapsuleSpaceOdds34
             ])
 
         # Update widgets with loaded values
         for index, widget in enumerate(prices12):
             if widget and index < len(prices12In):
-                widget.delete(0, 'end')
-                widget.insert(0, int(prices12In[index]))
+                try:
+                    widget.delete(0, 'end')
+                except:
+                    pass
+                try:
+                    widget.insert(0, int(prices12In[index]))
+                except:
+                    pass
         for index, widget in enumerate(prices34):
             if widget and index < len(prices34In):
-                widget.delete(0, 'end')
-                widget.insert(0, int(prices34In[index]))
+                try:
+                    widget.delete(0, 'end')
+                except:
+                    pass
+                try:
+                    widget.insert(0, int(prices34In[index]))
+                except:
+                    pass
         
         # Update widgets for shop odds
         for index, widget in enumerate(shopOdds12):
             if widget and index < len(shopOdds12In):
-                widget.delete(0, 'end')
-                widget.insert(0, int(shopOdds12In[index]))
+                try:
+                    widget.delete(0, 'end')
+                except:
+                    pass
+                try:
+                    widget.insert(0, int(shopOdds12In[index]))
+                except:
+                    pass
         for index, widget in enumerate(shopOdds34):
             if widget and index < len(shopOdds34In):
-                widget.delete(0, 'end')
-                widget.insert(0, int(shopOdds34In[index]))
+                try:
+                    widget.delete(0, 'end')
+                except:
+                    pass
+                try:
+                    widget.insert(0, int(shopOdds34In[index]))
+                except:
+                    pass
 
         # Update widgets for space odds
         for index, widget in enumerate(spaceOdds12):
             if widget and index < len(spaceOdds12In):
-                widget.delete(0, 'end')
-                widget.insert(0, int(spaceOdds12In[index]))
+                try:
+                    widget.delete(0, 'end')
+                except:
+                    pass
+                try:
+                    widget.insert(0, int(spaceOdds12In[index]))
+                except:
+                    pass
         for index, widget in enumerate(spaceOdds34):
             if widget and index < len(spaceOdds34In):
-                widget.delete(0, 'end')
-                widget.insert(0, int(spaceOdds34In[index]))
+                try:
+                    widget.delete(0, 'end')
+                except:
+                    pass
+                try:
+                    widget.insert(0, int(spaceOdds34In[index]))
+                except:
+                    pass
 
         print("MPT file laoded successfully!")
         createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
