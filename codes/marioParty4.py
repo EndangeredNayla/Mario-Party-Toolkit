@@ -132,7 +132,7 @@ C20A19CC 00000003
 040A19B0 3BA0{min}
 '''
 
-def getItemModsFour(oneP, oneW, twoP, twoW, threeP, threeW, fourP, fourW, fiveP, fiveW, sixP, sixW, sevenP, sevenW, eightP, eightW, nineP, nineW, tenP, tenW, elevenP, elevenW, twelveP, twelveW, thirteenP, thirteenW, fourteenP, fourteenW, minCoins):
+def getItemModsFour(oneP, oneW, twoP, twoW, threeP, threeW, fourP, fourW, fiveP, fiveW, sixP, sixW, sevenP, sevenW, eightP, eightW, nineP, nineW, tenP, tenW, elevenP, elevenW, twelveP, twelveW, thirteenP, thirteenW, fourteenP, fourteenW, minCoins, extOneP, extOneW, extTwoP, extTwoW, extThreeP, extThreeW, extFourP, extFourW, extFiveP, extFiveW):
     return f'''
 MP4 - Item Modifer
 C2083878 0000001E

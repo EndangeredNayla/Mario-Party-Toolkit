@@ -15,7 +15,7 @@ def customBonusStarEvent_mp5(star1, star2, star3, stars5):
     starSlot2 = star2.get()
     starSlot3 = star3.get()
 
-    starHex = ["NONE", "881D0014", "881D0015", "881D0016", "881D0017", "881D0018", "881D0019", "A81D0020", "A81D0022", "A883001C", "A883001E", "A8830022", "A81D0026", "A81D0034"]
+    starHex = ["NONE", "881D0014", "881D0015", "881D0016", "881D0017", "881D0018", "881D0019", "A81D0020", "A81D0022", "A81D0026", "A81D0034"]
 
     starSlot1Num = stars5.index(starSlot1)
     starSlot1Hex = starHex[starSlot1Num]

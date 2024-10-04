@@ -93,523 +93,1502 @@ def create_mario_party_7_interface(frame):
     parse_minigame_button = ctk.CTkButton(master=tabview.tab("Minigame Replacement"), command=lambda: mgReplaceEvent_mp7(combobox_mingames_1, combobox_mingames_2, minigames_list), text="Generate Codes")
     parse_minigame_button.place(x=10, y=800)
 
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/mushroomCapsule.png", 2, 1)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+
+    # ORB GEN
+    scrollable_frame = ctk.CTkFrame(master=tabview.tab("Orb Mods"), fg_color=("#fcfcfc", "#2e2e2e"))
+    scrollable_frame.grid(row=0, column=0, sticky="nsew", pady=(0, 50))
+    # Configure grid to allow stretching
+    tabview.tab("Orb Mods").grid_rowconfigure(0, weight=1)
+    tabview.tab("Orb Mods").grid_columnconfigure(0, weight=1)
+    scrollable_frame.grid_rowconfigure(0, weight=1)
+
+    # Create a canvas for scrolling
+    canvas = ctk.CTkCanvas(master=scrollable_frame, bg="#2e2e2e", highlightthickness=0)
+    canvas.grid(row=0, column=0, sticky="nsew")
+
+    # Create a vertical scrollbar linked to the canvas
+    scrollbar = ctk.CTkScrollbar(master=scrollable_frame, orientation="vertical", command=canvas.yview, fg_color=("#ffffff", "#3a3a3a"))
+    scrollbar.grid(row=0, column=1, sticky="ns")
+
+    # Configure the canvas to work with the scrollbar
+    canvas.configure(yscrollcommand=scrollbar.set)
+
+    # Create a frame inside the canvas to hold the content
+    content_frame = ctk.CTkFrame(master=canvas, fg_color=("#fcfcfc", "#2e2e2e"))
+    canvas.create_window((0, 0), window=content_frame, anchor="nw")
+
+    # Function to update the scroll region
+    def update_scroll_region(event):
+        canvas.configure(scrollregion=canvas.bbox("all"))
+
+    content_frame.bind("<Configure>", update_scroll_region)
+    
+    # Configure the canvas to fill the width of the scrollable frame
+    scrollable_frame.grid_columnconfigure(0, weight=1)  # Ensure the canvas fills the width
+    canvas.grid_rowconfigure(0, weight=1)  # Ensure the canvas fills the height
+
+    # Mushroom
+    icon = create_image_icon(content_frame, "assets/items/mushroomCapsule.png", 2, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
     label.grid(row=2, column=2)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" 5  ", font=("Arial", 24, "bold"))
+    label = ctk.CTkLabel(master=content_frame, text=" 5 ", font=("Arial", 24, "bold"))
     label.grid(row=2, column=3)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
     label.grid(row=2, column=4)
-    mushroomCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    mushroomCapsuleWeight7.grid(row=2, column=5)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.   ", font=("Arial", 16))
+    label = ctk.CTkLabel(master=content_frame, text=" 5 ", font=("Arial", 24, "bold"))
+    label.grid(row=2, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=2, column=6)
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/goldenMushroomCapsule.png", 3, 1)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    mushroomCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    mushroomCapsuleShopOdds12.grid(row=2, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=2, column=8)
+    mushroomCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    mushroomCapsuleShopOdds34.grid(row=2, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=2, column=10)
+    mushroomCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    mushroomCapsuleSpaceOdds12.grid(row=2, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=2, column=12)
+    mushroomCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    mushroomCapsuleSpaceOdds34.grid(row=2, column=13)
+
+    # Golden Mushroom
+    icon = create_image_icon(content_frame, "assets/items/goldenMushroomCapsule.png", 3, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
     label.grid(row=3, column=2)
-    goldenMushroomCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    goldenMushroomCapsulePrice7.grid(row=3, column=3)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    goldenMushroomCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    goldenMushroomCapsulePrice12.grid(row=3, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
     label.grid(row=3, column=4)
-    goldenMushroomCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    goldenMushroomCapsuleWeight7.grid(row=3, column=5)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    goldenMushroomCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    goldenMushroomCapsulePrice34.grid(row=3, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=3, column=6)
+    goldenMushroomCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    goldenMushroomCapsuleShopOdds12.grid(row=3, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=3, column=8)
+    goldenMushroomCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    goldenMushroomCapsuleShopOdds34.grid(row=3, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=3, column=10)
+    goldenMushroomCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    goldenMushroomCapsuleSpaceOdds12.grid(row=3, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=3, column=12)
+    goldenMushroomCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    goldenMushroomCapsuleSpaceOdds34.grid(row=3, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/slowMushroomCapsule.png", 4, 1)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    # Slow Mushroom
+    icon = create_image_icon(content_frame, "assets/items/slowMushroomCapsule.png", 4, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
     label.grid(row=4, column=2)
-    slowMushroomCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    slowMushroomCapsulePrice7.grid(row=4, column=3)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    slowMushroomCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    slowMushroomCapsulePrice12.grid(row=4, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
     label.grid(row=4, column=4)
-    slowMushroomCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    slowMushroomCapsuleWeight7.grid(row=4, column=5)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    slowMushroomCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    slowMushroomCapsulePrice34.grid(row=4, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=4, column=6)
+    slowMushroomCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    slowMushroomCapsuleShopOdds12.grid(row=4, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=4, column=8)
+    slowMushroomCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    slowMushroomCapsuleShopOdds34.grid(row=4, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=4, column=10)
+    slowMushroomCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    slowMushroomCapsuleSpaceOdds12.grid(row=4, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=4, column=12)
+    slowMushroomCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    slowMushroomCapsuleSpaceOdds34.grid(row=4, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/metalMushroomCapsule.png", 5, 1)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    # Metal Mushroom
+    icon = create_image_icon(content_frame, "assets/items/metalMushroomCapsule.png", 5, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
     label.grid(row=5, column=2)
-    metalMushroomCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    metalMushroomCapsulePrice7.grid(row=5, column=3)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    metalMushroomCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    metalMushroomCapsulePrice12.grid(row=5, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
     label.grid(row=5, column=4)
-    metalMushroomCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    metalMushroomCapsuleWeight7.grid(row=5, column=5)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    metalMushroomCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    metalMushroomCapsulePrice34.grid(row=5, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=5, column=6)
+    metalMushroomCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    metalMushroomCapsuleShopOdds12.grid(row=5, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=5, column=8)
+    metalMushroomCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    metalMushroomCapsuleShopOdds34.grid(row=5, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=5, column=10)
+    metalMushroomCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    metalMushroomCapsuleSpaceOdds12.grid(row=5, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=5, column=12)
+    metalMushroomCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    metalMushroomCapsuleSpaceOdds34.grid(row=5, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/wigglerCapsule.png", 6, 1)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    # Flutter
+    icon = create_image_icon(content_frame, "assets/items/wigglerCapsule.png", 6, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
     label.grid(row=6, column=2)
-    flutterCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    flutterCapsulePrice7.grid(row=6, column=3)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    flutterCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    flutterCapsulePrice12.grid(row=6, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
     label.grid(row=6, column=4)
-    flutterCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    flutterCapsuleWeight7.grid(row=6, column=5)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    flutterCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    flutterCapsulePrice34.grid(row=6, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=6, column=6)
+    flutterCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    flutterCapsuleShopOdds12.grid(row=6, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=6, column=8)
+    flutterCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    flutterCapsuleShopOdds34.grid(row=6, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=6, column=10)
+    flutterCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    flutterCapsuleSpaceOdds12.grid(row=6, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=6, column=12)
+    flutterCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    flutterCapsuleSpaceOdds34.grid(row=6, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/cannonCapsule.png", 7, 1)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    # Cannon
+    icon = create_image_icon(content_frame, "assets/items/cannonCapsule.png", 7, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
     label.grid(row=7, column=2)
-    cannonCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    cannonCapsulePrice7.grid(row=7, column=3)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    cannonCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    cannonCapsulePrice12.grid(row=7, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
     label.grid(row=7, column=4)
-    cannonCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    cannonCapsuleWeight7.grid(row=7, column=5)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    cannonCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    cannonCapsulePrice34.grid(row=7, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=7, column=6)
+    cannonCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    cannonCapsuleShopOdds12.grid(row=7, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=7, column=8)
+    cannonCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    cannonCapsuleShopOdds34.grid(row=7, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=7, column=10)
+    cannonCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    cannonCapsuleSpaceOdds12.grid(row=7, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=7, column=12)
+    cannonCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    cannonCapsuleSpaceOdds34.grid(row=7, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/snackCapsule7.png", 8, 1)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    # Snack
+    icon = create_image_icon(content_frame, "assets/items/snackCapsule.png", 8, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
     label.grid(row=8, column=2)
-    snackCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    snackCapsulePrice7.grid(row=8, column=3)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    snackCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    snackCapsulePrice12.grid(row=8, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
     label.grid(row=8, column=4)
-    snackCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    snackCapsuleWeight7.grid(row=8, column=5)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    snackCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    snackCapsulePrice34.grid(row=8, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=8, column=6)
+    snackCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    snackCapsuleShopOdds12.grid(row=8, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=8, column=8)
+    snackCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    snackCapsuleShopOdds34.grid(row=8, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=8, column=10)
+    snackCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    snackCapsuleSpaceOdds12.grid(row=8, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=8, column=12)
+    snackCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    snackCapsuleSpaceOdds34.grid(row=8, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/lakituCapsule.png", 9, 1)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    # Lakitu
+    icon = create_image_icon(content_frame, "assets/items/lakituCapsule.png", 9, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
     label.grid(row=9, column=2)
-    lakituCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    lakituCapsulePrice7.grid(row=9, column=3)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    lakituCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    lakituCapsulePrice12.grid(row=9, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
     label.grid(row=9, column=4)
-    lakituCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    lakituCapsuleWeight7.grid(row=9, column=5)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    lakituCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    lakituCapsulePrice34.grid(row=9, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=9, column=6)
+    lakituCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    lakituCapsuleShopOdds12.grid(row=9, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=9, column=8)
+    lakituCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    lakituCapsuleShopOdds34.grid(row=9, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=9, column=10)
+    lakituCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    lakituCapsuleSpaceOdds12.grid(row=9, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=9, column=12)
+    lakituCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    lakituCapsuleSpaceOdds34.grid(row=9, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/hammerBroCapsule.png", 10, 1)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    # Hammer Bro
+    icon = create_image_icon(content_frame, "assets/items/hammerBroCapsule.png", 10, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
     label.grid(row=10, column=2)
-    hammerBroCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    hammerBroCapsulePrice7.grid(row=10, column=3)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    hammerBroCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    hammerBroCapsulePrice12.grid(row=10, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
     label.grid(row=10, column=4)
-    hammerBroCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    hammerBroCapsuleWeight7.grid(row=10, column=5)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    hammerBroCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    hammerBroCapsulePrice34.grid(row=10, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=10, column=6)
+    hammerBroCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    hammerBroCapsuleShopOdds12.grid(row=10, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=10, column=8)
+    hammerBroCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    hammerBroCapsuleShopOdds34.grid(row=10, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=10, column=10)
+    hammerBroCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    hammerBroCapsuleSpaceOdds12.grid(row=10, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=10, column=12)
+    hammerBroCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    hammerBroCapsuleSpaceOdds34.grid(row=10, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/spearCapsule.png", 11, 1)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    # Piranha Plant
+    icon = create_image_icon(content_frame, "assets/items/plantCapsule.png", 11, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
     label.grid(row=11, column=2)
-    spearCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    spearCapsulePrice7.grid(row=11, column=3)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    piranhaPlantCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    piranhaPlantCapsulePrice12.grid(row=11, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
     label.grid(row=11, column=4)
-    spearCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    spearCapsuleWeight7.grid(row=11, column=5)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    piranhaPlantCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    piranhaPlantCapsulePrice34.grid(row=11, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=11, column=6)
+    piranhaPlantCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    piranhaPlantCapsuleShopOdds12.grid(row=11, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=11, column=8)
+    piranhaPlantCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    piranhaPlantCapsuleShopOdds34.grid(row=11, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=11, column=10)
+    piranhaPlantCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    piranhaPlantCapsuleSpaceOdds12.grid(row=11, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=11, column=12)
+    piranhaPlantCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    piranhaPlantCapsuleSpaceOdds34.grid(row=11, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/plantCapsule.png", 12, 1)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    # Spear Guy
+    icon = create_image_icon(content_frame, "assets/items/spearCapsule.png", 12, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
     label.grid(row=12, column=2)
-    plantCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    plantCapsulePrice7.grid(row=12, column=3)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    spearGuyCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    spearGuyCapsulePrice12.grid(row=12, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
     label.grid(row=12, column=4)
-    plantCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    plantCapsuleWeight7.grid(row=12, column=5)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.  ", font=("Arial", 16))
+    spearGuyCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    spearGuyCapsulePrice34.grid(row=12, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=12, column=6)
+    spearGuyCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    spearGuyCapsuleShopOdds12.grid(row=12, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=12, column=8)
+    spearGuyCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    spearGuyCapsuleShopOdds34.grid(row=12, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=12, column=10)
+    spearGuyCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    spearGuyCapsuleSpaceOdds12.grid(row=12, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=12, column=12)
+    spearGuyCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    spearGuyCapsuleSpaceOdds34.grid(row=12, column=13)
 
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/koopaCapsule.png", 13, 1)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
+    # Kamek
+    icon = create_image_icon(content_frame, "assets/items/kamekCapsule.png", 13, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
     label.grid(row=13, column=2)
-    koopaCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    koopaCapsulePrice7.grid(row=13, column=3)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
+    kamekCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    kamekCapsulePrice12.grid(row=13, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
     label.grid(row=13, column=4)
-    koopaCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    koopaCapsuleWeight7.grid(row=13, column=5)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    kamekCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    kamekCapsulePrice34.grid(row=13, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
     label.grid(row=13, column=6)
+    kamekCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    kamekCapsuleShopOdds12.grid(row=13, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=13, column=8)
+    kamekCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    kamekCapsuleShopOdds34.grid(row=13, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=13, column=10)
+    kamekCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    kamekCapsuleSpaceOdds12.grid(row=13, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=13, column=12)
+    kamekCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    kamekCapsuleSpaceOdds34.grid(row=13, column=13)
 
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text="", font=("Arial", 16))
-    label.grid(row=2, column=7)
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/kamekCapsule.png", 2, 8)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=2, column=9)
-    kamekCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    kamekCapsulePrice7.grid(row=2, column=10)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=2, column=11)
-    kamekCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    kamekCapsuleWeight7.grid(row=2, column=12)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.  ", font=("Arial", 16))
-    label.grid(row=2, column=13)
+    # Toady
+    icon = create_image_icon(content_frame, "assets/items/toadyCapsule.png", 14, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    label.grid(row=14, column=2)
+    toadyCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    toadyCapsulePrice12.grid(row=14, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    label.grid(row=14, column=4)
+    toadyCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    toadyCapsulePrice34.grid(row=14, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    label.grid(row=14, column=6)
+    toadyCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    toadyCapsuleShopOdds12.grid(row=14, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=14, column=8)
+    toadyCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    toadyCapsuleShopOdds34.grid(row=14, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=14, column=10)
+    toadyCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    toadyCapsuleSpaceOdds12.grid(row=14, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=14, column=12)
+    toadyCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    toadyCapsuleSpaceOdds34.grid(row=14, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/toadyCapsule.png", 3, 8)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=3, column=9)
-    toadyCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    toadyCapsulePrice7.grid(row=3, column=10)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=3, column=11)
-    toadyCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    toadyCapsuleWeight7.grid(row=3, column=12)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=3, column=13)
+    # Mr. Blizzard
+    icon = create_image_icon(content_frame, "assets/items/blizzardCapsule.png", 15, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    label.grid(row=15, column=2)
+    mrBlizzardCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    mrBlizzardCapsulePrice12.grid(row=15, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    label.grid(row=15, column=4)
+    mrBlizzardCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    mrBlizzardCapsulePrice34.grid(row=15, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    label.grid(row=15, column=6)
+    mrBlizzardCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    mrBlizzardCapsuleShopOdds12.grid(row=15, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=15, column=8)
+    mrBlizzardCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    mrBlizzardCapsuleShopOdds34.grid(row=15, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=15, column=10)
+    mrBlizzardCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    mrBlizzardCapsuleSpaceOdds12.grid(row=15, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=15, column=12)
+    mrBlizzardCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    mrBlizzardCapsuleSpaceOdds34.grid(row=15, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/blizzardCapsule.png", 4, 8)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=4, column=9)
-    blizzardCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    blizzardCapsulePrice7.grid(row=4, column=10)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=4, column=11)
-    blizzardCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    blizzardCapsuleWeight7.grid(row=4, column=12)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=4, column=13)
+    # Bandit
+    icon = create_image_icon(content_frame, "assets/items/banditCapsule.png", 16, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    label.grid(row=16, column=2)
+    banditCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    banditCapsulePrice12.grid(row=16, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    label.grid(row=16, column=4)
+    banditCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    banditCapsulePrice34.grid(row=16, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    label.grid(row=16, column=6)
+    banditCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    banditCapsuleShopOdds12.grid(row=16, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=16, column=8)
+    banditCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    banditCapsuleShopOdds34.grid(row=16, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=16, column=10)
+    banditCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    banditCapsuleSpaceOdds12.grid(row=16, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=16, column=12)
+    banditCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    banditCapsuleSpaceOdds34.grid(row=16, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/banditCapsule.png", 5, 8)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=5, column=9)
-    banditCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    banditCapsulePrice7.grid(row=5, column=10)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=5, column=11)
-    banditCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    banditCapsuleWeight7.grid(row=5, column=12)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=5, column=13)
+    # Pink Boo
+    icon = create_image_icon(content_frame, "assets/items/pinkBooCapsule.png", 17, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    label.grid(row=17, column=2)
+    pinkBooCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    pinkBooCapsulePrice12.grid(row=17, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    label.grid(row=17, column=4)
+    pinkBooCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    pinkBooCapsulePrice34.grid(row=17, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    label.grid(row=17, column=6)
+    pinkBooCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    pinkBooCapsuleShopOdds12.grid(row=17, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=17, column=8)
+    pinkBooCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    pinkBooCapsuleShopOdds34.grid(row=17, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=17, column=10)
+    pinkBooCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    pinkBooCapsuleSpaceOdds12.grid(row=17, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=17, column=12)
+    pinkBooCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    pinkBooCapsuleSpaceOdds34.grid(row=17, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/pinkBooCapsule.png", 6, 8)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=6, column=9)
-    pinkBooCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    pinkBooCapsulePrice7.grid(row=6, column=10)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=6, column=11)
-    pinkBooCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    pinkBooCapsuleWeight7.grid(row=6, column=12)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=6, column=13)
+    # Spiny
+    icon = create_image_icon(content_frame, "assets/items/spinyCapsule.png", 18, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    label.grid(row=18, column=2)
+    spinyCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    spinyCapsulePrice12.grid(row=18, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    label.grid(row=18, column=4)
+    spinyCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    spinyCapsulePrice34.grid(row=18, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    label.grid(row=18, column=6)
+    spinyCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    spinyCapsuleShopOdds12.grid(row=18, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=18, column=8)
+    spinyCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    spinyCapsuleShopOdds34.grid(row=18, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=18, column=10)
+    spinyCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    spinyCapsuleSpaceOdds12.grid(row=18, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=18, column=12)
+    spinyCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    spinyCapsuleSpaceOdds34.grid(row=18, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/spinyCapsule.png", 7, 8)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=7, column=9)
-    spinyCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    spinyCapsulePrice7.grid(row=7, column=10)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=7, column=11)
-    spinyCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    spinyCapsuleWeight7.grid(row=7, column=12)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=7, column=13)
+    # Zap
+    icon = create_image_icon(content_frame, "assets/items/zapCapsule.png", 19, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    label.grid(row=19, column=2)
+    zapCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    zapCapsulePrice12.grid(row=19, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    label.grid(row=19, column=4)
+    zapCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    zapCapsulePrice34.grid(row=19, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    label.grid(row=19, column=6)
+    zapCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    zapCapsuleShopOdds12.grid(row=19, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=19, column=8)
+    zapCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    zapCapsuleShopOdds34.grid(row=19, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=19, column=10)
+    zapCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    zapCapsuleSpaceOdds12.grid(row=19, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=19, column=12)
+    zapCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    zapCapsuleSpaceOdds34.grid(row=19, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/zapCapsule.png", 8, 8)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=8, column=9)
-    zapCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    zapCapsulePrice7.grid(row=8, column=10)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=8, column=11)
-    zapCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    zapCapsuleWeight7.grid(row=8, column=12)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=8, column=13)
+    # Tweester
+    icon = create_image_icon(content_frame, "assets/items/tweesterCapsule.png", 20, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    label.grid(row=20, column=2)
+    tweesterCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    tweesterCapsulePrice12.grid(row=20, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    label.grid(row=20, column=4)
+    tweesterCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    tweesterCapsulePrice34.grid(row=20, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    label.grid(row=20, column=6)
+    tweesterCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    tweesterCapsuleShopOdds12.grid(row=20, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=20, column=8)
+    tweesterCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    tweesterCapsuleShopOdds34.grid(row=20, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=20, column=10)
+    tweesterCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    tweesterCapsuleSpaceOdds12.grid(row=20, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=20, column=12)
+    tweesterCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    tweesterCapsuleSpaceOdds34.grid(row=20, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/tweesterCapsule.png", 9, 8)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=9, column=9)
-    tweesterCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    tweesterCapsulePrice7.grid(row=9, column=10)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=9, column=11)
-    tweesterCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    tweesterCapsuleWeight7.grid(row=9, column=12)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=9, column=13)
+    # Thwomp
+    icon = create_image_icon(content_frame, "assets/items/thwompCapsule.png", 21, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    label.grid(row=21, column=2)
+    thwompCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    thwompCapsulePrice12.grid(row=21, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    label.grid(row=21, column=4)
+    thwompCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    thwompCapsulePrice34.grid(row=21, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    label.grid(row=21, column=6)
+    thwompCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    thwompCapsuleShopOdds12.grid(row=21, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=21, column=8)
+    thwompCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    thwompCapsuleShopOdds34.grid(row=21, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=21, column=10)
+    thwompCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    thwompCapsuleSpaceOdds12.grid(row=21, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=21, column=12)
+    thwompCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    thwompCapsuleSpaceOdds34.grid(row=21, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/thwompCapsule7.png", 10, 8)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=10, column=9)
-    thwompCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    thwompCapsulePrice7.grid(row=10, column=10)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=10, column=11)
-    thwompCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    thwompCapsuleWeight7.grid(row=10, column=12)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=10, column=13)
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/warpCapsule.png", 11, 8)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=11, column=9)
-    warpCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    warpCapsulePrice7.grid(row=11, column=10)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=11, column=11)
-    warpCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    warpCapsuleWeight7.grid(row=11, column=12)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=11, column=13)
+    # Warp
+    icon = create_image_icon(content_frame, "assets/items/warpCapsule.png", 22, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    label.grid(row=22, column=2)
+    warpCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    warpCapsulePrice12.grid(row=22, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    label.grid(row=22, column=4)
+    warpCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    warpCapsulePrice34.grid(row=22, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    label.grid(row=22, column=6)
+    warpCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    warpCapsuleShopOdds12.grid(row=22, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=22, column=8)
+    warpCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    warpCapsuleShopOdds34.grid(row=22, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=22, column=10)
+    warpCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    warpCapsuleSpaceOdds12.grid(row=22, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=22, column=12)
+    warpCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    warpCapsuleSpaceOdds34.grid(row=22, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/bombCapsule7.png", 12, 8)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=12, column=9)
-    bombCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    bombCapsulePrice7.grid(row=12, column=10)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=12, column=11)
-    bombCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    bombCapsuleWeight7.grid(row=12, column=12)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.  ", font=("Arial", 16))
-    label.grid(row=12, column=13)
+    # Bomb
+    icon = create_image_icon(content_frame, "assets/items/bombCapsule.png", 23, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    label.grid(row=23, column=2)
+    bombCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    bombCapsulePrice12.grid(row=23, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    label.grid(row=23, column=4)
+    bombCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    bombCapsulePrice34.grid(row=23, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    label.grid(row=23, column=6)
+    bombCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    bombCapsuleShopOdds12.grid(row=23, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=23, column=8)
+    bombCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    bombCapsuleShopOdds34.grid(row=23, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=23, column=10)
+    bombCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    bombCapsuleSpaceOdds12.grid(row=23, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=23, column=12)
+    bombCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    bombCapsuleSpaceOdds34.grid(row=23, column=13)
 
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text="", font=("Arial", 16))
-    label.grid(row=2, column=14)
+    # Fireball
+    icon = create_image_icon(content_frame, "assets/items/fireballCapsule.png", 24, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    label.grid(row=24, column=2)
+    fireballCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    fireballCapsulePrice12.grid(row=24, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    label.grid(row=24, column=4)
+    fireballCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    fireballCapsulePrice34.grid(row=24, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    label.grid(row=24, column=6)
+    fireballCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    fireballCapsuleShopOdds12.grid(row=24, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=24, column=8)
+    fireballCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    fireballCapsuleShopOdds34.grid(row=24, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=24, column=10)
+    fireballCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    fireballCapsuleSpaceOdds12.grid(row=24, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=24, column=12)
+    fireballCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    fireballCapsuleSpaceOdds34.grid(row=24, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/fireballCapsule.png", 2, 15)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=2, column=16)
-    fireballCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    fireballCapsulePrice7.grid(row=2, column=17)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=2, column=18)
-    fireballCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    fireballCapsuleWeight7.grid(row=2, column=19)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=2, column=20)
+    # Flower
+    icon = create_image_icon(content_frame, "assets/items/flowerCapsule.png", 25, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    label.grid(row=25, column=2)
+    flowerCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    flowerCapsulePrice12.grid(row=25, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    label.grid(row=25, column=4)
+    flowerCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    flowerCapsulePrice34.grid(row=25, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    label.grid(row=25, column=6)
+    flowerCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    flowerCapsuleShopOdds12.grid(row=25, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=25, column=8)
+    flowerCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    flowerCapsuleShopOdds34.grid(row=25, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=25, column=10)
+    flowerCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    flowerCapsuleSpaceOdds12.grid(row=25, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=25, column=12)
+    flowerCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    flowerCapsuleSpaceOdds34.grid(row=25, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/flowerCapsule.png", 3, 15)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=3, column=16)
-    flowerCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    flowerCapsulePrice7.grid(row=3, column=17)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=3, column=18)
-    flowerCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    flowerCapsuleWeight7.grid(row=3, column=19)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=3, column=20)
+    # Egg
+    icon = create_image_icon(content_frame, "assets/items/eggCapsule.png", 26, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    label.grid(row=26, column=2)
+    eggCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    eggCapsulePrice12.grid(row=26, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    label.grid(row=26, column=4)
+    eggCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    eggCapsulePrice34.grid(row=26, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    label.grid(row=26, column=6)
+    eggCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    eggCapsuleShopOdds12.grid(row=26, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=26, column=8)
+    eggCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    eggCapsuleShopOdds34.grid(row=26, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=26, column=10)
+    eggCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    eggCapsuleSpaceOdds12.grid(row=26, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=26, column=12)
+    eggCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    eggCapsuleSpaceOdds34.grid(row=26, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/eggCapsule.png", 4, 15)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=4, column=16)
-    eggCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    eggCapsulePrice7.grid(row=4, column=17)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=4, column=18)
-    eggCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    eggCapsuleWeight7.grid(row=4, column=19)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=4, column=20)
+    # Vacuum
+    icon = create_image_icon(content_frame, "assets/items/vacuumCapsule.png", 27, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    label.grid(row=27, column=2)
+    vacuumCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    vacuumCapsulePrice12.grid(row=27, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    label.grid(row=27, column=4)
+    vacuumCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    vacuumCapsulePrice34.grid(row=27, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    label.grid(row=27, column=6)
+    vacuumCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    vacuumCapsuleShopOdds12.grid(row=27, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=27, column=8)
+    vacuumCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    vacuumCapsuleShopOdds34.grid(row=27, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=27, column=10)
+    vacuumCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    vacuumCapsuleSpaceOdds12.grid(row=27, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=27, column=12)
+    vacuumCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    vacuumCapsuleSpaceOdds34.grid(row=27, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/vacuumCapsule.png", 5, 15)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=5, column=16)
-    vacuumCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    vacuumCapsulePrice7.grid(row=5, column=17)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=5, column=18)
-    vacuumCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    vacuumCapsuleWeight7.grid(row=5, column=19)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=5, column=20)
+    # Magic
+    icon = create_image_icon(content_frame, "assets/items/magicCapsule.png", 28, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    label.grid(row=28, column=2)
+    magicCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    magicCapsulePrice12.grid(row=28, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    label.grid(row=28, column=4)
+    magicCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    magicCapsulePrice34.grid(row=28, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    label.grid(row=28, column=6)
+    magicCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    magicCapsuleShopOdds12.grid(row=28, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=28, column=8)
+    magicCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    magicCapsuleShopOdds34.grid(row=28, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=28, column=10)
+    magicCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    magicCapsuleSpaceOdds12.grid(row=28, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=28, column=12)
+    magicCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    magicCapsuleSpaceOdds34.grid(row=28, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/magicCapsule.png", 6, 15)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=6, column=16)
-    magicCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    magicCapsulePrice7.grid(row=6, column=17)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=6, column=18)
-    magicCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    magicCapsuleWeight7.grid(row=6, column=19)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=6, column=20)
+    # Triple
+    icon = create_image_icon(content_frame, "assets/items/tripleCapsule.png", 29, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    label.grid(row=29, column=2)
+    tripleCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    tripleCapsulePrice12.grid(row=29, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    label.grid(row=29, column=4)
+    tripleCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    tripleCapsulePrice34.grid(row=29, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    label.grid(row=29, column=6)
+    tripleCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    tripleCapsuleShopOdds12.grid(row=29, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=29, column=8)
+    tripleCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    tripleCapsuleShopOdds34.grid(row=29, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=29, column=10)
+    tripleCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    tripleCapsuleSpaceOdds12.grid(row=29, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=29, column=12)
+    tripleCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    tripleCapsuleSpaceOdds34.grid(row=29, column=13)
 
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/tripleCapsule.png", 7, 15)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    label.grid(row=7, column=16)
-    tripleCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    tripleCapsulePrice7.grid(row=7, column=17)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    label.grid(row=7, column=18)
-    tripleCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    tripleCapsuleWeight7.grid(row=7, column=19)
-    label = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    label.grid(row=7, column=20)
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/cursedMushroomCapsule7.png", 9, 15)
-    labelPoison1 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    poisonMushroomPrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    labelPoison2 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    poisonMushroomWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    labelPoison3 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    # Triple
+    icon = create_image_icon(content_frame, "assets/items/koopaCapsule.png", 30, 1)
+    label = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    label.grid(row=30, column=2)
+    koopaCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    koopaCapsulePrice12.grid(row=30, column=3)
+    label = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    label.grid(row=30, column=4)
+    koopaCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    koopaCapsulePrice34.grid(row=30, column=5)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    label.grid(row=30, column=6)
+    koopaCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    koopaCapsuleShopOdds12.grid(row=30, column=7)
+    label = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    label.grid(row=30, column=8)
+    koopaCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    koopaCapsuleShopOdds34.grid(row=30, column=9)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    label.grid(row=30, column=10)
+    koopaCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    koopaCapsuleSpaceOdds12.grid(row=30, column=11)
+    label = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    label.grid(row=30, column=12)
+    koopaCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    koopaCapsuleSpaceOdds34.grid(row=30, column=13)
 
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/duelCapsule.png", 10, 15)
-    labelDuel1 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    duelCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    labelDuel2 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    duelCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    labelDuel3 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    # Cursed Mushroom
+    icon = create_image_icon(content_frame, "assets/items/cursedMushroomCapsule7.png", 31, 1)
+    labelPoison1 = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    labelPoison1.grid(row=31, column=2)
+    poisonMushroomPrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    poisonMushroomPrice12.grid(row=31, column=3)
+    labelPoison2 = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    labelPoison2.grid(row=31, column=4)
+    poisonMushroomPrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    poisonMushroomPrice34.grid(row=31, column=5)
+    labelPoison3 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    labelPoison3.grid(row=31, column=6)
+    poisonMushroomShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    poisonMushroomShopOdds12.grid(row=31, column=7)
+    labelPoison4 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    labelPoison4.grid(row=31, column=8)
+    poisonMushroomShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    poisonMushroomShopOdds34.grid(row=31, column=9)
+    labelPoison5 = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    labelPoison5.grid(row=31, column=10)
+    poisonMushroomSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    poisonMushroomSpaceOdds12.grid(row=31, column=11)
+    labelPoison6 = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    labelPoison6.grid(row=31, column=12)
+    poisonMushroomSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    poisonMushroomSpaceOdds34.grid(row=31, column=13)
 
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/dkCapsule.png", 11, 15)
-    labelDK1 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    dkCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    labelDK2 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    dkCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    labelDK3 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    # Duel Capsule
+    icon = create_image_icon(content_frame, "assets/items/duelCapsule.png", 32, 1)
+    labelDuel1 = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    labelDuel1.grid(row=32, column=2)
+    duelCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    duelCapsulePrice12.grid(row=32, column=3)
+    labelDuel2 = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    labelDuel2.grid(row=32, column=4)
+    duelCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    duelCapsulePrice34.grid(row=32, column=5)
+    labelDuel3 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    labelDuel3.grid(row=32, column=6)
+    duelCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    duelCapsuleShopOdds12.grid(row=32, column=7)
+    labelDuel4 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    labelDuel4.grid(row=32, column=8)
+    duelCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    duelCapsuleShopOdds34.grid(row=32, column=9)
+    labelDuel5 = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    labelDuel5.grid(row=32, column=10)
+    duelCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    duelCapsuleSpaceOdds12.grid(row=32, column=11)
+    labelDuel6 = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    labelDuel6.grid(row=32, column=12)
+    duelCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    duelCapsuleSpaceOdds34.grid(row=32, column=13)
 
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/orbBagCapsule.png", 12, 15)
-    labelOrbBag1 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    orbBagCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    labelOrbBag2 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    orbBagCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    labelOrbBag3 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
-    
-    icon = create_image_icon(tabview.tab("Orb Mods"), "assets/items/mysteryCapsule.png", 8, 15)
-    labelMystery1 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" Costs  ", font=("Arial", 16))
-    mysteryCapsulePrice7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    labelMystery2 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" and is ", font=("Arial", 16))
-    mysteryCapsuleWeight7 = ctk.CTkEntry(master=tabview.tab("Orb Mods"), width=48, font=("Arial", 16, "bold"))
-    labelMystery3 = ctk.CTkLabel(master=tabview.tab("Orb Mods"), text=" % common.", font=("Arial", 16))
+    # DK Capsule
+    icon = create_image_icon(content_frame, "assets/items/dkCapsule.png", 33, 1)
+    labelDK1 = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    labelDK1.grid(row=33, column=2)
+    dkCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    dkCapsulePrice12.grid(row=33, column=3)
+    labelDK2 = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    labelDK2.grid(row=33, column=4)
+    dkCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    dkCapsulePrice34.grid(row=33, column=5)
+    labelDK3 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    labelDK3.grid(row=33, column=6)
+    dkCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    dkCapsuleShopOdds12.grid(row=33, column=7)
+    labelDK4 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    labelDK4.grid(row=33, column=8)
+    dkCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    dkCapsuleShopOdds34.grid(row=33, column=9)
+    labelDK5 = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    labelDK5.grid(row=33, column=10)
+    dkCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    dkCapsuleSpaceOdds12.grid(row=33, column=11)
+    labelDK6 = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    labelDK6.grid(row=33, column=12)
+    dkCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    dkCapsuleSpaceOdds34.grid(row=33, column=13)
+
+    # Orb Bag Capsule
+    icon = create_image_icon(content_frame, "assets/items/orbBagCapsule.png", 34, 1)
+    labelOrbBag1 = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    labelOrbBag1.grid(row=34, column=2)
+    orbBagCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    orbBagCapsulePrice12.grid(row=34, column=3)
+    labelOrbBag2 = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    labelOrbBag2.grid(row=34, column=4)
+    orbBagCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    orbBagCapsulePrice34.grid(row=34, column=5)
+    labelOrbBag3 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    labelOrbBag3.grid(row=34, column=6)
+    orbBagCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    orbBagCapsuleShopOdds12.grid(row=34, column=7)
+    labelOrbBag4 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    labelOrbBag4.grid(row=34, column=8)
+    orbBagCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    orbBagCapsuleShopOdds34.grid(row=34, column=9)
+    labelOrbBag5 = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    labelOrbBag5.grid(row=34, column=10)
+    orbBagCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    orbBagCapsuleSpaceOdds12.grid(row=34, column=11)
+    labelOrbBag6 = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    labelOrbBag6.grid(row=34, column=12)
+    orbBagCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    orbBagCapsuleSpaceOdds34.grid(row=34, column=13)
+
+    # Mystery Capsule
+    icon = create_image_icon(content_frame, "assets/items/mysteryCapsule.png", 35, 1)
+    labelMystery1 = ctk.CTkLabel(master=content_frame, text="  Cost\n  1st / 2nd  ", font=("Arial", 14))
+    labelMystery1.grid(row=35, column=2)
+    mysteryCapsulePrice12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    mysteryCapsulePrice12.grid(row=35, column=3)
+    labelMystery2 = ctk.CTkLabel(master=content_frame, text=" Cost\n  3rd / 4th ", font=("Arial", 14))
+    labelMystery2.grid(row=35, column=4)
+    mysteryCapsulePrice34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    mysteryCapsulePrice34.grid(row=35, column=5)
+    labelMystery3 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n    Early   ", font=("Arial", 14))
+    labelMystery3.grid(row=35, column=6)
+    mysteryCapsuleShopOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    mysteryCapsuleShopOdds12.grid(row=35, column=7)
+    labelMystery4 = ctk.CTkLabel(master=content_frame, text=" Shop Odd\n     Late    ", font=("Arial", 14))
+    labelMystery4.grid(row=35, column=8)
+    mysteryCapsuleShopOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    mysteryCapsuleShopOdds34.grid(row=35, column=9)
+    labelMystery5 = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      1st / 2nd ", font=("Arial", 14))
+    labelMystery5.grid(row=35, column=10)
+    mysteryCapsuleSpaceOdds12 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    mysteryCapsuleSpaceOdds12.grid(row=35, column=11)
+    labelMystery6 = ctk.CTkLabel(master=content_frame, text="     Pickup Odd  \n      3rd / 4th ", font=("Arial", 14))
+    labelMystery6.grid(row=35, column=12)
+    mysteryCapsuleSpaceOdds34 = ctk.CTkEntry(master=content_frame, width=48, font=("Arial", 16, "bold"))
+    mysteryCapsuleSpaceOdds34.grid(row=35, column=13)
 
     global hide_custom
     hide_custom = False
     
-    parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: itemsEvent_mp7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7, poisonMushroomWeight7 if hide_custom == False else "0", poisonMushroomPrice7 if hide_custom == False else "0", orbBagCapsuleWeight7 if hide_custom == False else "0", orbBagCapsulePrice7 if hide_custom == False else "0", mysteryCapsuleWeight7 if hide_custom == False else "0", mysteryCapsulePrice7 if hide_custom == False else "0", dkCapsuleWeight7 if hide_custom == False else "0", dkCapsulePrice7 if hide_custom == False else "0", duelCapsuleWeight7 if hide_custom == False else "0", duelCapsulePrice7  if hide_custom == False else "0"), text="Generate Codes")
+    parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: itemsEvent_mp7(
+        mushroomCapsuleShopOdds12, mushroomCapsuleShopOdds34,
+        mushroomCapsuleSpaceOdds12, mushroomCapsuleSpaceOdds34,
+        goldenMushroomCapsulePrice12, goldenMushroomCapsulePrice34, 
+        goldenMushroomCapsuleShopOdds12, goldenMushroomCapsuleShopOdds34, 
+        goldenMushroomCapsuleSpaceOdds12, goldenMushroomCapsuleSpaceOdds34,
+        slowMushroomCapsulePrice12, slowMushroomCapsulePrice34, 
+        slowMushroomCapsuleShopOdds12, slowMushroomCapsuleShopOdds34, 
+        slowMushroomCapsuleSpaceOdds12, slowMushroomCapsuleSpaceOdds34,
+        metalMushroomCapsulePrice12, metalMushroomCapsulePrice34, 
+        metalMushroomCapsuleShopOdds12, metalMushroomCapsuleShopOdds34, 
+        metalMushroomCapsuleSpaceOdds12, metalMushroomCapsuleSpaceOdds34,
+        flutterCapsulePrice12, flutterCapsulePrice34, 
+        flutterCapsuleShopOdds12, flutterCapsuleShopOdds34, 
+        flutterCapsuleSpaceOdds12, flutterCapsuleSpaceOdds34,
+        cannonCapsulePrice12, cannonCapsulePrice34, 
+        cannonCapsuleShopOdds12, cannonCapsuleShopOdds34, 
+        cannonCapsuleSpaceOdds12, cannonCapsuleSpaceOdds34,
+        snackCapsulePrice12, snackCapsulePrice34, 
+        snackCapsuleShopOdds12, snackCapsuleShopOdds34, 
+        snackCapsuleSpaceOdds12, snackCapsuleSpaceOdds34,
+        lakituCapsulePrice12, lakituCapsulePrice34, 
+        lakituCapsuleShopOdds12, lakituCapsuleShopOdds34, 
+        lakituCapsuleSpaceOdds12, lakituCapsuleSpaceOdds34,
+        hammerBroCapsulePrice12, hammerBroCapsulePrice34, 
+        hammerBroCapsuleShopOdds12, hammerBroCapsuleShopOdds34, 
+        hammerBroCapsuleSpaceOdds12, hammerBroCapsuleSpaceOdds34,
+        piranhaPlantCapsulePrice12, piranhaPlantCapsulePrice34, 
+        piranhaPlantCapsuleShopOdds12, piranhaPlantCapsuleShopOdds34, 
+        piranhaPlantCapsuleSpaceOdds12, piranhaPlantCapsuleSpaceOdds34,
+        spearGuyCapsulePrice12, spearGuyCapsulePrice34, 
+        spearGuyCapsuleShopOdds12, spearGuyCapsuleShopOdds34, 
+        spearGuyCapsuleSpaceOdds12, spearGuyCapsuleSpaceOdds34,
+        kamekCapsulePrice12, kamekCapsulePrice34, 
+        kamekCapsuleShopOdds12, kamekCapsuleShopOdds34, 
+        kamekCapsuleSpaceOdds12, kamekCapsuleSpaceOdds34,
+        toadyCapsulePrice12, toadyCapsulePrice34, 
+        toadyCapsuleShopOdds12, toadyCapsuleShopOdds34, 
+        toadyCapsuleSpaceOdds12, toadyCapsuleSpaceOdds34,
+        mrBlizzardCapsulePrice12, mrBlizzardCapsulePrice34, 
+        mrBlizzardCapsuleShopOdds12, mrBlizzardCapsulePrice34, 
+        mrBlizzardCapsuleSpaceOdds12, mrBlizzardCapsulePrice34,
+        banditCapsulePrice12, banditCapsulePrice34, 
+        banditCapsuleShopOdds12, banditCapsuleShopOdds34, 
+        banditCapsuleSpaceOdds12, banditCapsuleSpaceOdds34,
+        pinkBooCapsulePrice12, pinkBooCapsulePrice34, 
+        pinkBooCapsuleShopOdds12, pinkBooCapsuleShopOdds34, 
+        pinkBooCapsuleSpaceOdds12, pinkBooCapsuleSpaceOdds34,
+        spinyCapsulePrice12, spinyCapsulePrice34, 
+        spinyCapsuleShopOdds12, spinyCapsuleShopOdds34, 
+        spinyCapsuleSpaceOdds12, spinyCapsuleSpaceOdds34,
+        zapCapsulePrice12, zapCapsulePrice34, 
+        zapCapsuleShopOdds12, zapCapsuleShopOdds34, 
+        zapCapsuleSpaceOdds12, zapCapsuleSpaceOdds34,
+        tweesterCapsulePrice12, tweesterCapsulePrice34, 
+        tweesterCapsuleShopOdds12, tweesterCapsuleShopOdds34, 
+        tweesterCapsuleSpaceOdds12, tweesterCapsuleSpaceOdds34,
+        thwompCapsulePrice12, thwompCapsulePrice34, 
+        thwompCapsuleShopOdds12, thwompCapsuleShopOdds34, 
+        thwompCapsuleSpaceOdds12, thwompCapsuleSpaceOdds34,
+        warpCapsulePrice12, warpCapsulePrice34, 
+        warpCapsuleShopOdds12, warpCapsuleShopOdds34, 
+        warpCapsuleSpaceOdds12, warpCapsuleSpaceOdds34,
+        bombCapsulePrice12, bombCapsulePrice34, 
+        bombCapsuleShopOdds12, bombCapsuleShopOdds34, 
+        bombCapsuleSpaceOdds12, bombCapsuleSpaceOdds34,
+        fireballCapsulePrice12, fireballCapsulePrice34, 
+        fireballCapsuleShopOdds12, fireballCapsuleShopOdds34, 
+        fireballCapsuleSpaceOdds12, fireballCapsuleSpaceOdds34,
+        flowerCapsulePrice12, flowerCapsulePrice34, 
+        flowerCapsuleShopOdds12, flowerCapsuleShopOdds34, 
+        flowerCapsuleSpaceOdds12, flowerCapsuleSpaceOdds34,
+        eggCapsulePrice12, eggCapsulePrice34, 
+        eggCapsuleShopOdds12, eggCapsuleShopOdds34, 
+        eggCapsuleSpaceOdds12, eggCapsuleSpaceOdds34,
+        vacuumCapsulePrice12, vacuumCapsulePrice34, 
+        vacuumCapsuleShopOdds12, vacuumCapsuleShopOdds34, 
+        vacuumCapsuleSpaceOdds12, vacuumCapsuleSpaceOdds34,
+        magicCapsulePrice12, magicCapsulePrice34, 
+        magicCapsuleShopOdds12, magicCapsuleShopOdds34, 
+        magicCapsuleSpaceOdds12, magicCapsuleSpaceOdds34,
+        tripleCapsulePrice12, tripleCapsulePrice34, 
+        tripleCapsuleShopOdds12, tripleCapsuleShopOdds34, 
+        tripleCapsuleSpaceOdds12, tripleCapsuleSpaceOdds34,
+        koopaCapsulePrice12, koopaCapsulePrice34, 
+        koopaCapsuleShopOdds12, koopaCapsuleShopOdds34, 
+        koopaCapsuleSpaceOdds12, koopaCapsuleSpaceOdds34,
+        poisonMushroomPrice34 if hide_custom == False else "0", 
+        poisonMushroomPrice12 if hide_custom == False else "0", 
+        poisonMushroomShopOdds12 if hide_custom == False else "0", 
+        poisonMushroomShopOdds34 if hide_custom == False else "0", 
+        poisonMushroomSpaceOdds12 if hide_custom == False else "0", 
+        poisonMushroomSpaceOdds34 if hide_custom == False else "0", 
+        orbBagCapsulePrice34 if hide_custom == False else "0", 
+        orbBagCapsulePrice12 if hide_custom == False else "0", 
+        orbBagCapsuleShopOdds12 if hide_custom == False else "0", 
+        orbBagCapsuleShopOdds34 if hide_custom == False else "0", 
+        orbBagCapsuleSpaceOdds12 if hide_custom == False else "0", 
+        orbBagCapsuleSpaceOdds34 if hide_custom == False else "0", 
+        mysteryCapsulePrice34 if hide_custom == False else "0", 
+        mysteryCapsulePrice12 if hide_custom == False else "0", 
+        mysteryCapsuleShopOdds12 if hide_custom == False else "0", 
+        mysteryCapsuleShopOdds34 if hide_custom == False else "0", 
+        mysteryCapsuleSpaceOdds12 if hide_custom == False else "0", 
+        mysteryCapsuleSpaceOdds34 if hide_custom == False else "0", 
+        dkCapsulePrice34 if hide_custom == False else "0", 
+        dkCapsulePrice12 if hide_custom == False else "0", 
+        dkCapsuleShopOdds12 if hide_custom == False else "0", 
+        dkCapsuleShopOdds34 if hide_custom == False else "0", 
+        dkCapsuleSpaceOdds12 if hide_custom == False else "0", 
+        dkCapsuleSpaceOdds34 if hide_custom == False else "0", 
+        duelCapsulePrice34 if hide_custom == False else "0", 
+        duelCapsulePrice12 if hide_custom == False else "0", 
+        duelCapsuleShopOdds12 if hide_custom == False else "0", 
+        duelCapsuleShopOdds34 if hide_custom == False else "0", 
+        duelCapsuleSpaceOdds12 if hide_custom == False else "0", 
+        duelCapsuleSpaceOdds34 if hide_custom == False else "0"
+    ), text="Generate Code")
     parseButton.place(x=10, y=800)
 
-    parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: savePresetItems7(mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7, poisonMushroomWeight7 if hide_custom == False else "0", poisonMushroomPrice7 if hide_custom == False else "0", orbBagCapsuleWeight7 if hide_custom == False else "0", orbBagCapsulePrice7 if hide_custom == False else "0", mysteryCapsuleWeight7 if hide_custom == False else "0", mysteryCapsulePrice7 if hide_custom == False else "0", dkCapsuleWeight7 if hide_custom == False else "0", dkCapsulePrice7 if hide_custom == False else "0", duelCapsuleWeight7 if hide_custom == False else "0", duelCapsulePrice7  if hide_custom == False else "0"), text="Save Preset")
+
+    parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: savePresetItems7(
+        mushroomCapsuleShopOdds12, mushroomCapsuleShopOdds34,
+        mushroomCapsuleSpaceOdds12, mushroomCapsuleSpaceOdds34,
+        goldenMushroomCapsulePrice12, goldenMushroomCapsulePrice34, 
+        goldenMushroomCapsuleShopOdds12, goldenMushroomCapsuleShopOdds34, 
+        goldenMushroomCapsuleSpaceOdds12, goldenMushroomCapsuleSpaceOdds34,
+        slowMushroomCapsulePrice12, slowMushroomCapsulePrice34, 
+        slowMushroomCapsuleShopOdds12, slowMushroomCapsuleShopOdds34, 
+        slowMushroomCapsuleSpaceOdds12, slowMushroomCapsuleSpaceOdds34,
+        metalMushroomCapsulePrice12, metalMushroomCapsulePrice34, 
+        metalMushroomCapsuleShopOdds12, metalMushroomCapsuleShopOdds34, 
+        metalMushroomCapsuleSpaceOdds12, metalMushroomCapsuleSpaceOdds34,
+        flutterCapsulePrice12, flutterCapsulePrice34, 
+        flutterCapsuleShopOdds12, flutterCapsuleShopOdds34, 
+        flutterCapsuleSpaceOdds12, flutterCapsuleSpaceOdds34,
+        cannonCapsulePrice12, cannonCapsulePrice34, 
+        cannonCapsuleShopOdds12, cannonCapsuleShopOdds34, 
+        cannonCapsuleSpaceOdds12, cannonCapsuleSpaceOdds34,
+        snackCapsulePrice12, snackCapsulePrice34, 
+        snackCapsuleShopOdds12, snackCapsuleShopOdds34, 
+        snackCapsuleSpaceOdds12, snackCapsuleSpaceOdds34,
+        lakituCapsulePrice12, lakituCapsulePrice34, 
+        lakituCapsuleShopOdds12, lakituCapsuleShopOdds34, 
+        lakituCapsuleSpaceOdds12, lakituCapsuleSpaceOdds34,
+        hammerBroCapsulePrice12, hammerBroCapsulePrice34, 
+        hammerBroCapsuleShopOdds12, hammerBroCapsuleShopOdds34, 
+        hammerBroCapsuleSpaceOdds12, hammerBroCapsuleSpaceOdds34,
+        piranhaPlantCapsulePrice12, piranhaPlantCapsulePrice34, 
+        piranhaPlantCapsuleShopOdds12, piranhaPlantCapsuleShopOdds34, 
+        piranhaPlantCapsuleSpaceOdds12, piranhaPlantCapsuleSpaceOdds34,
+        spearGuyCapsulePrice12, spearGuyCapsulePrice34, 
+        spearGuyCapsuleShopOdds12, spearGuyCapsuleShopOdds34, 
+        spearGuyCapsuleSpaceOdds12, spearGuyCapsuleSpaceOdds34,
+        kamekCapsulePrice12, kamekCapsulePrice34, 
+        kamekCapsuleShopOdds12, kamekCapsuleShopOdds34, 
+        kamekCapsuleSpaceOdds12, kamekCapsuleSpaceOdds34,
+        toadyCapsulePrice12, toadyCapsulePrice34, 
+        toadyCapsuleShopOdds12, toadyCapsuleShopOdds34, 
+        toadyCapsuleSpaceOdds12, toadyCapsuleSpaceOdds34,
+        mrBlizzardCapsulePrice12, mrBlizzardCapsulePrice34, 
+        mrBlizzardCapsuleShopOdds12, mrBlizzardCapsulePrice34, 
+        mrBlizzardCapsuleSpaceOdds12, mrBlizzardCapsulePrice34,
+        banditCapsulePrice12, banditCapsulePrice34, 
+        banditCapsuleShopOdds12, banditCapsuleShopOdds34, 
+        banditCapsuleSpaceOdds12, banditCapsuleSpaceOdds34,
+        pinkBooCapsulePrice12, pinkBooCapsulePrice34, 
+        pinkBooCapsuleShopOdds12, pinkBooCapsuleShopOdds34, 
+        pinkBooCapsuleSpaceOdds12, pinkBooCapsuleSpaceOdds34,
+        spinyCapsulePrice12, spinyCapsulePrice34, 
+        spinyCapsuleShopOdds12, spinyCapsuleShopOdds34, 
+        spinyCapsuleSpaceOdds12, spinyCapsuleSpaceOdds34,
+        zapCapsulePrice12, zapCapsulePrice34, 
+        zapCapsuleShopOdds12, zapCapsuleShopOdds34, 
+        zapCapsuleSpaceOdds12, zapCapsuleSpaceOdds34,
+        tweesterCapsulePrice12, tweesterCapsulePrice34, 
+        tweesterCapsuleShopOdds12, tweesterCapsuleShopOdds34, 
+        tweesterCapsuleSpaceOdds12, tweesterCapsuleSpaceOdds34,
+        thwompCapsulePrice12, thwompCapsulePrice34, 
+        thwompCapsuleShopOdds12, thwompCapsuleShopOdds34, 
+        thwompCapsuleSpaceOdds12, thwompCapsuleSpaceOdds34,
+        warpCapsulePrice12, warpCapsulePrice34, 
+        warpCapsuleShopOdds12, warpCapsuleShopOdds34, 
+        warpCapsuleSpaceOdds12, warpCapsuleSpaceOdds34,
+        bombCapsulePrice12, bombCapsulePrice34, 
+        bombCapsuleShopOdds12, bombCapsuleShopOdds34, 
+        bombCapsuleSpaceOdds12, bombCapsuleSpaceOdds34,
+        fireballCapsulePrice12, fireballCapsulePrice34, 
+        fireballCapsuleShopOdds12, fireballCapsuleShopOdds34, 
+        fireballCapsuleSpaceOdds12, fireballCapsuleSpaceOdds34,
+        flowerCapsulePrice12, flowerCapsulePrice34, 
+        flowerCapsuleShopOdds12, flowerCapsuleShopOdds34, 
+        flowerCapsuleSpaceOdds12, flowerCapsuleSpaceOdds34,
+        eggCapsulePrice12, eggCapsulePrice34, 
+        eggCapsuleShopOdds12, eggCapsuleShopOdds34, 
+        eggCapsuleSpaceOdds12, eggCapsuleSpaceOdds34,
+        vacuumCapsulePrice12, vacuumCapsulePrice34, 
+        vacuumCapsuleShopOdds12, vacuumCapsuleShopOdds34, 
+        vacuumCapsuleSpaceOdds12, vacuumCapsuleSpaceOdds34,
+        magicCapsulePrice12, magicCapsulePrice34, 
+        magicCapsuleShopOdds12, magicCapsuleShopOdds34, 
+        magicCapsuleSpaceOdds12, magicCapsuleSpaceOdds34,
+        tripleCapsulePrice12, tripleCapsulePrice34, 
+        tripleCapsuleShopOdds12, tripleCapsuleShopOdds34, 
+        tripleCapsuleSpaceOdds12, tripleCapsuleSpaceOdds34,
+        koopaCapsulePrice12, koopaCapsulePrice34, 
+        koopaCapsuleShopOdds12, koopaCapsuleShopOdds34, 
+        koopaCapsuleSpaceOdds12, koopaCapsuleSpaceOdds34,
+        poisonMushroomPrice34 if hide_custom == False else "0", 
+        poisonMushroomPrice12 if hide_custom == False else "0", 
+        poisonMushroomShopOdds12 if hide_custom == False else "0", 
+        poisonMushroomShopOdds34 if hide_custom == False else "0", 
+        poisonMushroomSpaceOdds12 if hide_custom == False else "0", 
+        poisonMushroomSpaceOdds34 if hide_custom == False else "0", 
+        orbBagCapsulePrice34 if hide_custom == False else "0", 
+        orbBagCapsulePrice12 if hide_custom == False else "0", 
+        orbBagCapsuleShopOdds12 if hide_custom == False else "0", 
+        orbBagCapsuleShopOdds34 if hide_custom == False else "0", 
+        orbBagCapsuleSpaceOdds12 if hide_custom == False else "0", 
+        orbBagCapsuleSpaceOdds34 if hide_custom == False else "0", 
+        mysteryCapsulePrice34 if hide_custom == False else "0", 
+        mysteryCapsulePrice12 if hide_custom == False else "0", 
+        mysteryCapsuleShopOdds12 if hide_custom == False else "0", 
+        mysteryCapsuleShopOdds34 if hide_custom == False else "0", 
+        mysteryCapsuleSpaceOdds12 if hide_custom == False else "0", 
+        mysteryCapsuleSpaceOdds34 if hide_custom == False else "0", 
+        dkCapsulePrice34 if hide_custom == False else "0", 
+        dkCapsulePrice12 if hide_custom == False else "0", 
+        dkCapsuleShopOdds12 if hide_custom == False else "0", 
+        dkCapsuleShopOdds34 if hide_custom == False else "0", 
+        dkCapsuleSpaceOdds12 if hide_custom == False else "0", 
+        dkCapsuleSpaceOdds34 if hide_custom == False else "0", 
+        duelCapsulePrice34 if hide_custom == False else "0", 
+        duelCapsulePrice12 if hide_custom == False else "0", 
+        duelCapsuleShopOdds12 if hide_custom == False else "0", 
+        duelCapsuleShopOdds34 if hide_custom == False else "0", 
+        duelCapsuleSpaceOdds12 if hide_custom == False else "0", 
+        duelCapsuleSpaceOdds34 if hide_custom == False else "0"
+    ), text="Save Preset")
     parseButton.place(x=160, y=800)
 
-    parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: loadPresetItems7(hide_custom, mushroomCapsuleWeight7, goldenMushroomCapsulePrice7, goldenMushroomCapsuleWeight7, slowMushroomCapsulePrice7, slowMushroomCapsuleWeight7, metalMushroomCapsulePrice7, metalMushroomCapsuleWeight7, flutterCapsulePrice7, flutterCapsuleWeight7, cannonCapsulePrice7, cannonCapsuleWeight7, snackCapsulePrice7, snackCapsuleWeight7, lakituCapsulePrice7, lakituCapsuleWeight7, hammerBroCapsulePrice7, hammerBroCapsuleWeight7, plantCapsulePrice7, plantCapsuleWeight7, spearCapsulePrice7, spearCapsuleWeight7, kamekCapsulePrice7, kamekCapsuleWeight7, toadyCapsulePrice7, toadyCapsuleWeight7, blizzardCapsulePrice7, blizzardCapsuleWeight7, banditCapsulePrice7, banditCapsuleWeight7, pinkBooCapsulePrice7, pinkBooCapsuleWeight7, spinyCapsulePrice7, spinyCapsuleWeight7, zapCapsulePrice7, zapCapsuleWeight7, tweesterCapsulePrice7, tweesterCapsuleWeight7, thwompCapsulePrice7, thwompCapsuleWeight7, warpCapsulePrice7, warpCapsuleWeight7, bombCapsulePrice7, bombCapsuleWeight7, fireballCapsulePrice7, fireballCapsuleWeight7, flowerCapsulePrice7, flowerCapsuleWeight7, eggCapsulePrice7, eggCapsuleWeight7, vacuumCapsulePrice7, vacuumCapsuleWeight7, magicCapsulePrice7, magicCapsuleWeight7, tripleCapsulePrice7, tripleCapsuleWeight7, koopaCapsulePrice7, koopaCapsuleWeight7, poisonMushroomWeight7 if hide_custom == False else "0", poisonMushroomPrice7 if hide_custom == False else "0", orbBagCapsuleWeight7 if hide_custom == False else "0", orbBagCapsulePrice7 if hide_custom == False else "0", mysteryCapsuleWeight7 if hide_custom == False else "0", mysteryCapsulePrice7 if hide_custom == False else "0", dkCapsuleWeight7 if hide_custom == False else "0", dkCapsulePrice7 if hide_custom == False else "0", duelCapsuleWeight7 if hide_custom == False else "0", duelCapsulePrice7  if hide_custom == False else "0"), text="Load Preset")
+    parseButton = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: loadPresetItems7(
+        hide_custom,
+        mushroomCapsuleShopOdds12, mushroomCapsuleShopOdds34,
+        mushroomCapsuleSpaceOdds12, mushroomCapsuleSpaceOdds34,
+        goldenMushroomCapsulePrice12, goldenMushroomCapsulePrice34, 
+        goldenMushroomCapsuleShopOdds12, goldenMushroomCapsuleShopOdds34, 
+        goldenMushroomCapsuleSpaceOdds12, goldenMushroomCapsuleSpaceOdds34,
+        slowMushroomCapsulePrice12, slowMushroomCapsulePrice34, 
+        slowMushroomCapsuleShopOdds12, slowMushroomCapsuleShopOdds34, 
+        slowMushroomCapsuleSpaceOdds12, slowMushroomCapsuleSpaceOdds34,
+        metalMushroomCapsulePrice12, metalMushroomCapsulePrice34, 
+        metalMushroomCapsuleShopOdds12, metalMushroomCapsuleShopOdds34, 
+        metalMushroomCapsuleSpaceOdds12, metalMushroomCapsuleSpaceOdds34,
+        flutterCapsulePrice12, flutterCapsulePrice34, 
+        flutterCapsuleShopOdds12, flutterCapsuleShopOdds34, 
+        flutterCapsuleSpaceOdds12, flutterCapsuleSpaceOdds34,
+        cannonCapsulePrice12, cannonCapsulePrice34, 
+        cannonCapsuleShopOdds12, cannonCapsuleShopOdds34, 
+        cannonCapsuleSpaceOdds12, cannonCapsuleSpaceOdds34,
+        snackCapsulePrice12, snackCapsulePrice34, 
+        snackCapsuleShopOdds12, snackCapsuleShopOdds34, 
+        snackCapsuleSpaceOdds12, snackCapsuleSpaceOdds34,
+        lakituCapsulePrice12, lakituCapsulePrice34, 
+        lakituCapsuleShopOdds12, lakituCapsuleShopOdds34, 
+        lakituCapsuleSpaceOdds12, lakituCapsuleSpaceOdds34,
+        hammerBroCapsulePrice12, hammerBroCapsulePrice34, 
+        hammerBroCapsuleShopOdds12, hammerBroCapsuleShopOdds34, 
+        hammerBroCapsuleSpaceOdds12, hammerBroCapsuleSpaceOdds34,
+        piranhaPlantCapsulePrice12, piranhaPlantCapsulePrice34, 
+        piranhaPlantCapsuleShopOdds12, piranhaPlantCapsuleShopOdds34, 
+        piranhaPlantCapsuleSpaceOdds12, piranhaPlantCapsuleSpaceOdds34,
+        spearGuyCapsulePrice12, spearGuyCapsulePrice34, 
+        spearGuyCapsuleShopOdds12, spearGuyCapsuleShopOdds34, 
+        spearGuyCapsuleSpaceOdds12, spearGuyCapsuleSpaceOdds34,
+        kamekCapsulePrice12, kamekCapsulePrice34, 
+        kamekCapsuleShopOdds12, kamekCapsuleShopOdds34, 
+        kamekCapsuleSpaceOdds12, kamekCapsuleSpaceOdds34,
+        toadyCapsulePrice12, toadyCapsulePrice34, 
+        toadyCapsuleShopOdds12, toadyCapsuleShopOdds34, 
+        toadyCapsuleSpaceOdds12, toadyCapsuleSpaceOdds34,
+        mrBlizzardCapsulePrice12, mrBlizzardCapsulePrice34, 
+        mrBlizzardCapsuleShopOdds12, mrBlizzardCapsulePrice34, 
+        mrBlizzardCapsuleSpaceOdds12, mrBlizzardCapsulePrice34,
+        banditCapsulePrice12, banditCapsulePrice34, 
+        banditCapsuleShopOdds12, banditCapsuleShopOdds34, 
+        banditCapsuleSpaceOdds12, banditCapsuleSpaceOdds34,
+        pinkBooCapsulePrice12, pinkBooCapsulePrice34, 
+        pinkBooCapsuleShopOdds12, pinkBooCapsuleShopOdds34, 
+        pinkBooCapsuleSpaceOdds12, pinkBooCapsuleSpaceOdds34,
+        spinyCapsulePrice12, spinyCapsulePrice34, 
+        spinyCapsuleShopOdds12, spinyCapsuleShopOdds34, 
+        spinyCapsuleSpaceOdds12, spinyCapsuleSpaceOdds34,
+        zapCapsulePrice12, zapCapsulePrice34, 
+        zapCapsuleShopOdds12, zapCapsuleShopOdds34, 
+        zapCapsuleSpaceOdds12, zapCapsuleSpaceOdds34,
+        tweesterCapsulePrice12, tweesterCapsulePrice34, 
+        tweesterCapsuleShopOdds12, tweesterCapsuleShopOdds34, 
+        tweesterCapsuleSpaceOdds12, tweesterCapsuleSpaceOdds34,
+        thwompCapsulePrice12, thwompCapsulePrice34, 
+        thwompCapsuleShopOdds12, thwompCapsuleShopOdds34, 
+        thwompCapsuleSpaceOdds12, thwompCapsuleSpaceOdds34,
+        warpCapsulePrice12, warpCapsulePrice34, 
+        warpCapsuleShopOdds12, warpCapsuleShopOdds34, 
+        warpCapsuleSpaceOdds12, warpCapsuleSpaceOdds34,
+        bombCapsulePrice12, bombCapsulePrice34, 
+        bombCapsuleShopOdds12, bombCapsuleShopOdds34, 
+        bombCapsuleSpaceOdds12, bombCapsuleSpaceOdds34,
+        fireballCapsulePrice12, fireballCapsulePrice34, 
+        fireballCapsuleShopOdds12, fireballCapsuleShopOdds34, 
+        fireballCapsuleSpaceOdds12, fireballCapsuleSpaceOdds34,
+        flowerCapsulePrice12, flowerCapsulePrice34, 
+        flowerCapsuleShopOdds12, flowerCapsuleShopOdds34, 
+        flowerCapsuleSpaceOdds12, flowerCapsuleSpaceOdds34,
+        eggCapsulePrice12, eggCapsulePrice34, 
+        eggCapsuleShopOdds12, eggCapsuleShopOdds34, 
+        eggCapsuleSpaceOdds12, eggCapsuleSpaceOdds34,
+        vacuumCapsulePrice12, vacuumCapsulePrice34, 
+        vacuumCapsuleShopOdds12, vacuumCapsuleShopOdds34, 
+        vacuumCapsuleSpaceOdds12, vacuumCapsuleSpaceOdds34,
+        magicCapsulePrice12, magicCapsulePrice34, 
+        magicCapsuleShopOdds12, magicCapsuleShopOdds34, 
+        magicCapsuleSpaceOdds12, magicCapsuleSpaceOdds34,
+        tripleCapsulePrice12, tripleCapsulePrice34, 
+        tripleCapsuleShopOdds12, tripleCapsuleShopOdds34, 
+        tripleCapsuleSpaceOdds12, tripleCapsuleSpaceOdds34,
+        koopaCapsulePrice12, koopaCapsulePrice34, 
+        koopaCapsuleShopOdds12, koopaCapsuleShopOdds34, 
+        koopaCapsuleSpaceOdds12, koopaCapsuleSpaceOdds34,
+        poisonMushroomPrice34 if hide_custom == False else "0", 
+        poisonMushroomPrice12 if hide_custom == False else "0", 
+        poisonMushroomShopOdds12 if hide_custom == False else "0", 
+        poisonMushroomShopOdds34 if hide_custom == False else "0", 
+        poisonMushroomSpaceOdds12 if hide_custom == False else "0", 
+        poisonMushroomSpaceOdds34 if hide_custom == False else "0", 
+        orbBagCapsulePrice34 if hide_custom == False else "0", 
+        orbBagCapsulePrice12 if hide_custom == False else "0", 
+        orbBagCapsuleShopOdds12 if hide_custom == False else "0", 
+        orbBagCapsuleShopOdds34 if hide_custom == False else "0", 
+        orbBagCapsuleSpaceOdds12 if hide_custom == False else "0", 
+        orbBagCapsuleSpaceOdds34 if hide_custom == False else "0", 
+        mysteryCapsulePrice34 if hide_custom == False else "0", 
+        mysteryCapsulePrice12 if hide_custom == False else "0", 
+        mysteryCapsuleShopOdds12 if hide_custom == False else "0", 
+        mysteryCapsuleShopOdds34 if hide_custom == False else "0", 
+        mysteryCapsuleSpaceOdds12 if hide_custom == False else "0", 
+        mysteryCapsuleSpaceOdds34 if hide_custom == False else "0", 
+        dkCapsulePrice34 if hide_custom == False else "0", 
+        dkCapsulePrice12 if hide_custom == False else "0", 
+        dkCapsuleShopOdds12 if hide_custom == False else "0", 
+        dkCapsuleShopOdds34 if hide_custom == False else "0", 
+        dkCapsuleSpaceOdds12 if hide_custom == False else "0", 
+        dkCapsuleSpaceOdds34 if hide_custom == False else "0", 
+        duelCapsulePrice34 if hide_custom == False else "0", 
+        duelCapsulePrice12 if hide_custom == False else "0", 
+        duelCapsuleShopOdds12 if hide_custom == False else "0", 
+        duelCapsuleShopOdds34 if hide_custom == False else "0", 
+        duelCapsuleSpaceOdds12 if hide_custom == False else "0", 
+        duelCapsuleSpaceOdds34 if hide_custom == False else "0"
+    ), text="Load Preset")
     parseButton.place(x=310, y=800)
 
-    parseButtonSevenFillViaCode = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: fillViaCode7Actions(), text="Fill Via Code")
-    parseButtonSevenFillViaCode.place(x=460, y=800)
+    #parseButtonSevenFillViaCode = ctk.CTkButton(master=tabview.tab("Orb Mods"), command=lambda: fillViaCode7Actions(), text="Fill Via Code")
+    #parseButtonSevenFillViaCode.place(x=460, y=800)
 
     hideCustomSwitch = ctk.CTkSwitch(master=tabview.tab("Orb Mods"), text="Show Custom Orbs")
-    hideCustomSwitch.place(x=610, y=800)
+    hideCustomSwitch.place(x=460, y=800) # x=610
 
     def toggle_hide_custom():
         global hide_custom
         hide_custom = not hide_custom
 
         if hide_custom:
-            mysteryCapsulePrice7.grid_forget()
-            mysteryCapsuleWeight7.grid_forget()
-            dkCapsulePrice7.grid_forget()
-            dkCapsuleWeight7.grid_forget()
-            orbBagCapsulePrice7.grid_forget()
-            orbBagCapsuleWeight7.grid_forget()
-            duelCapsulePrice7.grid_forget()
-            duelCapsuleWeight7.grid_forget()
-            poisonMushroomPrice7.grid_forget()
-            poisonMushroomWeight7.grid_forget()
+            mysteryCapsulePrice12.grid_forget()
+            mysteryCapsulePrice34.grid_forget()
+            mysteryCapsuleShopOdds12.grid_forget()
+            mysteryCapsuleShopOdds34.grid_forget()
+            mysteryCapsuleSpaceOdds12.grid_forget()
+            mysteryCapsuleSpaceOdds34.grid_forget()
+            dkCapsulePrice12.grid_forget()
+            dkCapsulePrice34.grid_forget()
+            dkCapsuleShopOdds12.grid_forget()
+            dkCapsuleShopOdds34.grid_forget()
+            dkCapsuleSpaceOdds12.grid_forget()
+            dkCapsuleSpaceOdds34.grid_forget()
+            orbBagCapsulePrice12.grid_forget()
+            orbBagCapsulePrice34.grid_forget()
+            orbBagCapsuleShopOdds12.grid_forget()
+            orbBagCapsuleShopOdds34.grid_forget()
+            orbBagCapsuleSpaceOdds12.grid_forget()
+            orbBagCapsuleSpaceOdds34.grid_forget()
+            duelCapsulePrice12.grid_forget()
+            duelCapsulePrice34.grid_forget()
+            duelCapsuleShopOdds12.grid_forget()
+            duelCapsuleShopOdds34.grid_forget()
+            duelCapsuleSpaceOdds12.grid_forget()
+            duelCapsuleSpaceOdds34.grid_forget()
+            poisonMushroomPrice12.grid_forget()
+            poisonMushroomPrice34.grid_forget()
+            poisonMushroomShopOdds12.grid_forget()
+            poisonMushroomShopOdds34.grid_forget()
+            poisonMushroomSpaceOdds12.grid_forget()
+            poisonMushroomSpaceOdds34.grid_forget()
             labelMystery1.grid_forget()
             labelMystery2.grid_forget()
             labelMystery3.grid_forget()
+            labelMystery4.grid_forget()
+            labelMystery5.grid_forget()
+            labelMystery6.grid_forget()
             labelDK1.grid_forget()
             labelDK2.grid_forget()
             labelDK3.grid_forget()
+            labelDK4.grid_forget()
+            labelDK5.grid_forget()
+            labelDK6.grid_forget()
             labelOrbBag1.grid_forget()
             labelOrbBag2.grid_forget()
             labelOrbBag3.grid_forget()
+            labelOrbBag4.grid_forget() 
+            labelOrbBag5.grid_forget() 
+            labelOrbBag6.grid_forget() 
             labelDuel1.grid_forget()
             labelDuel2.grid_forget()
             labelDuel3.grid_forget()
+            labelDuel4.grid_forget()
+            labelDuel5.grid_forget()
+            labelDuel6.grid_forget()
             labelPoison1.grid_forget()
             labelPoison2.grid_forget()
             labelPoison3.grid_forget()
-            for widget in tabview.tab("Orb Mods").winfo_children():
-                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "10:15":
+            labelPoison4.grid_forget() 
+            labelPoison5.grid_forget() 
+            labelPoison6.grid_forget()
+            
+            for widget in content_frame.winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "31:1":
                     widget.grid_forget()
-            for widget in tabview.tab("Orb Mods").winfo_children():
-                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "9:15":
+            for widget in content_frame.winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "32:1":
                     widget.grid_forget()
-            for widget in tabview.tab("Orb Mods").winfo_children():
-                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "8:15":
+            for widget in content_frame.winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "33:1":
                     widget.grid_forget()
-            for widget in tabview.tab("Orb Mods").winfo_children():
-                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "11:15":
+            for widget in content_frame.winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "34:1":
                     widget.grid_forget()
-            for widget in tabview.tab("Orb Mods").winfo_children():
-                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "12:15":
+            for widget in content_frame.winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "35:1":
                     widget.grid_forget()
         else:
-            for widget in tabview.tab("Orb Mods").winfo_children():
-                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "8:15":
-                    widget.grid(row=8, column=15)
-            for widget in tabview.tab("Orb Mods").winfo_children():
-                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "9:15":
-                    widget.grid(row=9, column=15)
-            for widget in tabview.tab("Orb Mods").winfo_children():
-                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "10:15":
-                    widget.grid(row=10, column=15)
-            for widget in tabview.tab("Orb Mods").winfo_children():
-                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "11:15":
-                    widget.grid(row=11, column=15)
-            for widget in tabview.tab("Orb Mods").winfo_children():
-                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "12:15":
-                    widget.grid(row=12, column=15)
-            mysteryCapsulePrice7.grid(row=12, column=17)
-            mysteryCapsuleWeight7.grid(row=12, column=19)
-            orbBagCapsulePrice7.grid(row=11, column=17)
-            orbBagCapsuleWeight7.grid(row=11, column=19)
-            dkCapsulePrice7.grid(row=10, column=17)
-            dkCapsuleWeight7.grid(row=10, column=19)
-            duelCapsulePrice7.grid(row=9, column=17)
-            duelCapsuleWeight7.grid(row=9, column=19)
-            poisonMushroomPrice7.grid(row=8, column=17)
-            poisonMushroomWeight7.grid(row=8, column=19)
-            labelMystery1.grid(row=12, column=16)
-            labelMystery2.grid(row=12, column=18)
-            labelMystery3.grid(row=12, column=20)
-            labelOrbBag1.grid(row=11, column=16)
-            labelOrbBag2.grid(row=11, column=18)
-            labelOrbBag3.grid(row=11, column=20)
-            labelDK1.grid(row=10, column=16)
-            labelDK2.grid(row=10, column=18)
-            labelDK3.grid(row=10, column=20)
-            labelDuel1.grid(row=9, column=16)
-            labelDuel2.grid(row=9, column=18)
-            labelDuel3.grid(row=9, column=20)
-            labelPoison1.grid(row=8, column=16)
-            labelPoison2.grid(row=8, column=18)
-            labelPoison3.grid(row=8, column=20)
+            for widget in content_frame.winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "31:1":
+                    widget.grid(row=31, column=1)
+            for widget in content_frame.winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "32:1":
+                    widget.grid(row=32, column=1)
+            for widget in content_frame.winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "33:1":
+                    widget.grid(row=33, column=1)
+            for widget in content_frame.winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "34:1":
+                    widget.grid(row=34, column=1)
+            for widget in content_frame.winfo_children():
+                if isinstance(widget, ctk.CTkLabel) and widget.cget("text") == "35:1":
+                    widget.grid(row=35, column=1)
+
+            # Mystery Capsule
+            labelMystery1.grid(row=35, column=2)
+            labelMystery2.grid(row=35, column=4)
+            labelMystery3.grid(row=35, column=6)  # Fixed from labelMystery2 to labelMystery3
+            labelMystery4.grid(row=35, column=8)
+            labelMystery5.grid(row=35, column=10)
+            labelMystery6.grid(row=35, column=12)
+
+            # Orb Bag Capsule
+            labelOrbBag1.grid(row=34, column=2)
+            labelOrbBag2.grid(row=34, column=4)
+            labelOrbBag3.grid(row=34, column=6)
+            labelOrbBag4.grid(row=34, column=8)
+            labelOrbBag5.grid(row=34, column=10)
+            labelOrbBag6.grid(row=34, column=12)
+
+            # DK Capsule
+            labelDK1.grid(row=33, column=2)
+            labelDK2.grid(row=33, column=4)  # Fixed from column=2 to column=4
+            labelDK3.grid(row=33, column=6)
+            labelDK4.grid(row=33, column=8)
+            labelDK5.grid(row=33, column=10)
+            labelDK6.grid(row=33, column=12)
+
+            # Duel Capsule
+            labelDuel1.grid(row=32, column=2)
+            labelDuel2.grid(row=32, column=4)
+            labelDuel3.grid(row=32, column=6)
+            labelDuel4.grid(row=32, column=8)
+            labelDuel5.grid(row=32, column=10)
+            labelDuel6.grid(row=32, column=12)
+
+            # Poison Mushroom
+            labelPoison1.grid(row=31, column=2)
+            labelPoison2.grid(row=31, column=4)
+            labelPoison3.grid(row=31, column=6)
+            labelPoison4.grid(row=31, column=8)
+            labelPoison5.grid(row=31, column=10)
+            labelPoison6.grid(row=31, column=12)
+
+            # Prices and Odds for the last five items
+            mysteryCapsulePrice12.grid(row=35, column=3)
+            mysteryCapsulePrice34.grid(row=35, column=5)
+            mysteryCapsuleShopOdds12.grid(row=35, column=7)
+            mysteryCapsuleShopOdds34.grid(row=35, column=9)
+            mysteryCapsuleSpaceOdds12.grid(row=35, column=11)
+            mysteryCapsuleSpaceOdds34.grid(row=35, column=13)
+
+            orbBagCapsulePrice12.grid(row=34, column=3)
+            orbBagCapsulePrice34.grid(row=34, column=5)
+            orbBagCapsuleShopOdds12.grid(row=34, column=7)
+            orbBagCapsuleShopOdds34.grid(row=34, column=9)
+            orbBagCapsuleSpaceOdds12.grid(row=34, column=11)
+            orbBagCapsuleSpaceOdds34.grid(row=34, column=13)
+
+            dkCapsulePrice12.grid(row=33, column=3)
+            dkCapsulePrice34.grid(row=33, column=5)
+            dkCapsuleShopOdds12.grid(row=33, column=7)
+            dkCapsuleShopOdds34.grid(row=33, column=9)
+            dkCapsuleSpaceOdds12.grid(row=33, column=11)
+            dkCapsuleSpaceOdds34.grid(row=33, column=13)
+
+            duelCapsulePrice12.grid(row=32, column=3)
+            duelCapsulePrice34.grid(row=32, column=5)
+            duelCapsuleShopOdds12.grid(row=32, column=7)
+            duelCapsuleShopOdds34.grid(row=32, column=9)
+            duelCapsuleSpaceOdds12.grid(row=32, column=11)
+            duelCapsuleSpaceOdds34.grid(row=32, column=13)
+
+            poisonMushroomPrice12.grid(row=31, column=3)
+            poisonMushroomPrice34.grid(row=31, column=5)
+            poisonMushroomShopOdds12.grid(row=31, column=7)
+            poisonMushroomShopOdds34.grid(row=31, column=9)
+            poisonMushroomSpaceOdds12.grid(row=31, column=11)
+            poisonMushroomSpaceOdds34.grid(row=31, column=13)
 
     hideCustomSwitch.configure(command=toggle_hide_custom)
     toggle_hide_custom()

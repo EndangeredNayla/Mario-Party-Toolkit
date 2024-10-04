@@ -12,7 +12,7 @@ import csv
 import math
 import pyperclip
 
-def itemsEvent_mp4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4):
+def itemsEvent_mp4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4, mushroomPrice4, mushroomWeight4, goldenMushroomPrice4, goldenMushroomWeight4, bowserPhonePrice4, bowserPhoneWeight4, cellularShopperPrice4, cellularShopperWeight4, hiddenBlockCardPrice4, hiddenBlockCardWeight4):
     if not miniPrice4.get() or not miniWeight4.get() or not megaPrice4.get() or not megaWeight4.get() or not superMegaPrice4.get() or not superMegaWeight4.get() or not superMiniPrice4.get() or not superMiniWeight4.get() or not miniMegaHammerPrice4.get() or not miniMegaHammerWeight4.get() or not warpPipePrice4.get() or not warpPipeWeight4.get() or not swapCardPrice4.get() or not swapCardWeight4.get() or not sparkyStickerPrice4.get() or not sparkyStickerWeight4.get() or not bowserSuitPrice4.get() or not bowserSuitWeight4.get() or not gaddlightPrice4.get() or not gaddlightWeight4.get() or not chompCallPrice4.get() or not chompCallWeight4.get() or not crystalBallPrice4.get() or not crystalBallWeight4.get() or not magicLampPrice4.get() or not magicLampWeight4.get() or not itemBagPrice4.get()  or not itemBagWeight4.get():
         createDialog("Error", "error", "Please fill out all the boxes.", None)
         return
@@ -44,8 +44,60 @@ def itemsEvent_mp4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPr
     magicLampWeight4 = magicLampWeight4.get()
     itemBagPrice4 = itemBagPrice4.get()
     itemBagWeight4 = itemBagWeight4.get()
-    orbWeightTotal = int(miniWeight4) + int(megaWeight4) + int(superMiniWeight4) + int(superMegaWeight4) + int(miniMegaHammerWeight4) + int(warpPipeWeight4) + int(swapCardWeight4) + int(sparkyStickerWeight4) + int(gaddlightWeight4) + int(chompCallWeight4) + int(bowserSuitWeight4) + int(crystalBallWeight4) + int(magicLampWeight4) + int(itemBagWeight4)
-    orbPriceMin = find_lowest_integer(*[int(miniPrice4), int(megaPrice4), int(superMiniPrice4), int(superMegaPrice4), int(miniMegaHammerPrice4), int(warpPipePrice4), int(swapCardPrice4), int(sparkyStickerPrice4), int(gaddlightPrice4), int(chompCallPrice4), int(bowserSuitPrice4), int(crystalBallPrice4), int(magicLampPrice4), int(itemBagPrice4)])
+
+    try:
+        mushroomWeight4 = mushroomWeight4.get()
+    except:
+        mushroomWeight4 = 0
+
+    try:
+        mushroomPrice4 = mushroomPrice4.get()
+    except:
+        mushroomPrice4 = 0
+
+    try:
+        goldenMushroomWeight4 = goldenMushroomWeight4.get()
+    except:
+        goldenMushroomWeight4 = 0
+
+    try:
+        goldenMushroomPrice4 = goldenMushroomPrice4.get()
+    except:
+        goldenMushroomPrice4 = 0
+
+    try:
+        cellularShopperWeight4 = cellularShopperWeight4.get()
+    except:
+        cellularShopperWeight4 = 0
+
+    try:
+        cellularShopperPrice4 = cellularShopperPrice4.get()
+    except:
+        cellularShopperPrice4 = 0
+
+    try:
+        bowserPhoneWeight4 = bowserPhoneWeight4.get()
+    except:
+        bowserPhoneWeight4 = 0
+
+    try:
+        bowserPhonePrice4 = bowserPhonePrice4.get()
+    except:
+        bowserPhonePrice4 = 0
+
+    try:
+        hiddenBlockCardWeight4 = hiddenBlockCardWeight4.get()
+    except:
+        hiddenBlockCardWeight4 = 0
+
+    try:
+        hiddenBlockCardPrice4 = hiddenBlockCardPrice4.get()
+    except:
+        hiddenBlockCardPrice4 = 0
+
+    orbWeightTotal = int(miniWeight4) + int(megaWeight4) + int(superMiniWeight4) + int(superMegaWeight4) + int(miniMegaHammerWeight4) + int(warpPipeWeight4) + int(swapCardWeight4) + int(sparkyStickerWeight4) + int(gaddlightWeight4) + int(chompCallWeight4) + int(bowserSuitWeight4) + int(crystalBallWeight4) + int(magicLampWeight4) + int(itemBagWeight4) + int(mushroomWeight4) + int(goldenMushroomWeight4) + int(cellularShopperWeight4) + int(bowserPhoneWeight4) + int(hiddenBlockCardWeight4)
+
+    orbPriceMin = find_lowest_integer(*[int(miniPrice4), int(megaPrice4), int(superMiniPrice4), int(superMegaPrice4), int(miniMegaHammerPrice4), int(warpPipePrice4), int(swapCardPrice4), int(sparkyStickerPrice4), int(gaddlightPrice4), int(chompCallPrice4), int(bowserSuitPrice4), int(crystalBallPrice4), int(magicLampPrice4), int(itemBagPrice4), int(mushroomPrice4), int(goldenMushroomPrice4), int(cellularShopperPrice4), int(bowserPhonePrice4), int(hiddenBlockCardPrice4)])
     
     def calculateWeight(weight):
         if orbWeightTotal < 100:
@@ -71,13 +123,18 @@ def itemsEvent_mp4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPr
     crystalBallWeight4 = calculateWeight(crystalBallWeight4)
     magicLampWeight4 = calculateWeight(magicLampWeight4)
     itemBagWeight4 = calculateWeight(itemBagWeight4)
-
-    orbWeightTotal = miniWeight4 + megaWeight4 + superMiniWeight4 + superMegaWeight4 + miniMegaHammerWeight4 + warpPipeWeight4 + swapCardWeight4 + sparkyStickerWeight4 + gaddlightWeight4 + chompCallWeight4 + bowserSuitWeight4 + crystalBallWeight4 + magicLampWeight4 + itemBagWeight4
-
+    mushroomWeight4 = calculateWeight(mushroomWeight4)
+    goldenMushroomWeight4 = calculateWeight(goldenMushroomWeight4)
+    cellularShopperWeight4 = calculateWeight(cellularShopperWeight4)
+    bowserPhoneWeight4 = calculateWeight(bowserPhoneWeight4)
+    hiddenBlockCardWeight4 = calculateWeight(hiddenBlockCardWeight4)
+    
+    orbWeightTotal = miniWeight4 + megaWeight4 + superMiniWeight4 + superMegaWeight4 + miniMegaHammerWeight4 + warpPipeWeight4 + swapCardWeight4 + sparkyStickerWeight4 + gaddlightWeight4 + chompCallWeight4 + bowserSuitWeight4 + crystalBallWeight4 + magicLampWeight4 + itemBagWeight4 + mushroomWeight4 + goldenMushroomWeight4 + cellularShopperWeight4 + bowserPhoneWeight4 + hiddenBlockCardWeight4
+    
     if orbWeightTotal < 100:
-        var_names = ['miniWeight4', 'megaWeight4', 'superMegaWeight4', 'superMiniWeight4', 'miniMegaHammerWeight4', 'warpPipeWeight4', 'swapCardWeight4', 'sparkyStickerWeight4', 'gaddlightWeight4', 'chompCallWeight4', 'bowserSuitWeight4', 'crystalBallWeight4', 'magicLampWeight4', 'itemBagWeight4']
+        var_names = ['miniWeight4', 'megaWeight4', 'superMegaWeight4', 'superMiniWeight4', 'miniMegaHammerWeight4', 'warpPipeWeight4', 'swapCardWeight4', 'sparkyStickerWeight4', 'gaddlightWeight4', 'chompCallWeight4', 'bowserSuitWeight4', 'crystalBallWeight4', 'magicLampWeight4', 'itemBagWeight4', 'mushroomWeight4', 'goldenMushroomWeight4', 'cellularShopperWeight4', 'bowserPhoneWeight4', 'hiddenBlockCardWeight4']
         max_var = max(zip(var_names, (map(eval, var_names))), key=lambda tuple: tuple[1])[0]
-
+    
         if max_var == 'miniWeight4':
             miniWeight4 += (100 - orbWeightTotal)
         
@@ -119,7 +176,23 @@ def itemsEvent_mp4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPr
         
         if max_var == 'itemBagWeight4':
             itemBagWeight4 += (100 - orbWeightTotal)
-
+    
+        # New items adjustments
+        if max_var == 'mushroomWeight4':
+            mushroomWeight4 += (100 - orbWeightTotal)
+    
+        if max_var == 'goldenMushroomWeight4':
+            goldenMushroomWeight4 += (100 - orbWeightTotal)
+    
+        if max_var == 'cellularShopperWeight4':
+            cellularShopperWeight4 += (100 - orbWeightTotal)
+    
+        if max_var == 'bowserPhoneWeight4':
+            bowserPhoneWeight4 += (100 - orbWeightTotal)
+    
+        if max_var == 'hiddenBlockCardWeight4':
+            hiddenBlockCardWeight4 += (100 - orbWeightTotal)
+    
     miniWeight4 = str(miniWeight4)
     megaWeight4 = str(megaWeight4)
     superMegaWeight4 = str(superMegaWeight4)
@@ -134,7 +207,11 @@ def itemsEvent_mp4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPr
     crystalBallWeight4 = str(crystalBallWeight4)
     magicLampWeight4 = str(magicLampWeight4)
     itemBagWeight4 = str(itemBagWeight4)
-
+    mushroomWeight4 = str(mushroomWeight4)
+    goldenMushroomWeight4 = str(goldenMushroomWeight4)
+    cellularShopperWeight4 = str(cellularShopperWeight4)
+    bowserPhoneWeight4 = str(bowserPhoneWeight4)
+    hiddenBlockCardWeight4 = str(hiddenBlockCardWeight4)
     
     try:
         miniWeight4 = hex(int(miniWeight4))
@@ -360,24 +437,78 @@ def itemsEvent_mp4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPr
             itemBagPrice4 = "0" + itemBagPrice4[2:]
     except:
         itemBagPrice4 = "00"
+
+    try:
+        itemBagPrice4 = hex(int(itemBagPrice4))
+        if len(itemBagPrice4) == 4:
+            itemBagPrice4 = itemBagPrice4[2:]
+        elif len(itemBagPrice4) == 3:
+            itemBagPrice4 = "0" + itemBagPrice4[2:]
+    except:
+        itemBagPrice4 = "00"
+
+    # New items price conversion
+    try:
+        mushroomPrice4 = hex(int(mushroomPrice4))
+        if len(mushroomPrice4) == 4:
+            mushroomPrice4 = mushroomPrice4[2:]
+        elif len(mushroomPrice4) == 3:
+            mushroomPrice4 = "0" + mushroomPrice4[2:]
+    except:
+        mushroomPrice4 = "00"
+
+    try:
+        goldenMushroomPrice4 = hex(int(goldenMushroomPrice4))
+        if len(goldenMushroomPrice4) == 4:
+            goldenMushroomPrice4 = goldenMushroomPrice4[2:]
+        elif len(goldenMushroomPrice4) == 3:
+            goldenMushroomPrice4 = "0" + goldenMushroomPrice4[2:]
+    except:
+        goldenMushroomPrice4 = "00"
+
+    try:
+        cellularShopperPrice4 = hex(int(cellularShopperPrice4))
+        if len(cellularShopperPrice4) == 4:
+            cellularShopperPrice4 = cellularShopperPrice4[2:]
+        elif len(cellularShopperPrice4) == 3:
+            cellularShopperPrice4 = "0" + cellularShopperPrice4[2:]
+    except:
+        cellularShopperPrice4 = "00"
+
+    try:
+        bowserPhonePrice4 = hex(int(bowserPhonePrice4))
+        if len(bowserPhonePrice4) == 4:
+            bowserPhonePrice4 = bowserPhonePrice4[2:]
+        elif len(bowserPhonePrice4) == 3:
+            bowserPhonePrice4 = "0" + bowserPhonePrice4[2:]
+    except:
+        bowserPhonePrice4 = "00"
+
+    try:
+        hiddenBlockCardPrice4 = hex(int(hiddenBlockCardPrice4))
+        if len(hiddenBlockCardPrice4) == 4:
+            hiddenBlockCardPrice4 = hiddenBlockCardPrice4[2:]
+        elif len(hiddenBlockCardPrice4) == 3:
+            hiddenBlockCardPrice4 = "0" + hiddenBlockCardPrice4[2:]
+    except:
+        hiddenBlockCardPrice4 = "00"
+
     orbPriceMin = hex(int(orbPriceMin))
     if len(orbPriceMin) == 4:
         orbPriceMin = "00" + orbPriceMin[2:]
     elif len(orbPriceMin) == 3:
         orbPriceMin = "000" + orbPriceMin[2:]
-    generatedCode = getItemModsFour(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, sparkyStickerPrice4, sparkyStickerWeight4, gaddlightPrice4, gaddlightWeight4, chompCallPrice4, chompCallWeight4, bowserSuitPrice4, bowserSuitWeight4, crystalBallPrice4, crystalBallWeight4, magicLampPrice4, magicLampWeight4, itemBagPrice4, itemBagWeight4, orbPriceMin)
+    generatedCode = getItemModsFour(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, sparkyStickerPrice4, sparkyStickerWeight4, gaddlightPrice4, gaddlightWeight4, chompCallPrice4, chompCallWeight4, bowserSuitPrice4, bowserSuitWeight4, crystalBallPrice4, crystalBallWeight4, magicLampPrice4, magicLampWeight4, itemBagPrice4, itemBagWeight4, orbPriceMin, mushroomPrice4, mushroomWeight4, goldenMushroomPrice4, goldenMushroomWeight4, cellularShopperPrice4, cellularShopperWeight4, bowserPhonePrice4, bowserPhoneWeight4, hiddenBlockCardPrice4, hiddenBlockCardWeight4)
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)
     print("Generated code copied to the clipboard.")
     createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
 
-def savePresetItems4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4):
-    if not miniPrice4.get() or not miniWeight4.get() or not megaPrice4.get() or not megaWeight4.get() or not superMegaPrice4.get() or not superMegaWeight4.get() or not superMiniPrice4.get() or not superMiniWeight4.get() or not miniMegaHammerPrice4.get() or not miniMegaHammerWeight4.get() or not warpPipePrice4.get() or not warpPipeWeight4.get() or not swapCardPrice4.get() or not swapCardWeight4.get() or not sparkyStickerPrice4.get() or not sparkyStickerWeight4.get() or not bowserSuitPrice4.get() or not bowserSuitWeight4.get() or not gaddlightPrice4.get() or not gaddlightWeight4.get() or not chompCallPrice4.get() or not chompCallWeight4.get() or not crystalBallPrice4.get() or not crystalBallWeight4.get() or not magicLampPrice4.get() or not magicLampWeight4.get() or not itemBagPrice4.get()  or not itemBagWeight4.get():
-        if sys.platform == "darwin":
-            createDialog("Error", "error", "Please fill out all the boxes.", None)
-        else:
-            createDialog("Error", "error", "Please fill out all the boxes.", None)
+def savePresetItems4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4, mushroomPrice4, mushroomWeight4, goldenMushroomPrice4, goldenMushroomWeight4, cellularShopperPrice4, cellularShopperWeight4, bowserPhonePrice4, bowserPhoneWeight4, hiddenBlockCardPrice4, hiddenBlockCardWeight4):
+    if not miniPrice4.get() or not miniWeight4.get() or not megaPrice4.get() or not megaWeight4.get() or not superMegaPrice4.get() or not superMegaWeight4.get() or not superMiniPrice4.get() or not superMiniWeight4.get() or not miniMegaHammerPrice4.get() or not miniMegaHammerWeight4.get() or not warpPipePrice4.get() or not warpPipeWeight4.get() or not swapCardPrice4.get() or not swapCardWeight4.get() or not sparkyStickerPrice4.get() or not sparkyStickerWeight4.get() or not bowserSuitPrice4.get() or not bowserSuitWeight4.get() or not gaddlightPrice4.get() or not gaddlightWeight4.get() or not chompCallPrice4.get() or not chompCallWeight4.get() or not crystalBallPrice4.get() or not crystalBallWeight4.get() or not magicLampPrice4.get() or not magicLampWeight4.get() or not itemBagPrice4.get() or not itemBagWeight4.get() or not mushroomPrice4.get() or not mushroomWeight4.get() or not goldenMushroomPrice4.get() or not goldenMushroomWeight4.get() or not cellularShopperPrice4.get() or not cellularShopperWeight4.get() or not bowserPhonePrice4.get() or not bowserPhoneWeight4.get() or not hiddenBlockCardPrice4.get() or not hiddenBlockCardWeight4.get():
+        createDialog("Error", "error", "Please fill out all the boxes.", None)
         return
+
     miniPrice4 = miniPrice4.get()
     miniWeight4 = miniWeight4.get()
     megaPrice4 = megaPrice4.get()
@@ -406,9 +537,22 @@ def savePresetItems4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMini
     magicLampWeight4 = magicLampWeight4.get()
     itemBagPrice4 = itemBagPrice4.get()
     itemBagWeight4 = itemBagWeight4.get()
-    prices4 = [miniPrice4, megaPrice4, superMiniPrice4, superMegaPrice4, miniMegaHammerPrice4, warpPipePrice4, swapCardPrice4, sparkyStickerPrice4, gaddlightPrice4, chompCallPrice4, bowserSuitPrice4, crystalBallPrice4, magicLampPrice4, itemBagPrice4]
-    weights4 = [miniWeight4, megaWeight4, superMiniWeight4, superMegaWeight4, miniMegaHammerWeight4, warpPipeWeight4, swapCardWeight4, sparkyStickerWeight4, gaddlightWeight4, chompCallWeight4, bowserSuitWeight4, crystalBallWeight4, magicLampWeight4, itemBagWeight4]
- 
+    
+    # New items
+    mushroomPrice4 = mushroomPrice4.get()
+    mushroomWeight4 = mushroomWeight4.get()
+    goldenMushroomPrice4 = goldenMushroomPrice4.get()
+    goldenMushroomWeight4 = goldenMushroomWeight4.get()
+    cellularShopperPrice4 = cellularShopperPrice4.get()
+    cellularShopperWeight4 = cellularShopperWeight4.get()
+    bowserPhonePrice4 = bowserPhonePrice4.get()
+    bowserPhoneWeight4 = bowserPhoneWeight4.get()
+    hiddenBlockCardPrice4 = hiddenBlockCardPrice4.get()
+    hiddenBlockCardWeight4 = hiddenBlockCardWeight4.get()
+
+    prices4 = [miniPrice4, megaPrice4, superMiniPrice4, superMegaPrice4, miniMegaHammerPrice4, warpPipePrice4, swapCardPrice4, sparkyStickerPrice4, gaddlightPrice4, chompCallPrice4, bowserSuitPrice4, crystalBallPrice4, magicLampPrice4, itemBagPrice4, mushroomPrice4, goldenMushroomPrice4, cellularShopperPrice4, bowserPhonePrice4, hiddenBlockCardPrice4]
+    weights4 = [miniWeight4, megaWeight4, superMiniWeight4, superMegaWeight4, miniMegaHammerWeight4, warpPipeWeight4, swapCardWeight4, sparkyStickerWeight4, gaddlightWeight4, chompCallWeight4, bowserSuitWeight4, crystalBallWeight4, magicLampWeight4, itemBagWeight4, mushroomWeight4, goldenMushroomWeight4, cellularShopperWeight4, bowserPhoneWeight4, hiddenBlockCardWeight4]
+
     file_path = tkinter.filedialog.asksaveasfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
     if file_path:
         with open(file_path, 'w', newline='') as csvfile:
@@ -417,7 +561,7 @@ def savePresetItems4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMini
             for price, weight in zip(prices4, weights4):
                 writer.writerow([price, weight])
         print("MPT file saved successfully!")
-        createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
+        createDialog("Operation Successful", "success", "Presets file saved successfully!.", None)
 
 def loadPresetItems4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4):
     file_path = tkinter.filedialog.askopenfilename(defaultextension=".mpt", filetypes=[("MPT files", "*.mpt")])
@@ -445,7 +589,7 @@ def loadPresetItems4(miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMini
         print("MPT file laoded successfully!")
         createDialog("Operation Sucessful", "success", "Presets file saved successfully!.", None)
 
-def fillViaCode4(top, codeText, miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4):
+def fillViaCode4(hide_custom, top, codeText, miniPrice4, miniWeight4, megaPrice4, megaWeight4, superMiniPrice4, superMiniWeight4, superMegaPrice4, superMegaWeight4, miniMegaHammerPrice4, miniMegaHammerWeight4, sparkyStickerPrice4, sparkyStickerWeight4, warpPipePrice4, warpPipeWeight4, swapCardPrice4, swapCardWeight4, bowserSuitPrice4, bowserSuitWeight4, gaddlightPrice4, gaddlightWeight4, magicLampPrice4, magicLampWeight4, crystalBallPrice4, crystalBallWeight4, chompCallPrice4, chompCallWeight4, itemBagPrice4, itemBagWeight4):
     code4 = []
     code_single4 = []
     weight_code4 = []
@@ -512,6 +656,11 @@ def fillViaCode4(top, codeText, miniPrice4, miniWeight4, megaPrice4, megaWeight4
     # Define a list of Entry widget attributes
     pricesNames4 = [miniPrice4, megaPrice4, superMiniPrice4, superMegaPrice4, miniMegaHammerPrice4, warpPipePrice4, swapCardPrice4, sparkyStickerPrice4, gaddlightPrice4, chompCallPrice4, bowserSuitPrice4, crystalBallPrice4, magicLampPrice4, itemBagPrice4]
     weightsNames4 = [miniWeight4, megaWeight4, superMiniWeight4, superMegaWeight4, miniMegaHammerWeight4, warpPipeWeight4, swapCardWeight4, sparkyStickerWeight4, gaddlightWeight4, chompCallWeight4, bowserSuitWeight4, crystalBallWeight4, magicLampWeight4, itemBagWeight4]
+    
+    if not hide_custom:
+        pricesNames4.extend([mushroomPrice4, goldenMushroomPrice4, celluarShopperPrice4, bowserPhonePrice4, hiddenBlockCardPrice4])
+        weightsNames4.extend([mushroomWeight4, goldenMushroomWeight4, celluarShopperWeight4, bowserPhoneWeight4, hiddenBlockCardWeight4])
+
     # Update widgets with loaded values
     for index, widget in enumerate(pricesNames4):
         if widget and index < len(prices4In):
