@@ -371,3 +371,23 @@ def getZapOrb6(hex, amountDec):
 MP6 - Zap Takes {amountDec} Coins
 041AE1B8 3B60{hex}
 '''
+
+def getFaireFlowerEventStars(value):
+    return f'''
+MP6 - Always Wager Stars at Faire Square Flower Event
+282C0256 0000007D
+044d3c68 38E00001
+044d4e34 38000001
+044d3c68 38E00001
+E2000001 80008000
+'''
+
+def getFaireFlowerEventCoins(value):
+    return f'''
+MP6 - Always Wager Coins at Faire Square Flower Event
+282C0256 0000007D
+044d3c70 60000000
+044d4e3C 60000000
+044d3c70 60000000
+E2000001 80008000
+'''
