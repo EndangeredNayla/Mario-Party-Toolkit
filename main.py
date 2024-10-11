@@ -24,6 +24,7 @@ from version import *
 import customtkinter
 import os
 import sys
+import threading
 from PIL import Image
 import tkinter as tk
 
@@ -269,5 +270,5 @@ class App(customtkinter.CTk):
 if __name__ == "__main__":
     app = App()
     app.resizable(width=False, height=False)
-    app.mainloop()
+    threading.Thread(target=app.mainloop()).start()
     
