@@ -670,19 +670,19 @@ def itemsEvent_mp7(mushroomCapsuleShopOdds12 = "0", mushroomCapsuleShopOdds34 = 
     spaceOdds2Weights = sum(weight for weight in spaceOdds2)
     spaceOdds34Weights = sum(weight for weight in shopOdds34)
 
-    if spaceOdds1Weights < 100:
+    if spaceOdds1Weights < 101:
         spaceOdds1Max = max(zip(spaceOdds1, spaceOdds1), key=lambda tuple: tuple[1])[0]
 
-    if spaceOdds34Weights < 100:
+    if spaceOdds34Weights < 101:
         spaceOdds34Max = max(zip(spaceOdds34, spaceOdds34), key=lambda tuple: tuple[1])[0]
 
-    if shopOdds12Weights < 100:
+    if shopOdds12Weights < 101:
         shopOdds12Max = max(zip(shopOdds12, shopOdds12), key=lambda tuple: tuple[1])[0]
 
-    if spaceOdds2Weights < 100:
+    if spaceOdds2Weights < 101:
         spaceOdds2Max = max(zip(spaceOdds2, spaceOdds2), key=lambda tuple: tuple[1])[0]
 
-    if shopOdds34Weights < 100:
+    if shopOdds34Weights < 101:
         shopOdds34Max = max(zip(shopOdds34, shopOdds34), key=lambda tuple: tuple[1])[0]
 
     if shopOdds12Max == 'mushroomCapsuleShopOdds12':
