@@ -446,7 +446,71 @@ def itemsEvent_mp4ShopDXPrices(miniMushroomEarlyPrice1 = "5", miniMushroomEarlyP
         int(magicLampLatePrice1), int(magicLampLatePrice2), int(magicLampLatePrice34),
         int(itemBagEarlyPrice1), int(itemBagEarlyPrice2), int(itemBagEarlyPrice34),
         int(itemBagMidPrice1), int(itemBagMidPrice2), int(itemBagMidPrice34),
-        int(itemBagLatePrice1), int(itemBagLatePrice2), int(itemBagLatePrice34)])
+        int(itemBagLatePrice1), int(itemBagLatePrice2), int(itemBagLatePrice34),
+        int(mushroomEarlyPrice1), int(mushroomEarlyPrice2), int(mushroomEarlyPrice34),
+        int(mushroomMidPrice1), int(mushroomMidPrice2), int(mushroomMidPrice34),
+        int(mushroomLatePrice1), int(mushroomLatePrice2), int(mushroomLatePrice34),
+        int(goldenMushroomEarlyPrice1), int(goldenMushroomEarlyPrice2), int(goldenMushroomEarlyPrice34),
+        int(goldenMushroomMidPrice1), int(goldenMushroomMidPrice2), int(goldenMushroomMidPrice34),
+        int(goldenMushroomLatePrice1), int(goldenMushroomLatePrice2), int(goldenMushroomLatePrice34),
+        int(reverseMushroomEarlyPrice1), int(reverseMushroomEarlyPrice2), int(reverseMushroomEarlyPrice34),
+        int(reverseMushroomMidPrice1), int(reverseMushroomMidPrice2), int(reverseMushroomMidPrice34),
+        int(reverseMushroomLatePrice1), int(reverseMushroomLatePrice2), int(reverseMushroomLatePrice34),
+        int(poisonMushroomEarlyPrice1), int(poisonMushroomEarlyPrice2), int(poisonMushroomEarlyPrice34),
+        int(poisonMushroomMidPrice1), int(poisonMushroomMidPrice2), int(poisonMushroomMidPrice34),
+        int(poisonMushroomLatePrice1), int(poisonMushroomLatePrice2), int(poisonMushroomLatePrice34),
+        int(bowserPhoneEarlyPrice1), int(bowserPhoneEarlyPrice2), int(bowserPhoneEarlyPrice34),
+        int(bowserPhoneMidPrice1), int(bowserPhoneMidPrice2), int(bowserPhoneMidPrice34),
+        int(bowserPhoneLatePrice1), int(bowserPhoneLatePrice2), int(bowserPhoneLatePrice34),
+        int(triplePoisonMushroomEarlyPrice1), int(triplePoisonMushroomEarlyPrice2), int(triplePoisonMushroomEarlyPrice34),
+        int(triplePoisonMushroomMidPrice1), int(triplePoisonMushroomMidPrice2), int(triplePoisonMushroomMidPrice34),
+        int(triplePoisonMushroomLatePrice1), int(triplePoisonMushroomLatePrice2), int(triplePoisonMushroomLatePrice34),
+        int(celluarShopperEarlyPrice1), int(celluarShopperEarlyPrice2), int(celluarShopperEarlyPrice34),
+        int(celluarShopperMidPrice1), int(celluarShopperMidPrice2), int(celluarShopperMidPrice34),
+        int(celluarShopperLatePrice1), int(celluarShopperLatePrice2), int(celluarShopperLatePrice34),
+        int(skeletonKeyEarlyPrice1), int(skeletonKeyEarlyPrice2), int(skeletonKeyEarlyPrice34),
+        int(skeletonKeyMidPrice1), int(skeletonKeyMidPrice2), int(skeletonKeyMidPrice34),
+        int(skeletonKeyLatePrice1), int(skeletonKeyLatePrice2), int(skeletonKeyLatePrice34),
+        int(plunderChestEarlyPrice1), int(plunderChestEarlyPrice2), int(plunderChestEarlyPrice34),
+        int(plunderChestMidPrice1), int(plunderChestMidPrice2), int(plunderChestMidPrice34),
+        int(plunderChestLatePrice1), int(plunderChestLatePrice2), int(plunderChestLatePrice34),
+        int(gaddbrushEarlyPrice1), int(gaddbrushEarlyPrice2), int(gaddbrushEarlyPrice34),
+        int(gaddbrushMidPrice1), int(gaddbrushMidPrice2), int(gaddbrushMidPrice34),
+        int(gaddbrushLatePrice1), int(gaddbrushLatePrice2), int(gaddbrushLatePrice34),
+        int(warpBlockEarlyPrice1), int(warpBlockEarlyPrice2), int(warpBlockEarlyPrice34),
+        int(warpBlockMidPrice1), int(warpBlockMidPrice2), int(warpBlockMidPrice34),
+        int(warpBlockLatePrice1), int(warpBlockLatePrice2), int(warpBlockLatePrice34),
+        int(flyGuyEarlyPrice1), int(flyGuyEarlyPrice2), int(flyGuyEarlyPrice34),
+        int(flyGuyMidPrice1), int(flyGuyMidPrice2), int(flyGuyMidPrice34),
+        int(flyGuyLatePrice1), int(flyGuyLatePrice2), int(flyGuyLatePrice34),
+        int(plusBlockEarlyPrice1), int(plusBlockEarlyPrice2), int(plusBlockEarlyPrice34),
+        int(plusBlockMidPrice1), int(plusBlockMidPrice2), int(plusBlockMidPrice34),
+        int(plusBlockLatePrice1), int(plusBlockLatePrice2), int(plusBlockLatePrice34),
+        int(minusBlockEarlyPrice1), int(minusBlockEarlyPrice2), int(minusBlockEarlyPrice34),
+        int(minusBlockMidPrice1), int(minusBlockMidPrice2), int(minusBlockMidPrice34),
+        int(minusBlockLatePrice1), int(minusBlockLatePrice2), int(minusBlockLatePrice34),
+        int(speedBlockEarlyPrice1), int(speedBlockEarlyPrice2), int(speedBlockEarlyPrice34),
+        int(speedBlockMidPrice1), int(speedBlockMidPrice2), int(speedBlockMidPrice34),
+        int(speedBlockLatePrice1), int(speedBlockLatePrice2), int(speedBlockLatePrice34),
+        int(slowBlockEarlyPrice1), int(slowBlockEarlyPrice2), int(slowBlockEarlyPrice34),
+        int(slowBlockMidPrice1), int(slowBlockMidPrice2), int(slowBlockMidPrice34),
+        int(slowBlockLatePrice1), int(slowBlockLatePrice2), int(slowBlockLatePrice34),
+        int(hiddenBlockCardEarlyPrice1), int(hiddenBlockCardEarlyPrice2), int(hiddenBlockCardEarlyPrice34),
+        int(hiddenBlockCardMidPrice1), int(hiddenBlockCardMidPrice2), int(hiddenBlockCardMidPrice34),
+        int(hiddenBlockCardLatePrice1), int(hiddenBlockCardLatePrice2), int(hiddenBlockCardLatePrice34),
+        int(barterBoxEarlyPrice1), int(barterBoxEarlyPrice2), int(barterBoxEarlyPrice34),
+        int(barterBoxMidPrice1), int(barterBoxMidPrice2), int(barterBoxMidPrice34),
+        int(barterBoxLatePrice1), int(barterBoxLatePrice2), int(barterBoxLatePrice34),
+        int(superWarpPipeEarlyPrice1), int(superWarpPipeEarlyPrice2), int(superWarpPipeEarlyPrice34),
+        int(superWarpPipeMidPrice1), int(superWarpPipeMidPrice2), int(superWarpPipeMidPrice34),
+        int(superWarpPipeLatePrice1), int(superWarpPipeLatePrice2), int(superWarpPipeLatePrice34),
+        int(chanceTimeCharmEarlyPrice1), int(chanceTimeCharmEarlyPrice2), int(chanceTimeCharmEarlyPrice34),
+        int(chanceTimeCharmMidPrice1), int(chanceTimeCharmMidPrice2), int(chanceTimeCharmMidPrice34),
+        int(chanceTimeCharmLatePrice1), int(chanceTimeCharmLatePrice2), int(chanceTimeCharmLatePrice34),
+        int(wackyWatchEarlyPrice1), int(wackyWatchEarlyPrice2), int(wackyWatchEarlyPrice34),
+        int(wackyWatchMidPrice1), int(wackyWatchMidPrice2), int(wackyWatchMidPrice34),
+        int(wackyWatchLatePrice1), int(wackyWatchLatePrice2), int(wackyWatchLatePrice34)
+    ])
 
 
     def convert_to_hex_weight(weight):
@@ -849,6 +913,388 @@ def itemsEvent_mp4ShopDXPrices(miniMushroomEarlyPrice1 = "5", miniMushroomEarlyP
     minCoins = convert_to_hex_weight(minCoins)
 
     generatedCode = getItemShopPricesFourDX(minCoins, miniMushroomEarlyPrice1, miniMushroomEarlyPrice2, miniMushroomEarlyPrice34, miniMushroomMidPrice1, miniMushroomMidPrice2, miniMushroomMidPrice34, miniMushroomLatePrice1, miniMushroomLatePrice2, miniMushroomLatePrice34, megaMushroomEarlyPrice1, megaMushroomEarlyPrice2, megaMushroomEarlyPrice34, megaMushroomMidPrice1, megaMushroomMidPrice2, megaMushroomMidPrice34, megaMushroomLatePrice1, megaMushroomLatePrice2, megaMushroomLatePrice34, superMiniMushroomEarlyPrice1, superMiniMushroomEarlyPrice2, superMiniMushroomEarlyPrice34, superMiniMushroomMidPrice1, superMiniMushroomMidPrice2, superMiniMushroomMidPrice34, superMiniMushroomLatePrice1, superMiniMushroomLatePrice2, superMiniMushroomLatePrice34, superMegaMushroomEarlyPrice1, superMegaMushroomEarlyPrice2, superMegaMushroomEarlyPrice34, superMegaMushroomMidPrice1, superMegaMushroomMidPrice2, superMegaMushroomMidPrice34, superMegaMushroomLatePrice1, superMegaMushroomLatePrice2, superMegaMushroomLatePrice34, miniMegaHammerEarlyPrice1, miniMegaHammerEarlyPrice2, miniMegaHammerEarlyPrice34, miniMegaHammerMidPrice1, miniMegaHammerMidPrice2, miniMegaHammerMidPrice34, miniMegaHammerLatePrice1, miniMegaHammerLatePrice2, miniMegaHammerLatePrice34, warpPipeEarlyPrice1, warpPipeEarlyPrice2, warpPipeEarlyPrice34, warpPipeMidPrice1, warpPipeMidPrice2, warpPipeMidPrice34, warpPipeLatePrice1, warpPipeLatePrice2, warpPipeLatePrice34, swapCardEarlyPrice1, swapCardEarlyPrice2, swapCardEarlyPrice34, swapCardMidPrice1, swapCardMidPrice2, swapCardMidPrice34, swapCardLatePrice1, swapCardLatePrice2, swapCardLatePrice34, sparkyStickerEarlyPrice1, sparkyStickerEarlyPrice2, sparkyStickerEarlyPrice34, sparkyStickerMidPrice1, sparkyStickerMidPrice2, sparkyStickerMidPrice34, sparkyStickerLatePrice1, sparkyStickerLatePrice2, sparkyStickerLatePrice34, gaddlightEarlyPrice1, gaddlightEarlyPrice2, gaddlightEarlyPrice34, gaddlightMidPrice1, gaddlightMidPrice2, gaddlightMidPrice34, gaddlightLatePrice1, gaddlightLatePrice2, gaddlightLatePrice34, chompCallEarlyPrice1, chompCallEarlyPrice2, chompCallEarlyPrice34, chompCallMidPrice1, chompCallMidPrice2, chompCallMidPrice34, chompCallLatePrice1, chompCallLatePrice2, chompCallLatePrice34, bowserSuitEarlyPrice1, bowserSuitEarlyPrice2, bowserSuitEarlyPrice34, bowserSuitMidPrice1, bowserSuitMidPrice2, bowserSuitMidPrice34, bowserSuitLatePrice1, bowserSuitLatePrice2, bowserSuitLatePrice34, crystalBallEarlyPrice1, crystalBallEarlyPrice2, crystalBallEarlyPrice34, crystalBallMidPrice1, crystalBallMidPrice2, crystalBallMidPrice34, crystalBallLatePrice1, crystalBallLatePrice2, crystalBallLatePrice34, magicLampEarlyPrice1, magicLampEarlyPrice2, magicLampEarlyPrice34, magicLampMidPrice1, magicLampMidPrice2, magicLampMidPrice34, magicLampLatePrice1, magicLampLatePrice2, magicLampLatePrice34, itemBagEarlyPrice1, itemBagEarlyPrice2, itemBagEarlyPrice34, itemBagMidPrice1, itemBagMidPrice2, itemBagMidPrice34, itemBagLatePrice1, itemBagLatePrice2, itemBagLatePrice34, mushroomEarlyPrice1, mushroomEarlyPrice2, mushroomEarlyPrice34, mushroomMidPrice1, mushroomMidPrice2, mushroomMidPrice34, mushroomLatePrice1, mushroomLatePrice2, mushroomLatePrice34, goldenMushroomEarlyPrice1, goldenMushroomEarlyPrice2, goldenMushroomEarlyPrice34, goldenMushroomMidPrice1, goldenMushroomMidPrice2, goldenMushroomMidPrice34, goldenMushroomLatePrice1, goldenMushroomLatePrice2, goldenMushroomLatePrice34, reverseMushroomEarlyPrice1, reverseMushroomEarlyPrice2, reverseMushroomEarlyPrice34, reverseMushroomMidPrice1, reverseMushroomMidPrice2, reverseMushroomMidPrice34, reverseMushroomLatePrice1, reverseMushroomLatePrice2, reverseMushroomLatePrice34, poisonMushroomEarlyPrice1, poisonMushroomEarlyPrice2, poisonMushroomEarlyPrice34, poisonMushroomMidPrice1, poisonMushroomMidPrice2, poisonMushroomMidPrice34, poisonMushroomLatePrice1, poisonMushroomLatePrice2, poisonMushroomLatePrice34, triplePoisonMushroomEarlyPrice1, triplePoisonMushroomEarlyPrice2, triplePoisonMushroomEarlyPrice34, triplePoisonMushroomMidPrice1, triplePoisonMushroomMidPrice2, triplePoisonMushroomMidPrice34, triplePoisonMushroomLatePrice1, triplePoisonMushroomLatePrice2, triplePoisonMushroomLatePrice34, celluarShopperEarlyPrice1, celluarShopperEarlyPrice2, celluarShopperEarlyPrice34, celluarShopperMidPrice1, celluarShopperMidPrice2, celluarShopperMidPrice34, celluarShopperLatePrice1, celluarShopperLatePrice2, celluarShopperLatePrice34, skeletonKeyEarlyPrice1, skeletonKeyEarlyPrice2, skeletonKeyEarlyPrice34, skeletonKeyMidPrice1, skeletonKeyMidPrice2, skeletonKeyMidPrice34, skeletonKeyLatePrice1, skeletonKeyLatePrice2, skeletonKeyLatePrice34, plunderChestEarlyPrice1, plunderChestEarlyPrice2, plunderChestEarlyPrice34, plunderChestMidPrice1, plunderChestMidPrice2, plunderChestMidPrice34, plunderChestLatePrice1, plunderChestLatePrice2, plunderChestLatePrice34, gaddbrushEarlyPrice1, gaddbrushEarlyPrice2, gaddbrushEarlyPrice34, gaddbrushMidPrice1, gaddbrushMidPrice2, gaddbrushMidPrice34, gaddbrushLatePrice1, gaddbrushLatePrice2, gaddbrushLatePrice34, warpBlockEarlyPrice1, warpBlockEarlyPrice2, warpBlockEarlyPrice34, warpBlockMidPrice1, warpBlockMidPrice2, warpBlockMidPrice34, warpBlockLatePrice1, warpBlockLatePrice2, warpBlockLatePrice34, flyGuyEarlyPrice1, flyGuyEarlyPrice2, flyGuyEarlyPrice34, flyGuyMidPrice1, flyGuyMidPrice2, flyGuyMidPrice34, flyGuyLatePrice1, flyGuyLatePrice2, flyGuyLatePrice34, plusBlockEarlyPrice1, plusBlockEarlyPrice2, plusBlockEarlyPrice34, plusBlockMidPrice1, plusBlockMidPrice2, plusBlockMidPrice34, plusBlockLatePrice1, plusBlockLatePrice2, plusBlockLatePrice34, minusBlockEarlyPrice1, minusBlockEarlyPrice2, minusBlockEarlyPrice34, minusBlockMidPrice1, minusBlockMidPrice2, minusBlockMidPrice34, minusBlockLatePrice1, minusBlockLatePrice2, minusBlockLatePrice34, speedBlockEarlyPrice1, speedBlockEarlyPrice2, speedBlockEarlyPrice34, speedBlockMidPrice1, speedBlockMidPrice2, speedBlockMidPrice34, speedBlockLatePrice1, speedBlockLatePrice2, speedBlockLatePrice34, slowBlockEarlyPrice1, slowBlockEarlyPrice2, slowBlockEarlyPrice34, slowBlockMidPrice1, slowBlockMidPrice2, slowBlockMidPrice34, slowBlockLatePrice1, slowBlockLatePrice2, slowBlockLatePrice34, bowserPhoneEarlyPrice1, bowserPhoneEarlyPrice2, bowserPhoneEarlyPrice34, bowserPhoneMidPrice1, bowserPhoneMidPrice2, bowserPhoneMidPrice34, bowserPhoneLatePrice1, bowserPhoneLatePrice2, bowserPhoneLatePrice34, doubleDipEarlyPrice1, doubleDipEarlyPrice2, doubleDipEarlyPrice34, doubleDipMidPrice1, doubleDipMidPrice2, doubleDipMidPrice34, doubleDipLatePrice1, doubleDipLatePrice2, doubleDipLatePrice34, hiddenBlockCardEarlyPrice1, hiddenBlockCardEarlyPrice2, hiddenBlockCardEarlyPrice34, hiddenBlockCardMidPrice1, hiddenBlockCardMidPrice2, hiddenBlockCardMidPrice34, hiddenBlockCardLatePrice1, hiddenBlockCardLatePrice2, hiddenBlockCardLatePrice34, barterBoxEarlyPrice1, barterBoxEarlyPrice2, barterBoxEarlyPrice34, barterBoxMidPrice1, barterBoxMidPrice2, barterBoxMidPrice34, barterBoxLatePrice1, barterBoxLatePrice2, barterBoxLatePrice34, superWarpPipeEarlyPrice1, superWarpPipeEarlyPrice2, superWarpPipeEarlyPrice34, superWarpPipeMidPrice1, superWarpPipeMidPrice2, superWarpPipeMidPrice34, superWarpPipeLatePrice1, superWarpPipeLatePrice2, superWarpPipeLatePrice34, chanceTimeCharmEarlyPrice1, chanceTimeCharmEarlyPrice2, chanceTimeCharmEarlyPrice34, chanceTimeCharmMidPrice1, chanceTimeCharmMidPrice2, chanceTimeCharmMidPrice34, chanceTimeCharmLatePrice1, chanceTimeCharmLatePrice2, chanceTimeCharmLatePrice34, wackyWatchEarlyPrice1, wackyWatchEarlyPrice2, wackyWatchEarlyPrice34, wackyWatchMidPrice1, wackyWatchMidPrice2, wackyWatchMidPrice34, wackyWatchLatePrice1, wackyWatchLatePrice2, wackyWatchLatePrice34)
+    generatedCode = generatedCode.strip()
+    pyperclip.copy(generatedCode)
+
+    print("Generated code copied to the clipboard.")
+    createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
+
+def itemsEvent_mp4ShopPrices(miniMushroomEarlyPrice1 = "5", miniMushroomEarlyPrice2 = "5", miniMushroomEarlyPrice34 = "5", miniMushroomMidPrice1 = "5", miniMushroomMidPrice2 = "5", miniMushroomMidPrice34 = "5", miniMushroomLatePrice1 = "5", miniMushroomLatePrice2 = "5", miniMushroomLatePrice34 = "5", megaMushroomEarlyPrice1 = "5", megaMushroomEarlyPrice2 = "5", megaMushroomEarlyPrice34 = "5", megaMushroomMidPrice1 = "5", megaMushroomMidPrice2 = "5", megaMushroomMidPrice34 = "5", megaMushroomLatePrice1 = "5", megaMushroomLatePrice2 = "5", megaMushroomLatePrice34 = "5", superMiniMushroomEarlyPrice1 = "15", superMiniMushroomEarlyPrice2 = "15", superMiniMushroomEarlyPrice34 = "15", superMiniMushroomMidPrice1 = "15", superMiniMushroomMidPrice2 = "10", superMiniMushroomMidPrice34 = "15", superMiniMushroomLatePrice1 = "15", superMiniMushroomLatePrice2 = "15", superMiniMushroomLatePrice34 = "15", superMegaMushroomEarlyPrice1 = "15", superMegaMushroomEarlyPrice2 = "15", superMegaMushroomEarlyPrice34 = "15", superMegaMushroomMidPrice1 = "15", superMegaMushroomMidPrice2 = "15", superMegaMushroomMidPrice34 = "15", superMegaMushroomLatePrice1 = "15", superMegaMushroomLatePrice2 = "15", superMegaMushroomLatePrice34 = "15", miniMegaHammerEarlyPrice1 = "10", miniMegaHammerEarlyPrice2 = "10", miniMegaHammerEarlyPrice34 = "10", miniMegaHammerMidPrice1 = "10", miniMegaHammerMidPrice2 = "10", miniMegaHammerMidPrice34 = "10", miniMegaHammerLatePrice1 = "10", miniMegaHammerLatePrice2 = "10", miniMegaHammerLatePrice34 = "10", warpPipeEarlyPrice1 = "10", warpPipeEarlyPrice2 = "10", warpPipeEarlyPrice34 = "10", warpPipeMidPrice1 = "10", warpPipeMidPrice2 = "10", warpPipeMidPrice34 = "10", warpPipeLatePrice1 = "10", warpPipeLatePrice2 = "10", warpPipeLatePrice34 = "10", swapCardEarlyPrice1 = "15", swapCardEarlyPrice2 = "15", swapCardEarlyPrice34 = "15", swapCardMidPrice1 = "15", swapCardMidPrice2 = "15", swapCardMidPrice34 = "15", swapCardLatePrice1 = "15", swapCardLatePrice2 = "15", swapCardLatePrice34 = "15", sparkyStickerEarlyPrice1 = "15", sparkyStickerEarlyPrice2 = "15", sparkyStickerEarlyPrice34 = "15", sparkyStickerMidPrice1 = "15", sparkyStickerMidPrice2 = "15", sparkyStickerMidPrice34 = "5", sparkyStickerLatePrice1 = "15", sparkyStickerLatePrice2 = "15", sparkyStickerLatePrice34 = "15", gaddlightEarlyPrice1 = "15", gaddlightEarlyPrice2 = "15", gaddlightEarlyPrice34 = "15", gaddlightMidPrice1 = "15", gaddlightMidPrice2 = "15", gaddlightMidPrice34 = "15", gaddlightLatePrice1 = "15", gaddlightLatePrice2 = "15", gaddlightLatePrice34 = "10", chompCallEarlyPrice1 = "15", chompCallEarlyPrice2 = "15", chompCallEarlyPrice34 = "15", chompCallMidPrice1 = "15", chompCallMidPrice2 = "10", chompCallMidPrice34 = "15", chompCallLatePrice1 = "10", chompCallLatePrice2 = "15", chompCallLatePrice34 = "15", bowserSuitEarlyPrice1 = "0", bowserSuitEarlyPrice2 = "0", bowserSuitEarlyPrice34 = "0", bowserSuitMidPrice1 = "0", bowserSuitMidPrice2 = "0", bowserSuitMidPrice34 = "0", bowserSuitLatePrice1 = "0", bowserSuitLatePrice2 = "0", bowserSuitLatePrice34 = "12", crystalBallEarlyPrice1 = "25", crystalBallEarlyPrice2 = "25", crystalBallEarlyPrice34 = "25", crystalBallMidPrice1 = "25", crystalBallMidPrice2 = "25", crystalBallMidPrice34 = "25", crystalBallLatePrice1 = "25", crystalBallLatePrice2 = "25", crystalBallLatePrice34 = "25", magicLampEarlyPrice1 = "30", magicLampEarlyPrice2 = "30", magicLampEarlyPrice34 = "30", magicLampMidPrice1 = "30", magicLampMidPrice2 = "30", magicLampMidPrice34 = "30", magicLampLatePrice1 = "30", magicLampLatePrice2 = "30", magicLampLatePrice34 = "30", itemBagEarlyPrice1 = "30", itemBagEarlyPrice2 = "30", itemBagEarlyPrice34 = "30", itemBagMidPrice1 = "30", itemBagMidPrice2 = "30", itemBagMidPrice34 = "30", itemBagLatePrice1 = "30", itemBagLatePrice2 = "30", itemBagLatePrice34 = "30"):
+    def get_capsule_value(capsule):
+        try:
+            return capsule.get()
+        except:
+            return 0
+
+    # Mini Mushroom
+    miniMushroomEarlyPrice1 = get_capsule_value(miniMushroomEarlyPrice1) or "5"
+    miniMushroomEarlyPrice2 = get_capsule_value(miniMushroomEarlyPrice2) or "5"
+    miniMushroomEarlyPrice34 = get_capsule_value(miniMushroomEarlyPrice34) or "5"
+    miniMushroomMidPrice1 = get_capsule_value(miniMushroomMidPrice1) or "5"
+    miniMushroomMidPrice2 = get_capsule_value(miniMushroomMidPrice2) or "5"
+    miniMushroomMidPrice34 = get_capsule_value(miniMushroomMidPrice34) or "5"
+    miniMushroomLatePrice1 = get_capsule_value(miniMushroomLatePrice1) or "5"
+    miniMushroomLatePrice2 = get_capsule_value(miniMushroomLatePrice2) or "5"
+    miniMushroomLatePrice34 = get_capsule_value(miniMushroomLatePrice34) or "5"
+    
+    # Mega Mushroom
+    megaMushroomEarlyPrice1 = get_capsule_value(megaMushroomEarlyPrice1) or "5"
+    megaMushroomEarlyPrice2 = get_capsule_value(megaMushroomEarlyPrice2) or "5"
+    megaMushroomEarlyPrice34 = get_capsule_value(megaMushroomEarlyPrice34) or "5"
+    megaMushroomMidPrice1 = get_capsule_value(megaMushroomMidPrice1) or "5"
+    megaMushroomMidPrice2 = get_capsule_value(megaMushroomMidPrice2) or "5"
+    megaMushroomMidPrice34 = get_capsule_value(megaMushroomMidPrice34) or "5"
+    megaMushroomLatePrice1 = get_capsule_value(megaMushroomLatePrice1) or "5"
+    megaMushroomLatePrice2 = get_capsule_value(megaMushroomLatePrice2) or "5"
+    megaMushroomLatePrice34 = get_capsule_value(megaMushroomLatePrice34) or "5"
+
+    # Super Mini Mushroom
+    superMiniMushroomEarlyPrice1 = get_capsule_value(superMiniMushroomEarlyPrice1) or "15"
+    superMiniMushroomEarlyPrice2 = get_capsule_value(superMiniMushroomEarlyPrice2) or "15"
+    superMiniMushroomEarlyPrice34 = get_capsule_value(superMiniMushroomEarlyPrice34) or "15"
+    superMiniMushroomMidPrice1 = get_capsule_value(superMiniMushroomMidPrice1) or "15"
+    superMiniMushroomMidPrice2 = get_capsule_value(superMiniMushroomMidPrice2) or "15"
+    superMiniMushroomMidPrice34 = get_capsule_value(superMiniMushroomMidPrice34) or "15"
+    superMiniMushroomLatePrice1 = get_capsule_value(superMiniMushroomLatePrice1) or "15"
+    superMiniMushroomLatePrice2 = get_capsule_value(superMiniMushroomLatePrice2) or "15"
+    superMiniMushroomLatePrice34 = get_capsule_value(superMiniMushroomLatePrice34) or "15"
+
+    # Super Mega Mushroom
+    superMegaMushroomEarlyPrice1 = get_capsule_value(superMegaMushroomEarlyPrice1) or "15"
+    superMegaMushroomEarlyPrice2 = get_capsule_value(superMegaMushroomEarlyPrice2) or "15"
+    superMegaMushroomEarlyPrice34 = get_capsule_value(superMegaMushroomEarlyPrice34) or "15"
+    superMegaMushroomMidPrice1 = get_capsule_value(superMegaMushroomMidPrice1) or "15"
+    superMegaMushroomMidPrice2 = get_capsule_value(superMegaMushroomMidPrice2) or "15"
+    superMegaMushroomMidPrice34 = get_capsule_value(superMegaMushroomMidPrice34) or "15"
+    superMegaMushroomLatePrice1 = get_capsule_value(superMegaMushroomLatePrice1) or "15"
+    superMegaMushroomLatePrice2 = get_capsule_value(superMegaMushroomLatePrice2) or "15"
+    superMegaMushroomLatePrice34 = get_capsule_value(superMegaMushroomLatePrice34) or "15"
+
+    # Mini Mega Hammer
+    miniMegaHammerEarlyPrice1 = get_capsule_value(miniMegaHammerEarlyPrice1) or "10"
+    miniMegaHammerEarlyPrice2 = get_capsule_value(miniMegaHammerEarlyPrice2) or "10"
+    miniMegaHammerEarlyPrice34 = get_capsule_value(miniMegaHammerEarlyPrice34) or "10"
+    miniMegaHammerMidPrice1 = get_capsule_value(miniMegaHammerMidPrice1) or "10"
+    miniMegaHammerMidPrice2 = get_capsule_value(miniMegaHammerMidPrice2) or "10"
+    miniMegaHammerMidPrice34 = get_capsule_value(miniMegaHammerMidPrice34) or "10"
+    miniMegaHammerLatePrice1 = get_capsule_value(miniMegaHammerLatePrice1) or "10"
+    miniMegaHammerLatePrice2 = get_capsule_value(miniMegaHammerLatePrice2) or "10"
+    miniMegaHammerLatePrice34 = get_capsule_value(miniMegaHammerLatePrice34) or "10"
+
+    # Warp Pipe
+    warpPipeEarlyPrice1 = get_capsule_value(warpPipeEarlyPrice1) or "10"
+    warpPipeEarlyPrice2 = get_capsule_value(warpPipeEarlyPrice2) or "10"
+    warpPipeEarlyPrice34 = get_capsule_value(warpPipeEarlyPrice34) or "10"
+    warpPipeMidPrice1 = get_capsule_value(warpPipeMidPrice1) or "10"
+    warpPipeMidPrice2 = get_capsule_value(warpPipeMidPrice2) or "10"
+    warpPipeMidPrice34 = get_capsule_value(warpPipeMidPrice34) or "10"
+    warpPipeLatePrice1 = get_capsule_value(warpPipeLatePrice1) or "10"
+    warpPipeLatePrice2 = get_capsule_value(warpPipeLatePrice2) or "10"
+    warpPipeLatePrice34 = get_capsule_value(warpPipeLatePrice34) or "10"
+
+    # Swap Card
+    swapCardEarlyPrice1 = get_capsule_value(swapCardEarlyPrice1) or "15"
+    swapCardEarlyPrice2 = get_capsule_value(swapCardEarlyPrice2) or "15"
+    swapCardEarlyPrice34 = get_capsule_value(swapCardEarlyPrice34) or "15"
+    swapCardMidPrice1 = get_capsule_value(swapCardMidPrice1) or "15"
+    swapCardMidPrice2 = get_capsule_value(swapCardMidPrice2) or "15"
+    swapCardMidPrice34 = get_capsule_value(swapCardMidPrice34) or "15"
+    swapCardLatePrice1 = get_capsule_value(swapCardLatePrice1) or "15"
+    swapCardLatePrice2 = get_capsule_value(swapCardLatePrice2) or "15"
+    swapCardLatePrice34 = get_capsule_value(swapCardLatePrice34) or "15"
+
+    # Sparky Sticker
+    sparkyStickerEarlyPrice1 = get_capsule_value(sparkyStickerEarlyPrice1) or "15"
+    sparkyStickerEarlyPrice2 = get_capsule_value(sparkyStickerEarlyPrice2) or "15"
+    sparkyStickerEarlyPrice34 = get_capsule_value(sparkyStickerEarlyPrice34) or "15"
+    sparkyStickerMidPrice1 = get_capsule_value(sparkyStickerMidPrice1) or "15"
+    sparkyStickerMidPrice2 = get_capsule_value(sparkyStickerMidPrice2) or "15"
+    sparkyStickerMidPrice34 = get_capsule_value(sparkyStickerMidPrice34) or "15"
+    sparkyStickerLatePrice1 = get_capsule_value(sparkyStickerLatePrice1) or "15"
+    sparkyStickerLatePrice2 = get_capsule_value(sparkyStickerLatePrice2) or "15"
+    sparkyStickerLatePrice34 = get_capsule_value(sparkyStickerLatePrice34) or "15"
+
+    # Gaddlight
+    gaddlightEarlyPrice1 = get_capsule_value(gaddlightEarlyPrice1) or "15"
+    gaddlightEarlyPrice2 = get_capsule_value(gaddlightEarlyPrice2) or "15"
+    gaddlightEarlyPrice34 = get_capsule_value(gaddlightEarlyPrice34) or "15"
+    gaddlightMidPrice1 = get_capsule_value(gaddlightMidPrice1) or "15"
+    gaddlightMidPrice2 = get_capsule_value(gaddlightMidPrice2) or "15"
+    gaddlightMidPrice34 = get_capsule_value(gaddlightMidPrice34) or "15"
+    gaddlightLatePrice1 = get_capsule_value(gaddlightLatePrice1) or "15"
+    gaddlightLatePrice2 = get_capsule_value(gaddlightLatePrice2) or "15"
+    gaddlightLatePrice34 = get_capsule_value(gaddlightLatePrice34) or "15"
+
+    # Chomp Call
+    chompCallEarlyPrice1 = get_capsule_value(chompCallEarlyPrice1) or "15"
+    chompCallEarlyPrice2 = get_capsule_value(chompCallEarlyPrice2) or "15"
+    chompCallEarlyPrice34 = get_capsule_value(chompCallEarlyPrice34) or "15"
+    chompCallMidPrice1 = get_capsule_value(chompCallMidPrice1) or "15"
+    chompCallMidPrice2 = get_capsule_value(chompCallMidPrice2) or "15"
+    chompCallMidPrice34 = get_capsule_value(chompCallMidPrice34) or "15"
+    chompCallLatePrice1 = get_capsule_value(chompCallLatePrice1) or "15"
+    chompCallLatePrice2 = get_capsule_value(chompCallLatePrice2) or "15"
+    chompCallLatePrice34 = get_capsule_value(chompCallLatePrice34) or "15"
+
+    # Bowser Suit
+    bowserSuitEarlyPrice1 = get_capsule_value(bowserSuitEarlyPrice1) or "0"
+    bowserSuitEarlyPrice2 = get_capsule_value(bowserSuitEarlyPrice2) or "0"
+    bowserSuitEarlyPrice34 = get_capsule_value(bowserSuitEarlyPrice34) or "0"
+    bowserSuitMidPrice1 = get_capsule_value(bowserSuitMidPrice1) or "0"
+    bowserSuitMidPrice2 = get_capsule_value(bowserSuitMidPrice2) or "0"
+    bowserSuitMidPrice34 = get_capsule_value(bowserSuitMidPrice34) or "0"
+    bowserSuitLatePrice1 = get_capsule_value(bowserSuitLatePrice1) or "0"
+    bowserSuitLatePrice2 = get_capsule_value(bowserSuitLatePrice2) or "0"
+    bowserSuitLatePrice34 = get_capsule_value(bowserSuitLatePrice34) or "0"
+
+    # Crystal Ball
+    crystalBallEarlyPrice1 = get_capsule_value(crystalBallEarlyPrice1) or "25"
+    crystalBallEarlyPrice2 = get_capsule_value(crystalBallEarlyPrice2) or "25"
+    crystalBallEarlyPrice34 = get_capsule_value(crystalBallEarlyPrice34) or "25"
+    crystalBallMidPrice1 = get_capsule_value(crystalBallMidPrice1) or "25"
+    crystalBallMidPrice2 = get_capsule_value(crystalBallMidPrice2) or "25"
+    crystalBallMidPrice34 = get_capsule_value(crystalBallMidPrice34) or "25"
+    crystalBallLatePrice1 = get_capsule_value(crystalBallLatePrice1) or "25"
+    crystalBallLatePrice2 = get_capsule_value(crystalBallLatePrice2) or "25"
+    crystalBallLatePrice34 = get_capsule_value(crystalBallLatePrice34) or "25"
+
+    # Magic Lamp
+    magicLampEarlyPrice1 = get_capsule_value(magicLampEarlyPrice1) or "30"
+    magicLampEarlyPrice2 = get_capsule_value(magicLampEarlyPrice2) or "30"
+    magicLampEarlyPrice34 = get_capsule_value(magicLampEarlyPrice34) or "30"
+    magicLampMidPrice1 = get_capsule_value(magicLampMidPrice1) or "30"
+    magicLampMidPrice2 = get_capsule_value(magicLampMidPrice2) or "30"
+    magicLampMidPrice34 = get_capsule_value(magicLampMidPrice34) or "30"
+    magicLampLatePrice1 = get_capsule_value(magicLampLatePrice1) or "30"
+    magicLampLatePrice2 = get_capsule_value(magicLampLatePrice2) or "30"
+    magicLampLatePrice34 = get_capsule_value(magicLampLatePrice34) or "30"
+
+    # Item Bag
+    itemBagEarlyPrice1 = get_capsule_value(itemBagEarlyPrice1) or "30"
+    itemBagEarlyPrice2 = get_capsule_value(itemBagEarlyPrice2) or "30"
+    itemBagEarlyPrice34 = get_capsule_value(itemBagEarlyPrice34) or "30"
+    itemBagMidPrice1 = get_capsule_value(itemBagMidPrice1) or "30"
+    itemBagMidPrice2 = get_capsule_value(itemBagMidPrice2) or "30"
+    itemBagMidPrice34 = get_capsule_value(itemBagMidPrice34) or "30"
+    itemBagLatePrice1 = get_capsule_value(itemBagLatePrice1) or "30"
+    itemBagLatePrice2 = get_capsule_value(itemBagLatePrice2) or "30"
+    itemBagLatePrice34 = get_capsule_value(itemBagLatePrice34) or "30"
+    
+    minCoins = find_lowest_integer(*[
+        int(miniMushroomEarlyPrice1), int(miniMushroomEarlyPrice2), int(miniMushroomEarlyPrice34), 
+        int(miniMushroomMidPrice1), int(miniMushroomMidPrice2), int(miniMushroomMidPrice34),
+        int(miniMushroomLatePrice1), int(miniMushroomLatePrice2), int(miniMushroomLatePrice34),
+        int(megaMushroomEarlyPrice1), int(megaMushroomEarlyPrice2), int(megaMushroomEarlyPrice34), 
+        int(megaMushroomMidPrice1), int(megaMushroomMidPrice2), int(megaMushroomMidPrice34),
+        int(megaMushroomLatePrice1), int(megaMushroomLatePrice2), int(megaMushroomLatePrice34),
+        int(superMiniMushroomEarlyPrice1), int(superMiniMushroomEarlyPrice2), int(superMiniMushroomEarlyPrice34),
+        int(superMiniMushroomMidPrice1), int(superMiniMushroomMidPrice2), int(superMiniMushroomMidPrice34),
+        int(superMiniMushroomLatePrice1), int(superMiniMushroomLatePrice2), int(superMiniMushroomLatePrice34),
+        int(superMegaMushroomEarlyPrice1), int(superMegaMushroomEarlyPrice2), int(superMegaMushroomEarlyPrice34),
+        int(superMegaMushroomMidPrice1), int(superMegaMushroomMidPrice2), int(superMegaMushroomMidPrice34),
+        int(superMegaMushroomLatePrice1), int(superMegaMushroomLatePrice2), int(superMegaMushroomLatePrice34),
+        int(miniMegaHammerEarlyPrice1), int(miniMegaHammerEarlyPrice2), int(miniMegaHammerEarlyPrice34),
+        int(miniMegaHammerMidPrice1), int(miniMegaHammerMidPrice2), int(miniMegaHammerMidPrice34),
+        int(miniMegaHammerLatePrice1), int(miniMegaHammerLatePrice2), int(miniMegaHammerLatePrice34),
+        int(warpPipeEarlyPrice1), int(warpPipeEarlyPrice2), int(warpPipeEarlyPrice34),
+        int(warpPipeMidPrice1), int(warpPipeMidPrice2), int(warpPipeMidPrice34),
+        int(warpPipeLatePrice1), int(warpPipeLatePrice2), int(warpPipeLatePrice34),
+        int(swapCardEarlyPrice1), int(swapCardEarlyPrice2), int(swapCardEarlyPrice34),
+        int(swapCardMidPrice1), int(swapCardMidPrice2), int(swapCardMidPrice34),
+        int(swapCardLatePrice1), int(swapCardLatePrice2), int(swapCardLatePrice34),
+        int(sparkyStickerEarlyPrice1), int(sparkyStickerEarlyPrice2), int(sparkyStickerEarlyPrice34),
+        int(sparkyStickerMidPrice1), int(sparkyStickerMidPrice2), int(sparkyStickerMidPrice34),
+        int(sparkyStickerLatePrice1), int(sparkyStickerLatePrice2), int(sparkyStickerLatePrice34),
+        int(gaddlightEarlyPrice1), int(gaddlightEarlyPrice2), int(gaddlightEarlyPrice34),
+        int(gaddlightMidPrice1), int(gaddlightMidPrice2), int(gaddlightMidPrice34),
+        int(gaddlightLatePrice1), int(gaddlightLatePrice2), int(gaddlightLatePrice34),
+        int(chompCallEarlyPrice1), int(chompCallEarlyPrice2), int(chompCallEarlyPrice34),
+        int(chompCallMidPrice1), int(chompCallMidPrice2), int(chompCallMidPrice34),
+        int(chompCallLatePrice1), int(chompCallLatePrice2), int(chompCallLatePrice34),
+        int(bowserSuitEarlyPrice1), int(bowserSuitEarlyPrice2), int(bowserSuitEarlyPrice34),
+        int(bowserSuitMidPrice1), int(bowserSuitMidPrice2), int(bowserSuitMidPrice34),
+        int(bowserSuitLatePrice1), int(bowserSuitLatePrice2), int(bowserSuitLatePrice34),
+        int(crystalBallEarlyPrice1), int(crystalBallEarlyPrice2), int(crystalBallEarlyPrice34),
+        int(crystalBallMidPrice1), int(crystalBallMidPrice2), int(crystalBallMidPrice34),
+        int(crystalBallLatePrice1), int(crystalBallLatePrice2), int(crystalBallLatePrice34),
+        int(magicLampEarlyPrice1), int(magicLampEarlyPrice2), int(magicLampEarlyPrice34),
+        int(magicLampMidPrice1), int(magicLampMidPrice2), int(magicLampMidPrice34),
+        int(magicLampLatePrice1), int(magicLampLatePrice2), int(magicLampLatePrice34),
+        int(itemBagEarlyPrice1), int(itemBagEarlyPrice2), int(itemBagEarlyPrice34),
+        int(itemBagMidPrice1), int(itemBagMidPrice2), int(itemBagMidPrice34),
+        int(itemBagLatePrice1), int(itemBagLatePrice2), int(itemBagLatePrice34)
+    ])
+
+
+    def convert_to_hex_weight(weight):
+        try:
+            weight_hex = hex(int(weight))
+            if len(weight_hex) == 4:
+                return weight_hex[2:]  # Remove '0x' prefix
+            elif len(weight_hex) == 3:
+                return "0" + weight_hex[2:]  # Add leading zero
+            return weight_hex[2:]  # Return as is for other lengths
+        except:
+            return "00"  # Return default value on error
+
+
+    # Mini Mushroom
+    miniMushroomEarlyPrice1 = convert_to_hex_weight(miniMushroomEarlyPrice1)
+    miniMushroomEarlyPrice2 = convert_to_hex_weight(miniMushroomEarlyPrice2)
+    miniMushroomEarlyPrice34 = convert_to_hex_weight(miniMushroomEarlyPrice34)
+    miniMushroomMidPrice1 = convert_to_hex_weight(miniMushroomMidPrice1)
+    miniMushroomMidPrice2 = convert_to_hex_weight(miniMushroomMidPrice2)
+    miniMushroomMidPrice34 = convert_to_hex_weight(miniMushroomMidPrice34)
+    miniMushroomLatePrice1 = convert_to_hex_weight(miniMushroomLatePrice1)
+    miniMushroomLatePrice2 = convert_to_hex_weight(miniMushroomLatePrice2)
+    miniMushroomLatePrice34 = convert_to_hex_weight(miniMushroomLatePrice34)
+    
+    # Mega Mushroom
+    megaMushroomEarlyPrice1 = convert_to_hex_weight(megaMushroomEarlyPrice1)
+    megaMushroomEarlyPrice2 = convert_to_hex_weight(megaMushroomEarlyPrice2)
+    megaMushroomEarlyPrice34 = convert_to_hex_weight(megaMushroomEarlyPrice34)
+    megaMushroomMidPrice1 = convert_to_hex_weight(megaMushroomMidPrice1)
+    megaMushroomMidPrice2 = convert_to_hex_weight(megaMushroomMidPrice2)
+    megaMushroomMidPrice34 = convert_to_hex_weight(megaMushroomMidPrice34)
+    megaMushroomLatePrice1 = convert_to_hex_weight(megaMushroomLatePrice1)
+    megaMushroomLatePrice2 = convert_to_hex_weight(megaMushroomLatePrice2)
+    megaMushroomLatePrice34 = convert_to_hex_weight(megaMushroomLatePrice34)
+
+    # Super Mini Mushroom
+    superMiniMushroomEarlyPrice1 = convert_to_hex_weight(superMiniMushroomEarlyPrice1)
+    superMiniMushroomEarlyPrice2 = convert_to_hex_weight(superMiniMushroomEarlyPrice2)
+    superMiniMushroomEarlyPrice34 = convert_to_hex_weight(superMiniMushroomEarlyPrice34)
+    superMiniMushroomMidPrice1 = convert_to_hex_weight(superMiniMushroomMidPrice1)
+    superMiniMushroomMidPrice2 = convert_to_hex_weight(superMiniMushroomMidPrice2)
+    superMiniMushroomMidPrice34 = convert_to_hex_weight(superMiniMushroomMidPrice34)
+    superMiniMushroomLatePrice1 = convert_to_hex_weight(superMiniMushroomLatePrice1)
+    superMiniMushroomLatePrice2 = convert_to_hex_weight(superMiniMushroomLatePrice2)
+    superMiniMushroomLatePrice34 = convert_to_hex_weight(superMiniMushroomLatePrice34)
+
+    # Super Mega Mushroom
+    superMegaMushroomEarlyPrice1 = convert_to_hex_weight(superMegaMushroomEarlyPrice1)
+    superMegaMushroomEarlyPrice2 = convert_to_hex_weight(superMegaMushroomEarlyPrice2)
+    superMegaMushroomEarlyPrice34 = convert_to_hex_weight(superMegaMushroomEarlyPrice34)
+    superMegaMushroomMidPrice1 = convert_to_hex_weight(superMegaMushroomMidPrice1)
+    superMegaMushroomMidPrice2 = convert_to_hex_weight(superMegaMushroomMidPrice2)
+    superMegaMushroomMidPrice34 = convert_to_hex_weight(superMegaMushroomMidPrice34)
+    superMegaMushroomLatePrice1 = convert_to_hex_weight(superMegaMushroomLatePrice1)
+    superMegaMushroomLatePrice2 = convert_to_hex_weight(superMegaMushroomLatePrice2)
+    superMegaMushroomLatePrice34 = convert_to_hex_weight(superMegaMushroomLatePrice34)
+
+    # Mini Mega Hammer
+    miniMegaHammerEarlyPrice1 = convert_to_hex_weight(miniMegaHammerEarlyPrice1)
+    miniMegaHammerEarlyPrice2 = convert_to_hex_weight(miniMegaHammerEarlyPrice2)
+    miniMegaHammerEarlyPrice34 = convert_to_hex_weight(miniMegaHammerEarlyPrice34)
+    miniMegaHammerMidPrice1 = convert_to_hex_weight(miniMegaHammerMidPrice1)
+    miniMegaHammerMidPrice2 = convert_to_hex_weight(miniMegaHammerMidPrice2)
+    miniMegaHammerMidPrice34 = convert_to_hex_weight(miniMegaHammerMidPrice34)
+    miniMegaHammerLatePrice1 = convert_to_hex_weight(miniMegaHammerLatePrice1)
+    miniMegaHammerLatePrice2 = convert_to_hex_weight(miniMegaHammerLatePrice2)
+    miniMegaHammerLatePrice34 = convert_to_hex_weight(miniMegaHammerLatePrice34)
+
+    # Warp Pipe
+    warpPipeEarlyPrice1 = convert_to_hex_weight(warpPipeEarlyPrice1)
+    warpPipeEarlyPrice2 = convert_to_hex_weight(warpPipeEarlyPrice2)
+    warpPipeEarlyPrice34 = convert_to_hex_weight(warpPipeEarlyPrice34)
+    warpPipeMidPrice1 = convert_to_hex_weight(warpPipeMidPrice1)
+    warpPipeMidPrice2 = convert_to_hex_weight(warpPipeMidPrice2)
+    warpPipeMidPrice34 = convert_to_hex_weight(warpPipeMidPrice34)
+    warpPipeLatePrice1 = convert_to_hex_weight(warpPipeLatePrice1)
+    warpPipeLatePrice2 = convert_to_hex_weight(warpPipeLatePrice2)
+    warpPipeLatePrice34 = convert_to_hex_weight(warpPipeLatePrice34)
+
+    # Swap Card
+    swapCardEarlyPrice1 = convert_to_hex_weight(swapCardEarlyPrice1)
+    swapCardEarlyPrice2 = convert_to_hex_weight(swapCardEarlyPrice2)
+    swapCardEarlyPrice34 = convert_to_hex_weight(swapCardEarlyPrice34)
+    swapCardMidPrice1 = convert_to_hex_weight(swapCardMidPrice1)
+    swapCardMidPrice2 = convert_to_hex_weight(swapCardMidPrice2)
+    swapCardMidPrice34 = convert_to_hex_weight(swapCardMidPrice34)
+    swapCardLatePrice1 = convert_to_hex_weight(swapCardLatePrice1)
+    swapCardLatePrice2 = convert_to_hex_weight(swapCardLatePrice2)
+    swapCardLatePrice34 = convert_to_hex_weight(swapCardLatePrice34)
+
+    # Sparky Sticker
+    sparkyStickerEarlyPrice1 = convert_to_hex_weight(sparkyStickerEarlyPrice1)
+    sparkyStickerEarlyPrice2 = convert_to_hex_weight(sparkyStickerEarlyPrice2)
+    sparkyStickerEarlyPrice34 = convert_to_hex_weight(sparkyStickerEarlyPrice34)
+    sparkyStickerMidPrice1 = convert_to_hex_weight(sparkyStickerMidPrice1)
+    sparkyStickerMidPrice2 = convert_to_hex_weight(sparkyStickerMidPrice2)
+    sparkyStickerMidPrice34 = convert_to_hex_weight(sparkyStickerMidPrice34)
+    sparkyStickerLatePrice1 = convert_to_hex_weight(sparkyStickerLatePrice1)
+    sparkyStickerLatePrice2 = convert_to_hex_weight(sparkyStickerLatePrice2)
+    sparkyStickerLatePrice34 = convert_to_hex_weight(sparkyStickerLatePrice34)
+
+    # Gaddlight
+    gaddlightEarlyPrice1 = convert_to_hex_weight(gaddlightEarlyPrice1)
+    gaddlightEarlyPrice2 = convert_to_hex_weight(gaddlightEarlyPrice2)
+    gaddlightEarlyPrice34 = convert_to_hex_weight(gaddlightEarlyPrice34)
+    gaddlightMidPrice1 = convert_to_hex_weight(gaddlightMidPrice1)
+    gaddlightMidPrice2 = convert_to_hex_weight(gaddlightMidPrice2)
+    gaddlightMidPrice34 = convert_to_hex_weight(gaddlightMidPrice34)
+    gaddlightLatePrice1 = convert_to_hex_weight(gaddlightLatePrice1)
+    gaddlightLatePrice2 = convert_to_hex_weight(gaddlightLatePrice2)
+    gaddlightLatePrice34 = convert_to_hex_weight(gaddlightLatePrice34)
+
+    # Chomp Call
+    chompCallEarlyPrice1 = convert_to_hex_weight(chompCallEarlyPrice1)
+    chompCallEarlyPrice2 = convert_to_hex_weight(chompCallEarlyPrice2)
+    chompCallEarlyPrice34 = convert_to_hex_weight(chompCallEarlyPrice34)
+    chompCallMidPrice1 = convert_to_hex_weight(chompCallMidPrice1)
+    chompCallMidPrice2 = convert_to_hex_weight(chompCallMidPrice2)
+    chompCallMidPrice34 = convert_to_hex_weight(chompCallMidPrice34)
+    chompCallLatePrice1 = convert_to_hex_weight(chompCallLatePrice1)
+    chompCallLatePrice2 = convert_to_hex_weight(chompCallLatePrice2)
+    chompCallLatePrice34 = convert_to_hex_weight(chompCallLatePrice34)
+
+    # Bowser Suit
+    bowserSuitEarlyPrice1 = convert_to_hex_weight(bowserSuitEarlyPrice1)
+    bowserSuitEarlyPrice2 = convert_to_hex_weight(bowserSuitEarlyPrice2)
+    bowserSuitEarlyPrice34 = convert_to_hex_weight(bowserSuitEarlyPrice34)
+    bowserSuitMidPrice1 = convert_to_hex_weight(bowserSuitMidPrice1)
+    bowserSuitMidPrice2 = convert_to_hex_weight(bowserSuitMidPrice2)
+    bowserSuitMidPrice34 = convert_to_hex_weight(bowserSuitMidPrice34)
+    bowserSuitLatePrice1 = convert_to_hex_weight(bowserSuitLatePrice1)
+    bowserSuitLatePrice2 = convert_to_hex_weight(bowserSuitLatePrice2)
+    bowserSuitLatePrice34 = convert_to_hex_weight(bowserSuitLatePrice34)
+
+    # Crystal Ball
+    crystalBallEarlyPrice1 = convert_to_hex_weight(crystalBallEarlyPrice1)
+    crystalBallEarlyPrice2 = convert_to_hex_weight(crystalBallEarlyPrice2)
+    crystalBallEarlyPrice34 = convert_to_hex_weight(crystalBallEarlyPrice34)
+    crystalBallMidPrice1 = convert_to_hex_weight(crystalBallMidPrice1)
+    crystalBallMidPrice2 = convert_to_hex_weight(crystalBallMidPrice2)
+    crystalBallMidPrice34 = convert_to_hex_weight(crystalBallMidPrice34)
+    crystalBallLatePrice1 = convert_to_hex_weight(crystalBallLatePrice1)
+    crystalBallLatePrice2 = convert_to_hex_weight(crystalBallLatePrice2)
+    crystalBallLatePrice34 = convert_to_hex_weight(crystalBallLatePrice34)
+
+    # Magic Lamp
+    magicLampEarlyPrice1 = convert_to_hex_weight(magicLampEarlyPrice1)
+    magicLampEarlyPrice2 = convert_to_hex_weight(magicLampEarlyPrice2)
+    magicLampEarlyPrice34 = convert_to_hex_weight(magicLampEarlyPrice34)
+    magicLampMidPrice1 = convert_to_hex_weight(magicLampMidPrice1)
+    magicLampMidPrice2 = convert_to_hex_weight(magicLampMidPrice2)
+    magicLampMidPrice34 = convert_to_hex_weight(magicLampMidPrice34)
+    magicLampLatePrice1 = convert_to_hex_weight(magicLampLatePrice1)
+    magicLampLatePrice2 = convert_to_hex_weight(magicLampLatePrice2)
+    magicLampLatePrice34 = convert_to_hex_weight(magicLampLatePrice34)
+
+    # Item Bag
+    itemBagEarlyPrice1 = convert_to_hex_weight(itemBagEarlyPrice1)
+    itemBagEarlyPrice2 = convert_to_hex_weight(itemBagEarlyPrice2)
+    itemBagEarlyPrice34 = convert_to_hex_weight(itemBagEarlyPrice34)
+    itemBagMidPrice1 = convert_to_hex_weight(itemBagMidPrice1)
+    itemBagMidPrice2 = convert_to_hex_weight(itemBagMidPrice2)
+    itemBagMidPrice34 = convert_to_hex_weight(itemBagMidPrice34)
+    itemBagLatePrice1 = convert_to_hex_weight(itemBagLatePrice1)
+    itemBagLatePrice2 = convert_to_hex_weight(itemBagLatePrice2)
+    itemBagLatePrice34 = convert_to_hex_weight(itemBagLatePrice34)
+
+    minCoins = convert_to_hex_weight(minCoins)
+
+    generatedCode = getItemShopPricesFour(minCoins, miniMushroomEarlyPrice1, miniMushroomEarlyPrice2, miniMushroomEarlyPrice34, miniMushroomMidPrice1, miniMushroomMidPrice2, miniMushroomMidPrice34, miniMushroomLatePrice1, miniMushroomLatePrice2, miniMushroomLatePrice34, megaMushroomEarlyPrice1, megaMushroomEarlyPrice2, megaMushroomEarlyPrice34, megaMushroomMidPrice1, megaMushroomMidPrice2, megaMushroomMidPrice34, megaMushroomLatePrice1, megaMushroomLatePrice2, megaMushroomLatePrice34, superMiniMushroomEarlyPrice1, superMiniMushroomEarlyPrice2, superMiniMushroomEarlyPrice34, superMiniMushroomMidPrice1, superMiniMushroomMidPrice2, superMiniMushroomMidPrice34, superMiniMushroomLatePrice1, superMiniMushroomLatePrice2, superMiniMushroomLatePrice34, superMegaMushroomEarlyPrice1, superMegaMushroomEarlyPrice2, superMegaMushroomEarlyPrice34, superMegaMushroomMidPrice1, superMegaMushroomMidPrice2, superMegaMushroomMidPrice34, superMegaMushroomLatePrice1, superMegaMushroomLatePrice2, superMegaMushroomLatePrice34, miniMegaHammerEarlyPrice1, miniMegaHammerEarlyPrice2, miniMegaHammerEarlyPrice34, miniMegaHammerMidPrice1, miniMegaHammerMidPrice2, miniMegaHammerMidPrice34, miniMegaHammerLatePrice1, miniMegaHammerLatePrice2, miniMegaHammerLatePrice34, warpPipeEarlyPrice1, warpPipeEarlyPrice2, warpPipeEarlyPrice34, warpPipeMidPrice1, warpPipeMidPrice2, warpPipeMidPrice34, warpPipeLatePrice1, warpPipeLatePrice2, warpPipeLatePrice34, swapCardEarlyPrice1, swapCardEarlyPrice2, swapCardEarlyPrice34, swapCardMidPrice1, swapCardMidPrice2, swapCardMidPrice34, swapCardLatePrice1, swapCardLatePrice2, swapCardLatePrice34, sparkyStickerEarlyPrice1, sparkyStickerEarlyPrice2, sparkyStickerEarlyPrice34, sparkyStickerMidPrice1, sparkyStickerMidPrice2, sparkyStickerMidPrice34, sparkyStickerLatePrice1, sparkyStickerLatePrice2, sparkyStickerLatePrice34, gaddlightEarlyPrice1, gaddlightEarlyPrice2, gaddlightEarlyPrice34, gaddlightMidPrice1, gaddlightMidPrice2, gaddlightMidPrice34, gaddlightLatePrice1, gaddlightLatePrice2, gaddlightLatePrice34, chompCallEarlyPrice1, chompCallEarlyPrice2, chompCallEarlyPrice34, chompCallMidPrice1, chompCallMidPrice2, chompCallMidPrice34, chompCallLatePrice1, chompCallLatePrice2, chompCallLatePrice34, bowserSuitEarlyPrice1, bowserSuitEarlyPrice2, bowserSuitEarlyPrice34, bowserSuitMidPrice1, bowserSuitMidPrice2, bowserSuitMidPrice34, bowserSuitLatePrice1, bowserSuitLatePrice2, bowserSuitLatePrice34, crystalBallEarlyPrice1, crystalBallEarlyPrice2, crystalBallEarlyPrice34, crystalBallMidPrice1, crystalBallMidPrice2, crystalBallMidPrice34, crystalBallLatePrice1, crystalBallLatePrice2, crystalBallLatePrice34, magicLampEarlyPrice1, magicLampEarlyPrice2, magicLampEarlyPrice34, magicLampMidPrice1, magicLampMidPrice2, magicLampMidPrice34, magicLampLatePrice1, magicLampLatePrice2, magicLampLatePrice34, itemBagEarlyPrice1, itemBagEarlyPrice2, itemBagEarlyPrice34, itemBagMidPrice1, itemBagMidPrice2, itemBagMidPrice34, itemBagLatePrice1, itemBagLatePrice2, itemBagLatePrice34)
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)
 
