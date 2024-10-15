@@ -403,3 +403,9 @@ E2000001 80008000
 02139D38 0000{magicLampLatePrice34}{itemBagLatePrice34}
 E0000000 80008000
 '''
+
+def getItemShopOddsFour():
+    pass
+
+def getItemShopOddsFourDX():
+    pass
