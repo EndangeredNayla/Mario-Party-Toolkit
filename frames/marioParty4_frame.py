@@ -26,7 +26,7 @@ def create_mario_party_4_interface(frame):
     tabview.grid(padx=10, pady=10)
     tabview.add("Coins")
     tabview.add("Minigame Replacement")
-    tabview.add("Shops")
+    tabview.add("Shop Prices")
     tabview.add("Item Spaces")
     tabview.add("Initial Items")
     tabview.add("Item Bag")
@@ -79,11 +79,11 @@ def create_mario_party_4_interface(frame):
     parse_minigame_button.place(x=10, y=800)
 
     # ITEM GEN
-    scrollable_frame = ctk.CTkFrame(master=tabview.tab("Shops"), fg_color=("#fcfcfc", "#2e2e2e"))
+    scrollable_frame = ctk.CTkFrame(master=tabview.tab("Shop Prices"), fg_color=("#fcfcfc", "#2e2e2e"))
     scrollable_frame.grid(row=0, column=0, sticky="nsew", pady=(0, 50))
     # Configure grid to allow stretching
-    tabview.tab("Shops").grid_rowconfigure(0, weight=1)
-    tabview.tab("Shops").grid_columnconfigure(0, weight=1)
+    tabview.tab("Shop Prices").grid_rowconfigure(0, weight=1)
+    tabview.tab("Shop Prices").grid_columnconfigure(0, weight=1)
     scrollable_frame.grid_rowconfigure(0, weight=1)
 
     # Create a canvas for scrolling
@@ -1127,9 +1127,9 @@ def create_mario_party_4_interface(frame):
     global hide_custom
     hide_custom = False
 
-    def handle_button_command(miniMushroomEarlyPrice1, miniMushroomEarlyPrice2, miniMushroomEarlyPrice34, miniMushroomMidPrice1, miniMushroomMidPrice2, miniMushroomMidPrice34, miniMushroomLatePrice1, miniMushroomLatePrice2, miniMushroomLatePrice34, megaMushroomEarlyPrice1, megaMushroomEarlyPrice2, megaMushroomEarlyPrice34, megaMushroomMidPrice1, megaMushroomMidPrice2, megaMushroomMidPrice34, megaMushroomLatePrice1, megaMushroomLatePrice2, megaMushroomLatePrice34, superMiniMushroomEarlyPrice1, superMiniMushroomEarlyPrice2, superMiniMushroomEarlyPrice34, superMiniMushroomMidPrice1, superMiniMushroomMidPrice2, superMiniMushroomMidPrice34, superMiniMushroomLatePrice1, superMiniMushroomLatePrice2, superMiniMushroomLatePrice34, superMegaMushroomEarlyPrice1, superMegaMushroomEarlyPrice2, superMegaMushroomEarlyPrice34, superMegaMushroomMidPrice1, superMegaMushroomMidPrice2, superMegaMushroomMidPrice34, superMegaMushroomLatePrice1, superMegaMushroomLatePrice2, superMegaMushroomLatePrice34, miniMegaHammerEarlyPrice1, miniMegaHammerEarlyPrice2, miniMegaHammerEarlyPrice34, miniMegaHammerMidPrice1, miniMegaHammerMidPrice2, miniMegaHammerMidPrice34, miniMegaHammerLatePrice1, miniMegaHammerLatePrice2, miniMegaHammerLatePrice34, warpPipeEarlyPrice1, warpPipeEarlyPrice2, warpPipeEarlyPrice34, warpPipeMidPrice1, warpPipeMidPrice2, warpPipeMidPrice34, warpPipeLatePrice1, warpPipeLatePrice2, warpPipeLatePrice34, swapCardEarlyPrice1, swapCardEarlyPrice2, swapCardEarlyPrice34, swapCardMidPrice1, swapCardMidPrice2, swapCardMidPrice34, swapCardLatePrice1, swapCardLatePrice2, swapCardLatePrice34, sparkyStickerEarlyPrice1, sparkyStickerEarlyPrice2, sparkyStickerEarlyPrice34, sparkyStickerMidPrice1, sparkyStickerMidPrice2, sparkyStickerMidPrice34, sparkyStickerLatePrice1, sparkyStickerLatePrice2, sparkyStickerLatePrice34, gaddlightEarlyPrice1, gaddlightEarlyPrice2, gaddlightEarlyPrice34, gaddlightMidPrice1, gaddlightMidPrice2, gaddlightMidPrice34, gaddlightLatePrice1, gaddlightLatePrice2, gaddlightLatePrice34, chompCallEarlyPrice1, chompCallEarlyPrice2, chompCallEarlyPrice34, chompCallMidPrice1, chompCallMidPrice2, chompCallMidPrice34, chompCallLatePrice1, chompCallLatePrice2, chompCallLatePrice34, bowserSuitEarlyPrice1, bowserSuitEarlyPrice2, bowserSuitEarlyPrice34, bowserSuitMidPrice1, bowserSuitMidPrice2, bowserSuitMidPrice34, bowserSuitLatePrice1, bowserSuitLatePrice2, bowserSuitLatePrice34, crystalBallEarlyPrice1, crystalBallEarlyPrice2, crystalBallEarlyPrice34, crystalBallMidPrice1, crystalBallMidPrice2, crystalBallMidPrice34, crystalBallLatePrice1, crystalBallLatePrice2, crystalBallLatePrice34, magicLampEarlyPrice1, magicLampEarlyPrice2, magicLampEarlyPrice34, magicLampMidPrice1, magicLampMidPrice2, magicLampMidPrice34, magicLampLatePrice1, magicLampLatePrice2, magicLampLatePrice34, itemBagEarlyPrice1, itemBagEarlyPrice2, itemBagEarlyPrice34, itemBagMidPrice1, itemBagMidPrice2, itemBagMidPrice34, itemBagLatePrice1, itemBagLatePrice2, itemBagLatePrice34):
+    def handle_button_command(miniMushroomEarlyPrice1, miniMushroomEarlyPrice2, miniMushroomEarlyPrice34, miniMushroomMidPrice1, miniMushroomMidPrice2, miniMushroomMidPrice34, miniMushroomLatePrice1, miniMushroomLatePrice2, miniMushroomLatePrice34, megaMushroomEarlyPrice1, megaMushroomEarlyPrice2, megaMushroomEarlyPrice34, megaMushroomMidPrice1, megaMushroomMidPrice2, megaMushroomMidPrice34, megaMushroomLatePrice1, megaMushroomLatePrice2, megaMushroomLatePrice34, superMiniMushroomEarlyPrice1, superMiniMushroomEarlyPrice2, superMiniMushroomEarlyPrice34, superMiniMushroomMidPrice1, superMiniMushroomMidPrice2, superMiniMushroomMidPrice34, superMiniMushroomLatePrice1, superMiniMushroomLatePrice2, superMiniMushroomLatePrice34, superMegaMushroomEarlyPrice1, superMegaMushroomEarlyPrice2, superMegaMushroomEarlyPrice34, superMegaMushroomMidPrice1, superMegaMushroomMidPrice2, superMegaMushroomMidPrice34, superMegaMushroomLatePrice1, superMegaMushroomLatePrice2, superMegaMushroomLatePrice34, miniMegaHammerEarlyPrice1, miniMegaHammerEarlyPrice2, miniMegaHammerEarlyPrice34, miniMegaHammerMidPrice1, miniMegaHammerMidPrice2, miniMegaHammerMidPrice34, miniMegaHammerLatePrice1, miniMegaHammerLatePrice2, miniMegaHammerLatePrice34, warpPipeEarlyPrice1, warpPipeEarlyPrice2, warpPipeEarlyPrice34, warpPipeMidPrice1, warpPipeMidPrice2, warpPipeMidPrice34, warpPipeLatePrice1, warpPipeLatePrice2, warpPipeLatePrice34, swapCardEarlyPrice1, swapCardEarlyPrice2, swapCardEarlyPrice34, swapCardMidPrice1, swapCardMidPrice2, swapCardMidPrice34, swapCardLatePrice1, swapCardLatePrice2, swapCardLatePrice34, sparkyStickerEarlyPrice1, sparkyStickerEarlyPrice2, sparkyStickerEarlyPrice34, sparkyStickerMidPrice1, sparkyStickerMidPrice2, sparkyStickerMidPrice34, sparkyStickerLatePrice1, sparkyStickerLatePrice2, sparkyStickerLatePrice34, gaddlightEarlyPrice1, gaddlightEarlyPrice2, gaddlightEarlyPrice34, gaddlightMidPrice1, gaddlightMidPrice2, gaddlightMidPrice34, gaddlightLatePrice1, gaddlightLatePrice2, gaddlightLatePrice34, chompCallEarlyPrice1, chompCallEarlyPrice2, chompCallEarlyPrice34, chompCallMidPrice1, chompCallMidPrice2, chompCallMidPrice34, chompCallLatePrice1, chompCallLatePrice2, chompCallLatePrice34, bowserSuitEarlyPrice1, bowserSuitEarlyPrice2, bowserSuitEarlyPrice34, bowserSuitMidPrice1, bowserSuitMidPrice2, bowserSuitMidPrice34, bowserSuitLatePrice1, bowserSuitLatePrice2, bowserSuitLatePrice34, crystalBallEarlyPrice1, crystalBallEarlyPrice2, crystalBallEarlyPrice34, crystalBallMidPrice1, crystalBallMidPrice2, crystalBallMidPrice34, crystalBallLatePrice1, crystalBallLatePrice2, crystalBallLatePrice34, magicLampEarlyPrice1, magicLampEarlyPrice2, magicLampEarlyPrice34, magicLampMidPrice1, magicLampMidPrice2, magicLampMidPrice34, magicLampLatePrice1, magicLampLatePrice2, magicLampLatePrice34, itemBagEarlyPrice1, itemBagEarlyPrice2, itemBagEarlyPrice34, itemBagMidPrice1, itemBagMidPrice2, itemBagMidPrice34, itemBagLatePrice1, itemBagLatePrice2, itemBagLatePrice34, mushroomEarlyPrice1, mushroomEarlyPrice2, mushroomEarlyPrice34, mushroomMidPrice1, mushroomMidPrice2, mushroomMidPrice34, mushroomLatePrice1, mushroomLatePrice2, mushroomLatePrice34, goldenMushroomEarlyPrice1, goldenMushroomEarlyPrice2, goldenMushroomEarlyPrice34, goldenMushroomMidPrice1, goldenMushroomMidPrice2, goldenMushroomMidPrice34, goldenMushroomLatePrice1, goldenMushroomLatePrice2, goldenMushroomLatePrice34, reverseMushroomEarlyPrice1, reverseMushroomEarlyPrice2, reverseMushroomEarlyPrice34, reverseMushroomMidPrice1, reverseMushroomMidPrice2, reverseMushroomMidPrice34, reverseMushroomLatePrice1, reverseMushroomLatePrice2, reverseMushroomLatePrice34, poisonMushroomEarlyPrice1, poisonMushroomEarlyPrice2, poisonMushroomEarlyPrice34, poisonMushroomMidPrice1, poisonMushroomMidPrice2, poisonMushroomMidPrice34, poisonMushroomLatePrice1, poisonMushroomLatePrice2, poisonMushroomLatePrice34, triplePoisonMushroomEarlyPrice1, triplePoisonMushroomEarlyPrice2, triplePoisonMushroomEarlyPrice34, triplePoisonMushroomMidPrice1, triplePoisonMushroomMidPrice2, triplePoisonMushroomMidPrice34, triplePoisonMushroomLatePrice1, triplePoisonMushroomLatePrice2, triplePoisonMushroomLatePrice34, celluarShopperEarlyPrice1, celluarShopperEarlyPrice2, celluarShopperEarlyPrice34, celluarShopperMidPrice1, celluarShopperMidPrice2, celluarShopperMidPrice34, celluarShopperLatePrice1, celluarShopperLatePrice2, celluarShopperLatePrice34, skeletonKeyEarlyPrice1, skeletonKeyEarlyPrice2, skeletonKeyEarlyPrice34, skeletonKeyMidPrice1, skeletonKeyMidPrice2, skeletonKeyMidPrice34, skeletonKeyLatePrice1, skeletonKeyLatePrice2, skeletonKeyLatePrice34, plunderChestEarlyPrice1, plunderChestEarlyPrice2, plunderChestEarlyPrice34, plunderChestMidPrice1, plunderChestMidPrice2, plunderChestMidPrice34, plunderChestLatePrice1, plunderChestLatePrice2, plunderChestLatePrice34, gaddbrushEarlyPrice1, gaddbrushEarlyPrice2, gaddbrushEarlyPrice34, gaddbrushMidPrice1, gaddbrushMidPrice2, gaddbrushMidPrice34, gaddbrushLatePrice1, gaddbrushLatePrice2, gaddbrushLatePrice34, warpBlockEarlyPrice1, warpBlockEarlyPrice2, warpBlockEarlyPrice34, warpBlockMidPrice1, warpBlockMidPrice2, warpBlockMidPrice34, warpBlockLatePrice1, warpBlockLatePrice2, warpBlockLatePrice34, flyGuyEarlyPrice1, flyGuyEarlyPrice2, flyGuyEarlyPrice34, flyGuyMidPrice1, flyGuyMidPrice2, flyGuyMidPrice34, flyGuyLatePrice1, flyGuyLatePrice2, flyGuyLatePrice34, plusBlockEarlyPrice1, plusBlockEarlyPrice2, plusBlockEarlyPrice34, plusBlockMidPrice1, plusBlockMidPrice2, plusBlockMidPrice34, plusBlockLatePrice1, plusBlockLatePrice2, plusBlockLatePrice34, minusBlockEarlyPrice1, minusBlockEarlyPrice2, minusBlockEarlyPrice34, minusBlockMidPrice1, minusBlockMidPrice2, minusBlockMidPrice34, minusBlockLatePrice1, minusBlockLatePrice2, minusBlockLatePrice34, speedBlockEarlyPrice1, speedBlockEarlyPrice2, speedBlockEarlyPrice34, speedBlockMidPrice1, speedBlockMidPrice2, speedBlockMidPrice34, speedBlockLatePrice1, speedBlockLatePrice2, speedBlockLatePrice34, slowBlockEarlyPrice1, slowBlockEarlyPrice2, slowBlockEarlyPrice34, slowBlockMidPrice1, slowBlockMidPrice2, slowBlockMidPrice34, slowBlockLatePrice1, slowBlockLatePrice2, slowBlockLatePrice34, bowserPhoneEarlyPrice1, bowserPhoneEarlyPrice2, bowserPhoneEarlyPrice34, bowserPhoneMidPrice1, bowserPhoneMidPrice2, bowserPhoneMidPrice34, bowserPhoneLatePrice1, bowserPhoneLatePrice2, bowserPhoneLatePrice34, doubleDipEarlyPrice1, doubleDipEarlyPrice2, doubleDipEarlyPrice34, doubleDipMidPrice1, doubleDipMidPrice2, doubleDipMidPrice34, doubleDipLatePrice1, doubleDipLatePrice2, doubleDipLatePrice34, hiddenBlockCardEarlyPrice1, hiddenBlockCardEarlyPrice2, hiddenBlockCardEarlyPrice34, hiddenBlockCardMidPrice1, hiddenBlockCardMidPrice2, hiddenBlockCardMidPrice34, hiddenBlockCardLatePrice1, hiddenBlockCardLatePrice2, hiddenBlockCardLatePrice34, barterBoxEarlyPrice1, barterBoxEarlyPrice2, barterBoxEarlyPrice34, barterBoxMidPrice1, barterBoxMidPrice2, barterBoxMidPrice34, barterBoxLatePrice1, barterBoxLatePrice2, barterBoxLatePrice34, superWarpPipeEarlyPrice1, superWarpPipeEarlyPrice2, superWarpPipeEarlyPrice34, superWarpPipeMidPrice1, superWarpPipeMidPrice2, superWarpPipeMidPrice34, superWarpPipeLatePrice1, superWarpPipeLatePrice2, superWarpPipeLatePrice34, chanceTimeCharmEarlyPrice1, chanceTimeCharmEarlyPrice2, chanceTimeCharmEarlyPrice34, chanceTimeCharmMidPrice1, chanceTimeCharmMidPrice2, chanceTimeCharmMidPrice34, chanceTimeCharmLatePrice1, chanceTimeCharmLatePrice2, chanceTimeCharmLatePrice34, wackyWatchEarlyPrice1, wackyWatchEarlyPrice2, wackyWatchEarlyPrice34, wackyWatchMidPrice1, wackyWatchMidPrice2, wackyWatchMidPrice34, wackyWatchLatePrice1, wackyWatchLatePrice2, wackyWatchLatePrice34):
         if hide_custom:
-            itemsEvent_mp4Shops(
+            itemsEvent_mp4ShopPrices(
                 miniMushroomEarlyPrice1, miniMushroomEarlyPrice2, miniMushroomEarlyPrice34,
                 miniMushroomMidPrice1, miniMushroomMidPrice2, miniMushroomMidPrice34,
                 miniMushroomLatePrice1, miniMushroomLatePrice2, miniMushroomLatePrice34,
@@ -1174,22 +1174,128 @@ def create_mario_party_4_interface(frame):
                 itemBagLatePrice1, itemBagLatePrice2, itemBagLatePrice34
             )
         elif not hide_custom:
-            itemsEvent_mp4ShopsCustom(
-            miniMushroomEarlyPrice1, miniMushroomEarlyPrice2, miniMushroomEarlyPrice34, miniMushroomMidPrice1, miniMushroomMidPrice2, miniMushroomMidPrice34, miniMushroomLatePrice1, miniMushroomLatePrice2, miniMushroomLatePrice34, megaMushroomEarlyPrice1, megaMushroomEarlyPrice2, megaMushroomEarlyPrice34, megaMushroomMidPrice1, megaMushroomMidPrice2, megaMushroomMidPrice34, megaMushroomLatePrice1, megaMushroomLatePrice2, megaMushroomLatePrice34, superMiniMushroomEarlyPrice1, superMiniMushroomEarlyPrice2, superMiniMushroomEarlyPrice34, superMiniMushroomMidPrice1, superMiniMushroomMidPrice2, superMiniMushroomMidPrice34, superMiniMushroomLatePrice1, superMiniMushroomLatePrice2, superMiniMushroomLatePrice34, superMegaMushroomEarlyPrice1, superMegaMushroomEarlyPrice2, superMegaMushroomEarlyPrice34, superMegaMushroomMidPrice1, superMegaMushroomMidPrice2, superMegaMushroomMidPrice34, superMegaMushroomLatePrice1, superMegaMushroomLatePrice2, superMegaMushroomLatePrice34, miniMegaHammerEarlyPrice1, miniMegaHammerEarlyPrice2, miniMegaHammerEarlyPrice34, miniMegaHammerMidPrice1, miniMegaHammerMidPrice2, miniMegaHammerMidPrice34, miniMegaHammerLatePrice1, miniMegaHammerLatePrice2, miniMegaHammerLatePrice34, warpPipeEarlyPrice1, warpPipeEarlyPrice2, warpPipeEarlyPrice34, warpPipeMidPrice1, warpPipeMidPrice2, warpPipeMidPrice34, warpPipeLatePrice1, warpPipeLatePrice2, warpPipeLatePrice34, swapCardEarlyPrice1, swapCardEarlyPrice2, swapCardEarlyPrice34, swapCardMidPrice1, swapCardMidPrice2, swapCardMidPrice34, swapCardLatePrice1, swapCardLatePrice2, swapCardLatePrice34, sparkyStickerEarlyPrice1, sparkyStickerEarlyPrice2, sparkyStickerEarlyPrice34, sparkyStickerMidPrice1, sparkyStickerMidPrice2, sparkyStickerMidPrice34, sparkyStickerLatePrice1, sparkyStickerLatePrice2, sparkyStickerLatePrice34, gaddlightEarlyPrice1, gaddlightEarlyPrice2, gaddlightEarlyPrice34, gaddlightMidPrice1, gaddlightMidPrice2, gaddlightMidPrice34, gaddlightLatePrice1, gaddlightLatePrice2, gaddlightLatePrice34, chompCallEarlyPrice1, chompCallEarlyPrice2, chompCallEarlyPrice34, chompCallMidPrice1, chompCallMidPrice2, chompCallMidPrice34, chompCallLatePrice1, chompCallLatePrice2, chompCallLatePrice34, bowserSuitEarlyPrice1, bowserSuitEarlyPrice2, bowserSuitEarlyPrice34, bowserSuitMidPrice1, bowserSuitMidPrice2, bowserSuitMidPrice34, bowserSuitLatePrice1, bowserSuitLatePrice2, bowserSuitLatePrice34, crystalBallEarlyPrice1, crystalBallEarlyPrice2, crystalBallEarlyPrice34, crystalBallMidPrice1, crystalBallMidPrice2, crystalBallMidPrice34, crystalBallLatePrice1, crystalBallLatePrice2, crystalBallLatePrice34, magicLampEarlyPrice1, magicLampEarlyPrice2, magicLampEarlyPrice34, magicLampMidPrice1, magicLampMidPrice2, magicLampMidPrice34, magicLampLatePrice1, magicLampLatePrice2, magicLampLatePrice34, itemBagEarlyPrice1, itemBagEarlyPrice2, itemBagEarlyPrice34, itemBagMidPrice1, itemBagMidPrice2, itemBagMidPrice34, itemBagLatePrice1, itemBagLatePrice2, itemBagLatePrice34
+            itemsEvent_mp4ShopDXPrices(
+                miniMushroomEarlyPrice1, miniMushroomEarlyPrice2, miniMushroomEarlyPrice34,
+                miniMushroomMidPrice1, miniMushroomMidPrice2, miniMushroomMidPrice34,
+                miniMushroomLatePrice1, miniMushroomLatePrice2, miniMushroomLatePrice34,
+                megaMushroomEarlyPrice1, megaMushroomEarlyPrice2, megaMushroomEarlyPrice34,
+                megaMushroomMidPrice1, megaMushroomMidPrice2, megaMushroomMidPrice34,
+                megaMushroomLatePrice1, megaMushroomLatePrice2, megaMushroomLatePrice34,
+                superMiniMushroomEarlyPrice1, superMiniMushroomEarlyPrice2, superMiniMushroomEarlyPrice34,
+                superMiniMushroomMidPrice1, superMiniMushroomMidPrice2, superMiniMushroomMidPrice34,
+                superMiniMushroomLatePrice1, superMiniMushroomLatePrice2, superMiniMushroomLatePrice34,
+                superMegaMushroomEarlyPrice1, superMegaMushroomEarlyPrice2, superMegaMushroomEarlyPrice34,
+                superMegaMushroomMidPrice1, superMegaMushroomMidPrice2, superMegaMushroomMidPrice34,
+                superMegaMushroomLatePrice1, superMegaMushroomLatePrice2, superMegaMushroomLatePrice34,
+                miniMegaHammerEarlyPrice1, miniMegaHammerEarlyPrice2, miniMegaHammerEarlyPrice34,
+                miniMegaHammerMidPrice1, miniMegaHammerMidPrice2, miniMegaHammerMidPrice34,
+                miniMegaHammerLatePrice1, miniMegaHammerLatePrice2, miniMegaHammerLatePrice34,
+                warpPipeEarlyPrice1, warpPipeEarlyPrice2, warpPipeEarlyPrice34,
+                warpPipeMidPrice1, warpPipeMidPrice2, warpPipeMidPrice34,
+                warpPipeLatePrice1, warpPipeLatePrice2, warpPipeLatePrice34,
+                swapCardEarlyPrice1, swapCardEarlyPrice2, swapCardEarlyPrice34,
+                swapCardMidPrice1, swapCardMidPrice2, swapCardMidPrice34,
+                swapCardLatePrice1, swapCardLatePrice2, swapCardLatePrice34,
+                sparkyStickerEarlyPrice1, sparkyStickerEarlyPrice2, sparkyStickerEarlyPrice34,
+                sparkyStickerMidPrice1, sparkyStickerMidPrice2, sparkyStickerMidPrice34,
+                sparkyStickerLatePrice1, sparkyStickerLatePrice2, sparkyStickerLatePrice34,
+                gaddlightEarlyPrice1, gaddlightEarlyPrice2, gaddlightEarlyPrice34,
+                gaddlightMidPrice1, gaddlightMidPrice2, gaddlightMidPrice34,
+                gaddlightLatePrice1, gaddlightLatePrice2, gaddlightLatePrice34,
+                chompCallEarlyPrice1, chompCallEarlyPrice2, chompCallEarlyPrice34,
+                chompCallMidPrice1, chompCallMidPrice2, chompCallMidPrice34,
+                chompCallLatePrice1, chompCallLatePrice2, chompCallLatePrice34,
+                bowserSuitEarlyPrice1, bowserSuitEarlyPrice2, bowserSuitEarlyPrice34,
+                bowserSuitMidPrice1, bowserSuitMidPrice2, bowserSuitMidPrice34,
+                bowserSuitLatePrice1, bowserSuitLatePrice2, bowserSuitLatePrice34,
+                crystalBallEarlyPrice1, crystalBallEarlyPrice2, crystalBallEarlyPrice34,
+                crystalBallMidPrice1, crystalBallMidPrice2, crystalBallMidPrice34,
+                crystalBallLatePrice1, crystalBallLatePrice2, crystalBallLatePrice34,
+                magicLampEarlyPrice1, magicLampEarlyPrice2, magicLampEarlyPrice34,
+                magicLampMidPrice1, magicLampMidPrice2, magicLampMidPrice34,
+                magicLampLatePrice1, magicLampLatePrice2, magicLampLatePrice34,
+                itemBagEarlyPrice1, itemBagEarlyPrice2, itemBagEarlyPrice34,
+                itemBagMidPrice1, itemBagMidPrice2, itemBagMidPrice34,
+                itemBagLatePrice1, itemBagLatePrice2, itemBagLatePrice34,
+                mushroomEarlyPrice1, mushroomEarlyPrice2, mushroomEarlyPrice34,
+                mushroomMidPrice1, mushroomMidPrice2, mushroomMidPrice34,
+                mushroomLatePrice1, mushroomLatePrice2, mushroomLatePrice34,
+                goldenMushroomEarlyPrice1, goldenMushroomEarlyPrice2, goldenMushroomEarlyPrice34,
+                goldenMushroomMidPrice1, goldenMushroomMidPrice2, goldenMushroomMidPrice34,
+                goldenMushroomLatePrice1, goldenMushroomLatePrice2, goldenMushroomLatePrice34,
+                reverseMushroomEarlyPrice1, reverseMushroomEarlyPrice2, reverseMushroomEarlyPrice34,
+                reverseMushroomMidPrice1, reverseMushroomMidPrice2, reverseMushroomMidPrice34,
+                reverseMushroomLatePrice1, reverseMushroomLatePrice2, reverseMushroomLatePrice34,
+                poisonMushroomEarlyPrice1, poisonMushroomEarlyPrice2, poisonMushroomEarlyPrice34,
+                poisonMushroomMidPrice1, poisonMushroomMidPrice2, poisonMushroomMidPrice34,
+                poisonMushroomLatePrice1, poisonMushroomLatePrice2, poisonMushroomLatePrice34,
+                triplePoisonMushroomEarlyPrice1, triplePoisonMushroomEarlyPrice2, triplePoisonMushroomEarlyPrice34,
+                triplePoisonMushroomMidPrice1, triplePoisonMushroomMidPrice2, triplePoisonMushroomMidPrice34,
+                triplePoisonMushroomLatePrice1, triplePoisonMushroomLatePrice2, triplePoisonMushroomLatePrice34,
+                celluarShopperEarlyPrice1, celluarShopperEarlyPrice2, celluarShopperEarlyPrice34,
+                celluarShopperMidPrice1, celluarShopperMidPrice2, celluarShopperMidPrice34,
+                celluarShopperLatePrice1, celluarShopperLatePrice2, celluarShopperLatePrice34,
+                skeletonKeyEarlyPrice1, skeletonKeyEarlyPrice2, skeletonKeyEarlyPrice34,
+                skeletonKeyMidPrice1, skeletonKeyMidPrice2, skeletonKeyMidPrice34,
+                skeletonKeyLatePrice1, skeletonKeyLatePrice2, skeletonKeyLatePrice34,
+                plunderChestEarlyPrice1, plunderChestEarlyPrice2, plunderChestEarlyPrice34,
+                plunderChestMidPrice1, plunderChestMidPrice2, plunderChestMidPrice34,
+                plunderChestLatePrice1, plunderChestLatePrice2, plunderChestLatePrice34,
+                gaddbrushEarlyPrice1, gaddbrushEarlyPrice2, gaddbrushEarlyPrice34,
+                gaddbrushMidPrice1, gaddbrushMidPrice2, gaddbrushMidPrice34,
+                gaddbrushLatePrice1, gaddbrushLatePrice2, gaddbrushLatePrice34,
+                warpBlockEarlyPrice1, warpBlockEarlyPrice2, warpBlockEarlyPrice34,
+                warpBlockMidPrice1, warpBlockMidPrice2, warpBlockMidPrice34,
+                warpBlockLatePrice1, warpBlockLatePrice2, warpBlockLatePrice34,
+                flyGuyEarlyPrice1, flyGuyEarlyPrice2, flyGuyEarlyPrice34,
+                flyGuyMidPrice1, flyGuyMidPrice2, flyGuyMidPrice34,
+                flyGuyLatePrice1, flyGuyLatePrice2, flyGuyLatePrice34,
+                plusBlockEarlyPrice1, plusBlockEarlyPrice2, plusBlockEarlyPrice34,
+                plusBlockMidPrice1, plusBlockMidPrice2, plusBlockMidPrice34,
+                plusBlockLatePrice1, plusBlockLatePrice2, plusBlockLatePrice34,
+                minusBlockEarlyPrice1, minusBlockEarlyPrice2, minusBlockEarlyPrice34,
+                minusBlockMidPrice1, minusBlockMidPrice2, minusBlockMidPrice34,
+                minusBlockLatePrice1, minusBlockLatePrice2, minusBlockLatePrice34,
+                speedBlockEarlyPrice1, speedBlockEarlyPrice2, speedBlockEarlyPrice34,
+                speedBlockMidPrice1, speedBlockMidPrice2, speedBlockMidPrice34,
+                speedBlockLatePrice1, speedBlockLatePrice2, speedBlockLatePrice34,
+                slowBlockEarlyPrice1, slowBlockEarlyPrice2, slowBlockEarlyPrice34,
+                slowBlockMidPrice1, slowBlockMidPrice2, slowBlockMidPrice34,
+                slowBlockLatePrice1, slowBlockLatePrice2, slowBlockLatePrice34,
+                bowserPhoneEarlyPrice1, bowserPhoneEarlyPrice2, bowserPhoneEarlyPrice34,
+                bowserPhoneMidPrice1, bowserPhoneMidPrice2, bowserPhoneMidPrice34,
+                bowserPhoneLatePrice1, bowserPhoneLatePrice2, bowserPhoneLatePrice34,
+                doubleDipEarlyPrice1, doubleDipEarlyPrice2, doubleDipEarlyPrice34,
+                doubleDipMidPrice1, doubleDipMidPrice2, doubleDipMidPrice34,
+                doubleDipLatePrice1, doubleDipLatePrice2, doubleDipLatePrice34,
+                hiddenBlockCardEarlyPrice1, hiddenBlockCardEarlyPrice2, hiddenBlockCardEarlyPrice34,
+                hiddenBlockCardMidPrice1, hiddenBlockCardMidPrice2, hiddenBlockCardMidPrice34,
+                hiddenBlockCardLatePrice1, hiddenBlockCardLatePrice2, hiddenBlockCardLatePrice34,
+                barterBoxEarlyPrice1, barterBoxEarlyPrice2, barterBoxEarlyPrice34,
+                barterBoxMidPrice1, barterBoxMidPrice2, barterBoxMidPrice34,
+                barterBoxLatePrice1, barterBoxLatePrice2, barterBoxLatePrice34,
+                superWarpPipeEarlyPrice1, superWarpPipeEarlyPrice2, superWarpPipeEarlyPrice34,
+                superWarpPipeMidPrice1, superWarpPipeMidPrice2, superWarpPipeMidPrice34,
+                superWarpPipeLatePrice1, superWarpPipeLatePrice2, superWarpPipeLatePrice34,
+                chanceTimeCharmEarlyPrice1, chanceTimeCharmEarlyPrice2, chanceTimeCharmEarlyPrice34,
+                chanceTimeCharmMidPrice1, chanceTimeCharmMidPrice2, chanceTimeCharmMidPrice34,
+                chanceTimeCharmLatePrice1, chanceTimeCharmLatePrice2, chanceTimeCharmLatePrice34,
+                wackyWatchEarlyPrice1, wackyWatchEarlyPrice2, wackyWatchEarlyPrice34,
+                wackyWatchMidPrice1, wackyWatchMidPrice2, wackyWatchMidPrice34,
+                wackyWatchLatePrice1, wackyWatchLatePrice2, wackyWatchLatePrice34
             )
         else:
             print()
 
     # Create the button with the command set to the new function
     parseButton = ctk.CTkButton(
-        master=tabview.tab("Shops"),
-        command=lambda: handle_button_command(miniMushroomEarlyPrice1, miniMushroomEarlyPrice2, miniMushroomEarlyPrice34, miniMushroomMidPrice1, miniMushroomMidPrice2, miniMushroomMidPrice34, miniMushroomLatePrice1, miniMushroomLatePrice2, miniMushroomLatePrice34, megaMushroomEarlyPrice1, megaMushroomEarlyPrice2, megaMushroomEarlyPrice34, megaMushroomMidPrice1, megaMushroomMidPrice2, megaMushroomMidPrice34, megaMushroomLatePrice1, megaMushroomLatePrice2, megaMushroomLatePrice34, superMiniMushroomEarlyPrice1, superMiniMushroomEarlyPrice2, superMiniMushroomEarlyPrice34, superMiniMushroomMidPrice1, superMiniMushroomMidPrice2, superMiniMushroomMidPrice34, superMiniMushroomLatePrice1, superMiniMushroomLatePrice2, superMiniMushroomLatePrice34, superMegaMushroomEarlyPrice1, superMegaMushroomEarlyPrice2, superMegaMushroomEarlyPrice34, superMegaMushroomMidPrice1, superMegaMushroomMidPrice2, superMegaMushroomMidPrice34, superMegaMushroomLatePrice1, superMegaMushroomLatePrice2, superMegaMushroomLatePrice34, miniMegaHammerEarlyPrice1, miniMegaHammerEarlyPrice2, miniMegaHammerEarlyPrice34, miniMegaHammerMidPrice1, miniMegaHammerMidPrice2, miniMegaHammerMidPrice34, miniMegaHammerLatePrice1, miniMegaHammerLatePrice2, miniMegaHammerLatePrice34, warpPipeEarlyPrice1, warpPipeEarlyPrice2, warpPipeEarlyPrice34, warpPipeMidPrice1, warpPipeMidPrice2, warpPipeMidPrice34, warpPipeLatePrice1, warpPipeLatePrice2, warpPipeLatePrice34, swapCardEarlyPrice1, swapCardEarlyPrice2, swapCardEarlyPrice34, swapCardMidPrice1, swapCardMidPrice2, swapCardMidPrice34, swapCardLatePrice1, swapCardLatePrice2, swapCardLatePrice34, sparkyStickerEarlyPrice1, sparkyStickerEarlyPrice2, sparkyStickerEarlyPrice34, sparkyStickerMidPrice1, sparkyStickerMidPrice2, sparkyStickerMidPrice34, sparkyStickerLatePrice1, sparkyStickerLatePrice2, sparkyStickerLatePrice34, gaddlightEarlyPrice1, gaddlightEarlyPrice2, gaddlightEarlyPrice34, gaddlightMidPrice1, gaddlightMidPrice2, gaddlightMidPrice34, gaddlightLatePrice1, gaddlightLatePrice2, gaddlightLatePrice34, chompCallEarlyPrice1, chompCallEarlyPrice2, chompCallEarlyPrice34, chompCallMidPrice1, chompCallMidPrice2, chompCallMidPrice34, chompCallLatePrice1, chompCallLatePrice2, chompCallLatePrice34, bowserSuitEarlyPrice1, bowserSuitEarlyPrice2, bowserSuitEarlyPrice34, bowserSuitMidPrice1, bowserSuitMidPrice2, bowserSuitMidPrice34, bowserSuitLatePrice1, bowserSuitLatePrice2, bowserSuitLatePrice34, crystalBallEarlyPrice1, crystalBallEarlyPrice2, crystalBallEarlyPrice34, crystalBallMidPrice1, crystalBallMidPrice2, crystalBallMidPrice34, crystalBallLatePrice1, crystalBallLatePrice2, crystalBallLatePrice34, magicLampEarlyPrice1, magicLampEarlyPrice2, magicLampEarlyPrice34, magicLampMidPrice1, magicLampMidPrice2, magicLampMidPrice34, magicLampLatePrice1, magicLampLatePrice2, magicLampLatePrice34, itemBagEarlyPrice1, itemBagEarlyPrice2, itemBagEarlyPrice34, itemBagMidPrice1, itemBagMidPrice2, itemBagMidPrice34, itemBagLatePrice1, itemBagLatePrice2, itemBagLatePrice34
-                ),
+        master=tabview.tab("Shop Prices"),
+        command=lambda: handle_button_command(miniMushroomEarlyPrice1, miniMushroomEarlyPrice2, miniMushroomEarlyPrice34, miniMushroomMidPrice1, miniMushroomMidPrice2, miniMushroomMidPrice34, miniMushroomLatePrice1, miniMushroomLatePrice2, miniMushroomLatePrice34, megaMushroomEarlyPrice1, megaMushroomEarlyPrice2, megaMushroomEarlyPrice34, megaMushroomMidPrice1, megaMushroomMidPrice2, megaMushroomMidPrice34, megaMushroomLatePrice1, megaMushroomLatePrice2, megaMushroomLatePrice34, superMiniMushroomEarlyPrice1, superMiniMushroomEarlyPrice2, superMiniMushroomEarlyPrice34, superMiniMushroomMidPrice1, superMiniMushroomMidPrice2, superMiniMushroomMidPrice34, superMiniMushroomLatePrice1, superMiniMushroomLatePrice2, superMiniMushroomLatePrice34, superMegaMushroomEarlyPrice1, superMegaMushroomEarlyPrice2, superMegaMushroomEarlyPrice34, superMegaMushroomMidPrice1, superMegaMushroomMidPrice2, superMegaMushroomMidPrice34, superMegaMushroomLatePrice1, superMegaMushroomLatePrice2, superMegaMushroomLatePrice34, miniMegaHammerEarlyPrice1, miniMegaHammerEarlyPrice2, miniMegaHammerEarlyPrice34, miniMegaHammerMidPrice1, miniMegaHammerMidPrice2, miniMegaHammerMidPrice34, miniMegaHammerLatePrice1, miniMegaHammerLatePrice2, miniMegaHammerLatePrice34, warpPipeEarlyPrice1, warpPipeEarlyPrice2, warpPipeEarlyPrice34, warpPipeMidPrice1, warpPipeMidPrice2, warpPipeMidPrice34, warpPipeLatePrice1, warpPipeLatePrice2, warpPipeLatePrice34, swapCardEarlyPrice1, swapCardEarlyPrice2, swapCardEarlyPrice34, swapCardMidPrice1, swapCardMidPrice2, swapCardMidPrice34, swapCardLatePrice1, swapCardLatePrice2, swapCardLatePrice34, sparkyStickerEarlyPrice1, sparkyStickerEarlyPrice2, sparkyStickerEarlyPrice34, sparkyStickerMidPrice1, sparkyStickerMidPrice2, sparkyStickerMidPrice34, sparkyStickerLatePrice1, sparkyStickerLatePrice2, sparkyStickerLatePrice34, gaddlightEarlyPrice1, gaddlightEarlyPrice2, gaddlightEarlyPrice34, gaddlightMidPrice1, gaddlightMidPrice2, gaddlightMidPrice34, gaddlightLatePrice1, gaddlightLatePrice2, gaddlightLatePrice34, chompCallEarlyPrice1, chompCallEarlyPrice2, chompCallEarlyPrice34, chompCallMidPrice1, chompCallMidPrice2, chompCallMidPrice34, chompCallLatePrice1, chompCallLatePrice2, chompCallLatePrice34, bowserSuitEarlyPrice1, bowserSuitEarlyPrice2, bowserSuitEarlyPrice34, bowserSuitMidPrice1, bowserSuitMidPrice2, bowserSuitMidPrice34, bowserSuitLatePrice1, bowserSuitLatePrice2, bowserSuitLatePrice34, crystalBallEarlyPrice1, crystalBallEarlyPrice2, crystalBallEarlyPrice34, crystalBallMidPrice1, crystalBallMidPrice2, crystalBallMidPrice34, crystalBallLatePrice1, crystalBallLatePrice2, crystalBallLatePrice34, magicLampEarlyPrice1, magicLampEarlyPrice2, magicLampEarlyPrice34, magicLampMidPrice1, magicLampMidPrice2, magicLampMidPrice34, magicLampLatePrice1, magicLampLatePrice2, magicLampLatePrice34, itemBagEarlyPrice1, itemBagEarlyPrice2, itemBagEarlyPrice34, itemBagMidPrice1, itemBagMidPrice2, itemBagMidPrice34, itemBagLatePrice1, itemBagLatePrice2, itemBagLatePrice34, mushroomEarlyPrice1, mushroomEarlyPrice2, mushroomEarlyPrice34, mushroomMidPrice1, mushroomMidPrice2, mushroomMidPrice34, mushroomLatePrice1, mushroomLatePrice2, mushroomLatePrice34, goldenMushroomEarlyPrice1, goldenMushroomEarlyPrice2, goldenMushroomEarlyPrice34, goldenMushroomMidPrice1, goldenMushroomMidPrice2, goldenMushroomMidPrice34, goldenMushroomLatePrice1, goldenMushroomLatePrice2, goldenMushroomLatePrice34, reverseMushroomEarlyPrice1, reverseMushroomEarlyPrice2, reverseMushroomEarlyPrice34, reverseMushroomMidPrice1, reverseMushroomMidPrice2, reverseMushroomMidPrice34, reverseMushroomLatePrice1, reverseMushroomLatePrice2, reverseMushroomLatePrice34, poisonMushroomEarlyPrice1, poisonMushroomEarlyPrice2, poisonMushroomEarlyPrice34, poisonMushroomMidPrice1, poisonMushroomMidPrice2, poisonMushroomMidPrice34, poisonMushroomLatePrice1, poisonMushroomLatePrice2, poisonMushroomLatePrice34, triplePoisonMushroomEarlyPrice1, triplePoisonMushroomEarlyPrice2, triplePoisonMushroomEarlyPrice34, triplePoisonMushroomMidPrice1, triplePoisonMushroomMidPrice2, triplePoisonMushroomMidPrice34, triplePoisonMushroomLatePrice1, triplePoisonMushroomLatePrice2, triplePoisonMushroomLatePrice34, celluarShopperEarlyPrice1, celluarShopperEarlyPrice2, celluarShopperEarlyPrice34, celluarShopperMidPrice1, celluarShopperMidPrice2, celluarShopperMidPrice34, celluarShopperLatePrice1, celluarShopperLatePrice2, celluarShopperLatePrice34, skeletonKeyEarlyPrice1, skeletonKeyEarlyPrice2, skeletonKeyEarlyPrice34, skeletonKeyMidPrice1, skeletonKeyMidPrice2, skeletonKeyMidPrice34, skeletonKeyLatePrice1, skeletonKeyLatePrice2, skeletonKeyLatePrice34, plunderChestEarlyPrice1, plunderChestEarlyPrice2, plunderChestEarlyPrice34, plunderChestMidPrice1, plunderChestMidPrice2, plunderChestMidPrice34, plunderChestLatePrice1, plunderChestLatePrice2, plunderChestLatePrice34, gaddbrushEarlyPrice1, gaddbrushEarlyPrice2, gaddbrushEarlyPrice34, gaddbrushMidPrice1, gaddbrushMidPrice2, gaddbrushMidPrice34, gaddbrushLatePrice1, gaddbrushLatePrice2, gaddbrushLatePrice34, warpBlockEarlyPrice1, warpBlockEarlyPrice2, warpBlockEarlyPrice34, warpBlockMidPrice1, warpBlockMidPrice2, warpBlockMidPrice34, warpBlockLatePrice1, warpBlockLatePrice2, warpBlockLatePrice34, flyGuyEarlyPrice1, flyGuyEarlyPrice2, flyGuyEarlyPrice34, flyGuyMidPrice1, flyGuyMidPrice2, flyGuyMidPrice34, flyGuyLatePrice1, flyGuyLatePrice2, flyGuyLatePrice34, plusBlockEarlyPrice1, plusBlockEarlyPrice2, plusBlockEarlyPrice34, plusBlockMidPrice1, plusBlockMidPrice2, plusBlockMidPrice34, plusBlockLatePrice1, plusBlockLatePrice2, plusBlockLatePrice34, minusBlockEarlyPrice1, minusBlockEarlyPrice2, minusBlockEarlyPrice34, minusBlockMidPrice1, minusBlockMidPrice2, minusBlockMidPrice34, minusBlockLatePrice1, minusBlockLatePrice2, minusBlockLatePrice34, speedBlockEarlyPrice1, speedBlockEarlyPrice2, speedBlockEarlyPrice34, speedBlockMidPrice1, speedBlockMidPrice2, speedBlockMidPrice34, speedBlockLatePrice1, speedBlockLatePrice2, speedBlockLatePrice34, slowBlockEarlyPrice1, slowBlockEarlyPrice2, slowBlockEarlyPrice34, slowBlockMidPrice1, slowBlockMidPrice2, slowBlockMidPrice34, slowBlockLatePrice1, slowBlockLatePrice2, slowBlockLatePrice34, bowserPhoneEarlyPrice1, bowserPhoneEarlyPrice2, bowserPhoneEarlyPrice34, bowserPhoneMidPrice1, bowserPhoneMidPrice2, bowserPhoneMidPrice34, bowserPhoneLatePrice1, bowserPhoneLatePrice2, bowserPhoneLatePrice34, doubleDipEarlyPrice1, doubleDipEarlyPrice2, doubleDipEarlyPrice34, doubleDipMidPrice1, doubleDipMidPrice2, doubleDipMidPrice34, doubleDipLatePrice1, doubleDipLatePrice2, doubleDipLatePrice34, hiddenBlockCardEarlyPrice1, hiddenBlockCardEarlyPrice2, hiddenBlockCardEarlyPrice34, hiddenBlockCardMidPrice1, hiddenBlockCardMidPrice2, hiddenBlockCardMidPrice34, hiddenBlockCardLatePrice1, hiddenBlockCardLatePrice2, hiddenBlockCardLatePrice34, barterBoxEarlyPrice1, barterBoxEarlyPrice2, barterBoxEarlyPrice34, barterBoxMidPrice1, barterBoxMidPrice2, barterBoxMidPrice34, barterBoxLatePrice1, barterBoxLatePrice2, barterBoxLatePrice34, superWarpPipeEarlyPrice1, superWarpPipeEarlyPrice2, superWarpPipeEarlyPrice34, superWarpPipeMidPrice1, superWarpPipeMidPrice2, superWarpPipeMidPrice34, superWarpPipeLatePrice1, superWarpPipeLatePrice2, superWarpPipeLatePrice34, chanceTimeCharmEarlyPrice1, chanceTimeCharmEarlyPrice2, chanceTimeCharmEarlyPrice34, chanceTimeCharmMidPrice1, chanceTimeCharmMidPrice2, chanceTimeCharmMidPrice34, chanceTimeCharmLatePrice1, chanceTimeCharmLatePrice2, chanceTimeCharmLatePrice34, wackyWatchEarlyPrice1, wackyWatchEarlyPrice2, wackyWatchEarlyPrice34, wackyWatchMidPrice1, wackyWatchMidPrice2, wackyWatchMidPrice34, wackyWatchLatePrice1, wackyWatchLatePrice2, wackyWatchLatePrice34),
         text="Generate Code"
     )
     parseButton.place(x=10, y=800) # x=610
 
-    hideCustomSwitch = ctk.CTkSwitch(master=tabview.tab("Shops"), text="Show DX Items")
+    hideCustomSwitch = ctk.CTkSwitch(master=tabview.tab("Shop Prices"), text="Show DX Items")
     hideCustomSwitch.place(x=160, y=800) # x=610
 
 
@@ -1202,14 +1308,16 @@ def create_mario_party_4_interface(frame):
         hide_custom = not hide_custom
 
         if hide_custom:
+            # Mushroom: DX
             mushroomEarlyPrice1.grid_forget()
             mushroomEarlyPrice2.grid_forget()
             mushroomEarlyPrice34.grid_forget()
             mushroomMidPrice1.grid_forget()
             mushroomMidPrice2.grid_forget()
             mushroomMidPrice34.grid_forget()
-            mushroomMidPrice1.grid_forget()
-            mushroomMidPrice2.grid_forget()
+            mushroomLatePrice1.grid_forget()
+            mushroomLatePrice2.grid_forget()
+            mushroomLatePrice34.grid_forget()
             labelMushroom1.grid_forget()
             labelMushroom2.grid_forget()
             labelMushroom3.grid_forget()
@@ -1218,32 +1326,18 @@ def create_mario_party_4_interface(frame):
             labelMushroom6.grid_forget()
             labelMushroom7.grid_forget()
             labelMushroom8.grid_forget()
+            labelMushroom9.grid_forget()
 
-            bowserPhoneEarlyPrice1.grid_forget()
-            bowserPhoneEarlyPrice2.grid_forget()
-            bowserPhoneEarlyPrice34.grid_forget()
-            bowserPhoneMidPrice1.grid_forget()
-            bowserPhoneMidPrice2.grid_forget()
-            bowserPhoneMidPrice34.grid_forget()
-            bowserPhoneMidPrice1.grid_forget()
-            bowserPhoneMidPrice2.grid_forget()
-            labelBowserPhone1.grid_forget()
-            labelBowserPhone2.grid_forget()
-            labelBowserPhone3.grid_forget()
-            labelBowserPhone4.grid_forget()
-            labelBowserPhone5.grid_forget()
-            labelBowserPhone6.grid_forget()
-            labelBowserPhone7.grid_forget()
-            labelBowserPhone8.grid_forget()
-
+            # Golden Mushroom: DX
             goldenMushroomEarlyPrice1.grid_forget()
             goldenMushroomEarlyPrice2.grid_forget()
             goldenMushroomEarlyPrice34.grid_forget()
             goldenMushroomMidPrice1.grid_forget()
             goldenMushroomMidPrice2.grid_forget()
             goldenMushroomMidPrice34.grid_forget()
-            goldenMushroomMidPrice1.grid_forget()
-            goldenMushroomMidPrice2.grid_forget()
+            goldenMushroomLatePrice1.grid_forget()
+            goldenMushroomLatePrice2.grid_forget()
+            goldenMushroomLatePrice34.grid_forget()
             labelGoldenMushroom1.grid_forget()
             labelGoldenMushroom2.grid_forget()
             labelGoldenMushroom3.grid_forget()
@@ -1252,321 +1346,18 @@ def create_mario_party_4_interface(frame):
             labelGoldenMushroom6.grid_forget()
             labelGoldenMushroom7.grid_forget()
             labelGoldenMushroom8.grid_forget()
+            labelGoldenMushroom9.grid_forget()
 
-            hiddenBlockCardEarlyPrice1.grid_forget()
-            hiddenBlockCardEarlyPrice2.grid_forget()
-            hiddenBlockCardEarlyPrice34.grid_forget()
-            hiddenBlockCardMidPrice1.grid_forget()
-            hiddenBlockCardMidPrice2.grid_forget()
-            hiddenBlockCardMidPrice34.grid_forget()
-            hiddenBlockCardMidPrice1.grid_forget()
-            hiddenBlockCardMidPrice2.grid_forget()
-            labelHiddenBlockCard1.grid_forget()
-            labelHiddenBlockCard2.grid_forget()
-            labelHiddenBlockCard3.grid_forget()
-            labelHiddenBlockCard4.grid_forget()
-            labelHiddenBlockCard5.grid_forget()
-            labelHiddenBlockCard6.grid_forget()
-            labelHiddenBlockCard7.grid_forget()
-            labelHiddenBlockCard8.grid_forget()
-
-            celluarShopperEarlyPrice1.grid_forget()
-            celluarShopperEarlyPrice2.grid_forget()
-            celluarShopperEarlyPrice34.grid_forget()
-            celluarShopperMidPrice1.grid_forget()
-            celluarShopperMidPrice2.grid_forget()
-            celluarShopperMidPrice34.grid_forget()
-            celluarShopperMidPrice1.grid_forget()
-            celluarShopperMidPrice2.grid_forget()
-            labelCelluarShopper1.grid_forget()
-            labelCelluarShopper2.grid_forget()
-            labelCelluarShopper3.grid_forget()
-            labelCelluarShopper4.grid_forget()
-            labelCelluarShopper5.grid_forget()
-            labelCelluarShopper6.grid_forget()
-            labelCelluarShopper7.grid_forget()
-            labelCelluarShopper8.grid_forget()
-
-            barterBoxEarlyPrice1.grid_forget()
-            barterBoxEarlyPrice2.grid_forget()
-            barterBoxEarlyPrice34.grid_forget()
-            barterBoxMidPrice1.grid_forget()
-            barterBoxMidPrice2.grid_forget()
-            barterBoxMidPrice34.grid_forget()
-            barterBoxMidPrice1.grid_forget()
-            barterBoxMidPrice2.grid_forget()
-            labelBarterBox1.grid_forget()
-            labelBarterBox2.grid_forget()
-            labelBarterBox3.grid_forget()
-            labelBarterBox4.grid_forget()
-            labelBarterBox5.grid_forget()
-            labelBarterBox6.grid_forget()
-            labelBarterBox7.grid_forget()
-            labelBarterBox8.grid_forget()
-
-            superWarpPipeEarlyPrice1.grid_forget()
-            superWarpPipeEarlyPrice2.grid_forget()
-            superWarpPipeEarlyPrice34.grid_forget()
-            superWarpPipeMidPrice1.grid_forget()
-            superWarpPipeMidPrice2.grid_forget()
-            superWarpPipeMidPrice34.grid_forget()
-            superWarpPipeMidPrice1.grid_forget()
-            superWarpPipeMidPrice2.grid_forget()
-            labelSuperWarpPipe1.grid_forget()
-            labelSuperWarpPipe2.grid_forget()
-            labelSuperWarpPipe3.grid_forget()
-            labelSuperWarpPipe4.grid_forget()
-            labelSuperWarpPipe5.grid_forget()
-            labelSuperWarpPipe6.grid_forget()
-            labelSuperWarpPipe7.grid_forget()
-            labelSuperWarpPipe8.grid_forget()
-
-            chanceTimeCharmEarlyPrice1.grid_forget()
-            chanceTimeCharmEarlyPrice2.grid_forget()
-            chanceTimeCharmEarlyPrice34.grid_forget()
-            chanceTimeCharmMidPrice1.grid_forget()
-            chanceTimeCharmMidPrice2.grid_forget()
-            chanceTimeCharmMidPrice34.grid_forget()
-            chanceTimeCharmMidPrice1.grid_forget()
-            chanceTimeCharmMidPrice2.grid_forget()
-            labelChanceTimeCharm1.grid_forget()
-            labelChanceTimeCharm2.grid_forget()
-            labelChanceTimeCharm3.grid_forget()
-            labelChanceTimeCharm4.grid_forget()
-            labelChanceTimeCharm5.grid_forget()
-            labelChanceTimeCharm6.grid_forget()
-            labelChanceTimeCharm7.grid_forget()
-            labelChanceTimeCharm8.grid_forget()
-
-            wackyWatchEarlyPrice1.grid_forget()
-            wackyWatchEarlyPrice2.grid_forget()
-            wackyWatchEarlyPrice34.grid_forget()
-            wackyWatchMidPrice1.grid_forget()
-            wackyWatchMidPrice2.grid_forget()
-            wackyWatchMidPrice34.grid_forget()
-            wackyWatchMidPrice1.grid_forget()
-            wackyWatchMidPrice2.grid_forget()
-            labelWackyWatch1.grid_forget()
-            labelWackyWatch2.grid_forget()
-            labelWackyWatch3.grid_forget()
-            labelWackyWatch4.grid_forget()
-            labelWackyWatch5.grid_forget()
-            labelWackyWatch6.grid_forget()
-            labelWackyWatch7.grid_forget()
-            labelWackyWatch8.grid_forget()
-
-            plunderChestEarlyPrice1.grid_forget()
-            plunderChestEarlyPrice2.grid_forget()
-            plunderChestEarlyPrice34.grid_forget()
-            plunderChestMidPrice1.grid_forget()
-            plunderChestMidPrice2.grid_forget()
-            plunderChestMidPrice34.grid_forget()
-            plunderChestMidPrice1.grid_forget()
-            plunderChestMidPrice2.grid_forget()
-            labelPlunderChest1.grid_forget()
-            labelPlunderChest2.grid_forget()
-            labelPlunderChest3.grid_forget()
-            labelPlunderChest4.grid_forget()
-            labelPlunderChest5.grid_forget()
-            labelPlunderChest6.grid_forget()
-            labelPlunderChest7.grid_forget()
-            labelPlunderChest8.grid_forget()
-
-            gaddbrushEarlyPrice1.grid_forget()
-            gaddbrushEarlyPrice2.grid_forget()
-            gaddbrushEarlyPrice34.grid_forget()
-            gaddbrushMidPrice1.grid_forget()
-            gaddbrushMidPrice2.grid_forget()
-            gaddbrushMidPrice34.grid_forget()
-            gaddbrushMidPrice1.grid_forget()
-            gaddbrushMidPrice2.grid_forget()
-            labelGaddbrush1.grid_forget()
-            labelGaddbrush2.grid_forget()
-            labelGaddbrush3.grid_forget()
-            labelGaddbrush4.grid_forget()
-            labelGaddbrush5.grid_forget()
-            labelGaddbrush6.grid_forget()
-            labelGaddbrush7.grid_forget()
-            labelGaddbrush8.grid_forget()
-
-            skeletonKeyEarlyPrice1.grid_forget()
-            skeletonKeyEarlyPrice2.grid_forget()
-            skeletonKeyEarlyPrice34.grid_forget()
-            skeletonKeyMidPrice1.grid_forget()
-            skeletonKeyMidPrice2.grid_forget()
-            skeletonKeyMidPrice34.grid_forget()
-            skeletonKeyMidPrice1.grid_forget()
-            skeletonKeyMidPrice2.grid_forget()
-            labelSkeletonKey1.grid_forget()
-            labelSkeletonKey2.grid_forget()
-            labelSkeletonKey3.grid_forget()
-            labelSkeletonKey4.grid_forget()
-            labelSkeletonKey5.grid_forget()
-            labelSkeletonKey6.grid_forget()
-            labelSkeletonKey7.grid_forget()
-            labelSkeletonKey8.grid_forget()
-
-            warpBlockEarlyPrice1.grid_forget()
-            warpBlockEarlyPrice2.grid_forget()
-            warpBlockEarlyPrice34.grid_forget()
-            warpBlockMidPrice1.grid_forget()
-            warpBlockMidPrice2.grid_forget()
-            warpBlockMidPrice34.grid_forget()
-            warpBlockMidPrice1.grid_forget()
-            warpBlockMidPrice2.grid_forget()
-            labelWarpBlock1.grid_forget()
-            labelWarpBlock2.grid_forget()
-            labelWarpBlock3.grid_forget()
-            labelWarpBlock4.grid_forget()
-            labelWarpBlock5.grid_forget()
-            labelWarpBlock6.grid_forget()
-            labelWarpBlock7.grid_forget()
-            labelWarpBlock8.grid_forget()
-
-            flyGuyEarlyPrice1.grid_forget()
-            flyGuyEarlyPrice2.grid_forget()
-            flyGuyEarlyPrice34.grid_forget()
-            flyGuyMidPrice1.grid_forget()
-            flyGuyMidPrice2.grid_forget()
-            flyGuyMidPrice34.grid_forget()
-            flyGuyMidPrice1.grid_forget()
-            flyGuyMidPrice2.grid_forget()
-            labelFlyGuy1.grid_forget()
-            labelFlyGuy2.grid_forget()
-            labelFlyGuy3.grid_forget()
-            labelFlyGuy4.grid_forget()
-            labelFlyGuy5.grid_forget()
-            labelFlyGuy6.grid_forget()
-            labelFlyGuy7.grid_forget()
-            labelFlyGuy8.grid_forget()
-
-            plusBlockEarlyPrice1.grid_forget()
-            plusBlockEarlyPrice2.grid_forget()
-            plusBlockEarlyPrice34.grid_forget()
-            plusBlockMidPrice1.grid_forget()
-            plusBlockMidPrice2.grid_forget()
-            plusBlockMidPrice34.grid_forget()
-            plusBlockMidPrice1.grid_forget()
-            plusBlockMidPrice2.grid_forget()
-            labelPlusBlock1.grid_forget()
-            labelPlusBlock2.grid_forget()
-            labelPlusBlock3.grid_forget()
-            labelPlusBlock4.grid_forget()
-            labelPlusBlock5.grid_forget()
-            labelPlusBlock6.grid_forget()
-            labelPlusBlock7.grid_forget()
-            labelPlusBlock8.grid_forget()
-
-            minusBlockEarlyPrice1.grid_forget()
-            minusBlockEarlyPrice2.grid_forget()
-            minusBlockEarlyPrice34.grid_forget()
-            minusBlockMidPrice1.grid_forget()
-            minusBlockMidPrice2.grid_forget()
-            minusBlockMidPrice34.grid_forget()
-            minusBlockMidPrice1.grid_forget()
-            minusBlockMidPrice2.grid_forget()
-            labelMinusBlock1.grid_forget()
-            labelMinusBlock2.grid_forget()
-            labelMinusBlock3.grid_forget()
-            labelMinusBlock4.grid_forget()
-            labelMinusBlock5.grid_forget()
-            labelMinusBlock6.grid_forget()
-            labelMinusBlock7.grid_forget()
-            labelMinusBlock8.grid_forget()
-
-            speedBlockEarlyPrice1.grid_forget()
-            speedBlockEarlyPrice2.grid_forget()
-            speedBlockEarlyPrice34.grid_forget()
-            speedBlockMidPrice1.grid_forget()
-            speedBlockMidPrice2.grid_forget()
-            speedBlockMidPrice34.grid_forget()
-            speedBlockMidPrice1.grid_forget()
-            speedBlockMidPrice2.grid_forget()
-            labelSpeedBlock1.grid_forget()
-            labelSpeedBlock2.grid_forget()
-            labelSpeedBlock3.grid_forget()
-            labelSpeedBlock4.grid_forget()
-            labelSpeedBlock5.grid_forget()
-            labelSpeedBlock6.grid_forget()
-            labelSpeedBlock7.grid_forget()
-            labelSpeedBlock8.grid_forget()
-
-            slowBlockEarlyPrice1.grid_forget()
-            slowBlockEarlyPrice2.grid_forget()
-            slowBlockEarlyPrice34.grid_forget()
-            slowBlockMidPrice1.grid_forget()
-            slowBlockMidPrice2.grid_forget()
-            slowBlockMidPrice34.grid_forget()
-            slowBlockMidPrice1.grid_forget()
-            slowBlockMidPrice2.grid_forget()
-            labelSlowBlock1.grid_forget()
-            labelSlowBlock2.grid_forget()
-            labelSlowBlock3.grid_forget()
-            labelSlowBlock4.grid_forget()
-            labelSlowBlock5.grid_forget()
-            labelSlowBlock6.grid_forget()
-            labelSlowBlock7.grid_forget()
-            labelSlowBlock8.grid_forget()
-
-            poisonMushroomEarlyPrice1.grid_forget()
-            poisonMushroomEarlyPrice2.grid_forget()
-            poisonMushroomEarlyPrice34.grid_forget()
-            poisonMushroomMidPrice1.grid_forget()
-            poisonMushroomMidPrice2.grid_forget()
-            poisonMushroomMidPrice34.grid_forget()
-            poisonMushroomMidPrice1.grid_forget()
-            poisonMushroomMidPrice2.grid_forget()
-            labelPoisonMushroom1.grid_forget()
-            labelPoisonMushroom2.grid_forget()
-            labelPoisonMushroom3.grid_forget()
-            labelPoisonMushroom4.grid_forget()
-            labelPoisonMushroom5.grid_forget()
-            labelPoisonMushroom6.grid_forget()
-            labelPoisonMushroom7.grid_forget()
-            labelPoisonMushroom8.grid_forget()
-
-            triplePoisonMushroomEarlyPrice1.grid_forget()
-            triplePoisonMushroomEarlyPrice2.grid_forget()
-            triplePoisonMushroomEarlyPrice34.grid_forget()
-            triplePoisonMushroomMidPrice1.grid_forget()
-            triplePoisonMushroomMidPrice2.grid_forget()
-            triplePoisonMushroomMidPrice34.grid_forget()
-            triplePoisonMushroomMidPrice1.grid_forget()
-            triplePoisonMushroomMidPrice2.grid_forget()
-            labelTriplePoisonMushroom1.grid_forget()
-            labelTriplePoisonMushroom2.grid_forget()
-            labelTriplePoisonMushroom3.grid_forget()
-            labelTriplePoisonMushroom4.grid_forget()
-            labelTriplePoisonMushroom5.grid_forget()
-            labelTriplePoisonMushroom6.grid_forget()
-            labelTriplePoisonMushroom7.grid_forget()
-            labelTriplePoisonMushroom8.grid_forget()
-
-            doubleDipEarlyPrice1.grid_forget()
-            doubleDipEarlyPrice2.grid_forget()
-            doubleDipEarlyPrice34.grid_forget()
-            doubleDipMidPrice1.grid_forget()
-            doubleDipMidPrice2.grid_forget()
-            doubleDipMidPrice34.grid_forget()
-            doubleDipMidPrice1.grid_forget()
-            doubleDipMidPrice2.grid_forget()
-            labelDoubleDip1.grid_forget()
-            labelDoubleDip2.grid_forget()
-            labelDoubleDip3.grid_forget()
-            labelDoubleDip4.grid_forget()
-            labelDoubleDip5.grid_forget()
-            labelDoubleDip6.grid_forget()
-            labelDoubleDip7.grid_forget()
-            labelDoubleDip8.grid_forget()
-
+            # Reverse Mushroom: DX
             reverseMushroomEarlyPrice1.grid_forget()
             reverseMushroomEarlyPrice2.grid_forget()
             reverseMushroomEarlyPrice34.grid_forget()
             reverseMushroomMidPrice1.grid_forget()
             reverseMushroomMidPrice2.grid_forget()
             reverseMushroomMidPrice34.grid_forget()
-            reverseMushroomMidPrice1.grid_forget()
-            reverseMushroomMidPrice2.grid_forget()
+            reverseMushroomLatePrice1.grid_forget()
+            reverseMushroomLatePrice2.grid_forget()
+            reverseMushroomLatePrice34.grid_forget()
             labelReverseMushroom1.grid_forget()
             labelReverseMushroom2.grid_forget()
             labelReverseMushroom3.grid_forget()
@@ -1575,6 +1366,387 @@ def create_mario_party_4_interface(frame):
             labelReverseMushroom6.grid_forget()
             labelReverseMushroom7.grid_forget()
             labelReverseMushroom8.grid_forget()
+            labelReverseMushroom9.grid_forget()
+
+            # Poison Mushroom: DX
+            poisonMushroomEarlyPrice1.grid_forget()
+            poisonMushroomEarlyPrice2.grid_forget()
+            poisonMushroomEarlyPrice34.grid_forget()
+            poisonMushroomMidPrice1.grid_forget()
+            poisonMushroomMidPrice2.grid_forget()
+            poisonMushroomMidPrice34.grid_forget()
+            poisonMushroomLatePrice1.grid_forget()
+            poisonMushroomLatePrice2.grid_forget()
+            poisonMushroomLatePrice34.grid_forget()
+            labelPoisonMushroom1.grid_forget()
+            labelPoisonMushroom2.grid_forget()
+            labelPoisonMushroom3.grid_forget()
+            labelPoisonMushroom4.grid_forget()
+            labelPoisonMushroom5.grid_forget()
+            labelPoisonMushroom6.grid_forget()
+            labelPoisonMushroom7.grid_forget()
+            labelPoisonMushroom8.grid_forget()
+            labelPoisonMushroom9.grid_forget()
+
+            # Triple Poison Mushroom: DX
+            triplePoisonMushroomEarlyPrice1.grid_forget()
+            triplePoisonMushroomEarlyPrice2.grid_forget()
+            triplePoisonMushroomEarlyPrice34.grid_forget()
+            triplePoisonMushroomMidPrice1.grid_forget()
+            triplePoisonMushroomMidPrice2.grid_forget()
+            triplePoisonMushroomMidPrice34.grid_forget()
+            triplePoisonMushroomLatePrice1.grid_forget()
+            triplePoisonMushroomLatePrice2.grid_forget()
+            triplePoisonMushroomLatePrice34.grid_forget()
+            labelTriplePoisonMushroom1.grid_forget()
+            labelTriplePoisonMushroom2.grid_forget()
+            labelTriplePoisonMushroom3.grid_forget()
+            labelTriplePoisonMushroom4.grid_forget()
+            labelTriplePoisonMushroom5.grid_forget()
+            labelTriplePoisonMushroom6.grid_forget()
+            labelTriplePoisonMushroom7.grid_forget()
+            labelTriplePoisonMushroom8.grid_forget()
+            labelTriplePoisonMushroom9.grid_forget()
+
+            # Celluar Shopper: DX
+            celluarShopperEarlyPrice1.grid_forget()
+            celluarShopperEarlyPrice2.grid_forget()
+            celluarShopperEarlyPrice34.grid_forget()
+            celluarShopperMidPrice1.grid_forget()
+            celluarShopperMidPrice2.grid_forget()
+            celluarShopperMidPrice34.grid_forget()
+            celluarShopperLatePrice1.grid_forget()
+            celluarShopperLatePrice2.grid_forget()
+            celluarShopperLatePrice34.grid_forget()
+            labelCelluarShopper1.grid_forget()
+            labelCelluarShopper2.grid_forget()
+            labelCelluarShopper3.grid_forget()
+            labelCelluarShopper4.grid_forget()
+            labelCelluarShopper5.grid_forget()
+            labelCelluarShopper6.grid_forget()
+            labelCelluarShopper7.grid_forget()
+            labelCelluarShopper8.grid_forget()
+            labelCelluarShopper9.grid_forget()
+
+            # Skeleton Key: DX
+            skeletonKeyEarlyPrice1.grid_forget()
+            skeletonKeyEarlyPrice2.grid_forget()
+            skeletonKeyEarlyPrice34.grid_forget()
+            skeletonKeyMidPrice1.grid_forget()
+            skeletonKeyMidPrice2.grid_forget()
+            skeletonKeyMidPrice34.grid_forget()
+            skeletonKeyLatePrice1.grid_forget()
+            skeletonKeyLatePrice2.grid_forget()
+            skeletonKeyLatePrice34.grid_forget()
+            labelSkeletonKey1.grid_forget()
+            labelSkeletonKey2.grid_forget()
+            labelSkeletonKey3.grid_forget()
+            labelSkeletonKey4.grid_forget()
+            labelSkeletonKey5.grid_forget()
+            labelSkeletonKey6.grid_forget()
+            labelSkeletonKey7.grid_forget()
+            labelSkeletonKey8.grid_forget()
+            labelSkeletonKey9.grid_forget()
+
+            # Plunder Chest: DX
+            plunderChestEarlyPrice1.grid_forget()
+            plunderChestEarlyPrice2.grid_forget()
+            plunderChestEarlyPrice34.grid_forget()
+            plunderChestMidPrice1.grid_forget()
+            plunderChestMidPrice2.grid_forget()
+            plunderChestMidPrice34.grid_forget()
+            plunderChestLatePrice1.grid_forget()
+            plunderChestLatePrice2.grid_forget()
+            plunderChestLatePrice34.grid_forget()
+            labelPlunderChest1.grid_forget()
+            labelPlunderChest2.grid_forget()
+            labelPlunderChest3.grid_forget()
+            labelPlunderChest4.grid_forget()
+            labelPlunderChest5.grid_forget()
+            labelPlunderChest6.grid_forget()
+            labelPlunderChest7.grid_forget()
+            labelPlunderChest8.grid_forget()
+            labelPlunderChest9.grid_forget()
+
+            # Gaddbrush: DX
+            gaddbrushEarlyPrice1.grid_forget()
+            gaddbrushEarlyPrice2.grid_forget()
+            gaddbrushEarlyPrice34.grid_forget()
+            gaddbrushMidPrice1.grid_forget()
+            gaddbrushMidPrice2.grid_forget()
+            gaddbrushMidPrice34.grid_forget()
+            gaddbrushLatePrice1.grid_forget()
+            gaddbrushLatePrice2.grid_forget()
+            gaddbrushLatePrice34.grid_forget()
+            labelGaddbrush1.grid_forget()
+            labelGaddbrush2.grid_forget()
+            labelGaddbrush3.grid_forget()
+            labelGaddbrush4.grid_forget()
+            labelGaddbrush5.grid_forget()
+            labelGaddbrush6.grid_forget()
+            labelGaddbrush7.grid_forget()
+            labelGaddbrush8.grid_forget()
+            labelGaddbrush9.grid_forget()
+
+            # Warp Block: DX
+            warpBlockEarlyPrice1.grid_forget()
+            warpBlockEarlyPrice2.grid_forget()
+            warpBlockEarlyPrice34.grid_forget()
+            warpBlockMidPrice1.grid_forget()
+            warpBlockMidPrice2.grid_forget()
+            warpBlockMidPrice34.grid_forget()
+            warpBlockLatePrice1.grid_forget()
+            warpBlockLatePrice2.grid_forget()
+            warpBlockLatePrice34.grid_forget()
+            labelWarpBlock1.grid_forget()
+            labelWarpBlock2.grid_forget()
+            labelWarpBlock3.grid_forget()
+            labelWarpBlock4.grid_forget()
+            labelWarpBlock5.grid_forget()
+            labelWarpBlock6.grid_forget()
+            labelWarpBlock7.grid_forget()
+            labelWarpBlock8.grid_forget()
+            labelWarpBlock9.grid_forget()
+
+            # Fly Guy: DX
+            flyGuyEarlyPrice1.grid_forget()
+            flyGuyEarlyPrice2.grid_forget()
+            flyGuyEarlyPrice34.grid_forget()
+            flyGuyMidPrice1.grid_forget()
+            flyGuyMidPrice2.grid_forget()
+            flyGuyMidPrice34.grid_forget()
+            flyGuyLatePrice1.grid_forget()
+            flyGuyLatePrice2.grid_forget()
+            flyGuyLatePrice34.grid_forget()
+            labelFlyGuy1.grid_forget()
+            labelFlyGuy2.grid_forget()
+            labelFlyGuy3.grid_forget()
+            labelFlyGuy4.grid_forget()
+            labelFlyGuy5.grid_forget()
+            labelFlyGuy6.grid_forget()
+            labelFlyGuy7.grid_forget()
+            labelFlyGuy8.grid_forget()
+            labelFlyGuy9.grid_forget()
+
+            # Plus Block: DX
+            plusBlockEarlyPrice1.grid_forget()
+            plusBlockEarlyPrice2.grid_forget()
+            plusBlockEarlyPrice34.grid_forget()
+            plusBlockMidPrice1.grid_forget()
+            plusBlockMidPrice2.grid_forget()
+            plusBlockMidPrice34.grid_forget()
+            plusBlockLatePrice1.grid_forget()
+            plusBlockLatePrice2.grid_forget()
+            plusBlockLatePrice34.grid_forget()
+            labelPlusBlock1.grid_forget()
+            labelPlusBlock2.grid_forget()
+            labelPlusBlock3.grid_forget()
+            labelPlusBlock4.grid_forget()
+            labelPlusBlock5.grid_forget()
+            labelPlusBlock6.grid_forget()
+            labelPlusBlock7.grid_forget()
+            labelPlusBlock8.grid_forget()
+            labelPlusBlock9.grid_forget()
+
+            # Minus Block: DX
+            minusBlockEarlyPrice1.grid_forget()
+            minusBlockEarlyPrice2.grid_forget()
+            minusBlockEarlyPrice34.grid_forget()
+            minusBlockMidPrice1.grid_forget()
+            minusBlockMidPrice2.grid_forget()
+            minusBlockMidPrice34.grid_forget()
+            minusBlockLatePrice1.grid_forget()
+            minusBlockLatePrice2.grid_forget()
+            minusBlockLatePrice34.grid_forget()
+            labelMinusBlock1.grid_forget()
+            labelMinusBlock2.grid_forget()
+            labelMinusBlock3.grid_forget()
+            labelMinusBlock4.grid_forget()
+            labelMinusBlock5.grid_forget()
+            labelMinusBlock6.grid_forget()
+            labelMinusBlock7.grid_forget()
+            labelMinusBlock8.grid_forget()
+            labelMinusBlock9.grid_forget()
+
+            # Speed Block: DX
+            speedBlockEarlyPrice1.grid_forget()
+            speedBlockEarlyPrice2.grid_forget()
+            speedBlockEarlyPrice34.grid_forget()
+            speedBlockMidPrice1.grid_forget()
+            speedBlockMidPrice2.grid_forget()
+            speedBlockMidPrice34.grid_forget()
+            speedBlockLatePrice1.grid_forget()
+            speedBlockLatePrice2.grid_forget()
+            speedBlockLatePrice34.grid_forget()
+            labelSpeedBlock1.grid_forget()
+            labelSpeedBlock2.grid_forget()
+            labelSpeedBlock3.grid_forget()
+            labelSpeedBlock4.grid_forget()
+            labelSpeedBlock5.grid_forget()
+            labelSpeedBlock6.grid_forget()
+            labelSpeedBlock7.grid_forget()
+            labelSpeedBlock8.grid_forget()
+            labelSpeedBlock9.grid_forget()
+
+            # Slow Block: DX
+            slowBlockEarlyPrice1.grid_forget()
+            slowBlockEarlyPrice2.grid_forget()
+            slowBlockEarlyPrice34.grid_forget()
+            slowBlockMidPrice1.grid_forget()
+            slowBlockMidPrice2.grid_forget()
+            slowBlockMidPrice34.grid_forget()
+            slowBlockLatePrice1.grid_forget()
+            slowBlockLatePrice2.grid_forget()
+            slowBlockLatePrice34.grid_forget()
+            labelSlowBlock1.grid_forget()
+            labelSlowBlock2.grid_forget()
+            labelSlowBlock3.grid_forget()
+            labelSlowBlock4.grid_forget()
+            labelSlowBlock5.grid_forget()
+            labelSlowBlock6.grid_forget()
+            labelSlowBlock7.grid_forget()
+            labelSlowBlock8.grid_forget()
+            labelSlowBlock9.grid_forget()
+
+            # Bowser Phone: DX
+            bowserPhoneEarlyPrice1.grid_forget()
+            bowserPhoneEarlyPrice2.grid_forget()
+            bowserPhoneEarlyPrice34.grid_forget()
+            bowserPhoneMidPrice1.grid_forget()
+            bowserPhoneMidPrice2.grid_forget()
+            bowserPhoneMidPrice34.grid_forget()
+            bowserPhoneLatePrice1.grid_forget()
+            bowserPhoneLatePrice2.grid_forget()
+            bowserPhoneLatePrice34.grid_forget()
+            labelBowserPhone1.grid_forget()
+            labelBowserPhone2.grid_forget()
+            labelBowserPhone3.grid_forget()
+            labelBowserPhone4.grid_forget()
+            labelBowserPhone5.grid_forget()
+            labelBowserPhone6.grid_forget()
+            labelBowserPhone7.grid_forget()
+            labelBowserPhone8.grid_forget()
+            labelBowserPhone9.grid_forget()
+
+            # Double Dip: DX
+            doubleDipEarlyPrice1.grid_forget()
+            doubleDipEarlyPrice2.grid_forget()
+            doubleDipEarlyPrice34.grid_forget()
+            doubleDipMidPrice1.grid_forget()
+            doubleDipMidPrice2.grid_forget()
+            doubleDipMidPrice34.grid_forget()
+            doubleDipLatePrice1.grid_forget()
+            doubleDipLatePrice2.grid_forget()
+            doubleDipLatePrice34.grid_forget()
+            labelDoubleDip1.grid_forget()
+            labelDoubleDip2.grid_forget()
+            labelDoubleDip3.grid_forget()
+            labelDoubleDip4.grid_forget()
+            labelDoubleDip5.grid_forget()
+            labelDoubleDip6.grid_forget()
+            labelDoubleDip7.grid_forget()
+            labelDoubleDip8.grid_forget()
+            labelDoubleDip9.grid_forget()
+
+            # Hidden Block Card: DX
+            hiddenBlockCardEarlyPrice1.grid_forget()
+            hiddenBlockCardEarlyPrice2.grid_forget()
+            hiddenBlockCardEarlyPrice34.grid_forget()
+            hiddenBlockCardMidPrice1.grid_forget()
+            hiddenBlockCardMidPrice2.grid_forget()
+            hiddenBlockCardMidPrice34.grid_forget()
+            hiddenBlockCardLatePrice1.grid_forget()
+            hiddenBlockCardLatePrice2.grid_forget()
+            hiddenBlockCardLatePrice34.grid_forget()
+            labelHiddenBlockCard1.grid_forget()
+            labelHiddenBlockCard2.grid_forget()
+            labelHiddenBlockCard3.grid_forget()
+            labelHiddenBlockCard4.grid_forget()
+            labelHiddenBlockCard5.grid_forget()
+            labelHiddenBlockCard6.grid_forget()
+            labelHiddenBlockCard7.grid_forget()
+            labelHiddenBlockCard8.grid_forget()
+            labelHiddenBlockCard9.grid_forget()
+
+            # Barter Box: DX
+            barterBoxEarlyPrice1.grid_forget()
+            barterBoxEarlyPrice2.grid_forget()
+            barterBoxEarlyPrice34.grid_forget()
+            barterBoxMidPrice1.grid_forget()
+            barterBoxMidPrice2.grid_forget()
+            barterBoxMidPrice34.grid_forget()
+            barterBoxLatePrice1.grid_forget()
+            barterBoxLatePrice2.grid_forget()
+            barterBoxLatePrice34.grid_forget()
+            labelBarterBox1.grid_forget()
+            labelBarterBox2.grid_forget()
+            labelBarterBox3.grid_forget()
+            labelBarterBox4.grid_forget()
+            labelBarterBox5.grid_forget()
+            labelBarterBox6.grid_forget()
+            labelBarterBox7.grid_forget()
+            labelBarterBox8.grid_forget()
+            labelBarterBox9.grid_forget()
+
+            # Super Warp Pipe: DX
+            superWarpPipeEarlyPrice1.grid_forget()
+            superWarpPipeEarlyPrice2.grid_forget()
+            superWarpPipeEarlyPrice34.grid_forget()
+            superWarpPipeMidPrice1.grid_forget()
+            superWarpPipeMidPrice2.grid_forget()
+            superWarpPipeMidPrice34.grid_forget()
+            superWarpPipeLatePrice1.grid_forget()
+            superWarpPipeLatePrice2.grid_forget()
+            superWarpPipeLatePrice34.grid_forget()
+            labelSuperWarpPipe1.grid_forget()
+            labelSuperWarpPipe2.grid_forget()
+            labelSuperWarpPipe3.grid_forget()
+            labelSuperWarpPipe4.grid_forget()
+            labelSuperWarpPipe5.grid_forget()
+            labelSuperWarpPipe6.grid_forget()
+            labelSuperWarpPipe7.grid_forget()
+            labelSuperWarpPipe8.grid_forget()
+            labelSuperWarpPipe9.grid_forget()
+
+            # Chance Time Charm: DX
+            chanceTimeCharmEarlyPrice1.grid_forget()
+            chanceTimeCharmEarlyPrice2.grid_forget()
+            chanceTimeCharmEarlyPrice34.grid_forget()
+            chanceTimeCharmMidPrice1.grid_forget()
+            chanceTimeCharmMidPrice2.grid_forget()
+            chanceTimeCharmMidPrice34.grid_forget()
+            chanceTimeCharmLatePrice1.grid_forget()
+            chanceTimeCharmLatePrice2.grid_forget()
+            chanceTimeCharmLatePrice34.grid_forget()
+            labelChanceTimeCharm1.grid_forget()
+            labelChanceTimeCharm2.grid_forget()
+            labelChanceTimeCharm3.grid_forget()
+            labelChanceTimeCharm4.grid_forget()
+            labelChanceTimeCharm5.grid_forget()
+            labelChanceTimeCharm6.grid_forget()
+            labelChanceTimeCharm7.grid_forget()
+            labelChanceTimeCharm8.grid_forget()
+            labelChanceTimeCharm9.grid_forget()
+
+            # Wacky Watch: DX
+            wackyWatchEarlyPrice1.grid_forget()
+            wackyWatchEarlyPrice2.grid_forget()
+            wackyWatchEarlyPrice34.grid_forget()
+            wackyWatchMidPrice1.grid_forget()
+            wackyWatchMidPrice2.grid_forget()
+            wackyWatchMidPrice34.grid_forget()
+            wackyWatchLatePrice1.grid_forget()
+            wackyWatchLatePrice2.grid_forget()
+            wackyWatchLatePrice34.grid_forget()
+            labelWackyWatch1.grid_forget()
+            labelWackyWatch2.grid_forget()
+            labelWackyWatch3.grid_forget()
+            labelWackyWatch4.grid_forget()
+            labelWackyWatch5.grid_forget()
+            labelWackyWatch6.grid_forget()
+            labelWackyWatch7.grid_forget()
+            labelWackyWatch8.grid_forget()
+            labelWackyWatch9.grid_forget()
 
             for i in range(16, 38):
                 for widget in content_frame.winfo_children():
@@ -1593,8 +1765,9 @@ def create_mario_party_4_interface(frame):
             mushroomMidPrice1.grid(row=16, column=9)
             mushroomMidPrice2.grid(row=16, column=11)
             mushroomMidPrice34.grid(row=16, column=13)
-            mushroomMidPrice1.grid(row=16, column=15)
-            mushroomMidPrice2.grid(row=16, column=17)
+            mushroomLatePrice1.grid(row=16, column=15)
+            mushroomLatePrice2.grid(row=16, column=17)
+            mushroomLatePrice2.grid(row=16, column=19)
             labelMushroom1.grid(row=16, column=2)
             labelMushroom2.grid(row=16, column=4)
             labelMushroom3.grid(row=16, column=6)
@@ -1603,6 +1776,7 @@ def create_mario_party_4_interface(frame):
             labelMushroom6.grid(row=16, column=12)
             labelMushroom7.grid(row=16, column=14)
             labelMushroom8.grid(row=16, column=16)
+            labelMushroom9.grid(row=16, column=18)
 
             # Golden Mushroom: DX
             goldenMushroomEarlyPrice1.grid(row=17, column=3)
@@ -1611,8 +1785,9 @@ def create_mario_party_4_interface(frame):
             goldenMushroomMidPrice1.grid(row=17, column=9)
             goldenMushroomMidPrice2.grid(row=17, column=11)
             goldenMushroomMidPrice34.grid(row=17, column=13)
-            goldenMushroomMidPrice1.grid(row=17, column=15)
-            goldenMushroomMidPrice2.grid(row=17, column=17)
+            goldenMushroomLatePrice1.grid(row=17, column=15)
+            goldenMushroomLatePrice2.grid(row=17, column=17)
+            goldenMushroomLatePrice34.grid(row=17, column=19)
             labelGoldenMushroom1.grid(row=17, column=2)
             labelGoldenMushroom2.grid(row=17, column=4)
             labelGoldenMushroom3.grid(row=17, column=6)
@@ -1621,6 +1796,7 @@ def create_mario_party_4_interface(frame):
             labelGoldenMushroom6.grid(row=17, column=12)
             labelGoldenMushroom7.grid(row=17, column=14)
             labelGoldenMushroom8.grid(row=17, column=16)
+            labelGoldenMushroom9.grid(row=17, column=18)
 
             # Reverse Mushroom: DX
             reverseMushroomEarlyPrice1.grid(row=18, column=3)
@@ -1629,8 +1805,9 @@ def create_mario_party_4_interface(frame):
             reverseMushroomMidPrice1.grid(row=18, column=9)
             reverseMushroomMidPrice2.grid(row=18, column=11)
             reverseMushroomMidPrice34.grid(row=18, column=13)
-            reverseMushroomMidPrice1.grid(row=18, column=15)
-            reverseMushroomMidPrice2.grid(row=18, column=17)
+            reverseMushroomLatePrice1.grid(row=18, column=15)
+            reverseMushroomLatePrice2.grid(row=18, column=17)
+            reverseMushroomLatePrice34.grid(row=18, column=19)
             labelReverseMushroom1.grid(row=18, column=2)
             labelReverseMushroom2.grid(row=18, column=4)
             labelReverseMushroom3.grid(row=18, column=6)
@@ -1639,6 +1816,7 @@ def create_mario_party_4_interface(frame):
             labelReverseMushroom6.grid(row=18, column=12)
             labelReverseMushroom7.grid(row=18, column=14)
             labelReverseMushroom8.grid(row=18, column=16)
+            labelReverseMushroom9.grid(row=18, column=18)
 
             # Poison Mushroom: DX
             poisonMushroomEarlyPrice1.grid(row=19, column=3)
@@ -1647,8 +1825,9 @@ def create_mario_party_4_interface(frame):
             poisonMushroomMidPrice1.grid(row=19, column=9)
             poisonMushroomMidPrice2.grid(row=19, column=11)
             poisonMushroomMidPrice34.grid(row=19, column=13)
-            poisonMushroomMidPrice1.grid(row=19, column=15)
-            poisonMushroomMidPrice2.grid(row=19, column=17)
+            poisonMushroomLatePrice1.grid(row=19, column=15)
+            poisonMushroomLatePrice2.grid(row=19, column=17)
+            poisonMushroomLatePrice34.grid(row=19, column=19)
             labelPoisonMushroom1.grid(row=19, column=2)
             labelPoisonMushroom2.grid(row=19, column=4)
             labelPoisonMushroom3.grid(row=19, column=6)
@@ -1657,6 +1836,7 @@ def create_mario_party_4_interface(frame):
             labelPoisonMushroom6.grid(row=19, column=12)
             labelPoisonMushroom7.grid(row=19, column=14)
             labelPoisonMushroom8.grid(row=19, column=16)
+            labelPoisonMushroom9.grid(row=19, column=18)
 
             # Triple Poison Mushroom: DX
             triplePoisonMushroomEarlyPrice1.grid(row=20, column=3)
@@ -1665,8 +1845,9 @@ def create_mario_party_4_interface(frame):
             triplePoisonMushroomMidPrice1.grid(row=20, column=9)
             triplePoisonMushroomMidPrice2.grid(row=20, column=11)
             triplePoisonMushroomMidPrice34.grid(row=20, column=13)
-            triplePoisonMushroomMidPrice1.grid(row=20, column=15)
-            triplePoisonMushroomMidPrice2.grid(row=20, column=17)
+            triplePoisonMushroomLatePrice1.grid(row=20, column=15)
+            triplePoisonMushroomLatePrice2.grid(row=20, column=17)
+            triplePoisonMushroomLatePrice34.grid(row=20, column=19)
             labelTriplePoisonMushroom1.grid(row=20, column=2)
             labelTriplePoisonMushroom2.grid(row=20, column=4)
             labelTriplePoisonMushroom3.grid(row=20, column=6)
@@ -1675,16 +1856,18 @@ def create_mario_party_4_interface(frame):
             labelTriplePoisonMushroom6.grid(row=20, column=12)
             labelTriplePoisonMushroom7.grid(row=20, column=14)
             labelTriplePoisonMushroom8.grid(row=20, column=16)
+            labelTriplePoisonMushroom9.grid(row=20, column=18)
 
-            # Cellular Shopper: DX
+            # Celluar Shopper: DX
             celluarShopperEarlyPrice1.grid(row=21, column=3)
             celluarShopperEarlyPrice2.grid(row=21, column=5)
             celluarShopperEarlyPrice34.grid(row=21, column=7)
             celluarShopperMidPrice1.grid(row=21, column=9)
             celluarShopperMidPrice2.grid(row=21, column=11)
             celluarShopperMidPrice34.grid(row=21, column=13)
-            celluarShopperMidPrice1.grid(row=21, column=15)
-            celluarShopperMidPrice2.grid(row=21, column=17)
+            celluarShopperLatePrice1.grid(row=21, column=15)
+            celluarShopperLatePrice2.grid(row=21, column=17)
+            celluarShopperLatePrice34.grid(row=21, column=19)
             labelCelluarShopper1.grid(row=21, column=2)
             labelCelluarShopper2.grid(row=21, column=4)
             labelCelluarShopper3.grid(row=21, column=6)
@@ -1693,6 +1876,7 @@ def create_mario_party_4_interface(frame):
             labelCelluarShopper6.grid(row=21, column=12)
             labelCelluarShopper7.grid(row=21, column=14)
             labelCelluarShopper8.grid(row=21, column=16)
+            labelCelluarShopper9.grid(row=21, column=18)
 
             # Skeleton Key: DX
             skeletonKeyEarlyPrice1.grid(row=22, column=3)
@@ -1701,8 +1885,9 @@ def create_mario_party_4_interface(frame):
             skeletonKeyMidPrice1.grid(row=22, column=9)
             skeletonKeyMidPrice2.grid(row=22, column=11)
             skeletonKeyMidPrice34.grid(row=22, column=13)
-            skeletonKeyMidPrice1.grid(row=22, column=15)
-            skeletonKeyMidPrice2.grid(row=22, column=17)
+            skeletonKeyLatePrice1.grid(row=22, column=15)
+            skeletonKeyLatePrice2.grid(row=22, column=17)
+            skeletonKeyLatePrice34.grid(row=22, column=19)
             labelSkeletonKey1.grid(row=22, column=2)
             labelSkeletonKey2.grid(row=22, column=4)
             labelSkeletonKey3.grid(row=22, column=6)
@@ -1711,6 +1896,7 @@ def create_mario_party_4_interface(frame):
             labelSkeletonKey6.grid(row=22, column=12)
             labelSkeletonKey7.grid(row=22, column=14)
             labelSkeletonKey8.grid(row=22, column=16)
+            labelSkeletonKey9.grid(row=22, column=18)
 
             # Plunder Chest: DX
             plunderChestEarlyPrice1.grid(row=23, column=3)
@@ -1719,8 +1905,9 @@ def create_mario_party_4_interface(frame):
             plunderChestMidPrice1.grid(row=23, column=9)
             plunderChestMidPrice2.grid(row=23, column=11)
             plunderChestMidPrice34.grid(row=23, column=13)
-            plunderChestMidPrice1.grid(row=23, column=15)
-            plunderChestMidPrice2.grid(row=23, column=17)
+            plunderChestLatePrice1.grid(row=23, column=15)
+            plunderChestLatePrice2.grid(row=23, column=17)
+            plunderChestLatePrice34.grid(row=23, column=19)
             labelPlunderChest1.grid(row=23, column=2)
             labelPlunderChest2.grid(row=23, column=4)
             labelPlunderChest3.grid(row=23, column=6)
@@ -1729,6 +1916,7 @@ def create_mario_party_4_interface(frame):
             labelPlunderChest6.grid(row=23, column=12)
             labelPlunderChest7.grid(row=23, column=14)
             labelPlunderChest8.grid(row=23, column=16)
+            labelPlunderChest9.grid(row=23, column=18)
 
             # Gaddbrush: DX
             gaddbrushEarlyPrice1.grid(row=24, column=3)
@@ -1737,8 +1925,9 @@ def create_mario_party_4_interface(frame):
             gaddbrushMidPrice1.grid(row=24, column=9)
             gaddbrushMidPrice2.grid(row=24, column=11)
             gaddbrushMidPrice34.grid(row=24, column=13)
-            gaddbrushMidPrice1.grid(row=24, column=15)
-            gaddbrushMidPrice2.grid(row=24, column=17)
+            gaddbrushLatePrice1.grid(row=24, column=15)
+            gaddbrushLatePrice2.grid(row=24, column=17)
+            gaddbrushLatePrice34.grid(row=24, column=19)
             labelGaddbrush1.grid(row=24, column=2)
             labelGaddbrush2.grid(row=24, column=4)
             labelGaddbrush3.grid(row=24, column=6)
@@ -1747,6 +1936,7 @@ def create_mario_party_4_interface(frame):
             labelGaddbrush6.grid(row=24, column=12)
             labelGaddbrush7.grid(row=24, column=14)
             labelGaddbrush8.grid(row=24, column=16)
+            labelGaddbrush9.grid(row=24, column=18)
 
             # Warp Block: DX
             warpBlockEarlyPrice1.grid(row=25, column=3)
@@ -1755,8 +1945,9 @@ def create_mario_party_4_interface(frame):
             warpBlockMidPrice1.grid(row=25, column=9)
             warpBlockMidPrice2.grid(row=25, column=11)
             warpBlockMidPrice34.grid(row=25, column=13)
-            warpBlockMidPrice1.grid(row=25, column=15)
-            warpBlockMidPrice2.grid(row=25, column=17)
+            warpBlockLatePrice1.grid(row=25, column=15)
+            warpBlockLatePrice2.grid(row=25, column=17)
+            warpBlockLatePrice34.grid(row=25, column=19)
             labelWarpBlock1.grid(row=25, column=2)
             labelWarpBlock2.grid(row=25, column=4)
             labelWarpBlock3.grid(row=25, column=6)
@@ -1765,6 +1956,7 @@ def create_mario_party_4_interface(frame):
             labelWarpBlock6.grid(row=25, column=12)
             labelWarpBlock7.grid(row=25, column=14)
             labelWarpBlock8.grid(row=25, column=16)
+            labelWarpBlock9.grid(row=25, column=18)
 
             # Fly Guy: DX
             flyGuyEarlyPrice1.grid(row=26, column=3)
@@ -1773,8 +1965,9 @@ def create_mario_party_4_interface(frame):
             flyGuyMidPrice1.grid(row=26, column=9)
             flyGuyMidPrice2.grid(row=26, column=11)
             flyGuyMidPrice34.grid(row=26, column=13)
-            flyGuyMidPrice1.grid(row=26, column=15)
-            flyGuyMidPrice2.grid(row=26, column=17)
+            flyGuyLatePrice1.grid(row=26, column=15)
+            flyGuyLatePrice2.grid(row=26, column=17)
+            flyGuyLatePrice34.grid(row=26, column=19)
             labelFlyGuy1.grid(row=26, column=2)
             labelFlyGuy2.grid(row=26, column=4)
             labelFlyGuy3.grid(row=26, column=6)
@@ -1783,16 +1976,18 @@ def create_mario_party_4_interface(frame):
             labelFlyGuy6.grid(row=26, column=12)
             labelFlyGuy7.grid(row=26, column=14)
             labelFlyGuy8.grid(row=26, column=16)
-
-            # Plus Block: DX
+            labelFlyGuy9.grid(row=26, column=18)
+           
+                       # Plus Block: DX
             plusBlockEarlyPrice1.grid(row=27, column=3)
             plusBlockEarlyPrice2.grid(row=27, column=5)
             plusBlockEarlyPrice34.grid(row=27, column=7)
             plusBlockMidPrice1.grid(row=27, column=9)
             plusBlockMidPrice2.grid(row=27, column=11)
             plusBlockMidPrice34.grid(row=27, column=13)
-            plusBlockMidPrice1.grid(row=27, column=15)
-            plusBlockMidPrice2.grid(row=27, column=17)
+            plusBlockLatePrice1.grid(row=27, column=15)
+            plusBlockLatePrice2.grid(row=27, column=17)
+            plusBlockLatePrice34.grid(row=27, column=19)
             labelPlusBlock1.grid(row=27, column=2)
             labelPlusBlock2.grid(row=27, column=4)
             labelPlusBlock3.grid(row=27, column=6)
@@ -1801,7 +1996,7 @@ def create_mario_party_4_interface(frame):
             labelPlusBlock6.grid(row=27, column=12)
             labelPlusBlock7.grid(row=27, column=14)
             labelPlusBlock8.grid(row=27, column=16)
-
+            labelPlusBlock9.grid(row=27, column=18)
 
             # Minus Block: DX
             minusBlockEarlyPrice1.grid(row=28, column=3)
@@ -1810,8 +2005,9 @@ def create_mario_party_4_interface(frame):
             minusBlockMidPrice1.grid(row=28, column=9)
             minusBlockMidPrice2.grid(row=28, column=11)
             minusBlockMidPrice34.grid(row=28, column=13)
-            minusBlockMidPrice1.grid(row=28, column=15)
-            minusBlockMidPrice2.grid(row=28, column=17)
+            minusBlockLatePrice1.grid(row=28, column=15)
+            minusBlockLatePrice2.grid(row=28, column=17)
+            minusBlockLatePrice34.grid(row=28, column=19)
             labelMinusBlock1.grid(row=28, column=2)
             labelMinusBlock2.grid(row=28, column=4)
             labelMinusBlock3.grid(row=28, column=6)
@@ -1820,6 +2016,7 @@ def create_mario_party_4_interface(frame):
             labelMinusBlock6.grid(row=28, column=12)
             labelMinusBlock7.grid(row=28, column=14)
             labelMinusBlock8.grid(row=28, column=16)
+            labelMinusBlock9.grid(row=28, column=18)
 
             # Speed Block: DX
             speedBlockEarlyPrice1.grid(row=29, column=3)
@@ -1828,8 +2025,9 @@ def create_mario_party_4_interface(frame):
             speedBlockMidPrice1.grid(row=29, column=9)
             speedBlockMidPrice2.grid(row=29, column=11)
             speedBlockMidPrice34.grid(row=29, column=13)
-            speedBlockMidPrice1.grid(row=29, column=15)
-            speedBlockMidPrice2.grid(row=29, column=17)
+            speedBlockLatePrice1.grid(row=29, column=15)
+            speedBlockLatePrice2.grid(row=29, column=17)
+            speedBlockLatePrice34.grid(row=29, column=19)
             labelSpeedBlock1.grid(row=29, column=2)
             labelSpeedBlock2.grid(row=29, column=4)
             labelSpeedBlock3.grid(row=29, column=6)
@@ -1838,6 +2036,7 @@ def create_mario_party_4_interface(frame):
             labelSpeedBlock6.grid(row=29, column=12)
             labelSpeedBlock7.grid(row=29, column=14)
             labelSpeedBlock8.grid(row=29, column=16)
+            labelSpeedBlock9.grid(row=29, column=18)
 
             # Slow Block: DX
             slowBlockEarlyPrice1.grid(row=30, column=3)
@@ -1846,8 +2045,9 @@ def create_mario_party_4_interface(frame):
             slowBlockMidPrice1.grid(row=30, column=9)
             slowBlockMidPrice2.grid(row=30, column=11)
             slowBlockMidPrice34.grid(row=30, column=13)
-            slowBlockMidPrice1.grid(row=30, column=15)
-            slowBlockMidPrice2.grid(row=30, column=17)
+            slowBlockLatePrice1.grid(row=30, column=15)
+            slowBlockLatePrice2.grid(row=30, column=17)
+            slowBlockLatePrice34.grid(row=30, column=19)
             labelSlowBlock1.grid(row=30, column=2)
             labelSlowBlock2.grid(row=30, column=4)
             labelSlowBlock3.grid(row=30, column=6)
@@ -1856,16 +2056,18 @@ def create_mario_party_4_interface(frame):
             labelSlowBlock6.grid(row=30, column=12)
             labelSlowBlock7.grid(row=30, column=14)
             labelSlowBlock8.grid(row=30, column=16)
+            labelSlowBlock9.grid(row=30, column=18)
 
-            # Bowser Phone: DX
+                        # Bowser Phone: DX
             bowserPhoneEarlyPrice1.grid(row=31, column=3)
             bowserPhoneEarlyPrice2.grid(row=31, column=5)
             bowserPhoneEarlyPrice34.grid(row=31, column=7)
             bowserPhoneMidPrice1.grid(row=31, column=9)
             bowserPhoneMidPrice2.grid(row=31, column=11)
             bowserPhoneMidPrice34.grid(row=31, column=13)
-            bowserPhoneMidPrice1.grid(row=31, column=15)
-            bowserPhoneMidPrice2.grid(row=31, column=17)
+            bowserPhoneLatePrice1.grid(row=31, column=15)
+            bowserPhoneLatePrice2.grid(row=31, column=17)
+            bowserPhoneLatePrice34.grid(row=31, column=19)
             labelBowserPhone1.grid(row=31, column=2)
             labelBowserPhone2.grid(row=31, column=4)
             labelBowserPhone3.grid(row=31, column=6)
@@ -1874,6 +2076,7 @@ def create_mario_party_4_interface(frame):
             labelBowserPhone6.grid(row=31, column=12)
             labelBowserPhone7.grid(row=31, column=14)
             labelBowserPhone8.grid(row=31, column=16)
+            labelBowserPhone9.grid(row=31, column=18)
 
             # Double Dip: DX
             doubleDipEarlyPrice1.grid(row=32, column=3)
@@ -1882,8 +2085,9 @@ def create_mario_party_4_interface(frame):
             doubleDipMidPrice1.grid(row=32, column=9)
             doubleDipMidPrice2.grid(row=32, column=11)
             doubleDipMidPrice34.grid(row=32, column=13)
-            doubleDipMidPrice1.grid(row=32, column=15)
-            doubleDipMidPrice2.grid(row=32, column=17)
+            doubleDipLatePrice1.grid(row=32, column=15)
+            doubleDipLatePrice2.grid(row=32, column=17)
+            doubleDipLatePrice34.grid(row=32, column=19)
             labelDoubleDip1.grid(row=32, column=2)
             labelDoubleDip2.grid(row=32, column=4)
             labelDoubleDip3.grid(row=32, column=6)
@@ -1892,16 +2096,18 @@ def create_mario_party_4_interface(frame):
             labelDoubleDip6.grid(row=32, column=12)
             labelDoubleDip7.grid(row=32, column=14)
             labelDoubleDip8.grid(row=32, column=16)
+            labelDoubleDip9.grid(row=32, column=18)
 
-            # Hidden Block Card: DX
+                        # Hidden Block Card: DX
             hiddenBlockCardEarlyPrice1.grid(row=33, column=3)
             hiddenBlockCardEarlyPrice2.grid(row=33, column=5)
             hiddenBlockCardEarlyPrice34.grid(row=33, column=7)
             hiddenBlockCardMidPrice1.grid(row=33, column=9)
             hiddenBlockCardMidPrice2.grid(row=33, column=11)
             hiddenBlockCardMidPrice34.grid(row=33, column=13)
-            hiddenBlockCardMidPrice1.grid(row=33, column=15)
-            hiddenBlockCardMidPrice2.grid(row=33, column=17)
+            hiddenBlockCardLatePrice1.grid(row=33, column=15)
+            hiddenBlockCardLatePrice2.grid(row=33, column=17)
+            hiddenBlockCardLatePrice34.grid(row=33, column=19)
             labelHiddenBlockCard1.grid(row=33, column=2)
             labelHiddenBlockCard2.grid(row=33, column=4)
             labelHiddenBlockCard3.grid(row=33, column=6)
@@ -1910,42 +2116,47 @@ def create_mario_party_4_interface(frame):
             labelHiddenBlockCard6.grid(row=33, column=12)
             labelHiddenBlockCard7.grid(row=33, column=14)
             labelHiddenBlockCard8.grid(row=33, column=16)
-
-            # Super Warp Pipe: DX
-            superWarpPipeEarlyPrice1.grid(row=34, column=3)
-            superWarpPipeEarlyPrice2.grid(row=34, column=5)
-            superWarpPipeEarlyPrice34.grid(row=34, column=7)
-            superWarpPipeMidPrice1.grid(row=34, column=9)
-            superWarpPipeMidPrice2.grid(row=34, column=11)
-            superWarpPipeMidPrice34.grid(row=34, column=13)
-            superWarpPipeMidPrice1.grid(row=34, column=15)
-            superWarpPipeMidPrice2.grid(row=34, column=17)
-            labelSuperWarpPipe1.grid(row=34, column=2)
-            labelSuperWarpPipe2.grid(row=34, column=4)
-            labelSuperWarpPipe3.grid(row=34, column=6)
-            labelSuperWarpPipe4.grid(row=34, column=8)
-            labelSuperWarpPipe5.grid(row=34, column=10)
-            labelSuperWarpPipe6.grid(row=34, column=12)
-            labelSuperWarpPipe7.grid(row=34, column=14)
-            labelSuperWarpPipe8.grid(row=34, column=16)
+            labelHiddenBlockCard9.grid(row=33, column=18)
 
             # Barter Box: DX
-            barterBoxEarlyPrice1.grid(row=35, column=3)
-            barterBoxEarlyPrice2.grid(row=35, column=5)
-            barterBoxEarlyPrice34.grid(row=35, column=7)
-            barterBoxMidPrice1.grid(row=35, column=9)
-            barterBoxMidPrice2.grid(row=35, column=11)
-            barterBoxMidPrice34.grid(row=35, column=13)
-            barterBoxMidPrice1.grid(row=35, column=15)
-            barterBoxMidPrice2.grid(row=35, column=17)
-            labelBarterBox1.grid(row=35, column=2)
-            labelBarterBox2.grid(row=35, column=4)
-            labelBarterBox3.grid(row=35, column=6)
-            labelBarterBox4.grid(row=35, column=8)
-            labelBarterBox5.grid(row=35, column=10)
-            labelBarterBox6.grid(row=35, column=12)
-            labelBarterBox7.grid(row=35, column=14)
-            labelBarterBox8.grid(row=35, column=16)
+            barterBoxEarlyPrice1.grid(row=34, column=3)
+            barterBoxEarlyPrice2.grid(row=34, column=5)
+            barterBoxEarlyPrice34.grid(row=34, column=7)
+            barterBoxMidPrice1.grid(row=34, column=9)
+            barterBoxMidPrice2.grid(row=34, column=11)
+            barterBoxMidPrice34.grid(row=34, column=13)
+            barterBoxLatePrice1.grid(row=34, column=15)
+            barterBoxLatePrice2.grid(row=34, column=17)
+            barterBoxLatePrice34.grid(row=34, column=19)
+            labelBarterBox1.grid(row=34, column=2)
+            labelBarterBox2.grid(row=34, column=4)
+            labelBarterBox3.grid(row=34, column=6)
+            labelBarterBox4.grid(row=34, column=8)
+            labelBarterBox5.grid(row=34, column=10)
+            labelBarterBox6.grid(row=34, column=12)
+            labelBarterBox7.grid(row=34, column=14)
+            labelBarterBox8.grid(row=34, column=16)
+            labelBarterBox9.grid(row=34, column=18)
+
+            # Super Warp Pipe: DX
+            superWarpPipeEarlyPrice1.grid(row=35, column=3)
+            superWarpPipeEarlyPrice2.grid(row=35, column=5)
+            superWarpPipeEarlyPrice34.grid(row=35, column=7)
+            superWarpPipeMidPrice1.grid(row=35, column=9)
+            superWarpPipeMidPrice2.grid(row=35, column=11)
+            superWarpPipeMidPrice34.grid(row=35, column=13)
+            superWarpPipeLatePrice1.grid(row=35, column=15)
+            superWarpPipeLatePrice2.grid(row=35, column=17)
+            superWarpPipeLatePrice34.grid(row=35, column=19)
+            labelSuperWarpPipe1.grid(row=35, column=2)
+            labelSuperWarpPipe2.grid(row=35, column=4)
+            labelSuperWarpPipe3.grid(row=35, column=6)
+            labelSuperWarpPipe4.grid(row=35, column=8)
+            labelSuperWarpPipe5.grid(row=35, column=10)
+            labelSuperWarpPipe6.grid(row=35, column=12)
+            labelSuperWarpPipe7.grid(row=35, column=14)
+            labelSuperWarpPipe8.grid(row=35, column=16)
+            labelSuperWarpPipe9.grid(row=35, column=18)
 
             # Chance Time Charm: DX
             chanceTimeCharmEarlyPrice1.grid(row=36, column=3)
@@ -1954,8 +2165,9 @@ def create_mario_party_4_interface(frame):
             chanceTimeCharmMidPrice1.grid(row=36, column=9)
             chanceTimeCharmMidPrice2.grid(row=36, column=11)
             chanceTimeCharmMidPrice34.grid(row=36, column=13)
-            chanceTimeCharmMidPrice1.grid(row=36, column=15)
-            chanceTimeCharmMidPrice2.grid(row=36, column=17)
+            chanceTimeCharmLatePrice1.grid(row=36, column=15)
+            chanceTimeCharmLatePrice2.grid(row=36, column=17)
+            chanceTimeCharmLatePrice34.grid(row=36, column=19)
             labelChanceTimeCharm1.grid(row=36, column=2)
             labelChanceTimeCharm2.grid(row=36, column=4)
             labelChanceTimeCharm3.grid(row=36, column=6)
@@ -1964,6 +2176,7 @@ def create_mario_party_4_interface(frame):
             labelChanceTimeCharm6.grid(row=36, column=12)
             labelChanceTimeCharm7.grid(row=36, column=14)
             labelChanceTimeCharm8.grid(row=36, column=16)
+            labelChanceTimeCharm9.grid(row=36, column=18)
 
             # Wacky Watch: DX
             wackyWatchEarlyPrice1.grid(row=37, column=3)
@@ -1972,8 +2185,9 @@ def create_mario_party_4_interface(frame):
             wackyWatchMidPrice1.grid(row=37, column=9)
             wackyWatchMidPrice2.grid(row=37, column=11)
             wackyWatchMidPrice34.grid(row=37, column=13)
-            wackyWatchMidPrice1.grid(row=37, column=15)
-            wackyWatchMidPrice2.grid(row=37, column=17)
+            wackyWatchLatePrice1.grid(row=37, column=15)
+            wackyWatchLatePrice2.grid(row=37, column=17)
+            wackyWatchLatePrice34.grid(row=37, column=19)
             labelWackyWatch1.grid(row=37, column=2)
             labelWackyWatch2.grid(row=37, column=4)
             labelWackyWatch3.grid(row=37, column=6)
@@ -1982,7 +2196,9 @@ def create_mario_party_4_interface(frame):
             labelWackyWatch6.grid(row=37, column=12)
             labelWackyWatch7.grid(row=37, column=14)
             labelWackyWatch8.grid(row=37, column=16)
-           
+            labelWackyWatch9.grid(row=37, column=18)
+
+
     hideCustomSwitch.configure(command=toggle_hide_custom)
     toggle_hide_custom()
 

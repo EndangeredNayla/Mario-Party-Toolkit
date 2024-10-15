@@ -12,1642 +12,442 @@ import csv
 import math
 import pyperclip
 
-def itemsEvent_mp4CustomItemSpace(miniMushroomPrice1 = "0", miniMushroomPrice2 = "0", miniMushroomPrice34 = "0", miniMushroomShopOdds12 = "0", miniMushroomShopOdds34 = "0", miniMushroomSpaceOdds1 = "0", miniMushroomSpaceOdds2 = "0", miniMushroomSpaceOdds34 = "0", megaMushroomPrice1 = "0", megaMushroomPrice2 = "0", megaMushroomPrice34 = "0", megaMushroomShopOdds12 = "0", megaMushroomShopOdds34 = "0", megaMushroomSpaceOdds1 = "0", megaMushroomSpaceOdds2 = "0", megaMushroomSpaceOdds34 = "0", superMiniMushroomPrice1 = "0", superMiniMushroomPrice2 = "0", superMiniMushroomPrice34 = "0", superMiniMushroomShopOdds12 = "0", superMiniMushroomShopOdds34 = "0", superMiniMushroomSpaceOdds1 = "0", superMiniMushroomSpaceOdds2 = "0", superMiniMushroomSpaceOdds34 = "0", superMegaMushroomPrice1 = "0", superMegaMushroomPrice2 = "0", superMegaMushroomPrice34 = "0", superMegaMushroomShopOdds12 = "0", superMegaMushroomShopOdds34 = "0", superMegaMushroomSpaceOdds1 = "0", superMegaMushroomSpaceOdds2 = "0", superMegaMushroomSpaceOdds34 = "0", miniMegaHammerPrice1 = "0", miniMegaHammerPrice2 = "0", miniMegaHammerPrice34 = "0", miniMegaHammerShopOdds12 = "0", miniMegaHammerShopOdds34 = "0", miniMegaHammerSpaceOdds1 = "0", miniMegaHammerSpaceOdds2 = "0", miniMegaHammerSpaceOdds34 = "0", warpPipePrice1 = "0", warpPipePrice2 = "0", warpPipePrice34 = "0", warpPipeShopOdds12 = "0", warpPipeShopOdds34 = "0", warpPipeSpaceOdds1 = "0", warpPipeSpaceOdds2 = "0", warpPipeSpaceOdds34 = "0", swapCardPrice1 = "0", swapCardPrice2 = "0", swapCardPrice34 = "0", swapCardShopOdds12 = "0", swapCardShopOdds34 = "0", swapCardSpaceOdds1 = "0", swapCardSpaceOdds2 = "0", swapCardSpaceOdds34 = "0", sparkyStickerPrice1 = "0", sparkyStickerPrice2 = "0", sparkyStickerPrice34 = "0", sparkyStickerShopOdds12 = "0", sparkyStickerShopOdds34 = "0", sparkyStickerSpaceOdds1 = "0", sparkyStickerSpaceOdds2 = "0", sparkyStickerSpaceOdds34 = "0", gaddlightPrice1 = "0", gaddlightPrice2 = "0", gaddlightPrice34 = "0", gaddlightShopOdds12 = "0", gaddlightShopOdds34 = "0", gaddlightSpaceOdds1 = "0", gaddlightSpaceOdds2 = "0", gaddlightSpaceOdds34 = "0", chompCallPrice1 = "0", chompCallPrice2 = "0", chompCallPrice34 = "0", chompCallShopOdds12 = "0", chompCallShopOdds34 = "0", chompCallSpaceOdds1 = "0", chompCallSpaceOdds2 = "0", chompCallSpaceOdds34 = "0", bowserSuitPrice1 = "0", bowserSuitPrice2 = "0", bowserSuitPrice34 = "0", bowserSuitShopOdds12 = "0", bowserSuitShopOdds34 = "0", bowserSuitSpaceOdds1 = "0", bowserSuitSpaceOdds2 = "0", bowserSuitSpaceOdds34 = "0", crystalBallPrice1 = "0", crystalBallPrice2 = "0", crystalBallPrice34 = "0", crystalBallShopOdds12 = "0", crystalBallShopOdds34 = "0", crystalBallSpaceOdds1 = "0", crystalBallSpaceOdds2 = "0", crystalBallSpaceOdds34 = "0", magicLampPrice1 = "0", magicLampPrice2 = "0", magicLampPrice34 = "0", magicLampShopOdds12 = "0", magicLampShopOdds34 = "0", magicLampSpaceOdds1 = "0", magicLampSpaceOdds2 = "0", magicLampSpaceOdds34 = "0", itemBagPrice1 = "0", itemBagPrice2 = "0", itemBagPrice34 = "0", itemBagShopOdds12 = "0", itemBagShopOdds34 = "0", itemBagSpaceOdds1 = "0", itemBagSpaceOdds2 = "0", itemBagSpaceOdds34 = "0", mushroomPrice1 = "0", mushroomPrice2 = "0", mushroomPrice34 = "0", mushroomShopOdds12 = "0", mushroomShopOdds34 = "0", mushroomSpaceOdds1 = "0", mushroomSpaceOdds2 = "0", mushroomSpaceOdds34 = "0", goldenMushroomPrice1 = "0", goldenMushroomPrice2 = "0", goldenMushroomPrice34 = "0", goldenMushroomShopOdds12 = "0", goldenMushroomShopOdds34 = "0", goldenMushroomSpaceOdds1 = "0", goldenMushroomSpaceOdds2 = "0", goldenMushroomSpaceOdds34 = "0", reverseMushroomPrice1 = "0", reverseMushroomPrice2 = "0", reverseMushroomPrice34 = "0", reverseMushroomShopOdds12 = "0", reverseMushroomShopOdds34 = "0", reverseMushroomSpaceOdds1 = "0", reverseMushroomSpaceOdds2 = "0", reverseMushroomSpaceOdds34 = "0", poisonMushroomPrice1 = "0", poisonMushroomPrice2 = "0", poisonMushroomPrice34 = "0", poisonMushroomShopOdds12 = "0", poisonMushroomShopOdds34 = "0", poisonMushroomSpaceOdds1 = "0", poisonMushroomSpaceOdds2 = "0", poisonMushroomSpaceOdds34 = "0", triplePoisonMushroomPrice1 = "0", triplePoisonMushroomPrice2 = "0", triplePoisonMushroomPrice34 = "0", triplePoisonMushroomShopOdds12 = "0", triplePoisonMushroomShopOdds34 = "0", triplePoisonMushroomSpaceOdds1 = "0", triplePoisonMushroomSpaceOdds2 = "0", triplePoisonMushroomSpaceOdds34 = "0", celluarShopperPrice1 = "0", celluarShopperPrice2 = "0", celluarShopperPrice34 = "0", celluarShopperShopOdds12 = "0", celluarShopperShopOdds34 = "0", celluarShopperSpaceOdds1 = "0", celluarShopperSpaceOdds2 = "0", celluarShopperSpaceOdds34 = "0", skeletonKeyPrice1 = "0", skeletonKeyPrice2 = "0", skeletonKeyPrice34 = "0", skeletonKeyShopOdds12 = "0", skeletonKeyShopOdds34 = "0", skeletonKeySpaceOdds1 = "0", skeletonKeySpaceOdds2 = "0", skeletonKeySpaceOdds34 = "0", plunderChestPrice1 = "0", plunderChestPrice2 = "0", plunderChestPrice34 = "0", plunderChestShopOdds12 = "0", plunderChestShopOdds34 = "0", plunderChestSpaceOdds1 = "0", plunderChestSpaceOdds2 = "0", plunderChestSpaceOdds34 = "0", gaddbrushPrice1 = "0", gaddbrushPrice2 = "0", gaddbrushPrice34 = "0", gaddbrushShopOdds12 = "0", gaddbrushShopOdds34 = "0", gaddbrushSpaceOdds1 = "0", gaddbrushSpaceOdds2 = "0", gaddbrushSpaceOdds34 = "0", warpBlockPrice1 = "0", warpBlockPrice2 = "0", warpBlockPrice34 = "0", warpBlockShopOdds12 = "0", warpBlockShopOdds34 = "0", warpBlockSpaceOdds1 = "0", warpBlockSpaceOdds2 = "0", warpBlockSpaceOdds34 = "0", flyGuyPrice1 = "0", flyGuyPrice2 = "0", flyGuyPrice34 = "0", flyGuyShopOdds12 = "0", flyGuyShopOdds34 = "0", flyGuySpaceOdds1 = "0", flyGuySpaceOdds2 = "0", flyGuySpaceOdds34 = "0", plusBlockPrice1 = "0", plusBlockPrice2 = "0", plusBlockPrice34 = "0", plusBlockShopOdds12 = "0", plusBlockShopOdds34 = "0", plusBlockSpaceOdds1 = "0", plusBlockSpaceOdds2 = "0", plusBlockSpaceOdds34 = "0", minusBlockPrice1 = "0", minusBlockPrice2 = "0", minusBlockPrice34 = "0", minusBlockShopOdds12 = "0", minusBlockShopOdds34 = "0", minusBlockSpaceOdds1 = "0", minusBlockSpaceOdds2 = "0", minusBlockSpaceOdds34 = "0", speedBlockPrice1 = "0", speedBlockPrice2 = "0", speedBlockPrice34 = "0", speedBlockShopOdds12 = "0", speedBlockShopOdds34 = "0", speedBlockSpaceOdds1 = "0", speedBlockSpaceOdds2 = "0", speedBlockSpaceOdds34 = "0", slowBlockPrice1 = "0", slowBlockPrice2 = "0", slowBlockPrice34 = "0", slowBlockShopOdds12 = "0", slowBlockShopOdds34 = "0", slowBlockSpaceOdds1 = "0", slowBlockSpaceOdds2 = "0", slowBlockSpaceOdds34 = "0", bowserPhonePrice1 = "0", bowserPhonePrice2 = "0", bowserPhonePrice34 = "0", bowserPhoneShopOdds12 = "0", bowserPhoneShopOdds34 = "0", bowserPhoneSpaceOdds1 = "0", bowserPhoneSpaceOdds2 = "0", bowserPhoneSpaceOdds34 = "0", doubleDipPrice1 = "0", doubleDipPrice2 = "0", doubleDipPrice34 = "0", doubleDipShopOdds12 = "0", doubleDipShopOdds34 = "0", doubleDipSpaceOdds1 = "0", doubleDipSpaceOdds2 = "0", doubleDipSpaceOdds34 = "0", hiddenBlockCardPrice1 = "0", hiddenBlockCardPrice2 = "0", hiddenBlockCardPrice34 = "0", hiddenBlockCardShopOdds12 = "0", hiddenBlockCardShopOdds34 = "0", hiddenBlockCardSpaceOdds1 = "0", hiddenBlockCardSpaceOdds2 = "0", hiddenBlockCardSpaceOdds34 = "0", barterBoxPrice1 = "0", barterBoxPrice2 = "0", barterBoxPrice34 = "0", barterBoxShopOdds12 = "0", barterBoxShopOdds34 = "0", barterBoxSpaceOdds1 = "0", barterBoxSpaceOdds2 = "0", barterBoxSpaceOdds34 = "0", superWarpPipePrice1 = "0", superWarpPipePrice2 = "0", superWarpPipePrice34 = "0", superWarpPipeShopOdds12 = "0", superWarpPipeShopOdds34 = "0", superWarpPipeSpaceOdds1 = "0", superWarpPipeSpaceOdds2 = "0", superWarpPipeSpaceOdds34 = "0", chanceTimeCharmPrice1 = "0", chanceTimeCharmPrice2 = "0", chanceTimeCharmPrice34 = "0", chanceTimeCharmShopOdds12 = "0", chanceTimeCharmShopOdds34 = "0", chanceTimeCharmSpaceOdds1 = "0", chanceTimeCharmSpaceOdds2 = "0", chanceTimeCharmSpaceOdds34 = "0", wackyWatchPrice1 = "0", wackyWatchPrice2 = "0", wackyWatchPrice34 = "0", wackyWatchShopOdds12 = "0", wackyWatchShopOdds34 = "0", wackyWatchSpaceOdds1 = "0", wackyWatchSpaceOdds2 = "0", wackyWatchSpaceOdds34 = "0"):
+def itemsEvent_mp4ShopDXPrices(miniMushroomEarlyPrice1 = "5", miniMushroomEarlyPrice2 = "5", miniMushroomEarlyPrice34 = "5", miniMushroomMidPrice1 = "5", miniMushroomMidPrice2 = "5", miniMushroomMidPrice34 = "5", miniMushroomLatePrice1 = "5", miniMushroomLatePrice2 = "5", miniMushroomLatePrice34 = "5", megaMushroomEarlyPrice1 = "5", megaMushroomEarlyPrice2 = "5", megaMushroomEarlyPrice34 = "5", megaMushroomMidPrice1 = "5", megaMushroomMidPrice2 = "5", megaMushroomMidPrice34 = "5", megaMushroomLatePrice1 = "5", megaMushroomLatePrice2 = "5", megaMushroomLatePrice34 = "5", superMiniMushroomEarlyPrice1 = "10", superMiniMushroomEarlyPrice2 = "10", superMiniMushroomEarlyPrice34 = "10", superMiniMushroomMidPrice1 = "10", superMiniMushroomMidPrice2 = "10", superMiniMushroomMidPrice34 = "10", superMiniMushroomLatePrice1 = "10", superMiniMushroomLatePrice2 = "10", superMiniMushroomLatePrice34 = "10", superMegaMushroomEarlyPrice1 = "15", superMegaMushroomEarlyPrice2 = "15", superMegaMushroomEarlyPrice34 = "15", superMegaMushroomMidPrice1 = "15", superMegaMushroomMidPrice2 = "15", superMegaMushroomMidPrice34 = "15", superMegaMushroomLatePrice1 = "15", superMegaMushroomLatePrice2 = "15", superMegaMushroomLatePrice34 = "15", miniMegaHammerEarlyPrice1 = "10", miniMegaHammerEarlyPrice2 = "10", miniMegaHammerEarlyPrice34 = "10", miniMegaHammerMidPrice1 = "10", miniMegaHammerMidPrice2 = "10", miniMegaHammerMidPrice34 = "10", miniMegaHammerLatePrice1 = "10", miniMegaHammerLatePrice2 = "10", miniMegaHammerLatePrice34 = "10", warpPipeEarlyPrice1 = "10", warpPipeEarlyPrice2 = "10", warpPipeEarlyPrice34 = "10", warpPipeMidPrice1 = "10", warpPipeMidPrice2 = "10", warpPipeMidPrice34 = "10", warpPipeLatePrice1 = "10", warpPipeLatePrice2 = "10", warpPipeLatePrice34 = "10", swapCardEarlyPrice1 = "15", swapCardEarlyPrice2 = "15", swapCardEarlyPrice34 = "15", swapCardMidPrice1 = "15", swapCardMidPrice2 = "15", swapCardMidPrice34 = "15", swapCardLatePrice1 = "15", swapCardLatePrice2 = "15", swapCardLatePrice34 = "15", sparkyStickerEarlyPrice1 = "5", sparkyStickerEarlyPrice2 = "5", sparkyStickerEarlyPrice34 = "5", sparkyStickerMidPrice1 = "5", sparkyStickerMidPrice2 = "5", sparkyStickerMidPrice34 = "5", sparkyStickerLatePrice1 = "5", sparkyStickerLatePrice2 = "5", sparkyStickerLatePrice34 = "5", gaddlightEarlyPrice1 = "15", gaddlightEarlyPrice2 = "15", gaddlightEarlyPrice34 = "15", gaddlightMidPrice1 = "15", gaddlightMidPrice2 = "15", gaddlightMidPrice34 = "15", gaddlightLatePrice1 = "15", gaddlightLatePrice2 = "15", gaddlightLatePrice34 = "10", chompCallEarlyPrice1 = "10", chompCallEarlyPrice2 = "10", chompCallEarlyPrice34 = "10", chompCallMidPrice1 = "10", chompCallMidPrice2 = "10", chompCallMidPrice34 = "10", chompCallLatePrice1 = "10", chompCallLatePrice2 = "10", chompCallLatePrice34 = "10", bowserSuitEarlyPrice1 = "12", bowserSuitEarlyPrice2 = "12", bowserSuitEarlyPrice34 = "12", bowserSuitMidPrice1 = "12", bowserSuitMidPrice2 = "12", bowserSuitMidPrice34 = "12", bowserSuitLatePrice1 = "12", bowserSuitLatePrice2 = "12", bowserSuitLatePrice34 = "12", crystalBallEarlyPrice1 = "25", crystalBallEarlyPrice2 = "25", crystalBallEarlyPrice34 = "25", crystalBallMidPrice1 = "25", crystalBallMidPrice2 = "25", crystalBallMidPrice34 = "25", crystalBallLatePrice1 = "25", crystalBallLatePrice2 = "25", crystalBallLatePrice34 = "25", magicLampEarlyPrice1 = "30", magicLampEarlyPrice2 = "30", magicLampEarlyPrice34 = "30", magicLampMidPrice1 = "30", magicLampMidPrice2 = "30", magicLampMidPrice34 = "30", magicLampLatePrice1 = "30", magicLampLatePrice2 = "30", magicLampLatePrice34 = "30", itemBagEarlyPrice1 = "30", itemBagEarlyPrice2 = "30", itemBagEarlyPrice34 = "30", itemBagMidPrice1 = "30", itemBagMidPrice2 = "30", itemBagMidPrice34 = "30", itemBagLatePrice1 = "30", itemBagLatePrice2 = "30", itemBagLatePrice34 = "30", mushroomEarlyPrice1 = "5", mushroomEarlyPrice2 = "5", mushroomEarlyPrice34 = "5", mushroomMidPrice1 = "5", mushroomMidPrice2 = "5", mushroomMidPrice34 = "5", mushroomLatePrice1 = "5", mushroomLatePrice2 = "5", mushroomLatePrice34 = "5", goldenMushroomEarlyPrice1 = "10", goldenMushroomEarlyPrice2 = "10", goldenMushroomEarlyPrice34 = "10", goldenMushroomMidPrice1 = "10", goldenMushroomMidPrice2 = "10", goldenMushroomMidPrice34 = "10", goldenMushroomLatePrice1 = "10", goldenMushroomLatePrice2 = "10", goldenMushroomLatePrice34 = "10", reverseMushroomEarlyPrice1 = "10", reverseMushroomEarlyPrice2 = "10", reverseMushroomEarlyPrice34 = "10", reverseMushroomMidPrice1 = "10", reverseMushroomMidPrice2 = "10", reverseMushroomMidPrice34 = "10", reverseMushroomLatePrice1 = "10", reverseMushroomLatePrice2 = "10", reverseMushroomLatePrice34 = "5", poisonMushroomEarlyPrice1 = "5", poisonMushroomEarlyPrice2 = "5", poisonMushroomEarlyPrice34 = "5", poisonMushroomMidPrice1 = "5", poisonMushroomMidPrice2 = "5", poisonMushroomMidPrice34 = "5", poisonMushroomLatePrice1 = "5", poisonMushroomLatePrice2 = "5", poisonMushroomLatePrice34 = "5", triplePoisonMushroomEarlyPrice1 = "15", triplePoisonMushroomEarlyPrice2 = "15", triplePoisonMushroomEarlyPrice34 = "15", triplePoisonMushroomMidPrice1 = "15", triplePoisonMushroomMidPrice2 = "15", triplePoisonMushroomMidPrice34 = "15", triplePoisonMushroomLatePrice1 = "15", triplePoisonMushroomLatePrice2 = "15", triplePoisonMushroomLatePrice34 = "15", celluarShopperEarlyPrice1 = "5", celluarShopperEarlyPrice2 = "5", celluarShopperEarlyPrice34 = "5", celluarShopperMidPrice1 = "5", celluarShopperMidPrice2 = "5", celluarShopperMidPrice34 = "5", celluarShopperLatePrice1 = "5", celluarShopperLatePrice2 = "5", celluarShopperLatePrice34 = "5", skeletonKeyEarlyPrice1 = "5", skeletonKeyEarlyPrice2 = "5", skeletonKeyEarlyPrice34 = "5", skeletonKeyMidPrice1 = "5", skeletonKeyMidPrice2 = "5", skeletonKeyMidPrice34 = "5", skeletonKeyLatePrice1 = "5", skeletonKeyLatePrice2 = "5", skeletonKeyLatePrice34 = "5", plunderChestEarlyPrice1 = "15", plunderChestEarlyPrice2 = "15", plunderChestEarlyPrice34 = "15", plunderChestMidPrice1 = "15", plunderChestMidPrice2 = "15", plunderChestMidPrice34 = "15", plunderChestLatePrice1 = "15", plunderChestLatePrice2 = "15", plunderChestLatePrice34 = "15", gaddbrushEarlyPrice1 = "15", gaddbrushEarlyPrice2 = "15", gaddbrushEarlyPrice34 = "15", gaddbrushMidPrice1 = "15", gaddbrushMidPrice2 = "15", gaddbrushMidPrice34 = "15", gaddbrushLatePrice1 = "15", gaddbrushLatePrice2 = "15", gaddbrushLatePrice34 = "15", warpBlockEarlyPrice1 = "5", warpBlockEarlyPrice2 = "5", warpBlockEarlyPrice34 = "5", warpBlockMidPrice1 = "5", warpBlockMidPrice2 = "5", warpBlockMidPrice34 = "5", warpBlockLatePrice1 = "5", warpBlockLatePrice2 = "5", warpBlockLatePrice34 = "5", flyGuyEarlyPrice1 = "12", flyGuyEarlyPrice2 = "12", flyGuyEarlyPrice34 = "12", flyGuyMidPrice1 = "12", flyGuyMidPrice2 = "12", flyGuyMidPrice34 = "12", flyGuyLatePrice1 = "12", flyGuyLatePrice2 = "12", flyGuyLatePrice34 = "12", plusBlockEarlyPrice1 = "10", plusBlockEarlyPrice2 = "10", plusBlockEarlyPrice34 = "10", plusBlockMidPrice1 = "10", plusBlockMidPrice2 = "10", plusBlockMidPrice34 = "10", plusBlockLatePrice1 = "10", plusBlockLatePrice2 = "10", plusBlockLatePrice34 = "10", minusBlockEarlyPrice1 = "10", minusBlockEarlyPrice2 = "10", minusBlockEarlyPrice34 = "10", minusBlockMidPrice1 = "10", minusBlockMidPrice2 = "10", minusBlockMidPrice34 = "10", minusBlockLatePrice1 = "10", minusBlockLatePrice2 = "10", minusBlockLatePrice34 = "10", speedBlockEarlyPrice1 = "12", speedBlockEarlyPrice2 = "12", speedBlockEarlyPrice34 = "12", speedBlockMidPrice1 = "12", speedBlockMidPrice2 = "12", speedBlockMidPrice34 = "12", speedBlockLatePrice1 = "12", speedBlockLatePrice2 = "12", speedBlockLatePrice34 = "12", slowBlockEarlyPrice1 = "12", slowBlockEarlyPrice2 = "12", slowBlockEarlyPrice34 = "12", slowBlockMidPrice1 = "12", slowBlockMidPrice2 = "12", slowBlockMidPrice34 = "12", slowBlockLatePrice1 = "12", slowBlockLatePrice2 = "12", slowBlockLatePrice34 = "12", bowserPhoneEarlyPrice1 = "10", bowserPhoneEarlyPrice2 = "10", bowserPhoneEarlyPrice34 = "10", bowserPhoneMidPrice1 = "10", bowserPhoneMidPrice2 = "10", bowserPhoneMidPrice34 = "10", bowserPhoneLatePrice1 = "10", bowserPhoneLatePrice2 = "10", bowserPhoneLatePrice34 = "10", doubleDipEarlyPrice1 = "12", doubleDipEarlyPrice2 = "12", doubleDipEarlyPrice34 = "12", doubleDipMidPrice1 = "12", doubleDipMidPrice2 = "12", doubleDipMidPrice34 = "12", doubleDipLatePrice1 = "12", doubleDipLatePrice2 = "12", doubleDipLatePrice34 = "12", hiddenBlockCardEarlyPrice1 = "40", hiddenBlockCardEarlyPrice2 = "40", hiddenBlockCardEarlyPrice34 = "40", hiddenBlockCardMidPrice1 = "40", hiddenBlockCardMidPrice2 = "40", hiddenBlockCardMidPrice34 = "40", hiddenBlockCardLatePrice1 = "40", hiddenBlockCardLatePrice2 = "40", hiddenBlockCardLatePrice34 = "40", barterBoxEarlyPrice1 = "40", barterBoxEarlyPrice2 = "40", barterBoxEarlyPrice34 = "40", barterBoxMidPrice1 = "40", barterBoxMidPrice2 = "40", barterBoxMidPrice34 = "40", barterBoxLatePrice1 = "40", barterBoxLatePrice2 = "40", barterBoxLatePrice34 = "40", superWarpPipeEarlyPrice1 = "40", superWarpPipeEarlyPrice2 = "40", superWarpPipeEarlyPrice34 = "40", superWarpPipeMidPrice1 = "40", superWarpPipeMidPrice2 = "40", superWarpPipeMidPrice34 = "40", superWarpPipeLatePrice1 = "40", superWarpPipeLatePrice2 = "40", superWarpPipeLatePrice34 = "40", chanceTimeCharmEarlyPrice1 = "40", chanceTimeCharmEarlyPrice2 = "40", chanceTimeCharmEarlyPrice34 = "40", chanceTimeCharmMidPrice1 = "40", chanceTimeCharmMidPrice2 = "40", chanceTimeCharmMidPrice34 = "40", chanceTimeCharmLatePrice1 = "40", chanceTimeCharmLatePrice2 = "40", chanceTimeCharmLatePrice34 = "40", wackyWatchEarlyPrice1 = "100", wackyWatchEarlyPrice2 = "100", wackyWatchEarlyPrice34 = "100", wackyWatchMidPrice1 = "100", wackyWatchMidPrice2 = "100", wackyWatchMidPrice34 = "100", wackyWatchLatePrice1 = "100", wackyWatchLatePrice2 = "100", wackyWatchLatePrice34 = "100"):
     def get_capsule_value(capsule):
         try:
             return capsule.get()
         except:
             return 0
 
-    miniMushroomPrice1 = get_capsule_value(miniMushroomPrice1) or "0"
-    miniMushroomPrice2 = get_capsule_value(miniMushroomPrice2) or "0"
-    miniMushroomPrice34 = get_capsule_value(miniMushroomPrice34) or "0"
-    miniMushroomShopOdds12 = get_capsule_value(miniMushroomShopOdds12) or "0"
-    miniMushroomShopOdds34 = get_capsule_value(miniMushroomShopOdds34) or "0"
-    miniMushroomSpaceOdds1 = get_capsule_value(miniMushroomSpaceOdds1) or "0"
-    miniMushroomSpaceOdds2 = get_capsule_value(miniMushroomSpaceOdds2) or "0"
-    miniMushroomSpaceOdds34 = get_capsule_value(miniMushroomSpaceOdds34) or "0"
-    megaMushroomPrice1 = get_capsule_value(megaMushroomPrice1) or "0"
-    megaMushroomPrice2 = get_capsule_value(megaMushroomPrice2) or "0"
-    megaMushroomPrice34 = get_capsule_value(megaMushroomPrice34) or "0"
-    megaMushroomShopOdds12 = get_capsule_value(megaMushroomShopOdds12) or "0"
-    megaMushroomShopOdds34 = get_capsule_value(megaMushroomShopOdds34) or "0"
-    megaMushroomSpaceOdds1 = get_capsule_value(megaMushroomSpaceOdds1) or "0"
-    megaMushroomSpaceOdds2 = get_capsule_value(megaMushroomSpaceOdds2) or "0"
-    megaMushroomSpaceOdds34 = get_capsule_value(megaMushroomSpaceOdds34) or "0"
-    superMiniMushroomPrice1 = get_capsule_value(superMiniMushroomPrice1) or "0"
-    superMiniMushroomPrice2 = get_capsule_value(superMiniMushroomPrice2) or "0"
-    superMiniMushroomPrice34 = get_capsule_value(superMiniMushroomPrice34) or "0"
-    superMiniMushroomShopOdds12 = get_capsule_value(superMiniMushroomShopOdds12) or "0"
-    superMiniMushroomShopOdds34 = get_capsule_value(superMiniMushroomShopOdds34) or "0"
-    superMiniMushroomSpaceOdds1 = get_capsule_value(superMiniMushroomSpaceOdds1) or "0"
-    superMiniMushroomSpaceOdds2 = get_capsule_value(superMiniMushroomSpaceOdds2) or "0"
-    superMiniMushroomSpaceOdds34 = get_capsule_value(superMiniMushroomSpaceOdds34) or "0"
-    superMegaMushroomPrice1 = get_capsule_value(superMegaMushroomPrice1) or "0"
-    superMegaMushroomPrice2 = get_capsule_value(superMegaMushroomPrice2) or "0"
-    superMegaMushroomPrice34 = get_capsule_value(superMegaMushroomPrice34) or "0"
-    superMegaMushroomShopOdds12 = get_capsule_value(superMegaMushroomShopOdds12) or "0"
-    superMegaMushroomShopOdds34 = get_capsule_value(superMegaMushroomShopOdds34) or "0"
-    superMegaMushroomSpaceOdds1 = get_capsule_value(superMegaMushroomSpaceOdds1) or "0"
-    superMegaMushroomSpaceOdds2 = get_capsule_value(superMegaMushroomSpaceOdds2) or "0"
-    superMegaMushroomSpaceOdds34 = get_capsule_value(superMegaMushroomSpaceOdds34) or "0"
-    miniMegaHammerPrice1 = get_capsule_value(miniMegaHammerPrice1) or "0"
-    miniMegaHammerPrice2 = get_capsule_value(miniMegaHammerPrice2) or "0"
-    miniMegaHammerPrice34 = get_capsule_value(miniMegaHammerPrice34) or "0"
-    miniMegaHammerShopOdds12 = get_capsule_value(miniMegaHammerShopOdds12) or "0"
-    miniMegaHammerShopOdds34 = get_capsule_value(miniMegaHammerShopOdds34) or "0"
-    miniMegaHammerSpaceOdds1 = get_capsule_value(miniMegaHammerSpaceOdds1) or "0"
-    miniMegaHammerSpaceOdds2 = get_capsule_value(miniMegaHammerSpaceOdds2) or "0"
-    miniMegaHammerSpaceOdds34 = get_capsule_value(miniMegaHammerSpaceOdds34) or "0"
-    warpPipePrice1 = get_capsule_value(warpPipePrice1) or "0"
-    warpPipePrice2 = get_capsule_value(warpPipePrice2) or "0"
-    warpPipePrice34 = get_capsule_value(warpPipePrice34) or "0"
-    warpPipeShopOdds12 = get_capsule_value(warpPipeShopOdds12) or "0"
-    warpPipeShopOdds34 = get_capsule_value(warpPipeShopOdds34) or "0"
-    warpPipeSpaceOdds1 = get_capsule_value(warpPipeSpaceOdds1) or "0"
-    warpPipeSpaceOdds2 = get_capsule_value(warpPipeSpaceOdds2) or "0"
-    warpPipeSpaceOdds34 = get_capsule_value(warpPipeSpaceOdds34) or "0"
-    swapCardPrice1 = get_capsule_value(swapCardPrice1) or "0"
-    swapCardPrice2 = get_capsule_value(swapCardPrice2) or "0"
-    swapCardPrice34 = get_capsule_value(swapCardPrice34) or "0"
-    swapCardShopOdds12 = get_capsule_value(swapCardShopOdds12) or "0"
-    swapCardShopOdds34 = get_capsule_value(swapCardShopOdds34) or "0"
-    swapCardSpaceOdds1 = get_capsule_value(swapCardSpaceOdds1) or "0"
-    swapCardSpaceOdds2 = get_capsule_value(swapCardSpaceOdds2) or "0"
-    swapCardSpaceOdds34 = get_capsule_value(swapCardSpaceOdds34) or "0"
-    sparkyStickerPrice1 = get_capsule_value(sparkyStickerPrice1) or "0"
-    sparkyStickerPrice2 = get_capsule_value(sparkyStickerPrice2) or "0"
-    sparkyStickerPrice34 = get_capsule_value(sparkyStickerPrice34) or "0"
-    sparkyStickerShopOdds12 = get_capsule_value(sparkyStickerShopOdds12) or "0"
-    sparkyStickerShopOdds34 = get_capsule_value(sparkyStickerShopOdds34) or "0"
-    sparkyStickerSpaceOdds1 = get_capsule_value(sparkyStickerSpaceOdds1) or "0"
-    sparkyStickerSpaceOdds2 = get_capsule_value(sparkyStickerSpaceOdds2) or "0"
-    sparkyStickerSpaceOdds34 = get_capsule_value(sparkyStickerSpaceOdds34) or "0"
-    gaddlightPrice1 = get_capsule_value(gaddlightPrice1) or "0"    
-    gaddlightPrice2 = get_capsule_value(gaddlightPrice2) or "0"
-    gaddlightPrice34 = get_capsule_value(gaddlightPrice2) or "0"    
-    gaddlightShopOdds12 = get_capsule_value(gaddlightShopOdds12) or "0"
-    gaddlightShopOdds34 = get_capsule_value(gaddlightShopOdds34) or "0"
-    gaddlightSpaceOdds1 = get_capsule_value(gaddlightSpaceOdds1) or "0"
-    gaddlightSpaceOdds2 = get_capsule_value(gaddlightSpaceOdds2) or "0"
-    gaddlightSpaceOdds34 = get_capsule_value(gaddlightSpaceOdds34) or "0"
-    chompCallPrice1 = get_capsule_value(chompCallPrice1) or "0"
-    chompCallPrice2 = get_capsule_value(chompCallPrice2) or "0" 
-    chompCallPrice34 = get_capsule_value(chompCallPrice34) or "0"
-    chompCallShopOdds12 = get_capsule_value(chompCallShopOdds12) or "0"
-    chompCallShopOdds34 = get_capsule_value(chompCallShopOdds34) or "0"
-    chompCallSpaceOdds1 = get_capsule_value(chompCallSpaceOdds1) or "0"
-    chompCallSpaceOdds2 = get_capsule_value(chompCallSpaceOdds2) or "0"
-    chompCallSpaceOdds34 = get_capsule_value(chompCallSpaceOdds34) or "0"
-    bowserSuitPrice1 = get_capsule_value(bowserSuitPrice1) or "0"
-    bowserSuitPrice2 = get_capsule_value(bowserSuitPrice2) or "0"
-    bowserSuitPrice34 = get_capsule_value(bowserSuitPrice34) or "0"
-    bowserSuitShopOdds12 = get_capsule_value(bowserSuitShopOdds12) or "0"
-    bowserSuitShopOdds34 = get_capsule_value(bowserSuitShopOdds34) or "0"
-    bowserSuitSpaceOdds1 = get_capsule_value(bowserSuitSpaceOdds1) or "0"
-    bowserSuitSpaceOdds2 = get_capsule_value(bowserSuitSpaceOdds2) or "0"
-    bowserSuitSpaceOdds34 = get_capsule_value(bowserSuitSpaceOdds34) or "0"
-    crystalBallPrice1 = get_capsule_value(crystalBallPrice1) or "0"
-    crystalBallPrice2 = get_capsule_value(crystalBallPrice2) or "0"
-    crystalBallPrice34 = get_capsule_value(crystalBallPrice34) or "0"
-    crystalBallShopOdds12 = get_capsule_value(crystalBallShopOdds12) or "0"
-    crystalBallShopOdds34 = get_capsule_value(crystalBallShopOdds34) or "0"
-    crystalBallSpaceOdds1 = get_capsule_value(crystalBallSpaceOdds1) or "0"
-    crystalBallSpaceOdds2 = get_capsule_value(crystalBallSpaceOdds2) or "0"
-    crystalBallSpaceOdds34 = get_capsule_value(crystalBallSpaceOdds34) or "0"
-    magicLampPrice1 = get_capsule_value(magicLampPrice1) or "0"
-    magicLampPrice2 = get_capsule_value(magicLampPrice2) or "0"
-    magicLampPrice34 = get_capsule_value(magicLampPrice34) or "0"
-    magicLampShopOdds12 = get_capsule_value(magicLampShopOdds12) or "0"
-    magicLampShopOdds34 = get_capsule_value(magicLampShopOdds34) or "0"
-    magicLampSpaceOdds1 = get_capsule_value(magicLampSpaceOdds1) or "0"
-    magicLampSpaceOdds2 = get_capsule_value(magicLampSpaceOdds2) or "0"
-    magicLampSpaceOdds34 = get_capsule_value(magicLampSpaceOdds34) or "0"
-    itemBagPrice1 = get_capsule_value(itemBagPrice1) or "0"
-    itemBagPrice2 = get_capsule_value(itemBagPrice2) or "0"
-    itemBagPrice34 = get_capsule_value(itemBagPrice34) or "0"
-    itemBagShopOdds12 = get_capsule_value(itemBagShopOdds12) or "0"
-    itemBagShopOdds34 = get_capsule_value(itemBagShopOdds34) or "0"
-    itemBagSpaceOdds1 = get_capsule_value(itemBagSpaceOdds1) or "0"
-    itemBagSpaceOdds2 = get_capsule_value(itemBagSpaceOdds2) or "0"
-    itemBagSpaceOdds34 = get_capsule_value(itemBagSpaceOdds34) or "0"
-    mushroomPrice1 = get_capsule_value(mushroomPrice1) or "0"
-    mushroomPrice2 = get_capsule_value(mushroomPrice2) or "0"
-    mushroomPrice34 = get_capsule_value(mushroomPrice34) or "0"
-    mushroomShopOdds12 = get_capsule_value(mushroomShopOdds12) or "0"
-    mushroomShopOdds34 = get_capsule_value(mushroomShopOdds34) or "0"
-    mushroomSpaceOdds1 = get_capsule_value(mushroomSpaceOdds1) or "0"
-    mushroomSpaceOdds2 = get_capsule_value(mushroomSpaceOdds2) or "0"
-    mushroomSpaceOdds34 = get_capsule_value(mushroomSpaceOdds34) or "0"
-    goldenMushroomPrice1 = get_capsule_value(goldenMushroomPrice1) or "0"
-    goldenMushroomPrice2 = get_capsule_value(goldenMushroomPrice2) or "0"
-    goldenMushroomPrice34 = get_capsule_value(goldenMushroomPrice34) or "0"
-    goldenMushroomShopOdds12 = get_capsule_value(goldenMushroomShopOdds12) or "0"
-    goldenMushroomShopOdds34 = get_capsule_value(goldenMushroomShopOdds34) or "0"
-    goldenMushroomSpaceOdds1 = get_capsule_value(goldenMushroomSpaceOdds1) or "0"
-    goldenMushroomSpaceOdds2 = get_capsule_value(goldenMushroomSpaceOdds2) or "0"
-    goldenMushroomSpaceOdds34 = get_capsule_value(goldenMushroomSpaceOdds34) or "0"
-    reverseMushroomPrice1 = get_capsule_value(reverseMushroomPrice1) or "0"
-    reverseMushroomPrice2 = get_capsule_value(reverseMushroomPrice2) or "0"
-    reverseMushroomPrice34 = get_capsule_value(reverseMushroomPrice34) or "0"
-    reverseMushroomShopOdds12 = get_capsule_value(reverseMushroomShopOdds12) or "0"
-    reverseMushroomShopOdds34 = get_capsule_value(reverseMushroomShopOdds34) or "0"
-    reverseMushroomSpaceOdds1 = get_capsule_value(reverseMushroomSpaceOdds1) or "0"
-    reverseMushroomSpaceOdds2 = get_capsule_value(reverseMushroomSpaceOdds2) or "0"
-    reverseMushroomSpaceOdds34 = get_capsule_value(reverseMushroomSpaceOdds34) or "0"
-    poisonMushroomPrice1 = get_capsule_value(poisonMushroomPrice1) or "0"
-    poisonMushroomPrice2 = get_capsule_value(poisonMushroomPrice2) or "0"
-    poisonMushroomPrice34 = get_capsule_value(poisonMushroomPrice34) or "0"
-    poisonMushroomShopOdds12 = get_capsule_value(poisonMushroomShopOdds12) or "0"
-    poisonMushroomShopOdds34 = get_capsule_value(poisonMushroomShopOdds34) or "0"
-    poisonMushroomSpaceOdds1 = get_capsule_value(poisonMushroomSpaceOdds1) or "0"
-    poisonMushroomSpaceOdds2 = get_capsule_value(poisonMushroomSpaceOdds2) or "0"
-    poisonMushroomSpaceOdds34 = get_capsule_value(poisonMushroomSpaceOdds34) or "0"
-    triplePoisonMushroomPrice1 = get_capsule_value(triplePoisonMushroomPrice1) or "0"
-    triplePoisonMushroomPrice2 = get_capsule_value(triplePoisonMushroomPrice2) or "0"
-    triplePoisonMushroomPrice34 = get_capsule_value(triplePoisonMushroomPrice34) or "0"
-    triplePoisonMushroomShopOdds12 = get_capsule_value(triplePoisonMushroomShopOdds12) or "0"
-    triplePoisonMushroomShopOdds34 = get_capsule_value(triplePoisonMushroomShopOdds34) or "0"
-    triplePoisonMushroomSpaceOdds1 = get_capsule_value(triplePoisonMushroomSpaceOdds1) or "0"
-    triplePoisonMushroomSpaceOdds2 = get_capsule_value(triplePoisonMushroomSpaceOdds2) or "0"
-    triplePoisonMushroomSpaceOdds34 = get_capsule_value(triplePoisonMushroomSpaceOdds34) or "0"
-    celluarShopperPrice1 = get_capsule_value(celluarShopperPrice1) or "0"
-    celluarShopperPrice2 = get_capsule_value(celluarShopperPrice2) or "0"
-    celluarShopperPrice34 = get_capsule_value(celluarShopperPrice34) or "0"
-    celluarShopperShopOdds12 = get_capsule_value(celluarShopperShopOdds12) or "0"
-    celluarShopperShopOdds34 = get_capsule_value(celluarShopperShopOdds34) or "0"
-    celluarShopperSpaceOdds1 = get_capsule_value(celluarShopperSpaceOdds1) or "0"
-    celluarShopperSpaceOdds2 = get_capsule_value(celluarShopperSpaceOdds2) or "0"
-    celluarShopperSpaceOdds34 = get_capsule_value(celluarShopperSpaceOdds34) or "0"
-    skeletonKeyPrice1 = get_capsule_value(skeletonKeyPrice1) or "0"
-    skeletonKeyPrice2 = get_capsule_value(skeletonKeyPrice2) or "0"
-    skeletonKeyPrice34 = get_capsule_value(skeletonKeyPrice34) or "0"
-    skeletonKeyShopOdds12 = get_capsule_value(skeletonKeyShopOdds12) or "0"
-    skeletonKeyShopOdds34 = get_capsule_value(skeletonKeyShopOdds34) or "0"
-    skeletonKeySpaceOdds1 = get_capsule_value(skeletonKeySpaceOdds1) or "0"
-    skeletonKeySpaceOdds2 = get_capsule_value(skeletonKeySpaceOdds2) or "0"
-    skeletonKeySpaceOdds34 = get_capsule_value(skeletonKeySpaceOdds34) or "0"
-    plunderChestPrice1 = get_capsule_value(plunderChestPrice1) or "0"
-    plunderChestPrice2 = get_capsule_value(plunderChestPrice2) or "0"
-    plunderChestPrice34 = get_capsule_value(plunderChestPrice34) or "0"
-    plunderChestShopOdds12 = get_capsule_value(plunderChestShopOdds12) or "0"
-    plunderChestShopOdds34 = get_capsule_value(plunderChestShopOdds34) or "0"
-    plunderChestSpaceOdds1 = get_capsule_value(plunderChestSpaceOdds1) or "0"
-    plunderChestSpaceOdds2 = get_capsule_value(plunderChestSpaceOdds2) or "0"
-    plunderChestSpaceOdds34 = get_capsule_value(plunderChestSpaceOdds34) or "0"
-    gaddbrushPrice1 = get_capsule_value(gaddbrushPrice1) or "0"
-    gaddbrushPrice2 = get_capsule_value(gaddbrushPrice2) or "0"
-    gaddbrushPrice34 = get_capsule_value(gaddbrushPrice34) or "0"
-    gaddbrushShopOdds12 = get_capsule_value(gaddbrushShopOdds12) or "0"
-    gaddbrushShopOdds34 = get_capsule_value(gaddbrushShopOdds34) or "0"
-    gaddbrushSpaceOdds1 = get_capsule_value(gaddbrushSpaceOdds1) or "0"
-    gaddbrushSpaceOdds2 = get_capsule_value(gaddbrushSpaceOdds2) or "0"
-    gaddbrushSpaceOdds34 = get_capsule_value(gaddbrushSpaceOdds34) or "0"
-    warpBlockPrice1 = get_capsule_value(warpBlockPrice1) or "0"
-    warpBlockPrice2 = get_capsule_value(warpBlockPrice2) or "0"
-    warpBlockPrice34 = get_capsule_value(warpBlockPrice34) or "0"
-    warpBlockShopOdds12 = get_capsule_value(warpBlockShopOdds12) or "0"
-    warpBlockShopOdds34 = get_capsule_value(warpBlockShopOdds34) or "0"
-    warpBlockSpaceOdds1 = get_capsule_value(warpBlockSpaceOdds1) or "0"
-    warpBlockSpaceOdds2 = get_capsule_value(warpBlockSpaceOdds2) or "0"
-    warpBlockSpaceOdds34 = get_capsule_value(warpBlockSpaceOdds34) or "0"
-    flyGuyPrice1 = get_capsule_value(flyGuyPrice1) or "0"
-    flyGuyPrice2 = get_capsule_value(flyGuyPrice2) or "0"
-    flyGuyPrice34 = get_capsule_value(flyGuyPrice34) or "0"
-    flyGuyShopOdds12 = get_capsule_value(flyGuyShopOdds12) or "0"
-    flyGuyShopOdds34 = get_capsule_value(flyGuyShopOdds34) or "0"
-    flyGuySpaceOdds1 = get_capsule_value(flyGuySpaceOdds1) or "0"
-    flyGuySpaceOdds2 = get_capsule_value(flyGuySpaceOdds2) or "0"
-    flyGuySpaceOdds34 = get_capsule_value(flyGuySpaceOdds34) or "0"
-    plusBlockPrice1 = get_capsule_value(plusBlockPrice1) or "0"
-    plusBlockPrice2 = get_capsule_value(plusBlockPrice2) or "0"
-    plusBlockPrice34 = get_capsule_value(plusBlockPrice34) or "0"
-    plusBlockShopOdds12 = get_capsule_value(plusBlockShopOdds12) or "0"
-    plusBlockShopOdds34 = get_capsule_value(plusBlockShopOdds34) or "0"
-    plusBlockSpaceOdds1 = get_capsule_value(plusBlockSpaceOdds1) or "0"
-    plusBlockSpaceOdds2 = get_capsule_value(plusBlockSpaceOdds2) or "0"
-    plusBlockSpaceOdds34 = get_capsule_value(plusBlockSpaceOdds34) or "0"
-    minusBlockPrice1 = get_capsule_value(minusBlockPrice1) or "0"
-    minusBlockPrice2 = get_capsule_value(minusBlockPrice2) or "0"
-    minusBlockPrice34 = get_capsule_value(minusBlockPrice34) or "0"
-    minusBlockShopOdds12 = get_capsule_value(minusBlockShopOdds12) or "0"
-    minusBlockShopOdds34 = get_capsule_value(minusBlockShopOdds34) or "0"
-    minusBlockSpaceOdds1 = get_capsule_value(minusBlockSpaceOdds1) or "0"
-    minusBlockSpaceOdds2 = get_capsule_value(minusBlockSpaceOdds2) or "0"
-    minusBlockSpaceOdds34 = get_capsule_value(minusBlockSpaceOdds34) or "0"
-    speedBlockPrice1 = get_capsule_value(speedBlockPrice1) or "0"
-    speedBlockPrice2 = get_capsule_value(speedBlockPrice2) or "0"
-    speedBlockPrice34 = get_capsule_value(speedBlockPrice34) or "0"
-    speedBlockShopOdds12 = get_capsule_value(speedBlockShopOdds12) or "0"
-    speedBlockShopOdds34 = get_capsule_value(speedBlockShopOdds34) or "0"
-    speedBlockSpaceOdds1 = get_capsule_value(speedBlockSpaceOdds1) or "0"
-    speedBlockSpaceOdds2 = get_capsule_value(speedBlockSpaceOdds2) or "0"
-    speedBlockSpaceOdds34 = get_capsule_value(speedBlockSpaceOdds34) or "0"
-    slowBlockPrice1 = get_capsule_value(slowBlockPrice1) or "0"
-    slowBlockPrice2 = get_capsule_value(slowBlockPrice2) or "0"
-    slowBlockPrice34 = get_capsule_value(slowBlockPrice34) or "0"
-    slowBlockShopOdds12 = get_capsule_value(slowBlockShopOdds12) or "0"
-    slowBlockShopOdds34 = get_capsule_value(slowBlockShopOdds34) or "0"
-    slowBlockSpaceOdds1 = get_capsule_value(slowBlockSpaceOdds1) or "0"
-    slowBlockSpaceOdds2 = get_capsule_value(slowBlockSpaceOdds2) or "0"
-    slowBlockSpaceOdds34 = get_capsule_value(slowBlockSpaceOdds34) or "0"
-    bowserPhonePrice1 = get_capsule_value(bowserPhonePrice1) or "0"
-    bowserPhonePrice2 = get_capsule_value(bowserPhonePrice2) or "0"
-    bowserPhonePrice34 = get_capsule_value(bowserPhonePrice34) or "0"
-    bowserPhoneShopOdds12 = get_capsule_value(bowserPhoneShopOdds12) or "0"
-    bowserPhoneShopOdds34 = get_capsule_value(bowserPhoneShopOdds34) or "0"
-    bowserPhoneSpaceOdds1 = get_capsule_value(bowserPhoneSpaceOdds1) or "0"
-    bowserPhoneSpaceOdds2 = get_capsule_value(bowserPhoneSpaceOdds2) or "0"
-    bowserPhoneSpaceOdds34 = get_capsule_value(bowserPhoneSpaceOdds34) or "0"
-    doubleDipPrice1 = get_capsule_value(doubleDipPrice1) or "0"
-    doubleDipPrice2 = get_capsule_value(doubleDipPrice2) or "0"
-    doubleDipPrice34 = get_capsule_value(doubleDipPrice34) or "0"
-    doubleDipShopOdds12 = get_capsule_value(doubleDipShopOdds12) or "0"
-    doubleDipShopOdds34 = get_capsule_value(doubleDipShopOdds34) or "0"
-    doubleDipSpaceOdds1 = get_capsule_value(doubleDipSpaceOdds1) or "0"
-    doubleDipSpaceOdds2 = get_capsule_value(doubleDipSpaceOdds2) or "0"
-    doubleDipSpaceOdds34 = get_capsule_value(doubleDipSpaceOdds34) or "0"
-    hiddenBlockCardPrice1 = get_capsule_value(hiddenBlockCardPrice1) or "0"
-    hiddenBlockCardPrice2 = get_capsule_value(hiddenBlockCardPrice2) or "0"
-    hiddenBlockCardPrice34 = get_capsule_value(hiddenBlockCardPrice34) or "0"
-    hiddenBlockCardShopOdds12 = get_capsule_value(hiddenBlockCardShopOdds12) or "0"
-    hiddenBlockCardShopOdds34 = get_capsule_value(hiddenBlockCardShopOdds34) or "0"
-    hiddenBlockCardSpaceOdds1 = get_capsule_value(hiddenBlockCardSpaceOdds1) or "0"
-    hiddenBlockCardSpaceOdds2 = get_capsule_value(hiddenBlockCardSpaceOdds2) or "0"
-    hiddenBlockCardSpaceOdds34 = get_capsule_value(hiddenBlockCardSpaceOdds34) or "0"
-    barterBoxPrice1 = get_capsule_value(barterBoxPrice1) or "0"
-    barterBoxPrice2 = get_capsule_value(barterBoxPrice2) or "0"
-    barterBoxPrice34 = get_capsule_value(barterBoxPrice34) or "0"
-    barterBoxShopOdds12 = get_capsule_value(barterBoxShopOdds12) or "0"
-    barterBoxShopOdds34 = get_capsule_value(barterBoxShopOdds34) or "0"
-    barterBoxSpaceOdds1 = get_capsule_value(barterBoxSpaceOdds1) or "0"
-    barterBoxSpaceOdds2 = get_capsule_value(barterBoxSpaceOdds2) or "0"
-    barterBoxSpaceOdds34 = get_capsule_value(barterBoxSpaceOdds34) or "0"
-    superWarpPipePrice1 = get_capsule_value(superWarpPipePrice1) or "0"
-    superWarpPipePrice2 = get_capsule_value(superWarpPipePrice2) or "0"
-    superWarpPipePrice34 = get_capsule_value(superWarpPipePrice34) or "0"
-    superWarpPipeShopOdds12 = get_capsule_value(superWarpPipeShopOdds12) or "0"
-    superWarpPipeShopOdds34 = get_capsule_value(superWarpPipeShopOdds34) or "0"
-    superWarpPipeSpaceOdds1 = get_capsule_value(superWarpPipeSpaceOdds1) or "0"
-    superWarpPipeSpaceOdds2 = get_capsule_value(superWarpPipeSpaceOdds2) or "0"
-    superWarpPipeSpaceOdds34 = get_capsule_value(superWarpPipeSpaceOdds34) or "0"
-    chanceTimeCharmPrice1 = get_capsule_value(chanceTimeCharmPrice1) or "0"
-    chanceTimeCharmPrice2 = get_capsule_value(chanceTimeCharmPrice2) or "0"
-    chanceTimeCharmPrice34 = get_capsule_value(chanceTimeCharmPrice34) or "0"
-    chanceTimeCharmShopOdds12 = get_capsule_value(chanceTimeCharmShopOdds12) or "0"
-    chanceTimeCharmShopOdds34 = get_capsule_value(chanceTimeCharmShopOdds34) or "0"
-    chanceTimeCharmSpaceOdds1 = get_capsule_value(chanceTimeCharmSpaceOdds1) or "0"
-    chanceTimeCharmSpaceOdds2 = get_capsule_value(chanceTimeCharmSpaceOdds2) or "0"
-    chanceTimeCharmSpaceOdds34 = get_capsule_value(chanceTimeCharmSpaceOdds34) or "0"
-    wackyWatchPrice1 = get_capsule_value(wackyWatchPrice1) or "0"
-    wackyWatchPrice2 = get_capsule_value(wackyWatchPrice2) or "0"
-    wackyWatchPrice34 = get_capsule_value(wackyWatchPrice34) or "0"
-    wackyWatchShopOdds12 = get_capsule_value(wackyWatchShopOdds12) or "0"
-    wackyWatchShopOdds34 = get_capsule_value(wackyWatchShopOdds34) or "0"
-    wackyWatchSpaceOdds1 = get_capsule_value(wackyWatchSpaceOdds1) or "0"
-    wackyWatchSpaceOdds2 = get_capsule_value(wackyWatchSpaceOdds2) or "0"
-    wackyWatchSpaceOdds34 = get_capsule_value(wackyWatchSpaceOdds34) or "0"
-
-    # Weights lists
-    shopOdds12 = [
-        miniMushroomShopOdds12,
-        megaMushroomShopOdds12,
-        superMiniMushroomShopOdds12,
-        superMegaMushroomShopOdds12,
-        miniMegaHammerShopOdds12,
-        warpPipeShopOdds12,
-        swapCardShopOdds12,
-        sparkyStickerShopOdds12,
-        gaddlightShopOdds12,
-        chompCallShopOdds12,
-        bowserSuitShopOdds12,
-        crystalBallShopOdds12,
-        magicLampShopOdds12,
-        itemBagShopOdds12,
-        mushroomShopOdds12,
-        goldenMushroomShopOdds12,
-        reverseMushroomShopOdds12,
-        poisonMushroomShopOdds12,
-        triplePoisonMushroomShopOdds12,
-        celluarShopperShopOdds12,
-        skeletonKeyShopOdds12,
-        plunderChestShopOdds12,
-        gaddbrushShopOdds12,
-        warpBlockShopOdds12,
-        flyGuyShopOdds12,
-        plusBlockShopOdds12,
-        minusBlockShopOdds12,
-        speedBlockShopOdds12,
-        slowBlockShopOdds12,
-        bowserPhoneShopOdds12,
-        doubleDipShopOdds12,
-        hiddenBlockCardShopOdds12,
-        barterBoxShopOdds12,
-        superWarpPipeShopOdds12,
-        chanceTimeCharmShopOdds12,
-        wackyWatchShopOdds12,
-    ]
-
-    shopOdds34 = [
-        miniMushroomShopOdds34,
-        megaMushroomShopOdds34,
-        superMiniMushroomShopOdds34,
-        superMegaMushroomShopOdds34,
-        miniMegaHammerShopOdds34,
-        warpPipeShopOdds34,
-        swapCardShopOdds34,
-        sparkyStickerShopOdds34,
-        gaddlightShopOdds34,
-        chompCallShopOdds34,
-        bowserSuitShopOdds34,
-        crystalBallShopOdds34,
-        magicLampShopOdds34,
-        itemBagShopOdds34,
-        mushroomShopOdds34,
-        goldenMushroomShopOdds34,
-        reverseMushroomShopOdds34,
-        poisonMushroomShopOdds34,
-        triplePoisonMushroomShopOdds34,
-        celluarShopperShopOdds34,
-        skeletonKeyShopOdds34,
-        plunderChestShopOdds34,
-        gaddbrushShopOdds34,
-        warpBlockShopOdds34,
-        flyGuyShopOdds34,
-        plusBlockShopOdds34,
-        minusBlockShopOdds34,
-        speedBlockShopOdds34,
-        slowBlockShopOdds34,
-        bowserPhoneShopOdds34,
-        doubleDipShopOdds34,
-        hiddenBlockCardShopOdds34,
-        barterBoxShopOdds34,
-        superWarpPipeShopOdds34,
-        chanceTimeCharmShopOdds34,
-        wackyWatchShopOdds34,
-    ]
-
-    spaceOdds1 = [
-        miniMushroomSpaceOdds1,
-        megaMushroomSpaceOdds1,
-        superMiniMushroomSpaceOdds1,
-        superMegaMushroomSpaceOdds1,
-        miniMegaHammerSpaceOdds1,
-        warpPipeSpaceOdds1,
-        swapCardSpaceOdds1,
-        sparkyStickerSpaceOdds1,
-        gaddlightSpaceOdds1,
-        chompCallSpaceOdds1,
-        bowserSuitSpaceOdds1,
-        crystalBallSpaceOdds1,
-        magicLampSpaceOdds1,
-        itemBagSpaceOdds1,
-        mushroomSpaceOdds1,
-        goldenMushroomSpaceOdds1,
-        reverseMushroomSpaceOdds1,
-        poisonMushroomSpaceOdds1,
-        triplePoisonMushroomSpaceOdds1,
-        celluarShopperSpaceOdds1,
-        skeletonKeySpaceOdds1,
-        plunderChestSpaceOdds1,
-        gaddbrushSpaceOdds1,
-        warpBlockSpaceOdds1,
-        flyGuySpaceOdds1,
-        plusBlockSpaceOdds1,
-        minusBlockSpaceOdds1,
-        speedBlockSpaceOdds1,
-        slowBlockSpaceOdds1,
-        bowserPhoneSpaceOdds1,
-        doubleDipSpaceOdds1,
-        hiddenBlockCardSpaceOdds1,
-        barterBoxSpaceOdds1,
-        superWarpPipeSpaceOdds1,
-        chanceTimeCharmSpaceOdds1,
-        wackyWatchSpaceOdds1,
-    ]
-
-    spaceOdds2 = [
-        miniMushroomSpaceOdds2,
-        megaMushroomSpaceOdds2,
-        superMiniMushroomSpaceOdds2,
-        superMegaMushroomSpaceOdds2,
-        miniMegaHammerSpaceOdds2,
-        warpPipeSpaceOdds2,
-        swapCardSpaceOdds2,
-        sparkyStickerSpaceOdds2,
-        gaddlightSpaceOdds2,
-        chompCallSpaceOdds2,
-        bowserSuitSpaceOdds2,
-        crystalBallSpaceOdds2,
-        magicLampSpaceOdds2,
-        itemBagSpaceOdds2,
-        mushroomSpaceOdds2,
-        goldenMushroomSpaceOdds2,
-        reverseMushroomSpaceOdds2,
-        poisonMushroomSpaceOdds2,
-        triplePoisonMushroomSpaceOdds2,
-        celluarShopperSpaceOdds2,
-        skeletonKeySpaceOdds2,
-        plunderChestSpaceOdds2,
-        gaddbrushSpaceOdds2,
-        warpBlockSpaceOdds2,
-        flyGuySpaceOdds2,
-        plusBlockSpaceOdds2,
-        minusBlockSpaceOdds2,
-        speedBlockSpaceOdds2,
-        slowBlockSpaceOdds2,
-        bowserPhoneSpaceOdds2,
-        doubleDipSpaceOdds2,
-        hiddenBlockCardSpaceOdds2,
-        barterBoxSpaceOdds2,
-        superWarpPipeSpaceOdds2,
-        chanceTimeCharmSpaceOdds2,
-        wackyWatchSpaceOdds2,
-    ]
-
-    spaceOdds34 = [
-        miniMushroomSpaceOdds34,
-        megaMushroomSpaceOdds34,
-        superMiniMushroomSpaceOdds34,
-        superMegaMushroomSpaceOdds34,
-        miniMegaHammerSpaceOdds34,
-        warpPipeSpaceOdds34,
-        swapCardSpaceOdds34,
-        sparkyStickerSpaceOdds34,
-        gaddlightSpaceOdds34,
-        chompCallSpaceOdds34,
-        bowserSuitSpaceOdds34,
-        crystalBallSpaceOdds34,
-        magicLampSpaceOdds34,
-        itemBagSpaceOdds34,
-        mushroomSpaceOdds34,
-        goldenMushroomSpaceOdds34,
-        reverseMushroomSpaceOdds34,
-        poisonMushroomSpaceOdds34,
-        triplePoisonMushroomSpaceOdds34,
-        celluarShopperSpaceOdds34,
-        skeletonKeySpaceOdds34,
-        plunderChestSpaceOdds34,
-        gaddbrushSpaceOdds34,
-        warpBlockSpaceOdds34,
-        flyGuySpaceOdds34,
-        plusBlockSpaceOdds34,
-        minusBlockSpaceOdds34,
-        speedBlockSpaceOdds34,
-        slowBlockSpaceOdds34,
-        bowserPhoneSpaceOdds34,
-        doubleDipSpaceOdds34,
-        hiddenBlockCardSpaceOdds34,
-        barterBoxSpaceOdds34,
-        superWarpPipeSpaceOdds34,
-        chanceTimeCharmSpaceOdds34,
-        wackyWatchSpaceOdds34,
-    ]
-
-    shopOdds12Weights = sum(int(weight) if weight else 0 for weight in shopOdds12)
-    shopOdds34Weights = sum(int(weight) if weight else 0 for weight in shopOdds34)
-    spaceOdds1Weights = sum(int(weight) if weight else 0 for weight in spaceOdds1)
-    spaceOdds2Weights = sum(int(weight) if weight else 0 for weight in spaceOdds2)
-    spaceOdds34Weights = sum(int(weight) if weight else 0 for weight in spaceOdds34)
-
-    def calculateWeight(weight, total):
-        # Convert weight to int, default to 0 if empty or None
-        weight = int(weight) if weight else 0
-        # Check for total being zero to avoid division by zero
-        if total <= 0:
-            return 0  # Return 0 if total is zero or negative
-        if total < 100:
-            return weight  # Return the weight directly if total is less than 100
-        else:
-            percentage = (weight / total) * 100
-            if 0 < percentage < 1:
-                return math.ceil(percentage)
-            return round(percentage)
-
-    # Calculate weights for shop odds 34
-    miniMushroomSpaceOdds34 = calculateWeight(miniMushroomSpaceOdds34, shopOdds34Weights)
-    megaMushroomSpaceOdds34 = calculateWeight(megaMushroomSpaceOdds34, shopOdds34Weights)
-    superMiniMushroomSpaceOdds34 = calculateWeight(superMiniMushroomSpaceOdds34, shopOdds34Weights)
-    superMegaMushroomSpaceOdds34 = calculateWeight(superMegaMushroomSpaceOdds34, shopOdds34Weights)
-    miniMegaHammerSpaceOdds34 = calculateWeight(miniMegaHammerSpaceOdds34, shopOdds34Weights)
-    warpPipeSpaceOdds34 = calculateWeight(warpPipeSpaceOdds34, shopOdds34Weights)
-    swapCardSpaceOdds34 = calculateWeight(swapCardSpaceOdds34, shopOdds34Weights)
-    sparkyStickerSpaceOdds34 = calculateWeight(sparkyStickerSpaceOdds34, shopOdds34Weights)
-    gaddlightSpaceOdds34 = calculateWeight(gaddlightSpaceOdds34, shopOdds34Weights)
-    chompCallSpaceOdds34 = calculateWeight(chompCallSpaceOdds34, shopOdds34Weights)
-    bowserSuitSpaceOdds34 = calculateWeight(bowserSuitSpaceOdds34, shopOdds34Weights)
-    crystalBallSpaceOdds34 = calculateWeight(crystalBallSpaceOdds34, shopOdds34Weights)
-    magicLampSpaceOdds34 = calculateWeight(magicLampSpaceOdds34, shopOdds34Weights)
-    itemBagSpaceOdds34 = calculateWeight(itemBagSpaceOdds34, shopOdds34Weights)
-    mushroomSpaceOdds34 = calculateWeight(mushroomSpaceOdds34, shopOdds34Weights)
-    goldenMushroomSpaceOdds34 = calculateWeight(goldenMushroomSpaceOdds34, shopOdds34Weights)
-    reverseMushroomSpaceOdds34 = calculateWeight(reverseMushroomSpaceOdds34, shopOdds34Weights)
-    poisonMushroomSpaceOdds34 = calculateWeight(poisonMushroomSpaceOdds34, shopOdds34Weights)
-    triplePoisonMushroomSpaceOdds34 = calculateWeight(triplePoisonMushroomSpaceOdds34, shopOdds34Weights)
-    celluarShopperSpaceOdds34 = calculateWeight(celluarShopperSpaceOdds34, shopOdds34Weights)
-    skeletonKeySpaceOdds34 = calculateWeight(skeletonKeySpaceOdds34, shopOdds34Weights)
-    plunderChestSpaceOdds34 = calculateWeight(plunderChestSpaceOdds34, shopOdds34Weights)
-    gaddbrushSpaceOdds34 = calculateWeight(gaddbrushSpaceOdds34, shopOdds34Weights)
-    warpBlockSpaceOdds34 = calculateWeight(warpBlockSpaceOdds34, shopOdds34Weights)
-    flyGuySpaceOdds34 = calculateWeight(flyGuySpaceOdds34, shopOdds34Weights)
-    plusBlockSpaceOdds34 = calculateWeight(plusBlockSpaceOdds34, shopOdds34Weights)
-    minusBlockSpaceOdds34 = calculateWeight(minusBlockSpaceOdds34, shopOdds34Weights)
-    speedBlockSpaceOdds34 = calculateWeight(speedBlockSpaceOdds34, shopOdds34Weights)
-    slowBlockSpaceOdds34 = calculateWeight(slowBlockSpaceOdds34, shopOdds34Weights)
-    bowserPhoneSpaceOdds34 = calculateWeight(bowserPhoneSpaceOdds34, shopOdds34Weights)
-    doubleDipSpaceOdds34 = calculateWeight(doubleDipSpaceOdds34, shopOdds34Weights)
-    hiddenBlockCardSpaceOdds34 = calculateWeight(hiddenBlockCardSpaceOdds34, shopOdds34Weights)
-    barterBoxSpaceOdds34 = calculateWeight(barterBoxSpaceOdds34, shopOdds34Weights)
-    superWarpPipeSpaceOdds34 = calculateWeight(superWarpPipeSpaceOdds34, shopOdds34Weights)
-    chanceTimeCharmSpaceOdds34 = calculateWeight(chanceTimeCharmSpaceOdds34, shopOdds34Weights)
-    wackyWatchSpaceOdds34 = calculateWeight(wackyWatchSpaceOdds34, shopOdds34Weights)
-
-    # Calculate weights for shop odds 12
-    miniMushroomShopOdds12 = calculateWeight(miniMushroomShopOdds12, shopOdds12Weights)
-    megaMushroomShopOdds12 = calculateWeight(megaMushroomShopOdds12, shopOdds12Weights)
-    superMiniMushroomShopOdds12 = calculateWeight(superMiniMushroomShopOdds12, shopOdds12Weights)
-    superMegaMushroomShopOdds12 = calculateWeight(superMegaMushroomShopOdds12, shopOdds12Weights)
-    miniMegaHammerShopOdds12 = calculateWeight(miniMegaHammerShopOdds12, shopOdds12Weights)
-    warpPipeShopOdds12 = calculateWeight(warpPipeShopOdds12, shopOdds12Weights)
-    swapCardShopOdds12 = calculateWeight(swapCardShopOdds12, shopOdds12Weights)
-    sparkyStickerShopOdds12 = calculateWeight(sparkyStickerShopOdds12, shopOdds12Weights)
-    gaddlightShopOdds12 = calculateWeight(gaddlightShopOdds12, shopOdds12Weights)
-    chompCallShopOdds12 = calculateWeight(chompCallShopOdds12, shopOdds12Weights)
-    bowserSuitShopOdds12 = calculateWeight(bowserSuitShopOdds12, shopOdds12Weights)
-    crystalBallShopOdds12 = calculateWeight(crystalBallShopOdds12, shopOdds12Weights)
-    magicLampShopOdds12 = calculateWeight(magicLampShopOdds12, shopOdds12Weights)
-    itemBagShopOdds12 = calculateWeight(itemBagShopOdds12, shopOdds12Weights)
-    mushroomShopOdds12 = calculateWeight(mushroomShopOdds12, shopOdds12Weights)
-    goldenMushroomShopOdds12 = calculateWeight(goldenMushroomShopOdds12, shopOdds12Weights)
-    reverseMushroomShopOdds12 = calculateWeight(reverseMushroomShopOdds12, shopOdds12Weights)
-    poisonMushroomShopOdds12 = calculateWeight(poisonMushroomShopOdds12, shopOdds12Weights)
-    triplePoisonMushroomShopOdds12 = calculateWeight(triplePoisonMushroomShopOdds12, shopOdds12Weights)
-    celluarShopperShopOdds12 = calculateWeight(celluarShopperShopOdds12, shopOdds12Weights)
-    skeletonKeyShopOdds12 = calculateWeight(skeletonKeyShopOdds12, shopOdds12Weights)
-    plunderChestShopOdds12 = calculateWeight(plunderChestShopOdds12, shopOdds12Weights)
-    gaddbrushShopOdds12 = calculateWeight(gaddbrushShopOdds12, shopOdds12Weights)
-    warpBlockShopOdds12 = calculateWeight(warpBlockShopOdds12, shopOdds12Weights)
-    flyGuyShopOdds12 = calculateWeight(flyGuyShopOdds12, shopOdds12Weights)
-    plusBlockShopOdds12 = calculateWeight(plusBlockShopOdds12, shopOdds12Weights)
-    minusBlockShopOdds12 = calculateWeight(minusBlockShopOdds12, shopOdds12Weights)
-    speedBlockShopOdds12 = calculateWeight(speedBlockShopOdds12, shopOdds12Weights)
-    slowBlockShopOdds12 = calculateWeight(slowBlockShopOdds12, shopOdds12Weights)
-    bowserPhoneShopOdds12 = calculateWeight(bowserPhoneShopOdds12, shopOdds12Weights)
-    doubleDipShopOdds12 = calculateWeight(doubleDipShopOdds12, shopOdds12Weights)
-    hiddenBlockCardShopOdds12 = calculateWeight(hiddenBlockCardShopOdds12, shopOdds12Weights)
-    barterBoxShopOdds12 = calculateWeight(barterBoxShopOdds12, shopOdds12Weights)
-    superWarpPipeShopOdds12 = calculateWeight(superWarpPipeShopOdds12, shopOdds12Weights)
-    chanceTimeCharmShopOdds12 = calculateWeight(chanceTimeCharmShopOdds12, shopOdds12Weights)
-    wackyWatchShopOdds12 = calculateWeight(wackyWatchShopOdds12, shopOdds12Weights)
-
-   # Calculate weights for space odds 1
-    miniMushroomSpaceOdds1 = calculateWeight(miniMushroomSpaceOdds1, spaceOdds1Weights)
-    megaMushroomSpaceOdds1 = calculateWeight(megaMushroomSpaceOdds1, spaceOdds1Weights)
-    superMiniMushroomSpaceOdds1 = calculateWeight(superMiniMushroomSpaceOdds1, spaceOdds1Weights)
-    superMegaMushroomSpaceOdds1 = calculateWeight(superMegaMushroomSpaceOdds1, spaceOdds1Weights)
-    miniMegaHammerSpaceOdds1 = calculateWeight(miniMegaHammerSpaceOdds1, spaceOdds1Weights)
-    warpPipeSpaceOdds1 = calculateWeight(warpPipeSpaceOdds1, spaceOdds1Weights)
-    swapCardSpaceOdds1 = calculateWeight(swapCardSpaceOdds1, spaceOdds1Weights)
-    sparkyStickerSpaceOdds1 = calculateWeight(sparkyStickerSpaceOdds1, spaceOdds1Weights)
-    gaddlightSpaceOdds1 = calculateWeight(gaddlightSpaceOdds1, spaceOdds1Weights)
-    chompCallSpaceOdds1 = calculateWeight(chompCallSpaceOdds1, spaceOdds1Weights)
-    bowserSuitSpaceOdds1 = calculateWeight(bowserSuitSpaceOdds1, spaceOdds1Weights)
-    crystalBallSpaceOdds1 = calculateWeight(crystalBallSpaceOdds1, spaceOdds1Weights)
-    magicLampSpaceOdds1 = calculateWeight(magicLampSpaceOdds1, spaceOdds1Weights)
-    itemBagSpaceOdds1 = calculateWeight(itemBagSpaceOdds1, spaceOdds1Weights)
-    mushroomSpaceOdds1 = calculateWeight(mushroomSpaceOdds1, spaceOdds1Weights)
-    goldenMushroomSpaceOdds1 = calculateWeight(goldenMushroomSpaceOdds1, spaceOdds1Weights)
-    reverseMushroomSpaceOdds1 = calculateWeight(reverseMushroomSpaceOdds1, spaceOdds1Weights)
-    poisonMushroomSpaceOdds1 = calculateWeight(poisonMushroomSpaceOdds1, spaceOdds1Weights)
-    triplePoisonMushroomSpaceOdds1 = calculateWeight(triplePoisonMushroomSpaceOdds1, spaceOdds1Weights)
-    celluarShopperSpaceOdds1 = calculateWeight(celluarShopperSpaceOdds1, spaceOdds1Weights)
-    skeletonKeySpaceOdds1 = calculateWeight(skeletonKeySpaceOdds1, spaceOdds1Weights)
-    plunderChestSpaceOdds1 = calculateWeight(plunderChestSpaceOdds1, spaceOdds1Weights)
-    gaddbrushSpaceOdds1 = calculateWeight(gaddbrushSpaceOdds1, spaceOdds1Weights)
-    warpBlockSpaceOdds1 = calculateWeight(warpBlockSpaceOdds1, spaceOdds1Weights)
-    flyGuySpaceOdds1 = calculateWeight(flyGuySpaceOdds1, spaceOdds1Weights)
-    plusBlockSpaceOdds1 = calculateWeight(plusBlockSpaceOdds1, spaceOdds1Weights)
-    minusBlockSpaceOdds1 = calculateWeight(minusBlockSpaceOdds1, spaceOdds1Weights)
-    speedBlockSpaceOdds1 = calculateWeight(speedBlockSpaceOdds1, spaceOdds1Weights)
-    slowBlockSpaceOdds1 = calculateWeight(slowBlockSpaceOdds1, spaceOdds1Weights)
-    bowserPhoneSpaceOdds1 = calculateWeight(bowserPhoneSpaceOdds1, spaceOdds1Weights)
-    doubleDipSpaceOdds1 = calculateWeight(doubleDipSpaceOdds1, spaceOdds1Weights)
-    hiddenBlockCardSpaceOdds1 = calculateWeight(hiddenBlockCardSpaceOdds1, spaceOdds1Weights)
-    barterBoxSpaceOdds1 = calculateWeight(barterBoxSpaceOdds1, spaceOdds1Weights)
-    superWarpPipeSpaceOdds1 = calculateWeight(superWarpPipeSpaceOdds1, spaceOdds1Weights)
-    chanceTimeCharmSpaceOdds1 = calculateWeight(chanceTimeCharmSpaceOdds1, spaceOdds1Weights)
-
-    # Calculate weights for space odds 2
-    miniMushroomSpaceOdds2 = calculateWeight(miniMushroomSpaceOdds2, spaceOdds2Weights)
-    megaMushroomSpaceOdds2 = calculateWeight(megaMushroomSpaceOdds2, spaceOdds2Weights)
-    superMiniMushroomSpaceOdds2 = calculateWeight(superMiniMushroomSpaceOdds2, spaceOdds2Weights)
-    superMegaMushroomSpaceOdds2 = calculateWeight(superMegaMushroomSpaceOdds2, spaceOdds2Weights)
-    miniMegaHammerSpaceOdds2 = calculateWeight(miniMegaHammerSpaceOdds2, spaceOdds2Weights)
-    warpPipeSpaceOdds2 = calculateWeight(warpPipeSpaceOdds2, spaceOdds2Weights)
-    swapCardSpaceOdds2 = calculateWeight(swapCardSpaceOdds2, spaceOdds2Weights)
-    sparkyStickerSpaceOdds2 = calculateWeight(sparkyStickerSpaceOdds2, spaceOdds2Weights)
-    gaddlightSpaceOdds2 = calculateWeight(gaddlightSpaceOdds2, spaceOdds2Weights)
-    chompCallSpaceOdds2 = calculateWeight(chompCallSpaceOdds2, spaceOdds2Weights)
-    bowserSuitSpaceOdds2 = calculateWeight(bowserSuitSpaceOdds2, spaceOdds2Weights)
-    crystalBallSpaceOdds2 = calculateWeight(crystalBallSpaceOdds2, spaceOdds2Weights)
-    magicLampSpaceOdds2 = calculateWeight(magicLampSpaceOdds2, spaceOdds2Weights)
-    itemBagSpaceOdds2 = calculateWeight(itemBagSpaceOdds2, spaceOdds2Weights)
-    mushroomSpaceOdds2 = calculateWeight(mushroomSpaceOdds2, spaceOdds2Weights)
-    reverseMushroomSpaceOdds2 = calculateWeight(reverseMushroomSpaceOdds2, spaceOdds2Weights)
-    poisonMushroomSpaceOdds2 = calculateWeight(poisonMushroomSpaceOdds2, spaceOdds2Weights)
-    triplePoisonMushroomSpaceOdds2 = calculateWeight(triplePoisonMushroomSpaceOdds2, spaceOdds2Weights)
-    celluarShopperSpaceOdds2 = calculateWeight(celluarShopperSpaceOdds2, spaceOdds2Weights)
-    skeletonKeySpaceOdds2 = calculateWeight(skeletonKeySpaceOdds2, spaceOdds2Weights)
-    plunderChestSpaceOdds2 = calculateWeight(plunderChestSpaceOdds2, spaceOdds2Weights)
-    gaddbrushSpaceOdds2 = calculateWeight(gaddbrushSpaceOdds2, spaceOdds2Weights)
-    warpBlockSpaceOdds2 = calculateWeight(warpBlockSpaceOdds2, spaceOdds2Weights)
-    flyGuySpaceOdds2 = calculateWeight(flyGuySpaceOdds2, spaceOdds2Weights)
-    plusBlockSpaceOdds2 = calculateWeight(plusBlockSpaceOdds2, spaceOdds2Weights)
-    minusBlockSpaceOdds2 = calculateWeight(minusBlockSpaceOdds2, spaceOdds2Weights)
-    speedBlockSpaceOdds2 = calculateWeight(speedBlockSpaceOdds2, spaceOdds2Weights)
-    slowBlockSpaceOdds2 = calculateWeight(slowBlockSpaceOdds2, spaceOdds2Weights)
-    bowserPhoneSpaceOdds2 = calculateWeight(bowserPhoneSpaceOdds2, spaceOdds2Weights)
-    doubleDipSpaceOdds2 = calculateWeight(doubleDipSpaceOdds2, spaceOdds2Weights)
-    hiddenBlockCardSpaceOdds2 = calculateWeight(hiddenBlockCardSpaceOdds2, spaceOdds2Weights)
-    barterBoxSpaceOdds2 = calculateWeight(barterBoxSpaceOdds2, spaceOdds2Weights)
-    superWarpPipeSpaceOdds2 = calculateWeight(superWarpPipeSpaceOdds2, spaceOdds2Weights)
-    chanceTimeCharmSpaceOdds2 = calculateWeight(chanceTimeCharmSpaceOdds2, spaceOdds2Weights)
-    wackyWatchSpaceOdds2 = calculateWeight(wackyWatchSpaceOdds2, spaceOdds2Weights)
-
-    # Calculate weights for space odds 34
-    miniMushroomSpaceOdds34 = calculateWeight(miniMushroomSpaceOdds34, spaceOdds34Weights)
-    megaMushroomSpaceOdds34 = calculateWeight(megaMushroomSpaceOdds34, spaceOdds34Weights)
-    superMiniMushroomSpaceOdds34 = calculateWeight(superMiniMushroomSpaceOdds34, spaceOdds34Weights)
-    superMegaMushroomSpaceOdds34 = calculateWeight(superMegaMushroomSpaceOdds34, spaceOdds34Weights)
-    miniMegaHammerSpaceOdds34 = calculateWeight(miniMegaHammerSpaceOdds34, spaceOdds34Weights)
-    warpPipeSpaceOdds34 = calculateWeight(warpPipeSpaceOdds34, spaceOdds34Weights)
-    swapCardSpaceOdds34 = calculateWeight(swapCardSpaceOdds34, spaceOdds34Weights)
-    sparkyStickerSpaceOdds34 = calculateWeight(sparkyStickerSpaceOdds34, spaceOdds34Weights)
-    gaddlightSpaceOdds34 = calculateWeight(gaddlightSpaceOdds34, spaceOdds34Weights)
-    chompCallSpaceOdds34 = calculateWeight(chompCallSpaceOdds34, spaceOdds34Weights)
-    bowserSuitSpaceOdds34 = calculateWeight(bowserSuitSpaceOdds34, spaceOdds34Weights)
-    crystalBallSpaceOdds34 = calculateWeight(crystalBallSpaceOdds34, spaceOdds34Weights)
-    magicLampSpaceOdds34 = calculateWeight(magicLampSpaceOdds34, spaceOdds34Weights)
-    itemBagSpaceOdds34 = calculateWeight(itemBagSpaceOdds34, spaceOdds34Weights)
-    mushroomSpaceOdds34 = calculateWeight(mushroomSpaceOdds34, spaceOdds34Weights)
-    goldenMushroomSpaceOdds34 = calculateWeight(goldenMushroomSpaceOdds34, spaceOdds34Weights)
-    reverseMushroomSpaceOdds34 = calculateWeight(reverseMushroomSpaceOdds34, spaceOdds34Weights)
-    poisonMushroomSpaceOdds34 = calculateWeight(poisonMushroomSpaceOdds34, spaceOdds34Weights)
-    triplePoisonMushroomSpaceOdds34 = calculateWeight(triplePoisonMushroomSpaceOdds34, spaceOdds34Weights)
-    celluarShopperSpaceOdds34 = calculateWeight(celluarShopperSpaceOdds34, spaceOdds34Weights)
-    skeletonKeySpaceOdds34 = calculateWeight(skeletonKeySpaceOdds34, spaceOdds34Weights)
-    plunderChestSpaceOdds34 = calculateWeight(plunderChestSpaceOdds34, spaceOdds34Weights)
-    gaddbrushSpaceOdds34 = calculateWeight(gaddbrushSpaceOdds34, spaceOdds34Weights)
-    warpBlockSpaceOdds34 = calculateWeight(warpBlockSpaceOdds34, spaceOdds34Weights)
-    flyGuySpaceOdds34 = calculateWeight(flyGuySpaceOdds34, spaceOdds34Weights)
-    plusBlockSpaceOdds34 = calculateWeight(plusBlockSpaceOdds34, spaceOdds34Weights)
-    minusBlockSpaceOdds34 = calculateWeight(minusBlockSpaceOdds34, spaceOdds34Weights)
-    speedBlockSpaceOdds34 = calculateWeight(speedBlockSpaceOdds34, spaceOdds34Weights)
-    slowBlockSpaceOdds34 = calculateWeight(slowBlockSpaceOdds34, spaceOdds34Weights)
-    bowserPhoneSpaceOdds34 = calculateWeight(bowserPhoneSpaceOdds34, spaceOdds34Weights)
-    doubleDipSpaceOdds34 = calculateWeight(doubleDipSpaceOdds34, spaceOdds34Weights)
-    hiddenBlockCardSpaceOdds34 = calculateWeight(hiddenBlockCardSpaceOdds34, spaceOdds34Weights)
-    barterBoxSpaceOdds34 = calculateWeight(barterBoxSpaceOdds34, spaceOdds34Weights)
-    superWarpPipeSpaceOdds34 = calculateWeight(superWarpPipeSpaceOdds34, spaceOdds34Weights)
-    chanceTimeCharmSpaceOdds34 = calculateWeight(chanceTimeCharmSpaceOdds34, spaceOdds34Weights)
-    wackyWatchSpaceOdds34 = calculateWeight(wackyWatchSpaceOdds34, spaceOdds34Weights)
-
-    # Redefine Weights lists
-    shopOdds12 = [
-        miniMushroomShopOdds12,
-        megaMushroomShopOdds12,
-        superMiniMushroomShopOdds12,
-        superMegaMushroomShopOdds12,
-        miniMegaHammerShopOdds12,
-        warpPipeShopOdds12,
-        swapCardShopOdds12,
-        sparkyStickerShopOdds12,
-        gaddlightShopOdds12,
-        chompCallShopOdds12,
-        bowserSuitShopOdds12,
-        crystalBallShopOdds12,
-        magicLampShopOdds12,
-        itemBagShopOdds12,
-        mushroomShopOdds12,
-        goldenMushroomShopOdds12,
-        reverseMushroomShopOdds12,
-        poisonMushroomShopOdds12,
-        triplePoisonMushroomShopOdds12,
-        celluarShopperShopOdds12,
-        skeletonKeyShopOdds12,
-        plunderChestShopOdds12,
-        gaddbrushShopOdds12,
-        warpBlockShopOdds12,
-        flyGuyShopOdds12,
-        plusBlockShopOdds12,
-        minusBlockShopOdds12,
-        speedBlockShopOdds12,
-        slowBlockShopOdds12,
-        bowserPhoneShopOdds12,
-        doubleDipShopOdds12,
-        hiddenBlockCardShopOdds12,
-        barterBoxShopOdds12,
-        superWarpPipeShopOdds12,
-        chanceTimeCharmShopOdds12,
-        wackyWatchShopOdds12,
-    ]
-
-    shopOdds34 = [
-        miniMushroomShopOdds34,
-        megaMushroomShopOdds34,
-        superMiniMushroomShopOdds34,
-        superMegaMushroomShopOdds34,
-        miniMegaHammerShopOdds34,
-        warpPipeShopOdds34,
-        swapCardShopOdds34,
-        sparkyStickerShopOdds34,
-        gaddlightShopOdds34,
-        chompCallShopOdds34,
-        bowserSuitShopOdds34,
-        crystalBallShopOdds34,
-        magicLampShopOdds34,
-        itemBagShopOdds34,
-        mushroomShopOdds34,
-        goldenMushroomShopOdds34,
-        reverseMushroomShopOdds34,
-        poisonMushroomShopOdds34,
-        triplePoisonMushroomShopOdds34,
-        celluarShopperShopOdds34,
-        skeletonKeyShopOdds34,
-        plunderChestShopOdds34,
-        gaddbrushShopOdds34,
-        warpBlockShopOdds34,
-        flyGuyShopOdds34,
-        plusBlockShopOdds34,
-        minusBlockShopOdds34,
-        speedBlockShopOdds34,
-        slowBlockShopOdds34,
-        bowserPhoneShopOdds34,
-        doubleDipShopOdds34,
-        hiddenBlockCardShopOdds34,
-        barterBoxShopOdds34,
-        superWarpPipeShopOdds34,
-        chanceTimeCharmShopOdds34,
-        wackyWatchShopOdds34,
-    ]
-
-    spaceOdds1 = [
-        miniMushroomSpaceOdds1,
-        megaMushroomSpaceOdds1,
-        superMiniMushroomSpaceOdds1,
-        superMegaMushroomSpaceOdds1,
-        miniMegaHammerSpaceOdds1,
-        warpPipeSpaceOdds1,
-        swapCardSpaceOdds1,
-        sparkyStickerSpaceOdds1,
-        gaddlightSpaceOdds1,
-        chompCallSpaceOdds1,
-        bowserSuitSpaceOdds1,
-        crystalBallSpaceOdds1,
-        magicLampSpaceOdds1,
-        itemBagSpaceOdds1,
-        mushroomSpaceOdds1,
-        goldenMushroomSpaceOdds1,
-        reverseMushroomSpaceOdds1,
-        poisonMushroomSpaceOdds1,
-        triplePoisonMushroomSpaceOdds1,
-        celluarShopperSpaceOdds1,
-        skeletonKeySpaceOdds1,
-        plunderChestSpaceOdds1,
-        gaddbrushSpaceOdds1,
-        warpBlockSpaceOdds1,
-        flyGuySpaceOdds1,
-        plusBlockSpaceOdds1,
-        minusBlockSpaceOdds1,
-        speedBlockSpaceOdds1,
-        slowBlockSpaceOdds1,
-        bowserPhoneSpaceOdds1,
-        doubleDipSpaceOdds1,
-        hiddenBlockCardSpaceOdds1,
-        barterBoxSpaceOdds1,
-        superWarpPipeSpaceOdds1,
-        chanceTimeCharmSpaceOdds1,
-        wackyWatchSpaceOdds1,
-    ]
-
-    spaceOdds2 = [
-        miniMushroomSpaceOdds2,
-        megaMushroomSpaceOdds2,
-        superMiniMushroomSpaceOdds2,
-        superMegaMushroomSpaceOdds2,
-        miniMegaHammerSpaceOdds2,
-        warpPipeSpaceOdds2,
-        swapCardSpaceOdds2,
-        sparkyStickerSpaceOdds2,
-        gaddlightSpaceOdds2,
-        chompCallSpaceOdds2,
-        bowserSuitSpaceOdds2,
-        crystalBallSpaceOdds2,
-        magicLampSpaceOdds2,
-        itemBagSpaceOdds2,
-        mushroomSpaceOdds2,
-        goldenMushroomSpaceOdds2,
-        reverseMushroomSpaceOdds2,
-        poisonMushroomSpaceOdds2,
-        triplePoisonMushroomSpaceOdds2,
-        celluarShopperSpaceOdds2,
-        skeletonKeySpaceOdds2,
-        plunderChestSpaceOdds2,
-        gaddbrushSpaceOdds2,
-        warpBlockSpaceOdds2,
-        flyGuySpaceOdds2,
-        plusBlockSpaceOdds2,
-        minusBlockSpaceOdds2,
-        speedBlockSpaceOdds2,
-        slowBlockSpaceOdds2,
-        bowserPhoneSpaceOdds2,
-        doubleDipSpaceOdds2,
-        hiddenBlockCardSpaceOdds2,
-        barterBoxSpaceOdds2,
-        superWarpPipeSpaceOdds2,
-        chanceTimeCharmSpaceOdds2,
-        wackyWatchSpaceOdds2,
-    ]
-
-    spaceOdds34 = [
-        miniMushroomSpaceOdds34,
-        megaMushroomSpaceOdds34,
-        superMiniMushroomSpaceOdds34,
-        superMegaMushroomSpaceOdds34,
-        miniMegaHammerSpaceOdds34,
-        warpPipeSpaceOdds34,
-        swapCardSpaceOdds34,
-        sparkyStickerSpaceOdds34,
-        gaddlightSpaceOdds34,
-        chompCallSpaceOdds34,
-        bowserSuitSpaceOdds34,
-        crystalBallSpaceOdds34,
-        magicLampSpaceOdds34,
-        itemBagSpaceOdds34,
-        mushroomSpaceOdds34,
-        goldenMushroomSpaceOdds34,
-        reverseMushroomSpaceOdds34,
-        poisonMushroomSpaceOdds34,
-        triplePoisonMushroomSpaceOdds34,
-        celluarShopperSpaceOdds34,
-        skeletonKeySpaceOdds34,
-        plunderChestSpaceOdds34,
-        gaddbrushSpaceOdds34,
-        warpBlockSpaceOdds34,
-        flyGuySpaceOdds34,
-        plusBlockSpaceOdds34,
-        minusBlockSpaceOdds34,
-        speedBlockSpaceOdds34,
-        slowBlockSpaceOdds34,
-        bowserPhoneSpaceOdds34,
-        doubleDipSpaceOdds34,
-        hiddenBlockCardSpaceOdds34,
-        barterBoxSpaceOdds34,
-        superWarpPipeSpaceOdds34,
-        chanceTimeCharmSpaceOdds34,
-        wackyWatchSpaceOdds34,
-    ]
-
-    shopOdds12Weights = sum(int(weight) for weight in shopOdds12 if weight)
-    shopOdds34Weights = sum(int(weight) for weight in shopOdds34 if weight)
-    spaceOdds1Weights = sum(int(weight) for weight in spaceOdds1 if weight)
-    spaceOdds2Weights = sum(int(weight) for weight in spaceOdds2 if weight)
-    spaceOdds34Weights = sum(int(weight) for weight in spaceOdds34 if weight)
-
-    if int(spaceOdds1Weights) < 101:
-        spaceOdds1Max = max(zip(spaceOdds1, spaceOdds1), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(spaceOdds34Weights) < 101:
-        spaceOdds34Max = max(zip(spaceOdds34, spaceOdds34), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(shopOdds12Weights) < 101:
-        shopOdds12Max = max(zip(shopOdds12, shopOdds12), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(spaceOdds2Weights) < 101:
-        spaceOdds2Max = max(zip(spaceOdds2, spaceOdds2), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(shopOdds34Weights) < 101:
-        shopOdds34Max = max(zip(shopOdds34, shopOdds34), key=lambda tuple: int(tuple[1]))[0]
-
-    if shopOdds12Max == 'miniMushroomShopOdds12':
-        miniMushroomShopOdds12 += (100 - miniMushroomShopOdds12)
-
-    if shopOdds12Max == 'megaMushroomShopOdds12':
-        megaMushroomShopOdds12 += (100 - megaMushroomShopOdds12)
-
-    if shopOdds12Max == 'superMiniMushroomShopOdds12':
-        superMiniMushroomShopOdds12 += (100 - superMiniMushroomShopOdds12)
-
-    if shopOdds12Max == 'superMegaMushroomShopOdds12':
-        superMegaMushroomShopOdds12 += (100 - superMegaMushroomShopOdds12)
-
-    if shopOdds12Max == 'miniMegaHammerShopOdds12':
-        miniMegaHammerShopOdds12 += (100 - miniMegaHammerShopOdds12)
-
-    if shopOdds12Max == 'warpPipeShopOdds12':
-        warpPipeShopOdds12 += (100 - warpPipeShopOdds12)
-
-    if shopOdds12Max == 'swapCardShopOdds12':
-        swapCardShopOdds12 += (100 - swapCardShopOdds12)
-
-    if shopOdds12Max == 'sparkyStickerShopOdds12':
-        sparkyStickerShopOdds12 += (100 - sparkyStickerShopOdds12)
-
-    if shopOdds12Max == 'gaddlightShopOdds12':
-        gaddlightShopOdds12 += (100 - gaddlightShopOdds12)
-
-    if shopOdds12Max == 'chompCallShopOdds12':
-        chompCallShopOdds12 += (100 - chompCallShopOdds12)
-
-    if shopOdds12Max == 'bowserSuitShopOdds12':
-        bowserSuitShopOdds12 += (100 - bowserSuitShopOdds12)
-
-    if shopOdds12Max == 'crystalBallShopOdds12':
-        crystalBallShopOdds12 += (100 - crystalBallShopOdds12)
-
-    if shopOdds12Max == 'magicLampShopOdds12':
-        magicLampShopOdds12 += (100 - magicLampShopOdds12)
-
-    if shopOdds12Max == 'itemBagShopOdds12':
-        itemBagShopOdds12 += (100 - itemBagShopOdds12)
-
-    if shopOdds12Max == 'mushroomShopOdds12':
-        mushroomShopOdds12 += (100 - mushroomShopOdds12)
-
-    if shopOdds12Max == 'goldenMushroomShopOdds12':
-        goldenMushroomShopOdds12 += (100 - goldenMushroomShopOdds12)
-
-    if shopOdds12Max == 'reverseMushroomShopOdds12':
-        reverseMushroomShopOdds12 += (100 - reverseMushroomShopOdds12)
-
-    if shopOdds12Max == 'poisonMushroomShopOdds12':
-        poisonMushroomShopOdds12 += (100 - poisonMushroomShopOdds12)
-
-    if shopOdds12Max == 'triplePoisonMushroomShopOdds12':
-        triplePoisonMushroomShopOdds12 += (100 - triplePoisonMushroomShopOdds12)
-
-    if shopOdds12Max == 'celluarShopperShopOdds12':
-        celluarShopperShopOdds12 += (100 - celluarShopperShopOdds12)
-
-    if shopOdds12Max == 'skeletonKeyShopOdds12':
-        skeletonKeyShopOdds12 += (100 - skeletonKeyShopOdds12)
-
-    if shopOdds12Max == 'plunderChestShopOdds12':
-        plunderChestShopOdds12 += (100 - plunderChestShopOdds12)
-
-    if shopOdds12Max == 'gaddbrushShopOdds12':
-        gaddbrushShopOdds12 += (100 - gaddbrushShopOdds12)
-
-    if shopOdds12Max == 'warpBlockShopOdds12':
-        warpBlockShopOdds12 += (100 - warpBlockShopOdds12)
-
-    if shopOdds12Max == 'flyGuyShopOdds12':
-        flyGuyShopOdds12 += (100 - flyGuyShopOdds12)
-
-    if shopOdds12Max == 'plusBlockShopOdds12':
-        plusBlockShopOdds12 += (100 - plusBlockShopOdds12)
-
-    if shopOdds12Max == 'minusBlockShopOdds12':
-        minusBlockShopOdds12 += (100 - minusBlockShopOdds12)
-
-    if shopOdds12Max == 'speedBlockShopOdds12':
-        speedBlockShopOdds12 += (100 - speedBlockShopOdds12)
-
-    if shopOdds12Max == 'slowBlockShopOdds12':
-        slowBlockShopOdds12 += (100 - slowBlockShopOdds12)
-
-    if shopOdds12Max == 'bowserPhoneShopOdds12':
-        bowserPhoneShopOdds12 += (100 - bowserPhoneShopOdds12)
-
-    if shopOdds12Max == 'doubleDipShopOdds12':
-        doubleDipShopOdds12 += (100 - doubleDipShopOdds12)
-
-    if shopOdds12Max == 'hiddenBlockCardShopOdds12':
-        hiddenBlockCardShopOdds12 += (100 - hiddenBlockCardShopOdds12)
-
-    if shopOdds12Max == 'barterBoxShopOdds12':
-        barterBoxShopOdds12 += (100 - barterBoxShopOdds12)
-
-    if shopOdds12Max == 'superWarpPipeShopOdds12':
-        superWarpPipeShopOdds12 += (100 - superWarpPipeShopOdds12)
-
-    if shopOdds12Max == 'chanceTimeCharmShopOdds12':
-        chanceTimeCharmShopOdds12 += (100 - chanceTimeCharmShopOdds12)
-
-    if shopOdds12Max == 'wackyWatchShopOdds12':
-        wackyWatchShopOdds12 += (100 - wackyWatchShopOdds12)
-
-    if shopOdds34Max == 'miniMushroomShopOdds34':
-        miniMushroomShopOdds34 += (100 - miniMushroomShopOdds34)
-
-    if shopOdds34Max == 'megaMushroomShopOdds34':
-        megaMushroomShopOdds34 += (100 - megaMushroomShopOdds34)
-
-    if shopOdds34Max == 'superMiniMushroomShopOdds34':
-        superMiniMushroomShopOdds34 += (100 - superMiniMushroomShopOdds34)
-
-    if shopOdds34Max == 'superMegaMushroomShopOdds34':
-        superMegaMushroomShopOdds34 += (100 - superMegaMushroomShopOdds34)
-
-    if shopOdds34Max == 'miniMegaHammerShopOdds34':
-        miniMegaHammerShopOdds34 += (100 - miniMegaHammerShopOdds34)
-
-    if shopOdds34Max == 'warpPipeShopOdds34':
-        warpPipeShopOdds34 += (100 - warpPipeShopOdds34)
-
-    if shopOdds34Max == 'swapCardShopOdds34':
-        swapCardShopOdds34 += (100 - swapCardShopOdds34)
-
-    if shopOdds34Max == 'sparkyStickerShopOdds34':
-        sparkyStickerShopOdds34 += (100 - sparkyStickerShopOdds34)
-
-    if shopOdds34Max == 'gaddlightShopOdds34':
-        gaddlightShopOdds34 += (100 - gaddlightShopOdds34)
-
-    if shopOdds34Max == 'chompCallShopOdds34':
-        chompCallShopOdds34 += (100 - chompCallShopOdds34)
-
-    if shopOdds34Max == 'bowserSuitShopOdds34':
-        bowserSuitShopOdds34 += (100 - bowserSuitShopOdds34)
-
-    if shopOdds34Max == 'crystalBallShopOdds34':
-        crystalBallShopOdds34 += (100 - crystalBallShopOdds34)
-
-    if shopOdds34Max == 'magicLampShopOdds34':
-        magicLampShopOdds34 += (100 - magicLampShopOdds34)
-
-    if shopOdds34Max == 'itemBagShopOdds34':
-        itemBagShopOdds34 += (100 - itemBagShopOdds34)
-
-    if shopOdds34Max == 'mushroomShopOdds34':
-        mushroomShopOdds34 += (100 - mushroomShopOdds34)
-
-    if shopOdds34Max == 'goldenMushroomShopOdds34':
-        goldenMushroomShopOdds34 += (100 - goldenMushroomShopOdds34)
-
-    if shopOdds34Max == 'reverseMushroomShopOdds34':
-        reverseMushroomShopOdds34 += (100 - reverseMushroomShopOdds34)
-
-    if shopOdds34Max == 'poisonMushroomShopOdds34':
-        poisonMushroomShopOdds34 += (100 - poisonMushroomShopOdds34)
-
-    if shopOdds34Max == 'triplePoisonMushroomShopOdds34':
-        triplePoisonMushroomShopOdds34 += (100 - triplePoisonMushroomShopOdds34)
-
-    if shopOdds34Max == 'celluarShopperShopOdds34':
-        celluarShopperShopOdds34 += (100 - celluarShopperShopOdds34)
-
-    if shopOdds34Max == 'skeletonKeyShopOdds34':
-        skeletonKeyShopOdds34 += (100 - skeletonKeyShopOdds34)
-
-    if shopOdds34Max == 'plunderChestShopOdds34':
-        plunderChestShopOdds34 += (100 - plunderChestShopOdds34)
-
-    if shopOdds34Max == 'gaddbrushShopOdds34':
-        gaddbrushShopOdds34 += (100 - gaddbrushShopOdds34)
-
-    if shopOdds34Max == 'warpBlockShopOdds34':
-        warpBlockShopOdds34 += (100 - warpBlockShopOdds34)
-
-    if shopOdds34Max == 'flyGuyShopOdds34':
-        flyGuyShopOdds34 += (100 - flyGuyShopOdds34)
-
-    if shopOdds34Max == 'plusBlockShopOdds34':
-        plusBlockShopOdds34 += (100 - plusBlockShopOdds34)
-
-    if shopOdds34Max == 'minusBlockShopOdds34':
-        minusBlockShopOdds34 += (100 - minusBlockShopOdds34)
-
-    if shopOdds34Max == 'speedBlockShopOdds34':
-        speedBlockShopOdds34 += (100 - speedBlockShopOdds34)
-
-    if shopOdds34Max == 'slowBlockShopOdds34':
-        slowBlockShopOdds34 += (100 - slowBlockShopOdds34)
-
-    if shopOdds34Max == 'bowserPhoneShopOdds34':
-        bowserPhoneShopOdds34 += (100 - bowserPhoneShopOdds34)
-
-    if shopOdds34Max == 'doubleDipShopOdds34':
-        doubleDipShopOdds34 += (100 - doubleDipShopOdds34)
-
-    if shopOdds34Max == 'hiddenBlockCardShopOdds34':
-        hiddenBlockCardShopOdds34 += (100 - hiddenBlockCardShopOdds34)
-
-    if shopOdds34Max == 'barterBoxShopOdds34':
-        barterBoxShopOdds34 += (100 - barterBoxShopOdds34)
-
-    if shopOdds34Max == 'superWarpPipeShopOdds34':
-        superWarpPipeShopOdds34 += (100 - superWarpPipeShopOdds34)
-
-    if shopOdds34Max == 'chanceTimeCharmShopOdds34':
-        chanceTimeCharmShopOdds34 += (100 - chanceTimeCharmShopOdds34)
-
-    if shopOdds34Max == 'wackyWatchShopOdds34':
-        wackyWatchShopOdds34 += (100 - wackyWatchShopOdds34)
-
-    if spaceOdds1Max == 'miniMushroomSpaceOdds1':
-        miniMushroomSpaceOdds1 += (100 - miniMushroomSpaceOdds1)
-
-    if spaceOdds1Max == 'megaMushroomSpaceOdds1':
-        megaMushroomSpaceOdds1 += (100 - megaMushroomSpaceOdds1)
-
-    if spaceOdds1Max == 'superMiniMushroomSpaceOdds1':
-        superMiniMushroomSpaceOdds1 += (100 - superMiniMushroomSpaceOdds1)
-
-    if spaceOdds1Max == 'superMegaMushroomSpaceOdds1':
-        superMegaMushroomSpaceOdds1 += (100 - superMegaMushroomSpaceOdds1)
-
-    if spaceOdds1Max == 'miniMegaHammerSpaceOdds1':
-        miniMegaHammerSpaceOdds1 += (100 - miniMegaHammerSpaceOdds1)
-
-    if spaceOdds1Max == 'warpPipeSpaceOdds1':
-        warpPipeSpaceOdds1 += (100 - warpPipeSpaceOdds1)
-
-    if spaceOdds1Max == 'swapCardSpaceOdds1':
-        swapCardSpaceOdds1 += (100 - swapCardSpaceOdds1)
-
-    if spaceOdds1Max == 'sparkyStickerSpaceOdds1':
-        sparkyStickerSpaceOdds1 += (100 - sparkyStickerSpaceOdds1)
-
-    if spaceOdds1Max == 'gaddlightSpaceOdds1':
-        gaddlightSpaceOdds1 += (100 - gaddlightSpaceOdds1)
-
-    if spaceOdds1Max == 'chompCallSpaceOdds1':
-        chompCallSpaceOdds1 += (100 - chompCallSpaceOdds1)
-
-    if spaceOdds1Max == 'bowserSuitSpaceOdds1':
-        bowserSuitSpaceOdds1 += (100 - bowserSuitSpaceOdds1)
-
-    if spaceOdds1Max == 'crystalBallSpaceOdds1':
-        crystalBallSpaceOdds1 += (100 - crystalBallSpaceOdds1)
-
-    if spaceOdds1Max == 'magicLampSpaceOdds1':
-        magicLampSpaceOdds1 += (100 - magicLampSpaceOdds1)
-
-    if spaceOdds1Max == 'itemBagSpaceOdds1':
-        itemBagSpaceOdds1 += (100 - itemBagSpaceOdds1)
-
-    if spaceOdds1Max == 'mushroomSpaceOdds1':
-        mushroomSpaceOdds1 += (100 - mushroomSpaceOdds1)
-
-    if spaceOdds1Max == 'goldenMushroomSpaceOdds1':
-        goldenMushroomSpaceOdds1 += (100 - goldenMushroomSpaceOdds1)
-
-    if spaceOdds1Max == 'reverseMushroomSpaceOdds1':
-        reverseMushroomSpaceOdds1 += (100 - reverseMushroomSpaceOdds1)
-
-    if spaceOdds1Max == 'poisonMushroomSpaceOdds1':
-        poisonMushroomSpaceOdds1 += (100 - poisonMushroomSpaceOdds1)
-
-    if spaceOdds1Max == 'triplePoisonMushroomSpaceOdds1':
-        triplePoisonMushroomSpaceOdds1 += (100 - triplePoisonMushroomSpaceOdds1)
-
-    if spaceOdds1Max == 'celluarShopperSpaceOdds1':
-        celluarShopperSpaceOdds1 += (100 - celluarShopperSpaceOdds1)
-
-    if spaceOdds1Max == 'skeletonKeySpaceOdds1':
-        skeletonKeySpaceOdds1 += (100 - skeletonKeySpaceOdds1)
-
-    if spaceOdds1Max == 'plunderChestSpaceOdds1':
-        plunderChestSpaceOdds1 += (100 - plunderChestSpaceOdds1)
-
-    if spaceOdds1Max == 'gaddbrushSpaceOdds1':
-        gaddbrushSpaceOdds1 += (100 - gaddbrushSpaceOdds1)
-
-    if spaceOdds1Max == 'warpBlockSpaceOdds1':
-        warpBlockSpaceOdds1 += (100 - warpBlockSpaceOdds1)
-
-    if spaceOdds1Max == 'flyGuySpaceOdds1':
-        flyGuySpaceOdds1 += (100 - flyGuySpaceOdds1)
-
-    if spaceOdds1Max == 'plusBlockSpaceOdds1':
-        plusBlockSpaceOdds1 += (100 - plusBlockSpaceOdds1)
-
-    if spaceOdds1Max == 'minusBlockSpaceOdds1':
-        minusBlockSpaceOdds1 += (100 - minusBlockSpaceOdds1)
-
-    if spaceOdds1Max == 'speedBlockSpaceOdds1':
-        speedBlockSpaceOdds1 += (100 - speedBlockSpaceOdds1)
-
-    if spaceOdds1Max == 'slowBlockSpaceOdds1':
-        slowBlockSpaceOdds1 += (100 - slowBlockSpaceOdds1)
-
-    if spaceOdds1Max == 'bowserPhoneSpaceOdds1':
-        bowserPhoneSpaceOdds1 += (100 - bowserPhoneSpaceOdds1)
-
-    if spaceOdds1Max == 'doubleDipSpaceOdds1':
-        doubleDipSpaceOdds1 += (100 - doubleDipSpaceOdds1)
-
-    if spaceOdds1Max == 'hiddenBlockCardSpaceOdds1':
-        hiddenBlockCardSpaceOdds1 += (100 - hiddenBlockCardSpaceOdds1)
-
-    if spaceOdds1Max == 'barterBoxSpaceOdds1':
-        barterBoxSpaceOdds1 += (100 - barterBoxSpaceOdds1)
-
-    if spaceOdds1Max == 'superWarpPipeSpaceOdds1':
-        superWarpPipeSpaceOdds1 += (100 - superWarpPipeSpaceOdds1)
-
-    if spaceOdds1Max == 'chanceTimeCharmSpaceOdds1':
-        chanceTimeCharmSpaceOdds1 += (100 - chanceTimeCharmSpaceOdds1)
-
-    if spaceOdds1Max == 'wackyWatchSpaceOdds1':
-        wackyWatchSpaceOdds1 += (100 - wackyWatchSpaceOdds1)
-
-    if spaceOdds2Max == 'miniMushroomSpaceOdds2':
-        miniMushroomSpaceOdds2 += (100 - miniMushroomSpaceOdds2)
-
-    if spaceOdds2Max == 'megaMushroomSpaceOdds2':
-        megaMushroomSpaceOdds2 += (100 - megaMushroomSpaceOdds2)
-
-    if spaceOdds2Max == 'superMiniMushroomSpaceOdds2':
-        superMiniMushroomSpaceOdds2 += (100 - superMiniMushroomSpaceOdds2)
-
-    if spaceOdds2Max == 'superMegaMushroomSpaceOdds2':
-        superMegaMushroomSpaceOdds2 += (100 - superMegaMushroomSpaceOdds2)
-
-    if spaceOdds2Max == 'miniMegaHammerSpaceOdds2':
-        miniMegaHammerSpaceOdds2 += (100 - miniMegaHammerSpaceOdds2)
-
-    if spaceOdds2Max == 'warpPipeSpaceOdds2':
-        warpPipeSpaceOdds2 += (100 - warpPipeSpaceOdds2)
-
-    if spaceOdds2Max == 'swapCardSpaceOdds2':
-        swapCardSpaceOdds2 += (100 - swapCardSpaceOdds2)
-
-    if spaceOdds2Max == 'sparkyStickerSpaceOdds2':
-        sparkyStickerSpaceOdds2 += (100 - sparkyStickerSpaceOdds2)
-
-    if spaceOdds2Max == 'gaddlightSpaceOdds2':
-        gaddlightSpaceOdds2 += (100 - gaddlightSpaceOdds2)
-
-    if spaceOdds2Max == 'chompCallSpaceOdds2':
-        chompCallSpaceOdds2 += (100 - chompCallSpaceOdds2)
-
-    if spaceOdds2Max == 'bowserSuitSpaceOdds2':
-        bowserSuitSpaceOdds2 += (100 - bowserSuitSpaceOdds2)
-
-    if spaceOdds2Max == 'crystalBallSpaceOdds2':
-        crystalBallSpaceOdds2 += (100 - crystalBallSpaceOdds2)
-
-    if spaceOdds2Max == 'magicLampSpaceOdds2':
-        magicLampSpaceOdds2 += (100 - magicLampSpaceOdds2)
-
-    if spaceOdds2Max == 'itemBagSpaceOdds2':
-        itemBagSpaceOdds2 += (100 - itemBagSpaceOdds2)
-
-    if spaceOdds2Max == 'mushroomSpaceOdds2':
-        mushroomSpaceOdds2 += (100 - mushroomSpaceOdds2)
-
-    if spaceOdds2Max == 'goldenMushroomSpaceOdds2':
-        goldenMushroomSpaceOdds2 += (100 - goldenMushroomSpaceOdds2)
-
-    if spaceOdds2Max == 'reverseMushroomSpaceOdds2':
-        reverseMushroomSpaceOdds2 += (100 - reverseMushroomSpaceOdds2)
-
-    if spaceOdds2Max == 'poisonMushroomSpaceOdds2':
-        poisonMushroomSpaceOdds2 += (100 - poisonMushroomSpaceOdds2)
-
-    if spaceOdds2Max == 'triplePoisonMushroomSpaceOdds2':
-        triplePoisonMushroomSpaceOdds2 += (100 - triplePoisonMushroomSpaceOdds2)
-
-    if spaceOdds2Max == 'celluarShopperSpaceOdds2':
-        celluarShopperSpaceOdds2 += (100 - celluarShopperSpaceOdds2)
-
-    if spaceOdds2Max == 'skeletonKeySpaceOdds2':
-        skeletonKeySpaceOdds2 += (100 - skeletonKeySpaceOdds2)
-
-    if spaceOdds2Max == 'plunderChestSpaceOdds2':
-        plunderChestSpaceOdds2 += (100 - plunderChestSpaceOdds2)
-
-    if spaceOdds2Max == 'gaddbrushSpaceOdds2':
-        gaddbrushSpaceOdds2 += (100 - gaddbrushSpaceOdds2)
-
-    if spaceOdds2Max == 'warpBlockSpaceOdds2':
-        warpBlockSpaceOdds2 += (100 - warpBlockSpaceOdds2)
-
-    if spaceOdds2Max == 'flyGuySpaceOdds2':
-        flyGuySpaceOdds2 += (100 - flyGuySpaceOdds2)
-
-    if spaceOdds2Max == 'plusBlockSpaceOdds2':
-        plusBlockSpaceOdds2 += (100 - plusBlockSpaceOdds2)
-
-    if spaceOdds2Max == 'minusBlockSpaceOdds2':
-        minusBlockSpaceOdds2 += (100 - minusBlockSpaceOdds2)
-
-    if spaceOdds2Max == 'speedBlockSpaceOdds2':
-        speedBlockSpaceOdds2 += (100 - speedBlockSpaceOdds2)
-
-    if spaceOdds2Max == 'slowBlockSpaceOdds2':
-        slowBlockSpaceOdds2 += (100 - slowBlockSpaceOdds2)
-
-    if spaceOdds2Max == 'bowserPhoneSpaceOdds2':
-        bowserPhoneSpaceOdds2 += (100 - bowserPhoneSpaceOdds2)
-
-    if spaceOdds2Max == 'doubleDipSpaceOdds2':
-        doubleDipSpaceOdds2 += (100 - doubleDipSpaceOdds2)
-
-    if spaceOdds2Max == 'hiddenBlockCardSpaceOdds2':
-        hiddenBlockCardSpaceOdds2 += (100 - hiddenBlockCardSpaceOdds2)
-
-    if spaceOdds2Max == 'barterBoxSpaceOdds2':
-        barterBoxSpaceOdds2 += (100 - barterBoxSpaceOdds2)
-
-    if spaceOdds2Max == 'superWarpPipeSpaceOdds2':
-        superWarpPipeSpaceOdds2 += (100 - superWarpPipeSpaceOdds2)
-
-    if spaceOdds2Max == 'chanceTimeCharmSpaceOdds2':
-        chanceTimeCharmSpaceOdds2 += (100 - chanceTimeCharmSpaceOdds2)
-
-    if spaceOdds2Max == 'wackyWatchSpaceOdds2':
-        wackyWatchSpaceOdds2 += (100 - wackyWatchSpaceOdds2)
-
-    if spaceOdds34Max == 'miniMushroomSpaceOdds34':
-        miniMushroomSpaceOdds34 += (100 - miniMushroomSpaceOdds34)
-
-    if spaceOdds34Max == 'megaMushroomSpaceOdds34':
-        megaMushroomSpaceOdds34 += (100 - megaMushroomSpaceOdds34)
-
-    if spaceOdds34Max == 'superMiniMushroomSpaceOdds34':
-        superMiniMushroomSpaceOdds34 += (100 - superMiniMushroomSpaceOdds34)
-
-    if spaceOdds34Max == 'superMegaMushroomSpaceOdds34':
-        superMegaMushroomSpaceOdds34 += (100 - superMegaMushroomSpaceOdds34)
-
-    if spaceOdds34Max == 'miniMegaHammerSpaceOdds34':
-        miniMegaHammerSpaceOdds34 += (100 - miniMegaHammerSpaceOdds34)
-
-    if spaceOdds34Max == 'warpPipeSpaceOdds34':
-        warpPipeSpaceOdds34 += (100 - warpPipeSpaceOdds34)
-
-    if spaceOdds34Max == 'swapCardSpaceOdds34':
-        swapCardSpaceOdds34 += (100 - swapCardSpaceOdds34)
-
-    if spaceOdds34Max == 'sparkyStickerSpaceOdds34':
-        sparkyStickerSpaceOdds34 += (100 - sparkyStickerSpaceOdds34)
-
-    if spaceOdds34Max == 'gaddlightSpaceOdds34':
-        gaddlightSpaceOdds34 += (100 - gaddlightSpaceOdds34)
-
-    if spaceOdds34Max == 'chompCallSpaceOdds34':
-        chompCallSpaceOdds34 += (100 - chompCallSpaceOdds34)
-
-    if spaceOdds34Max == 'bowserSuitSpaceOdds34':
-        bowserSuitSpaceOdds34 += (100 - bowserSuitSpaceOdds34)
-
-    if spaceOdds34Max == 'crystalBallSpaceOdds34':
-        crystalBallSpaceOdds34 += (100 - crystalBallSpaceOdds34)
-
-    if spaceOdds34Max == 'magicLampSpaceOdds34':
-        magicLampSpaceOdds34 += (100 - magicLampSpaceOdds34)
-
-    if spaceOdds34Max == 'itemBagSpaceOdds34':
-        itemBagSpaceOdds34 += (100 - itemBagSpaceOdds34)
-
-    if spaceOdds34Max == 'mushroomSpaceOdds34':
-        mushroomSpaceOdds34 += (100 - mushroomSpaceOdds34)
-
-    if spaceOdds34Max == 'goldenMushroomSpaceOdds34':
-        goldenMushroomSpaceOdds34 += (100 - goldenMushroomSpaceOdds34)
-
-    if spaceOdds34Max == 'reverseMushroomSpaceOdds34':
-        reverseMushroomSpaceOdds34 += (100 - reverseMushroomSpaceOdds34)
-
-    if spaceOdds34Max == 'poisonMushroomSpaceOdds34':
-        poisonMushroomSpaceOdds34 += (100 - poisonMushroomSpaceOdds34)
-
-    if spaceOdds34Max == 'triplePoisonMushroomSpaceOdds34':
-        triplePoisonMushroomSpaceOdds34 += (100 - triplePoisonMushroomSpaceOdds34)
-
-    if spaceOdds34Max == 'celluarShopperSpaceOdds34':
-        celluarShopperSpaceOdds34 += (100 - celluarShopperSpaceOdds34)
-
-    if spaceOdds34Max == 'skeletonKeySpaceOdds34':
-        skeletonKeySpaceOdds34 += (100 - skeletonKeySpaceOdds34)
-
-    if spaceOdds34Max == 'plunderChestSpaceOdds34':
-        plunderChestSpaceOdds34 += (100 - plunderChestSpaceOdds34)
-
-    if spaceOdds34Max == 'gaddbrushSpaceOdds34':
-        gaddbrushSpaceOdds34 += (100 - gaddbrushSpaceOdds34)
-
-    if spaceOdds34Max == 'warpBlockSpaceOdds34':
-        warpBlockSpaceOdds34 += (100 - warpBlockSpaceOdds34)
-
-    if spaceOdds34Max == 'flyGuySpaceOdds34':
-        flyGuySpaceOdds34 += (100 - flyGuySpaceOdds34)
-
-    if spaceOdds34Max == 'plusBlockSpaceOdds34':
-        plusBlockSpaceOdds34 += (100 - plusBlockSpaceOdds34)
-
-    if spaceOdds34Max == 'minusBlockSpaceOdds34':
-        minusBlockSpaceOdds34 += (100 - minusBlockSpaceOdds34)
-
-    if spaceOdds34Max == 'speedBlockSpaceOdds34':
-        speedBlockSpaceOdds34 += (100 - speedBlockSpaceOdds34)
-
-    if spaceOdds34Max == 'slowBlockSpaceOdds34':
-        slowBlockSpaceOdds34 += (100 - slowBlockSpaceOdds34)
-
-    if spaceOdds34Max == 'bowserPhoneSpaceOdds34':
-        bowserPhoneSpaceOdds34 += (100 - bowserPhoneSpaceOdds34)
-
-    if spaceOdds34Max == 'doubleDipSpaceOdds34':
-        doubleDipSpaceOdds34 += (100 - doubleDipSpaceOdds34)
-
-    if spaceOdds34Max == 'hiddenBlockCardSpaceOdds34':
-        hiddenBlockCardSpaceOdds34 += (100 - hiddenBlockCardSpaceOdds34)
-
-    if spaceOdds34Max == 'barterBoxSpaceOdds34':
-        barterBoxSpaceOdds34 += (100 - barterBoxSpaceOdds34)
-
-    if spaceOdds34Max == 'superWarpPipeSpaceOdds34':
-        superWarpPipeSpaceOdds34 += (100 - superWarpPipeSpaceOdds34)
-
-    if spaceOdds34Max == 'chanceTimeCharmSpaceOdds34':
-        chanceTimeCharmSpaceOdds34 += (100 - chanceTimeCharmSpaceOdds34)
-
-    if spaceOdds34Max == 'wackyWatchSpaceOdds34':
-        wackyWatchSpaceOdds34 += (100 - wackyWatchSpaceOdds34)
-
-    miniMushroomSpaceOdds34 = str(miniMushroomSpaceOdds34)
-    megaMushroomSpaceOdds34 = str(megaMushroomSpaceOdds34)
-    superMiniMushroomSpaceOdds34 = str(superMiniMushroomSpaceOdds34)
-    superMegaMushroomSpaceOdds34 = str(superMegaMushroomSpaceOdds34)
-    miniMegaHammerSpaceOdds34 = str(miniMegaHammerSpaceOdds34)
-    warpPipeSpaceOdds34 = str(warpPipeSpaceOdds34)
-    swapCardSpaceOdds34 = str(swapCardSpaceOdds34)
-    sparkyStickerSpaceOdds34 = str(sparkyStickerSpaceOdds34)
-    gaddlightSpaceOdds34 = str(gaddlightSpaceOdds34)
-    chompCallSpaceOdds34 = str(chompCallSpaceOdds34)
-    bowserSuitSpaceOdds34 = str(bowserSuitSpaceOdds34)
-    crystalBallSpaceOdds34 = str(crystalBallSpaceOdds34)
-    magicLampSpaceOdds34 = str(magicLampSpaceOdds34)
-    itemBagSpaceOdds34 = str(itemBagSpaceOdds34)
-    mushroomSpaceOdds34 = str(mushroomSpaceOdds34)
-    goldenMushroomSpaceOdds34 = str(goldenMushroomSpaceOdds34)
-    reverseMushroomSpaceOdds34 = str(reverseMushroomSpaceOdds34)
-    poisonMushroomSpaceOdds34 = str(poisonMushroomSpaceOdds34)
-    triplePoisonMushroomSpaceOdds34 = str(triplePoisonMushroomSpaceOdds34)
-    celluarShopperSpaceOdds34 = str(celluarShopperSpaceOdds34)
-    skeletonKeySpaceOdds34 = str(skeletonKeySpaceOdds34)
-    plunderChestSpaceOdds34 = str(plunderChestSpaceOdds34)
-    gaddbrushSpaceOdds34 = str(gaddbrushSpaceOdds34)
-    warpBlockSpaceOdds34 = str(warpBlockSpaceOdds34)
-    flyGuySpaceOdds34 = str(flyGuySpaceOdds34)
-    plusBlockSpaceOdds34 = str(plusBlockSpaceOdds34)
-    minusBlockSpaceOdds34 = str(minusBlockSpaceOdds34)
-    speedBlockSpaceOdds34 = str(speedBlockSpaceOdds34)
-    slowBlockSpaceOdds34 = str(slowBlockSpaceOdds34)
-    bowserPhoneSpaceOdds34 = str(bowserPhoneSpaceOdds34)
-    doubleDipSpaceOdds34 = str(doubleDipSpaceOdds34)
-    hiddenBlockCardSpaceOdds34 = str(hiddenBlockCardSpaceOdds34)
-    barterBoxSpaceOdds34 = str(barterBoxSpaceOdds34)
-    superWarpPipeSpaceOdds34 = str(superWarpPipeSpaceOdds34)
-    chanceTimeCharmSpaceOdds34 = str(chanceTimeCharmSpaceOdds34)
-    wackyWatchSpaceOdds34 = str(wackyWatchSpaceOdds34)
-    miniMushroomShopOdds12 = str(miniMushroomShopOdds12)
-    megaMushroomShopOdds12 = str(megaMushroomShopOdds12)
-    superMiniMushroomShopOdds12 = str(superMiniMushroomShopOdds12)
-    superMegaMushroomShopOdds12 = str(superMegaMushroomShopOdds12)
-    miniMegaHammerShopOdds12 = str(miniMegaHammerShopOdds12)
-    warpPipeShopOdds12 = str(warpPipeShopOdds12)
-    swapCardShopOdds12 = str(swapCardShopOdds12)
-    sparkyStickerShopOdds12 = str(sparkyStickerShopOdds12)
-    gaddlightShopOdds12 = str(gaddlightShopOdds12)
-    chompCallShopOdds12 = str(chompCallShopOdds12)
-    bowserSuitShopOdds12 = str(bowserSuitShopOdds12)
-    crystalBallShopOdds12 = str(crystalBallShopOdds12)
-    magicLampShopOdds12 = str(magicLampShopOdds12)
-    itemBagShopOdds12 = str(itemBagShopOdds12)
-    mushroomShopOdds12 = str(mushroomShopOdds12)
-    goldenMushroomShopOdds12 = str(goldenMushroomShopOdds12)
-    reverseMushroomShopOdds12 = str(reverseMushroomShopOdds12)
-    poisonMushroomShopOdds12 = str(poisonMushroomShopOdds12)
-    triplePoisonMushroomShopOdds12 = str(triplePoisonMushroomShopOdds12)
-    celluarShopperShopOdds12 = str(celluarShopperShopOdds12)
-    skeletonKeyShopOdds12 = str(skeletonKeyShopOdds12)
-    plunderChestShopOdds12 = str(plunderChestShopOdds12)
-    gaddbrushShopOdds12 = str(gaddbrushShopOdds12)
-    warpBlockShopOdds12 = str(warpBlockShopOdds12)
-    flyGuyShopOdds12 = str(flyGuyShopOdds12)
-    plusBlockShopOdds12 = str(plusBlockShopOdds12)
-    minusBlockShopOdds12 = str(minusBlockShopOdds12)
-    speedBlockShopOdds12 = str(speedBlockShopOdds12)
-    slowBlockShopOdds12 = str(slowBlockShopOdds12)
-    bowserPhoneShopOdds12 = str(bowserPhoneShopOdds12)
-    doubleDipShopOdds12 = str(doubleDipShopOdds12)
-    hiddenBlockCardShopOdds12 = str(hiddenBlockCardShopOdds12)
-    barterBoxShopOdds12 = str(barterBoxShopOdds12)
-    superWarpPipeShopOdds12 = str(superWarpPipeShopOdds12)
-    chanceTimeCharmShopOdds12 = str(chanceTimeCharmShopOdds12)
-    wackyWatchShopOdds12 = str(wackyWatchShopOdds12)
-    miniMushroomSpaceOdds1 = str(miniMushroomSpaceOdds1)
-    megaMushroomSpaceOdds1 = str(megaMushroomSpaceOdds1)
-    superMiniMushroomSpaceOdds1 = str(superMiniMushroomSpaceOdds1)
-    superMegaMushroomSpaceOdds1 = str(superMegaMushroomSpaceOdds1)
-    miniMegaHammerSpaceOdds1 = str(miniMegaHammerSpaceOdds1)
-    warpPipeSpaceOdds1 = str(warpPipeSpaceOdds1)
-    swapCardSpaceOdds1 = str(swapCardSpaceOdds1)
-    sparkyStickerSpaceOdds1 = str(sparkyStickerSpaceOdds1)
-    gaddlightSpaceOdds1 = str(gaddlightSpaceOdds1)
-    chompCallSpaceOdds1 = str(chompCallSpaceOdds1)
-    bowserSuitSpaceOdds1 = str(bowserSuitSpaceOdds1)
-    crystalBallSpaceOdds1 = str(crystalBallSpaceOdds1)
-    magicLampSpaceOdds1 = str(magicLampSpaceOdds1)
-    itemBagSpaceOdds1 = str(itemBagSpaceOdds1)
-    mushroomSpaceOdds1 = str(mushroomSpaceOdds1)
-    goldenMushroomSpaceOdds1 = str(goldenMushroomSpaceOdds1)
-    reverseMushroomSpaceOdds1 = str(reverseMushroomSpaceOdds1)
-    poisonMushroomSpaceOdds1 = str(poisonMushroomSpaceOdds1)
-    triplePoisonMushroomSpaceOdds1 = str(triplePoisonMushroomSpaceOdds1)
-    celluarShopperSpaceOdds1 = str(celluarShopperSpaceOdds1)
-    skeletonKeySpaceOdds1 = str(skeletonKeySpaceOdds1)
-    plunderChestSpaceOdds1 = str(plunderChestSpaceOdds1)
-    gaddbrushSpaceOdds1 = str(gaddbrushSpaceOdds1)
-    warpBlockSpaceOdds1 = str(warpBlockSpaceOdds1)
-    flyGuySpaceOdds1 = str(flyGuySpaceOdds1)
-    plusBlockSpaceOdds1 = str(plusBlockSpaceOdds1)
-    minusBlockSpaceOdds1 = str(minusBlockSpaceOdds1)
-    speedBlockSpaceOdds1 = str(speedBlockSpaceOdds1)
-    slowBlockSpaceOdds1 = str(slowBlockSpaceOdds1)
-    bowserPhoneSpaceOdds1 = str(bowserPhoneSpaceOdds1)
-    doubleDipSpaceOdds1 = str(doubleDipSpaceOdds1)
-    hiddenBlockCardSpaceOdds1 = str(hiddenBlockCardSpaceOdds1)
-    barterBoxSpaceOdds1 = str(barterBoxSpaceOdds1)
-    superWarpPipeSpaceOdds1 = str(superWarpPipeSpaceOdds1)
-    chanceTimeCharmSpaceOdds1 = str(chanceTimeCharmSpaceOdds1)
-    miniMushroomSpaceOdds2 = str(miniMushroomSpaceOdds2)
-    megaMushroomSpaceOdds2 = str(megaMushroomSpaceOdds2)
-    superMiniMushroomSpaceOdds2 = str(superMiniMushroomSpaceOdds2)
-    superMegaMushroomSpaceOdds2 = str(superMegaMushroomSpaceOdds2)
-    miniMegaHammerSpaceOdds2 = str(miniMegaHammerSpaceOdds2)
-    warpPipeSpaceOdds2 = str(warpPipeSpaceOdds2)
-    swapCardSpaceOdds2 = str(swapCardSpaceOdds2)
-    sparkyStickerSpaceOdds2 = str(sparkyStickerSpaceOdds2)
-    gaddlightSpaceOdds2 = str(gaddlightSpaceOdds2)
-    chompCallSpaceOdds2 = str(chompCallSpaceOdds2)
-    bowserSuitSpaceOdds2 = str(bowserSuitSpaceOdds2)
-    crystalBallSpaceOdds2 = str(crystalBallSpaceOdds2)
-    magicLampSpaceOdds2 = str(magicLampSpaceOdds2)
-    itemBagSpaceOdds2 = str(itemBagSpaceOdds2)
-    mushroomSpaceOdds2 = str(mushroomSpaceOdds2)
-    goldenMushroomSpaceOdds2 = str(goldenMushroomSpaceOdds2)
-    reverseMushroomSpaceOdds2 = str(reverseMushroomSpaceOdds2)
-    poisonMushroomSpaceOdds2 = str(poisonMushroomSpaceOdds2)
-    triplePoisonMushroomSpaceOdds2 = str(triplePoisonMushroomSpaceOdds2)
-    celluarShopperSpaceOdds2 = str(celluarShopperSpaceOdds2)
-    skeletonKeySpaceOdds2 = str(skeletonKeySpaceOdds2)
-    plunderChestSpaceOdds2 = str(plunderChestSpaceOdds2)
-    gaddbrushSpaceOdds2 = str(gaddbrushSpaceOdds2)
-    warpBlockSpaceOdds2 = str(warpBlockSpaceOdds2)
-    flyGuySpaceOdds2 = str(flyGuySpaceOdds2)
-    plusBlockSpaceOdds2 = str(plusBlockSpaceOdds2)
-    minusBlockSpaceOdds2 = str(minusBlockSpaceOdds2)
-    speedBlockSpaceOdds2 = str(speedBlockSpaceOdds2)
-    slowBlockSpaceOdds2 = str(slowBlockSpaceOdds2)
-    bowserPhoneSpaceOdds2 = str(bowserPhoneSpaceOdds2)
-    doubleDipSpaceOdds2 = str(doubleDipSpaceOdds2)
-    hiddenBlockCardSpaceOdds2 = str(hiddenBlockCardSpaceOdds2)
-    barterBoxSpaceOdds2 = str(barterBoxSpaceOdds2)
-    superWarpPipeSpaceOdds2 = str(superWarpPipeSpaceOdds2)
-    chanceTimeCharmSpaceOdds2 = str(chanceTimeCharmSpaceOdds2)
-    wackyWatchSpaceOdds2 = str(wackyWatchSpaceOdds2)
-    miniMushroomSpaceOdds34 = str(miniMushroomSpaceOdds34)
-    megaMushroomSpaceOdds34 = str(megaMushroomSpaceOdds34)
-    superMiniMushroomSpaceOdds34 = str(superMiniMushroomSpaceOdds34)
-    superMegaMushroomSpaceOdds34 = str(superMegaMushroomSpaceOdds34)
-    miniMegaHammerSpaceOdds34 = str(miniMegaHammerSpaceOdds34)
-    warpPipeSpaceOdds34 = str(warpPipeSpaceOdds34)
-    swapCardSpaceOdds34 = str(swapCardSpaceOdds34)
-    sparkyStickerSpaceOdds34 = str(sparkyStickerSpaceOdds34)
-    gaddlightSpaceOdds34 = str(gaddlightSpaceOdds34)
-    chompCallSpaceOdds34 = str(chompCallSpaceOdds34)
-    bowserSuitSpaceOdds34 = str(bowserSuitSpaceOdds34)
-    crystalBallSpaceOdds34 = str(crystalBallSpaceOdds34)
-    magicLampSpaceOdds34 = str(magicLampSpaceOdds34)
-    itemBagSpaceOdds34 = str(itemBagSpaceOdds34)
-    mushroomSpaceOdds34 = str(mushroomSpaceOdds34)
-    goldenMushroomSpaceOdds34 = str(goldenMushroomSpaceOdds34)
-    reverseMushroomSpaceOdds34 = str(reverseMushroomSpaceOdds34)
-    poisonMushroomSpaceOdds34 = str(poisonMushroomSpaceOdds34)
-    triplePoisonMushroomSpaceOdds34 = str(triplePoisonMushroomSpaceOdds34)
-    celluarShopperSpaceOdds34 = str(celluarShopperSpaceOdds34)
-    skeletonKeySpaceOdds34 = str(skeletonKeySpaceOdds34)
-    plunderChestSpaceOdds34 = str(plunderChestSpaceOdds34)
-    gaddbrushSpaceOdds34 = str(gaddbrushSpaceOdds34)
-    warpBlockSpaceOdds34 = str(warpBlockSpaceOdds34)
-    flyGuySpaceOdds34 = str(flyGuySpaceOdds34)
-    plusBlockSpaceOdds34 = str(plusBlockSpaceOdds34)
-    minusBlockSpaceOdds34 = str(minusBlockSpaceOdds34)
-    speedBlockSpaceOdds34 = str(speedBlockSpaceOdds34)
-    slowBlockSpaceOdds34 = str(slowBlockSpaceOdds34)
-    bowserPhoneSpaceOdds34 = str(bowserPhoneSpaceOdds34)
-    doubleDipSpaceOdds34 = str(doubleDipSpaceOdds34)
-    hiddenBlockCardSpaceOdds34 = str(hiddenBlockCardSpaceOdds34)
-    barterBoxSpaceOdds34 = str(barterBoxSpaceOdds34)
-    superWarpPipeSpaceOdds34 = str(superWarpPipeSpaceOdds34)
-    chanceTimeCharmSpaceOdds34 = str(chanceTimeCharmSpaceOdds34)
-    wackyWatchSpaceOdds34 = str(wackyWatchSpaceOdds34)
+    # Mini Mushroom
+    miniMushroomEarlyPrice1 = get_capsule_value(miniMushroomEarlyPrice1) or "5"
+    miniMushroomEarlyPrice2 = get_capsule_value(miniMushroomEarlyPrice2) or "5"
+    miniMushroomEarlyPrice34 = get_capsule_value(miniMushroomEarlyPrice34) or "5"
+    miniMushroomMidPrice1 = get_capsule_value(miniMushroomMidPrice1) or "5"
+    miniMushroomMidPrice2 = get_capsule_value(miniMushroomMidPrice2) or "5"
+    miniMushroomMidPrice34 = get_capsule_value(miniMushroomMidPrice34) or "5"
+    miniMushroomLatePrice1 = get_capsule_value(miniMushroomLatePrice1) or "5"
+    miniMushroomLatePrice2 = get_capsule_value(miniMushroomLatePrice2) or "5"
+    miniMushroomLatePrice34 = get_capsule_value(miniMushroomLatePrice34) or "5"
+    
+    # Mega Mushroom
+    megaMushroomEarlyPrice1 = get_capsule_value(megaMushroomEarlyPrice1) or "5"
+    megaMushroomEarlyPrice2 = get_capsule_value(megaMushroomEarlyPrice2) or "5"
+    megaMushroomEarlyPrice34 = get_capsule_value(megaMushroomEarlyPrice34) or "5"
+    megaMushroomMidPrice1 = get_capsule_value(megaMushroomMidPrice1) or "5"
+    megaMushroomMidPrice2 = get_capsule_value(megaMushroomMidPrice2) or "5"
+    megaMushroomMidPrice34 = get_capsule_value(megaMushroomMidPrice34) or "5"
+    megaMushroomLatePrice1 = get_capsule_value(megaMushroomLatePrice1) or "5"
+    megaMushroomLatePrice2 = get_capsule_value(megaMushroomLatePrice2) or "5"
+    megaMushroomLatePrice34 = get_capsule_value(megaMushroomLatePrice34) or "5"
+
+    # Super Mini Mushroom
+    superMiniMushroomEarlyPrice1 = get_capsule_value(superMiniMushroomEarlyPrice1) or "10"
+    superMiniMushroomEarlyPrice2 = get_capsule_value(superMiniMushroomEarlyPrice2) or "10"
+    superMiniMushroomEarlyPrice34 = get_capsule_value(superMiniMushroomEarlyPrice34) or "10"
+    superMiniMushroomMidPrice1 = get_capsule_value(superMiniMushroomMidPrice1) or "10"
+    superMiniMushroomMidPrice2 = get_capsule_value(superMiniMushroomMidPrice2) or "10"
+    superMiniMushroomMidPrice34 = get_capsule_value(superMiniMushroomMidPrice34) or "10"
+    superMiniMushroomLatePrice1 = get_capsule_value(superMiniMushroomLatePrice1) or "10"
+    superMiniMushroomLatePrice2 = get_capsule_value(superMiniMushroomLatePrice2) or "10"
+    superMiniMushroomLatePrice34 = get_capsule_value(superMiniMushroomLatePrice34) or "10"
+
+    # Super Mega Mushroom
+    superMegaMushroomEarlyPrice1 = get_capsule_value(superMegaMushroomEarlyPrice1) or "15"
+    superMegaMushroomEarlyPrice2 = get_capsule_value(superMegaMushroomEarlyPrice2) or "15"
+    superMegaMushroomEarlyPrice34 = get_capsule_value(superMegaMushroomEarlyPrice34) or "15"
+    superMegaMushroomMidPrice1 = get_capsule_value(superMegaMushroomMidPrice1) or "15"
+    superMegaMushroomMidPrice2 = get_capsule_value(superMegaMushroomMidPrice2) or "15"
+    superMegaMushroomMidPrice34 = get_capsule_value(superMegaMushroomMidPrice34) or "15"
+    superMegaMushroomLatePrice1 = get_capsule_value(superMegaMushroomLatePrice1) or "15"
+    superMegaMushroomLatePrice2 = get_capsule_value(superMegaMushroomLatePrice2) or "15"
+    superMegaMushroomLatePrice34 = get_capsule_value(superMegaMushroomLatePrice34) or "15"
+
+    # Mini Mega Hammer
+    miniMegaHammerEarlyPrice1 = get_capsule_value(miniMegaHammerEarlyPrice1) or "10"
+    miniMegaHammerEarlyPrice2 = get_capsule_value(miniMegaHammerEarlyPrice2) or "10"
+    miniMegaHammerEarlyPrice34 = get_capsule_value(miniMegaHammerEarlyPrice34) or "10"
+    miniMegaHammerMidPrice1 = get_capsule_value(miniMegaHammerMidPrice1) or "10"
+    miniMegaHammerMidPrice2 = get_capsule_value(miniMegaHammerMidPrice2) or "10"
+    miniMegaHammerMidPrice34 = get_capsule_value(miniMegaHammerMidPrice34) or "10"
+    miniMegaHammerLatePrice1 = get_capsule_value(miniMegaHammerLatePrice1) or "10"
+    miniMegaHammerLatePrice2 = get_capsule_value(miniMegaHammerLatePrice2) or "10"
+    miniMegaHammerLatePrice34 = get_capsule_value(miniMegaHammerLatePrice34) or "10"
+
+    # Warp Pipe
+    warpPipeEarlyPrice1 = get_capsule_value(warpPipeEarlyPrice1) or "10"
+    warpPipeEarlyPrice2 = get_capsule_value(warpPipeEarlyPrice2) or "10"
+    warpPipeEarlyPrice34 = get_capsule_value(warpPipeEarlyPrice34) or "10"
+    warpPipeMidPrice1 = get_capsule_value(warpPipeMidPrice1) or "10"
+    warpPipeMidPrice2 = get_capsule_value(warpPipeMidPrice2) or "10"
+    warpPipeMidPrice34 = get_capsule_value(warpPipeMidPrice34) or "10"
+    warpPipeLatePrice1 = get_capsule_value(warpPipeLatePrice1) or "10"
+    warpPipeLatePrice2 = get_capsule_value(warpPipeLatePrice2) or "10"
+    warpPipeLatePrice34 = get_capsule_value(warpPipeLatePrice34) or "10"
+
+    # Swap Card
+    swapCardEarlyPrice1 = get_capsule_value(swapCardEarlyPrice1) or "15"
+    swapCardEarlyPrice2 = get_capsule_value(swapCardEarlyPrice2) or "15"
+    swapCardEarlyPrice34 = get_capsule_value(swapCardEarlyPrice34) or "15"
+    swapCardMidPrice1 = get_capsule_value(swapCardMidPrice1) or "15"
+    swapCardMidPrice2 = get_capsule_value(swapCardMidPrice2) or "15"
+    swapCardMidPrice34 = get_capsule_value(swapCardMidPrice34) or "15"
+    swapCardLatePrice1 = get_capsule_value(swapCardLatePrice1) or "15"
+    swapCardLatePrice2 = get_capsule_value(swapCardLatePrice2) or "15"
+    swapCardLatePrice34 = get_capsule_value(swapCardLatePrice34) or "15"
+
+    # Sparky Sticker
+    sparkyStickerEarlyPrice1 = get_capsule_value(sparkyStickerEarlyPrice1) or "5"
+    sparkyStickerEarlyPrice2 = get_capsule_value(sparkyStickerEarlyPrice2) or "5"
+    sparkyStickerEarlyPrice34 = get_capsule_value(sparkyStickerEarlyPrice34) or "5"
+    sparkyStickerMidPrice1 = get_capsule_value(sparkyStickerMidPrice1) or "5"
+    sparkyStickerMidPrice2 = get_capsule_value(sparkyStickerMidPrice2) or "5"
+    sparkyStickerMidPrice34 = get_capsule_value(sparkyStickerMidPrice34) or "5"
+    sparkyStickerLatePrice1 = get_capsule_value(sparkyStickerLatePrice1) or "5"
+    sparkyStickerLatePrice2 = get_capsule_value(sparkyStickerLatePrice2) or "5"
+    sparkyStickerLatePrice34 = get_capsule_value(sparkyStickerLatePrice34) or "5"
+
+    # Gaddlight
+    gaddlightEarlyPrice1 = get_capsule_value(gaddlightEarlyPrice1) or "15"
+    gaddlightEarlyPrice2 = get_capsule_value(gaddlightEarlyPrice2) or "15"
+    gaddlightEarlyPrice34 = get_capsule_value(gaddlightEarlyPrice34) or "15"
+    gaddlightMidPrice1 = get_capsule_value(gaddlightMidPrice1) or "15"
+    gaddlightMidPrice2 = get_capsule_value(gaddlightMidPrice2) or "15"
+    gaddlightMidPrice34 = get_capsule_value(gaddlightMidPrice34) or "15"
+    gaddlightLatePrice1 = get_capsule_value(gaddlightLatePrice1) or "15"
+    gaddlightLatePrice2 = get_capsule_value(gaddlightLatePrice2) or "15"
+    gaddlightLatePrice34 = get_capsule_value(gaddlightLatePrice34) or "15"
+
+    # Chomp Call
+    chompCallEarlyPrice1 = get_capsule_value(chompCallEarlyPrice1) or "10"
+    chompCallEarlyPrice2 = get_capsule_value(chompCallEarlyPrice2) or "10"
+    chompCallEarlyPrice34 = get_capsule_value(chompCallEarlyPrice34) or "10"
+    chompCallMidPrice1 = get_capsule_value(chompCallMidPrice1) or "10"
+    chompCallMidPrice2 = get_capsule_value(chompCallMidPrice2) or "10"
+    chompCallMidPrice34 = get_capsule_value(chompCallMidPrice34) or "10"
+    chompCallLatePrice1 = get_capsule_value(chompCallLatePrice1) or "10"
+    chompCallLatePrice2 = get_capsule_value(chompCallLatePrice2) or "10"
+    chompCallLatePrice34 = get_capsule_value(chompCallLatePrice34) or "10"
+
+    # Bowser Suit
+    bowserSuitEarlyPrice1 = get_capsule_value(bowserSuitEarlyPrice1) or "12"
+    bowserSuitEarlyPrice2 = get_capsule_value(bowserSuitEarlyPrice2) or "12"
+    bowserSuitEarlyPrice34 = get_capsule_value(bowserSuitEarlyPrice34) or "12"
+    bowserSuitMidPrice1 = get_capsule_value(bowserSuitMidPrice1) or "12"
+    bowserSuitMidPrice2 = get_capsule_value(bowserSuitMidPrice2) or "12"
+    bowserSuitMidPrice34 = get_capsule_value(bowserSuitMidPrice34) or "12"
+    bowserSuitLatePrice1 = get_capsule_value(bowserSuitLatePrice1) or "12"
+    bowserSuitLatePrice2 = get_capsule_value(bowserSuitLatePrice2) or "12"
+    bowserSuitLatePrice34 = get_capsule_value(bowserSuitLatePrice34) or "12"
+
+    # Crystal Ball
+    crystalBallEarlyPrice1 = get_capsule_value(crystalBallEarlyPrice1) or "25"
+    crystalBallEarlyPrice2 = get_capsule_value(crystalBallEarlyPrice2) or "25"
+    crystalBallEarlyPrice34 = get_capsule_value(crystalBallEarlyPrice34) or "25"
+    crystalBallMidPrice1 = get_capsule_value(crystalBallMidPrice1) or "25"
+    crystalBallMidPrice2 = get_capsule_value(crystalBallMidPrice2) or "25"
+    crystalBallMidPrice34 = get_capsule_value(crystalBallMidPrice34) or "25"
+    crystalBallLatePrice1 = get_capsule_value(crystalBallLatePrice1) or "25"
+    crystalBallLatePrice2 = get_capsule_value(crystalBallLatePrice2) or "25"
+    crystalBallLatePrice34 = get_capsule_value(crystalBallLatePrice34) or "25"
+
+    # Magic Lamp
+    magicLampEarlyPrice1 = get_capsule_value(magicLampEarlyPrice1) or "30"
+    magicLampEarlyPrice2 = get_capsule_value(magicLampEarlyPrice2) or "30"
+    magicLampEarlyPrice34 = get_capsule_value(magicLampEarlyPrice34) or "30"
+    magicLampMidPrice1 = get_capsule_value(magicLampMidPrice1) or "30"
+    magicLampMidPrice2 = get_capsule_value(magicLampMidPrice2) or "30"
+    magicLampMidPrice34 = get_capsule_value(magicLampMidPrice34) or "30"
+    magicLampLatePrice1 = get_capsule_value(magicLampLatePrice1) or "30"
+    magicLampLatePrice2 = get_capsule_value(magicLampLatePrice2) or "30"
+    magicLampLatePrice34 = get_capsule_value(magicLampLatePrice34) or "30"
+
+    # Item Bag
+    itemBagEarlyPrice1 = get_capsule_value(itemBagEarlyPrice1) or "30"
+    itemBagEarlyPrice2 = get_capsule_value(itemBagEarlyPrice2) or "30"
+    itemBagEarlyPrice34 = get_capsule_value(itemBagEarlyPrice34) or "30"
+    itemBagMidPrice1 = get_capsule_value(itemBagMidPrice1) or "30"
+    itemBagMidPrice2 = get_capsule_value(itemBagMidPrice2) or "30"
+    itemBagMidPrice34 = get_capsule_value(itemBagMidPrice34) or "30"
+    itemBagLatePrice1 = get_capsule_value(itemBagLatePrice1) or "30"
+    itemBagLatePrice2 = get_capsule_value(itemBagLatePrice2) or "30"
+    itemBagLatePrice34 = get_capsule_value(itemBagLatePrice34) or "30"
+
+    # Mushroom: DX
+    mushroomEarlyPrice1 = get_capsule_value(mushroomEarlyPrice1) or "5"
+    mushroomEarlyPrice2 = get_capsule_value(mushroomEarlyPrice2) or "5"
+    mushroomEarlyPrice34 = get_capsule_value(mushroomEarlyPrice34) or "5"
+    mushroomMidPrice1 = get_capsule_value(mushroomMidPrice1) or "5"
+    mushroomMidPrice2 = get_capsule_value(mushroomMidPrice2) or "5"
+    mushroomMidPrice34 = get_capsule_value(mushroomMidPrice34) or "5"
+    mushroomLatePrice1 = get_capsule_value(mushroomLatePrice1) or "5"
+    mushroomLatePrice2 = get_capsule_value(mushroomLatePrice2) or "5"
+    mushroomLatePrice34 = get_capsule_value(mushroomLatePrice34) or "5"
+
+    # Golden Mushroom: DX
+    goldenMushroomEarlyPrice1 = get_capsule_value(goldenMushroomEarlyPrice1) or "10"
+    goldenMushroomEarlyPrice2 = get_capsule_value(goldenMushroomEarlyPrice2) or "10"
+    goldenMushroomEarlyPrice34 = get_capsule_value(goldenMushroomEarlyPrice34) or "10"
+    goldenMushroomMidPrice1 = get_capsule_value(goldenMushroomMidPrice1) or "10"
+    goldenMushroomMidPrice2 = get_capsule_value(goldenMushroomMidPrice2) or "10"
+    goldenMushroomMidPrice34 = get_capsule_value(goldenMushroomMidPrice34) or "10"
+    goldenMushroomLatePrice1 = get_capsule_value(goldenMushroomLatePrice1) or "10"
+    goldenMushroomLatePrice2 = get_capsule_value(goldenMushroomLatePrice2) or "10"
+    goldenMushroomLatePrice34 = get_capsule_value(goldenMushroomLatePrice34) or "10"
+
+    # Reverse Mushroom: DX
+    reverseMushroomEarlyPrice1 = get_capsule_value(reverseMushroomEarlyPrice1) or "15"
+    reverseMushroomEarlyPrice2 = get_capsule_value(reverseMushroomEarlyPrice2) or "15"
+    reverseMushroomEarlyPrice34 = get_capsule_value(reverseMushroomEarlyPrice34) or "15"
+    reverseMushroomMidPrice1 = get_capsule_value(reverseMushroomMidPrice1) or "15"
+    reverseMushroomMidPrice2 = get_capsule_value(reverseMushroomMidPrice2) or "15"
+    reverseMushroomMidPrice34 = get_capsule_value(reverseMushroomMidPrice34) or "15"
+    reverseMushroomLatePrice1 = get_capsule_value(reverseMushroomLatePrice1) or "15"
+    reverseMushroomLatePrice2 = get_capsule_value(reverseMushroomLatePrice2) or "15"
+    reverseMushroomLatePrice34 = get_capsule_value(reverseMushroomLatePrice34) or "15"
+
+    # Poison Mushroom: DX
+    poisonMushroomEarlyPrice1 = get_capsule_value(poisonMushroomEarlyPrice1) or "5"
+    poisonMushroomEarlyPrice2 = get_capsule_value(poisonMushroomEarlyPrice2) or "5"
+    poisonMushroomEarlyPrice34 = get_capsule_value(poisonMushroomEarlyPrice34) or "5"
+    poisonMushroomMidPrice1 = get_capsule_value(poisonMushroomMidPrice1) or "5"
+    poisonMushroomMidPrice2 = get_capsule_value(poisonMushroomMidPrice2) or "5"
+    poisonMushroomMidPrice34 = get_capsule_value(poisonMushroomMidPrice34) or "5"
+    poisonMushroomLatePrice1 = get_capsule_value(poisonMushroomLatePrice1) or "5"
+    poisonMushroomLatePrice2 = get_capsule_value(poisonMushroomLatePrice2) or "5"
+    poisonMushroomLatePrice34 = get_capsule_value(poisonMushroomLatePrice34) or "5"
+    
+    # Bowser Phone: DX
+    bowserPhoneEarlyPrice1 = get_capsule_value(bowserPhoneEarlyPrice1) or "10"
+    bowserPhoneEarlyPrice2 = get_capsule_value(bowserPhoneEarlyPrice2) or "10"
+    bowserPhoneEarlyPrice34 = get_capsule_value(bowserPhoneEarlyPrice34) or "10"
+    bowserPhoneMidPrice1 = get_capsule_value(bowserPhoneMidPrice1) or "10"
+    bowserPhoneMidPrice2 = get_capsule_value(bowserPhoneMidPrice2) or "10"
+    bowserPhoneMidPrice34 = get_capsule_value(bowserPhoneMidPrice34) or "10"
+    bowserPhoneLatePrice1 = get_capsule_value(bowserPhoneLatePrice1) or "10"
+    bowserPhoneLatePrice2 = get_capsule_value(bowserPhoneLatePrice2) or "10"
+    bowserPhoneLatePrice34 = get_capsule_value(bowserPhoneLatePrice34) or "10"
+
+    # Triple Poison Mushroom: DX
+    triplePoisonMushroomEarlyPrice1 = get_capsule_value(triplePoisonMushroomEarlyPrice1) or "15"
+    triplePoisonMushroomEarlyPrice2 = get_capsule_value(triplePoisonMushroomEarlyPrice2) or "15"
+    triplePoisonMushroomEarlyPrice34 = get_capsule_value(triplePoisonMushroomEarlyPrice34) or "15"
+    triplePoisonMushroomMidPrice1 = get_capsule_value(triplePoisonMushroomMidPrice1) or "15"
+    triplePoisonMushroomMidPrice2 = get_capsule_value(triplePoisonMushroomMidPrice2) or "15"
+    triplePoisonMushroomMidPrice34 = get_capsule_value(triplePoisonMushroomMidPrice34) or "15"
+    triplePoisonMushroomLatePrice1 = get_capsule_value(triplePoisonMushroomLatePrice1) or "15"
+    triplePoisonMushroomLatePrice2 = get_capsule_value(triplePoisonMushroomLatePrice2) or "15"
+    triplePoisonMushroomLatePrice34 = get_capsule_value(triplePoisonMushroomLatePrice34) or "15"
+
+    # Celluar Shopper: DX
+    celluarShopperEarlyPrice1 = get_capsule_value(celluarShopperEarlyPrice1) or "5"
+    celluarShopperEarlyPrice2 = get_capsule_value(celluarShopperEarlyPrice2) or "5"
+    celluarShopperEarlyPrice34 = get_capsule_value(celluarShopperEarlyPrice34) or "5"
+    celluarShopperMidPrice1 = get_capsule_value(celluarShopperMidPrice1) or "5"
+    celluarShopperMidPrice2 = get_capsule_value(celluarShopperMidPrice2) or "5"
+    celluarShopperMidPrice34 = get_capsule_value(celluarShopperMidPrice34) or "5"
+    celluarShopperLatePrice1 = get_capsule_value(celluarShopperLatePrice1) or "5"
+    celluarShopperLatePrice2 = get_capsule_value(celluarShopperLatePrice2) or "5"
+    celluarShopperLatePrice34 = get_capsule_value(celluarShopperLatePrice34) or "5"
+
+    # Skeleton Key: DX
+    skeletonKeyEarlyPrice1 = get_capsule_value(skeletonKeyEarlyPrice1) or "5"
+    skeletonKeyEarlyPrice2 = get_capsule_value(skeletonKeyEarlyPrice2) or "5"
+    skeletonKeyEarlyPrice34 = get_capsule_value(skeletonKeyEarlyPrice34) or "5"
+    skeletonKeyMidPrice1 = get_capsule_value(skeletonKeyMidPrice1) or "5"
+    skeletonKeyMidPrice2 = get_capsule_value(skeletonKeyMidPrice2) or "5"
+    skeletonKeyMidPrice34 = get_capsule_value(skeletonKeyMidPrice34) or "5"
+    skeletonKeyLatePrice1 = get_capsule_value(skeletonKeyLatePrice1) or "5"
+    skeletonKeyLatePrice2 = get_capsule_value(skeletonKeyLatePrice2) or "5"
+    skeletonKeyLatePrice34 = get_capsule_value(skeletonKeyLatePrice34) or "5"
+
+    # Plunder Chest: DX
+    plunderChestEarlyPrice1 = get_capsule_value(plunderChestEarlyPrice1) or "15"
+    plunderChestEarlyPrice2 = get_capsule_value(plunderChestEarlyPrice2) or "15"
+    plunderChestEarlyPrice34 = get_capsule_value(plunderChestEarlyPrice34) or "15"
+    plunderChestMidPrice1 = get_capsule_value(plunderChestMidPrice1) or "15"
+    plunderChestMidPrice2 = get_capsule_value(plunderChestMidPrice2) or "15"
+    plunderChestMidPrice34 = get_capsule_value(plunderChestMidPrice34) or "15"
+    plunderChestLatePrice1 = get_capsule_value(plunderChestLatePrice1) or "15"
+    plunderChestLatePrice2 = get_capsule_value(plunderChestLatePrice2) or "15"
+    plunderChestLatePrice34 = get_capsule_value(plunderChestLatePrice34) or "15"
+
+    # Gaddbrush: DX
+    gaddbrushEarlyPrice1 = get_capsule_value(gaddbrushEarlyPrice1) or "15"
+    gaddbrushEarlyPrice2 = get_capsule_value(gaddbrushEarlyPrice2) or "15"
+    gaddbrushEarlyPrice34 = get_capsule_value(gaddbrushEarlyPrice34) or "15"
+    gaddbrushMidPrice1 = get_capsule_value(gaddbrushMidPrice1) or "15"
+    gaddbrushMidPrice2 = get_capsule_value(gaddbrushMidPrice2) or "15"
+    gaddbrushMidPrice34 = get_capsule_value(gaddbrushMidPrice34) or "15"
+    gaddbrushLatePrice1 = get_capsule_value(gaddbrushLatePrice1) or "15"
+    gaddbrushLatePrice2 = get_capsule_value(gaddbrushLatePrice2) or "15"
+    gaddbrushLatePrice34 = get_capsule_value(gaddbrushLatePrice34) or "15"
+
+    # Warp Block: DX
+    warpBlockEarlyPrice1 = get_capsule_value(warpBlockEarlyPrice1) or "5"
+    warpBlockEarlyPrice2 = get_capsule_value(warpBlockEarlyPrice2) or "5"
+    warpBlockEarlyPrice34 = get_capsule_value(warpBlockEarlyPrice34) or "5"
+    warpBlockMidPrice1 = get_capsule_value(warpBlockMidPrice1) or "5"
+    warpBlockMidPrice2 = get_capsule_value(warpBlockMidPrice2) or "5"
+    warpBlockMidPrice34 = get_capsule_value(warpBlockMidPrice34) or "5"
+    warpBlockLatePrice1 = get_capsule_value(warpBlockLatePrice1) or "5"
+    warpBlockLatePrice2 = get_capsule_value(warpBlockLatePrice2) or "5"
+    warpBlockLatePrice34 = get_capsule_value(warpBlockLatePrice34) or "5"
+
+    # Fly Guy: DX
+    flyGuyEarlyPrice1 = get_capsule_value(flyGuyEarlyPrice1) or "12"
+    flyGuyEarlyPrice2 = get_capsule_value(flyGuyEarlyPrice2) or "12"
+    flyGuyEarlyPrice34 = get_capsule_value(flyGuyEarlyPrice34) or "12"
+    flyGuyMidPrice1 = get_capsule_value(flyGuyMidPrice1) or "12"
+    flyGuyMidPrice2 = get_capsule_value(flyGuyMidPrice2) or "12"
+    flyGuyMidPrice34 = get_capsule_value(flyGuyMidPrice34) or "12"
+    flyGuyLatePrice1 = get_capsule_value(flyGuyLatePrice1) or "12"
+    flyGuyLatePrice2 = get_capsule_value(flyGuyLatePrice2) or "12"
+    flyGuyLatePrice34 = get_capsule_value(flyGuyLatePrice34) or "12"
+
+    # Plus Block: DX
+    plusBlockEarlyPrice1 = get_capsule_value(plusBlockEarlyPrice1) or "10"
+    plusBlockEarlyPrice2 = get_capsule_value(plusBlockEarlyPrice2) or "10"
+    plusBlockEarlyPrice34 = get_capsule_value(plusBlockEarlyPrice34) or "10"
+    plusBlockMidPrice1 = get_capsule_value(plusBlockMidPrice1) or "10"
+    plusBlockMidPrice2 = get_capsule_value(plusBlockMidPrice2) or "10"
+    plusBlockMidPrice34 = get_capsule_value(plusBlockMidPrice34) or "10"
+    plusBlockLatePrice1 = get_capsule_value(plusBlockLatePrice1) or "10"
+    plusBlockLatePrice2 = get_capsule_value(plusBlockLatePrice2) or "10"
+    plusBlockLatePrice34 = get_capsule_value(plusBlockLatePrice34) or "10"
+
+    # Minus Block: DX
+    minusBlockEarlyPrice1 = get_capsule_value(minusBlockEarlyPrice1) or "10"
+    minusBlockEarlyPrice2 = get_capsule_value(minusBlockEarlyPrice2) or "10"
+    minusBlockEarlyPrice34 = get_capsule_value(minusBlockEarlyPrice34) or "10"
+    minusBlockMidPrice1 = get_capsule_value(minusBlockMidPrice1) or "10"
+    minusBlockMidPrice2 = get_capsule_value(minusBlockMidPrice2) or "10"
+    minusBlockMidPrice34 = get_capsule_value(minusBlockMidPrice34) or "10"
+    minusBlockLatePrice1 = get_capsule_value(minusBlockLatePrice1) or "10"
+    minusBlockLatePrice2 = get_capsule_value(minusBlockLatePrice2) or "10"
+    minusBlockLatePrice34 = get_capsule_value(minusBlockLatePrice34) or "10"
+
+    # Speed Block: DX
+    speedBlockEarlyPrice1 = get_capsule_value(speedBlockEarlyPrice1) or "12"
+    speedBlockEarlyPrice2 = get_capsule_value(speedBlockEarlyPrice2) or "12"
+    speedBlockEarlyPrice34 = get_capsule_value(speedBlockEarlyPrice34) or "12"
+    speedBlockMidPrice1 = get_capsule_value(speedBlockMidPrice1) or "12"
+    speedBlockMidPrice2 = get_capsule_value(speedBlockMidPrice2) or "12"
+    speedBlockMidPrice34 = get_capsule_value(speedBlockMidPrice34) or "12"
+    speedBlockLatePrice1 = get_capsule_value(speedBlockLatePrice1) or "12"
+    speedBlockLatePrice2 = get_capsule_value(speedBlockLatePrice2) or "12"
+    speedBlockLatePrice34 = get_capsule_value(speedBlockLatePrice34) or "12"
+
+    # Slow Block: DX
+    slowBlockEarlyPrice1 = get_capsule_value(slowBlockEarlyPrice1) or "12"
+    slowBlockEarlyPrice2 = get_capsule_value(slowBlockEarlyPrice2) or "12"
+    slowBlockEarlyPrice34 = get_capsule_value(slowBlockEarlyPrice34) or "12"
+    slowBlockMidPrice1 = get_capsule_value(slowBlockMidPrice1) or "12"
+    slowBlockMidPrice2 = get_capsule_value(slowBlockMidPrice2) or "12"
+    slowBlockMidPrice34 = get_capsule_value(slowBlockMidPrice34) or "12"
+    slowBlockLatePrice1 = get_capsule_value(slowBlockLatePrice1) or "12"
+    slowBlockLatePrice2 = get_capsule_value(slowBlockLatePrice2) or "12"
+    slowBlockLatePrice34 = get_capsule_value(slowBlockLatePrice34) or "12"
+
+    # Hidden Block Card: DX
+    hiddenBlockCardEarlyPrice1 = get_capsule_value(hiddenBlockCardEarlyPrice1) or "40"
+    hiddenBlockCardEarlyPrice2 = get_capsule_value(hiddenBlockCardEarlyPrice2) or "40"
+    hiddenBlockCardEarlyPrice34 = get_capsule_value(hiddenBlockCardEarlyPrice34) or "40"
+    hiddenBlockCardMidPrice1 = get_capsule_value(hiddenBlockCardMidPrice1) or "40"
+    hiddenBlockCardMidPrice2 = get_capsule_value(hiddenBlockCardMidPrice2) or "40"
+    hiddenBlockCardMidPrice34 = get_capsule_value(hiddenBlockCardMidPrice34) or "40"
+    hiddenBlockCardLatePrice1 = get_capsule_value(hiddenBlockCardLatePrice1) or "40"
+    hiddenBlockCardLatePrice2 = get_capsule_value(hiddenBlockCardLatePrice2) or "40"
+    hiddenBlockCardLatePrice34 = get_capsule_value(hiddenBlockCardLatePrice34) or "40"
+
+    # Barter Box: DX
+    barterBoxEarlyPrice1 = get_capsule_value(barterBoxEarlyPrice1) or "40"
+    barterBoxEarlyPrice2 = get_capsule_value(barterBoxEarlyPrice2) or "40"
+    barterBoxEarlyPrice34 = get_capsule_value(barterBoxEarlyPrice34) or "40"
+    barterBoxMidPrice1 = get_capsule_value(barterBoxMidPrice1) or "40"
+    barterBoxMidPrice2 = get_capsule_value(barterBoxMidPrice2) or "40"
+    barterBoxMidPrice34 = get_capsule_value(barterBoxMidPrice34) or "40"
+    barterBoxLatePrice1 = get_capsule_value(barterBoxLatePrice1) or "40"
+    barterBoxLatePrice2 = get_capsule_value(barterBoxLatePrice2) or "40"
+    barterBoxLatePrice34 = get_capsule_value(barterBoxLatePrice34) or "40"
+
+    # Super Warp Pipe: DX
+    superWarpPipeEarlyPrice1 = get_capsule_value(superWarpPipeEarlyPrice1) or "40"
+    superWarpPipeEarlyPrice2 = get_capsule_value(superWarpPipeEarlyPrice2) or "40"
+    superWarpPipeEarlyPrice34 = get_capsule_value(superWarpPipeEarlyPrice34) or "40"
+    superWarpPipeMidPrice1 = get_capsule_value(superWarpPipeMidPrice1) or "40"
+    superWarpPipeMidPrice2 = get_capsule_value(superWarpPipeMidPrice2) or "40"
+    superWarpPipeMidPrice34 = get_capsule_value(superWarpPipeMidPrice34) or "40"
+    superWarpPipeLatePrice1 = get_capsule_value(superWarpPipeLatePrice1) or "40"
+    superWarpPipeLatePrice2 = get_capsule_value(superWarpPipeLatePrice2) or "40"
+    superWarpPipeLatePrice34 = get_capsule_value(superWarpPipeLatePrice34) or "40"
+
+    # Chance Time Charm: DX
+    chanceTimeCharmEarlyPrice1 = get_capsule_value(chanceTimeCharmEarlyPrice1) or "40"
+    chanceTimeCharmEarlyPrice2 = get_capsule_value(chanceTimeCharmEarlyPrice2) or "40"
+    chanceTimeCharmEarlyPrice34 = get_capsule_value(chanceTimeCharmEarlyPrice34) or "40"
+    chanceTimeCharmMidPrice1 = get_capsule_value(chanceTimeCharmMidPrice1) or "40"
+    chanceTimeCharmMidPrice2 = get_capsule_value(chanceTimeCharmMidPrice2) or "40"
+    chanceTimeCharmMidPrice34 = get_capsule_value(chanceTimeCharmMidPrice34) or "40"
+    chanceTimeCharmLatePrice1 = get_capsule_value(chanceTimeCharmLatePrice1) or "40"
+    chanceTimeCharmLatePrice2 = get_capsule_value(chanceTimeCharmLatePrice2) or "40"
+    chanceTimeCharmLatePrice34 = get_capsule_value(chanceTimeCharmLatePrice34) or "40"
+
+    # Wacky Watch: DX
+    wackyWatchEarlyPrice1 = get_capsule_value(wackyWatchEarlyPrice1) or "100"
+    wackyWatchEarlyPrice2 = get_capsule_value(wackyWatchEarlyPrice2) or "100"
+    wackyWatchEarlyPrice34 = get_capsule_value(wackyWatchEarlyPrice34) or "100"
+    wackyWatchMidPrice1 = get_capsule_value(wackyWatchMidPrice1) or "100"
+    wackyWatchMidPrice2 = get_capsule_value(wackyWatchMidPrice2) or "100"
+    wackyWatchMidPrice34 = get_capsule_value(wackyWatchMidPrice34) or "100"
+    wackyWatchLatePrice1 = get_capsule_value(wackyWatchLatePrice1) or "100"
+    wackyWatchLatePrice2 = get_capsule_value(wackyWatchLatePrice2) or "100"
+    wackyWatchLatePrice34 = get_capsule_value(wackyWatchLatePrice34) or "100"
+    
+    minCoins = find_lowest_integer(*[
+        int(miniMushroomEarlyPrice1), int(miniMushroomEarlyPrice2), int(miniMushroomEarlyPrice34), 
+        int(miniMushroomMidPrice1), int(miniMushroomMidPrice2), int(miniMushroomMidPrice34),
+        int(miniMushroomLatePrice1), int(miniMushroomLatePrice2), int(miniMushroomLatePrice34),
+        int(megaMushroomEarlyPrice1), int(megaMushroomEarlyPrice2), int(megaMushroomEarlyPrice34), 
+        int(megaMushroomMidPrice1), int(megaMushroomMidPrice2), int(megaMushroomMidPrice34),
+        int(megaMushroomLatePrice1), int(megaMushroomLatePrice2), int(megaMushroomLatePrice34),
+        int(superMiniMushroomEarlyPrice1), int(superMiniMushroomEarlyPrice2), int(superMiniMushroomEarlyPrice34),
+        int(superMiniMushroomMidPrice1), int(superMiniMushroomMidPrice2), int(superMiniMushroomMidPrice34),
+        int(superMiniMushroomLatePrice1), int(superMiniMushroomLatePrice2), int(superMiniMushroomLatePrice34),
+        int(superMegaMushroomEarlyPrice1), int(superMegaMushroomEarlyPrice2), int(superMegaMushroomEarlyPrice34),
+        int(superMegaMushroomMidPrice1), int(superMegaMushroomMidPrice2), int(superMegaMushroomMidPrice34),
+        int(superMegaMushroomLatePrice1), int(superMegaMushroomLatePrice2), int(superMegaMushroomLatePrice34),
+        int(miniMegaHammerEarlyPrice1), int(miniMegaHammerEarlyPrice2), int(miniMegaHammerEarlyPrice34),
+        int(miniMegaHammerMidPrice1), int(miniMegaHammerMidPrice2), int(miniMegaHammerMidPrice34),
+        int(miniMegaHammerLatePrice1), int(miniMegaHammerLatePrice2), int(miniMegaHammerLatePrice34),
+        int(warpPipeEarlyPrice1), int(warpPipeEarlyPrice2), int(warpPipeEarlyPrice34),
+        int(warpPipeMidPrice1), int(warpPipeMidPrice2), int(warpPipeMidPrice34),
+        int(warpPipeLatePrice1), int(warpPipeLatePrice2), int(warpPipeLatePrice34),
+        int(swapCardEarlyPrice1), int(swapCardEarlyPrice2), int(swapCardEarlyPrice34),
+        int(swapCardMidPrice1), int(swapCardMidPrice2), int(swapCardMidPrice34),
+        int(swapCardLatePrice1), int(swapCardLatePrice2), int(swapCardLatePrice34),
+        int(sparkyStickerEarlyPrice1), int(sparkyStickerEarlyPrice2), int(sparkyStickerEarlyPrice34),
+        int(sparkyStickerMidPrice1), int(sparkyStickerMidPrice2), int(sparkyStickerMidPrice34),
+        int(sparkyStickerLatePrice1), int(sparkyStickerLatePrice2), int(sparkyStickerLatePrice34),
+        int(gaddlightEarlyPrice1), int(gaddlightEarlyPrice2), int(gaddlightEarlyPrice34),
+        int(gaddlightMidPrice1), int(gaddlightMidPrice2), int(gaddlightMidPrice34),
+        int(gaddlightLatePrice1), int(gaddlightLatePrice2), int(gaddlightLatePrice34),
+        int(chompCallEarlyPrice1), int(chompCallEarlyPrice2), int(chompCallEarlyPrice34),
+        int(chompCallMidPrice1), int(chompCallMidPrice2), int(chompCallMidPrice34),
+        int(chompCallLatePrice1), int(chompCallLatePrice2), int(chompCallLatePrice34),
+        int(bowserSuitEarlyPrice1), int(bowserSuitEarlyPrice2), int(bowserSuitEarlyPrice34),
+        int(bowserSuitMidPrice1), int(bowserSuitMidPrice2), int(bowserSuitMidPrice34),
+        int(bowserSuitLatePrice1), int(bowserSuitLatePrice2), int(bowserSuitLatePrice34),
+        int(crystalBallEarlyPrice1), int(crystalBallEarlyPrice2), int(crystalBallEarlyPrice34),
+        int(crystalBallMidPrice1), int(crystalBallMidPrice2), int(crystalBallMidPrice34),
+        int(crystalBallLatePrice1), int(crystalBallLatePrice2), int(crystalBallLatePrice34),
+        int(magicLampEarlyPrice1), int(magicLampEarlyPrice2), int(magicLampEarlyPrice34),
+        int(magicLampMidPrice1), int(magicLampMidPrice2), int(magicLampMidPrice34),
+        int(magicLampLatePrice1), int(magicLampLatePrice2), int(magicLampLatePrice34),
+        int(itemBagEarlyPrice1), int(itemBagEarlyPrice2), int(itemBagEarlyPrice34),
+        int(itemBagMidPrice1), int(itemBagMidPrice2), int(itemBagMidPrice34),
+        int(itemBagLatePrice1), int(itemBagLatePrice2), int(itemBagLatePrice34)])
+
 
     def convert_to_hex_weight(weight):
         try:
@@ -1660,1142 +460,395 @@ def itemsEvent_mp4CustomItemSpace(miniMushroomPrice1 = "0", miniMushroomPrice2 =
         except:
             return "00"  # Return default value on error
 
-    # Usage
-    miniMushroomPrice1 = convert_to_hex_weight(miniMushroomPrice1)
-    miniMushroomPrice2 = convert_to_hex_weight(miniMushroomPrice2)
-    miniMushroomPrice34 = convert_to_hex_weight(miniMushroomPrice34)
-    miniMushroomShopOdds12 = convert_to_hex_weight(miniMushroomShopOdds12)
-    miniMushroomShopOdds34 = convert_to_hex_weight(miniMushroomShopOdds34)
-    miniMushroomSpaceOdds1 = convert_to_hex_weight(miniMushroomSpaceOdds1)
-    miniMushroomSpaceOdds2 = convert_to_hex_weight(miniMushroomSpaceOdds2)
-    miniMushroomSpaceOdds34 = convert_to_hex_weight(miniMushroomSpaceOdds34)
-    megaMushroomPrice1 = convert_to_hex_weight(megaMushroomPrice1)
-    megaMushroomPrice2 = convert_to_hex_weight(megaMushroomPrice2)
-    megaMushroomPrice34 = convert_to_hex_weight(megaMushroomPrice34)
-    megaMushroomShopOdds12 = convert_to_hex_weight(megaMushroomShopOdds12)
-    megaMushroomShopOdds34 = convert_to_hex_weight(megaMushroomShopOdds34)
-    megaMushroomSpaceOdds1 = convert_to_hex_weight(megaMushroomSpaceOdds1)
-    megaMushroomSpaceOdds2 = convert_to_hex_weight(megaMushroomSpaceOdds2)
-    megaMushroomSpaceOdds34 = convert_to_hex_weight(megaMushroomSpaceOdds34)
-    superMiniMushroomPrice1 = convert_to_hex_weight(superMiniMushroomPrice1)
-    superMiniMushroomPrice2 = convert_to_hex_weight(superMiniMushroomPrice2)
-    superMiniMushroomPrice34 = convert_to_hex_weight(superMiniMushroomPrice34)
-    superMiniMushroomShopOdds12 = convert_to_hex_weight(superMiniMushroomShopOdds12)
-    superMiniMushroomShopOdds34 = convert_to_hex_weight(superMiniMushroomShopOdds34)
-    superMiniMushroomSpaceOdds1 = convert_to_hex_weight(superMiniMushroomSpaceOdds1)
-    superMiniMushroomSpaceOdds2 = convert_to_hex_weight(superMiniMushroomSpaceOdds2)
-    superMiniMushroomSpaceOdds34 = convert_to_hex_weight(superMiniMushroomSpaceOdds34)
-    superMegaMushroomPrice1 = convert_to_hex_weight(superMegaMushroomPrice1)
-    superMegaMushroomPrice2 = convert_to_hex_weight(superMegaMushroomPrice2)
-    superMegaMushroomPrice34 = convert_to_hex_weight(superMegaMushroomPrice34)
-    superMegaMushroomShopOdds12 = convert_to_hex_weight(superMegaMushroomShopOdds12)
-    superMegaMushroomShopOdds34 = convert_to_hex_weight(superMegaMushroomShopOdds34)
-    superMegaMushroomSpaceOdds1 = convert_to_hex_weight(superMegaMushroomSpaceOdds1)
-    superMegaMushroomSpaceOdds2 = convert_to_hex_weight(superMegaMushroomSpaceOdds2)
-    superMegaMushroomSpaceOdds34 = convert_to_hex_weight(superMegaMushroomSpaceOdds34)
-    miniMegaHammerPrice1 = convert_to_hex_weight(miniMegaHammerPrice1)
-    miniMegaHammerPrice2 = convert_to_hex_weight(miniMegaHammerPrice2)
-    miniMegaHammerPrice34 = convert_to_hex_weight(miniMegaHammerPrice34)
-    miniMegaHammerShopOdds12 = convert_to_hex_weight(miniMegaHammerShopOdds12)
-    miniMegaHammerShopOdds34 = convert_to_hex_weight(miniMegaHammerShopOdds34)
-    miniMegaHammerSpaceOdds1 = convert_to_hex_weight(miniMegaHammerSpaceOdds1)
-    miniMegaHammerSpaceOdds2 = convert_to_hex_weight(miniMegaHammerSpaceOdds2)
-    miniMegaHammerSpaceOdds34 = convert_to_hex_weight(miniMegaHammerSpaceOdds34)
-    warpPipePrice1 = convert_to_hex_weight(warpPipePrice1)
-    warpPipePrice2 = convert_to_hex_weight(warpPipePrice2)
-    warpPipePrice34 = convert_to_hex_weight(warpPipePrice34)
-    warpPipeShopOdds12 = convert_to_hex_weight(warpPipeShopOdds12)
-    warpPipeShopOdds34 = convert_to_hex_weight(warpPipeShopOdds34)
-    warpPipeSpaceOdds1 = convert_to_hex_weight(warpPipeSpaceOdds1)
-    warpPipeSpaceOdds2 = convert_to_hex_weight(warpPipeSpaceOdds2)
-    warpPipeSpaceOdds34 = convert_to_hex_weight(warpPipeSpaceOdds34)
-    swapCardPrice1 = convert_to_hex_weight(swapCardPrice1)
-    swapCardPrice2 = convert_to_hex_weight(swapCardPrice2)
-    swapCardPrice34 = convert_to_hex_weight(swapCardPrice34)
-    swapCardShopOdds12 = convert_to_hex_weight(swapCardShopOdds12)
-    swapCardShopOdds34 = convert_to_hex_weight(swapCardShopOdds34)
-    swapCardSpaceOdds1 = convert_to_hex_weight(swapCardSpaceOdds1)
-    swapCardSpaceOdds2 = convert_to_hex_weight(swapCardSpaceOdds2)
-    swapCardSpaceOdds34 = convert_to_hex_weight(swapCardSpaceOdds34)
-    sparkyStickerPrice1 = convert_to_hex_weight(sparkyStickerPrice1)
-    sparkyStickerPrice2 = convert_to_hex_weight(sparkyStickerPrice2)
-    sparkyStickerPrice34 = convert_to_hex_weight(sparkyStickerPrice34)
-    sparkyStickerShopOdds12 = convert_to_hex_weight(sparkyStickerShopOdds12)
-    sparkyStickerShopOdds34 = convert_to_hex_weight(sparkyStickerShopOdds34)
-    sparkyStickerSpaceOdds1 = convert_to_hex_weight(sparkyStickerSpaceOdds1)
-    sparkyStickerSpaceOdds2 = convert_to_hex_weight(sparkyStickerSpaceOdds2)
-    sparkyStickerSpaceOdds34 = convert_to_hex_weight(sparkyStickerSpaceOdds34)
-    gaddlightPrice1 = convert_to_hex_weight(gaddlightPrice1)
-    gaddlightPrice2 = convert_to_hex_weight(gaddlightPrice2)
-    gaddlightPrice34 = convert_to_hex_weight(gaddlightPrice34)
-    gaddlightShopOdds12 = convert_to_hex_weight(gaddlightShopOdds12)
-    gaddlightShopOdds34 = convert_to_hex_weight(gaddlightShopOdds34)
-    gaddlightSpaceOdds1 = convert_to_hex_weight(gaddlightSpaceOdds1)
-    gaddlightSpaceOdds2 = convert_to_hex_weight(gaddlightSpaceOdds2)
-    gaddlightSpaceOdds34 = convert_to_hex_weight(gaddlightSpaceOdds34)
-    chompCallPrice1 = convert_to_hex_weight(chompCallPrice1)
-    chompCallPrice2 = convert_to_hex_weight(chompCallPrice2)
-    chompCallPrice34 = convert_to_hex_weight(chompCallPrice34)
-    chompCallShopOdds12 = convert_to_hex_weight(chompCallShopOdds12)
-    chompCallShopOdds34 = convert_to_hex_weight(chompCallShopOdds34)
-    chompCallSpaceOdds1 = convert_to_hex_weight(chompCallSpaceOdds1)
-    chompCallSpaceOdds2 = convert_to_hex_weight(chompCallSpaceOdds2)
-    chompCallSpaceOdds34 = convert_to_hex_weight(chompCallSpaceOdds34)
-    bowserSuitPrice1 = convert_to_hex_weight(bowserSuitPrice1)
-    bowserSuitPrice2 = convert_to_hex_weight(bowserSuitPrice2)
-    bowserSuitPrice34 = convert_to_hex_weight(bowserSuitPrice34)
-    bowserSuitShopOdds12 = convert_to_hex_weight(bowserSuitShopOdds12)
-    bowserSuitShopOdds34 = convert_to_hex_weight(bowserSuitShopOdds34)
-    bowserSuitSpaceOdds1 = convert_to_hex_weight(bowserSuitSpaceOdds1)
-    bowserSuitSpaceOdds2 = convert_to_hex_weight(bowserSuitSpaceOdds2)
-    bowserSuitSpaceOdds34 = convert_to_hex_weight(bowserSuitSpaceOdds34)
-    crystalBallPrice1 = convert_to_hex_weight(crystalBallPrice1)
-    crystalBallPrice2 = convert_to_hex_weight(crystalBallPrice2)
-    crystalBallPrice34 = convert_to_hex_weight(crystalBallPrice34)
-    crystalBallShopOdds12 = convert_to_hex_weight(crystalBallShopOdds12)
-    crystalBallShopOdds34 = convert_to_hex_weight(crystalBallShopOdds34)
-    crystalBallSpaceOdds1 = convert_to_hex_weight(crystalBallSpaceOdds1)
-    crystalBallSpaceOdds2 = convert_to_hex_weight(crystalBallSpaceOdds2)
-    crystalBallSpaceOdds34 = convert_to_hex_weight(crystalBallSpaceOdds34)
-    magicLampPrice1 = convert_to_hex_weight(magicLampPrice1)
-    magicLampPrice2 = convert_to_hex_weight(magicLampPrice2)
-    magicLampPrice34 = convert_to_hex_weight(magicLampPrice34)
-    magicLampShopOdds12 = convert_to_hex_weight(magicLampShopOdds12)
-    magicLampShopOdds34 = convert_to_hex_weight(magicLampShopOdds34)
-    magicLampSpaceOdds1 = convert_to_hex_weight(magicLampSpaceOdds1)
-    magicLampSpaceOdds2 = convert_to_hex_weight(magicLampSpaceOdds2)
-    magicLampSpaceOdds34 = convert_to_hex_weight(magicLampSpaceOdds34)
-    itemBagPrice1 = convert_to_hex_weight(itemBagPrice1)
-    itemBagPrice2 = convert_to_hex_weight(itemBagPrice2)
-    itemBagPrice34 = convert_to_hex_weight(itemBagPrice34)
-    itemBagShopOdds12 = convert_to_hex_weight(itemBagShopOdds12)
-    itemBagShopOdds34 = convert_to_hex_weight(itemBagShopOdds34)
-    itemBagSpaceOdds1 = convert_to_hex_weight(itemBagSpaceOdds1)
-    itemBagSpaceOdds2 = convert_to_hex_weight(itemBagSpaceOdds2)
-    itemBagSpaceOdds34 = convert_to_hex_weight(itemBagSpaceOdds34)
-    mushroomPrice1 = convert_to_hex_weight(mushroomPrice1)
-    mushroomPrice2 = convert_to_hex_weight(mushroomPrice2)
-    mushroomPrice34 = convert_to_hex_weight(mushroomPrice34)
-    mushroomShopOdds12 = convert_to_hex_weight(mushroomShopOdds12)
-    mushroomShopOdds34 = convert_to_hex_weight(mushroomShopOdds34)
-    mushroomSpaceOdds1 = convert_to_hex_weight(mushroomSpaceOdds1)
-    mushroomSpaceOdds2 = convert_to_hex_weight(mushroomSpaceOdds2)
-    mushroomSpaceOdds34 = convert_to_hex_weight(mushroomSpaceOdds34)
-    goldenMushroomPrice1 = convert_to_hex_weight(goldenMushroomPrice1)
-    goldenMushroomPrice2 = convert_to_hex_weight(goldenMushroomPrice2)
-    goldenMushroomPrice34 = convert_to_hex_weight(goldenMushroomPrice34)
-    goldenMushroomShopOdds12 = convert_to_hex_weight(goldenMushroomShopOdds12)
-    goldenMushroomShopOdds34 = convert_to_hex_weight(goldenMushroomShopOdds34)
-    goldenMushroomSpaceOdds1 = convert_to_hex_weight(goldenMushroomSpaceOdds1)
-    goldenMushroomSpaceOdds2 = convert_to_hex_weight(goldenMushroomSpaceOdds2)
-    goldenMushroomSpaceOdds34 = convert_to_hex_weight(goldenMushroomSpaceOdds34)
-    reverseMushroomPrice1 = convert_to_hex_weight(reverseMushroomPrice1)
-    reverseMushroomPrice2 = convert_to_hex_weight(reverseMushroomPrice2)
-    reverseMushroomPrice34 = convert_to_hex_weight(reverseMushroomPrice34)
-    reverseMushroomShopOdds12 = convert_to_hex_weight(reverseMushroomShopOdds12)
-    reverseMushroomShopOdds34 = convert_to_hex_weight(reverseMushroomShopOdds34)
-    reverseMushroomSpaceOdds1 = convert_to_hex_weight(reverseMushroomSpaceOdds1)
-    reverseMushroomSpaceOdds2 = convert_to_hex_weight(reverseMushroomSpaceOdds2)
-    reverseMushroomSpaceOdds34 = convert_to_hex_weight(reverseMushroomSpaceOdds34)
-    poisonMushroomPrice1 = convert_to_hex_weight(poisonMushroomPrice1)
-    poisonMushroomPrice2 = convert_to_hex_weight(poisonMushroomPrice2)
-    poisonMushroomPrice34 = convert_to_hex_weight(poisonMushroomPrice34)
-    poisonMushroomShopOdds12 = convert_to_hex_weight(poisonMushroomShopOdds12)
-    poisonMushroomShopOdds34 = convert_to_hex_weight(poisonMushroomShopOdds34)
-    poisonMushroomSpaceOdds1 = convert_to_hex_weight(poisonMushroomSpaceOdds1)
-    poisonMushroomSpaceOdds2 = convert_to_hex_weight(poisonMushroomSpaceOdds2)
-    poisonMushroomSpaceOdds34 = convert_to_hex_weight(poisonMushroomSpaceOdds34)
-    triplePoisonMushroomPrice1 = convert_to_hex_weight(triplePoisonMushroomPrice1)
-    triplePoisonMushroomPrice2 = convert_to_hex_weight(triplePoisonMushroomPrice2)
-    triplePoisonMushroomPrice34 = convert_to_hex_weight(triplePoisonMushroomPrice34)
-    triplePoisonMushroomShopOdds12 = convert_to_hex_weight(triplePoisonMushroomShopOdds12)
-    triplePoisonMushroomShopOdds34 = convert_to_hex_weight(triplePoisonMushroomShopOdds34)
-    triplePoisonMushroomSpaceOdds1 = convert_to_hex_weight(triplePoisonMushroomSpaceOdds1)
-    triplePoisonMushroomSpaceOdds2 = convert_to_hex_weight(triplePoisonMushroomSpaceOdds2)
-    triplePoisonMushroomSpaceOdds34 = convert_to_hex_weight(triplePoisonMushroomSpaceOdds34)
-    celluarShopperPrice1 = convert_to_hex_weight(celluarShopperPrice1)
-    celluarShopperPrice2 = convert_to_hex_weight(celluarShopperPrice2)
-    celluarShopperPrice34 = convert_to_hex_weight(celluarShopperPrice34)
-    celluarShopperShopOdds12 = convert_to_hex_weight(celluarShopperShopOdds12)
-    celluarShopperShopOdds34 = convert_to_hex_weight(celluarShopperShopOdds34)
-    celluarShopperSpaceOdds1 = convert_to_hex_weight(celluarShopperSpaceOdds1)
-    celluarShopperSpaceOdds2 = convert_to_hex_weight(celluarShopperSpaceOdds2)
-    celluarShopperSpaceOdds34 = convert_to_hex_weight(celluarShopperSpaceOdds34)
-    skeletonKeyPrice1 = convert_to_hex_weight(skeletonKeyPrice1)
-    skeletonKeyPrice2 = convert_to_hex_weight(skeletonKeyPrice2)
-    skeletonKeyPrice34 = convert_to_hex_weight(skeletonKeyPrice34)
-    skeletonKeyShopOdds12 = convert_to_hex_weight(skeletonKeyShopOdds12)
-    skeletonKeyShopOdds34 = convert_to_hex_weight(skeletonKeyShopOdds34)
-    skeletonKeySpaceOdds1 = convert_to_hex_weight(skeletonKeySpaceOdds1)
-    skeletonKeySpaceOdds2 = convert_to_hex_weight(skeletonKeySpaceOdds2)
-    skeletonKeySpaceOdds34 = convert_to_hex_weight(skeletonKeySpaceOdds34)
-    plunderChestPrice1 = convert_to_hex_weight(plunderChestPrice1)
-    plunderChestPrice2 = convert_to_hex_weight(plunderChestPrice2)
-    plunderChestPrice34 = convert_to_hex_weight(plunderChestPrice34)
-    plunderChestShopOdds12 = convert_to_hex_weight(plunderChestShopOdds12)
-    plunderChestShopOdds34 = convert_to_hex_weight(plunderChestShopOdds34)
-    plunderChestSpaceOdds1 = convert_to_hex_weight(plunderChestSpaceOdds1)
-    plunderChestSpaceOdds2 = convert_to_hex_weight(plunderChestSpaceOdds2)
-    plunderChestSpaceOdds34 = convert_to_hex_weight(plunderChestSpaceOdds34)
-    gaddbrushPrice1 = convert_to_hex_weight(gaddbrushPrice1)
-    gaddbrushPrice2 = convert_to_hex_weight(gaddbrushPrice2)
-    gaddbrushPrice34 = convert_to_hex_weight(gaddbrushPrice34)
-    gaddbrushShopOdds12 = convert_to_hex_weight(gaddbrushShopOdds12)
-    gaddbrushShopOdds34 = convert_to_hex_weight(gaddbrushShopOdds34)
-    gaddbrushSpaceOdds1 = convert_to_hex_weight(gaddbrushSpaceOdds1)
-    gaddbrushSpaceOdds2 = convert_to_hex_weight(gaddbrushSpaceOdds2)
-    gaddbrushSpaceOdds34 = convert_to_hex_weight(gaddbrushSpaceOdds34)
-    warpBlockPrice1 = convert_to_hex_weight(warpBlockPrice1)
-    warpBlockPrice2 = convert_to_hex_weight(warpBlockPrice2)
-    warpBlockPrice34 = convert_to_hex_weight(warpBlockPrice34)
-    warpBlockShopOdds12 = convert_to_hex_weight(warpBlockShopOdds12)
-    warpBlockShopOdds34 = convert_to_hex_weight(warpBlockShopOdds34)
-    warpBlockSpaceOdds1 = convert_to_hex_weight(warpBlockSpaceOdds1)
-    warpBlockSpaceOdds2 = convert_to_hex_weight(warpBlockSpaceOdds2)
-    warpBlockSpaceOdds34 = convert_to_hex_weight(warpBlockSpaceOdds34)
-    flyGuyPrice1 = convert_to_hex_weight(flyGuyPrice1)
-    flyGuyPrice2 = convert_to_hex_weight(flyGuyPrice2)
-    flyGuyPrice34 = convert_to_hex_weight(flyGuyPrice34)
-    flyGuyShopOdds12 = convert_to_hex_weight(flyGuyShopOdds12)
-    flyGuyShopOdds34 = convert_to_hex_weight(flyGuyShopOdds34)
-    flyGuySpaceOdds1 = convert_to_hex_weight(flyGuySpaceOdds1)
-    flyGuySpaceOdds2 = convert_to_hex_weight(flyGuySpaceOdds2)
-    flyGuySpaceOdds34 = convert_to_hex_weight(flyGuySpaceOdds34)
-    plusBlockPrice1 = convert_to_hex_weight(plusBlockPrice1)
-    plusBlockPrice2 = convert_to_hex_weight(plusBlockPrice2)
-    plusBlockPrice34 = convert_to_hex_weight(plusBlockPrice34)
-    plusBlockShopOdds12 = convert_to_hex_weight(plusBlockShopOdds12)
-    plusBlockShopOdds34 = convert_to_hex_weight(plusBlockShopOdds34)
-    plusBlockSpaceOdds1 = convert_to_hex_weight(plusBlockSpaceOdds1)
-    plusBlockSpaceOdds2 = convert_to_hex_weight(plusBlockSpaceOdds2)
-    plusBlockSpaceOdds34 = convert_to_hex_weight(plusBlockSpaceOdds34)
-    minusBlockPrice1 = convert_to_hex_weight(minusBlockPrice1)
-    minusBlockPrice2 = convert_to_hex_weight(minusBlockPrice2)
-    minusBlockPrice34 = convert_to_hex_weight(minusBlockPrice34)
-    minusBlockShopOdds12 = convert_to_hex_weight(minusBlockShopOdds12)
-    minusBlockShopOdds34 = convert_to_hex_weight(minusBlockShopOdds34)
-    minusBlockSpaceOdds1 = convert_to_hex_weight(minusBlockSpaceOdds1)
-    minusBlockSpaceOdds2 = convert_to_hex_weight(minusBlockSpaceOdds2)
-    minusBlockSpaceOdds34 = convert_to_hex_weight(minusBlockSpaceOdds34)
-    speedBlockPrice1 = convert_to_hex_weight(speedBlockPrice1)
-    speedBlockPrice2 = convert_to_hex_weight(speedBlockPrice2)
-    speedBlockPrice34 = convert_to_hex_weight(speedBlockPrice34)
-    speedBlockShopOdds12 = convert_to_hex_weight(speedBlockShopOdds12)
-    speedBlockShopOdds34 = convert_to_hex_weight(speedBlockShopOdds34)
-    speedBlockSpaceOdds1 = convert_to_hex_weight(speedBlockSpaceOdds1)
-    speedBlockSpaceOdds2 = convert_to_hex_weight(speedBlockSpaceOdds2)
-    speedBlockSpaceOdds34 = convert_to_hex_weight(speedBlockSpaceOdds34)
-    slowBlockPrice1 = convert_to_hex_weight(slowBlockPrice1)
-    slowBlockPrice2 = convert_to_hex_weight(slowBlockPrice2)
-    slowBlockPrice34 = convert_to_hex_weight(slowBlockPrice34)
-    slowBlockShopOdds12 = convert_to_hex_weight(slowBlockShopOdds12)
-    slowBlockShopOdds34 = convert_to_hex_weight(slowBlockShopOdds34)
-    slowBlockSpaceOdds1 = convert_to_hex_weight(slowBlockSpaceOdds1)
-    slowBlockSpaceOdds2 = convert_to_hex_weight(slowBlockSpaceOdds2)
-    slowBlockSpaceOdds34 = convert_to_hex_weight(slowBlockSpaceOdds34)
-    bowserPhonePrice1 = convert_to_hex_weight(bowserPhonePrice1)
-    bowserPhonePrice2 = convert_to_hex_weight(bowserPhonePrice2)
-    bowserPhonePrice34 = convert_to_hex_weight(bowserPhonePrice34)
-    bowserPhoneShopOdds12 = convert_to_hex_weight(bowserPhoneShopOdds12)
-    bowserPhoneShopOdds34 = convert_to_hex_weight(bowserPhoneShopOdds34)
-    bowserPhoneSpaceOdds1 = convert_to_hex_weight(bowserPhoneSpaceOdds1)
-    bowserPhoneSpaceOdds2 = convert_to_hex_weight(bowserPhoneSpaceOdds2)
-    bowserPhoneSpaceOdds34 = convert_to_hex_weight(bowserPhoneSpaceOdds34)
-    doubleDipPrice1 = convert_to_hex_weight(doubleDipPrice1)
-    doubleDipPrice2 = convert_to_hex_weight(doubleDipPrice2)
-    doubleDipPrice34 = convert_to_hex_weight(doubleDipPrice34)
-    doubleDipShopOdds12 = convert_to_hex_weight(doubleDipShopOdds12)
-    doubleDipShopOdds34 = convert_to_hex_weight(doubleDipShopOdds34)
-    doubleDipSpaceOdds1 = convert_to_hex_weight(doubleDipSpaceOdds1)
-    doubleDipSpaceOdds2 = convert_to_hex_weight(doubleDipSpaceOdds2)
-    doubleDipSpaceOdds34 = convert_to_hex_weight(doubleDipSpaceOdds34)
-    hiddenBlockCardPrice1 = convert_to_hex_weight(hiddenBlockCardPrice1)
-    hiddenBlockCardPrice2 = convert_to_hex_weight(hiddenBlockCardPrice2)
-    hiddenBlockCardPrice34 = convert_to_hex_weight(hiddenBlockCardPrice34)
-    hiddenBlockCardShopOdds12 = convert_to_hex_weight(hiddenBlockCardShopOdds12)
-    hiddenBlockCardShopOdds34 = convert_to_hex_weight(hiddenBlockCardShopOdds34)
-    hiddenBlockCardSpaceOdds1 = convert_to_hex_weight(hiddenBlockCardSpaceOdds1)
-    hiddenBlockCardSpaceOdds2 = convert_to_hex_weight(hiddenBlockCardSpaceOdds2)
-    hiddenBlockCardSpaceOdds34 = convert_to_hex_weight(hiddenBlockCardSpaceOdds34)
-    barterBoxPrice1 = convert_to_hex_weight(barterBoxPrice1)
-    barterBoxPrice2 = convert_to_hex_weight(barterBoxPrice2)
-    barterBoxPrice34 = convert_to_hex_weight(barterBoxPrice34)
-    barterBoxShopOdds12 = convert_to_hex_weight(barterBoxShopOdds12)
-    barterBoxShopOdds34 = convert_to_hex_weight(barterBoxShopOdds34)
-    barterBoxSpaceOdds1 = convert_to_hex_weight(barterBoxSpaceOdds1)
-    barterBoxSpaceOdds2 = convert_to_hex_weight(barterBoxSpaceOdds2)
-    barterBoxSpaceOdds34 = convert_to_hex_weight(barterBoxSpaceOdds34)
-    superWarpPipePrice1 = convert_to_hex_weight(superWarpPipePrice1)
-    superWarpPipePrice2 = convert_to_hex_weight(superWarpPipePrice2)
-    superWarpPipePrice34 = convert_to_hex_weight(superWarpPipePrice34)
-    superWarpPipeShopOdds12 = convert_to_hex_weight(superWarpPipeShopOdds12)
-    superWarpPipeShopOdds34 = convert_to_hex_weight(superWarpPipeShopOdds34)
-    superWarpPipeSpaceOdds1 = convert_to_hex_weight(superWarpPipeSpaceOdds1)
-    superWarpPipeSpaceOdds2 = convert_to_hex_weight(superWarpPipeSpaceOdds2)
-    superWarpPipeSpaceOdds34 = convert_to_hex_weight(superWarpPipeSpaceOdds34)
-    chanceTimeCharmPrice1 = convert_to_hex_weight(chanceTimeCharmPrice1)
-    chanceTimeCharmPrice2 = convert_to_hex_weight(chanceTimeCharmPrice2)
-    chanceTimeCharmPrice34 = convert_to_hex_weight(chanceTimeCharmPrice34)
-    chanceTimeCharmShopOdds12 = convert_to_hex_weight(chanceTimeCharmShopOdds12)
-    chanceTimeCharmShopOdds34 = convert_to_hex_weight(chanceTimeCharmShopOdds34)
-    chanceTimeCharmSpaceOdds1 = convert_to_hex_weight(chanceTimeCharmSpaceOdds1)
-    chanceTimeCharmSpaceOdds2 = convert_to_hex_weight(chanceTimeCharmSpaceOdds2)
-    chanceTimeCharmSpaceOdds34 = convert_to_hex_weight(chanceTimeCharmSpaceOdds34)
-    wackyWatchPrice1 = convert_to_hex_weight(wackyWatchPrice1)
-    wackyWatchPrice2 = convert_to_hex_weight(wackyWatchPrice2)
-    wackyWatchPrice34 = convert_to_hex_weight(wackyWatchPrice34)
-    wackyWatchShopOdds12 = convert_to_hex_weight(wackyWatchShopOdds12)
-    wackyWatchShopOdds34 = convert_to_hex_weight(wackyWatchShopOdds34)
-    wackyWatchSpaceOdds1 = convert_to_hex_weight(wackyWatchSpaceOdds1)
-    wackyWatchSpaceOdds2 = convert_to_hex_weight(wackyWatchSpaceOdds2)
-    wackyWatchSpaceOdds34 = convert_to_hex_weight(wackyWatchSpaceOdds34)
-
-
-    generatedCode = getItemModsFourDXItemSpace(miniMushroomPrice1, miniMushroomPrice2, miniMushroomPrice34, miniMushroomShopOdds12, miniMushroomShopOdds34, miniMushroomSpaceOdds1, miniMushroomSpaceOdds2, miniMushroomSpaceOdds34, megaMushroomPrice1, megaMushroomPrice2, megaMushroomPrice34, megaMushroomShopOdds12, megaMushroomShopOdds34, megaMushroomSpaceOdds1, megaMushroomSpaceOdds2, megaMushroomSpaceOdds34, superMiniMushroomPrice1, superMiniMushroomPrice2, superMiniMushroomPrice34, superMiniMushroomShopOdds12, superMiniMushroomShopOdds34, superMiniMushroomSpaceOdds1, superMiniMushroomSpaceOdds2, superMiniMushroomSpaceOdds34, superMegaMushroomPrice1, superMegaMushroomPrice2, superMegaMushroomPrice34, superMegaMushroomShopOdds12, superMegaMushroomShopOdds34, superMegaMushroomSpaceOdds1, superMegaMushroomSpaceOdds2, superMegaMushroomSpaceOdds34, miniMegaHammerPrice1, miniMegaHammerPrice2, miniMegaHammerPrice34, miniMegaHammerShopOdds12, miniMegaHammerShopOdds34, miniMegaHammerSpaceOdds1, miniMegaHammerSpaceOdds2, miniMegaHammerSpaceOdds34, warpPipePrice1, warpPipePrice2, warpPipePrice34, warpPipeShopOdds12, warpPipeShopOdds34, warpPipeSpaceOdds1, warpPipeSpaceOdds2, warpPipeSpaceOdds34, swapCardPrice1, swapCardPrice2, swapCardPrice34, swapCardShopOdds12, swapCardShopOdds34, swapCardSpaceOdds1, swapCardSpaceOdds2, swapCardSpaceOdds34, sparkyStickerPrice1, sparkyStickerPrice2, sparkyStickerPrice34, sparkyStickerShopOdds12, sparkyStickerShopOdds34, sparkyStickerSpaceOdds1, sparkyStickerSpaceOdds2, sparkyStickerSpaceOdds34, gaddlightPrice1, gaddlightPrice2, gaddlightPrice34, gaddlightShopOdds12, gaddlightShopOdds34, gaddlightSpaceOdds1, gaddlightSpaceOdds2, gaddlightSpaceOdds34, chompCallPrice1, chompCallPrice2, chompCallPrice34, chompCallShopOdds12, chompCallShopOdds34, chompCallSpaceOdds1, chompCallSpaceOdds2, chompCallSpaceOdds34, bowserSuitPrice1, bowserSuitPrice2, bowserSuitPrice34, bowserSuitShopOdds12, bowserSuitShopOdds34, bowserSuitSpaceOdds1, bowserSuitSpaceOdds2, bowserSuitSpaceOdds34, crystalBallPrice1, crystalBallPrice2, crystalBallPrice34, crystalBallShopOdds12, crystalBallShopOdds34, crystalBallSpaceOdds1, crystalBallSpaceOdds2, crystalBallSpaceOdds34, magicLampPrice1, magicLampPrice2, magicLampPrice34, magicLampShopOdds12, magicLampShopOdds34, magicLampSpaceOdds1, magicLampSpaceOdds2, magicLampSpaceOdds34, itemBagPrice1, itemBagPrice2, itemBagPrice34, itemBagShopOdds12, itemBagShopOdds34, itemBagSpaceOdds1, itemBagSpaceOdds2, itemBagSpaceOdds34, mushroomPrice1, mushroomPrice2, mushroomPrice34, mushroomShopOdds12, mushroomShopOdds34, mushroomSpaceOdds1, mushroomSpaceOdds2, mushroomSpaceOdds34, goldenMushroomPrice1, goldenMushroomPrice2, goldenMushroomPrice34, goldenMushroomShopOdds12, goldenMushroomShopOdds34, goldenMushroomSpaceOdds1, goldenMushroomSpaceOdds2, goldenMushroomSpaceOdds34, reverseMushroomPrice1, reverseMushroomPrice2, reverseMushroomPrice34, reverseMushroomShopOdds12, reverseMushroomShopOdds34, reverseMushroomSpaceOdds1, reverseMushroomSpaceOdds2, reverseMushroomSpaceOdds34, poisonMushroomPrice1, poisonMushroomPrice2, poisonMushroomPrice34, poisonMushroomShopOdds12, poisonMushroomShopOdds34, poisonMushroomSpaceOdds1, poisonMushroomSpaceOdds2, poisonMushroomSpaceOdds34, triplePoisonMushroomPrice1, triplePoisonMushroomPrice2, triplePoisonMushroomPrice34, triplePoisonMushroomShopOdds12, triplePoisonMushroomShopOdds34, triplePoisonMushroomSpaceOdds1, triplePoisonMushroomSpaceOdds2, triplePoisonMushroomSpaceOdds34, celluarShopperPrice1, celluarShopperPrice2, celluarShopperPrice34, celluarShopperShopOdds12, celluarShopperShopOdds34, celluarShopperSpaceOdds1, celluarShopperSpaceOdds2, celluarShopperSpaceOdds34, skeletonKeyPrice1, skeletonKeyPrice2, skeletonKeyPrice34, skeletonKeyShopOdds12, skeletonKeyShopOdds34, skeletonKeySpaceOdds1, skeletonKeySpaceOdds2, skeletonKeySpaceOdds34, plunderChestPrice1, plunderChestPrice2, plunderChestPrice34, plunderChestShopOdds12, plunderChestShopOdds34, plunderChestSpaceOdds1, plunderChestSpaceOdds2, plunderChestSpaceOdds34, gaddbrushPrice1, gaddbrushPrice2, gaddbrushPrice34, gaddbrushShopOdds12, gaddbrushShopOdds34, gaddbrushSpaceOdds1, gaddbrushSpaceOdds2, gaddbrushSpaceOdds34, warpBlockPrice1, warpBlockPrice2, warpBlockPrice34, warpBlockShopOdds12, warpBlockShopOdds34, warpBlockSpaceOdds1, warpBlockSpaceOdds2, warpBlockSpaceOdds34, flyGuyPrice1, flyGuyPrice2, flyGuyPrice34, flyGuyShopOdds12, flyGuyShopOdds34, flyGuySpaceOdds1, flyGuySpaceOdds2, flyGuySpaceOdds34, plusBlockPrice1, plusBlockPrice2, plusBlockPrice34, plusBlockShopOdds12, plusBlockShopOdds34, plusBlockSpaceOdds1, plusBlockSpaceOdds2, plusBlockSpaceOdds34, minusBlockPrice1, minusBlockPrice2, minusBlockPrice34, minusBlockShopOdds12, minusBlockShopOdds34, minusBlockSpaceOdds1, minusBlockSpaceOdds2, minusBlockSpaceOdds34, speedBlockPrice1, speedBlockPrice2, speedBlockPrice34, speedBlockShopOdds12, speedBlockShopOdds34, speedBlockSpaceOdds1, speedBlockSpaceOdds2, speedBlockSpaceOdds34, slowBlockPrice1, slowBlockPrice2, slowBlockPrice34, slowBlockShopOdds12, slowBlockShopOdds34, slowBlockSpaceOdds1, slowBlockSpaceOdds2, slowBlockSpaceOdds34, bowserPhonePrice1, bowserPhonePrice2, bowserPhonePrice34, bowserPhoneShopOdds12, bowserPhoneShopOdds34, bowserPhoneSpaceOdds1, bowserPhoneSpaceOdds2, bowserPhoneSpaceOdds34, doubleDipPrice1, doubleDipPrice2, doubleDipPrice34, doubleDipShopOdds12, doubleDipShopOdds34, doubleDipSpaceOdds1, doubleDipSpaceOdds2, doubleDipSpaceOdds34, hiddenBlockCardPrice1, hiddenBlockCardPrice2, hiddenBlockCardPrice34, hiddenBlockCardShopOdds12, hiddenBlockCardShopOdds34, hiddenBlockCardSpaceOdds1, hiddenBlockCardSpaceOdds2, hiddenBlockCardSpaceOdds34, barterBoxPrice1, barterBoxPrice2, barterBoxPrice34, barterBoxShopOdds12, barterBoxShopOdds34, barterBoxSpaceOdds1, barterBoxSpaceOdds2, barterBoxSpaceOdds34, superWarpPipePrice1, superWarpPipePrice2, superWarpPipePrice34, superWarpPipeShopOdds12, superWarpPipeShopOdds34, superWarpPipeSpaceOdds1, superWarpPipeSpaceOdds2, superWarpPipeSpaceOdds34, chanceTimeCharmPrice1, chanceTimeCharmPrice2, chanceTimeCharmPrice34, chanceTimeCharmShopOdds12, chanceTimeCharmShopOdds34, chanceTimeCharmSpaceOdds1, chanceTimeCharmSpaceOdds2, chanceTimeCharmSpaceOdds34, wackyWatchPrice1, wackyWatchPrice2, wackyWatchPrice34, wackyWatchShopOdds12, wackyWatchShopOdds34, wackyWatchSpaceOdds1, wackyWatchSpaceOdds2, wackyWatchSpaceOdds34)
-    generatedCode = generatedCode.strip()
-    pyperclip.copy(generatedCode)
-
-    print("Generated code copied to the clipboard.")
-    createDialog("Operation Sucessful", "success", "Generated codes copied to clipboard!.", None)
-
-def itemsEvent_mp4ItemSpace(miniMushroomPrice1 = "0", miniMushroomPrice2 = "0", miniMushroomPrice34 = "0", miniMushroomShopOdds12 = "0", miniMushroomShopOdds34 = "0", miniMushroomSpaceOdds1 = "0", miniMushroomSpaceOdds2 = "0", miniMushroomSpaceOdds34 = "0", megaMushroomPrice1 = "0", megaMushroomPrice2 = "0", megaMushroomPrice34 = "0", megaMushroomShopOdds12 = "0", megaMushroomShopOdds34 = "0", megaMushroomSpaceOdds1 = "0", megaMushroomSpaceOdds2 = "0", megaMushroomSpaceOdds34 = "0", superMiniMushroomPrice1 = "0", superMiniMushroomPrice2 = "0", superMiniMushroomPrice34 = "0", superMiniMushroomShopOdds12 = "0", superMiniMushroomShopOdds34 = "0", superMiniMushroomSpaceOdds1 = "0", superMiniMushroomSpaceOdds2 = "0", superMiniMushroomSpaceOdds34 = "0", superMegaMushroomPrice1 = "0", superMegaMushroomPrice2 = "0", superMegaMushroomPrice34 = "0", superMegaMushroomShopOdds12 = "0", superMegaMushroomShopOdds34 = "0", superMegaMushroomSpaceOdds1 = "0", superMegaMushroomSpaceOdds2 = "0", superMegaMushroomSpaceOdds34 = "0", miniMegaHammerPrice1 = "0", miniMegaHammerPrice2 = "0", miniMegaHammerPrice34 = "0", miniMegaHammerShopOdds12 = "0", miniMegaHammerShopOdds34 = "0", miniMegaHammerSpaceOdds1 = "0", miniMegaHammerSpaceOdds2 = "0", miniMegaHammerSpaceOdds34 = "0", warpPipePrice1 = "0", warpPipePrice2 = "0", warpPipePrice34 = "0", warpPipeShopOdds12 = "0", warpPipeShopOdds34 = "0", warpPipeSpaceOdds1 = "0", warpPipeSpaceOdds2 = "0", warpPipeSpaceOdds34 = "0", swapCardPrice1 = "0", swapCardPrice2 = "0", swapCardPrice34 = "0", swapCardShopOdds12 = "0", swapCardShopOdds34 = "0", swapCardSpaceOdds1 = "0", swapCardSpaceOdds2 = "0", swapCardSpaceOdds34 = "0", sparkyStickerPrice1 = "0", sparkyStickerPrice2 = "0", sparkyStickerPrice34 = "0", sparkyStickerShopOdds12 = "0", sparkyStickerShopOdds34 = "0", sparkyStickerSpaceOdds1 = "0", sparkyStickerSpaceOdds2 = "0", sparkyStickerSpaceOdds34 = "0", gaddlightPrice1 = "0", gaddlightPrice2 = "0", gaddlightPrice34 = "0", gaddlightShopOdds12 = "0", gaddlightShopOdds34 = "0", gaddlightSpaceOdds1 = "0", gaddlightSpaceOdds2 = "0", gaddlightSpaceOdds34 = "0", chompCallPrice1 = "0", chompCallPrice2 = "0", chompCallPrice34 = "0", chompCallShopOdds12 = "0", chompCallShopOdds34 = "0", chompCallSpaceOdds1 = "0", chompCallSpaceOdds2 = "0", chompCallSpaceOdds34 = "0", bowserSuitPrice1 = "0", bowserSuitPrice2 = "0", bowserSuitPrice34 = "0", bowserSuitShopOdds12 = "0", bowserSuitShopOdds34 = "0", bowserSuitSpaceOdds1 = "0", bowserSuitSpaceOdds2 = "0", bowserSuitSpaceOdds34 = "0", crystalBallPrice1 = "0", crystalBallPrice2 = "0", crystalBallPrice34 = "0", crystalBallShopOdds12 = "0", crystalBallShopOdds34 = "0", crystalBallSpaceOdds1 = "0", crystalBallSpaceOdds2 = "0", crystalBallSpaceOdds34 = "0", magicLampPrice1 = "0", magicLampPrice2 = "0", magicLampPrice34 = "0", magicLampShopOdds12 = "0", magicLampShopOdds34 = "0", magicLampSpaceOdds1 = "0", magicLampSpaceOdds2 = "0", magicLampSpaceOdds34 = "0", itemBagPrice1 = "0", itemBagPrice2 = "0", itemBagPrice34 = "0", itemBagShopOdds12 = "0", itemBagShopOdds34 = "0", itemBagSpaceOdds1 = "0", itemBagSpaceOdds2 = "0", itemBagSpaceOdds34 = "0"):
-    def get_capsule_value(capsule):
-        try:
-            return capsule.get()
-        except:
-            return 0
-
-    miniMushroomPrice1 = get_capsule_value(miniMushroomPrice1) or "0"
-    miniMushroomPrice2 = get_capsule_value(miniMushroomPrice2) or "0"
-    miniMushroomPrice34 = get_capsule_value(miniMushroomPrice34) or "0"
-    miniMushroomShopOdds12 = get_capsule_value(miniMushroomShopOdds12) or "0"
-    miniMushroomShopOdds34 = get_capsule_value(miniMushroomShopOdds34) or "0"
-    miniMushroomSpaceOdds1 = get_capsule_value(miniMushroomSpaceOdds1) or "0"
-    miniMushroomSpaceOdds2 = get_capsule_value(miniMushroomSpaceOdds2) or "0"
-    miniMushroomSpaceOdds34 = get_capsule_value(miniMushroomSpaceOdds34) or "0"
-    megaMushroomPrice1 = get_capsule_value(megaMushroomPrice1) or "0"
-    megaMushroomPrice2 = get_capsule_value(megaMushroomPrice2) or "0"
-    megaMushroomPrice34 = get_capsule_value(megaMushroomPrice34) or "0"
-    megaMushroomShopOdds12 = get_capsule_value(megaMushroomShopOdds12) or "0"
-    megaMushroomShopOdds34 = get_capsule_value(megaMushroomShopOdds34) or "0"
-    megaMushroomSpaceOdds1 = get_capsule_value(megaMushroomSpaceOdds1) or "0"
-    megaMushroomSpaceOdds2 = get_capsule_value(megaMushroomSpaceOdds2) or "0"
-    megaMushroomSpaceOdds34 = get_capsule_value(megaMushroomSpaceOdds34) or "0"
-    superMiniMushroomPrice1 = get_capsule_value(superMiniMushroomPrice1) or "0"
-    superMiniMushroomPrice2 = get_capsule_value(superMiniMushroomPrice2) or "0"
-    superMiniMushroomPrice34 = get_capsule_value(superMiniMushroomPrice34) or "0"
-    superMiniMushroomShopOdds12 = get_capsule_value(superMiniMushroomShopOdds12) or "0"
-    superMiniMushroomShopOdds34 = get_capsule_value(superMiniMushroomShopOdds34) or "0"
-    superMiniMushroomSpaceOdds1 = get_capsule_value(superMiniMushroomSpaceOdds1) or "0"
-    superMiniMushroomSpaceOdds2 = get_capsule_value(superMiniMushroomSpaceOdds2) or "0"
-    superMiniMushroomSpaceOdds34 = get_capsule_value(superMiniMushroomSpaceOdds34) or "0"
-    superMegaMushroomPrice1 = get_capsule_value(superMegaMushroomPrice1) or "0"
-    superMegaMushroomPrice2 = get_capsule_value(superMegaMushroomPrice2) or "0"
-    superMegaMushroomPrice34 = get_capsule_value(superMegaMushroomPrice34) or "0"
-    superMegaMushroomShopOdds12 = get_capsule_value(superMegaMushroomShopOdds12) or "0"
-    superMegaMushroomShopOdds34 = get_capsule_value(superMegaMushroomShopOdds34) or "0"
-    superMegaMushroomSpaceOdds1 = get_capsule_value(superMegaMushroomSpaceOdds1) or "0"
-    superMegaMushroomSpaceOdds2 = get_capsule_value(superMegaMushroomSpaceOdds2) or "0"
-    superMegaMushroomSpaceOdds34 = get_capsule_value(superMegaMushroomSpaceOdds34) or "0"
-    miniMegaHammerPrice1 = get_capsule_value(miniMegaHammerPrice1) or "0"
-    miniMegaHammerPrice2 = get_capsule_value(miniMegaHammerPrice2) or "0"
-    miniMegaHammerPrice34 = get_capsule_value(miniMegaHammerPrice34) or "0"
-    miniMegaHammerShopOdds12 = get_capsule_value(miniMegaHammerShopOdds12) or "0"
-    miniMegaHammerShopOdds34 = get_capsule_value(miniMegaHammerShopOdds34) or "0"
-    miniMegaHammerSpaceOdds1 = get_capsule_value(miniMegaHammerSpaceOdds1) or "0"
-    miniMegaHammerSpaceOdds2 = get_capsule_value(miniMegaHammerSpaceOdds2) or "0"
-    miniMegaHammerSpaceOdds34 = get_capsule_value(miniMegaHammerSpaceOdds34) or "0"
-    warpPipePrice1 = get_capsule_value(warpPipePrice1) or "0"
-    warpPipePrice2 = get_capsule_value(warpPipePrice2) or "0"
-    warpPipePrice34 = get_capsule_value(warpPipePrice34) or "0"
-    warpPipeShopOdds12 = get_capsule_value(warpPipeShopOdds12) or "0"
-    warpPipeShopOdds34 = get_capsule_value(warpPipeShopOdds34) or "0"
-    warpPipeSpaceOdds1 = get_capsule_value(warpPipeSpaceOdds1) or "0"
-    warpPipeSpaceOdds2 = get_capsule_value(warpPipeSpaceOdds2) or "0"
-    warpPipeSpaceOdds34 = get_capsule_value(warpPipeSpaceOdds34) or "0"
-    swapCardPrice1 = get_capsule_value(swapCardPrice1) or "0"
-    swapCardPrice2 = get_capsule_value(swapCardPrice2) or "0"
-    swapCardPrice34 = get_capsule_value(swapCardPrice34) or "0"
-    swapCardShopOdds12 = get_capsule_value(swapCardShopOdds12) or "0"
-    swapCardShopOdds34 = get_capsule_value(swapCardShopOdds34) or "0"
-    swapCardSpaceOdds1 = get_capsule_value(swapCardSpaceOdds1) or "0"
-    swapCardSpaceOdds2 = get_capsule_value(swapCardSpaceOdds2) or "0"
-    swapCardSpaceOdds34 = get_capsule_value(swapCardSpaceOdds34) or "0"
-    sparkyStickerPrice1 = get_capsule_value(sparkyStickerPrice1) or "0"
-    sparkyStickerPrice2 = get_capsule_value(sparkyStickerPrice2) or "0"
-    sparkyStickerPrice34 = get_capsule_value(sparkyStickerPrice34) or "0"
-    sparkyStickerShopOdds12 = get_capsule_value(sparkyStickerShopOdds12) or "0"
-    sparkyStickerShopOdds34 = get_capsule_value(sparkyStickerShopOdds34) or "0"
-    sparkyStickerSpaceOdds1 = get_capsule_value(sparkyStickerSpaceOdds1) or "0"
-    sparkyStickerSpaceOdds2 = get_capsule_value(sparkyStickerSpaceOdds2) or "0"
-    sparkyStickerSpaceOdds34 = get_capsule_value(sparkyStickerSpaceOdds34) or "0"
-    gaddlightPrice1 = get_capsule_value(gaddlightPrice1) or "0"    
-    gaddlightPrice2 = get_capsule_value(gaddlightPrice2) or "0"
-    gaddlightPrice34 = get_capsule_value(gaddlightPrice2) or "0"    
-    gaddlightShopOdds12 = get_capsule_value(gaddlightShopOdds12) or "0"
-    gaddlightShopOdds34 = get_capsule_value(gaddlightShopOdds34) or "0"
-    gaddlightSpaceOdds1 = get_capsule_value(gaddlightSpaceOdds1) or "0"
-    gaddlightSpaceOdds2 = get_capsule_value(gaddlightSpaceOdds2) or "0"
-    gaddlightSpaceOdds34 = get_capsule_value(gaddlightSpaceOdds34) or "0"
-    chompCallPrice1 = get_capsule_value(chompCallPrice1) or "0"
-    chompCallPrice2 = get_capsule_value(chompCallPrice2) or "0" 
-    chompCallPrice34 = get_capsule_value(chompCallPrice34) or "0"
-    chompCallShopOdds12 = get_capsule_value(chompCallShopOdds12) or "0"
-    chompCallShopOdds34 = get_capsule_value(chompCallShopOdds34) or "0"
-    chompCallSpaceOdds1 = get_capsule_value(chompCallSpaceOdds1) or "0"
-    chompCallSpaceOdds2 = get_capsule_value(chompCallSpaceOdds2) or "0"
-    chompCallSpaceOdds34 = get_capsule_value(chompCallSpaceOdds34) or "0"
-    bowserSuitPrice1 = get_capsule_value(bowserSuitPrice1) or "0"
-    bowserSuitPrice2 = get_capsule_value(bowserSuitPrice2) or "0"
-    bowserSuitPrice34 = get_capsule_value(bowserSuitPrice34) or "0"
-    bowserSuitShopOdds12 = get_capsule_value(bowserSuitShopOdds12) or "0"
-    bowserSuitShopOdds34 = get_capsule_value(bowserSuitShopOdds34) or "0"
-    bowserSuitSpaceOdds1 = get_capsule_value(bowserSuitSpaceOdds1) or "0"
-    bowserSuitSpaceOdds2 = get_capsule_value(bowserSuitSpaceOdds2) or "0"
-    bowserSuitSpaceOdds34 = get_capsule_value(bowserSuitSpaceOdds34) or "0"
-    crystalBallPrice1 = get_capsule_value(crystalBallPrice1) or "0"
-    crystalBallPrice2 = get_capsule_value(crystalBallPrice2) or "0"
-    crystalBallPrice34 = get_capsule_value(crystalBallPrice34) or "0"
-    crystalBallShopOdds12 = get_capsule_value(crystalBallShopOdds12) or "0"
-    crystalBallShopOdds34 = get_capsule_value(crystalBallShopOdds34) or "0"
-    crystalBallSpaceOdds1 = get_capsule_value(crystalBallSpaceOdds1) or "0"
-    crystalBallSpaceOdds2 = get_capsule_value(crystalBallSpaceOdds2) or "0"
-    crystalBallSpaceOdds34 = get_capsule_value(crystalBallSpaceOdds34) or "0"
-    magicLampPrice1 = get_capsule_value(magicLampPrice1) or "0"
-    magicLampPrice2 = get_capsule_value(magicLampPrice2) or "0"
-    magicLampPrice34 = get_capsule_value(magicLampPrice34) or "0"
-    magicLampShopOdds12 = get_capsule_value(magicLampShopOdds12) or "0"
-    magicLampShopOdds34 = get_capsule_value(magicLampShopOdds34) or "0"
-    magicLampSpaceOdds1 = get_capsule_value(magicLampSpaceOdds1) or "0"
-    magicLampSpaceOdds2 = get_capsule_value(magicLampSpaceOdds2) or "0"
-    magicLampSpaceOdds34 = get_capsule_value(magicLampSpaceOdds34) or "0"
-    itemBagPrice1 = get_capsule_value(itemBagPrice1) or "0"
-    itemBagPrice2 = get_capsule_value(itemBagPrice2) or "0"
-    itemBagPrice34 = get_capsule_value(itemBagPrice34) or "0"
-    itemBagShopOdds12 = get_capsule_value(itemBagShopOdds12) or "0"
-    itemBagShopOdds34 = get_capsule_value(itemBagShopOdds34) or "0"
-    itemBagSpaceOdds1 = get_capsule_value(itemBagSpaceOdds1) or "0"
-    itemBagSpaceOdds2 = get_capsule_value(itemBagSpaceOdds2) or "0"
-    itemBagSpaceOdds34 = get_capsule_value(itemBagSpaceOdds34) or "0"
-
-    # Weights lists
-    shopOdds12 = [
-        miniMushroomShopOdds12,
-        megaMushroomShopOdds12,
-        superMiniMushroomShopOdds12,
-        superMegaMushroomShopOdds12,
-        miniMegaHammerShopOdds12,
-        warpPipeShopOdds12,
-        swapCardShopOdds12,
-        sparkyStickerShopOdds12,
-        gaddlightShopOdds12,
-        chompCallShopOdds12,
-        bowserSuitShopOdds12,
-        crystalBallShopOdds12,
-        magicLampShopOdds12,
-        itemBagShopOdds12,
-    ]
-
-    shopOdds34 = [
-        miniMushroomShopOdds34,
-        megaMushroomShopOdds34,
-        superMiniMushroomShopOdds34,
-        superMegaMushroomShopOdds34,
-        miniMegaHammerShopOdds34,
-        warpPipeShopOdds34,
-        swapCardShopOdds34,
-        sparkyStickerShopOdds34,
-        gaddlightShopOdds34,
-        chompCallShopOdds34,
-        bowserSuitShopOdds34,
-        crystalBallShopOdds34,
-        magicLampShopOdds34,
-        itemBagShopOdds34,
-    ]
-
-    spaceOdds1 = [
-        miniMushroomSpaceOdds1,
-        megaMushroomSpaceOdds1,
-        superMiniMushroomSpaceOdds1,
-        superMegaMushroomSpaceOdds1,
-        miniMegaHammerSpaceOdds1,
-        warpPipeSpaceOdds1,
-        swapCardSpaceOdds1,
-        sparkyStickerSpaceOdds1,
-        gaddlightSpaceOdds1,
-        chompCallSpaceOdds1,
-        bowserSuitSpaceOdds1,
-        crystalBallSpaceOdds1,
-        magicLampSpaceOdds1,
-        itemBagSpaceOdds1,
-    ]
-
-    spaceOdds2 = [
-        miniMushroomSpaceOdds2,
-        megaMushroomSpaceOdds2,
-        superMiniMushroomSpaceOdds2,
-        superMegaMushroomSpaceOdds2,
-        miniMegaHammerSpaceOdds2,
-        warpPipeSpaceOdds2,
-        swapCardSpaceOdds2,
-        sparkyStickerSpaceOdds2,
-        gaddlightSpaceOdds2,
-        chompCallSpaceOdds2,
-        bowserSuitSpaceOdds2,
-        crystalBallSpaceOdds2,
-        magicLampSpaceOdds2,
-        itemBagSpaceOdds2,
-    ]
-
-    spaceOdds34 = [
-        miniMushroomSpaceOdds34,
-        megaMushroomSpaceOdds34,
-        superMiniMushroomSpaceOdds34,
-        superMegaMushroomSpaceOdds34,
-        miniMegaHammerSpaceOdds34,
-        warpPipeSpaceOdds34,
-        swapCardSpaceOdds34,
-        sparkyStickerSpaceOdds34,
-        gaddlightSpaceOdds34,
-        chompCallSpaceOdds34,
-        bowserSuitSpaceOdds34,
-        crystalBallSpaceOdds34,
-        magicLampSpaceOdds34,
-        itemBagSpaceOdds34,
-    ]
-
-    shopOdds12Weights = sum(int(weight) if weight else 0 for weight in shopOdds12)
-    shopOdds34Weights = sum(int(weight) if weight else 0 for weight in shopOdds34)
-    spaceOdds1Weights = sum(int(weight) if weight else 0 for weight in spaceOdds1)
-    spaceOdds2Weights = sum(int(weight) if weight else 0 for weight in spaceOdds2)
-    spaceOdds34Weights = sum(int(weight) if weight else 0 for weight in spaceOdds34)
-
-    def calculateWeight(weight, total):
-        # Convert weight to int, default to 0 if empty or None
-        weight = int(weight) if weight else 0
-        # Check for total being zero to avoid division by zero
-        if total <= 0:
-            return 0  # Return 0 if total is zero or negative
-        if total < 100:
-            return weight  # Return the weight directly if total is less than 100
-        else:
-            percentage = (weight / total) * 100
-            if 0 < percentage < 1:
-                return math.ceil(percentage)
-            return round(percentage)
-
-    # Calculate weights for shop odds 34
-    miniMushroomSpaceOdds34 = calculateWeight(miniMushroomSpaceOdds34, shopOdds34Weights)
-    megaMushroomSpaceOdds34 = calculateWeight(megaMushroomSpaceOdds34, shopOdds34Weights)
-    superMiniMushroomSpaceOdds34 = calculateWeight(superMiniMushroomSpaceOdds34, shopOdds34Weights)
-    superMegaMushroomSpaceOdds34 = calculateWeight(superMegaMushroomSpaceOdds34, shopOdds34Weights)
-    miniMegaHammerSpaceOdds34 = calculateWeight(miniMegaHammerSpaceOdds34, shopOdds34Weights)
-    warpPipeSpaceOdds34 = calculateWeight(warpPipeSpaceOdds34, shopOdds34Weights)
-    swapCardSpaceOdds34 = calculateWeight(swapCardSpaceOdds34, shopOdds34Weights)
-    sparkyStickerSpaceOdds34 = calculateWeight(sparkyStickerSpaceOdds34, shopOdds34Weights)
-    gaddlightSpaceOdds34 = calculateWeight(gaddlightSpaceOdds34, shopOdds34Weights)
-    chompCallSpaceOdds34 = calculateWeight(chompCallSpaceOdds34, shopOdds34Weights)
-    bowserSuitSpaceOdds34 = calculateWeight(bowserSuitSpaceOdds34, shopOdds34Weights)
-    crystalBallSpaceOdds34 = calculateWeight(crystalBallSpaceOdds34, shopOdds34Weights)
-    magicLampSpaceOdds34 = calculateWeight(magicLampSpaceOdds34, shopOdds34Weights)
-    itemBagSpaceOdds34 = calculateWeight(itemBagSpaceOdds34, shopOdds34Weights)
-
-    # Calculate weights for shop odds 12
-    miniMushroomShopOdds12 = calculateWeight(miniMushroomShopOdds12, shopOdds12Weights)
-    megaMushroomShopOdds12 = calculateWeight(megaMushroomShopOdds12, shopOdds12Weights)
-    superMiniMushroomShopOdds12 = calculateWeight(superMiniMushroomShopOdds12, shopOdds12Weights)
-    superMegaMushroomShopOdds12 = calculateWeight(superMegaMushroomShopOdds12, shopOdds12Weights)
-    miniMegaHammerShopOdds12 = calculateWeight(miniMegaHammerShopOdds12, shopOdds12Weights)
-    warpPipeShopOdds12 = calculateWeight(warpPipeShopOdds12, shopOdds12Weights)
-    swapCardShopOdds12 = calculateWeight(swapCardShopOdds12, shopOdds12Weights)
-    sparkyStickerShopOdds12 = calculateWeight(sparkyStickerShopOdds12, shopOdds12Weights)
-    gaddlightShopOdds12 = calculateWeight(gaddlightShopOdds12, shopOdds12Weights)
-    chompCallShopOdds12 = calculateWeight(chompCallShopOdds12, shopOdds12Weights)
-    bowserSuitShopOdds12 = calculateWeight(bowserSuitShopOdds12, shopOdds12Weights)
-    crystalBallShopOdds12 = calculateWeight(crystalBallShopOdds12, shopOdds12Weights)
-    magicLampShopOdds12 = calculateWeight(magicLampShopOdds12, shopOdds12Weights)
-    itemBagShopOdds12 = calculateWeight(itemBagShopOdds12, shopOdds12Weights)
-
-   # Calculate weights for space odds 1
-    miniMushroomSpaceOdds1 = calculateWeight(miniMushroomSpaceOdds1, spaceOdds1Weights)
-    megaMushroomSpaceOdds1 = calculateWeight(megaMushroomSpaceOdds1, spaceOdds1Weights)
-    superMiniMushroomSpaceOdds1 = calculateWeight(superMiniMushroomSpaceOdds1, spaceOdds1Weights)
-    superMegaMushroomSpaceOdds1 = calculateWeight(superMegaMushroomSpaceOdds1, spaceOdds1Weights)
-    miniMegaHammerSpaceOdds1 = calculateWeight(miniMegaHammerSpaceOdds1, spaceOdds1Weights)
-    warpPipeSpaceOdds1 = calculateWeight(warpPipeSpaceOdds1, spaceOdds1Weights)
-    swapCardSpaceOdds1 = calculateWeight(swapCardSpaceOdds1, spaceOdds1Weights)
-    sparkyStickerSpaceOdds1 = calculateWeight(sparkyStickerSpaceOdds1, spaceOdds1Weights)
-    gaddlightSpaceOdds1 = calculateWeight(gaddlightSpaceOdds1, spaceOdds1Weights)
-    chompCallSpaceOdds1 = calculateWeight(chompCallSpaceOdds1, spaceOdds1Weights)
-    bowserSuitSpaceOdds1 = calculateWeight(bowserSuitSpaceOdds1, spaceOdds1Weights)
-    crystalBallSpaceOdds1 = calculateWeight(crystalBallSpaceOdds1, spaceOdds1Weights)
-    magicLampSpaceOdds1 = calculateWeight(magicLampSpaceOdds1, spaceOdds1Weights)
-    itemBagSpaceOdds1 = calculateWeight(itemBagSpaceOdds1, spaceOdds1Weights)
-
-
-    # Calculate weights for space odds 2
-    miniMushroomSpaceOdds2 = calculateWeight(miniMushroomSpaceOdds2, spaceOdds2Weights)
-    megaMushroomSpaceOdds2 = calculateWeight(megaMushroomSpaceOdds2, spaceOdds2Weights)
-    superMiniMushroomSpaceOdds2 = calculateWeight(superMiniMushroomSpaceOdds2, spaceOdds2Weights)
-    superMegaMushroomSpaceOdds2 = calculateWeight(superMegaMushroomSpaceOdds2, spaceOdds2Weights)
-    miniMegaHammerSpaceOdds2 = calculateWeight(miniMegaHammerSpaceOdds2, spaceOdds2Weights)
-    warpPipeSpaceOdds2 = calculateWeight(warpPipeSpaceOdds2, spaceOdds2Weights)
-    swapCardSpaceOdds2 = calculateWeight(swapCardSpaceOdds2, spaceOdds2Weights)
-    sparkyStickerSpaceOdds2 = calculateWeight(sparkyStickerSpaceOdds2, spaceOdds2Weights)
-    gaddlightSpaceOdds2 = calculateWeight(gaddlightSpaceOdds2, spaceOdds2Weights)
-    chompCallSpaceOdds2 = calculateWeight(chompCallSpaceOdds2, spaceOdds2Weights)
-    bowserSuitSpaceOdds2 = calculateWeight(bowserSuitSpaceOdds2, spaceOdds2Weights)
-    crystalBallSpaceOdds2 = calculateWeight(crystalBallSpaceOdds2, spaceOdds2Weights)
-    magicLampSpaceOdds2 = calculateWeight(magicLampSpaceOdds2, spaceOdds2Weights)
-    itemBagSpaceOdds2 = calculateWeight(itemBagSpaceOdds2, spaceOdds2Weights)
-
-    # Calculate weights for space odds 34
-    miniMushroomSpaceOdds34 = calculateWeight(miniMushroomSpaceOdds34, spaceOdds34Weights)
-    megaMushroomSpaceOdds34 = calculateWeight(megaMushroomSpaceOdds34, spaceOdds34Weights)
-    superMiniMushroomSpaceOdds34 = calculateWeight(superMiniMushroomSpaceOdds34, spaceOdds34Weights)
-    superMegaMushroomSpaceOdds34 = calculateWeight(superMegaMushroomSpaceOdds34, spaceOdds34Weights)
-    miniMegaHammerSpaceOdds34 = calculateWeight(miniMegaHammerSpaceOdds34, spaceOdds34Weights)
-    warpPipeSpaceOdds34 = calculateWeight(warpPipeSpaceOdds34, spaceOdds34Weights)
-    swapCardSpaceOdds34 = calculateWeight(swapCardSpaceOdds34, spaceOdds34Weights)
-    sparkyStickerSpaceOdds34 = calculateWeight(sparkyStickerSpaceOdds34, spaceOdds34Weights)
-    gaddlightSpaceOdds34 = calculateWeight(gaddlightSpaceOdds34, spaceOdds34Weights)
-    chompCallSpaceOdds34 = calculateWeight(chompCallSpaceOdds34, spaceOdds34Weights)
-    bowserSuitSpaceOdds34 = calculateWeight(bowserSuitSpaceOdds34, spaceOdds34Weights)
-    crystalBallSpaceOdds34 = calculateWeight(crystalBallSpaceOdds34, spaceOdds34Weights)
-    magicLampSpaceOdds34 = calculateWeight(magicLampSpaceOdds34, spaceOdds34Weights)
-    itemBagSpaceOdds34 = calculateWeight(itemBagSpaceOdds34, spaceOdds34Weights)
-
-    # Redefine Weights lists
-    shopOdds12 = [
-        miniMushroomShopOdds12,
-        megaMushroomShopOdds12,
-        superMiniMushroomShopOdds12,
-        superMegaMushroomShopOdds12,
-        miniMegaHammerShopOdds12,
-        warpPipeShopOdds12,
-        swapCardShopOdds12,
-        sparkyStickerShopOdds12,
-        gaddlightShopOdds12,
-        chompCallShopOdds12,
-        bowserSuitShopOdds12,
-        crystalBallShopOdds12,
-        magicLampShopOdds12,
-        itemBagShopOdds12,
-    ]
-
-    shopOdds34 = [
-        miniMushroomShopOdds34,
-        megaMushroomShopOdds34,
-        superMiniMushroomShopOdds34,
-        superMegaMushroomShopOdds34,
-        miniMegaHammerShopOdds34,
-        warpPipeShopOdds34,
-        swapCardShopOdds34,
-        sparkyStickerShopOdds34,
-        gaddlightShopOdds34,
-        chompCallShopOdds34,
-        bowserSuitShopOdds34,
-        crystalBallShopOdds34,
-        magicLampShopOdds34,
-        itemBagShopOdds34,
-    ]
-
-    spaceOdds1 = [
-        miniMushroomSpaceOdds1,
-        megaMushroomSpaceOdds1,
-        superMiniMushroomSpaceOdds1,
-        superMegaMushroomSpaceOdds1,
-        miniMegaHammerSpaceOdds1,
-        warpPipeSpaceOdds1,
-        swapCardSpaceOdds1,
-        sparkyStickerSpaceOdds1,
-        gaddlightSpaceOdds1,
-        chompCallSpaceOdds1,
-        bowserSuitSpaceOdds1,
-        crystalBallSpaceOdds1,
-        magicLampSpaceOdds1,
-        itemBagSpaceOdds1,
-    ]
-
-    spaceOdds2 = [
-        miniMushroomSpaceOdds2,
-        megaMushroomSpaceOdds2,
-        superMiniMushroomSpaceOdds2,
-        superMegaMushroomSpaceOdds2,
-        miniMegaHammerSpaceOdds2,
-        warpPipeSpaceOdds2,
-        swapCardSpaceOdds2,
-        sparkyStickerSpaceOdds2,
-        gaddlightSpaceOdds2,
-        chompCallSpaceOdds2,
-        bowserSuitSpaceOdds2,
-        crystalBallSpaceOdds2,
-        magicLampSpaceOdds2,
-        itemBagSpaceOdds2,
-    ]
-
-    spaceOdds34 = [
-        miniMushroomSpaceOdds34,
-        megaMushroomSpaceOdds34,
-        superMiniMushroomSpaceOdds34,
-        superMegaMushroomSpaceOdds34,
-        miniMegaHammerSpaceOdds34,
-        warpPipeSpaceOdds34,
-        swapCardSpaceOdds34,
-        sparkyStickerSpaceOdds34,
-        gaddlightSpaceOdds34,
-        chompCallSpaceOdds34,
-        bowserSuitSpaceOdds34,
-        crystalBallSpaceOdds34,
-        magicLampSpaceOdds34,
-        itemBagSpaceOdds34,
-    ]
-
-    shopOdds12Weights = sum(int(weight) for weight in shopOdds12 if weight)
-    shopOdds34Weights = sum(int(weight) for weight in shopOdds34 if weight)
-    spaceOdds1Weights = sum(int(weight) for weight in spaceOdds1 if weight)
-    spaceOdds2Weights = sum(int(weight) for weight in spaceOdds2 if weight)
-    spaceOdds34Weights = sum(int(weight) for weight in spaceOdds34 if weight)
-
-    if int(spaceOdds1Weights) < 101:
-        spaceOdds1Max = max(zip(spaceOdds1, spaceOdds1), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(spaceOdds34Weights) < 101:
-        spaceOdds34Max = max(zip(spaceOdds34, spaceOdds34), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(shopOdds12Weights) < 101:
-        shopOdds12Max = max(zip(shopOdds12, shopOdds12), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(spaceOdds2Weights) < 101:
-        spaceOdds2Max = max(zip(spaceOdds2, spaceOdds2), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(shopOdds34Weights) < 101:
-        shopOdds34Max = max(zip(shopOdds34, shopOdds34), key=lambda tuple: int(tuple[1]))[0]
-
-    if shopOdds12Max == 'miniMushroomShopOdds12':
-        miniMushroomShopOdds12 += (100 - miniMushroomShopOdds12)
-
-    if shopOdds12Max == 'megaMushroomShopOdds12':
-        megaMushroomShopOdds12 += (100 - megaMushroomShopOdds12)
-
-    if shopOdds12Max == 'superMiniMushroomShopOdds12':
-        superMiniMushroomShopOdds12 += (100 - superMiniMushroomShopOdds12)
-
-    if shopOdds12Max == 'superMegaMushroomShopOdds12':
-        superMegaMushroomShopOdds12 += (100 - superMegaMushroomShopOdds12)
-
-    if shopOdds12Max == 'miniMegaHammerShopOdds12':
-        miniMegaHammerShopOdds12 += (100 - miniMegaHammerShopOdds12)
-
-    if shopOdds12Max == 'warpPipeShopOdds12':
-        warpPipeShopOdds12 += (100 - warpPipeShopOdds12)
-
-    if shopOdds12Max == 'swapCardShopOdds12':
-        swapCardShopOdds12 += (100 - swapCardShopOdds12)
-
-    if shopOdds12Max == 'sparkyStickerShopOdds12':
-        sparkyStickerShopOdds12 += (100 - sparkyStickerShopOdds12)
-
-    if shopOdds12Max == 'gaddlightShopOdds12':
-        gaddlightShopOdds12 += (100 - gaddlightShopOdds12)
-
-    if shopOdds12Max == 'chompCallShopOdds12':
-        chompCallShopOdds12 += (100 - chompCallShopOdds12)
-
-    if shopOdds12Max == 'bowserSuitShopOdds12':
-        bowserSuitShopOdds12 += (100 - bowserSuitShopOdds12)
-
-    if shopOdds12Max == 'crystalBallShopOdds12':
-        crystalBallShopOdds12 += (100 - crystalBallShopOdds12)
-
-    if shopOdds12Max == 'magicLampShopOdds12':
-        magicLampShopOdds12 += (100 - magicLampShopOdds12)
-
-    if shopOdds12Max == 'itemBagShopOdds12':
-        itemBagShopOdds12 += (100 - itemBagShopOdds12)
-
-    if shopOdds34Max == 'miniMushroomShopOdds34':
-        miniMushroomShopOdds34 += (100 - miniMushroomShopOdds34)
-
-    if shopOdds34Max == 'megaMushroomShopOdds34':
-        megaMushroomShopOdds34 += (100 - megaMushroomShopOdds34)
-
-    if shopOdds34Max == 'superMiniMushroomShopOdds34':
-        superMiniMushroomShopOdds34 += (100 - superMiniMushroomShopOdds34)
-
-    if shopOdds34Max == 'superMegaMushroomShopOdds34':
-        superMegaMushroomShopOdds34 += (100 - superMegaMushroomShopOdds34)
-
-    if shopOdds34Max == 'miniMegaHammerShopOdds34':
-        miniMegaHammerShopOdds34 += (100 - miniMegaHammerShopOdds34)
-
-    if shopOdds34Max == 'warpPipeShopOdds34':
-        warpPipeShopOdds34 += (100 - warpPipeShopOdds34)
-
-    if shopOdds34Max == 'swapCardShopOdds34':
-        swapCardShopOdds34 += (100 - swapCardShopOdds34)
-
-    if shopOdds34Max == 'sparkyStickerShopOdds34':
-        sparkyStickerShopOdds34 += (100 - sparkyStickerShopOdds34)
-
-    if shopOdds34Max == 'gaddlightShopOdds34':
-        gaddlightShopOdds34 += (100 - gaddlightShopOdds34)
-
-    if shopOdds34Max == 'chompCallShopOdds34':
-        chompCallShopOdds34 += (100 - chompCallShopOdds34)
-
-    if shopOdds34Max == 'bowserSuitShopOdds34':
-        bowserSuitShopOdds34 += (100 - bowserSuitShopOdds34)
-
-    if shopOdds34Max == 'crystalBallShopOdds34':
-        crystalBallShopOdds34 += (100 - crystalBallShopOdds34)
-
-    if shopOdds34Max == 'magicLampShopOdds34':
-        magicLampShopOdds34 += (100 - magicLampShopOdds34)
-
-    if shopOdds34Max == 'itemBagShopOdds34':
-        itemBagShopOdds34 += (100 - itemBagShopOdds34)
-
-    if spaceOdds1Max == 'miniMushroomSpaceOdds1':
-        miniMushroomSpaceOdds1 += (100 - miniMushroomSpaceOdds1)
-
-    if spaceOdds1Max == 'megaMushroomSpaceOdds1':
-        megaMushroomSpaceOdds1 += (100 - megaMushroomSpaceOdds1)
-
-    if spaceOdds1Max == 'superMiniMushroomSpaceOdds1':
-        superMiniMushroomSpaceOdds1 += (100 - superMiniMushroomSpaceOdds1)
-
-    if spaceOdds1Max == 'superMegaMushroomSpaceOdds1':
-        superMegaMushroomSpaceOdds1 += (100 - superMegaMushroomSpaceOdds1)
-
-    if spaceOdds1Max == 'miniMegaHammerSpaceOdds1':
-        miniMegaHammerSpaceOdds1 += (100 - miniMegaHammerSpaceOdds1)
-
-    if spaceOdds1Max == 'warpPipeSpaceOdds1':
-        warpPipeSpaceOdds1 += (100 - warpPipeSpaceOdds1)
-
-    if spaceOdds1Max == 'swapCardSpaceOdds1':
-        swapCardSpaceOdds1 += (100 - swapCardSpaceOdds1)
-
-    if spaceOdds1Max == 'sparkyStickerSpaceOdds1':
-        sparkyStickerSpaceOdds1 += (100 - sparkyStickerSpaceOdds1)
-
-    if spaceOdds1Max == 'gaddlightSpaceOdds1':
-        gaddlightSpaceOdds1 += (100 - gaddlightSpaceOdds1)
-
-    if spaceOdds1Max == 'chompCallSpaceOdds1':
-        chompCallSpaceOdds1 += (100 - chompCallSpaceOdds1)
-
-    if spaceOdds1Max == 'bowserSuitSpaceOdds1':
-        bowserSuitSpaceOdds1 += (100 - bowserSuitSpaceOdds1)
-
-    if spaceOdds1Max == 'crystalBallSpaceOdds1':
-        crystalBallSpaceOdds1 += (100 - crystalBallSpaceOdds1)
-
-    if spaceOdds1Max == 'magicLampSpaceOdds1':
-        magicLampSpaceOdds1 += (100 - magicLampSpaceOdds1)
-
-    if spaceOdds1Max == 'itemBagSpaceOdds1':
-        itemBagSpaceOdds1 += (100 - itemBagSpaceOdds1)
-
-    if spaceOdds2Max == 'miniMushroomSpaceOdds2':
-        miniMushroomSpaceOdds2 += (100 - miniMushroomSpaceOdds2)
-
-    if spaceOdds2Max == 'megaMushroomSpaceOdds2':
-        megaMushroomSpaceOdds2 += (100 - megaMushroomSpaceOdds2)
-
-    if spaceOdds2Max == 'superMiniMushroomSpaceOdds2':
-        superMiniMushroomSpaceOdds2 += (100 - superMiniMushroomSpaceOdds2)
-
-    if spaceOdds2Max == 'superMegaMushroomSpaceOdds2':
-        superMegaMushroomSpaceOdds2 += (100 - superMegaMushroomSpaceOdds2)
-
-    if spaceOdds2Max == 'miniMegaHammerSpaceOdds2':
-        miniMegaHammerSpaceOdds2 += (100 - miniMegaHammerSpaceOdds2)
-
-    if spaceOdds2Max == 'warpPipeSpaceOdds2':
-        warpPipeSpaceOdds2 += (100 - warpPipeSpaceOdds2)
-
-    if spaceOdds2Max == 'swapCardSpaceOdds2':
-        swapCardSpaceOdds2 += (100 - swapCardSpaceOdds2)
-
-    if spaceOdds2Max == 'sparkyStickerSpaceOdds2':
-        sparkyStickerSpaceOdds2 += (100 - sparkyStickerSpaceOdds2)
-
-    if spaceOdds2Max == 'gaddlightSpaceOdds2':
-        gaddlightSpaceOdds2 += (100 - gaddlightSpaceOdds2)
-
-    if spaceOdds2Max == 'chompCallSpaceOdds2':
-        chompCallSpaceOdds2 += (100 - chompCallSpaceOdds2)
-
-    if spaceOdds2Max == 'bowserSuitSpaceOdds2':
-        bowserSuitSpaceOdds2 += (100 - bowserSuitSpaceOdds2)
-
-    if spaceOdds2Max == 'crystalBallSpaceOdds2':
-        crystalBallSpaceOdds2 += (100 - crystalBallSpaceOdds2)
-
-    if spaceOdds2Max == 'magicLampSpaceOdds2':
-        magicLampSpaceOdds2 += (100 - magicLampSpaceOdds2)
-
-    if spaceOdds2Max == 'itemBagSpaceOdds2':
-        itemBagSpaceOdds2 += (100 - itemBagSpaceOdds2)
-
-    if spaceOdds34Max == 'miniMushroomSpaceOdds34':
-        miniMushroomSpaceOdds34 += (100 - miniMushroomSpaceOdds34)
-
-    if spaceOdds34Max == 'megaMushroomSpaceOdds34':
-        megaMushroomSpaceOdds34 += (100 - megaMushroomSpaceOdds34)
-
-    if spaceOdds34Max == 'superMiniMushroomSpaceOdds34':
-        superMiniMushroomSpaceOdds34 += (100 - superMiniMushroomSpaceOdds34)
-
-    if spaceOdds34Max == 'superMegaMushroomSpaceOdds34':
-        superMegaMushroomSpaceOdds34 += (100 - superMegaMushroomSpaceOdds34)
-
-    if spaceOdds34Max == 'miniMegaHammerSpaceOdds34':
-        miniMegaHammerSpaceOdds34 += (100 - miniMegaHammerSpaceOdds34)
-
-    if spaceOdds34Max == 'warpPipeSpaceOdds34':
-        warpPipeSpaceOdds34 += (100 - warpPipeSpaceOdds34)
-
-    if spaceOdds34Max == 'swapCardSpaceOdds34':
-        swapCardSpaceOdds34 += (100 - swapCardSpaceOdds34)
-
-    if spaceOdds34Max == 'sparkyStickerSpaceOdds34':
-        sparkyStickerSpaceOdds34 += (100 - sparkyStickerSpaceOdds34)
-
-    if spaceOdds34Max == 'gaddlightSpaceOdds34':
-        gaddlightSpaceOdds34 += (100 - gaddlightSpaceOdds34)
-
-    if spaceOdds34Max == 'chompCallSpaceOdds34':
-        chompCallSpaceOdds34 += (100 - chompCallSpaceOdds34)
-
-    if spaceOdds34Max == 'bowserSuitSpaceOdds34':
-        bowserSuitSpaceOdds34 += (100 - bowserSuitSpaceOdds34)
-
-    if spaceOdds34Max == 'crystalBallSpaceOdds34':
-        crystalBallSpaceOdds34 += (100 - crystalBallSpaceOdds34)
-
-    if spaceOdds34Max == 'magicLampSpaceOdds34':
-        magicLampSpaceOdds34 += (100 - magicLampSpaceOdds34)
-
-    if spaceOdds34Max == 'itemBagSpaceOdds34':
-        itemBagSpaceOdds34 += (100 - itemBagSpaceOdds34)
-
-    miniMushroomSpaceOdds34 = str(miniMushroomSpaceOdds34)
-    megaMushroomSpaceOdds34 = str(megaMushroomSpaceOdds34)
-    superMiniMushroomSpaceOdds34 = str(superMiniMushroomSpaceOdds34)
-    superMegaMushroomSpaceOdds34 = str(superMegaMushroomSpaceOdds34)
-    miniMegaHammerSpaceOdds34 = str(miniMegaHammerSpaceOdds34)
-    warpPipeSpaceOdds34 = str(warpPipeSpaceOdds34)
-    swapCardSpaceOdds34 = str(swapCardSpaceOdds34)
-    sparkyStickerSpaceOdds34 = str(sparkyStickerSpaceOdds34)
-    gaddlightSpaceOdds34 = str(gaddlightSpaceOdds34)
-    chompCallSpaceOdds34 = str(chompCallSpaceOdds34)
-    bowserSuitSpaceOdds34 = str(bowserSuitSpaceOdds34)
-    crystalBallSpaceOdds34 = str(crystalBallSpaceOdds34)
-    magicLampSpaceOdds34 = str(magicLampSpaceOdds34)
-    itemBagSpaceOdds34 = str(itemBagSpaceOdds34)
-    miniMushroomShopOdds12 = str(miniMushroomShopOdds12)
-    megaMushroomShopOdds12 = str(megaMushroomShopOdds12)
-    superMiniMushroomShopOdds12 = str(superMiniMushroomShopOdds12)
-    superMegaMushroomShopOdds12 = str(superMegaMushroomShopOdds12)
-    miniMegaHammerShopOdds12 = str(miniMegaHammerShopOdds12)
-    warpPipeShopOdds12 = str(warpPipeShopOdds12)
-    swapCardShopOdds12 = str(swapCardShopOdds12)
-    sparkyStickerShopOdds12 = str(sparkyStickerShopOdds12)
-    gaddlightShopOdds12 = str(gaddlightShopOdds12)
-    chompCallShopOdds12 = str(chompCallShopOdds12)
-    bowserSuitShopOdds12 = str(bowserSuitShopOdds12)
-    crystalBallShopOdds12 = str(crystalBallShopOdds12)
-    magicLampShopOdds12 = str(magicLampShopOdds12)
-    itemBagShopOdds12 = str(itemBagShopOdds12)
-    miniMushroomSpaceOdds1 = str(miniMushroomSpaceOdds1)
-    megaMushroomSpaceOdds1 = str(megaMushroomSpaceOdds1)
-    superMiniMushroomSpaceOdds1 = str(superMiniMushroomSpaceOdds1)
-    superMegaMushroomSpaceOdds1 = str(superMegaMushroomSpaceOdds1)
-    miniMegaHammerSpaceOdds1 = str(miniMegaHammerSpaceOdds1)
-    warpPipeSpaceOdds1 = str(warpPipeSpaceOdds1)
-    swapCardSpaceOdds1 = str(swapCardSpaceOdds1)
-    sparkyStickerSpaceOdds1 = str(sparkyStickerSpaceOdds1)
-    gaddlightSpaceOdds1 = str(gaddlightSpaceOdds1)
-    chompCallSpaceOdds1 = str(chompCallSpaceOdds1)
-    bowserSuitSpaceOdds1 = str(bowserSuitSpaceOdds1)
-    crystalBallSpaceOdds1 = str(crystalBallSpaceOdds1)
-    magicLampSpaceOdds1 = str(magicLampSpaceOdds1)
-    itemBagSpaceOdds1 = str(itemBagSpaceOdds1)
-    miniMushroomSpaceOdds2 = str(miniMushroomSpaceOdds2)
-    megaMushroomSpaceOdds2 = str(megaMushroomSpaceOdds2)
-    superMiniMushroomSpaceOdds2 = str(superMiniMushroomSpaceOdds2)
-    superMegaMushroomSpaceOdds2 = str(superMegaMushroomSpaceOdds2)
-    miniMegaHammerSpaceOdds2 = str(miniMegaHammerSpaceOdds2)
-    warpPipeSpaceOdds2 = str(warpPipeSpaceOdds2)
-    swapCardSpaceOdds2 = str(swapCardSpaceOdds2)
-    sparkyStickerSpaceOdds2 = str(sparkyStickerSpaceOdds2)
-    gaddlightSpaceOdds2 = str(gaddlightSpaceOdds2)
-    chompCallSpaceOdds2 = str(chompCallSpaceOdds2)
-    bowserSuitSpaceOdds2 = str(bowserSuitSpaceOdds2)
-    crystalBallSpaceOdds2 = str(crystalBallSpaceOdds2)
-    magicLampSpaceOdds2 = str(magicLampSpaceOdds2)
-    itemBagSpaceOdds2 = str(itemBagSpaceOdds2)
-    miniMushroomSpaceOdds34 = str(miniMushroomSpaceOdds34)
-    megaMushroomSpaceOdds34 = str(megaMushroomSpaceOdds34)
-    superMiniMushroomSpaceOdds34 = str(superMiniMushroomSpaceOdds34)
-    superMegaMushroomSpaceOdds34 = str(superMegaMushroomSpaceOdds34)
-    miniMegaHammerSpaceOdds34 = str(miniMegaHammerSpaceOdds34)
-    warpPipeSpaceOdds34 = str(warpPipeSpaceOdds34)
-    swapCardSpaceOdds34 = str(swapCardSpaceOdds34)
-    sparkyStickerSpaceOdds34 = str(sparkyStickerSpaceOdds34)
-    gaddlightSpaceOdds34 = str(gaddlightSpaceOdds34)
-    chompCallSpaceOdds34 = str(chompCallSpaceOdds34)
-    bowserSuitSpaceOdds34 = str(bowserSuitSpaceOdds34)
-    crystalBallSpaceOdds34 = str(crystalBallSpaceOdds34)
-    magicLampSpaceOdds34 = str(magicLampSpaceOdds34)
-    itemBagSpaceOdds34 = str(itemBagSpaceOdds34)
-
-    minimumPrice = find_lowest_integer(*[int(miniMushroomPrice1), int(miniMushroomPrice2), int(miniMushroomPrice34), 
-                                          int(megaMushroomPrice1), int(megaMushroomPrice2), int(megaMushroomPrice34), 
-                                          int(superMiniMushroomPrice1), int(superMiniMushroomPrice2), int(superMiniMushroomPrice34), 
-                                          int(superMegaMushroomPrice1), int(superMegaMushroomPrice2), int(superMegaMushroomPrice34), 
-                                          int(miniMegaHammerPrice1), int(miniMegaHammerPrice2), int(miniMegaHammerPrice34), 
-                                          int(warpPipePrice1), int(warpPipePrice2), int(warpPipePrice34), 
-                                          int(swapCardPrice1), int(swapCardPrice2), int(swapCardPrice34), 
-                                          int(sparkyStickerPrice1), int(sparkyStickerPrice2), int(sparkyStickerPrice34), 
-                                          int(gaddlightPrice1), int(gaddlightPrice2), int(gaddlightPrice34), 
-                                          int(chompCallPrice1), int(chompCallPrice2), int(chompCallPrice34), 
-                                          int(bowserSuitPrice1), int(bowserSuitPrice2), int(bowserSuitPrice34), 
-                                          int(crystalBallPrice1), int(crystalBallPrice2), int(crystalBallPrice34), 
-                                          int(magicLampPrice1), int(magicLampPrice2), int(magicLampPrice34), 
-                                          int(itemBagPrice1), int(itemBagPrice2), int(itemBagPrice34)])
-
-    def convert_to_hex_weight(weight):
-        try:
-            weight_hex = hex(int(weight))
-            if len(weight_hex) == 4:
-                return weight_hex[2:]  # Remove '0x' prefix
-            elif len(weight_hex) == 3:
-                return "0" + weight_hex[2:]  # Add leading zero
-            return weight_hex[2:]  # Return as is for other lengths
-        except:
-            return "00"  # Return default value on error
-
-    # Usage
-    miniMushroomPrice1 = convert_to_hex_weight(miniMushroomPrice1)
-    miniMushroomPrice2 = convert_to_hex_weight(miniMushroomPrice2)
-    miniMushroomPrice34 = convert_to_hex_weight(miniMushroomPrice34)
-    miniMushroomShopOdds12 = convert_to_hex_weight(miniMushroomShopOdds12)
-    miniMushroomShopOdds34 = convert_to_hex_weight(miniMushroomShopOdds34)
-    miniMushroomSpaceOdds1 = convert_to_hex_weight(miniMushroomSpaceOdds1)
-    miniMushroomSpaceOdds2 = convert_to_hex_weight(miniMushroomSpaceOdds2)
-    miniMushroomSpaceOdds34 = convert_to_hex_weight(miniMushroomSpaceOdds34)
-    megaMushroomPrice1 = convert_to_hex_weight(megaMushroomPrice1)
-    megaMushroomPrice2 = convert_to_hex_weight(megaMushroomPrice2)
-    megaMushroomPrice34 = convert_to_hex_weight(megaMushroomPrice34)
-    megaMushroomShopOdds12 = convert_to_hex_weight(megaMushroomShopOdds12)
-    megaMushroomShopOdds34 = convert_to_hex_weight(megaMushroomShopOdds34)
-    megaMushroomSpaceOdds1 = convert_to_hex_weight(megaMushroomSpaceOdds1)
-    megaMushroomSpaceOdds2 = convert_to_hex_weight(megaMushroomSpaceOdds2)
-    megaMushroomSpaceOdds34 = convert_to_hex_weight(megaMushroomSpaceOdds34)
-    superMiniMushroomPrice1 = convert_to_hex_weight(superMiniMushroomPrice1)
-    superMiniMushroomPrice2 = convert_to_hex_weight(superMiniMushroomPrice2)
-    superMiniMushroomPrice34 = convert_to_hex_weight(superMiniMushroomPrice34)
-    superMiniMushroomShopOdds12 = convert_to_hex_weight(superMiniMushroomShopOdds12)
-    superMiniMushroomShopOdds34 = convert_to_hex_weight(superMiniMushroomShopOdds34)
-    superMiniMushroomSpaceOdds1 = convert_to_hex_weight(superMiniMushroomSpaceOdds1)
-    superMiniMushroomSpaceOdds2 = convert_to_hex_weight(superMiniMushroomSpaceOdds2)
-    superMiniMushroomSpaceOdds34 = convert_to_hex_weight(superMiniMushroomSpaceOdds34)
-    superMegaMushroomPrice1 = convert_to_hex_weight(superMegaMushroomPrice1)
-    superMegaMushroomPrice2 = convert_to_hex_weight(superMegaMushroomPrice2)
-    superMegaMushroomPrice34 = convert_to_hex_weight(superMegaMushroomPrice34)
-    superMegaMushroomShopOdds12 = convert_to_hex_weight(superMegaMushroomShopOdds12)
-    superMegaMushroomShopOdds34 = convert_to_hex_weight(superMegaMushroomShopOdds34)
-    superMegaMushroomSpaceOdds1 = convert_to_hex_weight(superMegaMushroomSpaceOdds1)
-    superMegaMushroomSpaceOdds2 = convert_to_hex_weight(superMegaMushroomSpaceOdds2)
-    superMegaMushroomSpaceOdds34 = convert_to_hex_weight(superMegaMushroomSpaceOdds34)
-    miniMegaHammerPrice1 = convert_to_hex_weight(miniMegaHammerPrice1)
-    miniMegaHammerPrice2 = convert_to_hex_weight(miniMegaHammerPrice2)
-    miniMegaHammerPrice34 = convert_to_hex_weight(miniMegaHammerPrice34)
-    miniMegaHammerShopOdds12 = convert_to_hex_weight(miniMegaHammerShopOdds12)
-    miniMegaHammerShopOdds34 = convert_to_hex_weight(miniMegaHammerShopOdds34)
-    miniMegaHammerSpaceOdds1 = convert_to_hex_weight(miniMegaHammerSpaceOdds1)
-    miniMegaHammerSpaceOdds2 = convert_to_hex_weight(miniMegaHammerSpaceOdds2)
-    miniMegaHammerSpaceOdds34 = convert_to_hex_weight(miniMegaHammerSpaceOdds34)
-    warpPipePrice1 = convert_to_hex_weight(warpPipePrice1)
-    warpPipePrice2 = convert_to_hex_weight(warpPipePrice2)
-    warpPipePrice34 = convert_to_hex_weight(warpPipePrice34)
-    warpPipeShopOdds12 = convert_to_hex_weight(warpPipeShopOdds12)
-    warpPipeShopOdds34 = convert_to_hex_weight(warpPipeShopOdds34)
-    warpPipeSpaceOdds1 = convert_to_hex_weight(warpPipeSpaceOdds1)
-    warpPipeSpaceOdds2 = convert_to_hex_weight(warpPipeSpaceOdds2)
-    warpPipeSpaceOdds34 = convert_to_hex_weight(warpPipeSpaceOdds34)
-    swapCardPrice1 = convert_to_hex_weight(swapCardPrice1)
-    swapCardPrice2 = convert_to_hex_weight(swapCardPrice2)
-    swapCardPrice34 = convert_to_hex_weight(swapCardPrice34)
-    swapCardShopOdds12 = convert_to_hex_weight(swapCardShopOdds12)
-    swapCardShopOdds34 = convert_to_hex_weight(swapCardShopOdds34)
-    swapCardSpaceOdds1 = convert_to_hex_weight(swapCardSpaceOdds1)
-    swapCardSpaceOdds2 = convert_to_hex_weight(swapCardSpaceOdds2)
-    swapCardSpaceOdds34 = convert_to_hex_weight(swapCardSpaceOdds34)
-    sparkyStickerPrice1 = convert_to_hex_weight(sparkyStickerPrice1)
-    sparkyStickerPrice2 = convert_to_hex_weight(sparkyStickerPrice2)
-    sparkyStickerPrice34 = convert_to_hex_weight(sparkyStickerPrice34)
-    sparkyStickerShopOdds12 = convert_to_hex_weight(sparkyStickerShopOdds12)
-    sparkyStickerShopOdds34 = convert_to_hex_weight(sparkyStickerShopOdds34)
-    sparkyStickerSpaceOdds1 = convert_to_hex_weight(sparkyStickerSpaceOdds1)
-    sparkyStickerSpaceOdds2 = convert_to_hex_weight(sparkyStickerSpaceOdds2)
-    sparkyStickerSpaceOdds34 = convert_to_hex_weight(sparkyStickerSpaceOdds34)
-    gaddlightPrice1 = convert_to_hex_weight(gaddlightPrice1)
-    gaddlightPrice2 = convert_to_hex_weight(gaddlightPrice2)
-    gaddlightPrice34 = convert_to_hex_weight(gaddlightPrice34)
-    gaddlightShopOdds12 = convert_to_hex_weight(gaddlightShopOdds12)
-    gaddlightShopOdds34 = convert_to_hex_weight(gaddlightShopOdds34)
-    gaddlightSpaceOdds1 = convert_to_hex_weight(gaddlightSpaceOdds1)
-    gaddlightSpaceOdds2 = convert_to_hex_weight(gaddlightSpaceOdds2)
-    gaddlightSpaceOdds34 = convert_to_hex_weight(gaddlightSpaceOdds34)
-    chompCallPrice1 = convert_to_hex_weight(chompCallPrice1)
-    chompCallPrice2 = convert_to_hex_weight(chompCallPrice2)
-    chompCallPrice34 = convert_to_hex_weight(chompCallPrice34)
-    chompCallShopOdds12 = convert_to_hex_weight(chompCallShopOdds12)
-    chompCallShopOdds34 = convert_to_hex_weight(chompCallShopOdds34)
-    chompCallSpaceOdds1 = convert_to_hex_weight(chompCallSpaceOdds1)
-    chompCallSpaceOdds2 = convert_to_hex_weight(chompCallSpaceOdds2)
-    chompCallSpaceOdds34 = convert_to_hex_weight(chompCallSpaceOdds34)
-    bowserSuitPrice1 = convert_to_hex_weight(bowserSuitPrice1)
-    bowserSuitPrice2 = convert_to_hex_weight(bowserSuitPrice2)
-    bowserSuitPrice34 = convert_to_hex_weight(bowserSuitPrice34)
-    bowserSuitShopOdds12 = convert_to_hex_weight(bowserSuitShopOdds12)
-    bowserSuitShopOdds34 = convert_to_hex_weight(bowserSuitShopOdds34)
-    bowserSuitSpaceOdds1 = convert_to_hex_weight(bowserSuitSpaceOdds1)
-    bowserSuitSpaceOdds2 = convert_to_hex_weight(bowserSuitSpaceOdds2)
-    bowserSuitSpaceOdds34 = convert_to_hex_weight(bowserSuitSpaceOdds34)
-    crystalBallPrice1 = convert_to_hex_weight(crystalBallPrice1)
-    crystalBallPrice2 = convert_to_hex_weight(crystalBallPrice2)
-    crystalBallPrice34 = convert_to_hex_weight(crystalBallPrice34)
-    crystalBallShopOdds12 = convert_to_hex_weight(crystalBallShopOdds12)
-    crystalBallShopOdds34 = convert_to_hex_weight(crystalBallShopOdds34)
-    crystalBallSpaceOdds1 = convert_to_hex_weight(crystalBallSpaceOdds1)
-    crystalBallSpaceOdds2 = convert_to_hex_weight(crystalBallSpaceOdds2)
-    crystalBallSpaceOdds34 = convert_to_hex_weight(crystalBallSpaceOdds34)
-    magicLampPrice1 = convert_to_hex_weight(magicLampPrice1)
-    magicLampPrice2 = convert_to_hex_weight(magicLampPrice2)
-    magicLampPrice34 = convert_to_hex_weight(magicLampPrice34)
-    magicLampShopOdds12 = convert_to_hex_weight(magicLampShopOdds12)
-    magicLampShopOdds34 = convert_to_hex_weight(magicLampShopOdds34)
-    magicLampSpaceOdds1 = convert_to_hex_weight(magicLampSpaceOdds1)
-    magicLampSpaceOdds2 = convert_to_hex_weight(magicLampSpaceOdds2)
-    magicLampSpaceOdds34 = convert_to_hex_weight(magicLampSpaceOdds34)
-    itemBagPrice1 = convert_to_hex_weight(itemBagPrice1)
-    itemBagPrice2 = convert_to_hex_weight(itemBagPrice2)
-    itemBagPrice34 = convert_to_hex_weight(itemBagPrice34)
-    itemBagShopOdds12 = convert_to_hex_weight(itemBagShopOdds12)
-    itemBagShopOdds34 = convert_to_hex_weight(itemBagShopOdds34)
-    itemBagSpaceOdds1 = convert_to_hex_weight(itemBagSpaceOdds1)
-    itemBagSpaceOdds2 = convert_to_hex_weight(itemBagSpaceOdds2)
-    itemBagSpaceOdds34 = convert_to_hex_weight(itemBagSpaceOdds34)
-
-    minimumPrice = convert_to_hex_weight(minimumPrice)
-
-    generatedCode = getItemModsFourItemSpace(minimumPrice)
+
+    # Mini Mushroom
+    miniMushroomEarlyPrice1 = convert_to_hex_weight(miniMushroomEarlyPrice1)
+    miniMushroomEarlyPrice2 = convert_to_hex_weight(miniMushroomEarlyPrice2)
+    miniMushroomEarlyPrice34 = convert_to_hex_weight(miniMushroomEarlyPrice34)
+    miniMushroomMidPrice1 = convert_to_hex_weight(miniMushroomMidPrice1)
+    miniMushroomMidPrice2 = convert_to_hex_weight(miniMushroomMidPrice2)
+    miniMushroomMidPrice34 = convert_to_hex_weight(miniMushroomMidPrice34)
+    miniMushroomLatePrice1 = convert_to_hex_weight(miniMushroomLatePrice1)
+    miniMushroomLatePrice2 = convert_to_hex_weight(miniMushroomLatePrice2)
+    miniMushroomLatePrice34 = convert_to_hex_weight(miniMushroomLatePrice34)
+    
+    # Mega Mushroom
+    megaMushroomEarlyPrice1 = convert_to_hex_weight(megaMushroomEarlyPrice1)
+    megaMushroomEarlyPrice2 = convert_to_hex_weight(megaMushroomEarlyPrice2)
+    megaMushroomEarlyPrice34 = convert_to_hex_weight(megaMushroomEarlyPrice34)
+    megaMushroomMidPrice1 = convert_to_hex_weight(megaMushroomMidPrice1)
+    megaMushroomMidPrice2 = convert_to_hex_weight(megaMushroomMidPrice2)
+    megaMushroomMidPrice34 = convert_to_hex_weight(megaMushroomMidPrice34)
+    megaMushroomLatePrice1 = convert_to_hex_weight(megaMushroomLatePrice1)
+    megaMushroomLatePrice2 = convert_to_hex_weight(megaMushroomLatePrice2)
+    megaMushroomLatePrice34 = convert_to_hex_weight(megaMushroomLatePrice34)
+
+    # Super Mini Mushroom
+    superMiniMushroomEarlyPrice1 = convert_to_hex_weight(superMiniMushroomEarlyPrice1)
+    superMiniMushroomEarlyPrice2 = convert_to_hex_weight(superMiniMushroomEarlyPrice2)
+    superMiniMushroomEarlyPrice34 = convert_to_hex_weight(superMiniMushroomEarlyPrice34)
+    superMiniMushroomMidPrice1 = convert_to_hex_weight(superMiniMushroomMidPrice1)
+    superMiniMushroomMidPrice2 = convert_to_hex_weight(superMiniMushroomMidPrice2)
+    superMiniMushroomMidPrice34 = convert_to_hex_weight(superMiniMushroomMidPrice34)
+    superMiniMushroomLatePrice1 = convert_to_hex_weight(superMiniMushroomLatePrice1)
+    superMiniMushroomLatePrice2 = convert_to_hex_weight(superMiniMushroomLatePrice2)
+    superMiniMushroomLatePrice34 = convert_to_hex_weight(superMiniMushroomLatePrice34)
+
+    # Super Mega Mushroom
+    superMegaMushroomEarlyPrice1 = convert_to_hex_weight(superMegaMushroomEarlyPrice1)
+    superMegaMushroomEarlyPrice2 = convert_to_hex_weight(superMegaMushroomEarlyPrice2)
+    superMegaMushroomEarlyPrice34 = convert_to_hex_weight(superMegaMushroomEarlyPrice34)
+    superMegaMushroomMidPrice1 = convert_to_hex_weight(superMegaMushroomMidPrice1)
+    superMegaMushroomMidPrice2 = convert_to_hex_weight(superMegaMushroomMidPrice2)
+    superMegaMushroomMidPrice34 = convert_to_hex_weight(superMegaMushroomMidPrice34)
+    superMegaMushroomLatePrice1 = convert_to_hex_weight(superMegaMushroomLatePrice1)
+    superMegaMushroomLatePrice2 = convert_to_hex_weight(superMegaMushroomLatePrice2)
+    superMegaMushroomLatePrice34 = convert_to_hex_weight(superMegaMushroomLatePrice34)
+
+    # Mini Mega Hammer
+    miniMegaHammerEarlyPrice1 = convert_to_hex_weight(miniMegaHammerEarlyPrice1)
+    miniMegaHammerEarlyPrice2 = convert_to_hex_weight(miniMegaHammerEarlyPrice2)
+    miniMegaHammerEarlyPrice34 = convert_to_hex_weight(miniMegaHammerEarlyPrice34)
+    miniMegaHammerMidPrice1 = convert_to_hex_weight(miniMegaHammerMidPrice1)
+    miniMegaHammerMidPrice2 = convert_to_hex_weight(miniMegaHammerMidPrice2)
+    miniMegaHammerMidPrice34 = convert_to_hex_weight(miniMegaHammerMidPrice34)
+    miniMegaHammerLatePrice1 = convert_to_hex_weight(miniMegaHammerLatePrice1)
+    miniMegaHammerLatePrice2 = convert_to_hex_weight(miniMegaHammerLatePrice2)
+    miniMegaHammerLatePrice34 = convert_to_hex_weight(miniMegaHammerLatePrice34)
+
+    # Warp Pipe
+    warpPipeEarlyPrice1 = convert_to_hex_weight(warpPipeEarlyPrice1)
+    warpPipeEarlyPrice2 = convert_to_hex_weight(warpPipeEarlyPrice2)
+    warpPipeEarlyPrice34 = convert_to_hex_weight(warpPipeEarlyPrice34)
+    warpPipeMidPrice1 = convert_to_hex_weight(warpPipeMidPrice1)
+    warpPipeMidPrice2 = convert_to_hex_weight(warpPipeMidPrice2)
+    warpPipeMidPrice34 = convert_to_hex_weight(warpPipeMidPrice34)
+    warpPipeLatePrice1 = convert_to_hex_weight(warpPipeLatePrice1)
+    warpPipeLatePrice2 = convert_to_hex_weight(warpPipeLatePrice2)
+    warpPipeLatePrice34 = convert_to_hex_weight(warpPipeLatePrice34)
+
+    # Swap Card
+    swapCardEarlyPrice1 = convert_to_hex_weight(swapCardEarlyPrice1)
+    swapCardEarlyPrice2 = convert_to_hex_weight(swapCardEarlyPrice2)
+    swapCardEarlyPrice34 = convert_to_hex_weight(swapCardEarlyPrice34)
+    swapCardMidPrice1 = convert_to_hex_weight(swapCardMidPrice1)
+    swapCardMidPrice2 = convert_to_hex_weight(swapCardMidPrice2)
+    swapCardMidPrice34 = convert_to_hex_weight(swapCardMidPrice34)
+    swapCardLatePrice1 = convert_to_hex_weight(swapCardLatePrice1)
+    swapCardLatePrice2 = convert_to_hex_weight(swapCardLatePrice2)
+    swapCardLatePrice34 = convert_to_hex_weight(swapCardLatePrice34)
+
+    # Sparky Sticker
+    sparkyStickerEarlyPrice1 = convert_to_hex_weight(sparkyStickerEarlyPrice1)
+    sparkyStickerEarlyPrice2 = convert_to_hex_weight(sparkyStickerEarlyPrice2)
+    sparkyStickerEarlyPrice34 = convert_to_hex_weight(sparkyStickerEarlyPrice34)
+    sparkyStickerMidPrice1 = convert_to_hex_weight(sparkyStickerMidPrice1)
+    sparkyStickerMidPrice2 = convert_to_hex_weight(sparkyStickerMidPrice2)
+    sparkyStickerMidPrice34 = convert_to_hex_weight(sparkyStickerMidPrice34)
+    sparkyStickerLatePrice1 = convert_to_hex_weight(sparkyStickerLatePrice1)
+    sparkyStickerLatePrice2 = convert_to_hex_weight(sparkyStickerLatePrice2)
+    sparkyStickerLatePrice34 = convert_to_hex_weight(sparkyStickerLatePrice34)
+
+    # Gaddlight
+    gaddlightEarlyPrice1 = convert_to_hex_weight(gaddlightEarlyPrice1)
+    gaddlightEarlyPrice2 = convert_to_hex_weight(gaddlightEarlyPrice2)
+    gaddlightEarlyPrice34 = convert_to_hex_weight(gaddlightEarlyPrice34)
+    gaddlightMidPrice1 = convert_to_hex_weight(gaddlightMidPrice1)
+    gaddlightMidPrice2 = convert_to_hex_weight(gaddlightMidPrice2)
+    gaddlightMidPrice34 = convert_to_hex_weight(gaddlightMidPrice34)
+    gaddlightLatePrice1 = convert_to_hex_weight(gaddlightLatePrice1)
+    gaddlightLatePrice2 = convert_to_hex_weight(gaddlightLatePrice2)
+    gaddlightLatePrice34 = convert_to_hex_weight(gaddlightLatePrice34)
+
+    # Chomp Call
+    chompCallEarlyPrice1 = convert_to_hex_weight(chompCallEarlyPrice1)
+    chompCallEarlyPrice2 = convert_to_hex_weight(chompCallEarlyPrice2)
+    chompCallEarlyPrice34 = convert_to_hex_weight(chompCallEarlyPrice34)
+    chompCallMidPrice1 = convert_to_hex_weight(chompCallMidPrice1)
+    chompCallMidPrice2 = convert_to_hex_weight(chompCallMidPrice2)
+    chompCallMidPrice34 = convert_to_hex_weight(chompCallMidPrice34)
+    chompCallLatePrice1 = convert_to_hex_weight(chompCallLatePrice1)
+    chompCallLatePrice2 = convert_to_hex_weight(chompCallLatePrice2)
+    chompCallLatePrice34 = convert_to_hex_weight(chompCallLatePrice34)
+
+    # Bowser Suit
+    bowserSuitEarlyPrice1 = convert_to_hex_weight(bowserSuitEarlyPrice1)
+    bowserSuitEarlyPrice2 = convert_to_hex_weight(bowserSuitEarlyPrice2)
+    bowserSuitEarlyPrice34 = convert_to_hex_weight(bowserSuitEarlyPrice34)
+    bowserSuitMidPrice1 = convert_to_hex_weight(bowserSuitMidPrice1)
+    bowserSuitMidPrice2 = convert_to_hex_weight(bowserSuitMidPrice2)
+    bowserSuitMidPrice34 = convert_to_hex_weight(bowserSuitMidPrice34)
+    bowserSuitLatePrice1 = convert_to_hex_weight(bowserSuitLatePrice1)
+    bowserSuitLatePrice2 = convert_to_hex_weight(bowserSuitLatePrice2)
+    bowserSuitLatePrice34 = convert_to_hex_weight(bowserSuitLatePrice34)
+
+    # Crystal Ball
+    crystalBallEarlyPrice1 = convert_to_hex_weight(crystalBallEarlyPrice1)
+    crystalBallEarlyPrice2 = convert_to_hex_weight(crystalBallEarlyPrice2)
+    crystalBallEarlyPrice34 = convert_to_hex_weight(crystalBallEarlyPrice34)
+    crystalBallMidPrice1 = convert_to_hex_weight(crystalBallMidPrice1)
+    crystalBallMidPrice2 = convert_to_hex_weight(crystalBallMidPrice2)
+    crystalBallMidPrice34 = convert_to_hex_weight(crystalBallMidPrice34)
+    crystalBallLatePrice1 = convert_to_hex_weight(crystalBallLatePrice1)
+    crystalBallLatePrice2 = convert_to_hex_weight(crystalBallLatePrice2)
+    crystalBallLatePrice34 = convert_to_hex_weight(crystalBallLatePrice34)
+
+    # Magic Lamp
+    magicLampEarlyPrice1 = convert_to_hex_weight(magicLampEarlyPrice1)
+    magicLampEarlyPrice2 = convert_to_hex_weight(magicLampEarlyPrice2)
+    magicLampEarlyPrice34 = convert_to_hex_weight(magicLampEarlyPrice34)
+    magicLampMidPrice1 = convert_to_hex_weight(magicLampMidPrice1)
+    magicLampMidPrice2 = convert_to_hex_weight(magicLampMidPrice2)
+    magicLampMidPrice34 = convert_to_hex_weight(magicLampMidPrice34)
+    magicLampLatePrice1 = convert_to_hex_weight(magicLampLatePrice1)
+    magicLampLatePrice2 = convert_to_hex_weight(magicLampLatePrice2)
+    magicLampLatePrice34 = convert_to_hex_weight(magicLampLatePrice34)
+
+    # Item Bag
+    itemBagEarlyPrice1 = convert_to_hex_weight(itemBagEarlyPrice1)
+    itemBagEarlyPrice2 = convert_to_hex_weight(itemBagEarlyPrice2)
+    itemBagEarlyPrice34 = convert_to_hex_weight(itemBagEarlyPrice34)
+    itemBagMidPrice1 = convert_to_hex_weight(itemBagMidPrice1)
+    itemBagMidPrice2 = convert_to_hex_weight(itemBagMidPrice2)
+    itemBagMidPrice34 = convert_to_hex_weight(itemBagMidPrice34)
+    itemBagLatePrice1 = convert_to_hex_weight(itemBagLatePrice1)
+    itemBagLatePrice2 = convert_to_hex_weight(itemBagLatePrice2)
+    itemBagLatePrice34 = convert_to_hex_weight(itemBagLatePrice34)
+
+    # Mushroom: DX
+    mushroomEarlyPrice1 = convert_to_hex_weight(mushroomEarlyPrice1)
+    mushroomEarlyPrice2 = convert_to_hex_weight(mushroomEarlyPrice2)
+    mushroomEarlyPrice34 = convert_to_hex_weight(mushroomEarlyPrice34)
+    mushroomMidPrice1 = convert_to_hex_weight(mushroomMidPrice1)
+    mushroomMidPrice2 = convert_to_hex_weight(mushroomMidPrice2)
+    mushroomMidPrice34 = convert_to_hex_weight(mushroomMidPrice34)
+    mushroomLatePrice1 = convert_to_hex_weight(mushroomLatePrice1)
+    mushroomLatePrice2 = convert_to_hex_weight(mushroomLatePrice2)
+    mushroomLatePrice34 = convert_to_hex_weight(mushroomLatePrice34)
+
+    # Golden Mushroom: DX
+    goldenMushroomEarlyPrice1 = convert_to_hex_weight(goldenMushroomEarlyPrice1)
+    goldenMushroomEarlyPrice2 = convert_to_hex_weight(goldenMushroomEarlyPrice2)
+    goldenMushroomEarlyPrice34 = convert_to_hex_weight(goldenMushroomEarlyPrice34)
+    goldenMushroomMidPrice1 = convert_to_hex_weight(goldenMushroomMidPrice1)
+    goldenMushroomMidPrice2 = convert_to_hex_weight(goldenMushroomMidPrice2)
+    goldenMushroomMidPrice34 = convert_to_hex_weight(goldenMushroomMidPrice34)
+    goldenMushroomLatePrice1 = convert_to_hex_weight(goldenMushroomLatePrice1)
+    goldenMushroomLatePrice2 = convert_to_hex_weight(goldenMushroomLatePrice2)
+    goldenMushroomLatePrice34 = convert_to_hex_weight(goldenMushroomLatePrice34)
+
+    # Reverse Mushroom: DX
+    reverseMushroomEarlyPrice1 = convert_to_hex_weight(reverseMushroomEarlyPrice1)
+    reverseMushroomEarlyPrice2 = convert_to_hex_weight(reverseMushroomEarlyPrice2)
+    reverseMushroomEarlyPrice34 = convert_to_hex_weight(reverseMushroomEarlyPrice34)
+    reverseMushroomMidPrice1 = convert_to_hex_weight(reverseMushroomMidPrice1)
+    reverseMushroomMidPrice2 = convert_to_hex_weight(reverseMushroomMidPrice2)
+    reverseMushroomMidPrice34 = convert_to_hex_weight(reverseMushroomMidPrice34)
+    reverseMushroomLatePrice1 = convert_to_hex_weight(reverseMushroomLatePrice1)
+    reverseMushroomLatePrice2 = convert_to_hex_weight(reverseMushroomLatePrice2)
+    reverseMushroomLatePrice34 = convert_to_hex_weight(reverseMushroomLatePrice34)
+
+    # Poison Mushroom: DX
+    poisonMushroomEarlyPrice1 = convert_to_hex_weight(poisonMushroomEarlyPrice1)
+    poisonMushroomEarlyPrice2 = convert_to_hex_weight(poisonMushroomEarlyPrice2)
+    poisonMushroomEarlyPrice34 = convert_to_hex_weight(poisonMushroomEarlyPrice34)
+    poisonMushroomMidPrice1 = convert_to_hex_weight(poisonMushroomMidPrice1)
+    poisonMushroomMidPrice2 = convert_to_hex_weight(poisonMushroomMidPrice2)
+    poisonMushroomMidPrice34 = convert_to_hex_weight(poisonMushroomMidPrice34)
+    poisonMushroomLatePrice1 = convert_to_hex_weight(poisonMushroomLatePrice1)
+    poisonMushroomLatePrice2 = convert_to_hex_weight(poisonMushroomLatePrice2)
+    poisonMushroomLatePrice34 = convert_to_hex_weight(poisonMushroomLatePrice34)
+
+    # Triple Poison Mushroom: DX
+    triplePoisonMushroomEarlyPrice1 = convert_to_hex_weight(triplePoisonMushroomEarlyPrice1)
+    triplePoisonMushroomEarlyPrice2 = convert_to_hex_weight(triplePoisonMushroomEarlyPrice2)
+    triplePoisonMushroomEarlyPrice34 = convert_to_hex_weight(triplePoisonMushroomEarlyPrice34)
+    triplePoisonMushroomMidPrice1 = convert_to_hex_weight(triplePoisonMushroomMidPrice1)
+    triplePoisonMushroomMidPrice2 = convert_to_hex_weight(triplePoisonMushroomMidPrice2)
+    triplePoisonMushroomMidPrice34 = convert_to_hex_weight(triplePoisonMushroomMidPrice34)
+    triplePoisonMushroomLatePrice1 = convert_to_hex_weight(triplePoisonMushroomLatePrice1)
+    triplePoisonMushroomLatePrice2 = convert_to_hex_weight(triplePoisonMushroomLatePrice2)
+    triplePoisonMushroomLatePrice34 = convert_to_hex_weight(triplePoisonMushroomLatePrice34)
+
+    # Celluar Shopper: DX
+    celluarShopperEarlyPrice1 = convert_to_hex_weight(celluarShopperEarlyPrice1)
+    celluarShopperEarlyPrice2 = convert_to_hex_weight(celluarShopperEarlyPrice2)
+    celluarShopperEarlyPrice34 = convert_to_hex_weight(celluarShopperEarlyPrice34)
+    celluarShopperMidPrice1 = convert_to_hex_weight(celluarShopperMidPrice1)
+    celluarShopperMidPrice2 = convert_to_hex_weight(celluarShopperMidPrice2)
+    celluarShopperMidPrice34 = convert_to_hex_weight(celluarShopperMidPrice34)
+    celluarShopperLatePrice1 = convert_to_hex_weight(celluarShopperLatePrice1)
+    celluarShopperLatePrice2 = convert_to_hex_weight(celluarShopperLatePrice2)
+    celluarShopperLatePrice34 = convert_to_hex_weight(celluarShopperLatePrice34)
+
+    # Skeleton Key: DX
+    skeletonKeyEarlyPrice1 = convert_to_hex_weight(skeletonKeyEarlyPrice1)
+    skeletonKeyEarlyPrice2 = convert_to_hex_weight(skeletonKeyEarlyPrice2)
+    skeletonKeyEarlyPrice34 = convert_to_hex_weight(skeletonKeyEarlyPrice34)
+    skeletonKeyMidPrice1 = convert_to_hex_weight(skeletonKeyMidPrice1)
+    skeletonKeyMidPrice2 = convert_to_hex_weight(skeletonKeyMidPrice2)
+    skeletonKeyMidPrice34 = convert_to_hex_weight(skeletonKeyMidPrice34)
+    skeletonKeyLatePrice1 = convert_to_hex_weight(skeletonKeyLatePrice1)
+    skeletonKeyLatePrice2 = convert_to_hex_weight(skeletonKeyLatePrice2)
+    skeletonKeyLatePrice34 = convert_to_hex_weight(skeletonKeyLatePrice34)
+
+    # Plunder Chest: DX
+    plunderChestEarlyPrice1 = convert_to_hex_weight(plunderChestEarlyPrice1)
+    plunderChestEarlyPrice2 = convert_to_hex_weight(plunderChestEarlyPrice2)
+    plunderChestEarlyPrice34 = convert_to_hex_weight(plunderChestEarlyPrice34)
+    plunderChestMidPrice1 = convert_to_hex_weight(plunderChestMidPrice1)
+    plunderChestMidPrice2 = convert_to_hex_weight(plunderChestMidPrice2)
+    plunderChestMidPrice34 = convert_to_hex_weight(plunderChestMidPrice34)
+    plunderChestLatePrice1 = convert_to_hex_weight(plunderChestLatePrice1)
+    plunderChestLatePrice2 = convert_to_hex_weight(plunderChestLatePrice2)
+    plunderChestLatePrice34 = convert_to_hex_weight(plunderChestLatePrice34)
+
+    # Gaddbrush: DX
+    gaddbrushEarlyPrice1 = convert_to_hex_weight(gaddbrushEarlyPrice1)
+    gaddbrushEarlyPrice2 = convert_to_hex_weight(gaddbrushEarlyPrice2)
+    gaddbrushEarlyPrice34 = convert_to_hex_weight(gaddbrushEarlyPrice34)
+    gaddbrushMidPrice1 = convert_to_hex_weight(gaddbrushMidPrice1)
+    gaddbrushMidPrice2 = convert_to_hex_weight(gaddbrushMidPrice2)
+    gaddbrushMidPrice34 = convert_to_hex_weight(gaddbrushMidPrice34)
+    gaddbrushLatePrice1 = convert_to_hex_weight(gaddbrushLatePrice1)
+    gaddbrushLatePrice2 = convert_to_hex_weight(gaddbrushLatePrice2)
+    gaddbrushLatePrice34 = convert_to_hex_weight(gaddbrushLatePrice34)
+
+    # Warp Block: DX
+    warpBlockEarlyPrice1 = convert_to_hex_weight(warpBlockEarlyPrice1)
+    warpBlockEarlyPrice2 = convert_to_hex_weight(warpBlockEarlyPrice2)
+    warpBlockEarlyPrice34 = convert_to_hex_weight(warpBlockEarlyPrice34)
+    warpBlockMidPrice1 = convert_to_hex_weight(warpBlockMidPrice1)
+    warpBlockMidPrice2 = convert_to_hex_weight(warpBlockMidPrice2)
+    warpBlockMidPrice34 = convert_to_hex_weight(warpBlockMidPrice34)
+    warpBlockLatePrice1 = convert_to_hex_weight(warpBlockLatePrice1)
+    warpBlockLatePrice2 = convert_to_hex_weight(warpBlockLatePrice2)
+    warpBlockLatePrice34 = convert_to_hex_weight(warpBlockLatePrice34)
+
+    # Fly Guy: DX
+    flyGuyEarlyPrice1 = convert_to_hex_weight(flyGuyEarlyPrice1)
+    flyGuyEarlyPrice2 = convert_to_hex_weight(flyGuyEarlyPrice2)
+    flyGuyEarlyPrice34 = convert_to_hex_weight(flyGuyEarlyPrice34)
+    flyGuyMidPrice1 = convert_to_hex_weight(flyGuyMidPrice1)
+    flyGuyMidPrice2 = convert_to_hex_weight(flyGuyMidPrice2)
+    flyGuyMidPrice34 = convert_to_hex_weight(flyGuyMidPrice34)
+    flyGuyLatePrice1 = convert_to_hex_weight(flyGuyLatePrice1)
+    flyGuyLatePrice2 = convert_to_hex_weight(flyGuyLatePrice2)
+    flyGuyLatePrice34 = convert_to_hex_weight(flyGuyLatePrice34)
+
+    # Plus Block: DX
+    plusBlockEarlyPrice1 = convert_to_hex_weight(plusBlockEarlyPrice1)
+    plusBlockEarlyPrice2 = convert_to_hex_weight(plusBlockEarlyPrice2)
+    plusBlockEarlyPrice34 = convert_to_hex_weight(plusBlockEarlyPrice34)
+    plusBlockMidPrice1 = convert_to_hex_weight(plusBlockMidPrice1)
+    plusBlockMidPrice2 = convert_to_hex_weight(plusBlockMidPrice2)
+    plusBlockMidPrice34 = convert_to_hex_weight(plusBlockMidPrice34)
+    plusBlockLatePrice1 = convert_to_hex_weight(plusBlockLatePrice1)
+    plusBlockLatePrice2 = convert_to_hex_weight(plusBlockLatePrice2)
+    plusBlockLatePrice34 = convert_to_hex_weight(plusBlockLatePrice34)
+
+    # Minus Block: DX
+    minusBlockEarlyPrice1 = convert_to_hex_weight(minusBlockEarlyPrice1)
+    minusBlockEarlyPrice2 = convert_to_hex_weight(minusBlockEarlyPrice2)
+    minusBlockEarlyPrice34 = convert_to_hex_weight(minusBlockEarlyPrice34)
+    minusBlockMidPrice1 = convert_to_hex_weight(minusBlockMidPrice1)
+    minusBlockMidPrice2 = convert_to_hex_weight(minusBlockMidPrice2)
+    minusBlockMidPrice34 = convert_to_hex_weight(minusBlockMidPrice34)
+    minusBlockLatePrice1 = convert_to_hex_weight(minusBlockLatePrice1)
+    minusBlockLatePrice2 = convert_to_hex_weight(minusBlockLatePrice2)
+    minusBlockLatePrice34 = convert_to_hex_weight(minusBlockLatePrice34)
+
+    # Speed Block: DX
+    speedBlockEarlyPrice1 = convert_to_hex_weight(speedBlockEarlyPrice1)
+    speedBlockEarlyPrice2 = convert_to_hex_weight(speedBlockEarlyPrice2)
+    speedBlockEarlyPrice34 = convert_to_hex_weight(speedBlockEarlyPrice34)
+    speedBlockMidPrice1 = convert_to_hex_weight(speedBlockMidPrice1)
+    speedBlockMidPrice2 = convert_to_hex_weight(speedBlockMidPrice2)
+    speedBlockMidPrice34 = convert_to_hex_weight(speedBlockMidPrice34)
+    speedBlockLatePrice1 = convert_to_hex_weight(speedBlockLatePrice1)
+    speedBlockLatePrice2 = convert_to_hex_weight(speedBlockLatePrice2)
+    speedBlockLatePrice34 = convert_to_hex_weight(speedBlockLatePrice34)
+
+    # Slow Block: DX
+    slowBlockEarlyPrice1 = convert_to_hex_weight(slowBlockEarlyPrice1)
+    slowBlockEarlyPrice2 = convert_to_hex_weight(slowBlockEarlyPrice2)
+    slowBlockEarlyPrice34 = convert_to_hex_weight(slowBlockEarlyPrice34)
+    slowBlockMidPrice1 = convert_to_hex_weight(slowBlockMidPrice1)
+    slowBlockMidPrice2 = convert_to_hex_weight(slowBlockMidPrice2)
+    slowBlockMidPrice34 = convert_to_hex_weight(slowBlockMidPrice34)
+    slowBlockLatePrice1 = convert_to_hex_weight(slowBlockLatePrice1)
+    slowBlockLatePrice2 = convert_to_hex_weight(slowBlockLatePrice2)
+    slowBlockLatePrice34 = convert_to_hex_weight(slowBlockLatePrice34)
+
+    # Hidden Block Card: DX
+    hiddenBlockCardEarlyPrice1 = convert_to_hex_weight(hiddenBlockCardEarlyPrice1)
+    hiddenBlockCardEarlyPrice2 = convert_to_hex_weight(hiddenBlockCardEarlyPrice2)
+    hiddenBlockCardEarlyPrice34 = convert_to_hex_weight(hiddenBlockCardEarlyPrice34)
+    hiddenBlockCardMidPrice1 = convert_to_hex_weight(hiddenBlockCardMidPrice1)
+    hiddenBlockCardMidPrice2 = convert_to_hex_weight(hiddenBlockCardMidPrice2)
+    hiddenBlockCardMidPrice34 = convert_to_hex_weight(hiddenBlockCardMidPrice34)
+    hiddenBlockCardLatePrice1 = convert_to_hex_weight(hiddenBlockCardLatePrice1)
+    hiddenBlockCardLatePrice2 = convert_to_hex_weight(hiddenBlockCardLatePrice2)
+    hiddenBlockCardLatePrice34 = convert_to_hex_weight(hiddenBlockCardLatePrice34)
+
+    # Barter Box: DX
+    barterBoxEarlyPrice1 = convert_to_hex_weight(barterBoxEarlyPrice1)
+    barterBoxEarlyPrice2 = convert_to_hex_weight(barterBoxEarlyPrice2)
+    barterBoxEarlyPrice34 = convert_to_hex_weight(barterBoxEarlyPrice34)
+    barterBoxMidPrice1 = convert_to_hex_weight(barterBoxMidPrice1)
+    barterBoxMidPrice2 = convert_to_hex_weight(barterBoxMidPrice2)
+    barterBoxMidPrice34 = convert_to_hex_weight(barterBoxMidPrice34)
+    barterBoxLatePrice1 = convert_to_hex_weight(barterBoxLatePrice1)
+    barterBoxLatePrice2 = convert_to_hex_weight(barterBoxLatePrice2)
+    barterBoxLatePrice34 = convert_to_hex_weight(barterBoxLatePrice34)
+
+    # Super Warp Pipe: DX
+    superWarpPipeEarlyPrice1 = convert_to_hex_weight(superWarpPipeEarlyPrice1)
+    superWarpPipeEarlyPrice2 = convert_to_hex_weight(superWarpPipeEarlyPrice2)
+    superWarpPipeEarlyPrice34 = convert_to_hex_weight(superWarpPipeEarlyPrice34)
+    superWarpPipeMidPrice1 = convert_to_hex_weight(superWarpPipeMidPrice1)
+    superWarpPipeMidPrice2 = convert_to_hex_weight(superWarpPipeMidPrice2)
+    superWarpPipeMidPrice34 = convert_to_hex_weight(superWarpPipeMidPrice34)
+    superWarpPipeLatePrice1 = convert_to_hex_weight(superWarpPipeLatePrice1)
+    superWarpPipeLatePrice2 = convert_to_hex_weight(superWarpPipeLatePrice2)
+    superWarpPipeLatePrice34 = convert_to_hex_weight(superWarpPipeLatePrice34)
+
+    # Chance Time Charm: DX
+    chanceTimeCharmEarlyPrice1 = convert_to_hex_weight(chanceTimeCharmEarlyPrice1)
+    chanceTimeCharmEarlyPrice2 = convert_to_hex_weight(chanceTimeCharmEarlyPrice2)
+    chanceTimeCharmEarlyPrice34 = convert_to_hex_weight(chanceTimeCharmEarlyPrice34)
+    chanceTimeCharmMidPrice1 = convert_to_hex_weight(chanceTimeCharmMidPrice1)
+    chanceTimeCharmMidPrice2 = convert_to_hex_weight(chanceTimeCharmMidPrice2)
+    chanceTimeCharmMidPrice34 = convert_to_hex_weight(chanceTimeCharmMidPrice34)
+    chanceTimeCharmLatePrice1 = convert_to_hex_weight(chanceTimeCharmLatePrice1)
+    chanceTimeCharmLatePrice2 = convert_to_hex_weight(chanceTimeCharmLatePrice2)
+    chanceTimeCharmLatePrice34 = convert_to_hex_weight(chanceTimeCharmLatePrice34)
+
+    # Wacky Watch: DX
+    wackyWatchEarlyPrice1 = convert_to_hex_weight(wackyWatchEarlyPrice1)
+    wackyWatchEarlyPrice2 = convert_to_hex_weight(wackyWatchEarlyPrice2)
+    wackyWatchEarlyPrice34 = convert_to_hex_weight(wackyWatchEarlyPrice34)
+    wackyWatchMidPrice1 = convert_to_hex_weight(wackyWatchMidPrice1)
+    wackyWatchMidPrice2 = convert_to_hex_weight(wackyWatchMidPrice2)
+    wackyWatchMidPrice34 = convert_to_hex_weight(wackyWatchMidPrice34)
+    wackyWatchLatePrice1 = convert_to_hex_weight(wackyWatchLatePrice1)
+    wackyWatchLatePrice2 = convert_to_hex_weight(wackyWatchLatePrice2)
+    wackyWatchLatePrice34 = convert_to_hex_weight(wackyWatchLatePrice34)
+
+    # Bowser Phone: DX
+    bowserPhoneEarlyPrice1 = convert_to_hex_weight(bowserPhoneEarlyPrice1)
+    bowserPhoneEarlyPrice2 = convert_to_hex_weight(bowserPhoneEarlyPrice2)
+    bowserPhoneEarlyPrice34 = convert_to_hex_weight(bowserPhoneEarlyPrice34)
+    bowserPhoneMidPrice1 = convert_to_hex_weight(bowserPhoneMidPrice1)
+    bowserPhoneMidPrice2 = convert_to_hex_weight(bowserPhoneMidPrice2)
+    bowserPhoneMidPrice34 = convert_to_hex_weight(bowserPhoneMidPrice34)
+    bowserPhoneLatePrice1 = convert_to_hex_weight(bowserPhoneLatePrice1)
+    bowserPhoneLatePrice2 = convert_to_hex_weight(bowserPhoneLatePrice2)
+    bowserPhoneLatePrice34 = convert_to_hex_weight(bowserPhoneLatePrice34)
+
+    minCoins = convert_to_hex_weight(minCoins)
+
+    generatedCode = getItemShopPricesFourDX(minCoins, miniMushroomEarlyPrice1, miniMushroomEarlyPrice2, miniMushroomEarlyPrice34, miniMushroomMidPrice1, miniMushroomMidPrice2, miniMushroomMidPrice34, miniMushroomLatePrice1, miniMushroomLatePrice2, miniMushroomLatePrice34, megaMushroomEarlyPrice1, megaMushroomEarlyPrice2, megaMushroomEarlyPrice34, megaMushroomMidPrice1, megaMushroomMidPrice2, megaMushroomMidPrice34, megaMushroomLatePrice1, megaMushroomLatePrice2, megaMushroomLatePrice34, superMiniMushroomEarlyPrice1, superMiniMushroomEarlyPrice2, superMiniMushroomEarlyPrice34, superMiniMushroomMidPrice1, superMiniMushroomMidPrice2, superMiniMushroomMidPrice34, superMiniMushroomLatePrice1, superMiniMushroomLatePrice2, superMiniMushroomLatePrice34, superMegaMushroomEarlyPrice1, superMegaMushroomEarlyPrice2, superMegaMushroomEarlyPrice34, superMegaMushroomMidPrice1, superMegaMushroomMidPrice2, superMegaMushroomMidPrice34, superMegaMushroomLatePrice1, superMegaMushroomLatePrice2, superMegaMushroomLatePrice34, miniMegaHammerEarlyPrice1, miniMegaHammerEarlyPrice2, miniMegaHammerEarlyPrice34, miniMegaHammerMidPrice1, miniMegaHammerMidPrice2, miniMegaHammerMidPrice34, miniMegaHammerLatePrice1, miniMegaHammerLatePrice2, miniMegaHammerLatePrice34, warpPipeEarlyPrice1, warpPipeEarlyPrice2, warpPipeEarlyPrice34, warpPipeMidPrice1, warpPipeMidPrice2, warpPipeMidPrice34, warpPipeLatePrice1, warpPipeLatePrice2, warpPipeLatePrice34, swapCardEarlyPrice1, swapCardEarlyPrice2, swapCardEarlyPrice34, swapCardMidPrice1, swapCardMidPrice2, swapCardMidPrice34, swapCardLatePrice1, swapCardLatePrice2, swapCardLatePrice34, sparkyStickerEarlyPrice1, sparkyStickerEarlyPrice2, sparkyStickerEarlyPrice34, sparkyStickerMidPrice1, sparkyStickerMidPrice2, sparkyStickerMidPrice34, sparkyStickerLatePrice1, sparkyStickerLatePrice2, sparkyStickerLatePrice34, gaddlightEarlyPrice1, gaddlightEarlyPrice2, gaddlightEarlyPrice34, gaddlightMidPrice1, gaddlightMidPrice2, gaddlightMidPrice34, gaddlightLatePrice1, gaddlightLatePrice2, gaddlightLatePrice34, chompCallEarlyPrice1, chompCallEarlyPrice2, chompCallEarlyPrice34, chompCallMidPrice1, chompCallMidPrice2, chompCallMidPrice34, chompCallLatePrice1, chompCallLatePrice2, chompCallLatePrice34, bowserSuitEarlyPrice1, bowserSuitEarlyPrice2, bowserSuitEarlyPrice34, bowserSuitMidPrice1, bowserSuitMidPrice2, bowserSuitMidPrice34, bowserSuitLatePrice1, bowserSuitLatePrice2, bowserSuitLatePrice34, crystalBallEarlyPrice1, crystalBallEarlyPrice2, crystalBallEarlyPrice34, crystalBallMidPrice1, crystalBallMidPrice2, crystalBallMidPrice34, crystalBallLatePrice1, crystalBallLatePrice2, crystalBallLatePrice34, magicLampEarlyPrice1, magicLampEarlyPrice2, magicLampEarlyPrice34, magicLampMidPrice1, magicLampMidPrice2, magicLampMidPrice34, magicLampLatePrice1, magicLampLatePrice2, magicLampLatePrice34, itemBagEarlyPrice1, itemBagEarlyPrice2, itemBagEarlyPrice34, itemBagMidPrice1, itemBagMidPrice2, itemBagMidPrice34, itemBagLatePrice1, itemBagLatePrice2, itemBagLatePrice34, mushroomEarlyPrice1, mushroomEarlyPrice2, mushroomEarlyPrice34, mushroomMidPrice1, mushroomMidPrice2, mushroomMidPrice34, mushroomLatePrice1, mushroomLatePrice2, mushroomLatePrice34, goldenMushroomEarlyPrice1, goldenMushroomEarlyPrice2, goldenMushroomEarlyPrice34, goldenMushroomMidPrice1, goldenMushroomMidPrice2, goldenMushroomMidPrice34, goldenMushroomLatePrice1, goldenMushroomLatePrice2, goldenMushroomLatePrice34, reverseMushroomEarlyPrice1, reverseMushroomEarlyPrice2, reverseMushroomEarlyPrice34, reverseMushroomMidPrice1, reverseMushroomMidPrice2, reverseMushroomMidPrice34, reverseMushroomLatePrice1, reverseMushroomLatePrice2, reverseMushroomLatePrice34, poisonMushroomEarlyPrice1, poisonMushroomEarlyPrice2, poisonMushroomEarlyPrice34, poisonMushroomMidPrice1, poisonMushroomMidPrice2, poisonMushroomMidPrice34, poisonMushroomLatePrice1, poisonMushroomLatePrice2, poisonMushroomLatePrice34, triplePoisonMushroomEarlyPrice1, triplePoisonMushroomEarlyPrice2, triplePoisonMushroomEarlyPrice34, triplePoisonMushroomMidPrice1, triplePoisonMushroomMidPrice2, triplePoisonMushroomMidPrice34, triplePoisonMushroomLatePrice1, triplePoisonMushroomLatePrice2, triplePoisonMushroomLatePrice34, celluarShopperEarlyPrice1, celluarShopperEarlyPrice2, celluarShopperEarlyPrice34, celluarShopperMidPrice1, celluarShopperMidPrice2, celluarShopperMidPrice34, celluarShopperLatePrice1, celluarShopperLatePrice2, celluarShopperLatePrice34, skeletonKeyEarlyPrice1, skeletonKeyEarlyPrice2, skeletonKeyEarlyPrice34, skeletonKeyMidPrice1, skeletonKeyMidPrice2, skeletonKeyMidPrice34, skeletonKeyLatePrice1, skeletonKeyLatePrice2, skeletonKeyLatePrice34, plunderChestEarlyPrice1, plunderChestEarlyPrice2, plunderChestEarlyPrice34, plunderChestMidPrice1, plunderChestMidPrice2, plunderChestMidPrice34, plunderChestLatePrice1, plunderChestLatePrice2, plunderChestLatePrice34, gaddbrushEarlyPrice1, gaddbrushEarlyPrice2, gaddbrushEarlyPrice34, gaddbrushMidPrice1, gaddbrushMidPrice2, gaddbrushMidPrice34, gaddbrushLatePrice1, gaddbrushLatePrice2, gaddbrushLatePrice34, warpBlockEarlyPrice1, warpBlockEarlyPrice2, warpBlockEarlyPrice34, warpBlockMidPrice1, warpBlockMidPrice2, warpBlockMidPrice34, warpBlockLatePrice1, warpBlockLatePrice2, warpBlockLatePrice34, flyGuyEarlyPrice1, flyGuyEarlyPrice2, flyGuyEarlyPrice34, flyGuyMidPrice1, flyGuyMidPrice2, flyGuyMidPrice34, flyGuyLatePrice1, flyGuyLatePrice2, flyGuyLatePrice34, plusBlockEarlyPrice1, plusBlockEarlyPrice2, plusBlockEarlyPrice34, plusBlockMidPrice1, plusBlockMidPrice2, plusBlockMidPrice34, plusBlockLatePrice1, plusBlockLatePrice2, plusBlockLatePrice34, minusBlockEarlyPrice1, minusBlockEarlyPrice2, minusBlockEarlyPrice34, minusBlockMidPrice1, minusBlockMidPrice2, minusBlockMidPrice34, minusBlockLatePrice1, minusBlockLatePrice2, minusBlockLatePrice34, speedBlockEarlyPrice1, speedBlockEarlyPrice2, speedBlockEarlyPrice34, speedBlockMidPrice1, speedBlockMidPrice2, speedBlockMidPrice34, speedBlockLatePrice1, speedBlockLatePrice2, speedBlockLatePrice34, slowBlockEarlyPrice1, slowBlockEarlyPrice2, slowBlockEarlyPrice34, slowBlockMidPrice1, slowBlockMidPrice2, slowBlockMidPrice34, slowBlockLatePrice1, slowBlockLatePrice2, slowBlockLatePrice34, bowserPhoneEarlyPrice1, bowserPhoneEarlyPrice2, bowserPhoneEarlyPrice34, bowserPhoneMidPrice1, bowserPhoneMidPrice2, bowserPhoneMidPrice34, bowserPhoneLatePrice1, bowserPhoneLatePrice2, bowserPhoneLatePrice34, doubleDipEarlyPrice1, doubleDipEarlyPrice2, doubleDipEarlyPrice34, doubleDipMidPrice1, doubleDipMidPrice2, doubleDipMidPrice34, doubleDipLatePrice1, doubleDipLatePrice2, doubleDipLatePrice34, hiddenBlockCardEarlyPrice1, hiddenBlockCardEarlyPrice2, hiddenBlockCardEarlyPrice34, hiddenBlockCardMidPrice1, hiddenBlockCardMidPrice2, hiddenBlockCardMidPrice34, hiddenBlockCardLatePrice1, hiddenBlockCardLatePrice2, hiddenBlockCardLatePrice34, barterBoxEarlyPrice1, barterBoxEarlyPrice2, barterBoxEarlyPrice34, barterBoxMidPrice1, barterBoxMidPrice2, barterBoxMidPrice34, barterBoxLatePrice1, barterBoxLatePrice2, barterBoxLatePrice34, superWarpPipeEarlyPrice1, superWarpPipeEarlyPrice2, superWarpPipeEarlyPrice34, superWarpPipeMidPrice1, superWarpPipeMidPrice2, superWarpPipeMidPrice34, superWarpPipeLatePrice1, superWarpPipeLatePrice2, superWarpPipeLatePrice34, chanceTimeCharmEarlyPrice1, chanceTimeCharmEarlyPrice2, chanceTimeCharmEarlyPrice34, chanceTimeCharmMidPrice1, chanceTimeCharmMidPrice2, chanceTimeCharmMidPrice34, chanceTimeCharmLatePrice1, chanceTimeCharmLatePrice2, chanceTimeCharmLatePrice34, wackyWatchEarlyPrice1, wackyWatchEarlyPrice2, wackyWatchEarlyPrice34, wackyWatchMidPrice1, wackyWatchMidPrice2, wackyWatchMidPrice34, wackyWatchLatePrice1, wackyWatchLatePrice2, wackyWatchLatePrice34)
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)
 
