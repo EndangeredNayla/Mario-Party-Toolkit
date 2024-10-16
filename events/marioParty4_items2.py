@@ -1038,7 +1038,7 @@ def itemsEvent_mp4ShopOddsDX(miniMushroomEarlyOdds1 = "0", miniMushroomEarlyOdds
     gaddbrushLateOdds2 = calculateWeight(gaddbrushLateOdds2, lateOdds2Weights)
     gaddbrushLateOdds34 = calculateWeight(gaddbrushLateOdds34, lateOdds34Weights)
 
-    # DoubleDip: DX
+    # Double Dip: DX
     doubleDipEarlyOdds1 = calculateWeight(doubleDipEarlyOdds1, earlyOdds1Weights)
     doubleDipEarlyOdds2 = calculateWeight(doubleDipEarlyOdds2, earlyOdds2Weights)
     doubleDipEarlyOdds34 = calculateWeight(doubleDipEarlyOdds34, earlyOdds34Weights)
@@ -1048,6 +1048,138 @@ def itemsEvent_mp4ShopOddsDX(miniMushroomEarlyOdds1 = "0", miniMushroomEarlyOdds
     doubleDipLateOdds1 = calculateWeight(doubleDipLateOdds1, lateOdds1Weights)
     doubleDipLateOdds2 = calculateWeight(doubleDipLateOdds2, lateOdds2Weights)
     doubleDipLateOdds34 = calculateWeight(poisonMushroomLateOdds34, lateOdds34Weights)
+
+    # Bowser Phone
+    bowserPhoneEarlyOdds1 = calculateWeight(bowserPhoneEarlyOdds1, earlyOdds1Weights)
+    bowserPhoneEarlyOdds2 = calculateWeight(bowserPhoneEarlyOdds2, earlyOdds2Weights)
+    bowserPhoneEarlyOdds34 = calculateWeight(bowserPhoneEarlyOdds34, earlyOdds34Weights)
+    bowserPhoneMidOdds1 = calculateWeight(bowserPhoneMidOdds1, midOdds1Weights)
+    bowserPhoneMidOdds2 = calculateWeight(bowserPhoneMidOdds2, midOdds2Weights)
+    bowserPhoneMidOdds34 = calculateWeight(bowserPhoneMidOdds34, midOdds34Weights)
+    bowserPhoneLateOdds1 = calculateWeight(bowserPhoneLateOdds1, lateOdds1Weights)
+    bowserPhoneLateOdds2 = calculateWeight(bowserPhoneLateOdds2, lateOdds2Weights)
+    bowserPhoneLateOdds34 = calculateWeight(bowserPhoneLateOdds34, lateOdds34Weights)
+
+    # Hidden Block Card
+    hiddenBlockCardEarlyOdds1 = calculateWeight(hiddenBlockCardEarlyOdds1, earlyOdds1Weights)
+    hiddenBlockCardEarlyOdds2 = calculateWeight(hiddenBlockCardEarlyOdds2, earlyOdds2Weights)
+    hiddenBlockCardEarlyOdds34 = calculateWeight(hiddenBlockCardEarlyOdds34, earlyOdds34Weights)
+    hiddenBlockCardMidOdds1 = calculateWeight(hiddenBlockCardMidOdds1, midOdds1Weights)
+    hiddenBlockCardMidOdds2 = calculateWeight(hiddenBlockCardMidOdds2, midOdds2Weights)
+    hiddenBlockCardMidOdds34 = calculateWeight(hiddenBlockCardMidOdds34, midOdds34Weights)
+    hiddenBlockCardLateOdds1 = calculateWeight(hiddenBlockCardLateOdds1, lateOdds1Weights)
+    hiddenBlockCardLateOdds2 = calculateWeight(hiddenBlockCardLateOdds2, lateOdds2Weights)
+    hiddenBlockCardLateOdds34 = calculateWeight(hiddenBlockCardLateOdds34, lateOdds34Weights)
+
+    # Barter Box
+    barterBoxEarlyOdds1 = calculateWeight(barterBoxEarlyOdds1, earlyOdds1Weights)
+    barterBoxEarlyOdds2 = calculateWeight(barterBoxEarlyOdds2, earlyOdds2Weights)
+    barterBoxEarlyOdds34 = calculateWeight(barterBoxEarlyOdds34, earlyOdds34Weights)
+    barterBoxMidOdds1 = calculateWeight(barterBoxMidOdds1, midOdds1Weights)
+    barterBoxMidOdds2 = calculateWeight(barterBoxMidOdds2, midOdds2Weights)
+    barterBoxMidOdds34 = calculateWeight(barterBoxMidOdds34, midOdds34Weights)
+    barterBoxLateOdds1 = calculateWeight(barterBoxLateOdds1, lateOdds1Weights)
+    barterBoxLateOdds2 = calculateWeight(barterBoxLateOdds2, lateOdds2Weights)
+    barterBoxLateOdds34 = calculateWeight(barterBoxLateOdds34, lateOdds34Weights)
+
+    # Super Warp Pipe
+    superWarpPipeEarlyOdds1 = calculateWeight(superWarpPipeEarlyOdds1, earlyOdds1Weights)
+    superWarpPipeEarlyOdds2 = calculateWeight(superWarpPipeEarlyOdds2, earlyOdds2Weights)
+    superWarpPipeEarlyOdds34 = calculateWeight(superWarpPipeEarlyOdds34, earlyOdds34Weights)
+    superWarpPipeMidOdds1 = calculateWeight(superWarpPipeMidOdds1, midOdds1Weights)
+    superWarpPipeMidOdds2 = calculateWeight(superWarpPipeMidOdds2, midOdds2Weights)
+    superWarpPipeMidOdds34 = calculateWeight(superWarpPipeMidOdds34, midOdds34Weights)
+    superWarpPipeLateOdds1 = calculateWeight(superWarpPipeLateOdds1, lateOdds1Weights)
+    superWarpPipeLateOdds2 = calculateWeight(superWarpPipeLateOdds2, lateOdds2Weights)
+    superWarpPipeLateOdds34 = calculateWeight(superWarpPipeLateOdds34, lateOdds34Weights)
+
+    # Chance Time Charm
+    chanceTimeCharmEarlyOdds1 = calculateWeight(chanceTimeCharmEarlyOdds1, earlyOdds1Weights)
+    chanceTimeCharmEarlyOdds2 = calculateWeight(chanceTimeCharmEarlyOdds2, earlyOdds2Weights)
+    chanceTimeCharmEarlyOdds34 = calculateWeight(chanceTimeCharmEarlyOdds34, earlyOdds34Weights)
+    chanceTimeCharmMidOdds1 = calculateWeight(chanceTimeCharmMidOdds1, midOdds1Weights)
+    chanceTimeCharmMidOdds2 = calculateWeight(chanceTimeCharmMidOdds2, midOdds2Weights)
+    chanceTimeCharmMidOdds34 = calculateWeight(chanceTimeCharmMidOdds34, midOdds34Weights)
+    chanceTimeCharmLateOdds1 = calculateWeight(chanceTimeCharmLateOdds1, lateOdds1Weights)
+    chanceTimeCharmLateOdds2 = calculateWeight(chanceTimeCharmLateOdds2, lateOdds2Weights)
+    chanceTimeCharmLateOdds34 = calculateWeight(chanceTimeCharmLateOdds34, lateOdds34Weights)
+
+    # Wacky Watch
+    wackyWatchEarlyOdds1 = calculateWeight(wackyWatchEarlyOdds1, earlyOdds1Weights)
+    wackyWatchEarlyOdds2 = calculateWeight(wackyWatchEarlyOdds2, earlyOdds2Weights)
+    wackyWatchEarlyOdds34 = calculateWeight(wackyWatchEarlyOdds34, earlyOdds34Weights)
+    wackyWatchMidOdds1 = calculateWeight(wackyWatchMidOdds1, midOdds1Weights)
+    wackyWatchMidOdds2 = calculateWeight(wackyWatchMidOdds2, midOdds2Weights)
+    wackyWatchMidOdds34 = calculateWeight(wackyWatchMidOdds34, midOdds34Weights)
+    wackyWatchLateOdds1 = calculateWeight(wackyWatchLateOdds1, lateOdds1Weights)
+    wackyWatchLateOdds2 = calculateWeight(wackyWatchLateOdds2, lateOdds2Weights)
+    wackyWatchLateOdds34 = calculateWeight(wackyWatchLateOdds34, lateOdds34Weights)
+
+    # Warp Block
+    warpBlockEarlyOdds1 = calculateWeight(warpBlockEarlyOdds1, earlyOdds1Weights)
+    warpBlockEarlyOdds2 = calculateWeight(warpBlockEarlyOdds2, earlyOdds2Weights)
+    warpBlockEarlyOdds34 = calculateWeight(warpBlockEarlyOdds34, earlyOdds34Weights)
+    warpBlockMidOdds1 = calculateWeight(warpBlockMidOdds1, midOdds1Weights)
+    warpBlockMidOdds2 = calculateWeight(warpBlockMidOdds2, midOdds2Weights)
+    warpBlockMidOdds34 = calculateWeight(warpBlockMidOdds34, midOdds34Weights)
+    warpBlockLateOdds1 = calculateWeight(warpBlockLateOdds1, lateOdds1Weights)
+    warpBlockLateOdds2 = calculateWeight(warpBlockLateOdds2, lateOdds2Weights)
+    warpBlockLateOdds34 = calculateWeight(warpBlockLateOdds34, lateOdds34Weights)
+
+    # Fly Guy
+    flyGuyEarlyOdds1 = calculateWeight(flyGuyEarlyOdds1, earlyOdds1Weights)
+    flyGuyEarlyOdds2 = calculateWeight(flyGuyEarlyOdds2, earlyOdds2Weights)
+    flyGuyEarlyOdds34 = calculateWeight(flyGuyEarlyOdds34, earlyOdds34Weights)
+    flyGuyMidOdds1 = calculateWeight(flyGuyMidOdds1, midOdds1Weights)
+    flyGuyMidOdds2 = calculateWeight(flyGuyMidOdds2, midOdds2Weights)
+    flyGuyMidOdds34 = calculateWeight(flyGuyMidOdds34, midOdds34Weights)
+    flyGuyLateOdds1 = calculateWeight(flyGuyLateOdds1, lateOdds1Weights)
+    flyGuyLateOdds2 = calculateWeight(flyGuyLateOdds2, lateOdds2Weights)
+    flyGuyLateOdds34 = calculateWeight(flyGuyLateOdds34, lateOdds34Weights)
+
+    # Plus Block
+    plusBlockEarlyOdds1 = calculateWeight(plusBlockEarlyOdds1, earlyOdds1Weights)
+    plusBlockEarlyOdds2 = calculateWeight(plusBlockEarlyOdds2, earlyOdds2Weights)
+    plusBlockEarlyOdds34 = calculateWeight(plusBlockEarlyOdds34, earlyOdds34Weights)
+    plusBlockMidOdds1 = calculateWeight(plusBlockMidOdds1, midOdds1Weights)
+    plusBlockMidOdds2 = calculateWeight(plusBlockMidOdds2, midOdds2Weights)
+    plusBlockMidOdds34 = calculateWeight(plusBlockMidOdds34, midOdds34Weights)
+    plusBlockLateOdds1 = calculateWeight(plusBlockLateOdds1, lateOdds1Weights)
+    plusBlockLateOdds2 = calculateWeight(plusBlockLateOdds2, lateOdds2Weights)
+    plusBlockLateOdds34 = calculateWeight(plusBlockLateOdds34, lateOdds34Weights)
+
+    # Minus Block
+    minusBlockEarlyOdds1 = calculateWeight(minusBlockEarlyOdds1, earlyOdds1Weights)
+    minusBlockEarlyOdds2 = calculateWeight(minusBlockEarlyOdds2, earlyOdds2Weights)
+    minusBlockEarlyOdds34 = calculateWeight(minusBlockEarlyOdds34, earlyOdds34Weights)
+    minusBlockMidOdds1 = calculateWeight(minusBlockMidOdds1, midOdds1Weights)
+    minusBlockMidOdds2 = calculateWeight(minusBlockMidOdds2, midOdds2Weights)
+    minusBlockMidOdds34 = calculateWeight(minusBlockMidOdds34, midOdds34Weights)
+    minusBlockLateOdds1 = calculateWeight(minusBlockLateOdds1, lateOdds1Weights)
+    minusBlockLateOdds2 = calculateWeight(minusBlockLateOdds2, lateOdds2Weights)
+    minusBlockLateOdds34 = calculateWeight(minusBlockLateOdds34, lateOdds34Weights)
+
+    # Speed Block
+    speedBlockEarlyOdds1 = calculateWeight(speedBlockEarlyOdds1, earlyOdds1Weights)
+    speedBlockEarlyOdds2 = calculateWeight(speedBlockEarlyOdds2, earlyOdds2Weights)
+    speedBlockEarlyOdds34 = calculateWeight(speedBlockEarlyOdds34, earlyOdds34Weights)
+    speedBlockMidOdds1 = calculateWeight(speedBlockMidOdds1, midOdds1Weights)
+    speedBlockMidOdds2 = calculateWeight(speedBlockMidOdds2, midOdds2Weights)
+    speedBlockMidOdds34 = calculateWeight(speedBlockMidOdds34, midOdds34Weights)
+    speedBlockLateOdds1 = calculateWeight(speedBlockLateOdds1, lateOdds1Weights)
+    speedBlockLateOdds2 = calculateWeight(speedBlockLateOdds2, lateOdds2Weights)
+    speedBlockLateOdds34 = calculateWeight(speedBlockLateOdds34, lateOdds34Weights)
+
+    # Slow Block
+    slowBlockEarlyOdds1 = calculateWeight(slowBlockEarlyOdds1, earlyOdds1Weights)
+    slowBlockEarlyOdds2 = calculateWeight(slowBlockEarlyOdds2, earlyOdds2Weights)
+    slowBlockEarlyOdds34 = calculateWeight(slowBlockEarlyOdds34, earlyOdds34Weights)
+    slowBlockMidOdds1 = calculateWeight(slowBlockMidOdds1, midOdds1Weights)
+    slowBlockMidOdds2 = calculateWeight(slowBlockMidOdds2, midOdds2Weights)
+    slowBlockMidOdds34 = calculateWeight(slowBlockMidOdds34, midOdds34Weights)
+    slowBlockLateOdds1 = calculateWeight(slowBlockLateOdds1, lateOdds1Weights)
+    slowBlockLateOdds2 = calculateWeight(slowBlockLateOdds2, lateOdds2Weights)
+    slowBlockLateOdds34 = calculateWeight(slowBlockLateOdds34, lateOdds34Weights)
 
     earlyOdds1 = [
         miniMushroomEarlyOdds1,
@@ -1087,7 +1219,7 @@ def itemsEvent_mp4ShopOddsDX(miniMushroomEarlyOdds1 = "0", miniMushroomEarlyOdds
         chanceTimeCharmEarlyOdds1,
         wackyWatchEarlyOdds1,
     ]
-    
+
     earlyOdds2 = [
         miniMushroomEarlyOdds2,
         megaMushroomEarlyOdds2,
@@ -2116,7 +2248,29 @@ def itemsEvent_mp4ShopOddsDX(miniMushroomEarlyOdds1 = "0", miniMushroomEarlyOdds
         wackyWatchLateOdds2 += (100 - wackyWatchLateOdds2)
     if lateOdds34Max == 'wackyWatchLateOdds34':
         wackyWatchLateOdds34 += (100 - wackyWatchLateOdds34)
-    
+
+
+    # Double Dip: DX
+    if earlyOdds1Max == 'doubleDipEarlyOdds1':
+        doubleDipEarlyOdds1 += (100 - doubleDipEarlyOdds1)
+    if earlyOdds2Max == 'doubleDipEarlyOdds2':
+        doubleDipEarlyOdds2 += (100 - doubleDipEarlyOdds2)
+    if earlyOdds34Max == 'doubleDipEarlyOdds34':
+        doubleDipEarlyOdds34 += (100 - doubleDipEarlyOdds34)
+    if midOdds1Max == 'doubleDipMidOdds1':
+        doubleDipMidOdds1 += (100 - doubleDipMidOdds1)
+    if midOdds2Max == 'doubleDipMidOdds2':
+        doubleDipMidOdds2 += (100 - doubleDipMidOdds2)
+    if midOdds34Max == 'doubleDipMidOdds34':
+        doubleDipMidOdds34 += (100 - doubleDipMidOdds34)
+    if lateOdds1Max == 'doubleDipLateOdds1':
+        doubleDipLateOdds1 += (100 - doubleDipLateOdds1)
+    if lateOdds2Max == 'doubleDipLateOdds2':
+        doubleDipLateOdds2 += (100 - doubleDipLateOdds2)
+    if lateOdds34Max == 'doubleDipLateOdds34':
+        doubleDipLateOdds34 += (100 - doubleDipLateOdds34)
+
+
     # Mini Mushroom
     miniMushroomEarlyOdds1 = str(miniMushroomEarlyOdds1)
     miniMushroomEarlyOdds2 = str(miniMushroomEarlyOdds2)
@@ -2491,16 +2645,16 @@ def itemsEvent_mp4ShopOddsDX(miniMushroomEarlyOdds1 = "0", miniMushroomEarlyOdds
     wackyWatchLateOdds2 = str(wackyWatchLateOdds2)
     wackyWatchLateOdds34 = str(wackyWatchLateOdds34)
 
-    # Bowser Phone: DX
-    bowserPhoneEarlyOdds1 = str(bowserPhoneEarlyOdds1)
-    bowserPhoneEarlyOdds2 = str(bowserPhoneEarlyOdds2)
-    bowserPhoneEarlyOdds34 = str(bowserPhoneEarlyOdds34)
-    bowserPhoneMidOdds1 = str(bowserPhoneMidOdds1)
-    bowserPhoneMidOdds2 = str(bowserPhoneMidOdds2)
-    bowserPhoneMidOdds34 = str(bowserPhoneMidOdds34)
-    bowserPhoneLateOdds1 = str(bowserPhoneLateOdds1)
-    bowserPhoneLateOdds2 = str(bowserPhoneLateOdds2)
-    bowserPhoneLateOdds34 = str(bowserPhoneLateOdds34)
+    # Double Dip: DX
+    doubleDipEarlyOdds1 = str(doubleDipEarlyOdds1)
+    doubleDipEarlyOdds2 = str(doubleDipEarlyOdds2)
+    doubleDipEarlyOdds34 = str(doubleDipEarlyOdds34)
+    doubleDipMidOdds1 = str(doubleDipMidOdds1)
+    doubleDipMidOdds2 = str(doubleDipMidOdds2)
+    doubleDipMidOdds34 = str(doubleDipMidOdds34)
+    doubleDipLateOdds1 = str(doubleDipLateOdds1)
+    doubleDipLateOdds2 = str(doubleDipLateOdds2)
+    doubleDipLateOdds34 = str(doubleDipLateOdds34)
 
 
     def convert_to_hex_weight(weight):
@@ -2900,6 +3054,17 @@ def itemsEvent_mp4ShopOddsDX(miniMushroomEarlyOdds1 = "0", miniMushroomEarlyOdds
     bowserPhoneLateOdds2 = convert_to_hex_weight(bowserPhoneLateOdds2)
     bowserPhoneLateOdds34 = convert_to_hex_weight(bowserPhoneLateOdds34)
 
+    # Double Dip: DX
+    doubleDipEarlyOdds1 = convert_to_hex_weight(doubleDipEarlyOdds1)
+    doubleDipEarlyOdds2 = convert_to_hex_weight(doubleDipEarlyOdds2)
+    doubleDipEarlyOdds34 = convert_to_hex_weight(doubleDipEarlyOdds34)
+    doubleDipMidOdds1 = convert_to_hex_weight(doubleDipMidOdds1)
+    doubleDipMidOdds2 = convert_to_hex_weight(doubleDipMidOdds2)
+    doubleDipMidOdds34 = convert_to_hex_weight(doubleDipMidOdds34)
+    doubleDipLateOdds1 = convert_to_hex_weight(doubleDipLateOdds1)
+    doubleDipLateOdds2 = convert_to_hex_weight(doubleDipLateOdds2)
+    doubleDipLateOdds34 = convert_to_hex_weight(doubleDipLateOdds34)
+    
     generatedCode = getItemShopOddsFourDX(miniMushroomEarlyOdds1, miniMushroomEarlyOdds2, miniMushroomEarlyOdds34, miniMushroomMidOdds1, miniMushroomMidOdds2, miniMushroomMidOdds34, miniMushroomLateOdds1, miniMushroomLateOdds2, miniMushroomLateOdds34, megaMushroomEarlyOdds1, megaMushroomEarlyOdds2, megaMushroomEarlyOdds34, megaMushroomMidOdds1, megaMushroomMidOdds2, megaMushroomMidOdds34, megaMushroomLateOdds1, megaMushroomLateOdds2, megaMushroomLateOdds34, superMiniMushroomEarlyOdds1, superMiniMushroomEarlyOdds2, superMiniMushroomEarlyOdds34, superMiniMushroomMidOdds1, superMiniMushroomMidOdds2, superMiniMushroomMidOdds34, superMiniMushroomLateOdds1, superMiniMushroomLateOdds2, superMiniMushroomLateOdds34, superMegaMushroomEarlyOdds1, superMegaMushroomEarlyOdds2, superMegaMushroomEarlyOdds34, superMegaMushroomMidOdds1, superMegaMushroomMidOdds2, superMegaMushroomMidOdds34, superMegaMushroomLateOdds1, superMegaMushroomLateOdds2, superMegaMushroomLateOdds34, miniMegaHammerEarlyOdds1, miniMegaHammerEarlyOdds2, miniMegaHammerEarlyOdds34, miniMegaHammerMidOdds1, miniMegaHammerMidOdds2, miniMegaHammerMidOdds34, miniMegaHammerLateOdds1, miniMegaHammerLateOdds2, miniMegaHammerLateOdds34, warpPipeEarlyOdds1, warpPipeEarlyOdds2, warpPipeEarlyOdds34, warpPipeMidOdds1, warpPipeMidOdds2, warpPipeMidOdds34, warpPipeLateOdds1, warpPipeLateOdds2, warpPipeLateOdds34, swapCardEarlyOdds1, swapCardEarlyOdds2, swapCardEarlyOdds34, swapCardMidOdds1, swapCardMidOdds2, swapCardMidOdds34, swapCardLateOdds1, swapCardLateOdds2, swapCardLateOdds34, sparkyStickerEarlyOdds1, sparkyStickerEarlyOdds2, sparkyStickerEarlyOdds34, sparkyStickerMidOdds1, sparkyStickerMidOdds2, sparkyStickerMidOdds34, sparkyStickerLateOdds1, sparkyStickerLateOdds2, sparkyStickerLateOdds34, gaddlightEarlyOdds1, gaddlightEarlyOdds2, gaddlightEarlyOdds34, gaddlightMidOdds1, gaddlightMidOdds2, gaddlightMidOdds34, gaddlightLateOdds1, gaddlightLateOdds2, gaddlightLateOdds34, chompCallEarlyOdds1, chompCallEarlyOdds2, chompCallEarlyOdds34, chompCallMidOdds1, chompCallMidOdds2, chompCallMidOdds34, chompCallLateOdds1, chompCallLateOdds2, chompCallLateOdds34, bowserSuitEarlyOdds1, bowserSuitEarlyOdds2, bowserSuitEarlyOdds34, bowserSuitMidOdds1, bowserSuitMidOdds2, bowserSuitMidOdds34, bowserSuitLateOdds1, bowserSuitLateOdds2, bowserSuitLateOdds34, crystalBallEarlyOdds1, crystalBallEarlyOdds2, crystalBallEarlyOdds34, crystalBallMidOdds1, crystalBallMidOdds2, crystalBallMidOdds34, crystalBallLateOdds1, crystalBallLateOdds2, crystalBallLateOdds34, magicLampEarlyOdds1, magicLampEarlyOdds2, magicLampEarlyOdds34, magicLampMidOdds1, magicLampMidOdds2, magicLampMidOdds34, magicLampLateOdds1, magicLampLateOdds2, magicLampLateOdds34, itemBagEarlyOdds1, itemBagEarlyOdds2, itemBagEarlyOdds34, itemBagMidOdds1, itemBagMidOdds2, itemBagMidOdds34, itemBagLateOdds1, itemBagLateOdds2, itemBagLateOdds34, mushroomEarlyOdds1, mushroomEarlyOdds2, mushroomEarlyOdds34, mushroomMidOdds1, mushroomMidOdds2, mushroomMidOdds34, mushroomLateOdds1, mushroomLateOdds2, mushroomLateOdds34, goldenMushroomEarlyOdds1, goldenMushroomEarlyOdds2, goldenMushroomEarlyOdds34, goldenMushroomMidOdds1, goldenMushroomMidOdds2, goldenMushroomMidOdds34, goldenMushroomLateOdds1, goldenMushroomLateOdds2, goldenMushroomLateOdds34, reverseMushroomEarlyOdds1, reverseMushroomEarlyOdds2, reverseMushroomEarlyOdds34, reverseMushroomMidOdds1, reverseMushroomMidOdds2, reverseMushroomMidOdds34, reverseMushroomLateOdds1, reverseMushroomLateOdds2, reverseMushroomLateOdds34, poisonMushroomEarlyOdds1, poisonMushroomEarlyOdds2, poisonMushroomEarlyOdds34, poisonMushroomMidOdds1, poisonMushroomMidOdds2, poisonMushroomMidOdds34, poisonMushroomLateOdds1, poisonMushroomLateOdds2, poisonMushroomLateOdds34, triplePoisonMushroomEarlyOdds1, triplePoisonMushroomEarlyOdds2, triplePoisonMushroomEarlyOdds34, triplePoisonMushroomMidOdds1, triplePoisonMushroomMidOdds2, triplePoisonMushroomMidOdds34, triplePoisonMushroomLateOdds1, triplePoisonMushroomLateOdds2, triplePoisonMushroomLateOdds34, celluarShopperEarlyOdds1, celluarShopperEarlyOdds2, celluarShopperEarlyOdds34, celluarShopperMidOdds1, celluarShopperMidOdds2, celluarShopperMidOdds34, celluarShopperLateOdds1, celluarShopperLateOdds2, celluarShopperLateOdds34, skeletonKeyEarlyOdds1, skeletonKeyEarlyOdds2, skeletonKeyEarlyOdds34, skeletonKeyMidOdds1, skeletonKeyMidOdds2, skeletonKeyMidOdds34, skeletonKeyLateOdds1, skeletonKeyLateOdds2, skeletonKeyLateOdds34, plunderChestEarlyOdds1, plunderChestEarlyOdds2, plunderChestEarlyOdds34, plunderChestMidOdds1, plunderChestMidOdds2, plunderChestMidOdds34, plunderChestLateOdds1, plunderChestLateOdds2, plunderChestLateOdds34, gaddbrushEarlyOdds1, gaddbrushEarlyOdds2, gaddbrushEarlyOdds34, gaddbrushMidOdds1, gaddbrushMidOdds2, gaddbrushMidOdds34, gaddbrushLateOdds1, gaddbrushLateOdds2, gaddbrushLateOdds34, warpBlockEarlyOdds1, warpBlockEarlyOdds2, warpBlockEarlyOdds34, warpBlockMidOdds1, warpBlockMidOdds2, warpBlockMidOdds34, warpBlockLateOdds1, warpBlockLateOdds2, warpBlockLateOdds34, flyGuyEarlyOdds1, flyGuyEarlyOdds2, flyGuyEarlyOdds34, flyGuyMidOdds1, flyGuyMidOdds2, flyGuyMidOdds34, flyGuyLateOdds1, flyGuyLateOdds2, flyGuyLateOdds34, plusBlockEarlyOdds1, plusBlockEarlyOdds2, plusBlockEarlyOdds34, plusBlockMidOdds1, plusBlockMidOdds2, plusBlockMidOdds34, plusBlockLateOdds1, plusBlockLateOdds2, plusBlockLateOdds34, minusBlockEarlyOdds1, minusBlockEarlyOdds2, minusBlockEarlyOdds34, minusBlockMidOdds1, minusBlockMidOdds2, minusBlockMidOdds34, minusBlockLateOdds1, minusBlockLateOdds2, minusBlockLateOdds34, speedBlockEarlyOdds1, speedBlockEarlyOdds2, speedBlockEarlyOdds34, speedBlockMidOdds1, speedBlockMidOdds2, speedBlockMidOdds34, speedBlockLateOdds1, speedBlockLateOdds2, speedBlockLateOdds34, slowBlockEarlyOdds1, slowBlockEarlyOdds2, slowBlockEarlyOdds34, slowBlockMidOdds1, slowBlockMidOdds2, slowBlockMidOdds34, slowBlockLateOdds1, slowBlockLateOdds2, slowBlockLateOdds34, bowserPhoneEarlyOdds1, bowserPhoneEarlyOdds2, bowserPhoneEarlyOdds34, bowserPhoneMidOdds1, bowserPhoneMidOdds2, bowserPhoneMidOdds34, bowserPhoneLateOdds1, bowserPhoneLateOdds2, bowserPhoneLateOdds34, doubleDipEarlyOdds1, doubleDipEarlyOdds2, doubleDipEarlyOdds34, doubleDipMidOdds1, doubleDipMidOdds2, doubleDipMidOdds34, doubleDipLateOdds1, doubleDipLateOdds2, doubleDipLateOdds34, hiddenBlockCardEarlyOdds1, hiddenBlockCardEarlyOdds2, hiddenBlockCardEarlyOdds34, hiddenBlockCardMidOdds1, hiddenBlockCardMidOdds2, hiddenBlockCardMidOdds34, hiddenBlockCardLateOdds1, hiddenBlockCardLateOdds2, hiddenBlockCardLateOdds34, barterBoxEarlyOdds1, barterBoxEarlyOdds2, barterBoxEarlyOdds34, barterBoxMidOdds1, barterBoxMidOdds2, barterBoxMidOdds34, barterBoxLateOdds1, barterBoxLateOdds2, barterBoxLateOdds34, superWarpPipeEarlyOdds1, superWarpPipeEarlyOdds2, superWarpPipeEarlyOdds34, superWarpPipeMidOdds1, superWarpPipeMidOdds2, superWarpPipeMidOdds34, superWarpPipeLateOdds1, superWarpPipeLateOdds2, superWarpPipeLateOdds34, chanceTimeCharmEarlyOdds1, chanceTimeCharmEarlyOdds2, chanceTimeCharmEarlyOdds34, chanceTimeCharmMidOdds1, chanceTimeCharmMidOdds2, chanceTimeCharmMidOdds34, chanceTimeCharmLateOdds1, chanceTimeCharmLateOdds2, chanceTimeCharmLateOdds34, wackyWatchEarlyOdds1, wackyWatchEarlyOdds2, wackyWatchEarlyOdds34, wackyWatchMidOdds1, wackyWatchMidOdds2, wackyWatchMidOdds34, wackyWatchLateOdds1, wackyWatchLateOdds2, wackyWatchLateOdds34)
     generatedCode = generatedCode.strip()
     pyperclip.copy(generatedCode)

@@ -399,6 +399,17 @@ def itemsEvent_mp4ShopDXPrices(miniMushroomEarlyPrice1 = "5", miniMushroomEarlyP
     wackyWatchLatePrice2 = get_capsule_value(wackyWatchLatePrice2) or "100"
     wackyWatchLatePrice34 = get_capsule_value(wackyWatchLatePrice34) or "100"
     
+    # Double Dip: DX
+    doubleDipEarlyPrice1 = get_capsule_value(doubleDipEarlyPrice1) or "12"
+    doubleDipEarlyPrice2 = get_capsule_value(doubleDipEarlyPrice2) or "12"
+    doubleDipEarlyPrice34 = get_capsule_value(doubleDipEarlyPrice34) or "12"
+    doubleDipMidPrice1 = get_capsule_value(doubleDipMidPrice1) or "12"
+    doubleDipMidPrice2 = get_capsule_value(doubleDipMidPrice2) or "12"
+    doubleDipMidPrice34 = get_capsule_value(doubleDipMidPrice34) or "12"
+    doubleDipLatePrice1 = get_capsule_value(doubleDipLatePrice1) or "12"
+    doubleDipLatePrice2 = get_capsule_value(doubleDipLatePrice2) or "12"
+    doubleDipLatePrice34 = get_capsule_value(doubleDipLatePrice34) or "12"
+
     minCoins = find_lowest_integer(*[
         int(miniMushroomEarlyPrice1), int(miniMushroomEarlyPrice2), int(miniMushroomEarlyPrice34), 
         int(miniMushroomMidPrice1), int(miniMushroomMidPrice2), int(miniMushroomMidPrice34),
@@ -504,7 +515,11 @@ def itemsEvent_mp4ShopDXPrices(miniMushroomEarlyPrice1 = "5", miniMushroomEarlyP
         int(chanceTimeCharmLatePrice1), int(chanceTimeCharmLatePrice2), int(chanceTimeCharmLatePrice34),
         int(wackyWatchEarlyPrice1), int(wackyWatchEarlyPrice2), int(wackyWatchEarlyPrice34),
         int(wackyWatchMidPrice1), int(wackyWatchMidPrice2), int(wackyWatchMidPrice34),
-        int(wackyWatchLatePrice1), int(wackyWatchLatePrice2), int(wackyWatchLatePrice34)
+        int(wackyWatchLatePrice1), int(wackyWatchLatePrice2), int(wackyWatchLatePrice34),
+        int(doubleDipEarlyPrice1), int(doubleDipEarlyPrice2), int(doubleDipEarlyPrice34),
+        int(doubleDipMidPrice1), int(doubleDipMidPrice2), int(doubleDipMidPrice34),
+        int(doubleDipLatePrice1), int(doubleDipLatePrice2), int(doubleDipLatePrice34)
+
     ])
 
 
@@ -905,6 +920,18 @@ def itemsEvent_mp4ShopDXPrices(miniMushroomEarlyPrice1 = "5", miniMushroomEarlyP
     bowserPhoneLatePrice2 = convert_to_hex_weight(bowserPhoneLatePrice2)
     bowserPhoneLatePrice34 = convert_to_hex_weight(bowserPhoneLatePrice34)
 
+    # Double Dip: DX
+    doubleDipEarlyPrice1 = convert_to_hex_weight(doubleDipEarlyPrice1)
+    doubleDipEarlyPrice2 = convert_to_hex_weight(doubleDipEarlyPrice2)
+    doubleDipEarlyPrice34 = convert_to_hex_weight(doubleDipEarlyPrice34)
+    doubleDipMidPrice1 = convert_to_hex_weight(doubleDipMidPrice1)
+    doubleDipMidPrice2 = convert_to_hex_weight(doubleDipMidPrice2)
+    doubleDipMidPrice34 = convert_to_hex_weight(doubleDipMidPrice34)
+    doubleDipLatePrice1 = convert_to_hex_weight(doubleDipLatePrice1)
+    doubleDipLatePrice2 = convert_to_hex_weight(doubleDipLatePrice2)
+    doubleDipLatePrice34 = convert_to_hex_weight(doubleDipLatePrice34)
+
+
     minCoins = convert_to_hex_weight(minCoins)
 
     generatedCode = getItemShopPricesFourDX(minCoins, miniMushroomEarlyPrice1, miniMushroomEarlyPrice2, miniMushroomEarlyPrice34, miniMushroomMidPrice1, miniMushroomMidPrice2, miniMushroomMidPrice34, miniMushroomLatePrice1, miniMushroomLatePrice2, miniMushroomLatePrice34, megaMushroomEarlyPrice1, megaMushroomEarlyPrice2, megaMushroomEarlyPrice34, megaMushroomMidPrice1, megaMushroomMidPrice2, megaMushroomMidPrice34, megaMushroomLatePrice1, megaMushroomLatePrice2, megaMushroomLatePrice34, superMiniMushroomEarlyPrice1, superMiniMushroomEarlyPrice2, superMiniMushroomEarlyPrice34, superMiniMushroomMidPrice1, superMiniMushroomMidPrice2, superMiniMushroomMidPrice34, superMiniMushroomLatePrice1, superMiniMushroomLatePrice2, superMiniMushroomLatePrice34, superMegaMushroomEarlyPrice1, superMegaMushroomEarlyPrice2, superMegaMushroomEarlyPrice34, superMegaMushroomMidPrice1, superMegaMushroomMidPrice2, superMegaMushroomMidPrice34, superMegaMushroomLatePrice1, superMegaMushroomLatePrice2, superMegaMushroomLatePrice34, miniMegaHammerEarlyPrice1, miniMegaHammerEarlyPrice2, miniMegaHammerEarlyPrice34, miniMegaHammerMidPrice1, miniMegaHammerMidPrice2, miniMegaHammerMidPrice34, miniMegaHammerLatePrice1, miniMegaHammerLatePrice2, miniMegaHammerLatePrice34, warpPipeEarlyPrice1, warpPipeEarlyPrice2, warpPipeEarlyPrice34, warpPipeMidPrice1, warpPipeMidPrice2, warpPipeMidPrice34, warpPipeLatePrice1, warpPipeLatePrice2, warpPipeLatePrice34, swapCardEarlyPrice1, swapCardEarlyPrice2, swapCardEarlyPrice34, swapCardMidPrice1, swapCardMidPrice2, swapCardMidPrice34, swapCardLatePrice1, swapCardLatePrice2, swapCardLatePrice34, sparkyStickerEarlyPrice1, sparkyStickerEarlyPrice2, sparkyStickerEarlyPrice34, sparkyStickerMidPrice1, sparkyStickerMidPrice2, sparkyStickerMidPrice34, sparkyStickerLatePrice1, sparkyStickerLatePrice2, sparkyStickerLatePrice34, gaddlightEarlyPrice1, gaddlightEarlyPrice2, gaddlightEarlyPrice34, gaddlightMidPrice1, gaddlightMidPrice2, gaddlightMidPrice34, gaddlightLatePrice1, gaddlightLatePrice2, gaddlightLatePrice34, chompCallEarlyPrice1, chompCallEarlyPrice2, chompCallEarlyPrice34, chompCallMidPrice1, chompCallMidPrice2, chompCallMidPrice34, chompCallLatePrice1, chompCallLatePrice2, chompCallLatePrice34, bowserSuitEarlyPrice1, bowserSuitEarlyPrice2, bowserSuitEarlyPrice34, bowserSuitMidPrice1, bowserSuitMidPrice2, bowserSuitMidPrice34, bowserSuitLatePrice1, bowserSuitLatePrice2, bowserSuitLatePrice34, crystalBallEarlyPrice1, crystalBallEarlyPrice2, crystalBallEarlyPrice34, crystalBallMidPrice1, crystalBallMidPrice2, crystalBallMidPrice34, crystalBallLatePrice1, crystalBallLatePrice2, crystalBallLatePrice34, magicLampEarlyPrice1, magicLampEarlyPrice2, magicLampEarlyPrice34, magicLampMidPrice1, magicLampMidPrice2, magicLampMidPrice34, magicLampLatePrice1, magicLampLatePrice2, magicLampLatePrice34, itemBagEarlyPrice1, itemBagEarlyPrice2, itemBagEarlyPrice34, itemBagMidPrice1, itemBagMidPrice2, itemBagMidPrice34, itemBagLatePrice1, itemBagLatePrice2, itemBagLatePrice34, mushroomEarlyPrice1, mushroomEarlyPrice2, mushroomEarlyPrice34, mushroomMidPrice1, mushroomMidPrice2, mushroomMidPrice34, mushroomLatePrice1, mushroomLatePrice2, mushroomLatePrice34, goldenMushroomEarlyPrice1, goldenMushroomEarlyPrice2, goldenMushroomEarlyPrice34, goldenMushroomMidPrice1, goldenMushroomMidPrice2, goldenMushroomMidPrice34, goldenMushroomLatePrice1, goldenMushroomLatePrice2, goldenMushroomLatePrice34, reverseMushroomEarlyPrice1, reverseMushroomEarlyPrice2, reverseMushroomEarlyPrice34, reverseMushroomMidPrice1, reverseMushroomMidPrice2, reverseMushroomMidPrice34, reverseMushroomLatePrice1, reverseMushroomLatePrice2, reverseMushroomLatePrice34, poisonMushroomEarlyPrice1, poisonMushroomEarlyPrice2, poisonMushroomEarlyPrice34, poisonMushroomMidPrice1, poisonMushroomMidPrice2, poisonMushroomMidPrice34, poisonMushroomLatePrice1, poisonMushroomLatePrice2, poisonMushroomLatePrice34, triplePoisonMushroomEarlyPrice1, triplePoisonMushroomEarlyPrice2, triplePoisonMushroomEarlyPrice34, triplePoisonMushroomMidPrice1, triplePoisonMushroomMidPrice2, triplePoisonMushroomMidPrice34, triplePoisonMushroomLatePrice1, triplePoisonMushroomLatePrice2, triplePoisonMushroomLatePrice34, celluarShopperEarlyPrice1, celluarShopperEarlyPrice2, celluarShopperEarlyPrice34, celluarShopperMidPrice1, celluarShopperMidPrice2, celluarShopperMidPrice34, celluarShopperLatePrice1, celluarShopperLatePrice2, celluarShopperLatePrice34, skeletonKeyEarlyPrice1, skeletonKeyEarlyPrice2, skeletonKeyEarlyPrice34, skeletonKeyMidPrice1, skeletonKeyMidPrice2, skeletonKeyMidPrice34, skeletonKeyLatePrice1, skeletonKeyLatePrice2, skeletonKeyLatePrice34, plunderChestEarlyPrice1, plunderChestEarlyPrice2, plunderChestEarlyPrice34, plunderChestMidPrice1, plunderChestMidPrice2, plunderChestMidPrice34, plunderChestLatePrice1, plunderChestLatePrice2, plunderChestLatePrice34, gaddbrushEarlyPrice1, gaddbrushEarlyPrice2, gaddbrushEarlyPrice34, gaddbrushMidPrice1, gaddbrushMidPrice2, gaddbrushMidPrice34, gaddbrushLatePrice1, gaddbrushLatePrice2, gaddbrushLatePrice34, warpBlockEarlyPrice1, warpBlockEarlyPrice2, warpBlockEarlyPrice34, warpBlockMidPrice1, warpBlockMidPrice2, warpBlockMidPrice34, warpBlockLatePrice1, warpBlockLatePrice2, warpBlockLatePrice34, flyGuyEarlyPrice1, flyGuyEarlyPrice2, flyGuyEarlyPrice34, flyGuyMidPrice1, flyGuyMidPrice2, flyGuyMidPrice34, flyGuyLatePrice1, flyGuyLatePrice2, flyGuyLatePrice34, plusBlockEarlyPrice1, plusBlockEarlyPrice2, plusBlockEarlyPrice34, plusBlockMidPrice1, plusBlockMidPrice2, plusBlockMidPrice34, plusBlockLatePrice1, plusBlockLatePrice2, plusBlockLatePrice34, minusBlockEarlyPrice1, minusBlockEarlyPrice2, minusBlockEarlyPrice34, minusBlockMidPrice1, minusBlockMidPrice2, minusBlockMidPrice34, minusBlockLatePrice1, minusBlockLatePrice2, minusBlockLatePrice34, speedBlockEarlyPrice1, speedBlockEarlyPrice2, speedBlockEarlyPrice34, speedBlockMidPrice1, speedBlockMidPrice2, speedBlockMidPrice34, speedBlockLatePrice1, speedBlockLatePrice2, speedBlockLatePrice34, slowBlockEarlyPrice1, slowBlockEarlyPrice2, slowBlockEarlyPrice34, slowBlockMidPrice1, slowBlockMidPrice2, slowBlockMidPrice34, slowBlockLatePrice1, slowBlockLatePrice2, slowBlockLatePrice34, bowserPhoneEarlyPrice1, bowserPhoneEarlyPrice2, bowserPhoneEarlyPrice34, bowserPhoneMidPrice1, bowserPhoneMidPrice2, bowserPhoneMidPrice34, bowserPhoneLatePrice1, bowserPhoneLatePrice2, bowserPhoneLatePrice34, doubleDipEarlyPrice1, doubleDipEarlyPrice2, doubleDipEarlyPrice34, doubleDipMidPrice1, doubleDipMidPrice2, doubleDipMidPrice34, doubleDipLatePrice1, doubleDipLatePrice2, doubleDipLatePrice34, hiddenBlockCardEarlyPrice1, hiddenBlockCardEarlyPrice2, hiddenBlockCardEarlyPrice34, hiddenBlockCardMidPrice1, hiddenBlockCardMidPrice2, hiddenBlockCardMidPrice34, hiddenBlockCardLatePrice1, hiddenBlockCardLatePrice2, hiddenBlockCardLatePrice34, barterBoxEarlyPrice1, barterBoxEarlyPrice2, barterBoxEarlyPrice34, barterBoxMidPrice1, barterBoxMidPrice2, barterBoxMidPrice34, barterBoxLatePrice1, barterBoxLatePrice2, barterBoxLatePrice34, superWarpPipeEarlyPrice1, superWarpPipeEarlyPrice2, superWarpPipeEarlyPrice34, superWarpPipeMidPrice1, superWarpPipeMidPrice2, superWarpPipeMidPrice34, superWarpPipeLatePrice1, superWarpPipeLatePrice2, superWarpPipeLatePrice34, chanceTimeCharmEarlyPrice1, chanceTimeCharmEarlyPrice2, chanceTimeCharmEarlyPrice34, chanceTimeCharmMidPrice1, chanceTimeCharmMidPrice2, chanceTimeCharmMidPrice34, chanceTimeCharmLatePrice1, chanceTimeCharmLatePrice2, chanceTimeCharmLatePrice34, wackyWatchEarlyPrice1, wackyWatchEarlyPrice2, wackyWatchEarlyPrice34, wackyWatchMidPrice1, wackyWatchMidPrice2, wackyWatchMidPrice34, wackyWatchLatePrice1, wackyWatchLatePrice2, wackyWatchLatePrice34)
@@ -1074,7 +1101,7 @@ def itemsEvent_mp4ShopPrices(miniMushroomEarlyPrice1 = "5", miniMushroomEarlyPri
     itemBagLatePrice1 = get_capsule_value(itemBagLatePrice1) or "30"
     itemBagLatePrice2 = get_capsule_value(itemBagLatePrice2) or "30"
     itemBagLatePrice34 = get_capsule_value(itemBagLatePrice34) or "30"
-    
+
     minCoins = find_lowest_integer(*[
         int(miniMushroomEarlyPrice1), int(miniMushroomEarlyPrice2), int(miniMushroomEarlyPrice34), 
         int(miniMushroomMidPrice1), int(miniMushroomMidPrice2), int(miniMushroomMidPrice34),
