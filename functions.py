@@ -65,6 +65,12 @@ def is_file_greater_than_4gb(file_path):
     # Check if the file size is greater than 4 GB
     return file_size_gb > 4
 
+def get_capsule_value(capsule):
+        try:
+            return capsule.get()
+        except:
+            return 0
+        
 def find_lowest_integer(*args):
     if not args:
         return None  # Return None if no arguments are provided
