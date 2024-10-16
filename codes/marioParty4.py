@@ -464,7 +464,6 @@ C2077FF4 00000039
 98640000 98640004
 98640008 9864000C
 98640010 00000000
-
 02139DB2 0000{miniMushroomEarlyOdds1}{megaMushroomEarlyOdds1}
 04139DB4 {superMiniMushroomEarlyOdds1}{superMegaMushroomEarlyOdds1}{miniMegaHammerEarlyOdds1}{warpPipeEarlyOdds1}
 04139DB8 {swapCardEarlyOdds1}{sparkyStickerEarlyOdds1}{gaddlightEarlyOdds1}{chompCallEarlyOdds1}

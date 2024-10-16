@@ -1541,32 +1541,15 @@ def itemsEvent_mp4ShopOddsDX(miniMushroomEarlyOdds1 = "0", miniMushroomEarlyOdds
     lateOdds2Weights = sum(int(weight) for weight in lateOdds2)
     lateOdds34Weights = sum(int(weight) for weight in lateOdds34)
 
-    if int(earlyOdds1Weights) < 101:
-        earlyOdds1Max = max(zip(earlyOdds1, earlyOdds1), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(earlyOdds2Weights) < 101:
-        earlyOdds2Max = max(zip(earlyOdds2, earlyOdds2), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(earlyOdds34Weights) < 101:
-        earlyOdds34Max = max(zip(earlyOdds34, earlyOdds34), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(midOdds1Weights) < 101:
-        midOdds1Max = max(zip(midOdds1, midOdds1), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(midOdds2Weights) < 101:
-        midOdds2Max = max(zip(midOdds2, midOdds2), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(midOdds34Weights) < 101:
-        midOdds34Max = max(zip(midOdds34, midOdds34), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(lateOdds1Weights) < 101:
-        lateOdds1Max = max(zip(lateOdds1, lateOdds1), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(lateOdds2Weights) < 101:
-        lateOdds2Max = max(zip(lateOdds2, lateOdds2), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(lateOdds34Weights) < 101:
-        lateOdds34Max = max(zip(lateOdds34, lateOdds34), key=lambda tuple: int(tuple[1]))[0]
+    earlyOdds1Max = max(zip(earlyOdds1, earlyOdds1), key=lambda tuple: int(tuple[1]))[0]
+    earlyOdds2Max = max(zip(earlyOdds2, earlyOdds2), key=lambda tuple: int(tuple[1]))[0]
+    earlyOdds34Max = max(zip(earlyOdds34, earlyOdds34), key=lambda tuple: int(tuple[1]))[0]
+    midOdds1Max = max(zip(midOdds1, midOdds1), key=lambda tuple: int(tuple[1]))[0]
+    midOdds2Max = max(zip(midOdds2, midOdds2), key=lambda tuple: int(tuple[1]))[0]
+    midOdds34Max = max(zip(midOdds34, midOdds34), key=lambda tuple: int(tuple[1]))[0]
+    lateOdds1Max = max(zip(lateOdds1, lateOdds1), key=lambda tuple: int(tuple[1]))[0]
+    lateOdds2Max = max(zip(lateOdds2, lateOdds2), key=lambda tuple: int(tuple[1]))[0]
+    lateOdds34Max = max(zip(lateOdds34, lateOdds34), key=lambda tuple: int(tuple[1]))[0]
 
     # Mini Mushroom
     if earlyOdds1Max == 'miniMushroomEarlyOdds1':
@@ -3720,32 +3703,15 @@ def itemsEvent_mp4ShopOdds(miniMushroomEarlyOdds1 = "0", miniMushroomEarlyOdds2 
     lateOdds2Weights = sum(int(weight) for weight in lateOdds2)
     lateOdds34Weights = sum(int(weight) for weight in lateOdds34)
 
-    if int(earlyOdds1Weights) < 101:
-        earlyOdds1Max = max(zip(earlyOdds1, earlyOdds1), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(earlyOdds2Weights) < 101:
-        earlyOdds2Max = max(zip(earlyOdds2, earlyOdds2), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(earlyOdds34Weights) < 101:
-        earlyOdds34Max = max(zip(earlyOdds34, earlyOdds34), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(midOdds1Weights) < 101:
-        midOdds1Max = max(zip(midOdds1, midOdds1), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(midOdds2Weights) < 101:
-        midOdds2Max = max(zip(midOdds2, midOdds2), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(midOdds34Weights) < 101:
-        midOdds34Max = max(zip(midOdds34, midOdds34), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(lateOdds1Weights) < 101:
-        lateOdds1Max = max(zip(lateOdds1, lateOdds1), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(lateOdds2Weights) < 101:
-        lateOdds2Max = max(zip(lateOdds2, lateOdds2), key=lambda tuple: int(tuple[1]))[0]
-
-    if int(lateOdds34Weights) < 101:
-        lateOdds34Max = max(zip(lateOdds34, lateOdds34), key=lambda tuple: int(tuple[1]))[0]
+    earlyOdds1Max = max(zip(earlyOdds1, earlyOdds1), key=lambda tuple: int(tuple[1]))[0]
+    earlyOdds2Max = max(zip(earlyOdds2, earlyOdds2), key=lambda tuple: int(tuple[1]))[0]
+    earlyOdds34Max = max(zip(earlyOdds34, earlyOdds34), key=lambda tuple: int(tuple[1]))[0]
+    midOdds1Max = max(zip(midOdds1, midOdds1), key=lambda tuple: int(tuple[1]))[0]
+    midOdds2Max = max(zip(midOdds2, midOdds2), key=lambda tuple: int(tuple[1]))[0]
+    midOdds34Max = max(zip(midOdds34, midOdds34), key=lambda tuple: int(tuple[1]))[0]
+    lateOdds1Max = max(zip(lateOdds1, lateOdds1), key=lambda tuple: int(tuple[1]))[0]
+    lateOdds2Max = max(zip(lateOdds2, lateOdds2), key=lambda tuple: int(tuple[1]))[0]
+    lateOdds34Max = max(zip(lateOdds34, lateOdds34), key=lambda tuple: int(tuple[1]))[0]
 
     # Mini Mushroom
     if earlyOdds1Max == 'miniMushroomEarlyOdds1':
