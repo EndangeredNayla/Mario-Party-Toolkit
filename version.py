@@ -5,4 +5,4 @@
 # License: MIT
 # ============================================
 
-versionString = "4.0.0-DEV3"
+versionString = "4.0.0-DEV4"
