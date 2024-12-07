@@ -80,37 +80,37 @@ def create_mario_party_4_interface(frame):
     parse_minigame_button.place(x=10, y=800)
 
     # ITEM GEN
-    scrollable_frame = ctk.CTkFrame(master=tabview.tab("Shop Prices"), fg_color=("#fcfcfc", "#2e2e2e"))
-    scrollable_frame.grid(row=0, column=0, sticky="nsew", pady=(0, 50))
+    scrollable_frame1 = ctk.CTkFrame(master=tabview.tab("Shop Prices"), fg_color=("#fcfcfc", "#2e2e2e"))
+    scrollable_frame1.grid(row=0, column=0, sticky="nsew", pady=(0, 50))
     # Configure grid to allow stretching
     tabview.tab("Shop Prices").grid_rowconfigure(0, weight=1)
     tabview.tab("Shop Prices").grid_columnconfigure(0, weight=1)
-    scrollable_frame.grid_rowconfigure(0, weight=1)
+    scrollable_frame1.grid_rowconfigure(0, weight=1)
 
     # Create a canvas for scrolling
-    canvas = ctk.CTkCanvas(master=scrollable_frame, bg="#2e2e2e", highlightthickness=0)
-    canvas.grid(row=0, column=0, sticky="nsew")
+    canvas1 = ctk.CTkCanvas(master=scrollable_frame1, bg="#2e2e2e", highlightthickness=0)
+    canvas1.grid(row=0, column=0, sticky="nsew")
 
     # Create a vertical scrollbar linked to the canvas
-    scrollbar = ctk.CTkScrollbar(master=scrollable_frame, orientation="vertical", command=canvas.yview, fg_color=("#ffffff", "#3a3a3a"))
-    scrollbar.grid(row=0, column=1, sticky="ns")
+    scrollbar1 = ctk.CTkScrollbar(master=scrollable_frame1, orientation="vertical", command=canvas1.yview, fg_color=("#ffffff", "#3a3a3a"))
+    scrollbar1.grid(row=0, column=1, sticky="ns")
 
     # Configure the canvas to work with the scrollbar
-    canvas.configure(yscrollcommand=scrollbar.set)
+    canvas1.configure(yscrollcommand=scrollbar1.set)
 
     # Create a frame inside the canvas to hold the content
-    content_frame = ctk.CTkFrame(master=canvas, fg_color=("#fcfcfc", "#2e2e2e"))
-    canvas.create_window((0, 0), window=content_frame, anchor="nw")
+    content_frame = ctk.CTkFrame(master=canvas1, fg_color=("#fcfcfc", "#2e2e2e"))
+    canvas1.create_window((0, 0), window=content_frame, anchor="nw")
 
     # Function to update the scroll region
     def update_scroll_region(event):
-        canvas.configure(scrollregion=canvas.bbox("all"))
+        canvas1.configure(scrollregion=canvas1.bbox("all"))
 
     content_frame.bind("<Configure>", update_scroll_region)
     
     # Configure the canvas to fill the width of the scrollable frame
-    scrollable_frame.grid_columnconfigure(0, weight=1)  # Ensure the canvas fills the width
-    canvas.grid_rowconfigure(0, weight=1)  # Ensure the canvas fills the heigh
+    scrollable_frame1.grid_columnconfigure(0, weight=1)  # Ensure the canvas fills the width
+    canvas1.grid_rowconfigure(0, weight=1)  # Ensure the canvas fills the heigh
 
     # Mini Mushroom
     icon = create_image_icon(content_frame, "assets/items/miniMushroom.png", 2, 1)

@@ -24,7 +24,7 @@ def battleCoins_mp7(p1, p2, p3, p4, p5):
     p1String = p1.get() if p1.get() != "" else "5"
     p2String = p2.get() if p2.get() != "" else "10"
     p3String = p3.get() if p3.get() != "" else "20"
-    p4String = p4.get() if p4.get() != "" else "30"
+    p4Sftring = p4.get() if p4.get() != "" else "30"
     p5String = p5.get() if p5.get() != "" else "50"
 
     # Generate codes for blue and red spaces

@@ -461,7 +461,7 @@ E2000001 80008000
 
 def getStarReplaceSeven6(amount, amountDec):
     return f'''
-MP7 - Replace Running Star with {amountDec}
+MP7 - Replace Red Star with {amountDec}
 204E198C 8904001D
 044E198C {amount}
 E2000001 80008000
